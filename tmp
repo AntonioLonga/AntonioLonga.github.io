@@ -1,0 +1,27 @@
+    <div class="row "> 
+      <div class="column">
+        <img src="img/gallery/bici.jpg" alt="With my bicycle at Crap dala Pare'" style="width:100%" >
+        <img src="img/gallery/camminare.jpg" style="width:100%" alt="dksl" id="myImg">
+        <img src="img/gallery/degreeBicocca.jpg" style="width:100%">
+        <img src="img/gallery/cioccolato.jpg" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="img/gallery/eventi.jpg" style="width:100%">
+        <img src="img/gallery/giaccio.jpg" style="width:100%">
+        <img src="img/gallery/girdimunt.jpg" style="width:100%">
+        <img src="img/gallery/Img1.jpg" style="width:100%">
+      </div>  
+      <div class="column">
+        <img src="img/gallery/amici.jpg" style="width:100%">
+        <img src="img/gallery/livigno.jpg" style="width:100%">
+        <img src="img/gallery/plymouth.jpg" style="width:100%">
+        <img src="img/gallery/pulcino.jpg" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="img/gallery/coscritti.jpg" style="width:100%">
+        <img src="img/gallery/gnoccata.jpg" style="width:100%">
+        <img src="img/gallery/vulcans.jpg" style="width:100%">
+        <img src="img/gallery/ioesilvia.jpg" style="width:100%">
+      </div>
+    </div>
+  </div>
