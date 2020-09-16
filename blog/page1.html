@@ -265,42 +265,98 @@
             to show
             how to generate non isomorphic connected graphs given the number of nodes.
           </p>
+          <p>
+            First of all we need to import the required libraries.
+          </p>
 
           <div class="language-python highlighter-rouge">
+            <pre class="highlight">
+              <code class="code">
+1   <span class="import">import</span> <span class="nn">numpy</span> <span class="as">as</span> <span class="n">np</span>
+2   <span class="import">import</span> <span class="nn">networkx</span> <span class="as">as</span> <span class="n">nx</span>
+3   <span class="import">import</span> <span class="nn">itertools</span>  </code>
+                </pre>
+                  </div>
 
+
+
+
+          <div class="language-python highlighter-rouge">
+            <pre class="highlight">
+              <code class="code">
+1  <span class="def">def</span> <span class="nn">get_non_isomorphic_graphs_from_edges</span><span class="n">(edges,G):</span>
+2      <span class="n">res = []</span>
+3      <span class="n">res.append(edges[0])</span>
+4      <span class="n"><span class="for">for</span> i <span class="def">in</span> <span class="nn">range</span>(<span class="nn">len</span>(edges)-1):</span>
+5          <span class="n"><span class="for">for</span> J <span class="def">in</span> <span class="nn">range</span>(<span class="nn">len</span>(res)-1):</span>
+6              <span class="n">add = <span class="def">True</span></span>
+7              <span class="n">g1 = G.edge_subgraph(edges[i+1]).copy()</span>
+8              <span class="n">g2 = G.edge_subgraph(res[j]).copy() </span>
+9              <span class="n"><span class="if">if</span> (nx.is_isomorphic(g1,g2)):</span>
+10                  <span class="n">add = <span class="def">False</span></span>
+11                  <span class="n">break</span>
+12          <span class="n"><span class="if">if</span>(add == <span class="def">True</span>):</span>
+13             <span class="n">res.append(edges[i+1])</span>
+15
+16    <span class="n"><span class="if">return</span>(res)</span></code>
+                  </pre>
+                    </div>
+
+          <p>
+            The algorithm is composed by two functions <i>get_not_isomorphic_connected_graphs(n)</i> and
+            <i>get_non_isomorphic_graphs_from_edges(e,g)</i>. The first function create a complete graph whith n nodes, 
+            then it iterate over the minimum number of edges (len(n)-1) and the maximum number of edges ((n*(n-1))/2).
+            In the nested first
+          </p>
+          <p>
+            <b>get_not_isomorphic_connected_graphs(number_of_nodes)</b>
+          </p>
+
+
+
+
+          <div class="language-python highlighter-rouge">
               <pre class="highlight">
-
-                <code>
-  <span class="import">import</span> <span class="nn">numpy</span> <span class="as">as</span> <span class="n">np</span>
-  <span class="import">import</span> <span class="nn">networkx</span> <span class="as">as</span> <span class="n">nx</span>
-  <span class="import">import</span> <span class="nn">itertools</span> 
-  <span class="c1"># load iris dataset </span>
-  <span class="def">def</span> <span class="nn">get_not_isomorphic_connected_graphs</span><span class="n">(number_of_nodes):</span>
-      
-      <span class="n">G = nx.complete_graph(number_of_nodes)</span>
-      <span class="n">number_max_edges = <span class="nn">len</span>(G.edges())</span>
-      <span class="n">graphs = []</span>
-
-      <span class="n"><span class="for">for</span> i <span class="def">in</span> np.arange(number_of_nodes-1,number_max_edges+1):</span>
-          <span class="n">edges = []</span>
-          <span class="n"><span class="for">for</span> sub_nodes <span class="def">in</span> itertools.combinations(G.edges(),i):</span>
-              <span class="n">edges.append(sub_nodes)</span>
-          <span class="n">graphs.append(get_non_isomorphic_graphs_from_edges(edges,G))</span>
-
-      <span class="n">not_isomorphic_graphs = []</span>
-
-      <span class="n"><span class="for">for</span> i <span class="def">in</span> graphs:</span>
-        <span class="n"><span class="for">for</span> j <span class="def">in</span> i:</span>
-          <span class="n">g1 = G.edge_subgraph(j).copy()</span>
-          <span class="n"><span class="if">if</span>(<span class="nn">len</span>(g1.nodes())>=number_of_nodes):</span>
-            <span class="n"><span class="if">if</span>(nx.is_connected(g1)):</span>
-              <span class="n">not_isomorphic_graphs.append(g1)</span>
-      <span class="n">return(not_isomorphic_graphs)</span>
-    </code>
-        </pre>
-          </div>
+                <code class="code">
+1   <span class="c1"># load iris dataset </span>
+2   <span class="def">def</span> <span class="nn">get_not_isomorphic_connected_graphs</span><span class="n">(number_of_nodes):</span>
+3      
+4       <span class="n">G = nx.complete_graph(number_of_nodes)</span>
+5       <span class="n">number_max_edges = <span class="nn">int</span>(number_of_nodes*(number_of_nodes−1)/2)
+6       <span class="n">graphs = []</span>
+7
+8      <span class="n"><span class="for">for</span> i <span class="def">in</span> np.arange(number_of_nodes-1,number_max_edges+1):</span>
+9          <span class="n">edges = []</span>
+10          <span class="n"><span class="for">for</span> sub_nodes <span class="def">in</span> itertools.combinations(G.edges(),i):</span>
+11              <span class="n">edges.append(sub_nodes)</span>
+12          <span class="n">graphs.append(get_non_isomorphic_graphs_from_edges(edges,G))</span>
+13
+14      <span class="n">not_isomorphic_graphs = []</span>
+15
+16      <span class="n"><span class="for">for</span> i <span class="def">in</span> graphs:</span>
+17        <span class="n"><span class="for">for</span> j <span class="def">in</span> i:</span>
+18          <span class="n">g1 = G.edge_subgraph(j).copy()</span>
+19          <span class="n"><span class="if">if</span>(<span class="nn">len</span>(g1.nodes())>=number_of_nodes):</span>
+20          <span class="n"><span class="if">if</span>(nx.is_connected(g1)):</span>
+21            <span class="n">not_isomorphic_graphs.append(g1)</span>
+22    <span class="n"><span class="if">return</span>(not_isomorphic_graphs)</span></code>
+</pre>
+  </div>
 
 
+
+
+
+          <div class="language-python highlighter-rouge">
+            <pre class="highlight">
+              <code>
+     
+    <span class="n">graphs = <span class="nn">get_not_isomorphic_connected_graphs</span><span class="n">(number_of_nodes)</span></span>
+
+  </code>
+      </pre>
+        </div>
+   
         </div>
         <div class="resume-date text-md-right">
           <span class="text-primary">December 2019</span>

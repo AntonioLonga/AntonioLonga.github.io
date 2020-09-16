@@ -15,6 +15,9 @@
     margin: 0;
 }
   
+.code {
+    padding : 10px;
+}
 .highlight .def {
     color: rgb(42, 48, 128);
     font-weight: bold
