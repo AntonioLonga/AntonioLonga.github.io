@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python: Fondamentali &mdash; Laboratorio di Informatica 2020 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Laboratorio di Informatica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Python: Fondamentali</a><ul>
+<li><a class="reference internal" href="#interprete">Interprete</a></li>
+<li><a class="reference internal" href="#moduli">Moduli</a></li>
+<li><a class="reference internal" href="#oggetti">Oggetti</a></li>
+<li><a class="reference internal" href="#variabili">Variabili</a></li>
+<li><a class="reference internal" href="#funzioni-e-metodi">Funzioni e Metodi</a></li>
+<li><a class="reference internal" href="#documentazione">Documentazione</a></li>
+<li><a class="reference internal" href="#esercizi">Esercizi</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Laboratorio di Informatica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Python: Fondamentali</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/python_basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-fondamentali">
+<h1>Python: Fondamentali<a class="headerlink" href="#python-fondamentali" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interprete">
+<h2>Interprete<a class="headerlink" href="#interprete" title="Permalink to this headline">¶</a></h2>
+<p>Python si riferisce a:</p>
+<ul class="simple">
+<li>il <strong>linguaggio</strong> Python, un insieme di regole sintattiche e semantiche che
+definiscono il comportamento di un programma scritto in Python.</li>
+<li>l’<strong>interprete</strong> <code class="docutils literal notranslate"><span class="pre">python</span></code>, un comando eseguibile dalla shell che permette
+di eseguire codice scritto nel linguaggio Python.</li>
+</ul>
+<p>Per far partire l’interprete, da una shell scrivete:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>In alcune distribuzioni, la versione di default e’ ancora la 2.x.
+Tipicamente e’ possibile avviare Python 3 tramite il comando:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span>
+</pre></div>
+</div>
+</div>
+<p>Vi apparira’ una schermata di testo simile a questa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">2</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Sep</span> <span class="mi">14</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">06</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">5.4</span><span class="o">.</span><span class="mi">0</span> <span class="mi">20160609</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Per eseguire codice python, scrivetelo nell’interprete e date invio, ad
+esempio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Per chiudere l’interprete, premete <code class="docutils literal notranslate"><span class="pre">Control-d</span></code> in una riga vuota.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Oltre all’interpreter <code class="docutils literal notranslate"><span class="pre">python</span></code>, che e’ il default, esistono altri
+interpreti Python piu’ usabili, ad esempio <code class="docutils literal notranslate"><span class="pre">ipython</span></code>:</p>
+<blockquote>
+<div><a class="reference external" href="https://ipython.org/">https://ipython.org/</a></div></blockquote>
+<p class="last">L’interprete <code class="docutils literal notranslate"><span class="pre">ipython</span></code> funziona <em>esattamente</em> come <code class="docutils literal notranslate"><span class="pre">python</span></code>, ma
+dispone di funzionalita’ avanzate, come ad esempio la <strong>colorazione della
+sintassi</strong> (syntax highlighting), che possono facilitare la stesura del
+codice.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="moduli">
+<h2>Moduli<a class="headerlink" href="#moduli" title="Permalink to this headline">¶</a></h2>
+<p>Un’alternativa all’eseguire codice nell’interprete e’ scrivere un <em>modulo</em>: un
+file di testo con estensione <code class="docutils literal notranslate"><span class="pre">.py</span></code> in cui scrivete il codice da eseguire.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">L’estensione <code class="docutils literal notranslate"><span class="pre">.py</span></code> e’ obbligatoria!</p>
+</div>
+<p>Per eseguire un modulo, diciamo il file <code class="docutils literal notranslate"><span class="pre">eseguibile.py</span></code>, scrivo dalla shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">eseguibile</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Per utilizzare le funzioni definite in un modulo all’interno di un altro, uso
+<code class="docutils literal notranslate"><span class="pre">import</span></code>. Ad esempio, se in <code class="docutils literal notranslate"><span class="pre">eseguibile.py</span></code> voglio usare la funzione
+<code class="docutils literal notranslate"><span class="pre">ordina_proteine()</span></code> precedentemente definita nel modulo <code class="docutils literal notranslate"><span class="pre">util.py</span></code>, scrivo
+all’inizio di <code class="docutils literal notranslate"><span class="pre">eseguibile.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">util</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Quando importate un modulo, omettete l’estensione <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p>
+</div>
+<p>A questo punto posso usare <code class="docutils literal notranslate"><span class="pre">ordina_proteine()</span></code> cosi’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">util</span><span class="o">.</span><span class="n">ordina_proteine</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">I contenuti di un modulo importato vengono prefissati col nome del modulo:
+qui abbiamo invocato <code class="docutils literal notranslate"><span class="pre">util.ordina_proteine</span></code>, non <code class="docutils literal notranslate"><span class="pre">ordina_protein</span></code> liscio.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="oggetti">
+<h2>Oggetti<a class="headerlink" href="#oggetti" title="Permalink to this headline">¶</a></h2>
+<p>Un oggetto rappresenta dei dati di qualche tipo (un intero, una stringa, una
+lista, <em>etc.</em>) sui cui operiamo in qualche modo.</p>
+<p>Ogni oggetto ha:</p>
+<ul class="simple">
+<li>un <em>tipo</em>, che specifica che cosa l’oggetto rappresenta.</li>
+<li>un <em>valore</em>.</li>
+</ul>
+<p>I tipi fondamentali sono:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="55%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tipo</th>
+<th class="head">Significato</th>
+<th class="head">Valori</th>
+<th class="head">Mutabile</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+<td>Condizioni</td>
+<td><code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code></td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td>Interi</td>
+<td><span class="math">\{-2^{-31},\ldots,2^{31}-1\}</span></td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">float</span></code></td>
+<td>Razionali</td>
+<td><span class="math">\mathbb{Q}</span></td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+<td>Testo</td>
+<td>Testo</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">list</span></code></td>
+<td>Sequenze</td>
+<td>Eterogenei</td>
+<td><strong>Si’</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<td>Sequenze</td>
+<td>Eterogenei</td>
+<td>No</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict</span></code></td>
+<td>Mappe</td>
+<td>Eterogenei</td>
+<td><strong>Si’</strong></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">set</span></code></td>
+<td>Insiemi</td>
+<td>Eterogenei</td>
+<td><strong>Si’</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="variabili">
+<h2>Variabili<a class="headerlink" href="#variabili" title="Permalink to this headline">¶</a></h2>
+<p>Le variabili sono contenitori di <em>riferimenti</em> ad oggetti. Possono essere viste
+come <em>nomi</em> per gli oggetti a cui si riferiscono.</p>
+<p>Un oggetto viene <em>assegnato</em> ad una variabile con <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926536</span>
+</pre></div>
+</div>
+<p>Qui la variabile di nome <code class="docutils literal notranslate"><span class="pre">pi</span></code> si <em>riferisce</em> all’oggetto <code class="docutils literal notranslate"><span class="pre">3.1415926536</span></code> di
+tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>. In sostanza abbiamo deciso che <code class="docutils literal notranslate"><span class="pre">pi</span></code> e’ un nome per l’oggetto
+<code class="docutils literal notranslate"><span class="pre">3.1415926536</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Il nome della variabile e’ arbitrario!</p>
+<p class="last">Lo decidiamo noi in modo che sia conveniente: breve, descrittivo degli
+oggetti a cui si riferisce, indicativo del ruolo che la variabile svolge
+nel nostro codice, <em>etc.</em></p>
+</div>
+<p>Il tipo di una variabile e’ il tipo dell’oggetto a cui si riferisce. Ne segue
+che il tipo di <code class="docutils literal notranslate"><span class="pre">pi</span></code> e’ <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">La variabile non contiene l’oggetto, ma un <em>riferimento</em> a quell’oggetto.</p>
+</div>
+<p>Per stampare il <em>valore</em> di una variabile, uso la funzione <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variabile</span> <span class="o">=</span> <span class="s2">&quot;sono una esempio&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variabile</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Per stampare il <em>tipo</em> di una variabile, uso la funzione <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variabile</span> <span class="o">=</span> <span class="s2">&quot;sono un esempio&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">variabile</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Esempio</strong>. Creo una nuova variabile <code class="docutils literal notranslate"><span class="pre">var</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">123</span>
+</pre></div>
+</div>
+<p>Il nome di <code class="docutils literal notranslate"><span class="pre">var</span></code> e’ <code class="docutils literal notranslate"><span class="pre">var</span></code>, il suo valore e’ <code class="docutils literal notranslate"><span class="pre">123</span></code>, il suo tipo e’ <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p><strong>Esempio</strong>. Una variabile puo’ essere assignata piu’ volte:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">var</span> <span class="o">=</span> <span class="s2">&quot;MANLFKLGAENIFLGRKAATKEEAIRF&quot;</span>
+<span class="n">var</span> <span class="o">=</span> <span class="mf">3.1415926536</span>
+</pre></div>
+</div>
+<p>Il nome della variabile resta sempre lo stesso, ma tipo e valore cambiano ad
+ogni passaggio: controlla con <code class="docutils literal notranslate"><span class="pre">print(var)</span></code> e <code class="docutils literal notranslate"><span class="pre">print(type(var))</span></code>.</p>
+<p><strong>Esempio</strong>. L’assegnamento funziona anche tra variabili:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;sono un esempio&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Qui l’oggetto riferito da <code class="docutils literal notranslate"><span class="pre">a</span></code> viene assegnato a <code class="docutils literal notranslate"><span class="pre">b</span></code>, quindi sia <code class="docutils literal notranslate"><span class="pre">a</span></code> che
+<code class="docutils literal notranslate"><span class="pre">b</span></code> si riferiscono allo stesso oggetto.</p>
+<p>Posso anche scrivere:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;sono un esempio&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;sono un esempio&quot;</span>
+</pre></div>
+</div>
+<p>L’effetto e’ diverso: qui <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code> si riferiscono a due oggetti diversi
+con lo stesso valore!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="funzioni-e-metodi">
+<h2>Funzioni e Metodi<a class="headerlink" href="#funzioni-e-metodi" title="Permalink to this headline">¶</a></h2>
+<p>Python mette a disposizione un’ampia gamma di funzioni e metodi, ad esempio
+<code class="docutils literal notranslate"><span class="pre">print</span></code>, che stampa il valore di una espressione a schermo, e <code class="docutils literal notranslate"><span class="pre">help</span></code>,
+che visualizza l’aiuto.</p>
+<ul>
+<li><p class="first">Una funzione esegue un’operazione sui suoi <em>argomenti</em>, e puo’ restituire
+un <em>risultato</em>.</p>
+<p>Una funzione e’ invocata cosi’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">risultato</span> <span class="o">=</span> <span class="n">funzione</span><span class="p">(</span><span class="n">argomento1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argomentoN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Qui <code class="docutils literal notranslate"><span class="pre">risultato</span></code> e’ una variabile arbitraria.</p>
+</li>
+<li><p class="first">Un metodo e’ una funzione associata ad un tipo: ci sono i metodi degli
+interi, delle stringhe, delle liste, <em>etc.</em></p>
+<p>L’invocazione dei metodi somiglia a quella delle funzioni:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">risultato</span> <span class="o">=</span> <span class="n">oggetto_o_variabile</span><span class="o">.</span><span class="n">metodo</span><span class="p">(</span><span class="n">argomento1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argomentoN</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>C’e’ un’analogia con le funzioni matematiche:</p>
+<div class="math">
+<p><span class="math">y = f(x_1, \ldots, x_n)</span></p>
+</div><p>Con delle importanti differenze:</p>
+<ul class="simple">
+<li>Non tutte le funzioni (e metodi) Python richiedono argomenti, o ritornano un
+risultato.</li>
+<li>Le funzioni matematiche possono operare solo sui loro inputs
+<span class="math">x_1,\ldots,x_n</span> e dall’esterno possiamo osservare solo il loro
+risultato <span class="math">y</span>. Al contrario, le funzioni Python possono avere
+<em>side-effects</em>, ad esempio stampare informazioni a schermo, o modificare
+variabili che non sono i loro argomenti.</li>
+<li>La variabile <code class="docutils literal notranslate"><span class="pre">risultato</span></code> e’ una variabile Python (di nome arbitrario, lo
+decidiamo noi!) in cui viene messo il risultato della funzione.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Non dimenticate le parentesi attorno agli argomenti!</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="documentazione">
+<h2>Documentazione<a class="headerlink" href="#documentazione" title="Permalink to this headline">¶</a></h2>
+<p>Per visualizzare l’aiuto di un tipo/oggetto/variabile, usa la funzione <code class="docutils literal notranslate"><span class="pre">help</span></code>,
+ad esempio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>visualizza l’aiuto degli interi, cioe’ del tipo dell’oggetto <code class="docutils literal notranslate"><span class="pre">123</span></code>. Avrei
+ottenuto lo stesso risultato con:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">help</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>o:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>L’aiuto si usa come il manuale della shell: posso navigare l’aiuto con le
+frecce, cercare un termine con <code class="docutils literal notranslate"><span class="pre">/</span></code>, e chiudere l’aiuto con <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>Posso visualizzare l’aiuto di un metodo di interesse, ad esempio il metodo
+<code class="docutils literal notranslate"><span class="pre">split</span></code> delle stringhe, cosi’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="s2">&quot;una stringa&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>Esercizi<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Dati l’intero <code class="docutils literal notranslate"><span class="pre">1</span></code> ed il razionale <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, quali sono i metodi messi a
+disposizione dai tipi dei due oggetti?</li>
+<li>Data la stringa <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">'testo'</span></code>, visualizza l’aiuto del metodo <code class="docutils literal notranslate"><span class="pre">replace</span></code>
+delle stringhe.</li>
+<li>Data la lista <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[]</span></code>, visualizza l’aiuto del metodo <code class="docutils literal notranslate"><span class="pre">remove</span></code> delle
+liste.</li>
+<li>Dato il dizionario <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">{}</span></code>, visualizza l’aiuto del metodo <code class="docutils literal notranslate"><span class="pre">items</span></code>
+dei dizionari.</li>
+<li>Visualizza l’aiuto di <code class="docutils literal notranslate"><span class="pre">dir</span></code> e di <code class="docutils literal notranslate"><span class="pre">help</span></code>.</li>
+<li>Usando un editor di testo a tua scelta (ad esempio <code class="docutils literal notranslate"><span class="pre">nano</span></code> o <code class="docutils literal notranslate"><span class="pre">gedit</span></code>),
+scrivi un modulo che stampi a schermo, usando <code class="docutils literal notranslate"><span class="pre">print</span></code>, la stringa <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">world!'</span></code>.
+Il modulo deve chiamarsi <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. Esegui il modulo dal terminale per
+verificare che funzioni.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016, Stefano Teso
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
