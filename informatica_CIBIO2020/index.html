@@ -35,7 +35,8 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Shell: Fondamentali" href="shell_basics.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,21 +85,11 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Laboratorio di Informatica</a><ul>
-<li><a class="reference internal" href="#bibliografia">Bibliografia</a></li>
-<li><a class="reference internal" href="#note-introduttive">Note Introduttive</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#virtualbox-e-ubuntu">Virtualbox e Ubuntu</a><ul>
-<li><a class="reference internal" href="#virtualbox">Virtualbox</a></li>
-<li><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
-<li><a class="reference internal" href="#installazione-di-ubuntu-su-virtualbox">Installazione di Ubuntu su VirtualBox</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
             
           
         </div>
@@ -217,9 +208,6 @@ dall’estensione dei file.</li>
 <li>Il comportamento di alcuni comandi puo’ variare tra varianti diverse di Unix,
 ad esempio GNU/Linux e MacOS X.</li>
 </ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </div>
 </div>
 <div class="section" id="virtualbox-e-ubuntu">
@@ -244,7 +232,7 @@ ed è in grado di eseguire diversi sistemi operativi guest come Windows, Linux, 
 <p>Download di Ubuntu:</p>
 <ul class="simple">
 <li>Scaricate Ubuntu dal seguente link <a class="reference external" href="https://www.ubuntu-it.org/download">https://www.ubuntu-it.org/download</a></li>
-<li>Sceglite la versione <strong>Desktop</strong> di <strong>Ubuntu 20.01.1 LTS</strong> (Long Term Support)</li>
+<li>Sceglite la versione <strong>Desktop</strong> di <strong>Ubuntu 20.04.1 LTS</strong> (Long Term Support)</li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -258,7 +246,464 @@ ed è in grado di eseguire diversi sistemi operativi guest come Windows, Linux, 
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
+</div>
+</div>
+<div class="section" id="shell-fondamentali">
+<h1>Shell: Fondamentali<a class="headerlink" href="#shell-fondamentali" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cosa-faremo-oggi">
+<h2>Cosa faremo oggi?<a class="headerlink" href="#cosa-faremo-oggi" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/lez1.png"><img alt="Riassunto lezione 1." class="align-center" src="_images/lez1.png" style="width: 505.4px; height: 153.29999999999998px;" /></a>
+</div>
+<div class="section" id="scorciatoie">
+<h2>Scorciatoie<a class="headerlink" href="#scorciatoie" title="Permalink to this headline">¶</a></h2>
+<p>Alcune dritte per lavorare con la shell:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">combinazione</th>
+<th class="head">funzione</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Control-c</span></code></td>
+<td>uccide il comando/script in esecuzione</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Tab</span></code></td>
+<td>autocompleta comandi e percorsi</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">↓</span></code></td>
+<td>scorrono tra i comandi dati in precedenza</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">history</span></code></td>
+<td>stampa a schermo la storia dei comandi</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Control-←</span></code>, <code class="docutils literal notranslate"><span class="pre">Control-→</span></code></td>
+<td>scorrono tra le parole della riga</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Home</span></code>, <code class="docutils literal notranslate"><span class="pre">End</span></code></td>
+<td>saltano all’inizio e alla fine della riga</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Control-l</span></code></td>
+<td>pulisce il terminale</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="comando-cd">
+<h2>Comando cd<a class="headerlink" href="#comando-cd" title="Permalink to this headline">¶</a></h2>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">cd</span></code> permette di muoversi all’interno delle directory.
+La sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;percorso&gt;
+</pre></div>
+</div>
+<p>Utilizzando il tasto <code class="docutils literal notranslate"><span class="pre">Tab</span></code> abbiamo l’autocompletamento dei percorsi!
+Il filesystem puo’ essere visto come un albero, simile a questo:</p>
+<a class="reference internal image-reference" href="_images/filesystem.png"><img alt="Struttura ad albero del filesystem." class="align-center" src="_images/filesystem.png" style="width: 589.4px; height: 319.2px;" /></a>
+<p>La posizione di ogni file e directory nel filesystem e’ specificata da un
+<em>percorso</em> (o <em>path</em>).</p>
+<p>Utilizzando il comando <code class="docutils literal notranslate"><span class="pre">cd</span></code> possiamo muoverci nelle varie catelle.</p>
+<p>Supponiamo di voler accedere ad una cartella “folder1” il comando da digitare è il seguente:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> folder1/
+</pre></div>
+</div>
+<p>Se si vuole risalire nell’albero del filesystem si utilizza il comando:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="comando-ls">
+<h2>Comando ls<a class="headerlink" href="#comando-ls" title="Permalink to this headline">¶</a></h2>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">ls</span></code> permette di visualizzare il contenuto di un folder</p>
+<p>La sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls <span class="o">[</span>-opzioni<span class="o">]</span> &lt;percorso_1&gt; ... &lt;percorso_n&gt;
+</pre></div>
+</div>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">ls</span></code> ha diverse opzioni (che vedremo tra poco), tuttavia
+puo’ essere usato senza specificare nessun opzione.</p>
+<p><strong>PROVATE VOI</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls
+ls folder1/
+</pre></div>
+</div>
+<p><strong>OPZIONI</strong></p>
+<p>Ci sono diverse opzioni che prmettono di avere un outup piu dettagliato:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">comando</th>
+<th class="head">funzione</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">&lt;percorso&gt;</span></code></td>
+<td>fornisce un output dettagliato</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-s</span> <span class="pre">&lt;percorso&gt;</span></code></td>
+<td>stampa la dimensione dei file all’interno del percorso</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-t</span> <span class="pre">&lt;percorso&gt;</span></code></td>
+<td>ordina rispetto all’ultima modifica</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code></td>
+<td>stampa la guida del comando ls</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PROVATE VOI</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls -l
+ls -s
+ls -t
+ls --help
+</pre></div>
+</div>
+<p>Le opzioni possono essere combinate semplicemnte concatenando piu opzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls -lst
+&gt;&gt; questo comando restituisce la lista dettagliata dei files ordinati e con la dimensione del file.
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="comando-man">
+<h2>Comando man<a class="headerlink" href="#comando-man" title="Permalink to this headline">¶</a></h2>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">man</span></code> permette leggere il manuale di un comando
+Per invocare un comando <code class="docutils literal notranslate"><span class="pre">man</span></code> e’ sufficiente scrivere:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>man argomento
+</pre></div>
+</div>
+<p><strong>ESEMPIO</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>man ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="creare-un-folder">
+<h2>Creare un folder<a class="headerlink" href="#creare-un-folder" title="Permalink to this headline">¶</a></h2>
+<p>Per creare (MaKe DIRectory) una cartella la sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mkdir NomeDelFile
+</pre></div>
+</div>
+<p><strong>ESEMPIO</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mkdir file1
+</pre></div>
+</div>
+</div>
+<div class="section" id="spostare-un-folder">
+<h2>Spostare un folder<a class="headerlink" href="#spostare-un-folder" title="Permalink to this headline">¶</a></h2>
+<p>Per spostare (MoVe) una cartella la sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mv percorso_file_in percorso_file_out
+</pre></div>
+</div>
+<p><strong>ESEMPIO</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mv file1 home/antonio/prova/
+</pre></div>
+</div>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">mv</span></code> viene utilizzato anche per rinominare i file, nel segunete modo:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mv file_vecchio_nome file_nuovo_nome
+</pre></div>
+</div>
+</div>
+<div class="section" id="copiare-un-folder">
+<h2>Copiare un folder<a class="headerlink" href="#copiare-un-folder" title="Permalink to this headline">¶</a></h2>
+<p>Per copiare (CoPy) una cartella la sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cp percorso_file_in percorso_file_out
+</pre></div>
+</div>
+<p><strong>ESEMPIO</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cp file1 home/antonio/prova/
+</pre></div>
+</div>
+</div>
+<div class="section" id="eliminare-un-folder">
+<h2>Eliminare un folder<a class="headerlink" href="#eliminare-un-folder" title="Permalink to this headline">¶</a></h2>
+<p>Per eliminare (ReMove) una file la sintassi e’:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>rm <span class="o">[</span>opzioni<span class="o">]</span> file
+</pre></div>
+</div>
+<p>Se si vuole eliminare un folder con tutto il suo contenuto è necessario specificare l’opzione -r</p>
+<p><strong>ESEMPIO</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mkdir file1
+rm -r file1
+</pre></div>
+</div>
+</div>
+<div class="section" id="esercizi-10-min">
+<h2>Esercizi 10 min<a class="headerlink" href="#esercizi-10-min" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create una catella chiamata “CIBIO”</li>
+<li>All’interno della catella “CIBIO” create una catella “INF” e una cartella “SPROT”</li>
+<li>Create una catella “MOLECOLE” dentro la cartella “INF”</li>
+<li>Rinominate la cartella “SPORT” in “BIOLOGIA”</li>
+<li>Spostate la catella “MOLECOLE” nella cartella “BIOLOGIA”</li>
+</ol>
+<p><strong>TRA 10 min invio le soluzioni nella chat</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="shell-parte-1">
+<h1>Shell: Parte 1<a class="headerlink" href="#shell-parte-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Cosa faremo oggi?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/lez2.png"><img alt="Riassunto lezione 1." class="align-center" src="_images/lez2.png" style="width: 505.4px; height: 118.99999999999999px;" /></a>
+</div>
+<div class="section" id="creare-un-file">
+<h2>Creare un File<a class="headerlink" href="#creare-un-file" title="Permalink to this headline">¶</a></h2>
+<p>Per poter creare un file, è necessario disporre di un editor di testo, nel nostro caso usermo
+<code class="docutils literal notranslate"><span class="pre">nano</span></code> un editor utilizzabile da terminale</p>
+<p><strong>CREARE/APRIRE UN FILE</strong>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>nano nome_del_file.txt
+</pre></div>
+</div>
+<p>Per poter salvare le mofiche appena effettuate premere <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">S</span></code>, mentre per chiudere l’editro
+premere <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">X</span></code></p>
+<p><strong>PROVATE VOI</strong></p>
+<p>Create un file.txt e scriveteci un paio di righe:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>nano file.txt
+Ciao mi chiamo bla bla bla ...
+Ctrl + S
+Ctrl + X
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="comando-cat">
+<h2>Comando cat<a class="headerlink" href="#comando-cat" title="Permalink to this headline">¶</a></h2>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">cat</span></code> permette di visualizzare file testuali:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cat file.txt
+</pre></div>
+</div>
+<p><strong>PROVATE VOI</strong></p>
+<p>Ora provate a leggere il file che avete appena scritto.</p>
+<p>Il comando <code class="docutils literal notranslate"><span class="pre">cat</span></code> stampa a video il contenuto di un file, ma questo puo essere reindirizato su un altra sorgente
+ad esempio un file:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cat prova.txt &gt; nuova_prova.txt
+</pre></div>
+</div>
+<p>il comando permette anche di concatenare piu file in un unico file:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>nano prova1.txt
+nano prova2.txt
+cat prova1.txt prova2.txt &gt; concat_prova_1_2.txt
+</pre></div>
+</div>
+<p>Ora il file concat_prova_1_2.txt contiene la concatenazione dei file prova1 e prova2.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="wildcards">
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
+<p>La shell esegue quella che si chiama <em>wildcard expansion</em>: ogni volta che
+incontra l’asterisco <code class="docutils literal notranslate"><span class="pre">*</span></code> lo sostituisce con la lista dei file/directory che
+“fanno <em>match</em>”.</p>
+<p><strong>ESEMPIO</strong>. Se eseguo:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls *
+</pre></div>
+</div>
+<p>la shell sostituisce <code class="docutils literal notranslate"><span class="pre">*</span></code> con la lista di tutti i file e le directory nella
+directory attuale (perche’ tutti fanno <em>match</em> con <code class="docutils literal notranslate"><span class="pre">*</span></code>). Invece:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls informatica/*
+</pre></div>
+</div>
+<p>sostituisce <code class="docutils literal notranslate"><span class="pre">*</span></code> con la lista dei file in <code class="docutils literal notranslate"><span class="pre">informatica</span></code>.</p>
+<p>Supponendo che in <code class="docutils literal notranslate"><span class="pre">informatica</span></code> ci siano solo tre file, chiamati <code class="docutils literal notranslate"><span class="pre">test1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">test2</span></code> e <code class="docutils literal notranslate"><span class="pre">results</span></code>, il comando precedente sarebbe equivalente a:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls informatica/test1 informatica/test2 informatica/results
+</pre></div>
+</div>
+<p>Se avessi eseguito:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls informatica/test*
+</pre></div>
+</div>
+<p>la wildcard <code class="docutils literal notranslate"><span class="pre">test*</span></code> avrebbe fatto <em>match</em> solo con <code class="docutils literal notranslate"><span class="pre">test1</span></code> e <code class="docutils literal notranslate"><span class="pre">test2</span></code>, ed
+il comando sarebbe stato equivalente a:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls informatica/test1 informatica/test2
+</pre></div>
+</div>
+<p>Qui <code class="docutils literal notranslate"><span class="pre">results</span></code> non fa <em>match</em>, quindi non viene incluso.</p>
+<p>Le wildcard piu’ importanti sono:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">wildcard</th>
+<th class="head">fa <em>match</em> con</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">akz</span></code></td>
+<td>il testo “<code class="docutils literal notranslate"><span class="pre">akz</span></code>”</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td>una stringa qualunque (anche vuota)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">?</span></code></td>
+<td>un carattere qualunque</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[akz]</span></code></td>
+<td>un carattere solo tra <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code> e <code class="docutils literal notranslate"><span class="pre">z</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">[a-z]</span></code></td>
+<td>un carattere alfabetico qualunque</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[0-9]</span></code></td>
+<td>una cifra qualunque</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">[!1b]</span></code></td>
+<td>un carattere qualunque che non sia <code class="docutils literal notranslate"><span class="pre">1</span></code> o <code class="docutils literal notranslate"><span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[!a-e]</span></code></td>
+<td>un carattere qualunque che non sia <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, …, <code class="docutils literal notranslate"><span class="pre">e</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Quando la shell incontra un comando dove uno (o piu’) degli argomenti contiene
+delle wildacrds, esegue la <em>wildcard expansion</em>: sostituisce all’argomento
+incriminato tutti i file che fanno <em>match</em> con la wildcard.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Le wildcards sono simili alle regex, ma non sono la stessa cosa:</p>
+<ol class="last arabic simple">
+<li>Le wildcards sono usate dalla shell per fare il match di <strong>percorsi</strong>.</li>
+<li>Le regex sono usate da <code class="docutils literal notranslate"><span class="pre">grep</span></code> per fare il match di <strong>righe di testo</strong> contenute in un file.</li>
+<li>Le regole che determinano il <em>match</em> di wildcards e regex sono diverse.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. La wildcard:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>le rose sono *se
+</pre></div>
+</div>
+<p>fa <em>match</em> con:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>le rose sono rosse
+</pre></div>
+</div>
+<p>ma anche con:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>le rose sono costose
+</pre></div>
+</div>
+<p>e:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>le rose sono grosse
+</pre></div>
+</div>
+<p>ma non con:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>i maneggi abitano in montagna
+</pre></div>
+</div>
+<p>Le wildcard possono essere combinate, ad esempio:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>test?<span class="o">[</span>a-z<span class="o">][</span>!0-9<span class="o">]</span>
+</pre></div>
+</div>
+<p>fa il <em>match</em> con tutti i percorsi che cominciano con <code class="docutils literal notranslate"><span class="pre">test</span></code>, proseguono con
+un carattere qualunque, poi con un carattere alfabetico ed infine con un
+carattere non numerico.</p>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Un esempio piu’ realistico. Il comando:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cat data/dna-fasta/*.<span class="o">[</span><span class="m">12</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>fa <em>match</em> con tutti i file nella directory <code class="docutils literal notranslate"><span class="pre">data/dna-fasta</span></code> il cui filename
+e’ composto di una-stringa-qualunque, seguita da un punto, seguito da <code class="docutils literal notranslate"><span class="pre">1</span></code> o
+<code class="docutils literal notranslate"><span class="pre">2</span></code> e nient’altro. Nel nostro caso i soli file a fare <em>match</em> sono:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>data/dna-fasta/fasta.1
+data/dna-fasta/fasta.2
+</pre></div>
+</div>
+<p>Dopo la wildcard expansion il comando precedente diventa:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>cat data/dna-fasta/fasta.1 data/dna-fasta/fasta.2
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>PROVATE VOI</strong> create le seguenti directory e sub-directory</p>
+<ol class="arabic simple">
+<li>data</li>
+<li>data/deep1</li>
+<li>data/deep1/1</li>
+<li>data/deep2</li>
+<li>data/deep2/1</li>
+<li>data/deep3</li>
+<li>data/deep3/1</li>
+<li>data/deep4</li>
+<li>data/deep4/1</li>
+</ol>
+<p>Stampare a schermo i contenuti della directory data:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls data
+</pre></div>
+</div>
+<p>Per stampare i contenuti delle <em>directory</em> che stanno in data:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls data/*
+</pre></div>
+</div>
+<p>Per stampare a schermo solo il contenuto delle directory <code class="docutils literal notranslate"><span class="pre">deep0</span></code>, …, <code class="docutils literal notranslate"><span class="pre">deep4</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls data/deep*
+</pre></div>
+</div>
+<p>Mentre per restringere la wildcard alle directory <code class="docutils literal notranslate"><span class="pre">deep0</span></code> e <code class="docutils literal notranslate"><span class="pre">deep3</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls data/deep<span class="o">[</span><span class="m">03</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>e solo per le directory <code class="docutils literal notranslate"><span class="pre">deep0</span></code>, …, <code class="docutils literal notranslate"><span class="pre">deep4</span></code> ma non <code class="docutils literal notranslate"><span class="pre">deep2</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ls data/deep<span class="o">[</span>!2<span class="o">]</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Esercizi 10 min<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create 3 file usando l editor <code class="docutils literal notranslate"><span class="pre">nano</span></code></li>
+<li>Copiate i 3 file usando <code class="docutils literal notranslate"><span class="pre">cp</span></code> nel folder “prova”</li>
+<li>create un quarto file chiamato concat.txt contenente la concatenzione dei 3 file creati</li>
+</ol>
+<p><strong>TRA 10 min invio le soluzioni nella chat</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#cosa-faremo-oggi">Cosa faremo oggi?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#scorciatoie">Scorciatoie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#comando-cd">Comando cd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#comando-ls">Comando ls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#comando-man">Comando man</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#creare-un-folder">Creare un folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#spostare-un-folder">Spostare un folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#copiare-un-folder">Copiare un folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#eliminare-un-folder">Eliminare un folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#esercizi-10-min">Esercizi 10 min</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#cosa-faremo-oggi">Cosa faremo oggi?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#creare-un-file">Creare un File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#comando-cat">Comando cat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#wildcards">Wildcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#esercizi-10-min">Esercizi 10 min</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -268,6 +713,13 @@ ed è in grado di eseguire diversi sistemi operativi guest come Windows, Linux, 
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="shell_basics.html" class="btn btn-neutral float-right" title="Shell: Fondamentali" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>

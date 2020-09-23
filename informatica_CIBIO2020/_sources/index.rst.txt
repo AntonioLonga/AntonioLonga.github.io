@@ -51,7 +51,7 @@ Note Introduttive
 * Il comportamento di alcuni comandi puo' variare tra varianti diverse di Unix,
   ad esempio GNU/Linux e MacOS X.
 
-|
+
 
 .. highlight:: Virtualbox e Ubuntu
 
@@ -59,9 +59,22 @@ Note Introduttive
 |
 |
 
+.. highlight:: Shell 
+
+.. include:: shell_basics.rst
+|
+|
+
+.. highlight:: Shell 1
+
+.. include:: shell_commands1.rst
+|
+|
+
 
 .. toctree::
     :maxdepth: 2
-	       
 
-    virtualbox_ubuntu.rst	       
+    virtualbox_ubuntu.rst
+    shell_basics.rst
+    shell_commands1.rst	       
