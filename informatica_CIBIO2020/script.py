@@ -8,6 +8,7 @@ for i in os.listdir():
         data = fin.read()
         #replace all occurrences of the required string
         data = data.replace('_static/', 'static/')
+        data = data.replace('_images/', 'images/')
         #close the input file
         fin.close()
         #open the input file in write mode
