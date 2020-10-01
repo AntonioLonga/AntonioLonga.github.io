@@ -52,7 +52,7 @@ Note Introduttive
   ad esempio GNU/Linux e MacOS X.
 
 
-
+|
 .. highlight:: Virtualbox e Ubuntu
 
 .. include:: python_virtualbox_ubuntu.rst
@@ -72,9 +72,16 @@ Note Introduttive
 |
 
 
+.. highlight:: Python Fondamenti
+
+.. include:: python_basics.rst
+|
+|
+
 .. toctree::
     :maxdepth: 2
 
     virtualbox_ubuntu.rst
     shell_basics.rst
-    shell_commands1.rst	       
+    shell_commands1.rst	      
+    python_basics.rst	       

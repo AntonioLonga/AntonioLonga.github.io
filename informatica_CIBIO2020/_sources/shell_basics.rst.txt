@@ -188,30 +188,30 @@ Esercizi 10 min
 
 **TRA 10 min invio le soluzioni nella chat**
 
-.. Soluzioni
-.. --------
+Soluzioni
+--------
 
-.. #. Create una catella chiamata "CIBIO"::
+#. Create una catella chiamata "CIBIO"::
 
-..    mkdir CIBIO
+    mkdir CIBIO
 
-.. #. All'interno della catella "CIBIO" create una catella "INF" e una cartella "SPROT"::
+#. All'interno della catella "CIBIO" create una catella "INF" e una cartella "SPROT"::
 
-..    cd CIBIO
-..    mkdir INF
-..    mkdir SPORT
+    cd CIBIO
+    mkdir INF
+    mkdir SPORT
     
-.. #. Create una catella "MOLECOLE" dentro la cartella "INF"::
+#. Create una catella "MOLECOLE" dentro la cartella "INF"::
 
-..    cd INF
-..    mkdir MOLECOLE
+    cd INF
+    mkdir MOLECOLE
     
-.. #. Rinominate la cartella "SPORT" in "BIOLOGIA"::
+#. Rinominate la cartella "SPORT" in "BIOLOGIA"::
 
-..    cd ..
-..    mv SPORT BIOLOGIA
+    cd ..
+    mv SPORT BIOLOGIA
     
-.. #. Spostate la catella "MOLECOLE" nella cartella "BIOLOGIA"::
+#. Spostate la catella "MOLECOLE" nella cartella "BIOLOGIA"::
 
-..    mv INF/MOLECOLE/ BIOLOGIA/
+    mv INF/MOLECOLE/ BIOLOGIA/
     

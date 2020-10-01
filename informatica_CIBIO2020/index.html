@@ -88,6 +88,7 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python: Fondamentali</a></li>
 </ul>
 
             
@@ -208,6 +209,9 @@ dall’estensione dei file.</li>
 <li>Il comportamento di alcuni comandi puo’ variare tra varianti diverse di Unix,
 ad esempio GNU/Linux e MacOS X.</li>
 </ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 </div>
 <div class="section" id="virtualbox-e-ubuntu">
@@ -449,6 +453,40 @@ rm -r file1
 <li>Spostate la catella “MOLECOLE” nella cartella “BIOLOGIA”</li>
 </ol>
 <p><strong>TRA 10 min invio le soluzioni nella chat</strong></p>
+</div>
+<div class="section" id="soluzioni">
+<h2>Soluzioni<a class="headerlink" href="#soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create una catella chiamata “CIBIO”:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mkdir CIBIO
+</pre></div>
+</div>
+</li>
+<li><p class="first">All’interno della catella “CIBIO” create una catella “INF” e una cartella “SPROT”:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> CIBIO
+mkdir INF
+mkdir SPORT
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create una catella “MOLECOLE” dentro la cartella “INF”:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> INF
+mkdir MOLECOLE
+</pre></div>
+</div>
+</li>
+<li><p class="first">Rinominate la cartella “SPORT” in “BIOLOGIA”:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+mv SPORT BIOLOGIA
+</pre></div>
+</div>
+</li>
+<li><p class="first">Spostate la catella “MOLECOLE” nella cartella “BIOLOGIA”:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>mv INF/MOLECOLE/ BIOLOGIA/
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -680,6 +718,254 @@ data/dna-fasta/fasta.2
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
+</div>
+</div>
+<div class="section" id="python-fondamentali">
+<h1>Python: Fondamentali<a class="headerlink" href="#python-fondamentali" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interprete">
+<h2>Interprete<a class="headerlink" href="#interprete" title="Permalink to this headline">¶</a></h2>
+<p>Python si riferisce a:</p>
+<ul class="simple">
+<li>il <strong>linguaggio</strong> Python, un insieme di regole sintattiche e semantiche che
+definiscono il comportamento di un programma scritto in Python.</li>
+<li>l’<strong>interprete</strong> <code class="docutils literal notranslate"><span class="pre">python</span></code>, un comando eseguibile dalla shell che permette
+di eseguire codice scritto nel linguaggio Python.</li>
+</ul>
+<p>Per far partire l’interprete, da una shell scrivete:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>python3
+</pre></div>
+</div>
+<p>Vi apparira’ una schermata di testo simile a questa:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>Python <span class="m">3</span>.X.X <span class="o">(</span>default, Sep <span class="m">14</span> <span class="m">2017</span>, <span class="m">22</span>:51:06<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">5</span>.4.0 <span class="m">20160609</span><span class="o">]</span> on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Per eseguire codice python, scrivetelo nell’interprete e date invio, ad
+esempio:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span><span class="s2">&quot;hello, world!&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Per chiudere l’interprete, premete <code class="docutils literal notranslate"><span class="pre">Control-d</span></code> in una riga vuota.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="tipi">
+<h2>Tipi<a class="headerlink" href="#tipi" title="Permalink to this headline">¶</a></h2>
+<p>Ogni oggetto Python contiene dei dati, questi dati hanno un tipo (un intero, una stringa, una
+lista, <em>etc.</em>) sui cui operiamo in qualche modo.</p>
+<p>I tipi fondamentali sono:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tipo</th>
+<th class="head">Significato</th>
+<th class="head">Valori</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+<td>Condizioni</td>
+<td><code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td>Interi</td>
+<td><span class="math">\{-2^{-31},\ldots,2^{31}-1\}</span></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">float</span></code></td>
+<td>Razionali</td>
+<td><span class="math">\mathbb{Q}</span></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">str</span></code></td>
+<td>Testo</td>
+<td>Testo</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">list</span></code></td>
+<td>Sequenze</td>
+<td>Li vedremo più avanti nel corso</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<td>Sequenze</td>
+<td>Li vedremo più avanti nel corso</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict</span></code></td>
+<td>Mappe</td>
+<td>Li vedremo più avanti nel corso</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">set</span></code></td>
+<td>Insiemi</td>
+<td>Li vedremo più avanti nel corso</td>
+</tr>
+</tbody>
+</table>
+<p>Il comando “type()” restituisce il tipo di un oggetto.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Nei vari esempi che mostrerò, un comando verra mostrato così:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span><span class="s2">&quot;ciao&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>L’output verra mostrato così:</p>
+<div class="last highlight-Shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt; ciao
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Aprite un terminale, e digitate:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>python3
+</pre></div>
+</div>
+<p>Provate i seguenti comandi:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>type<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+&gt;&gt; class <span class="s1">&#39;int&#39;</span>
+type<span class="o">(</span><span class="s2">&quot;ciao&quot;</span><span class="o">)</span>
+&gt;&gt; class <span class="s1">&#39;str&#39;</span>
+type<span class="o">(</span><span class="m">1</span>.0<span class="o">)</span>
+&gt;&gt; class <span class="s1">&#39;float&#39;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="primi-passi-con-l-interprete">
+<h2>Primi passi con l’interprete<a class="headerlink" href="#primi-passi-con-l-interprete" title="Permalink to this headline">¶</a></h2>
+<p>Aprite un terminale, e digitate:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>python3
+</pre></div>
+</div>
+<p>Provate i seguenti comandi:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> + <span class="m">3</span>
+<span class="m">8</span> / <span class="m">2</span>
+<span class="m">52</span> * <span class="m">8</span>
+<span class="m">10</span> % <span class="m">3</span>
+<span class="s2">&quot;Ciao&quot;</span> + <span class="s2">&quot;come va?&quot;</span>
+</pre></div>
+</div>
+<p>Tutto molto bello, ma poco utile!
+Come possiamo fare a memorizzare i risultati… con le <strong>Variabili</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="variabili">
+<h2>Variabili<a class="headerlink" href="#variabili" title="Permalink to this headline">¶</a></h2>
+<p>Le variabili sono contenitori di <em>riferimenti</em> ad oggetti. Possono essere viste
+come <em>nomi</em> per gli oggetti a cui si riferiscono.</p>
+<p>Perche dico <em>riferimenti</em>?</p>
+<p>nel caso di Stringe Interi Float Boolean …</p>
+<a class="reference internal image-reference" href="images/int_float_str.png"><img alt="Riassunto lezione 1." class="align-center" src="images/int_float_str.png" style="width: 393.4px; height: 413.7px;" /></a>
+<p>nel caso di strutture un po’ più complesse</p>
+<a class="reference internal image-reference" href="images/array_dict.png"><img alt="Riassunto lezione 1." class="align-center" src="images/array_dict.png" style="width: 396.9px; height: 644.6999999999999px;" /></a>
+<p>Un oggetto viene <em>assegnato</em> ad una variabile con <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">pi</span> <span class="o">=</span> <span class="m">3</span>.1415926536
+</pre></div>
+</div>
+<p>Qui la variabile di nome <code class="docutils literal notranslate"><span class="pre">pi</span></code> si <em>riferisce</em> all’oggetto <code class="docutils literal notranslate"><span class="pre">3.1415926536</span></code> di
+tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>. In sostanza abbiamo deciso che <code class="docutils literal notranslate"><span class="pre">pi</span></code> e’ un nome per l’oggetto
+<code class="docutils literal notranslate"><span class="pre">3.1415926536</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Il nome della variabile e’ arbitrario!</p>
+<p class="last">Lo decidiamo noi in modo che sia conveniente: breve, descrittivo degli
+oggetti a cui si riferisce, indicativo del ruolo che la variabile svolge
+nel nostro codice, <em>etc.</em></p>
+</div>
+<p>Il tipo di una variabile e’ il tipo dell’oggetto a cui si riferisce. Ne segue
+che il tipo di <code class="docutils literal notranslate"><span class="pre">pi</span></code> e’ <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">La variabile non contiene l’oggetto, ma un <em>riferimento</em> a quell’oggetto.</p>
+</div>
+<p>Per stampare il <em>valore</em> di una variabile, uso la funzione <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">variabile</span> <span class="o">=</span> <span class="s2">&quot;sono una esempio&quot;</span>
+print<span class="o">(</span>variabile<span class="o">)</span>
+</pre></div>
+</div>
+<p>Per stampare il <em>tipo</em> di una variabile, uso la funzione <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">variabile</span> <span class="o">=</span> <span class="s2">&quot;sono un esempio&quot;</span>
+print<span class="o">(</span>type<span class="o">(</span>variabile<span class="o">))</span>
+</pre></div>
+</div>
+<p><strong>Esempio</strong>. Creo una nuova variabile <code class="docutils literal notranslate"><span class="pre">var</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span> <span class="o">=</span> <span class="m">123</span>
+</pre></div>
+</div>
+<p>Il nome di <code class="docutils literal notranslate"><span class="pre">var</span></code> e’ <code class="docutils literal notranslate"><span class="pre">var</span></code>, il suo valore e’ <code class="docutils literal notranslate"><span class="pre">123</span></code>, il suo tipo e’ <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p><strong>Esempio</strong>. Una variabile puo’ essere assignata piu’ volte:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span> <span class="o">=</span> <span class="m">1</span>
+<span class="nv">var</span> <span class="o">=</span> <span class="s2">&quot;MANLFKLGAENIFLGRKAATKEEAIRF&quot;</span>
+<span class="nv">var</span> <span class="o">=</span> <span class="m">3</span>.1415926536
+</pre></div>
+</div>
+<p>Il nome della variabile resta sempre lo stesso, ma tipo e valore cambiano ad
+ogni passaggio: controlla con <code class="docutils literal notranslate"><span class="pre">print(var)</span></code> e <code class="docutils literal notranslate"><span class="pre">print(type(var))</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="documentazione">
+<h2>Documentazione<a class="headerlink" href="#documentazione" title="Permalink to this headline">¶</a></h2>
+<p>Per visualizzare l’aiuto di un tipo/oggetto/variabile, usa la funzione <code class="docutils literal notranslate"><span class="pre">help</span></code>,
+ad esempio:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>help<span class="o">(</span><span class="m">123</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>visualizza l’aiuto degli interi, cioe’ del tipo dell’oggetto <code class="docutils literal notranslate"><span class="pre">123</span></code>. Avrei
+ottenuto lo stesso risultato con:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span> <span class="o">=</span> <span class="m">123</span>
+help<span class="o">(</span>x<span class="o">)</span>
+</pre></div>
+</div>
+<p>o:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>help<span class="o">(</span>int<span class="o">)</span>
+</pre></div>
+</div>
+<p>L’aiuto si usa come il manuale della shell: posso navigare l’aiuto con le
+frecce, cercare un termine con <code class="docutils literal notranslate"><span class="pre">/</span></code>, e chiudere l’aiuto con <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="esercizio-insieme">
+<h2>Esercizio insieme<a class="headerlink" href="#esercizio-insieme" title="Permalink to this headline">¶</a></h2>
+<p>Calcola il Body Mass Index BMI, prendendo in input peso(kg) ed altezza(m). Usando la seguente formula</p>
+<blockquote>
+<div>BMI = peso / (altezza * altezza)</div></blockquote>
+<p>definiamo le variabili peso e altezza:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">peso</span> <span class="o">=</span> <span class="m">70</span>
+<span class="nv">altezza</span> <span class="o">=</span> <span class="m">1</span>.75
+</pre></div>
+</div>
+<p>calcoliamo il BMI e mettiamolo in una variabile:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">BMI</span> <span class="o">=</span> peso / <span class="o">(</span>altezza * altezza<span class="o">)</span>
+</pre></div>
+</div>
+<p>stampiamo il BMI:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span><span class="s2">&quot;il suo BMI è &quot;</span>,BMI<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>Esercizi<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Calcola il perimetro di un triangolo, con i seguenti lati lato1 = 10,lato2 = 20, lato3 = 50</li>
+<li>Prendi tre variabili di tipo stringa e stampa la loro somma(+).</li>
+<li>Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.</li>
+<li>Cerca il metodo <strong>split</strong> nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile <em>prova</em> di tipo str contenente “Ciao Come va? Io sto bene” con separatore (<em>sep</em>) = ” “</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a><ul>
@@ -693,6 +979,7 @@ data/dna-fasta/fasta.2
 <li class="toctree-l2"><a class="reference internal" href="shell_basics.html#copiare-un-folder">Copiare un folder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell_basics.html#eliminare-un-folder">Eliminare un folder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell_basics.html#esercizi-10-min">Esercizi 10 min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell_basics.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a><ul>
@@ -701,6 +988,16 @@ data/dna-fasta/fasta.2
 <li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#comando-cat">Comando cat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#wildcards">Wildcards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shell_commands1.html#esercizi-10-min">Esercizi 10 min</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python: Fondamentali</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#interprete">Interprete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#tipi">Tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#primi-passi-con-l-interprete">Primi passi con l’interprete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#variabili">Variabili</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#documentazione">Documentazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#esercizio-insieme">Esercizio insieme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#esercizi">Esercizi</a></li>
 </ul>
 </li>
 </ul>

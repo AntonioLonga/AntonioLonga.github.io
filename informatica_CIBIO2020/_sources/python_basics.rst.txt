@@ -15,17 +15,13 @@ Python si riferisce a:
 
 Per far partire l'interprete, da una shell scrivete::
 
-    python
+    python3
 
-.. warning::
-   In alcune distribuzioni, la versione di default e' ancora la 2.x.
-   Tipicamente e' possibile avviare Python 3 tramite il comando::
 
-     python3
 
 Vi apparira' una schermata di testo simile a questa::
 
-    Python 3.5.2 (default, Sep 14 2017, 22:51:06) 
+    Python 3.X.X (default, Sep 14 2017, 22:51:06) 
     [GCC 5.4.0 20160609] on linux
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
@@ -38,88 +34,103 @@ esempio::
 
 Per chiudere l'interprete, premete ``Control-d`` in una riga vuota.
 
-.. hint::
-    Oltre all'interpreter ``python``, che e' il default, esistono altri
-    interpreti Python piu' usabili, ad esempio ``ipython``:
-
-        https://ipython.org/
-
-    L'interprete ``ipython`` funziona *esattamente* come ``python``, ma
-    dispone di funzionalita' avanzate, come ad esempio la **colorazione della
-    sintassi** (syntax highlighting), che possono facilitare la stesura del
-    codice.
 
 |
 
-Moduli
-------
-
-Un'alternativa all'eseguire codice nell'interprete e' scrivere un *modulo*: un
-file di testo con estensione ``.py`` in cui scrivete il codice da eseguire.
-
-.. warning::
-
-    L'estensione ``.py`` e' obbligatoria!
-
-Per eseguire un modulo, diciamo il file ``eseguibile.py``, scrivo dalla shell::
-
-    python eseguibile.py
-
-Per utilizzare le funzioni definite in un modulo all'interno di un altro, uso
-``import``. Ad esempio, se in ``eseguibile.py`` voglio usare la funzione
-``ordina_proteine()`` precedentemente definita nel modulo ``util.py``, scrivo
-all'inizio di ``eseguibile.py``::
-
-    import util
-
-.. warning::
-
-    Quando importate un modulo, omettete l'estensione ``.py``.
-
-A questo punto posso usare ``ordina_proteine()`` cosi'::
-
-    util.ordina_proteine()
-
-.. warning::
-
-    I contenuti di un modulo importato vengono prefissati col nome del modulo:
-    qui abbiamo invocato ``util.ordina_proteine``, non ``ordina_protein`` liscio.
-
-|
-
-Oggetti
+Tipi
 -------
 
-Un oggetto rappresenta dei dati di qualche tipo (un intero, una stringa, una
+Ogni oggetto Python contiene dei dati, questi dati hanno un tipo (un intero, una stringa, una
 lista, *etc.*) sui cui operiamo in qualche modo.
 
-Ogni oggetto ha:
-
-- un *tipo*, che specifica che cosa l'oggetto rappresenta.
-- un *valore*.
 
 I tipi fondamentali sono:
 
-=========== =========== ===================================== ========
-Tipo        Significato Valori                                Mutabile
-=========== =========== ===================================== ========
-``bool``    Condizioni  ``True``, ``False``                   No
-``int``     Interi      :math:`\{-2^{-31},\ldots,2^{31}-1\}`  No
-``float``   Razionali   :math:`\mathbb{Q}`                    No
-``str``     Testo       Testo                                 No
-``list``    Sequenze    Eterogenei                            **Si'**
-``tuple``   Sequenze    Eterogenei                            No
-``dict``    Mappe       Eterogenei                            **Si'**
-``set``     Insiemi     Eterogenei                            **Si'**
-=========== =========== ===================================== ========
+=========== =========== =====================================
+Tipo        Significato Valori                                
+=========== =========== ===================================== 
+``bool``    Condizioni  ``True``, ``False``                  
+``int``     Interi      :math:`\{-2^{-31},\ldots,2^{31}-1\}` 
+``float``   Razionali   :math:`\mathbb{Q}`                   
+``str``     Testo       Testo                                
+``list``    Sequenze    Li vedremo più avanti nel corso      
+``tuple``   Sequenze    Li vedremo più avanti nel corso      
+``dict``    Mappe       Li vedremo più avanti nel corso      
+``set``     Insiemi     Li vedremo più avanti nel corso      
+=========== =========== =====================================
+
+
+Il comando "type()" restituisce il tipo di un oggetto.
+
+
+.. hint::
+   Nei vari esempi che mostrerò, un comando verra mostrato così::
+
+        print("ciao")
+
+   L'output verra mostrato così::
+
+        >> ciao
+
+|   
+Aprite un terminale, e digitate::
+
+    python3
+
+Provate i seguenti comandi::
+
+    type(1)
+    >> class 'int'
+    type("ciao")
+    >> class 'str'
+    type(1.0)
+    >> class 'float'
 
 |
+
+Primi passi con l'interprete
+----------------------------
+
+Aprite un terminale, e digitate::
+
+    python3
+
+Provate i seguenti comandi::
+
+    5 + 3
+    8 / 2
+    52 * 8
+    10 % 3
+    "Ciao" + "come va?"
+
+
+Tutto molto bello, ma poco utile!
+Come possiamo fare a memorizzare i risultati... con le **Variabili**
+
+|
+
 
 Variabili
 ---------
 
 Le variabili sono contenitori di *riferimenti* ad oggetti. Possono essere viste
 come *nomi* per gli oggetti a cui si riferiscono.
+
+Perche dico *riferimenti*?
+
+nel caso di Stringe Interi Float Boolean ...
+
+.. image:: figures/int_float_str.png
+    :scale: 70 %
+    :alt: Riassunto lezione 1.
+    :align: center
+
+nel caso di strutture un po' più complesse
+
+.. image:: figures/array_dict.png
+    :scale: 70 %
+    :alt: Riassunto lezione 1.
+    :align: center
 
 Un oggetto viene *assegnato* ad una variabile con ``=``::
 
@@ -169,73 +180,6 @@ Il nome di ``var`` e' ``var``, il suo valore e' ``123``, il suo tipo e' ``int``.
 Il nome della variabile resta sempre lo stesso, ma tipo e valore cambiano ad
 ogni passaggio: controlla con ``print(var)`` e ``print(type(var))``.
 
-**Esempio**. L'assegnamento funziona anche tra variabili::
-
-    a = "sono un esempio"
-    print(a)
-    b = a
-    print(b)
-
-Qui l'oggetto riferito da ``a`` viene assegnato a ``b``, quindi sia ``a`` che
-``b`` si riferiscono allo stesso oggetto.
-
-Posso anche scrivere::
-
-    a = "sono un esempio"
-    b = "sono un esempio"
-
-L'effetto e' diverso: qui ``a`` e ``b`` si riferiscono a due oggetti diversi
-con lo stesso valore!
-
-|
-
-Funzioni e Metodi
------------------
-
-Python mette a disposizione un'ampia gamma di funzioni e metodi, ad esempio
-``print``, che stampa il valore di una espressione a schermo, e ``help``,
-che visualizza l'aiuto.
-
-- Una funzione esegue un'operazione sui suoi *argomenti*, e puo' restituire
-  un *risultato*.
-
-  Una funzione e' invocata cosi'::
-
-    risultato = funzione(argomento1, ..., argomentoN)
-
-  Qui ``risultato`` e' una variabile arbitraria.
-
-- Un metodo e' una funzione associata ad un tipo: ci sono i metodi degli
-  interi, delle stringhe, delle liste, *etc.*
-
-  L'invocazione dei metodi somiglia a quella delle funzioni::
-
-    risultato = oggetto_o_variabile.metodo(argomento1, ..., argomentoN)
-
-C'e' un'analogia con le funzioni matematiche:
-
-.. math::
-
-    y = f(x_1, \ldots, x_n)
-
-Con delle importanti differenze:
-
-- Non tutte le funzioni (e metodi) Python richiedono argomenti, o ritornano un
-  risultato.
-
-- Le funzioni matematiche possono operare solo sui loro inputs
-  :math:`x_1,\ldots,x_n` e dall'esterno possiamo osservare solo il loro
-  risultato :math:`y`. Al contrario, le funzioni Python possono avere
-  *side-effects*, ad esempio stampare informazioni a schermo, o modificare
-  variabili che non sono i loro argomenti.
-
-- La variabile ``risultato`` e' una variabile Python (di nome arbitrario, lo
-  decidiamo noi!) in cui viene messo il risultato della funzione.
-
-.. warning::
-
-    Non dimenticate le parentesi attorno agli argomenti!
-
 
 |
 
@@ -260,26 +204,36 @@ o::
 L'aiuto si usa come il manuale della shell: posso navigare l'aiuto con le
 frecce, cercare un termine con ``/``, e chiudere l'aiuto con ``q``.
 
-Posso visualizzare l'aiuto di un metodo di interesse, ad esempio il metodo
-``split`` delle stringhe, cosi'::
-
-    help("una stringa".split)
 
 |
+
+Esercizio insieme
+--------
+
+Calcola il Body Mass Index BMI, prendendo in input peso(kg) ed altezza(m). Usando la seguente formula
+
+    BMI = peso / (altezza * altezza)
+
+
+definiamo le variabili peso e altezza::
+    
+    peso = 70
+    altezza = 1.75
+
+calcoliamo il BMI e mettiamolo in una variabile::
+
+    BMI = peso / (altezza * altezza)
+
+stampiamo il BMI::
+
+    print("il suo BMI è ",BMI)
+
+
 
 Esercizi
 --------
 
-#. Dati l'intero ``1`` ed il razionale ``1.0``, quali sono i metodi messi a
-   disposizione dai tipi dei due oggetti?
-#. Data la stringa ``x = 'testo'``, visualizza l'aiuto del metodo ``replace``
-   delle stringhe.
-#. Data la lista ``x = []``, visualizza l'aiuto del metodo ``remove`` delle
-   liste.
-#. Dato il dizionario ``x = {}``, visualizza l'aiuto del metodo ``items``
-   dei dizionari.
-#. Visualizza l'aiuto di ``dir`` e di ``help``.
-#. Usando un editor di testo a tua scelta (ad esempio ``nano`` o ``gedit``),
-   scrivi un modulo che stampi a schermo, usando ``print``, la stringa ``'Hello, world!'``.
-   Il modulo deve chiamarsi ``hello.py``. Esegui il modulo dal terminale per
-   verificare che funzioni.
+#. Calcola il perimetro di un triangolo, con i seguenti lati lato1 = 10,lato2 = 20, lato3 = 50
+#. Prendi tre variabili di tipo stringa e stampa la loro somma(+).
+#. Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.
+#. Cerca il metodo **split** nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile *prova* di tipo str contenente "Ciao Come va? Io sto bene" con separatore (*sep*) = " "
