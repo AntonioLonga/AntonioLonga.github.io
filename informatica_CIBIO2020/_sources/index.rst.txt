@@ -78,10 +78,17 @@ Note Introduttive
 |
 |
 
+.. highlight:: Video Lezioni
+
+.. include:: video.rst
+|
+|
+
 .. toctree::
     :maxdepth: 2
 
     virtualbox_ubuntu.rst
     shell_basics.rst
     shell_commands1.rst	      
-    python_basics.rst	       
+    python_basics.rst
+    video.rst       

@@ -1,0 +1,26 @@
+===================
+Video
+===================
+
+Questa pagina contiene i link ai video di ogni lezione.
+
+
+
+Laboratorio 1
+-----------
+
+`Parte A <https://youtu.be/Tz9Hozvmyc4>`_.
+
+- `Ubuntu <https://youtu.be/Tz9Hozvmyc4?t=76>`_. 
+- `Comando cd <https://youtu.be/Tz9Hozvmyc4?t=1055>`_. 
+- `Comando ls <https://youtu.be/Tz9Hozvmyc4?t=2088>`_. 
+- `Comando man <https://youtu.be/Tz9Hozvmyc4?t=2982>`_.  
+
+`Parte B <https://www.youtube.com/watch?v=VEQJjz9P71w&t=71s>`_.
+
+- `Comando mkdir <https://youtu.be/VEQJjz9P71w?t=22>`_. 
+- `Comando mv <https://youtu.be/VEQJjz9P71w?t=113>`_. 
+- `Comando cp <https://youtu.be/VEQJjz9P71w?t=826>`_. 
+- `Comando rm <https://youtu.be/VEQJjz9P71w?t=1274>`_.  
+- `Esercizi <https://youtu.be/VEQJjz9P71w?t=1461>`_. 
+- `Soluzioni <https://youtu.be/VEQJjz9P71w?t=2501>`_.  
