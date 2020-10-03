@@ -97,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#documentazione">Documentazione</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#esercizio-insieme">Esercizio insieme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
@@ -406,6 +407,54 @@ frecce, cercare un termine con <code class="docutils literal notranslate"><span 
 <li>Prendi tre variabili di tipo stringa e stampa la loro somma(+).</li>
 <li>Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.</li>
 <li>Cerca il metodo <strong>split</strong> nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile <em>prova</em> di tipo str contenente “Ciao Come va? Io sto bene” con separatore (<em>sep</em>) = ” “</li>
+</ol>
+</div>
+<div class="section" id="soluzioni">
+<h2>Soluzioni<a class="headerlink" href="#soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Calcola il perimetro di un triangolo, con i seguenti lati lato1 = 10,lato2 = 20, lato3 = 50:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lato1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">lato2</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">lato3</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">perimetro</span> <span class="o">=</span> <span class="n">lato1</span> <span class="o">+</span> <span class="n">lato2</span> <span class="o">+</span> <span class="n">lato3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Il perimetro è: &quot;</span><span class="p">,</span><span class="n">perimetro</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Prendi tre variabili di tipo stringa e stampa la loro somma(+).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stringa1</span> <span class="o">=</span> <span class="s2">&quot;ciao &quot;</span>
+<span class="n">stringa2</span> <span class="o">=</span> <span class="s2">&quot;come ti chiami&quot;</span>
+<span class="n">stringa3</span> <span class="o">=</span> <span class="s2">&quot;?&quot;</span>
+
+<span class="nb">sum</span> <span class="o">=</span> <span class="n">stringa1</span> <span class="o">+</span> <span class="n">stringa2</span> <span class="o">+</span> <span class="n">stringa3</span>
+
+<span class="n">pritn</span><span class="p">(</span><span class="s2">&quot;la concatenazione di:&quot;</span><span class="p">)</span>
+<span class="n">pritn</span><span class="p">(</span><span class="n">stringa1</span><span class="p">,</span><span class="n">stringa2</span><span class="p">,</span><span class="n">stringa3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;è ugauale a:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.:</p>
+<p>peso = 60
+altezza = 100</p>
+<p>BMI = peso / (altezza * altezza)</p>
+<p>print(“il type di peso è”,type(peso))
+print(“il type di altezza è”,type(altezza))
+print(“il type di BMI è”,type(BMI))</p>
+</li>
+<li><p class="first">Cerca il metodo <strong>split</strong> nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile <em>prova</em> di tipo str contenente “Ciao Come va? Io sto bene” con separatore (<em>sep</em>) = ” “:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="c1"># premi / per cercare</span>
+<span class="c1"># cerca &quot;split&quot;</span>
+<span class="c1"># leggi come utilizzare lo split</span>
+
+<span class="n">prova</span> <span class="o">=</span> <span class="s2">&quot;Ciao Come va? Io sto bene&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prova</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s2">&quot;Ciao&quot;</span><span class="p">,</span><span class="s2">&quot;Come&quot;</span><span class="p">,</span><span class="s2">&quot;va?&quot;</span><span class="p">,</span><span class="s2">&quot;Io&quot;</span><span class="p">,</span><span class="s2">&quot;sto&quot;</span><span class="p">,</span><span class="s2">&quot;bene&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 </div>

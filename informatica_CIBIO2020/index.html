@@ -963,6 +963,54 @@ frecce, cercare un termine con <code class="docutils literal notranslate"><span 
 <li>Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.</li>
 <li>Cerca il metodo <strong>split</strong> nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile <em>prova</em> di tipo str contenente “Ciao Come va? Io sto bene” con separatore (<em>sep</em>) = ” “</li>
 </ol>
+</div>
+<div class="section" id="id3">
+<h2>Soluzioni<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Calcola il perimetro di un triangolo, con i seguenti lati lato1 = 10,lato2 = 20, lato3 = 50:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lato1</span> <span class="o">=</span> <span class="m">10</span>
+<span class="nv">lato2</span> <span class="o">=</span> <span class="m">20</span>
+<span class="nv">lato3</span> <span class="o">=</span> <span class="m">50</span>
+<span class="nv">perimetro</span> <span class="o">=</span> lato1 + lato2 + lato3
+print<span class="o">(</span><span class="s2">&quot;Il perimetro è: &quot;</span>,perimetro<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Prendi tre variabili di tipo stringa e stampa la loro somma(+).:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">stringa1</span> <span class="o">=</span> <span class="s2">&quot;ciao &quot;</span>
+<span class="nv">stringa2</span> <span class="o">=</span> <span class="s2">&quot;come ti chiami&quot;</span>
+<span class="nv">stringa3</span> <span class="o">=</span> <span class="s2">&quot;?&quot;</span>
+
+<span class="nv">sum</span> <span class="o">=</span> stringa1 + stringa2 + stringa3
+
+pritn<span class="o">(</span><span class="s2">&quot;la concatenazione di:&quot;</span><span class="o">)</span>
+pritn<span class="o">(</span>stringa1,stringa2,stringa3<span class="o">)</span>
+print<span class="o">(</span><span class="s2">&quot;è ugauale a:&quot;</span>, sum<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Riscrivi il programma per calcolare il BMI e stampa il tipo di peso, altezza e BMI.:</p>
+<p>peso = 60
+altezza = 100</p>
+<p>BMI = peso / (altezza * altezza)</p>
+<p>print(“il type di peso è”,type(peso))
+print(“il type di altezza è”,type(altezza))
+print(“il type di BMI è”,type(BMI))</p>
+</li>
+<li><p class="first">Cerca il metodo <strong>split</strong> nella documentazione del tipo string (str), successivamente utilizza lo split sulla variabile <em>prova</em> di tipo str contenente “Ciao Come va? Io sto bene” con separatore (<em>sep</em>) = ” “:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>help<span class="o">(</span>str<span class="o">)</span>
+<span class="c1"># premi / per cercare</span>
+<span class="c1"># cerca &quot;split&quot;</span>
+<span class="c1"># leggi come utilizzare lo split</span>
+
+<span class="nv">prova</span> <span class="o">=</span> <span class="s2">&quot;Ciao Come va? Io sto bene&quot;</span>
+print<span class="o">(</span>prova.split<span class="o">(</span><span class="nv">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">))</span>
+
+&gt;&gt;&gt; <span class="o">[</span><span class="s2">&quot;Ciao&quot;</span>,<span class="s2">&quot;Come&quot;</span>,<span class="s2">&quot;va?&quot;</span>,<span class="s2">&quot;Io&quot;</span>,<span class="s2">&quot;sto&quot;</span>,<span class="s2">&quot;bene&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -989,6 +1037,25 @@ frecce, cercare un termine con <code class="docutils literal notranslate"><span 
 <li><a class="reference external" href="https://youtu.be/VEQJjz9P71w?t=1274">Comando rm</a>.</li>
 <li><a class="reference external" href="https://youtu.be/VEQJjz9P71w?t=1461">Esercizi</a>.</li>
 <li><a class="reference external" href="https://youtu.be/VEQJjz9P71w?t=2501">Soluzioni</a>.</li>
+</ul>
+</div>
+<div class="section" id="laboratorio-2">
+<h2>Laboratorio 2<a class="headerlink" href="#laboratorio-2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://youtu.be/C8Oowz-zIdg">Parte A</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/C8Oowz-zIdg?t=72">nano</a>.</li>
+<li><a class="reference external" href="https://youtu.be/C8Oowz-zIdg?t=806">cat</a>.</li>
+<li><a class="reference external" href="https://youtu.be/C8Oowz-zIdg?t=1440">wildcards</a>.</li>
+</ul>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=2SyUloLfFwE">Parte B</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=16">L’ interprete Python</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=242">Tipi in Python</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=694">Variabili</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=1304">Documentazione</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=1472">Esercizio insieme</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=1900">Esercizi</a>.</li>
+<li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=2188">Soluzioni</a>.</li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1026,10 +1093,12 @@ frecce, cercare un termine con <code class="docutils literal notranslate"><span 
 <li class="toctree-l2"><a class="reference internal" href="python_basics.html#documentazione">Documentazione</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_basics.html#esercizio-insieme">Esercizio insieme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_basics.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_basics.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-1">Laboratorio 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-2">Laboratorio 2</a></li>
 </ul>
 </li>
 </ul>

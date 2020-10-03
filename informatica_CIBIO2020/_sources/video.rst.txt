@@ -24,3 +24,23 @@ Laboratorio 1
 - `Comando rm <https://youtu.be/VEQJjz9P71w?t=1274>`_.  
 - `Esercizi <https://youtu.be/VEQJjz9P71w?t=1461>`_. 
 - `Soluzioni <https://youtu.be/VEQJjz9P71w?t=2501>`_.  
+
+
+Laboratorio 2
+-----------
+
+`Parte A <https://youtu.be/C8Oowz-zIdg>`_.
+
+- `nano <https://youtu.be/C8Oowz-zIdg?t=72>`_. 
+- `cat <https://youtu.be/C8Oowz-zIdg?t=806>`_. 
+- `wildcards <https://youtu.be/C8Oowz-zIdg?t=1440>`_. 
+
+`Parte B <https://www.youtube.com/watch?v=2SyUloLfFwE>`_.
+
+- `L' interprete Python <https://youtu.be/2SyUloLfFwE?t=16>`_. 
+- `Tipi in Python <https://youtu.be/2SyUloLfFwE?t=242>`_. 
+- `Variabili <https://youtu.be/2SyUloLfFwE?t=694>`_. 
+- `Documentazione <https://youtu.be/2SyUloLfFwE?t=1304>`_.  
+- `Esercizio insieme <https://youtu.be/2SyUloLfFwE?t=1472>`_. 
+- `Esercizi <https://youtu.be/2SyUloLfFwE?t=1900>`_. 
+- `Soluzioni <https://youtu.be/2SyUloLfFwE?t=2188>`_.  
