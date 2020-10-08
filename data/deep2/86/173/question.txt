@@ -1,0 +1,1 @@
+Is this correct? 86 * 2 + 1 = 173

@@ -1,0 +1,21 @@
+# Adapted from http://en.wikipedia.org/wiki/Amino_acid
+NAME=Alanine		3LC=Ala	1LC=A
+NAME=Arginine		3LC=Arg	1LC=R
+NAME=Asparagine		3LC=Asn	1LC=N
+NAME=AsparticAcid	3LC=Asp	1LC=D
+NAME=Cysteine		3LC=Cys	1LC=C
+NAME=GlutamicAcid	3LC=Glu	1LC=E
+NAME=Glutamine		3LC=Gln	1LC=Q
+NAME=Glycine		3LC=Gly	1LC=G
+NAME=Histidine		3LC=His	1LC=H
+NAME=Isoleucine		3LC=Ile	1LC=I
+NAME=Leucine		3LC=Leu	1LC=L
+NAME=Lysine		3LC=Lys	1LC=K
+NAME=Methionine		3LC=Met	1LC=M
+NAME=Phenylalanine	3LC=Phe	1LC=F
+NAME=Proline		3LC=Pro	1LC=P
+NAME=Serine		3LC=Ser	1LC=S
+NAME=Threonine		3LC=Thr	1LC=T
+NAME=Tryptophan		3LC=Trp	1LC=W
+NAME=Tyrosine		3LC=Tyr	1LC=Y
+NAME=Valine		3LC=Val	1LC=V
