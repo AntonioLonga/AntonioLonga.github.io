@@ -164,15 +164,6 @@
 <span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;testo&#39;</span>
 </pre></div>
 </div>
-<p>Per inserire caratteri speciali, devo fare l’<em>escaping</em> con un backslash
-<code class="docutils literal notranslate"><span class="pre">\</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">percorso</span> <span class="o">=</span> <span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">fasta&quot;</span>
-</pre></div>
-</div>
-<p>oppure usare il prefisso <code class="docutils literal notranslate"><span class="pre">r</span></code> (<em>raw</em>, grezzo):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">percorso</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;data\fasta&quot;</span>
-</pre></div>
-</div>
 <p>Per creare una stringa multilinea posso inserire manualmente i carattere di
 <em>a capo</em> <code class="docutils literal notranslate"><span class="pre">\n</span></code> in ogni riga:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sad_joke</span> <span class="o">=</span> <span class="s2">&quot;Time flies like an arrow.</span><span class="se">\n</span><span class="s2">Fruit flies like a banana.&quot;</span>
@@ -187,22 +178,12 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">sad_joke</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">print</span></code> interpreta i caratteri speciali, mentre l’eco del terminale no.
-Provate a scrivere:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">percorso</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>e (dall’interprete):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">percorso</span>
-</pre></div>
-</div>
-<p>Nel primo caso lo slash appare una volta (quello di escaping viene
-interpretato automaticamente da <code class="docutils literal notranslate"><span class="pre">print</span></code>) mentre nel secondo due (quello
-di escaping non viene interpretato affatto).</p>
-<p class="last">Lo stesso vale se stampo <code class="docutils literal notranslate"><span class="pre">sad_joke</span></code>.</p>
-</div>
+<p><strong>PROVATE VOI</strong>:</p>
+<ol class="arabic simple">
+<li>Create una variabile con il vostro nome e cognome. ES: name=”Antonio Longa”</li>
+<li>Usate entrambe le virgolette (“” e ‘’), Cosa cambia? se stampate il type cosa cambia?</li>
+<li>Ora create una variabile multilinea con il vostro nome e cognome.</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -234,6 +215,21 @@ di escaping non viene interpretato affatto).</p>
 </pre></div>
 </div>
 </div>
+<p><strong>PROVATE VOI</strong>:</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Crate 4 variabili</dt>
+<dd><ol class="first last arabic">
+<li>nome = vostro nome di tipo string</li>
+<li>cognome = vostro cognome di tipo string</li>
+<li>eta = vostra eta di tipo int</li>
+<li>altezza  = vostra altezza di tipo float</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Convertite tutto in stringa e stampate la concatenzaione (+).</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -306,6 +302,21 @@ di escaping non viene interpretato affatto).</p>
 </div>
 <p class="last">(Nel secondo caso manca uno spazio tra <code class="docutils literal notranslate"><span class="pre">e'</span></code> e <code class="docutils literal notranslate"><span class="pre">123</span></code>.)</p>
 </div>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Crate 3 variabili</dt>
+<dd><ol class="first last arabic">
+<li>nome = vostro nome di tipo string</li>
+<li>cognome = vostro cognome di tipo string</li>
+<li>eta = vostra eta di tipo int</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Stampate il vostro nome età volte, stmpate il vostro cognome un numero di volte uguale alla metà dei vostri anni. Es: se avete 4 anni, il risultato sarà “AntonioAntonioAntonioAntonio” e “LongaLonga”</li>
+<li>Cosa succede se avete un età dispari? :)</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -323,6 +334,36 @@ di escaping non viene interpretato affatto).</p>
 </pre></div>
 </div>
 <p>Il risultato e’ sempre <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Dato il seguente frammento di DNA</dt>
+<dd><ol class="first last arabic">
+<li><dl class="first docutils">
+<dt>DNA =  “acactcgagacaatcttggtatcggtctacgcctcgcatcgattaggtgattgtggagcgt</dt>
+<dd>cgggagtatggtatcaagcgaacttaatcctttatgtaaaggcgctttggatctttgaaga
+ccagccacgtgcccgctgaccgacagctcagaacataacacgttggtcgttacccggctaa
+gcgaaaacgggatggggcgtcgcttcggattacccgattctgaatattcgtgtaagcattg
+cccgtacatttgtgactatatgagtaggaacgaccttgcgtccaaagaagtttagttggtt
+caacgaattaacagcctagcacatagctaagtacgtcggttcatatggcccctcaccataa”</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Cercate se contiene le seguenti sottostringhe</dt>
+<dd><ol class="first last arabic">
+<li>atcgattaggtgattgtggagcgtcggg</li>
+<li>atcg</li>
+<li>ggggg</li>
+<li>ATCG</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -377,9 +418,18 @@ invariata:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li>Usate il DNA definito prima.</li>
+<li>Create una variabile (ultimi10) contenente gli ultimi 10 caratteri del DNA</li>
+<li>Create una variabile (primi30) contenente i primi 30 caratteri del DNA</li>
+<li>Create una terza variabile (var) contenente la concatenazione delle variabili ultimi10 e primi30 ripetuta 10 volte.</li>
+<li>Cercate all’interno della variabile var la stringa <em>agct</em>.</li>
+</ol>
 </div>
 <div class="section" id="metodi">
 <h2>Metodi<a class="headerlink" href="#metodi" title="Permalink to this headline">¶</a></h2>
+<p><strong>oggetto.metodo(parametri)</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="9%" />
@@ -481,6 +531,13 @@ passare piu’ di un <em>carattere</em> da rimuovere:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li>prendete i primi 100 caratteri del DNA definito in precedenza, salvateli in una variabile chiamata sequenza.</li>
+<li>mettete tutto in maiuscolo</li>
+<li>rimuovete le “a” all’inizio e alla fine.</li>
+<li>qunato è lunga la nuova stringa?</li>
+</ol>
 <p><strong>Esempio</strong>. Lo stesso vale per <code class="docutils literal notranslate"><span class="pre">startswith()</span></code> e <code class="docutils literal notranslate"><span class="pre">endswith()</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testo</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span>
 
@@ -551,6 +608,20 @@ delle stringhe.</p>
 <div class="line"><br /></div>
 </div>
 </div>
+<div class="section" id="esercizio-insieme">
+<h2>Esercizio insieme<a class="headerlink" href="#esercizio-insieme" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Considerando la segente stringa in input: DNA = “ttggtatcggtctacgcctcgcatcgattaggtgattgtgga”</li>
+<li>Convertiamo la stringa in maiuscolo.</li>
+<li>Contiamo le occorrenze di timina, guanina, citosina e adenina, salvandole in variabili con nomi opportuni.</li>
+<li>Stampiamo la media delle loro frequnze</li>
+<li>Quante volte compare il codone “ttg”?</li>
+<li>Convertiamo la sequenza del DNA in forma estesa. cioè: t diventa timina, g diventa guanina etc etc etc</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
 <div class="section" id="esercizi">
 <h2>Esercizi<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -570,13 +641,9 @@ delle stringhe.</p>
 </li>
 <li><p class="first">Controllare se la stringa <code class="docutils literal notranslate"><span class="pre">&quot;12345&quot;</span></code> comincia con il carattere 1.</p>
 </li>
-<li><p class="first">Creare una stringa che contenga il solo carattere <code class="docutils literal notranslate"><span class="pre">\</span></code>. Controllate con <code class="docutils literal notranslate"><span class="pre">print</span></code>, l’eco dell’interprete, e <code class="docutils literal notranslate"><span class="pre">len()</span></code>!</p>
+<li><p class="first">Creare una stringa che contenga il solo carattere <code class="docutils literal notranslate"><span class="pre">\</span></code>. Controllate con <code class="docutils literal notranslate"><span class="pre">print</span></code>, e <code class="docutils literal notranslate"><span class="pre">len()</span></code>!</p>
 </li>
-<li><p class="first">Controllare se la stringa <code class="docutils literal notranslate"><span class="pre">&quot;\\&quot;</span></code> contiene due backslash <code class="docutils literal notranslate"><span class="pre">\</span></code> consecutivi.</p>
-</li>
-<li><p class="first">Controllare che una stringa inizi o finisca per <code class="docutils literal notranslate"><span class="pre">\</span></code>. Ci sono almeno due modi.</p>
-</li>
-<li><p class="first">Controllare che contenga il carattere <code class="docutils literal notranslate"><span class="pre">x</span></code> appaia almeno tre volte
+<li><p class="first">Controllare che il carattere <code class="docutils literal notranslate"><span class="pre">x</span></code> appaia almeno tre volte
 all’inizio o alla fine di una stringa. Ad esempio, questo e’ vero per:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;x....xx&quot;</span>           <span class="c1"># 1 + 2 &gt;= 3</span>
 <span class="s2">&quot;xx....x&quot;</span>           <span class="c1"># 2 + 1 &gt;= 3</span>
@@ -618,7 +685,7 @@ testo, inclusi apici e virgolette:</p>
 </div></blockquote>
 <p>Ci sono almeno due modi per farlo.</p>
 </li>
-<li><p class="first">Calcolare il valore di <span class="math">\frac{1}{7}</span> in Python, ottenendo un <code class="docutils literal notranslate"><span class="pre">float</span></code>;
+<li><p class="first">Calcolare il valore di 1/7 in Python, ottenendo un <code class="docutils literal notranslate"><span class="pre">float</span></code>;
 mettere il risultato ottenuto nella variabile <code class="docutils literal notranslate"><span class="pre">valore</span></code>. Controllare se:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -695,11 +762,13 @@ metterla in una nuova variabile <code class="docutils literal notranslate"><span
 </li>
 </ol>
 </li>
-<li><p class="first">Il comando:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/dna-fasta/fasta.1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
-</pre></div>
-</div>
+<li><dl class="first docutils">
+<dt>Scaricate il file da questo link <a class="reference external" href="https://drive.google.com/drive/folders/1MfpXoSSOwrqAGmCQ0cnlZ5P8ERMjc7BG?usp=sharing">https://drive.google.com/drive/folders/1MfpXoSSOwrqAGmCQ0cnlZ5P8ERMjc7BG?usp=sharing</a></dt>
+<dd><p class="first">Il comando:</p>
+<p class="last">dna = open(“data/dna-fasta/fasta.1”).readlines()[2]
+print(dna)</p>
+</dd>
+</dl>
 <p>legge le sequenze di nucleotidi contenute nel file <code class="docutils literal notranslate"><span class="pre">data/dna-fasta/fasta.1</span></code>
 (<strong>a patto che</strong> <code class="docutils literal notranslate"><span class="pre">python</span></code> <strong>sia stato lanciato nella directory giusta</strong>) e
 restituisce una stringa, che noi mettiamo nella variabile <code class="docutils literal notranslate"><span class="pre">dna</span></code>.</p>

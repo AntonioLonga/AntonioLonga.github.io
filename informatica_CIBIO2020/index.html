@@ -1079,8 +1079,37 @@ qui abbiamo invocato <code class="docutils literal notranslate"><span class="pre
 <div class="section" id="id4">
 <h2>Esercizi<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Crate un modulo che calcola i BMI.</li>
-<li>Crate un modulo che stampi una frase.</li>
+<li>Create un modulo che calcola i BMI.</li>
+<li>Create un modulo che stampi una frase.</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>Soluzioni<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create un modulo che calcola i BMI.</p>
+<blockquote>
+<div><p>Aprite un editor di testo
+Scrivete il seguente codice:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">peso</span> <span class="o">=</span> <span class="m">50</span>
+<span class="nv">altezza</span> <span class="o">=</span> <span class="m">160</span>
+<span class="nv">BMI</span> <span class="o">=</span> peso /<span class="o">(</span>altezza * altezza<span class="o">)</span>
+print<span class="o">(</span>BMI<span class="o">)</span>
+</pre></div>
+</div>
+<p>Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo</p>
+</div></blockquote>
+</li>
+<li><p class="first">Create un modulo che stampi una frase.</p>
+<blockquote>
+<div><p>Aprite un editor di testo
+Scrivete il seguente codice:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">testo</span> <span class="o">=</span> <span class="s2">&quot;Ciao come va&quot;</span>
+print<span class="o">(</span>testo<span class="o">)</span>
+</pre></div>
+</div>
+<p>Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo</p>
+</div></blockquote>
+</li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1128,13 +1157,13 @@ razionali puo’ essere rappresentata solo <em>approssimatamente</em> con un
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><strong>Esempio</strong>. Creo quattro variabili, una per tipo, poi le stampo a schermo con
+<p><strong>Esempio</strong>. Creo tre variabili, una per tipo, poi le stampo a schermo con
 <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
 <div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">n</span> <span class="o">=</span> <span class="m">10</span>
 <span class="nv">x</span> <span class="o">=</span> <span class="m">3</span>.14
 <span class="nv">cond</span> <span class="o">=</span> False
 
-<span class="c1"># Stampo le quattro variabili</span>
+<span class="c1"># Stampo le tre variabili</span>
 print<span class="o">(</span>n, x, cond<span class="o">)</span>
 
 <span class="c1"># Idem, inframezzando testo</span>
@@ -1391,8 +1420,8 @@ complesse:</p>
 <div class="line"><br /></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Esercizi<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>Esercizi<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Creare alcune variabili, controllando ad ogni passaggio che valore e tipo
 siano corretti (usando <code class="docutils literal notranslate"><span class="pre">print</span></code> e <code class="docutils literal notranslate"><span class="pre">type</span></code>):</p>
@@ -1479,6 +1508,229 @@ espressioni che valgono <code class="docutils literal notranslate"><span class="
 </ol>
 </li>
 </ol>
+</div>
+<div class="section" id="id7">
+<h2>Soluzioni<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="o">=</span> <span class="m">12</span>
+<span class="nv">b</span> <span class="o">=</span> <span class="m">23</span>
+print<span class="o">(</span>a, b<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>a<span class="o">)</span>, type<span class="o">(</span>b<span class="o">))</span>          <span class="c1"># int, int</span>
+
+<span class="nv">x</span> <span class="o">=</span> <span class="m">21</span>.0
+<span class="nv">y</span> <span class="o">=</span> <span class="m">14</span>.
+print<span class="o">(</span>x, y<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>x<span class="o">)</span>, type<span class="o">(</span>y<span class="o">))</span>          <span class="c1"># float, float</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span>a, b, x, y<span class="o">)</span>
+
+print<span class="o">(</span>a, <span class="s2">&quot;;&quot;</span>, b, <span class="s2">&quot;;&quot;</span>, x, <span class="s2">&quot;;&quot;</span>, ...<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># casi semplici:</span>
+
+<span class="nv">prodotto</span> <span class="o">=</span> a * b                <span class="c1"># int * int</span>
+print<span class="o">(</span>prodotto<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>prodotto<span class="o">))</span>           <span class="c1"># int</span>
+
+<span class="c1"># divisione e divisione intera tra vari</span>
+<span class="c1"># tipi di numeri:</span>
+
+<span class="nv">quoziente</span> <span class="o">=</span> x / y               <span class="c1"># float / float</span>
+print<span class="o">(</span>quoziente<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>quoziente<span class="o">))</span>          <span class="c1"># float</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> a // b              <span class="c1"># int // int</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># int</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> x // y              <span class="c1"># float // float</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># float</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> b * y               <span class="c1"># int * float</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># float</span>
+
+<span class="c1"># qui il tipo e&#39; determinato automaticamente</span>
+<span class="c1"># in base alla magnitudine del risultato:</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> <span class="m">2</span>**0                <span class="c1"># int**int</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># int</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> <span class="m">2</span>**1.2              <span class="c1"># int*float</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># float</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> <span class="m">2</span>**-2               <span class="c1"># int*int</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># *** float!!! ***</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> <span class="m">4</span>**0.5              <span class="c1"># int*float</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># float</span>
+
+<span class="nv">risultato</span> <span class="o">=</span> <span class="m">2</span>**0.5              <span class="c1"># int*float</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+print<span class="o">(</span>type<span class="o">(</span>risultato<span class="o">))</span>          <span class="c1"># float</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print<span class="o">(</span><span class="m">10</span> / <span class="m">12</span><span class="o">)</span>
+<span class="m">0</span>.8333333333333334
+&gt;&gt;&gt; print<span class="o">(</span><span class="m">10</span> / <span class="m">12</span>.0<span class="o">)</span>
+<span class="m">0</span>.8333333333333334
+&gt;&gt;&gt; print<span class="o">(</span><span class="m">10</span> // <span class="m">12</span><span class="o">)</span>
+<span class="m">0</span>
+&gt;&gt;&gt; print<span class="o">(</span><span class="m">10</span> // <span class="m">12</span>.0<span class="o">)</span>
+<span class="m">0</span>.0
+</pre></div>
+</div>
+<p>Come si vede la divisione intera si comporta normalmente rispetto ai tipi:
+quando la applico ai due float il risultato e’ quello della divisione
+normale, ma troncato all’intero <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="m">10</span> % <span class="m">3</span>
+<span class="m">1</span>
+&gt;&gt;&gt; <span class="m">10</span> % <span class="m">3</span>.0
+<span class="m">1</span>.0
+</pre></div>
+</div>
+<p>Come si puo’ vedere, <code class="docutils literal notranslate"><span class="pre">%</span></code> ritorna il resto di <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">3</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">10</span> <span class="o">=</span> <span class="m">3</span>*3 + <span class="m">1</span>
+<span class="c1">#          ^</span>
+<span class="c1">#       il resto</span>
+</pre></div>
+</div>
+<p>Il tipo degli operandi non influenza il valore del risultato, solo il suo
+tipo.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">pi</span> <span class="o">=</span> <span class="m">3</span>.141592
+<span class="nv">r</span> <span class="o">=</span> <span class="m">2</span>.5
+
+<span class="nv">circonferenza</span> <span class="o">=</span> <span class="m">2</span> * pi * r
+print<span class="o">(</span>circonferenza<span class="o">)</span>
+
+<span class="nv">area</span> <span class="o">=</span> <span class="m">2</span> * pi * r**2
+print<span class="o">(</span>area<span class="o">)</span>
+
+<span class="nv">area</span> <span class="o">=</span> <span class="m">2</span> * pi * r * r
+print<span class="o">(</span>area<span class="o">)</span>
+
+<span class="nv">volume</span> <span class="o">=</span> <span class="o">(</span><span class="m">4</span>.0 / <span class="m">3</span>.0<span class="o">)</span> * pi * r**3
+print<span class="o">(</span>volume<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>a, <span class="nv">b</span> <span class="o">=</span> <span class="m">100</span>, True
+
+<span class="nv">a2</span> <span class="o">=</span> a
+<span class="nv">b2</span> <span class="o">=</span> b
+<span class="nv">b</span> <span class="o">=</span> a2
+<span class="nv">a</span> <span class="o">=</span> b2
+
+print<span class="o">(</span>a, b<span class="o">)</span>
+</pre></div>
+</div>
+<p>oppure:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>a, <span class="nv">b</span> <span class="o">=</span> <span class="m">100</span>, True
+
+<span class="nv">x</span> <span class="o">=</span> a
+<span class="nv">a</span> <span class="o">=</span> b
+<span class="nv">b</span> <span class="o">=</span> x
+
+print<span class="o">(</span>a, b<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>gene1_inizio, <span class="nv">gene1_fine</span> <span class="o">=</span> <span class="m">10</span>, <span class="m">20</span>
+gene2_inizio, <span class="nv">gene2_fine</span> <span class="o">=</span> <span class="m">30</span>, <span class="m">40</span>
+
+<span class="c1"># disegnino:</span>
+<span class="c1">#</span>
+<span class="c1"># 5&#39;                            3&#39;</span>
+<span class="c1"># ~~~~~xxxxxxxx~~~~~xxxxxxx~~~~~&gt;</span>
+<span class="c1">#     10      20   30     40</span>
+<span class="c1">#      \______/     \_____/</span>
+<span class="c1">#       gene_1       gene_2</span>
+
+
+<span class="c1"># due alternative</span>
+<span class="nv">condizione_1</span> <span class="o">=</span> <span class="o">(</span><span class="m">10</span> &lt;<span class="o">=</span> pos &lt;<span class="o">=</span> <span class="m">20</span><span class="o">)</span>
+<span class="nv">condizione_1</span> <span class="o">=</span> <span class="o">(</span>pos &gt;<span class="o">=</span> <span class="m">10</span> and pos &lt;<span class="o">=</span> <span class="m">20</span><span class="o">)</span>
+
+
+<span class="nv">condizione_2</span> <span class="o">=</span> <span class="o">(</span><span class="m">30</span> &lt;<span class="o">=</span> pos &lt;<span class="o">=</span> <span class="m">40</span><span class="o">)</span>
+
+
+<span class="nv">condizione_3</span> <span class="o">=</span> <span class="o">(</span><span class="m">10</span> &lt;<span class="o">=</span> pos &lt;<span class="o">=</span> <span class="m">40</span><span class="o">)</span>
+
+
+<span class="c1"># due alternative</span>
+<span class="nv">condizione_4</span> <span class="o">=</span> condizione_3 and not <span class="o">(</span>condizione_1 or condizione_2<span class="o">)</span>
+<span class="nv">condizione_4</span> <span class="o">=</span> <span class="o">(</span><span class="m">20</span> &lt;<span class="o">=</span> pos &lt;<span class="o">=</span> <span class="m">40</span><span class="o">)</span>
+
+
+<span class="nv">condizione_5</span> <span class="o">=</span> pos &lt; <span class="m">10</span> or pos &gt; <span class="m">40</span>
+<span class="c1"># occhio che:</span>
+<span class="c1">#</span>
+<span class="c1">#   pos &lt; 10 and pos &gt; 40</span>
+<span class="c1">#</span>
+<span class="c1"># non ha senso: e&#39; sempre False!</span>
+
+
+<span class="nv">condizione_6</span> <span class="o">=</span> condizione_1 or condizione_2
+
+
+<span class="nv">condizione_7</span> <span class="o">=</span> <span class="o">(</span><span class="m">0</span> &lt;<span class="o">=</span> pos &lt;<span class="o">=</span> <span class="m">20</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Il codice va testato con diversi valori di <code class="docutils literal notranslate"><span class="pre">posizione</span></code>, in modo da
+controllare che le condizioni si comportino come vogliamo: che siano
+<code class="docutils literal notranslate"><span class="pre">True</span></code> quando la posizione soddisfa i requisiti della domanda, e <code class="docutils literal notranslate"><span class="pre">False</span></code>
+altrimenti.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">tutte_e_tre</span> <span class="o">=</span> t and u and v
+
+<span class="nv">t_oppure_u_ma_non_tutte_e_due</span> <span class="o">=</span> <span class="o">(</span>t or u<span class="o">)</span> and not <span class="o">(</span>t and u<span class="o">)</span>
+
+<span class="c1"># NOTA: qui i backslash alla fine delle righe servono</span>
+<span class="c1"># per andare &quot;a capo&quot;, potete ignorarli.</span>
+<span class="nv">una_delle_tre_falsa</span> <span class="o">=</span> <span class="se">\</span>
+    <span class="o">(</span>t and u and not v<span class="o">)</span> or <span class="se">\</span>
+    <span class="o">(</span>t and not u and v<span class="o">)</span> or <span class="se">\</span>
+    <span class="o">(</span>not t and u and v<span class="o">)</span>
+
+<span class="nv">una_delle_tre_vera</span> <span class="o">=</span> <span class="se">\</span>
+    <span class="o">(</span>t and not u and not v<span class="o">)</span> or <span class="se">\</span>
+    <span class="o">(</span>not t and u and not v<span class="o">)</span> or <span class="se">\</span>
+    <span class="o">(</span>not t and not u and v<span class="o">)</span>
+</pre></div>
+</div>
+<p>Di nuovo, il codice va testato usando diversi valori per <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code> e
+<code class="docutils literal notranslate"><span class="pre">v</span></code>. Ci sono 8 combinazioni in tutto:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>t, u, <span class="nv">v</span> <span class="o">=</span> False, False, False
+t, u, <span class="nv">v</span> <span class="o">=</span> False, False, True
+t, u, <span class="nv">v</span> <span class="o">=</span> False, True, False
+t, u, <span class="nv">v</span> <span class="o">=</span> False, True, True
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -1525,6 +1777,23 @@ espressioni che valgono <code class="docutils literal notranslate"><span class="
 <li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=1900">Esercizi</a>.</li>
 <li><a class="reference external" href="https://youtu.be/2SyUloLfFwE?t=2188">Soluzioni</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-3">
+<h2>Laboratorio 3<a class="headerlink" href="#laboratorio-3" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=5l3x9XSMv3c">Parte A</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/5l3x9XSMv3c?t=91">Interprete Python</a>.</li>
+<li><a class="reference external" href="https://youtu.be/5l3x9XSMv3c?t=205">Moduli</a>.</li>
+<li><a class="reference external" href="https://youtu.be/5l3x9XSMv3c?t=1300">Esercizi</a>.</li>
+<li><a class="reference external" href="https://youtu.be/5l3x9XSMv3c?t=2152">Soluzioni</a>.</li>
+</ul>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=IZGtmw_1ZD8">Parte B</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/IZGtmw_1ZD8?t=20">Tipi Fondamentali</a>.</li>
+<li><a class="reference external" href="https://youtu.be/IZGtmw_1ZD8?t=149">Aritmetica</a>.</li>
+<li><a class="reference external" href="https://youtu.be/IZGtmw_1ZD8?t=441">Confronti</a>.</li>
+<li><a class="reference external" href="https://youtu.be/IZGtmw_1ZD8?t=1322">Esercizi</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -1568,6 +1837,7 @@ espressioni che valgono <code class="docutils literal notranslate"><span class="
 <li class="toctree-l2"><a class="reference internal" href="python_moduli.html#interprete-python">Interprete Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_moduli.html#moduli">Moduli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_moduli.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_moduli.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_numbers.html">Python: Numeri</a><ul>
@@ -1576,11 +1846,13 @@ espressioni che valgono <code class="docutils literal notranslate"><span class="
 <li class="toctree-l2"><a class="reference internal" href="python_numbers.html#numeri-confronti">Numeri: Confronti</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_numbers.html#esempi">Esempi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_numbers.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_numbers.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-1">Laboratorio 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-2">Laboratorio 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-3">Laboratorio 3</a></li>
 </ul>
 </li>
 </ul>

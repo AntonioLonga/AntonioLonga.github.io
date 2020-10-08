@@ -9,15 +9,6 @@ Per definire una stringa, ho due alternative equivalenti::
     var = "testo"
     var = 'testo'
 
-Per inserire caratteri speciali, devo fare l'*escaping* con un backslash
-``\``::
-
-    percorso = "data\\fasta"
-
-oppure usare il prefisso ``r`` (*raw*, grezzo)::
-
-    percorso = r"data\fasta"
-
 Per creare una stringa multilinea posso inserire manualmente i carattere di
 *a capo* ``\n`` in ogni riga::
 
@@ -32,22 +23,13 @@ oppure usare le triple virgolette::
 
     print(sad_joke)
 
-.. warning::
 
-    ``print`` interpreta i caratteri speciali, mentre l'eco del terminale no.
-    Provate a scrivere::
+**PROVATE VOI**:
 
-        print(percorso)
+#. Create una variabile con il vostro nome e cognome. ES: name="Antonio Longa"
+#. Usate entrambe le virgolette ("" e ''), Cosa cambia? se stampate il type cosa cambia?
+#. Ora create una variabile multilinea con il vostro nome e cognome.
 
-    e (dall'interprete)::
-
-        percorso
-
-    Nel primo caso lo slash appare una volta (quello di escaping viene
-    interpretato automaticamente da ``print``) mentre nel secondo due (quello
-    di escaping non viene interpretato affatto).
-
-    Lo stesso vale se stampo ``sad_joke``.
 
 |
 
@@ -77,6 +59,17 @@ Posso convertire un numero in una stringa usando ``str()``::
         float("giardinaggio")   # Non e' un numero
         int("1 2 3")            # Non e' un numero
         int("fifteen")          # Non e' un numero
+
+
+**PROVATE VOI**:
+
+#. Crate 4 variabili
+        #. nome = vostro nome di tipo string
+        #. cognome = vostro cognome di tipo string
+        #. eta = vostra eta di tipo int
+        #. altezza  = vostra altezza di tipo float
+#. Convertite tutto in stringa e stampate la concatenzaione (+).
+
 
 |
 
@@ -123,6 +116,18 @@ Un altro esempio::
 
     (Nel secondo caso manca uno spazio tra ``e'`` e ``123``.)
 
+
+
+**PROVATE VOI** 
+
+#. Crate 3 variabili
+        #. nome = vostro nome di tipo string
+        #. cognome = vostro cognome di tipo string
+        #. eta = vostra eta di tipo int
+#. Stampate il vostro nome età volte, stmpate il vostro cognome un numero di volte uguale alla metà dei vostri anni. Es: se avete 4 anni, il risultato sarà "AntonioAntonioAntonioAntonio" e "LongaLonga"
+#. Cosa succede se avete un età dispari? :) 
+
+
 |
 
 **Esempio**. L'operatore ``sottostringa in stringa`` controlla se
@@ -139,6 +144,22 @@ Un altro esempio::
     print("     " in stringa)        # False
 
 Il risultato e' sempre ``True`` o ``False``.
+
+**PROVATE VOI**
+
+
+#. Dato il seguente frammento di DNA
+    #. DNA =  "acactcgagacaatcttggtatcggtctacgcctcgcatcgattaggtgattgtggagcgt
+        cgggagtatggtatcaagcgaacttaatcctttatgtaaaggcgctttggatctttgaaga
+        ccagccacgtgcccgctgaccgacagctcagaacataacacgttggtcgttacccggctaa
+        gcgaaaacgggatggggcgtcgcttcggattacccgattctgaatattcgtgtaagcattg
+        cccgtacatttgtgactatatgagtaggaacgaccttgcgtccaaagaagtttagttggtt
+        caacgaattaacagcctagcacatagctaagtacgtcggttcatatggcccctcaccataa"
+#. Cercate se contiene le seguenti sottostringhe
+    #. atcgattaggtgattgtggagcgtcggg
+    #. atcg 
+    #. ggggg
+    #. ATCG
 
 |
 
@@ -191,8 +212,20 @@ Il risultato e' sempre ``True`` o ``False``.
 
 |
 
+
+**PROVATE VOI**
+
+#. Usate il DNA definito prima.
+#. Create una variabile (ultimi10) contenente gli ultimi 10 caratteri del DNA
+#. Create una variabile (primi30) contenente i primi 30 caratteri del DNA
+#. Create una terza variabile (var) contenente la concatenazione delle variabili ultimi10 e primi30 ripetuta 10 volte.
+#. Cercate all'interno della variabile var la stringa *agct*.
+
+
 Metodi
 ------
+
+**oggetto.metodo(parametri)**
 
 ======== =========================== ===================================================
 Ritorna  Metodo                      Significato
@@ -250,6 +283,15 @@ passare piu' di un *carattere* da rimuovere::
     "AAAA un esempio BBBB".strip("AB")
 
 |
+
+**PROVATE VOI**
+
+#. prendete i primi 100 caratteri del DNA definito in precedenza, salvateli in una variabile chiamata sequenza.
+#. mettete tutto in maiuscolo
+#. rimuovete le "a" all'inizio e alla fine.
+#. qunato è lunga la nuova stringa?
+
+
 
 **Esempio**. Lo stesso vale per ``startswith()`` e ``endswith()``::
 
@@ -317,6 +359,20 @@ delle stringhe.
 
 |
 
+Esercizio insieme
+-----------------
+
+#. Considerando la segente stringa in input: DNA = "ttggtatcggtctacgcctcgcatcgattaggtgattgtgga"
+#. Convertiamo la stringa in maiuscolo.
+#. Contiamo le occorrenze di timina, guanina, citosina e adenina, salvandole in variabili con nomi opportuni.
+#. Stampiamo la media delle loro frequnze
+#. Quante volte compare il codone "ttg"?
+#. Convertiamo la sequenza del DNA in forma estesa. cioè: t diventa timina, g diventa guanina etc etc etc
+
+
+
+|
+
 Esercizi
 --------
 
@@ -329,10 +385,8 @@ Esercizi
    #. Creare una stringa che contenga cento ripetizioni di ``Python e' bello tra la la``.
    #. Date le stringhe ``"ma biologia"``, ``"molecolare"`` e ``"e' meglio"``, creare una stringa composta ``"ma biologia molecolare e' meglio"`` e poi replicarla **mille** volte.
    #. Controllare se la stringa ``"12345"`` comincia con il carattere 1.
-   #. Creare una stringa che contenga il solo carattere ``\``. Controllate con ``print``, l'eco dell'interprete, e ``len()``!
-   #. Controllare se la stringa ``"\\"`` contiene due backslash ``\`` consecutivi.
-   #. Controllare che una stringa inizi o finisca per ``\``. Ci sono almeno due modi.
-   #. Controllare che contenga il carattere ``x`` appaia almeno tre volte
+   #. Creare una stringa che contenga il solo carattere ``\``. Controllate con ``print``, e ``len()``!
+   #. Controllare che il carattere ``x`` appaia almeno tre volte
       all'inizio o alla fine di una stringa. Ad esempio, questo e' vero per::
 
        "x....xx"           # 1 + 2 >= 3
@@ -372,7 +426,7 @@ Esercizi
    Ci sono almeno due modi per farlo.
 
 
-#. Calcolare il valore di :math:`\frac{1}{7}` in Python, ottenendo un ``float``;
+#. Calcolare il valore di 1/7 in Python, ottenendo un ``float``;
    mettere il risultato ottenuto nella variabile ``valore``. Controllare se:
 
     #. Vi appare la cifra 9.
@@ -441,7 +495,8 @@ Esercizi
 
       *Hint*: per calcolare la distanza e' necessario usare dei ``float``.
 
-#. Il comando::
+#. Scaricate il file da questo link https://drive.google.com/drive/folders/1MfpXoSSOwrqAGmCQ0cnlZ5P8ERMjc7BG?usp=sharing
+    Il comando::
 
     dna = open("data/dna-fasta/fasta.1").readlines()[2]
     print(dna)

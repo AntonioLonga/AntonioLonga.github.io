@@ -44,3 +44,21 @@ Laboratorio 2
 - `Esercizio insieme <https://youtu.be/2SyUloLfFwE?t=1472>`_. 
 - `Esercizi <https://youtu.be/2SyUloLfFwE?t=1900>`_. 
 - `Soluzioni <https://youtu.be/2SyUloLfFwE?t=2188>`_.  
+
+
+Laboratorio 3
+-----------
+
+`Parte A <https://www.youtube.com/watch?v=5l3x9XSMv3c>`_.
+
+- `Interprete Python <https://youtu.be/5l3x9XSMv3c?t=91>`_. 
+- `Moduli <https://youtu.be/5l3x9XSMv3c?t=205>`_. 
+- `Esercizi <https://youtu.be/5l3x9XSMv3c?t=1300>`_. 
+- `Soluzioni <https://youtu.be/5l3x9XSMv3c?t=2152>`_. 
+
+`Parte B <https://www.youtube.com/watch?v=IZGtmw_1ZD8>`_.
+
+- `Tipi Fondamentali <https://youtu.be/IZGtmw_1ZD8?t=20>`_. 
+- `Aritmetica <https://youtu.be/IZGtmw_1ZD8?t=149>`_. 
+- `Confronti <https://youtu.be/IZGtmw_1ZD8?t=441>`_. 
+- `Esercizi <https://youtu.be/IZGtmw_1ZD8?t=1322>`_. 

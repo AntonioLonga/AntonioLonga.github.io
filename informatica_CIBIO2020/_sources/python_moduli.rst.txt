@@ -70,27 +70,27 @@ A questo punto posso usare ``ordina_proteine()`` cosi'::
 Esercizi
 --------
 
-#. Crate un modulo che calcola i BMI.
-#. Crate un modulo che stampi una frase.
+#. Create un modulo che calcola i BMI.
+#. Create un modulo che stampi una frase.
 
 
-.. Soluzioni
-.. --------
-.. #. Crate un modulo che calcola i BMI.::
+Soluzioni
+--------
+#. Create un modulo che calcola i BMI.
 
-..     Aprite un editor di testo
-..     Scrivete il seguente codice::
-..         peso = 50
-..         altezza = 160
-..         BMI = peso /(altezza * altezza)
-..         print(BMI)
-..     Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo
+    Aprite un editor di testo
+    Scrivete il seguente codice::
+        peso = 50
+        altezza = 160
+        BMI = peso /(altezza * altezza)
+        print(BMI)
+    Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo
 
 
-.. #. Crate un modulo che stampi una frase.
+#. Create un modulo che stampi una frase.
 
-..     Aprite un editor di testo
-..     Scrivete il seguente codice::
-..         testo = "Ciao come va"
-..         print(testo)
-..     Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo
+    Aprite un editor di testo
+    Scrivete il seguente codice::
+        testo = "Ciao come va"
+        print(testo)
+    Aprite una shell, raggingete il precorso dove è stato salvato il file ed eseguitelo
