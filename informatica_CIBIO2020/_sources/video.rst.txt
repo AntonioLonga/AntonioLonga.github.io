@@ -62,3 +62,17 @@ Laboratorio 3
 - `Aritmetica <https://youtu.be/IZGtmw_1ZD8?t=149>`_. 
 - `Confronti <https://youtu.be/IZGtmw_1ZD8?t=441>`_. 
 - `Esercizi <https://youtu.be/IZGtmw_1ZD8?t=1322>`_. 
+
+
+Laboratorio 4
+-----------
+
+`Parte A <https://www.youtube.com/watch?v=TH1U9HWZHxw>`_.
+
+- `Conversioni stringa-numero <https://youtu.be/TH1U9HWZHxw?t=448>`_. 
+- `Operazioni <https://youtu.be/TH1U9HWZHxw?t=825>`_. 
+
+`Parte B <https://www.youtube.com/watch?v=M5avOvcxoRk>`_.
+
+- `Metodi <https://youtu.be/M5avOvcxoRk?t=401>`_. 
+- `Esercizio insieme <https://youtu.be/M5avOvcxoRk?t=1837>`_. 

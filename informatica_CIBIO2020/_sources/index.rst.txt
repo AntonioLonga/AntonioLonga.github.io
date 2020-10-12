@@ -96,6 +96,12 @@ Note Introduttive
 |
 |
 
+.. highlight:: Le Liste
+
+.. include:: python_lists.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -112,4 +118,5 @@ Note Introduttive
     python_moduli.rst
     python_numbers.rst
     python_strings.rst
+    python_lists.rst
     video.rst       
