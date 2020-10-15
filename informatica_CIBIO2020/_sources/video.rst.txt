@@ -76,3 +76,21 @@ Laboratorio 4
 
 - `Metodi <https://youtu.be/M5avOvcxoRk?t=401>`_. 
 - `Esercizio insieme <https://youtu.be/M5avOvcxoRk?t=1837>`_. 
+
+
+
+
+
+Laboratorio 5
+-----------
+
+`Lab 5 <https://www.youtube.com/watch?v=Reya2krql5c>`_.
+
+- `Visual Studio Code <https://youtu.be/Reya2krql5c?t=28>`_. 
+- `Liste <https://youtu.be/Reya2krql5c?t=2482>`_. 
+- `Operazioni su Liste <https://youtu.be/Reya2krql5c?t=2657>`_. 
+- `Esercizi su operazioni <https://youtu.be/Reya2krql5c?t=3031>`_. 
+
+
+
+

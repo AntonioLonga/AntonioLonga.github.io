@@ -93,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_numbers.html">Python: Numeri</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Python: Stringhe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -3942,6 +3943,35 @@ usare piu’ di un passaggio, ed eventualmente liste ausiliarie.</p>
 </div>
 </div>
 </div>
+<div class="section" id="python-fake-test">
+<h1>Python: Fake Test<a class="headerlink" href="#python-fake-test" title="Permalink to this headline">¶</a></h1>
+<p>Giunti a questo punto, dovreste essere capaci di fare il seguente esercizio:</p>
+<div class="section" id="esercizio">
+<h2>Esercizio<a class="headerlink" href="#esercizio" title="Permalink to this headline">¶</a></h2>
+<p>Scrivete un <strong>modulo</strong> python che data in input la sequente seq di DNA:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>DNA = &quot;tatgtaaactgccaaggtgaacgttggaatcacctcgtatgtgactcgcgtgtgacctggatactgtcaaaccaggtcaggaaagcctatgagtacgagc&quot;
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>conti le frequenze di a,c,g,t normalizzate (numero di occorrenze di a diviso lunghezza della stringa. Es: se ci sono 30 “a” e la stringa è lunga 60, la frequenaza normalizzata di “a” è uguale a 30/60 = 0.5)</li>
+<li>stampi il DNA ordinato (es “aaaaaaaaaccccccccgggggggttttt”)</li>
+<li>create un array chiamato <strong>array_DNA</strong>, contenente la frequenza del aminoacido corrisponedete. Es se le frequnze sono a=0.20,c=0.30,g=0.10,t=0.40, e il DNA è del tipo “atgc…”, dovete creare l’array [0.2,0.4,0.1,0.3,…]</li>
+<li>Create un array con la media mobile del array chiamato <strong>array_DNA</strong>. La media mobile è un array dove l’elemento in posizione i rappresenta la media degli elementi in posizione 0,1,2,..,i-1,i. Es se l’array in input è [1,1,4,5], l’array contenente le medie mobile è il seguente: [1,1,2,2.75] perche [1/1 = 1, (1+1)/2 = 1, (1+1+4)/3 = 2, (1+1+4+5)/4 = 2.75]</li>
+</ol>
+<p>In fine stampate i 4 risultati, un esempio di output del programma è il seguente:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>res1 freq a = 0.28 freq c = 0.27 freq g = 0.22 freq t = 0.23
+res2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccccccccccccc....
+res3 [0.23, 0.28, 0.23, 0.27, 0.23 ...
+res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
+</pre></div>
+</div>
+<p><strong>L’esercizio è interamente risolvibile con quello cha abbiamo fatto fino a qui</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
 <div class="section" id="video">
 <h1>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h1>
 <p>Questa pagina contiene i link ai video di ogni lezione.</p>
@@ -4011,6 +4041,16 @@ usare piu’ di un passaggio, ed eventualmente liste ausiliarie.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://youtu.be/M5avOvcxoRk?t=401">Metodi</a>.</li>
 <li><a class="reference external" href="https://youtu.be/M5avOvcxoRk?t=1837">Esercizio insieme</a>.</li>
+</ul>
+</div>
+<div class="section" id="laboratorio-5">
+<h2>Laboratorio 5<a class="headerlink" href="#laboratorio-5" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=Reya2krql5c">Lab 5</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=28">Visual Studio Code</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=2482">Liste</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=2657">Operazioni su Liste</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=3031">Esercizi su operazioni</a>.</li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -4087,11 +4127,16 @@ usare piu’ di un passaggio, ed eventualmente liste ausiliarie.</p>
 <li class="toctree-l2"><a class="reference internal" href="python_lists.html#id3">Esercizi</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_test.html#esercizio">Esercizio</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-1">Laboratorio 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-2">Laboratorio 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-3">Laboratorio 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-4">Laboratorio 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-5">Laboratorio 5</a></li>
 </ul>
 </li>
 </ul>
