@@ -35,7 +35,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Video" href="video.html" />
+    <link rel="prev" title="Python: Fake Test" href="python_test.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,7 +86,7 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python: Fondamentali</a></li>
@@ -93,6 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Python: Stringhe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python: Dizionari</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#operazioni">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metodi">Metodi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esercizi">Esercizi</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -194,6 +202,7 @@ lettere (le <em>chiavi</em>) al nome dell’aminoacido corrispondente (i <em>val
 <span class="nb">print</span><span class="p">(</span><span class="n">aa_di_ucu</span><span class="p">)</span>             <span class="c1"># &quot;serine&quot;</span>
 </pre></div>
 </div>
+<p><strong>PROVIAMO INSIEME</strong></p>
 <p>Posso usare questo dizionario per “simulare” il processo della traduzione. Ad
 esempio, partendo da una sequenza di mRNA:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rna</span> <span class="o">=</span> <span class="s2">&quot;UUUUCUUAUUGUUUCUCC&quot;</span>
@@ -230,6 +239,7 @@ unico valore, ma lo stesso valore puo’ essere associato a piu’ chiavi:</p>
 </div>
 </div>
 <hr class="docutils" />
+<p><strong>PROVATE VOI</strong></p>
 <p><strong>Esempio</strong>. Creo un dizionario che mappa ogni aminoacido nel suo volume
 (approssimato, in Amstrong cubici):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">volume_di</span> <span class="o">=</span> <span class="p">{</span>
@@ -321,6 +331,7 @@ di due proprieta’: massa e volume:</p>
 </pre></div>
 </div>
 <p>Qui le chiavi sono <code class="docutils literal notranslate"><span class="pre">str</span></code> (immutabili) ed i valori sono <code class="docutils literal notranslate"><span class="pre">list</span></code> (mutabili).</p>
+<p><strong>Le liste non possono essere chiavi, infatti</strong></p>
 <p>Provo a creare il dizionario inverso (limitandomi al primo elemento per
 semplicita’):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">da_proprieta_ad_aa</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="mf">89.09</span><span class="p">,</span> <span class="mf">67.0</span><span class="p">]:</span> <span class="s2">&quot;A&quot;</span> <span class="p">}</span>
@@ -354,6 +365,17 @@ semplicita’):</p>
 </pre></div>
 </div>
 <p>Ora le chiavi sono <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, immutabili, e va tutto bene.</p>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li>Scrivete un dizionario con 4 chiavi (da 0 a 4), dove il valore rappresenta il quadrato della chiave</li>
+<li><dl class="first docutils">
+<dt>iterate sulla seguente lista</dt>
+<dd>lista = [1,3,1,1,0,2]</dd>
+</dl>
+</li>
+<li>e stampate a video il valore del dizionario usando le chiavi che incontrate nella lista</li>
+<li>output 1,9,1,1,0,4</li>
+</ol>
 <hr class="docutils" />
 <div class="section" id="operazioni">
 <h2>Operazioni<a class="headerlink" href="#operazioni" title="Permalink to this headline">¶</a></h2>
@@ -454,15 +476,15 @@ corretto:</p>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict_keys</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></td>
-<td>Restituisce una vista sulle chiavi</td>
+<td>Restituisce una <strong>vista</strong> sulle chiavi</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">dict_values</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></td>
-<td>Restituisce una vista sui valori</td>
+<td>Restituisce una <strong>vista</strong> sui valori</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict_items</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></td>
-<td>Restituisce una vista sulle coppie chiave-valore</td>
+<td>Restituisce una <strong>vista</strong> sulle coppie chiave-valore</td>
 </tr>
 </tbody>
 </table>
@@ -582,7 +604,8 @@ che descrive la sequenza primaria della <a class="reference external" href="http
 </pre></div>
 </div>
 <p>Le sequenza e’ presa dalla Protein Data Bank, struttura <a class="reference external" href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2hmi">2HMI</a>.</p>
-<p>Posso immaginare di mettere questa informazione in un dizionario:</p>
+<p><strong>PROVATE VOI</strong>
+Trasformate il testo sopra in un dizionario come quello seguente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sequenze_2HMI</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI...&quot;</span><span class="p">,</span>
     <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="s2">&quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI...&quot;</span><span class="p">,</span>
@@ -843,6 +866,15 @@ poi modificate il codice per tenere conto di questa idiosincrasia.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="video.html" class="btn btn-neutral float-right" title="Video" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_test.html" class="btn btn-neutral float-left" title="Python: Fake Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

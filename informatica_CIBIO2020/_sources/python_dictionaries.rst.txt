@@ -37,6 +37,8 @@ Uso un dizionario in questo modo::
     aa_di_ucu = codice["UCU"]
     print(aa_di_ucu)             # "serine"
 
+**PROVIAMO INSIEME**
+
 Posso usare questo dizionario per "simulare" il processo della traduzione. Ad
 esempio, partendo da una sequenza di mRNA::
 
@@ -74,6 +76,9 @@ codice non rispetta i codoni di terminazione, ma e' un difetto correggibile.
         print(codice["UCC"])            # "S", serina
 
 ****
+
+
+**PROVATE VOI**
 
 **Esempio**. Creo un dizionario che mappa ogni aminoacido nel suo volume
 (approssimato, in Amstrong cubici)::
@@ -137,6 +142,8 @@ di due proprieta': massa e volume::
 
 Qui le chiavi sono ``str`` (immutabili) ed i valori sono ``list`` (mutabili).
 
+**Le liste non possono essere chiavi, infatti**
+
 Provo a creare il dizionario inverso (limitandomi al primo elemento per
 semplicita')::
 
@@ -171,6 +178,15 @@ Per risolvere il problema posso usare, al posto di liste, delle tuple::
     print(type(aa))                          # str
 
 Ora le chiavi sono ``tuple``, immutabili, e va tutto bene.
+
+**PROVATE VOI**
+
+#. Scrivete un dizionario con 4 chiavi (da 0 a 4), dove il valore rappresenta il quadrato della chiave
+#. iterate sulla seguente lista
+    lista = [1,3,1,1,0,2]
+#. e stampate a video il valore del dizionario usando le chiavi che incontrate nella lista
+#. output 1,9,1,1,0,4
+
 
 ****
 
@@ -240,9 +256,9 @@ Ritorna             Metodo                      Significato
 =================== =========================== ====================================================
 ``object``          ``dict.get(k, [default])``  Resituisce il valore della chiave, oppure il default
 ``bool``            ``object in dict``          ``True`` se la chiave e' nel dizionario
-``dict_keys``       ``dict.keys()``             Restituisce una vista sulle chiavi
-``dict_values``     ``dict.values()``           Restituisce una vista sui valori
-``dict_items``      ``dict.items()``            Restituisce una vista sulle coppie chiave-valore
+``dict_keys``       ``dict.keys()``             Restituisce una **vista** sulle chiavi
+``dict_values``     ``dict.values()``           Restituisce una **vista** sui valori
+``dict_items``      ``dict.items()``            Restituisce una **vista** sulle coppie chiave-valore
 =================== =========================== ====================================================
 
 ****
@@ -370,7 +386,9 @@ che descrive la sequenza primaria della `retrotranscriptasi
 
 Le sequenza e' presa dalla Protein Data Bank, struttura `2HMI <http://www.rcsb.org/pdb/explore/explore.do?structureId=2hmi>`_.
 
-Posso immaginare di mettere questa informazione in un dizionario::
+
+**PROVATE VOI**
+Trasformate il testo sopra in un dizionario come quello seguente::
 
     sequenze_2HMI = {
         "A": "PISPIETVPVKLKPGMDGPKVKQWPLTEEKI...",

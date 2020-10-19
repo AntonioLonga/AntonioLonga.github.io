@@ -94,3 +94,21 @@ Laboratorio 5
 
 
 
+
+
+Laboratorio 6
+-----------
+
+`Parte A <https://www.youtube.com/watch?v=_zfeDKWlQDc&list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&index=11&t=3s>`_.
+
+- `Metodi sulle liste <https://youtu.be/_zfeDKWlQDc?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&t=1133>`_. 
+- `Metodi stringhe-liste <https://youtu.be/_zfeDKWlQDc?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&t=4048>`_. 
+
+
+
+`Parte B <https://www.youtube.com/watch?v=gOZnV9OqC48&list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&index=11>`_.
+
+- `list comprehension <https://youtu.be/gOZnV9OqC48?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&t=9>`_. 
+
+
+

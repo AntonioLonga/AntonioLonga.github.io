@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_strings.html">Python: Stringhe</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -3191,7 +3192,7 @@ alterata.</p>
 <li><p class="first">Data la lista:</p>
 <div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">frammenti</span> <span class="o">=</span> <span class="o">[</span>
     <span class="s2">&quot;KSYK&quot;</span>,
-    <span class="s2">&quot;SVALVV&quot;</span>
+    <span class="s2">&quot;SVALVV&quot;</span>,
     <span class="s2">&quot;GVTGI&quot;</span>,
     <span class="s2">&quot;VGSSLAEVLKLPD&quot;</span>,
 <span class="o">]</span>
@@ -3937,6 +3938,837 @@ usare piu’ di un passaggio, ed eventualmente liste ausiliarie.</p>
 <p>(Che numeri avete ottenuto? Ecco <a class="reference external" href="http://math.stackexchange.com/questions/263101/prove-every-odd-integer-is-the-difference-of-two-squares">perche’</a>.)</p>
 </li>
 </ol>
+</div>
+<div class="section" id="python-liste-soluzioni">
+<h2>Python: Liste (Soluzioni)<a class="headerlink" href="#python-liste-soluzioni" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In alcune soluzioni uso il carattere <code class="docutils literal notranslate"><span class="pre">\</span></code> alla fine di una riga di codice.</p>
+<p>Usato in questo modo, <code class="docutils literal notranslate"><span class="pre">\</span></code> spiega a Python che il comando continua alla
+riga successiva. Se non usassi <code class="docutils literal notranslate"><span class="pre">\</span></code>, Python potrebbe pensare che il
+comando finisca li’ e quindi che sia sintatticamente sbagliato – dando
+errore.</p>
+<p class="last">Potete tranquillamente ignorare questi <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+</div>
+</div>
+<div class="section" id="soluzioni-operazioni">
+<h2>Soluzioni Operazioni<a class="headerlink" href="#soluzioni-operazioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+print<span class="o">(</span>lista, len<span class="o">(</span>lista<span class="o">))</span>         <span class="c1"># controllo</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">5</span><span class="o">))</span>
+print<span class="o">(</span>lista, len<span class="o">(</span>lista<span class="o">))</span>         <span class="c1"># controllo</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">0</span><span class="o">]</span> * <span class="m">100</span>
+print<span class="o">(</span>lista, len<span class="o">(</span>lista<span class="o">))</span>         <span class="c1"># controllo</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_1</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+<span class="nv">lista_2</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">10</span>, <span class="m">20</span><span class="o">))</span>
+
+<span class="nv">lista_completa</span> <span class="o">=</span> lista_1 + lista_2
+print<span class="o">(</span>lista_completa<span class="o">)</span>
+
+print<span class="o">(</span>lista_completa<span class="o">)</span> <span class="o">==</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">20</span><span class="o">))</span>   <span class="c1"># Ture</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;sono&quot;</span>, <span class="s2">&quot;una&quot;</span>, <span class="s2">&quot;lista&quot;</span><span class="o">]</span>
+print<span class="o">(</span>lista, len<span class="o">(</span>lista<span class="o">))</span>         <span class="c1"># controllo</span>
+
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">]))</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">[</span><span class="m">1</span><span class="o">]))</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">[</span><span class="m">2</span><span class="o">]))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">0</span>.0, <span class="s2">&quot;b&quot;</span>, <span class="o">[</span><span class="m">3</span><span class="o">]</span>, <span class="o">[</span><span class="m">4</span>, <span class="m">5</span><span class="o">]]</span>
+
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">))</span>                <span class="c1"># 4</span>
+
+print<span class="o">(</span>type<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">]))</span>            <span class="c1"># float</span>
+
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">1</span><span class="o">]</span>, len<span class="o">(</span>lista<span class="o">[</span><span class="m">1</span><span class="o">]))</span>   <span class="c1"># &quot;b&quot;, 1</span>
+
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">2</span><span class="o">]</span>, len<span class="o">(</span>lista<span class="o">[</span><span class="m">2</span><span class="o">]))</span>   <span class="c1"># [3], 1</span>
+
+print<span class="o">(</span>lista<span class="o">[</span>-1<span class="o">]</span>, len<span class="o">(</span>lista<span class="o">[</span>-1<span class="o">]))</span> <span class="c1"># [4, 5], 2</span>
+
+print<span class="o">(</span><span class="s2">&quot;b&quot;</span> in lista<span class="o">)</span>              <span class="c1"># True</span>
+
+print<span class="o">(</span><span class="m">4</span> in lista<span class="o">)</span>                <span class="c1"># False</span>
+print<span class="o">(</span><span class="m">4</span> in lista<span class="o">[</span>-1<span class="o">])</span>            <span class="c1"># True</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione: la prima e’ una lista di interi, la seconda una lista
+di stringhe, mentre la terza e’ una <em>stringa</em>!:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span>type<span class="o">(</span>lista_1<span class="o">))</span>             <span class="c1"># list</span>
+print<span class="o">(</span>type<span class="o">(</span>lista_2<span class="o">))</span>             <span class="c1"># list</span>
+print<span class="o">(</span>type<span class="o">(</span>lista_3<span class="o">))</span>            <span class="c1"># str</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># una lista vuota</span>
+<span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">))</span>                <span class="c1"># 0</span>
+del lista
+
+
+<span class="c1"># sintassi non valida, Python da&#39; errore</span>
+<span class="nv">lista</span> <span class="o">=</span> <span class="o">[}</span>
+
+
+<span class="c1"># una lista che contiene una lista vuota</span>
+<span class="nv">lista</span> <span class="o">=</span> <span class="o">[[]]</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">))</span>                <span class="c1"># 1</span>
+print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">]))</span>             <span class="c1"># 0</span>
+del lista
+
+
+<span class="c1"># non funziona perche&#39; lista non e&#39; definita!</span>
+lista.append<span class="o">(</span><span class="m">0</span><span class="o">)</span>
+
+
+<span class="c1"># questa invece funziona</span>
+<span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+lista.append<span class="o">(</span><span class="m">0</span><span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">)</span>                     <span class="c1"># [0]</span>
+del lista
+
+
+<span class="c1"># non funziona perche&#39; mancano le virgole!</span>
+<span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="o">]</span>
+
+
+<span class="c1"># da&#39; errore perche&#39; la lista ha solo 3 elementi!</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">3</span><span class="o">])</span>
+
+
+<span class="c1"># estrae l&#39;ultimo elemento</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+print<span class="o">(</span>lista<span class="o">[</span>-1<span class="o">])</span>
+del lista
+
+
+<span class="c1"># estrae i primi due elementi (lista[2], il terzo,</span>
+<span class="c1"># e&#39; escluso)</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+<span class="nv">sottolista</span> <span class="o">=</span> lista<span class="o">[</span><span class="m">0</span>:2<span class="o">]</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+
+<span class="c1"># estrare tutti gli elementi (lista[3], che &#39;non</span>
+<span class="c1"># esiste&#39;, e&#39; escluso)</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+<span class="nv">sottolista</span> <span class="o">=</span> lista<span class="o">[</span><span class="m">0</span>:3<span class="o">]</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+
+<span class="c1"># estrae i primi due elementi (lista[-1], il terzo,</span>
+<span class="c1"># e&#39; escluso)</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+<span class="nv">sottolista</span> <span class="o">=</span> lista<span class="o">[</span><span class="m">0</span>:-1<span class="o">]</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+
+<span class="c1"># inserisce in terza posizione la stringa &quot;due&quot;</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista<span class="o">[</span><span class="m">2</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;due&quot;</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+
+<span class="c1"># non funziona: la lista contiene solo tre elementi,</span>
+<span class="c1"># quindi non ha una quarta posizione, e Python da&#39;</span>
+<span class="c1"># errore</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista<span class="o">[</span><span class="m">3</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;tre&quot;</span>
+
+
+<span class="c1"># inserisce in terza posizione la stringa &quot;tre&quot;</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista<span class="o">[</span>-1<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;tre&quot;</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+
+<span class="c1"># l&#39;indice deve essere un intero, Python da&#39; errore</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista<span class="o">[</span><span class="m">1</span>.2<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;uno virgola due&quot;</span>
+
+
+<span class="c1"># sostituisce il secondo elemento di lista (cioe&#39; 1)</span>
+<span class="c1"># con una lista di due stringhe; e&#39; perfettamente</span>
+<span class="c1"># legale: le liste *possono* contenere altre stringhe</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;testo-1&quot;</span>, <span class="s2">&quot;testo-2&quot;</span><span class="o">]</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">matrice</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">]</span>,
+    <span class="o">[</span><span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span><span class="o">]</span>,
+    <span class="o">[</span><span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span><span class="o">]</span>,
+<span class="o">]</span>
+
+<span class="nv">prima_riga</span> <span class="o">=</span> matrice<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+print<span class="o">(</span>prima_riga<span class="o">)</span>
+
+<span class="nv">secondo_elemento_prima_riga</span> <span class="o">=</span> prima_riga<span class="o">[</span><span class="m">1</span><span class="o">]</span>
+<span class="c1"># oppure</span>
+<span class="nv">secondo_elemento_prima_riga</span> <span class="o">=</span> matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">1</span><span class="o">]</span>
+print<span class="o">(</span>secondo_elemento_prima_riga<span class="o">)</span>
+
+<span class="nv">somma_prima_riga</span> <span class="o">=</span> matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">]</span> + matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">1</span><span class="o">]</span> + matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">2</span><span class="o">]</span>
+print<span class="o">(</span>somma_prima_riga<span class="o">)</span>
+
+<span class="nv">seconda_colonna</span> <span class="o">=</span> <span class="o">[</span>matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">1</span><span class="o">]</span>, matrice<span class="o">[</span><span class="m">1</span><span class="o">][</span><span class="m">1</span><span class="o">]</span>, matrice<span class="o">[</span><span class="m">2</span><span class="o">][</span><span class="m">1</span><span class="o">]]</span>
+print<span class="o">(</span>seconda_colonna<span class="o">)</span>
+
+<span class="nv">diagonale</span> <span class="o">=</span> <span class="o">[</span>matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">]</span>, matrice<span class="o">[</span><span class="m">1</span><span class="o">][</span><span class="m">1</span><span class="o">]</span>, matrice<span class="o">[</span><span class="m">2</span><span class="o">][</span><span class="m">2</span><span class="o">]]</span>
+print<span class="o">(</span>diagonale<span class="o">)</span>
+
+<span class="nv">tre_righe_assieme</span> <span class="o">=</span> matrice<span class="o">[</span><span class="m">0</span><span class="o">]</span> + matrice<span class="o">[</span><span class="m">1</span><span class="o">]</span> + matrice<span class="o">[</span><span class="m">2</span><span class="o">]</span>
+print<span class="o">(</span>tre_righe_assieme<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="soluzioni-metodi">
+<h2>Soluzioni Metodi<a class="headerlink" href="#soluzioni-metodi" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Prima dichiaro una lista qualunque, ad esempio quella vuota:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+</pre></div>
+</div>
+<p>poi aggiungo i vari elementi richiesti con <code class="docutils literal notranslate"><span class="pre">append()</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>lista.append<span class="o">(</span><span class="m">0</span><span class="o">)</span>
+lista.append<span class="o">(</span><span class="s2">&quot;testo&quot;</span><span class="o">)</span>
+lista.append<span class="o">([</span><span class="m">0</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># aggiunge un 3 alla fine della lista</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.append<span class="o">(</span><span class="m">3</span><span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># aggiunge una lista con un 3 dentro alla fine della lista</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.append<span class="o">([</span><span class="m">3</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># aggiunge un 3 (il solo elemento contenuto nella lista [3]) alla</span>
+<span class="c1"># fine della lista</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.extend<span class="o">([</span><span class="m">3</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># non funziona: extend() estende una lista con i contenuti</span>
+<span class="c1"># di un&#39;altra lista, ma qui 3 *non* e&#39; una lista! Python da&#39;</span>
+<span class="c1"># errore</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.extend<span class="o">(</span><span class="m">3</span><span class="o">)</span>
+
+<span class="c1"># sostituisce l&#39;elemento in posizione 0, il primo, con il</span>
+<span class="c1"># valore 3</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.insert<span class="o">(</span><span class="m">0</span>, <span class="m">3</span><span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># inserisce un 3 alla fine di lista</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.insert<span class="o">(</span><span class="m">3</span>, <span class="m">3</span><span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># inserisce la lista [3] alla fine di lista</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.insert<span class="o">(</span><span class="m">3</span>, <span class="o">[</span><span class="m">3</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+del lista
+
+<span class="c1"># non funziona: il primo argomento di insert() deve essere</span>
+<span class="c1"># un intero, qui gli stiamo dando una lista! Python da&#39; errore</span>
+<span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span><span class="o">))</span>
+lista.insert<span class="o">([</span><span class="m">3</span><span class="o">]</span>, <span class="m">3</span><span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+lista.append<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+lista.append<span class="o">(</span>range<span class="o">(</span><span class="m">10</span>, <span class="m">20</span><span class="o">))</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+</pre></div>
+</div>
+<p>Qui uso <code class="docutils literal notranslate"><span class="pre">append()</span></code>, che inserisce un <em>elemento</em> alla fine di <code class="docutils literal notranslate"><span class="pre">lista</span></code>.
+In questo caso inserisco due liste, cioe’ i risultati di <code class="docutils literal notranslate"><span class="pre">range(10)</span></code> e
+<code class="docutils literal notranslate"><span class="pre">range(10,</span> <span class="pre">20)</span></code>.</p>
+<p>E’ chiaro che <code class="docutils literal notranslate"><span class="pre">len(lista)</span></code> e’ <code class="docutils literal notranslate"><span class="pre">2</span></code>, visto che ho inserito solo due elementi.</p>
+<p>Invece:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+lista.extend<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+lista.extend<span class="o">(</span>range<span class="o">(</span><span class="m">10</span>, <span class="m">20</span><span class="o">))</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+</pre></div>
+</div>
+<p>fa uso di <code class="docutils literal notranslate"><span class="pre">extend()</span></code>, che “estende” una lista con un’altra lista. Qui
+la lista finale ha <code class="docutils literal notranslate"><span class="pre">20</span></code> elementi, come si evince con:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span>len<span class="o">(</span>lista<span class="o">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span>, <span class="m">0</span><span class="o">]</span>
+lista.remove<span class="o">(</span><span class="m">0</span><span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+</pre></div>
+</div>
+<p>solo la prima ripetizione di <code class="docutils literal notranslate"><span class="pre">0</span></code> viene rimossa!</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span><span class="o">]</span>
+
+<span class="c1"># inverte l&#39;ordine degli elementi di lista</span>
+lista.reverse<span class="o">()</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+
+<span class="c1"># ordina gli elementi di lista</span>
+lista.sort<span class="o">()</span>
+print<span class="o">(</span>lista<span class="o">)</span>
+</pre></div>
+</div>
+<p>Il risultato e’ che dopo le due operazioni <code class="docutils literal notranslate"><span class="pre">lista</span></code> torna al suo
+valore iniziale.</p>
+<p>Invece questo:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span><span class="o">]</span>
+lista.reverse<span class="o">()</span>.sort<span class="o">()</span>
+</pre></div>
+</div>
+<p><em>non</em> si puo’ fare. Il risultato di <code class="docutils literal notranslate"><span class="pre">lista.reverse()</span></code> e’ <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span><span class="o">]</span>
+<span class="nv">risultato</span> <span class="o">=</span> lista.reverse<span class="o">()</span>
+print<span class="o">(</span>risultato<span class="o">)</span>
+</pre></div>
+</div>
+<p>che certamente non e’ una lista, e quindi non ci posso fare sopra <code class="docutils literal notranslate"><span class="pre">sort()</span></code>.
+Python dara’ errore.</p>
+</li>
+<li><p class="first">Sono tentato di scrivere:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+<span class="nv">lista_inversa</span> <span class="o">=</span> lista.reverse<span class="o">()</span>
+
+print<span class="o">(</span>lista<span class="o">)</span>                         <span class="c1"># modificata!</span>
+print<span class="o">(</span>lista_inversa<span class="o">)</span>                 <span class="c1"># None!</span>
+</pre></div>
+</div>
+<p>ma questa cosa non funziona: <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> modifica <code class="docutils literal notranslate"><span class="pre">lista</span></code> e restituisce
+<code class="docutils literal notranslate"><span class="pre">None</span></code>! Perdipiu’ questo codice modifica <code class="docutils literal notranslate"><span class="pre">lista</span></code> direttamente, ed io
+non voglio.</p>
+<p>Quindi prima faccio una copia di <code class="docutils literal notranslate"><span class="pre">lista</span></code>, e poi ordino quella:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+<span class="nv">lista_inversa</span> <span class="o">=</span> lista<span class="o">[</span>:<span class="o">]</span>            <span class="c1"># *non* lista_inversa = lista</span>
+lista_inversa.reverse<span class="o">()</span>
+print<span class="o">(</span>lista<span class="o">)</span>                         <span class="c1"># invariata</span>
+print<span class="o">(</span>lista_inversa<span class="o">)</span>                 <span class="c1"># invertita</span>
+</pre></div>
+</div>
+<p>Invece questo codice:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">10</span><span class="o">))</span>
+<span class="nv">lista_inversa</span> <span class="o">=</span> lista
+lista_inversa.reverse<span class="o">()</span>
+print<span class="o">(</span>lista<span class="o">)</span>                         <span class="c1"># modificata!</span>
+print<span class="o">(</span>lista_inversa<span class="o">)</span>                 <span class="c1"># invertita</span>
+</pre></div>
+</div>
+<p>non funziona come vorrei: quello che succede e’ che <code class="docutils literal notranslate"><span class="pre">lista_inversa</span></code>
+contiene non una copia di <code class="docutils literal notranslate"><span class="pre">lista</span></code>, ma un riferimento allo stesso
+oggetto riferito da <code class="docutils literal notranslate"><span class="pre">lista</span></code>.</p>
+<p>Quindi quando inverto <code class="docutils literal notranslate"><span class="pre">lista_inversa</span></code> finisco per invertire anche <code class="docutils literal notranslate"><span class="pre">lista</span></code>.</p>
+</li>
+<li><p class="first">Come sopra:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">frammenti</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="s2">&quot;KSYK&quot;</span>,
+    <span class="s2">&quot;SVALVV&quot;</span>
+    <span class="s2">&quot;GVTGI&quot;</span>,
+    <span class="s2">&quot;VGSSLAEVLKLPD&quot;</span>,
+<span class="o">]</span>
+<span class="nv">frammenti_ordinati</span> <span class="o">=</span> frammenti.sort<span class="o">()</span>
+</pre></div>
+</div>
+<p>non funziona: <code class="docutils literal notranslate"><span class="pre">sort()</span></code> ordina <code class="docutils literal notranslate"><span class="pre">lista</span></code> e restituisce <code class="docutils literal notranslate"><span class="pre">None</span></code>! Quindi
+sono costretto a fare prima una copia di <code class="docutils literal notranslate"><span class="pre">frammenti</span></code>, e poi ad ordinare
+quella:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">frammenti_ordinati</span> <span class="o">=</span> frammenti<span class="o">[</span>:<span class="o">]</span>
+frammenti_ordinati.sort<span class="o">()</span>
+print<span class="o">(</span>frammenti<span class="o">)</span>                     <span class="c1"># invariata</span>
+print<span class="o">(</span>frammenti_ordinati<span class="o">)</span>            <span class="c1"># ordinata</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> <span class="o">[]</span>
+lista.append<span class="o">(</span>lista<span class="o">)</span>
+
+print<span class="o">(</span>lista<span class="o">)</span>
+</pre></div>
+</div>
+<p>crea una lista che contiene se’ stessa; <code class="docutils literal notranslate"><span class="pre">lista</span></code> e’ una struttura che
+in gergo viene detta <em>ricorsiva</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">lista</span></code> e’ chiaramente <em>infinita</em> (in termini di annidamento), visto che
+posso farci cose come queste:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span>lista<span class="o">)</span>
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">])</span>
+print<span class="o">(</span>lista<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">][</span><span class="m">0</span><span class="o">])</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Visto che <code class="docutils literal notranslate"><span class="pre">lista</span></code> ha profondita’ infinita, Python quando la stampa
+usa un’ellissi <code class="docutils literal notranslate"><span class="pre">...</span></code> per indicare che c’e’ una quantita’ infinita di liste
+dentro a <code class="docutils literal notranslate"><span class="pre">lista</span></code> (ed ovviamente non puo’ stamparle tutte).</p>
+<p><strong>Non</strong> vedremo altre strutture ricorsive nel corso.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="soluzioni-metodi-stringhe-liste">
+<h2>Soluzioni Metodi Stringhe-Liste<a class="headerlink" href="#soluzioni-metodi-stringhe-liste" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>testo = &quot;&quot;&quot;The Wellcome Trust Sanger Institute
+is a world leader in genome research.&quot;&quot;&quot;&quot;
+
+parole = testo.split()
+print(len(parole))
+
+
+righe = testo.split(&quot;\n&quot;)
+
+prima_riga = righe[0]
+print(&quot;la prima riga e&#39;:&quot;, prima_riga)
+
+seconda_riga = righe[1]
+print(&quot;la seconda riga e&#39;:&quot;, seconda_riga)
+
+
+print(&quot;la prima parola della seconda riga e&#39;:&quot;, seconda_riga.split()[0])
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">tabella</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="s2">&quot;protein | database | domain | start | end&quot;</span>,
+    <span class="s2">&quot;YNL275W | Pfam | PF00955 | 236 | 498&quot;</span>,
+    <span class="s2">&quot;YHR065C | SMART | SM00490 | 335 | 416&quot;</span>,
+    <span class="s2">&quot;YKL053C-A | Pfam | PF05254 | 5 | 72&quot;</span>,
+    <span class="s2">&quot;YOR349W | PANTHER | 353 | 414&quot;</span>,
+<span class="o">]</span>
+
+<span class="nv">prima_riga</span> <span class="o">=</span> tabella<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+<span class="nv">titoli_colonne_quasi</span> <span class="o">=</span> prima_riga.split<span class="o">(</span><span class="s2">&quot;|&quot;</span><span class="o">)</span>
+print<span class="o">(</span>titoli_colonne_quasi<span class="o">)</span>
+<span class="c1"># [&quot;protein &quot;, &quot; database &quot;, ...]</span>
+
+<span class="c1"># purtroppo qui i titoli delle colonne contengono spazi superflui</span>
+<span class="c1"># per evitarli posso cambiare il delimitatore che do a split()</span>
+
+<span class="nv">titoli_colonne</span> <span class="o">=</span> prima_riga.split<span class="o">(</span><span class="s2">&quot; | &quot;</span><span class="o">)</span>
+print<span class="o">(</span>titoli_colonne<span class="o">)</span>
+<span class="c1"># [&quot;protein&quot;, &quot;database&quot;, ...]</span>
+</pre></div>
+</div>
+<p>Volendo si puo’ usare anche <code class="docutils literal notranslate"><span class="pre">strip()</span></code> assieme ad una <em>list comprehension</em>
+su <code class="docutils literal notranslate"><span class="pre">titoli_colonne_quasi</span></code>, ma (come appena dimostrato) non e’ necessario.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">parole</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;parola_1&quot;</span>, <span class="s2">&quot;parola_2&quot;</span>, <span class="s2">&quot;parola_3&quot;</span><span class="o">]</span>
+
+print<span class="o">(</span><span class="s2">&quot; &quot;</span>.join<span class="o">(</span>parole<span class="o">))</span>
+
+print<span class="o">(</span><span class="s2">&quot;,&quot;</span>.join<span class="o">(</span>parole<span class="o">))</span>
+
+print<span class="o">(</span><span class="s2">&quot; e &quot;</span>.join<span class="o">(</span>parole<span class="o">))</span>
+
+print<span class="o">(</span><span class="s2">&quot;&quot;</span>.join<span class="o">(</span>parole<span class="o">))</span>
+
+<span class="nv">backslash</span> <span class="o">=</span> <span class="s2">&quot;\\&quot;</span>
+print<span class="o">(</span>backslash.join<span class="o">(</span>parole<span class="o">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">versi</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="s2">&quot;Taci. Su le soglie&quot;</span>
+    <span class="s2">&quot;del bosco non odo&quot;</span>
+    <span class="s2">&quot;parole che dici&quot;</span>
+    <span class="s2">&quot;umane; ma odo&quot;</span>
+    <span class="s2">&quot;parole piu&#39; nuove&quot;</span>
+    <span class="s2">&quot;che parlano gocciole e foglie&quot;</span>
+    <span class="s2">&quot;lontane.&quot;</span>
+<span class="o">]</span>
+
+<span class="nv">poesia</span> <span class="o">=</span> <span class="s2">&quot;\n&quot;</span>.join<span class="o">(</span>versi<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="soluzioni-list-comprehension">
+<h2>Soluzioni List Comprehension<a class="headerlink" href="#soluzioni-list-comprehension" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_piu_tre</span> <span class="o">=</span> <span class="o">[</span>numero + <span class="m">3</span> <span class="k">for</span> numero in lista<span class="o">]</span>
+
+print<span class="o">(</span>lista_piu_tre<span class="o">)</span>             <span class="c1"># controllo</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_dispari</span> <span class="o">=</span> <span class="o">[</span>numero <span class="k">for</span> numero in lista
+                 <span class="k">if</span> <span class="o">(</span>numero % <span class="nv">2</span> <span class="o">==</span> <span class="m">1</span><span class="o">)]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_opposti</span> <span class="o">=</span> <span class="o">[</span>-numero <span class="k">for</span> numero in lista<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_inversi</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>.0 / numero <span class="k">for</span> numero in lista
+                 <span class="k">if</span> numero !<span class="o">=</span> <span class="m">0</span><span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">primo_e_ultimo</span> <span class="o">=</span> <span class="o">[</span>lista<span class="o">[</span><span class="m">0</span><span class="o">]</span>, lista<span class="o">[</span>-1<span class="o">]]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">dal_secondo_al_penultimo</span> <span class="o">=</span> lista<span class="o">[</span><span class="m">1</span>:-1<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_dispari</span> <span class="o">=</span> <span class="o">[</span>numero <span class="k">for</span> numero in lista
+                 <span class="k">if</span> <span class="o">(</span>numero % <span class="nv">2</span> <span class="o">==</span> <span class="m">1</span><span class="o">)]</span>
+<span class="nv">quanti_dispari</span> <span class="o">=</span> len<span class="o">(</span>lista_dispari<span class="o">)</span>
+print<span class="o">(</span>quanti_dispari<span class="o">)</span>
+</pre></div>
+</div>
+<p>oppure abbreviando:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">quanti_dispari</span> <span class="o">=</span> len<span class="o">([</span>numero <span class="k">for</span> numero in lista
+                      <span class="k">if</span> <span class="o">(</span>numero % <span class="nv">2</span> <span class="o">==</span> <span class="m">1</span><span class="o">)])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_divisi_per_5</span> <span class="o">=</span> <span class="o">[</span>float<span class="o">(</span>numero<span class="o">)</span> / <span class="m">5</span>
+                      <span class="k">for</span> numero in lista<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_multipli_5_divisi</span> <span class="o">=</span> <span class="o">[</span>float<span class="o">(</span>numero<span class="o">)</span> / <span class="m">5</span>.0<span class="o">)</span>
+                           <span class="k">for</span> numero in lista
+                           <span class="k">if</span> <span class="o">(</span>numero % <span class="nv">5</span> <span class="o">==</span> <span class="m">0</span><span class="o">)]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista_di_stringhe</span> <span class="o">=</span> <span class="o">[</span>str<span class="o">(</span>numero<span class="o">)</span> <span class="k">for</span> numero in lista<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Come sopra, ma iterando su `lista_di_stringhe`</span>
+<span class="c1"># piuttosto che direttamente su `lista`</span>
+<span class="nv">quanti_dispari</span> <span class="o">=</span> len<span class="o">([</span>stringa <span class="k">for</span> stringa in lista_di_stringhe
+                      <span class="k">if</span> <span class="o">(</span>int<span class="o">(</span>stringa<span class="o">)</span> % <span class="nv">5</span> <span class="o">==</span> <span class="m">0</span><span class="o">)])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">testo</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>.join<span class="o">([</span>str<span class="o">(</span>numero<span class="o">)</span> <span class="k">for</span> numero in lista<span class="o">])</span>
+</pre></div>
+</div>
+<p>Occhio che se dimentico di fare <code class="docutils literal notranslate"><span class="pre">str(numero)</span></code>, <code class="docutils literal notranslate"><span class="pre">join()</span></code> si
+rifiuta di funzionare.</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><div class="first highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># andata</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">]</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[</span>str<span class="o">(</span>x<span class="o">)</span> <span class="k">for</span> x in lista_1<span class="o">]</span>
+
+<span class="c1"># ritorno</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;1&quot;</span>, <span class="s2">&quot;2&quot;</span>, <span class="s2">&quot;3&quot;</span><span class="o">]</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span>int<span class="o">(</span>x<span class="o">)</span> <span class="k">for</span> x in lista_2<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># andata</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;nome&quot;</span>, <span class="s2">&quot;cognome&quot;</span>, <span class="s2">&quot;eta&#39;&quot;</span><span class="o">]</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[[</span>x<span class="o">]</span> <span class="k">for</span> x in lista_1<span class="o">]</span>
+
+<span class="c1"># ritorno</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;nome&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;cognome&quot;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;eta&#39;&quot;</span><span class="o">]]</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span>l<span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="k">for</span> l in lista_2<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><div class="first highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># andata</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;ACTC&quot;</span>, <span class="s2">&quot;TTTGGG&quot;</span>, <span class="s2">&quot;CT&quot;</span><span class="o">]</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[[</span>x.lower<span class="o">()</span>, len<span class="o">(</span>x<span class="o">)]</span> <span class="k">for</span> x in lista_1<span class="o">]</span>
+
+<span class="c1"># ritorno</span>
+<span class="nv">lista_2</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot;actc&quot;</span>, <span class="m">4</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;tttgggcc&quot;</span>, <span class="m">6</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;ct&quot;</span>, <span class="m">2</span><span class="o">]]</span>
+<span class="nv">lista_1</span> <span class="o">=</span> <span class="o">[</span>l<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()</span> <span class="k">for</span> l in lista_2<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: crea una copia di <code class="docutils literal notranslate"><span class="pre">lista</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[y</span> <span class="pre">for</span> <span class="pre">y</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: crea una copia di <code class="docutils literal notranslate"><span class="pre">lista</span></code> (identico a sopra).</li>
+<li><code class="docutils literal notranslate"><span class="pre">[y</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: invalida. (Se <code class="docutils literal notranslate"><span class="pre">x</span></code> rappresenta l’elemento della lista, cos’e’ <code class="docutils literal notranslate"><span class="pre">y</span></code>?)</li>
+<li><code class="docutils literal notranslate"><span class="pre">[&quot;x&quot;</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: crea una lista piena di stringhe <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code> lunga quanto <code class="docutils literal notranslate"><span class="pre">lista</span></code>. Il risultato sara’: <code class="docutils literal notranslate"><span class="pre">[&quot;x&quot;,</span> <span class="pre">&quot;x&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;x&quot;]</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[str(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: per ogni intero <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">lista</span></code>, lo converte in stringa con <code class="docutils literal notranslate"><span class="pre">str(x)</span></code> e mette il risultato nella lista che sta creando. Il risultato sara’: <code class="docutils literal notranslate"><span class="pre">[&quot;0&quot;,</span> <span class="pre">&quot;1&quot;,</span> <span class="pre">...,</span> <span class="pre">&quot;9&quot;]</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">str(x)</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: invalida: la trasformazione <code class="docutils literal notranslate"><span class="pre">str(...)</span></code> e’ nel posto sbagliato!</li>
+<li><code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista]</span></code>: per ogni intero <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">lista</span></code>, aggiunge uno con <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> e mette il risultato nella lista che sta creando. Il risultato sara’: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">...,</span> <span class="pre">10]</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">lista</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">==</span> <span class="pre">2]</span></code>: per ogni intero <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">lista</span></code> controlla se vale <code class="docutils literal notranslate"><span class="pre">2</span></code>. Se lo e’ mette <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> nella lista che sta creando, altrimento lo scarta. Il risultato sara’: <code class="docutils literal notranslate"><span class="pre">[3]</span></code>.</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">dna</span> <span class="o">=</span> open<span class="o">(</span><span class="s2">&quot;data/dna-fasta/fasta.1&quot;</span><span class="o">)</span>.readlines<span class="o">()</span>
+print<span class="o">(</span><span class="s2">&quot; &quot;</span>.join<span class="o">(</span>dna<span class="o">))</span>
+
+
+<span class="c1"># Rimuovo l&#39;intestazione: due alternative</span>
+<span class="nv">dna_no_intestazione</span> <span class="o">=</span> <span class="o">[</span>riga <span class="k">for</span> riga in dna
+                       <span class="k">if</span> not riga<span class="o">[</span><span class="m">0</span><span class="o">]</span>.startswith<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)]</span>
+<span class="nv">dna_no_intestazione</span> <span class="o">=</span> <span class="o">[</span>riga <span class="k">for</span> riga in dna
+                       <span class="k">if</span> riga<span class="o">[</span><span class="m">0</span><span class="o">]</span> !<span class="o">=</span> <span class="s2">&quot;&gt;&quot;</span><span class="o">]</span>
+
+
+<span class="c1"># Si&#39;, ci sono caratteri di a capo o spazi</span>
+print<span class="o">([</span><span class="s2">&quot;\n&quot;</span> in riga <span class="k">for</span> riga in dna_no_intestazione<span class="o">])</span>
+print<span class="o">([</span><span class="s2">&quot; &quot;</span> in riga <span class="k">for</span> riga in dna_no_intestazione<span class="o">])</span>
+
+<span class="c1"># Rimuovo i caratteri a capo da tutte le righe</span>
+<span class="nv">dna_solo_seq</span> <span class="o">=</span> <span class="o">[</span>riga.strip<span class="o">()</span> <span class="k">for</span> riga in dna_no_intestazione<span class="o">]</span>
+
+<span class="c1"># Ricontrollo per sicurezza: non ci sono caratteri</span>
+<span class="c1"># di a capo ne&#39; spazi</span>
+print<span class="o">([</span><span class="s2">&quot;\n&quot;</span> in riga <span class="k">for</span> riga in dna_solo_seq<span class="o">])</span>
+print<span class="o">([</span><span class="s2">&quot; &quot;</span> in riga <span class="k">for</span> riga in dna_solo_seq<span class="o">])</span>
+
+
+<span class="c1"># Concateno tutte le righe di dna_solo_seq</span>
+<span class="nv">sequenza</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>.join<span class="o">(</span>dna_solo_seq<span class="o">)</span>
+
+
+<span class="c1"># Calcolo il numero di &quot;C&quot; e &quot;G&quot;</span>
+<span class="nv">num_c</span> <span class="o">=</span> sequenza.count<span class="o">(</span><span class="s2">&quot;C&quot;</span><span class="o">)</span>
+<span class="nv">num_g</span> <span class="o">=</span> sequenza.count<span class="o">(</span><span class="s2">&quot;G&quot;</span><span class="o">)</span>
+
+
+<span class="c1"># Calcolo il GC-content, facendo attenzione da usare</span>
+<span class="c1"># dei float per evitare errori di approssimazione</span>
+<span class="nv">gc_content</span> <span class="o">=</span> float<span class="o">(</span>num_c + num_g<span class="o">)</span> / len<span class="o">(</span>sequenza<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">risultato_cdhit</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;\</span>
+<span class="s2">&gt;Cluster 0</span>
+<span class="s2">0 &gt;YLR106C at 100.00%</span>
+<span class="s2">&gt;Cluster 50</span>
+<span class="s2">0 &gt;YPL082C at 100.00%</span>
+<span class="s2">&gt;Cluster 54</span>
+<span class="s2">0 &gt;YHL009W-A at 90.80%</span>
+<span class="s2">1 &gt;YHL009W-B at 100.00%</span>
+<span class="s2">2 &gt;YJL113W at 98.77%</span>
+<span class="s2">3 &gt;YJL114W at 97.35%</span>
+<span class="s2">&gt;Cluster 52</span>
+<span class="s2">0 &gt;YBR208C at 100.00%</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="nv">righe</span> <span class="o">=</span> risultato_cdhit.split<span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>Per ottenere i nomi dei cluster, devo tenere solo le righe che cominciano
+per <code class="docutils literal notranslate"><span class="pre">&quot;&gt;&quot;</span></code>, e per ciascuna di queste fare lo <code class="docutils literal notranslate"><span class="pre">split()</span></code> in modo da poter
+ottenere il secondo elemento (che e’ il nome del cluster):</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">nomi_cluster</span> <span class="o">=</span> <span class="o">[</span>riga.split<span class="o">()[</span><span class="m">1</span><span class="o">]</span> <span class="k">for</span> riga in righe
+                <span class="k">if</span> riga.startswith<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)]</span>
+</pre></div>
+</div>
+<p>Per ottenere i nomi delle proteine, devo tenere solo le righe che <em>non</em>
+cominciano per <code class="docutils literal notranslate"><span class="pre">&quot;&gt;&quot;</span></code>, e per ciascuna di queste fare lo <code class="docutils literal notranslate"><span class="pre">split()</span></code> e
+tenere il secondo elemento (avendo cura di rimuovere il <code class="docutils literal notranslate"><span class="pre">&quot;&gt;&quot;</span></code> dal nome
+della proteina):</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">proteine</span> <span class="o">=</span> <span class="o">[</span>riga.split<span class="o">()[</span><span class="m">1</span><span class="o">]</span>.lstrip<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)</span> <span class="k">for</span> riga in righe
+            <span class="k">if</span> not riga.startswith<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)]</span>
+</pre></div>
+</div>
+<p>Per ottenere le coppie proteina-percentuale, come nel caso precedente,
+tengo solo le righe che <em>non</em> cominciano per <code class="docutils literal notranslate"><span class="pre">&quot;&gt;&quot;</span></code>. Su ciascuna di
+queste faccio <code class="docutils literal notranslate"><span class="pre">split()</span></code> e tengo il nome della proteina (secondo elemento)
+e la percentuale (ultimo elemento):</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">coppie_proteina_percentuale</span> <span class="o">=</span> <span class="se">\</span>
+    <span class="o">[[</span>riga.split<span class="o">()[</span><span class="m">1</span><span class="o">]</span>.lstrip<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)</span>, riga.split<span class="o">()[</span>-1<span class="o">]</span>.rstrip<span class="o">(</span><span class="s2">&quot;%&quot;</span><span class="o">)]</span>
+     <span class="k">for</span> riga in righe <span class="k">if</span> not riga.startswith<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)]</span>
+</pre></div>
+</div>
+<p>Versione annotata:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">coppie_proteina_percentuale</span> <span class="o">=</span> <span class="se">\</span>
+    <span class="o">[[</span>riga.split<span class="o">()[</span><span class="m">1</span><span class="o">]</span>.lstrip<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)</span>, riga.split<span class="o">()[</span>-1<span class="o">]</span>.rstrip<span class="o">(</span><span class="s2">&quot;%&quot;</span><span class="o">)]</span>
+<span class="c1">#     ^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span class="c1">#       nome proteina, come sopra            percentuale</span>
+<span class="c1">#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span class="c1">#                     coppia proteina-percentuale</span>
+     <span class="k">for</span> riga in righe <span class="k">if</span> not riga.startswith<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">righe</span> <span class="o">=</span> open<span class="o">(</span><span class="s2">&quot;data/prot-pdb/1A3A.pdb&quot;</span><span class="o">)</span>.readlines<span class="o">()</span>
+
+
+<span class="c1"># ~~~~ prima parte ~~~~</span>
+
+<span class="c1"># Estraggo tutte le righe SEQRES</span>
+<span class="nv">righe_seqres</span> <span class="o">=</span> <span class="o">[</span>riga <span class="k">for</span> riga in righe
+                <span class="k">if</span> riga.startswith<span class="o">(</span><span class="s2">&quot;SEQRES&quot;</span><span class="o">)]</span>
+print<span class="o">(</span>len<span class="o">(</span>righe_seqres<span class="o">))</span>                     <span class="c1"># 48</span>
+
+<span class="c1"># Estraggo i nomi delle catene</span>
+<span class="nv">catene</span> <span class="o">=</span> <span class="o">[</span>riga.split<span class="o">()[</span><span class="m">2</span><span class="o">]</span> <span class="k">for</span> riga in righe_seqres<span class="o">]</span>
+print<span class="o">(</span>catene<span class="o">)</span>
+
+<span class="c1"># Estraggo da righe_seqres quelle relative alla catena B</span>
+<span class="nv">righe_seqres_b</span> <span class="o">=</span> <span class="o">[</span>riga <span class="k">for</span> riga in righe_seqres
+                  <span class="k">if</span> riga.split<span class="o">()[</span><span class="m">2</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span><span class="o">]</span>
+print<span class="o">(</span>len<span class="o">(</span>righe_seqres_b<span class="o">))</span>                   <span class="c1"># 12</span>
+
+<span class="c1"># Estraggo le sequenze da ciascuna riga di righe_seqres_b,</span>
+<span class="c1"># poi concateno per ottenere il risultato voluto.</span>
+<span class="nv">sequenze_parziali_B</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot; &quot;</span>.join<span class="o">(</span>riga.split<span class="o">()[</span><span class="m">4</span>:<span class="o">])</span>
+                       <span class="k">for</span> riga in righe_seqres_b<span class="o">]</span>
+<span class="nv">sequenza_B</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>.join<span class="o">(</span>sequenze_parziali_B<span class="o">)</span>
+
+
+<span class="c1"># ~~~~ seconda parte ~~~~</span>
+
+<span class="c1"># Estraggo tutte le righe HELIX</span>
+<span class="nv">righe_helix</span> <span class="o">=</span> <span class="o">[</span>riga <span class="k">for</span> riga in righe
+               <span class="k">if</span> riga.startswith<span class="o">(</span><span class="s2">&quot;HELIX&quot;</span><span class="o">)]</span>
+print<span class="o">(</span>len<span class="o">(</span>righe_helix<span class="o">))</span>                      <span class="c1"># 30</span>
+
+<span class="c1"># Estraggo dalle righe le posizioni di ciascuna elica</span>
+<span class="nv">eliche_inizio_fine</span> <span class="o">=</span> <span class="o">[[</span>int<span class="o">(</span>riga.split<span class="o">()[</span><span class="m">5</span><span class="o">])</span>, int<span class="o">(</span>riga.split<span class="o">()[</span><span class="m">8</span><span class="o">])]</span>
+<span class="c1">#                      ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^</span>
+<span class="c1">#                           inizio elica         fine elica</span>
+                      <span class="k">for</span> riga in righe_helix<span class="o">]</span>
+
+<span class="c1"># In un secondo passaggio (per comodita&#39;) calcolo</span>
+<span class="c1"># il risultato voluto</span>
+<span class="nv">info_eliche</span> <span class="o">=</span> <span class="o">[</span>coppia + <span class="o">[</span>coppia<span class="o">[</span><span class="m">1</span><span class="o">]</span> - coppia<span class="o">[</span><span class="m">0</span><span class="o">]</span> + <span class="m">1</span><span class="o">]</span>
+<span class="c1">#              ^^^^^^   ^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span class="c1">#           [inizio, fine]       lunghezza</span>
+               <span class="k">for</span> coppia in eliche_inizio_fine<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">matrice</span> <span class="o">=</span> <span class="o">[</span>list<span class="o">(</span>range<span class="o">(</span><span class="m">0</span>,3<span class="o">))</span>, list<span class="o">(</span>range<span class="o">(</span><span class="m">3</span>,6<span class="o">))</span>, list<span class="o">(</span>range<span class="o">(</span><span class="m">6</span>,9<span class="o">))]</span>
+
+
+<span class="c1"># estraggo la prima riga</span>
+<span class="nv">prima_riga</span> <span class="o">=</span> matrice<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+
+
+<span class="c1"># estraggo la prima colonna</span>
+<span class="nv">prima_colonna</span> <span class="o">=</span> <span class="o">[</span>matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span>i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)]</span>
+
+
+<span class="c1"># inverto l&#39;ordine delle righe</span>
+<span class="nv">sottosopra</span> <span class="o">=</span> matrice<span class="o">[</span>:<span class="o">]</span>
+sottosopra.reverse<span class="o">()</span>
+<span class="c1"># oppure</span>
+<span class="nv">sottosopra</span> <span class="o">=</span> <span class="o">[</span>matrice<span class="o">[</span><span class="m">2</span>-i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)]</span>
+
+
+<span class="c1"># inverto l&#39;ordine delle colonne</span>
+<span class="nv">palindromo</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="c1"># appendo la prima riga di matrice invertita</span>
+palindromo.append<span class="o">([</span>matrice<span class="o">[</span><span class="m">0</span><span class="o">][</span><span class="m">2</span>-i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)])</span>
+<span class="c1"># appendo la seconda riga di matrice invertita</span>
+palindromo.append<span class="o">([</span>matrice<span class="o">[</span><span class="m">1</span><span class="o">][</span><span class="m">2</span>-i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)])</span>
+<span class="c1"># appendo la terza riga di matrice invertita</span>
+palindromo.append<span class="o">([</span>matrice<span class="o">[</span><span class="m">2</span><span class="o">][</span><span class="m">2</span>-i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)])</span>
+
+<span class="c1"># oppure in un solo passaggio -- ma e&#39; complicato e potete ignorarlo!!!</span>
+<span class="nv">palindromo</span> <span class="o">=</span> <span class="o">[[</span>riga<span class="o">[</span><span class="m">2</span>-i<span class="o">]</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">3</span><span class="o">)]</span>
+               <span class="k">for</span> riga in matrice<span class="o">]</span>
+
+
+<span class="c1"># ricreo matrice con una sola list comprehension</span>
+<span class="nv">matrice_di_nuovo</span> <span class="o">=</span> <span class="o">[</span>list<span class="o">(</span>range<span class="o">(</span>i, i+3<span class="o">))</span> <span class="k">for</span> i in range<span class="o">(</span><span class="m">9</span><span class="o">)</span>
+                    <span class="k">if</span> i % <span class="nv">3</span> <span class="o">==</span> <span class="m">0</span><span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span><span class="nv">lista</span> <span class="o">=</span> list<span class="o">(</span>range<span class="o">(</span><span class="m">100</span><span class="o">))</span>
+
+<span class="nv">lista_quadrati</span> <span class="o">=</span> <span class="o">[</span>numero**2 <span class="k">for</span> numero in numeri<span class="o">]</span>
+
+<span class="nv">lista_differenze_quadrati</span> <span class="o">=</span> <span class="se">\</span>
+    <span class="o">[</span>lista_quadrati<span class="o">[</span>i+1<span class="o">]</span> - lista_quadrati<span class="o">[</span>i<span class="o">]</span>
+     <span class="k">for</span> i in range<span class="o">(</span>len<span class="o">(</span>lista_quadrati<span class="o">)</span> - <span class="m">1</span><span class="o">)]</span>
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -3966,6 +4798,703 @@ res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
 </pre></div>
 </div>
 <p><strong>L’esercizio è interamente risolvibile con quello cha abbiamo fatto fino a qui</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-dizionari">
+<h1>Python: Dizionari<a class="headerlink" href="#python-dizionari" title="Permalink to this headline">¶</a></h1>
+<p>I dizionari rappresentano <em>mappe</em> tra oggetti: mappano una <em>chiave</em> nel
+valore corrispondente.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">I dizionari sono <strong>mutabili</strong>!</p>
+</div>
+<p>Per definire un dizionario scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>codice = {
+    &quot;UUU&quot;: &quot;F&quot;,     # fenilalanina
+    &quot;UCU&quot;: &quot;S&quot;,     # serina
+    &quot;UAU&quot;: &quot;Y&quot;,     # tirosina
+    &quot;UGU&quot;: &quot;C&quot;,     # cisteina
+    &quot;UUC&quot;: &quot;F&quot;,     # fenilalanina
+    &quot;UCC&quot;: &quot;S&quot;,     # serina
+    &quot;UAC&quot;: &quot;Y&quot;,     # tirosina
+    # ...
+}
+</pre></div>
+</div>
+<p>Qui <code class="docutils literal notranslate"><span class="pre">codice</span></code> implementa il codice genetico, che mappa da stringhe di tre
+lettere (le <em>chiavi</em>) al nome dell’aminoacido corrispondente (i <em>valori</em>).</p>
+<p>La sintassi e’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>{ chiave1: valore1, chiave2: valore2, ...}
+</pre></div>
+</div>
+<p>Uso un dizionario in questo modo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>aa_di_uuu = codice[&quot;UUU&quot;]
+print(aa_di_uuu)             # &quot;phenylalanine&quot;
+
+aa_di_ucu = codice[&quot;UCU&quot;]
+print(aa_di_ucu)             # &quot;serine&quot;
+</pre></div>
+</div>
+<p><strong>PROVIAMO INSIEME</strong></p>
+<p>Posso usare questo dizionario per “simulare” il processo della traduzione. Ad
+esempio, partendo da una sequenza di mRNA:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>rna = &quot;UUUUCUUAUUGUUUCUCC&quot;
+</pre></div>
+</div>
+<p>la spezzo in triplette:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>triplette = [rna[i:i+3] for i in range(0, len(rna), 3)]
+</pre></div>
+</div>
+<p>ottenendo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(triplette)
+[&#39;UUU&#39;, &#39;UCU&#39;, &#39;UAU&#39;, &#39;UGU&#39;, &#39;UUC&#39;, &#39;UCC&#39;]
+</pre></div>
+</div>
+<p>ed a questo punto posso fare:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>proteina = &quot;&quot;.join([codice[tripletta] for tripletta in triplette])
+</pre></div>
+</div>
+<p>ottenendo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(proteina)
+&quot;FSYCFS&quot;
+</pre></div>
+</div>
+<p>La differenza piu’ notevole rispetto alla vera traduzione e’ che il nostro
+codice non rispetta i codoni di terminazione, ma e’ un difetto correggibile.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Le chiavi non possono essere ripetute, i valori si’!</p>
+<p>Nell’esempio sopra, ogni chiave e’ una tripletta ed e’ associata ad un
+unico valore, ma lo stesso valore puo’ essere associato a piu’ chiavi:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(codice[&quot;UCU&quot;])            # &quot;S&quot;, serina
+print(codice[&quot;UCC&quot;])            # &quot;S&quot;, serina
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>PROVATE VOI</strong></p>
+<p><strong>Esempio</strong>. Creo un dizionario che mappa ogni aminoacido nel suo volume
+(approssimato, in Amstrong cubici):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>volume_di = {
+    &quot;A&quot;:  67.0, &quot;C&quot;:  86.0, &quot;D&quot;:  91.0,
+    &quot;E&quot;: 109.0, &quot;F&quot;: 135.0, &quot;G&quot;:  48.0,
+    &quot;H&quot;: 118.0, &quot;I&quot;: 124.0, &quot;K&quot;: 135.0,
+    &quot;L&quot;: 124.0, &quot;M&quot;: 124.0, &quot;N&quot;:  96.0,
+    &quot;P&quot;:  90.0, &quot;Q&quot;: 114.0, &quot;R&quot;: 148.0,
+    &quot;S&quot;:  73.0, &quot;T&quot;:  93.0, &quot;V&quot;: 105.0,
+    &quot;W&quot;: 163.0, &quot;Y&quot;: 141.0,
+}
+
+# Stampo il volume della citosina
+print(volume_di[&quot;C&quot;])                    # 86.0
+print(type(volume_di[&quot;C&quot;]))              # float
+</pre></div>
+</div>
+<p>Qui le chiavi sono di tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (immutabili) ed i valori sono dei <code class="docutils literal notranslate"><span class="pre">float</span></code>
+(sempre immutabili).</p>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Non ci sono restrizioni sul tipo degli oggetti che si possono usare
+come <em>valori</em>. Come <em>chiavi</em> invece si possono usare solo oggetti
+immutabili!</p>
+<p>Riassumo in che modo possono essere usati i vari tipi:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tipo</th>
+<th class="head">Come chiavi</th>
+<th class="head">Come valori</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bool</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>int</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>float</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>str</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>list</td>
+<td><strong>NO</strong></td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>tuple</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>dict</td>
+<td><strong>NO</strong></td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>set</td>
+<td><strong>NO</strong></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Si veda l’esempio seguente.</p>
+</div>
+<p><strong>Esempio</strong>. Creo un dizionario che mappa da ogni aminoacido ad una lista
+di due proprieta’: massa e volume:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>proprieta_di = {
+    &quot;A&quot;: [ 89.09,  67.0],
+    &quot;C&quot;: [121.15,  86.0],
+    &quot;D&quot;: [133.10,  91.0],
+    &quot;E&quot;: [147.13, 109.0],
+    # ...
+}
+
+# Stampo massa e volume dell&#39;alanina
+print(proprieta_di[&quot;A&quot;])                 # [89.09, 67.0]
+print(type(proprieta_di[&quot;A&quot;]))           # list
+</pre></div>
+</div>
+<p>Qui le chiavi sono <code class="docutils literal notranslate"><span class="pre">str</span></code> (immutabili) ed i valori sono <code class="docutils literal notranslate"><span class="pre">list</span></code> (mutabili).</p>
+<p><strong>Le liste non possono essere chiavi, infatti</strong></p>
+<p>Provo a creare il dizionario inverso (limitandomi al primo elemento per
+semplicita’):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>da_proprieta_ad_aa = { [89.09, 67.0]: &quot;A&quot; }
+</pre></div>
+</div>
+<p>Mi aspetto che questo dizionario mappi dalla lista:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>[89.09, 67.0]
+</pre></div>
+</div>
+<p>ad <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>. Pero’ quando provo a crearlo Python da’ errore:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unhashable type: &#39;list&#39;
+#          ^^^^^^^^^^^^^^^^^^^^^^^
+#             list e&#39; mutabile!
+</pre></div>
+</div>
+<p>Questo succede perche’ le chiavi hanno tipo <code class="docutils literal notranslate"><span class="pre">list</span></code>, che  non e’ immutabile!</p>
+<p>Per risolvere il problema posso usare, al posto di liste, delle tuple:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>da_proprieta_ad_aa = {
+    ( 89.09,  67.0): &quot;A&quot;,
+    (121.15,  86.0): &quot;C&quot;,
+    (133.10,  91.0): &quot;D&quot;,
+    (147.13, 109.0): &quot;E&quot;,
+    # ...
+}
+
+aa = da_proprieta_ad_aa[(133.10,  91.0)]
+print(aa)                                # &quot;D&quot;
+print(type(aa))                          # str
+</pre></div>
+</div>
+<p>Ora le chiavi sono <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, immutabili, e va tutto bene.</p>
+<p><strong>PROVATE VOI</strong></p>
+<ol class="arabic simple">
+<li>Scrivete un dizionario con 4 chiavi (da 0 a 4), dove il valore rappresenta il quadrato della chiave</li>
+<li><dl class="first docutils">
+<dt>iterate sulla seguente lista</dt>
+<dd>lista = [1,3,1,1,0,2]</dd>
+</dl>
+</li>
+<li>e stampate a video il valore del dizionario usando le chiavi che incontrate nella lista</li>
+<li>output 1,9,1,1,0,4</li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="id18">
+<h2>Operazioni<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="28%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Operatore</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">len(dict)</span></code></td>
+<td>Restituisce il numero di coppie chiave-valore</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">object</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">dict[object]</span></code></td>
+<td>Restituisce il valore associato ad una chiave</td>
+</tr>
+<tr class="row-even"><td>–</td>
+<td><code class="docutils literal notranslate"><span class="pre">dict[object]=object</span></code></td>
+<td>Inserisce o sostituisce una coppia chiave-valore</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Partendo dal dizionario vuoto:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>codice = {}
+
+print(codice)                        # {}
+print(len(codice))                   # 0
+</pre></div>
+</div>
+<p>ricreo il dizionario del primo esempio inserendo a mano tutte le coppie
+chiave-valore:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>codice[&quot;UUU&quot;] = &quot;F&quot;                 # fenilalanina
+codice[&quot;UCU&quot;] = &quot;M&quot;                 # metionina
+codice[&quot;UAU&quot;] = &quot;Y&quot;                 # tirosina
+# ...
+
+print(codice)
+print(len(codice))
+</pre></div>
+</div>
+<p>Mi accorgo di avere fatto un errore qui sopra: <code class="docutils literal notranslate"><span class="pre">&quot;UCU&quot;</span></code> dovrebbe corrispondere
+a <code class="docutils literal notranslate"><span class="pre">&quot;S&quot;</span></code> (serina), non a <code class="docutils literal notranslate"><span class="pre">&quot;M&quot;</span></code> (metionina). Come faccio a correggere l’errore?</p>
+<p>Risposta: sostituendo il valore corrispondente alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;UCU&quot;</span></code> con quello
+corretto:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>codice[&quot;UCU&quot;] = &quot;S&quot;                 # serina
+</pre></div>
+</div>
+<p>Qui alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;UCU&quot;</span></code>, che gia’ era nel dizionario, associo un nuovo valore
+<code class="docutils literal notranslate"><span class="pre">&quot;S&quot;</span></code> (serina).</p>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Se provo ad ottenere il valore di una chiave non presente nel dizionario:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codice</span><span class="p">[</span><span class="s2">&quot;:-(&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Python da’ errore:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &quot;:-(&quot;
+#         ^^^^^
+#          questa e&#39; la chiave che non esiste
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h2>Metodi<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="28%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Metodo</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">object</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">dict.get(k,</span> <span class="pre">[default])</span></code></td>
+<td>Resituisce il valore della chiave, oppure il default</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">object</span> <span class="pre">in</span> <span class="pre">dict</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">True</span></code> se la chiave e’ nel dizionario</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict_keys</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code></td>
+<td>Restituisce una <strong>vista</strong> sulle chiavi</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">dict_values</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">dict.values()</span></code></td>
+<td>Restituisce una <strong>vista</strong> sui valori</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">dict_items</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">dict.items()</span></code></td>
+<td>Restituisce una <strong>vista</strong> sulle coppie chiave-valore</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Partendo dal dizionario <code class="docutils literal notranslate"><span class="pre">codice</span></code> definito nel primo esercizio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>codice = {
+    &quot;UUU&quot;: &quot;F&quot;,     # fenilalanina
+    &quot;UCU&quot;: &quot;S&quot;,     # serina
+    &quot;UAU&quot;: &quot;Y&quot;,     # tirosina
+    &quot;UGU&quot;: &quot;C&quot;,     # cisteina
+    &quot;UUC&quot;: &quot;F&quot;,     # fenilalanina
+    &quot;UCC&quot;: &quot;S&quot;,     # serina
+    &quot;UAC&quot;: &quot;Y&quot;,     # tirosina
+    # ...
+}
+</pre></div>
+</div>
+<p>posso ottenere le chiavi cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; chiavi = codice.keys()
+&gt;&gt;&gt; print(chiavi)
+dict_keys([&quot;UUU&quot;, &quot;UCU&quot;, &quot;UAU&quot;, ...])
+</pre></div>
+</div>
+<p>ed i valori cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; valori = codice.values()
+&gt;&gt;&gt; print(valori)
+dict_values([&quot;F&quot;, &quot;S&quot;, Y&quot;, &quot;C&quot;, ...])
+</pre></div>
+</div>
+<p>oppure sia chiavi che valori cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; coppie_chiave_valore = codice.items()
+&gt;&gt;&gt; print(coppie_chiave_valore)
+dict_items([(&quot;UUU&quot;, &quot;F&quot;), (&quot;UCU&quot;, &quot;S&quot;), ...])
+</pre></div>
+</div>
+<p>Infine posso controllare se una certa chiave sta nel dizionario:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(&quot;UUU&quot; in codice)
+True
+&gt;&gt;&gt; print(&quot;:-(&quot; in codice)
+False
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Non c’e’ <em>alcuna garanzia</em> che un dizionario preservi l’ordine in cui
+vengono inseriti gli elementi.</p>
+<p>Ad esempio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; d = {}
+&gt;&gt;&gt; d[&quot;z&quot;] = &quot;zeta&quot;
+&gt;&gt;&gt; d[&quot;a&quot;] = &quot;a&quot;
+&gt;&gt;&gt; d
+{&#39;a&#39;: &#39;a&#39;, &#39;z&#39;: &#39;zeta&#39;}
+&gt;&gt;&gt; list(d.keys())
+[&#39;a&#39;, &#39;z&#39;]
+&gt;&gt;&gt; list(d.values())
+[&#39;a&#39;, &#39;zeta&#39;]
+&gt;&gt;&gt; list(d.items())
+[(&#39;a&#39;, &#39;a&#39;), (&#39;z&#39;, &#39;zeta&#39;)]
+</pre></div>
+</div>
+<p class="last">Qui ho inserito prima <code class="docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> e poi <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, ma quando estraggo dal
+dizionario <code class="docutils literal notranslate"><span class="pre">d</span></code> le chiavi, i valori e le coppie chiave-valore,
+l’ordine in cui mi restituisce <code class="docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> ed <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> e’ invertito!</p>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Posso usare un dizionario per rappresentare un oggetto
+strutturato, ad esempio le proprieta’ di una catena proteica:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>chain = {
+    &quot;name&quot;: &quot;1A3A&quot;,
+    &quot;chain&quot;: &quot;B&quot;,
+    &quot;sequence&quot;: &quot;MANLFKLGAENIFLGRKAATK...&quot;,
+    &quot;num_scop_domains&quot;: 4,
+    &quot;num_pfam_domains&quot;: 1,
+}
+
+print(chain[&quot;name&quot;])
+print(chain[&quot;sequence&quot;])
+print(chain[&quot;num_scop_domains&quot;])
+</pre></div>
+</div>
+<p>Scrivere <em>a mano</em> dizionari come questo e’ sconveniente, ma quando leggeremo
+informazioni da file (possibilmente da interi database biologici), avere sotto
+mano dizionari fatti cosi’ puo’ essere molto comodo.</p>
+<p>(Soprattutto se sopra ci costruiamo algoritmi per analizzare in modo automatico
+i dati!)</p>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Dato il sequente testo in FASTA (accorciato per motivi di spazio)
+che descrive la sequenza primaria della <a class="reference external" href="http://www.rcsb.org/pdb/101/motm.do?momID=33">retrotranscriptasi</a> del virus HIV-1:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;2HMI:A|PDBID|CHAIN|SEQUENCE
+PISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKI
+NKRTQDFWEVQLGIPHPAGLKKKKSVTVLDVGDAYFSVPLDEDFRKYTAF
+QSSMTKILEPFKKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLL
+VQPIVLPEKDSWTVNDIQKLVGKLNWASQIYPGIKVRQLSKLLRGTKALT
+PSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMRGAHTNDVKQLTE
+WWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIVGAETFYVDGAANRET
+AIYLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVNQIIEQLIKKEK
+&gt;2HMI:B|PDBID|CHAIN|SEQUENCE
+PISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKI
+NKRTQDFWEVQLGIPHPAGLKKKKSVTVLDVGDAYFSVPLDEDFRKYTAF
+QSSMTKILEPFKKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLL
+VQPIVLPEKDSWTVNDIQKLVGKLNWASQIYPGIKVRQLSKLLRGTKALT
+PSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMRGAHTNDVKQLTE
+WWTEYWQATWIPEWEFVNTPPLVKLWYQLE
+&gt;2HMI:C|PDBID|CHAIN|SEQUENCE
+DIQMTQTTSSLSASLGDRVTISCSASQDISSYLNWYQQKPEGTVKLLIYY
+EDFATYYCQQYSKFPWTFGGGTKLEIKRADAAPTVSIFPPSSEQLTSGGA
+NSWTDQDSKDSTYSMSSTLTLTADEYEAANSYTCAATHKTSTSPIVKSFN
+&gt;2HMI:D|PDBID|CHAIN|SEQUENCE
+QITLKESGPGIVQPSQPFRLTCTFSGFSLSTSGIGVTWIRQPSGKGLEWL
+FLNMMTVETADTAIYYCAQSAITSVTDSAMDHWGQGTSVTVSSAATTPPS
+TVTWNSGSLSSGVHTFPAVLQSDLYTLSSSVTVPSSTWPSETVTCNVAHP
+&gt;2HMI:E|PDBID|CHAIN|SEQUENCE
+ATGGCGCCCGAACAGGGAC
+&gt;2HMI:F|PDBID|CHAIN|SEQUENCE
+GTCCCTGTTCGGGCGCCA
+</pre></div>
+</div>
+<p>Le sequenza e’ presa dalla Protein Data Bank, struttura <a class="reference external" href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2hmi">2HMI</a>.</p>
+<p><strong>PROVATE VOI</strong>
+Trasformate il testo sopra in un dizionario come quello seguente:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sequenze_2HMI = {
+    &quot;A&quot;: &quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI...&quot;,
+    &quot;B&quot;: &quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI...&quot;,
+    &quot;C&quot;: &quot;DIQMTQTTSSLSASLGDRVTISCSASQDISS...&quot;,
+    &quot;D&quot;: &quot;QITLKESGPGIVQPSQPFRLTCTFSGFSLST...&quot;,
+    &quot;E&quot;: &quot;ATGGCGCCCGAACAGGGAC&quot;,
+    &quot;F&quot;: &quot;GTCCCTGTTCGGGCGCCA&quot;,
+}
+</pre></div>
+</div>
+<p>Dato questo dizionario posso estrarre facilmente la sequenza di ogni
+singola catena della struttura 2HMI:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(sequenze_2HMI[&quot;F&quot;])
+&quot;GTCCCTGTTCGGGCGCCA&quot;
+</pre></div>
+</div>
+<p>calcolare di quante catene e’ composta la struttura:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>num_catene = len(sequenze_2HMI)
+</pre></div>
+</div>
+<p>calcolare statistiche sulla co-occorrenza di aminoacidi, provare a
+predire le strutture secondarie, allineare le sequenze contro qualche
+database…</p>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. I dizionari sono utili anche per descrivere <em>istogrammi</em>. Ad
+esempio, supponiamo di avere una sequenza:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>seq = &quot;GTCCCTGTTCGGGCGCCA&quot;
+</pre></div>
+</div>
+<p>Calcolo le proporzioni dei vari nucleotidi:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>num_A = seq.count(&quot;A&quot;)                          # 1
+num_T = seq.count(&quot;T&quot;)                          # 4
+num_C = seq.count(&quot;C&quot;)                          # 7
+num_G = seq.count(&quot;G&quot;)                          # 6
+</pre></div>
+</div>
+<p>Voglio catturare questa informazione statistica in un <em>istogramma</em>. Lo
+implemento cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>istogramma = {
+    &quot;A&quot;: num_A / len(seq),               # 1 / 18 ~ 0.06
+    &quot;T&quot;: num_T / len(seq),               # 4 / 18 ~ 0.22
+    &quot;C&quot;: num_C / len(seq),               # 7 / 18 ~ 0.38
+    &quot;G&quot;: num_G / len(seq),               # 6 / 18 ~ 0.33
+}
+</pre></div>
+</div>
+<p>A questo punto posso recuperare la proporzione dei vari nucelotidi
+dall’istogramma:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prop_A = istogramma[&quot;A&quot;]
+print(prop)
+</pre></div>
+</div>
+<p>Posso anche verificare che l’istogramma definisca una distribuzione di
+probabilita’ (approssimata), cioe’ che la somma delle proporzioni dia 1:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(istogramma[&quot;A&quot;] + istogramma[&quot;C&quot;] + ...)
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Possiamo codificare una rete (in questo esempio fittizia) di
+interazioni fisiche o funzionali tra proteine cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>partners_di = {
+    &quot;2JWD&quot;: (&quot;1A3A&quot;,),
+    &quot;1A3A&quot;: (&quot;2JWD&quot;, &quot;2ZTI&quot;, &quot;3BLU&quot;),
+    &quot;2ZTI&quot;: (&quot;1A3A&quot;, &quot;3BLF&quot;),
+    &quot;3BLU&quot;: (&quot;1A3A&quot;, &quot;3BLF&quot;),
+    &quot;3BLF&quot;: (&quot;3BLU&quot;, &quot;2ZTI&quot;),
+}
+</pre></div>
+</div>
+<p>che rappresenta la rete:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>2JWD ---------- 1A3A ---------- 2ZTI
+                 |               |
+                 |               |
+                3BLU ---------- 3BLF
+</pre></div>
+</div>
+<p>Qui <code class="docutils literal notranslate"><span class="pre">partners_di[&quot;1A3A&quot;]</span></code>, ad esempio, e’ una tupla dove abbiamo messo tutti
+i binding partners della proteina 1A3A.</p>
+<p>Possiamo usare questo dizionario per trovare tutti i binding partners dei
+binding partners di 1A3A, e oltre:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># Estraggo i partner di 1A3A
+partners = partners_di[&quot;1A3A&quot;]
+
+# Estraggo i partner dei partner di 1A3A
+partners_2_step = partners_di[partners[0]] + \
+                  partners_di[partners[1]] + \
+                  ...
+                  partners_di[partners[-1]]
+
+# Estraggo i parner dei partner dei partner di 1A3A
+partners_3_step = partners_di[partners_2_step[0]] + \
+                  partners_di[partners_2_step[1]] + \
+                  ...
+                  partners_di[partners_2_step[-1]]
+</pre></div>
+</div>
+<p>La stessa struttura si puo’ usare per codificare reti sociali (Facebook,
+Twitter, Google+, <em>etc.</em>) e trovare chi e’ amico (o segue) chi, o per
+individuare comunita’ di persone che si conoscono tra loro.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ci sono molti altri modi di codificare reti. Un’alternativa al dizionario
+di cui sopra, e’ la <a class="reference external" href="https://en.wikipedia.org/wiki/Adjacency_matrix">matrice di adiacenza</a>,
+che si puo’ implementare come una lista di liste.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id20">
+<h2>Esercizi<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Creare <em>a mano</em>:</p>
+<ol class="arabic">
+<li><p class="first">Un dizionario vuoto. Controllare che sia vuoto con <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+</li>
+<li><p class="first">Un dizionario <code class="docutils literal notranslate"><span class="pre">pronomi</span></code> che rappresenta queste corrispondenze:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>1 -&gt; &quot;io&quot;
+2 -&gt; &quot;tu&quot;
+3 -&gt; &quot;egli&quot;
+...
+</pre></div>
+</div>
+<p>Crearlo in due modi:</p>
+<ol class="arabic simple">
+<li>In una sola riga di codice.</li>
+<li>Partendo da un dizionario vuoto ed aggiungendo passo passo
+tutte le coppie chiave valore.</li>
+</ol>
+</li>
+<li><p class="first">Un dizionario <code class="docutils literal notranslate"><span class="pre">decuplo_di</span></code> che implementa la funzione <span class="math">f(n) = 10 n</span>, che
+associa ogni chiave (un intero) al suo decuplo.</p>
+<p>Le chiavi devono essere gli interi da 1 a 5.</p>
+<p>Una volta costruito il dizionario, applicarlo a tutti gli elementi
+di <code class="docutils literal notranslate"><span class="pre">range(2,</span> <span class="pre">5)</span></code> con una <em>list comprehension</em> e stampare a schermo
+il risultato.</p>
+<p>Poi fare la stessa cosa, pero’ per tutte le chiavi di <code class="docutils literal notranslate"><span class="pre">decuplo_di</span></code>.</p>
+<p><em>Hint</em>: la vista sulle chiavi si puo’ ottenere con <code class="docutils literal notranslate"><span class="pre">keys()</span></code>.</p>
+</li>
+<li><p class="first">Un dizionario <code class="docutils literal notranslate"><span class="pre">info_2TMV</span></code> che codifica informazioni strutturate sulla struttura PDB
+<a class="reference external" href="http://www.rcsb.org/pdb/explore/explore.do?structureId=2tmv">2TMV</a>
+della capside del <a class="reference external" href="http://www.rcsb.org/pdb/101/motm.do?momID=109">Tobacco Mosaic Virus</a>.</p>
+<ol class="arabic simple">
+<li>Alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;pdb_id&quot;</span></code> associate il valore <code class="docutils literal notranslate"><span class="pre">&quot;2TMV&quot;</span></code>.</li>
+<li>Alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;uniprot_id&quot;</span></code> associate il valore <code class="docutils literal notranslate"><span class="pre">&quot;P69687</span> <span class="pre">(CAPSD_TMV)&quot;</span></code>.</li>
+<li>Alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;numero_domini_scp&quot;</span></code> associate <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+<li>Alla chiave <code class="docutils literal notranslate"><span class="pre">&quot;numero_domini_pfam&quot;</span></code> associate <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ol>
+</li>
+<li><p class="first">Un dizionario <code class="docutils literal notranslate"><span class="pre">parenti_di</span></code> che rappresenta questa rete:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>GIULIA ---- FRANCO ---- MATTEO
+  |                       |
+  + ----- BENEDETTA ------+
+</pre></div>
+</div>
+<p>come nell’esempio visto in precedenza.</p>
+<p>Una volta costruito il dizionario, stampare a schermo il numero
+di parenti di <code class="docutils literal notranslate"><span class="pre">&quot;GIULIA&quot;</span></code>.</p>
+</li>
+<li><p class="first">Un dizionario <code class="docutils literal notranslate"><span class="pre">da_2_bit_a_intero</span></code> che rappresenta la mappa dalle
+seguenti coppie di interi ad intero:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>0, 0 -&gt; 0                           # 0*2**1 + 0*2**0 = 0
+0, 1 -&gt; 1                           # 0*2**1 + 1*2**0 = 1
+1, 0 -&gt; 2                           # 1*2**1 + 0*2**0 = 2
+1, 1 -&gt; 3                           # 1*2**1 + 1*2**1 = 3
+^^^^    ^                             ^^^^^^^^^^^^^^^^^^^
+chiave  valore                            spiegazione
+</pre></div>
+</div>
+<p>Una volta creato il dizionario, stampare a schermo il valore
+corrispondente ad una delle quattro chiavi date (a scelta).</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Dato:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>rapporti = {
+    (&quot;A&quot;, &quot;T&quot;): 10.0 / 5.0,
+    (&quot;A&quot;, &quot;C&quot;): 10.0 / 7.0,
+    (&quot;A&quot;, &quot;G&quot;): 10.0 / 6.0,
+    (&quot;T&quot;, &quot;C&quot;): 5.0 / 7.0,
+    (&quot;T&quot;, &quot;G&quot;): 5.0 / 6.0,
+    (&quot;C&quot;, &quot;G&quot;): 7.0 / 6.0,
+}
+</pre></div>
+</div>
+<p>che rappresenta rapporti tra il numero di A, T, C, e G in una
+sequenza:</p>
+<ol class="arabic">
+<li><p class="first">Che differenza c’e’ tra <code class="docutils literal notranslate"><span class="pre">len(rapporti)</span></code>, <code class="docutils literal notranslate"><span class="pre">len(rapporti.keys())</span></code>,
+<code class="docutils literal notranslate"><span class="pre">len(rapporti.values())</span></code> e <code class="docutils literal notranslate"><span class="pre">len(rapporti.items())</span></code>?</p>
+</li>
+<li><p class="first">Controllare se <code class="docutils literal notranslate"><span class="pre">rapporti</span></code> contiene la chiave <code class="docutils literal notranslate"><span class="pre">(&quot;T&quot;,</span> <span class="pre">&quot;A&quot;)</span></code>. E la
+chiave <code class="docutils literal notranslate"><span class="pre">(&quot;C&quot;,</span> <span class="pre">&quot;G&quot;)</span></code>?</p>
+<p><em>Hint</em>: posso usare <code class="docutils literal notranslate"><span class="pre">keys()</span></code>? Posso usare un altro metodo?</p>
+</li>
+<li><p class="first">Controllare se contiene il valore 2. E il valore 3?</p>
+<p><em>Hint</em>: posso usare <code class="docutils literal notranslate"><span class="pre">values()</span></code>?</p>
+</li>
+<li><p class="first">Controllare se contiene la coppia chiave-valore <code class="docutils literal notranslate"><span class="pre">((&quot;A&quot;,</span> <span class="pre">&quot;T&quot;),</span> <span class="pre">2)</span></code>.
+E la coppia chiave-valore <code class="docutils literal notranslate"><span class="pre">((&quot;C&quot;,</span> <span class="pre">&quot;G&quot;),</span> <span class="pre">1000)</span></code>?</p>
+<p><em>Hint</em>: posso usare <code class="docutils literal notranslate"><span class="pre">items()</span></code>?</p>
+</li>
+<li><p class="first">Usare una <em>list comprehension</em> per estrarre le chiavi dal risultato
+di <code class="docutils literal notranslate"><span class="pre">items()</span></code>. Poi fare la stessa cosa con le chiavi.</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Dato:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>mappa = {
+    &quot;zero&quot;: 1,
+    &quot;uno&quot;: 2,
+    &quot;due&quot;: 4,
+    &quot;tre&quot;: 8,
+    &quot;quattro&quot;: 16,
+    &quot;cinque&quot;: 32,
+}
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Concatenare tutte le chiavi di <code class="docutils literal notranslate"><span class="pre">mappa</span></code>, separate da spazi, in una
+sola stringa <code class="docutils literal notranslate"><span class="pre">stringa_delle_chiavi</span></code>.</p>
+</li>
+<li><p class="first">Concatenare tutti i valori di <code class="docutils literal notranslate"><span class="pre">mappa</span></code> come stringhe, separate da
+spazi, in una sola stringa <code class="docutils literal notranslate"><span class="pre">stringa_dei_valori</span></code>.</p>
+<p><em>Hint</em>: occhio che i valori di <code class="docutils literal notranslate"><span class="pre">mappa</span></code> non sono stringhe!</p>
+</li>
+<li><p class="first">Mettere in una lista tutte le chiavi di <code class="docutils literal notranslate"><span class="pre">mappa</span></code>.</p>
+</li>
+<li><p class="first">Mettere in una lista tutte le chiavi di <code class="docutils literal notranslate"><span class="pre">mappa</span></code>, ordinate alfanumericamente.</p>
+<p><em>Hint</em>: la vista restituita da <code class="docutils literal notranslate"><span class="pre">keys()</span></code> e’ ordinata?</p>
+</li>
+<li><p class="first">Mettere in una lista tutti i valori di <code class="docutils literal notranslate"><span class="pre">mappa</span></code>, ordinati in base
+all’ordine delle chiavi corrispondenti.</p>
+<p><em>Hint</em>: come faccio ad ordinare una lista in base all’ordine di un’altra lista?</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Dato:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>traduzione_di = {&quot;a&quot;: &quot;ade&quot;, &quot;c&quot;: &quot;cyt&quot;, &quot;g&quot;: &quot;gua&quot;, &quot;t&quot;: &quot;tym&quot;}
+</pre></div>
+</div>
+<p>tradurre la lista:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>lista = [&quot;A&quot;, &quot;T&quot;, &quot;T&quot;, &quot;A&quot;, &quot;G&quot;, &quot;T&quot;, &quot;C&quot;]
+</pre></div>
+</div>
+<p>nella stringa:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&quot;ade tym tym ade gua tym cyt&quot;
+</pre></div>
+</div>
+<p><em>Hint</em>: occhio che le chiavi del dizionario sono minuscole, mentre gli
+elementi di <code class="docutils literal notranslate"><span class="pre">lista</span></code> sono maiuscoli! Partite assumendo che non lo siano,
+poi modificate il codice per tenere conto di questa idiosincrasia.</p>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -4052,6 +5581,18 @@ res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
 <li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=2657">Operazioni su Liste</a>.</li>
 <li><a class="reference external" href="https://youtu.be/Reya2krql5c?t=3031">Esercizi su operazioni</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-6">
+<h2>Laboratorio 6<a class="headerlink" href="#laboratorio-6" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=_zfeDKWlQDc&amp;list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;index=11&amp;t=3s">Parte A</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/_zfeDKWlQDc?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;t=1133">Metodi sulle liste</a>.</li>
+<li><a class="reference external" href="https://youtu.be/_zfeDKWlQDc?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;t=4048">Metodi stringhe-liste</a>.</li>
+</ul>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=gOZnV9OqC48&amp;list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;index=11">Parte B</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/gOZnV9OqC48?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;t=9">list comprehension</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -4125,10 +5666,21 @@ res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
 <li class="toctree-l2"><a class="reference internal" href="python_lists.html#id2">Esercizi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_lists.html#list-comprehension">List Comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_lists.html#id3">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_lists.html#python-liste-soluzioni">Python: Liste (Soluzioni)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_lists.html#soluzioni-operazioni">Soluzioni Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_lists.html#soluzioni-metodi">Soluzioni Metodi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_lists.html#soluzioni-metodi-stringhe-liste">Soluzioni Metodi Stringhe-Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_lists.html#soluzioni-list-comprehension">Soluzioni List Comprehension</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_test.html#esercizio">Esercizio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#operazioni">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#metodi">Metodi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#esercizi">Esercizi</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
@@ -4137,6 +5689,7 @@ res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-3">Laboratorio 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-4">Laboratorio 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-5">Laboratorio 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-6">Laboratorio 6</a></li>
 </ul>
 </li>
 </ul>

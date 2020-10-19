@@ -108,6 +108,12 @@ Note Introduttive
 |
 |
 
+.. highlight:: I dizionari
+
+.. include:: python_dictionaries.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -126,4 +132,5 @@ Note Introduttive
     python_strings.rst
     python_lists.rst
     python_test.rst
+    python_dictionaries.rst
     video.rst       
