@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_sets.html">Python: Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -4798,6 +4800,53 @@ res4 [0.23, 0.255, 0.24666666666666667, 0.2525, 0.248 ....
 </pre></div>
 </div>
 <p><strong>L’esercizio è interamente risolvibile con quello cha abbiamo fatto fino a qui</strong></p>
+</div>
+<div class="section" id="soluzione">
+<h2>Soluzione<a class="headerlink" href="#soluzione" title="Permalink to this headline">¶</a></h2>
+<p>Definisco la variabile DNA copiando e incollando la stringa sopra:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>DNA = &quot;tatgtaaactgccaaggtgaacgttggaatcacctcgtatgtgactcgcgtgtgacctggatactgtcaaaccaggtcaggaaagcctatgagtacgagc&quot;
+</pre></div>
+</div>
+<p>per poter risolvere il punto 1 è sufficiente contare le sequenze con il metodo count delle stringhe,
+e dividere per la lunghezza del DNA (len(DNA)):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>f_a = DNA.count(&quot;a&quot;)/len(DNA)
+f_c = DNA.count(&quot;c&quot;)/len(DNA)
+f_g = DNA.count(&quot;g&quot;)/len(DNA)
+f_t = DNA.count(&quot;t&quot;)/len(DNA)
+</pre></div>
+</div>
+<p>per concludere stampo il res 1:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(&quot;res1: &quot;,f_a,f_c,f_g,f_t)
+</pre></div>
+</div>
+<p>Per quanto riguarda il punto 2, devo poter ordianre la stringa. Per l’ordinamento noi abbiamo visto il sort un metodo degli array.
+Quindi converto in array (con il list comprehension), ordino(con il metodo sort), e per finire ricreo la stringa (metodo join):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>DNA_sort = [x for x in DNA]          # converto la lista in stringa
+DNA_sort.sort()                      # ordino la lista
+string_dna_sort = &quot;&quot;.join(DNA_sort)  # riunisco la lista ordinata in una stringa
+print(&quot;res2: &quot;,string_dna_sort)      # stampo la stringa
+</pre></div>
+</div>
+<p>Il punto 3 sembra essere un pò più complesso, ma in realtà è molto semplice. Posso usare il replace per sostituire gli aminoacidi
+con le loro frequnze, io per semplicità ci ho aggiunto pure uno spazio vuoto (che mi servirà dopo per fare lo split!):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>array_DNA = DNA.replace(&quot;a&quot;,str(f_a)+&quot; &quot;)         # replace di a con la sua freq
+array_DNA = array_DNA.replace(&quot;c&quot;,str(f_c)+&quot; &quot;)   # replace di a con la sua freq
+array_DNA = array_DNA.replace(&quot;g&quot;,str(f_g)+&quot; &quot;)   # replace di a con la sua freq
+array_DNA = array_DNA.replace(&quot;t&quot;,str(f_t)+&quot; &quot;)   # replace di a con la sua freq
+array_DNA = array_DNA.split(&quot; &quot;)                  # splitto la stringa e la trasformo in un array
+array_DNA = array_DNA[:-1]                        # rimuovo l&#39;ultimo elemento (perche è vuoto)
+print(&quot;res3: &quot;,array_DNA)                         # stampo il risultato
+</pre></div>
+</div>
+<p>In fine, per poter calcolare la media mobile, posso calcolare prima la somma degli elementi precedenti:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sum_array_DNA = [sum(array_DNA[:x+1]) for x in range(len(array_DNA))]
+</pre></div>
+</div>
+<p>in <strong>sum_array_DNA</strong> l’elemento i-esimo rappresenta la somma degli elementi dalla posizione 0 alla posizione i.
+Successivamente, posso calcolare la media mobile, dividendo l’ i-esimo elemento di <strong>sum_array_DNA</strong> per i:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>media_mobile = [sum_array_DNA[x]/(x+1) for x in range(len(sum_array_DNA))]
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -5495,6 +5544,646 @@ elementi di <code class="docutils literal notranslate"><span class="pre">lista</
 poi modificate il codice per tenere conto di questa idiosincrasia.</p>
 </li>
 </ol>
+</div>
+<div class="section" id="dizionari-soluzioni">
+<h2>Dizionari (Soluzioni)<a class="headerlink" href="#dizionari-soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>diz_vuoto = {}
+print(diz_vuoto)
+print(len(diz_vuoto))                        # 0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>pronomi = {}
+pronomi[1] = &quot;io&quot;
+pronomi[2] = &quot;tu&quot;
+pronomi[3] = &quot;egli&quot;
+pronomi[4] = &quot;noi&quot;
+pronomi[5] = &quot;voi&quot;
+pronomi[6] = &quot;essi&quot;
+</pre></div>
+</div>
+<p>oppure:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>pronomi = {
+    1: &quot;io&quot;, 2: &quot;tu&quot;, 3: &quot;egli&quot;,
+    4: &quot;noi&quot;, 5: &quot;voi&quot;, 6: &quot;essi&quot;,
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>decuplo_di = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50}
+
+print([decuplo_di[n] for n in range(2, 5)])
+
+print([decuplo_di[chiave] for chiave in decuplo_di.keys()])
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>info_2TMV = {
+    &quot;pdb_id&quot;: &quot;2TMV&quot;,
+    &quot;uniprot_id&quot;: &quot;P69687 (CAPSD_TMV)&quot;,
+    &quot;numero_domini_scp&quot;: 1,
+    &quot;numero_domini_pfam&quot;: 1,
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>parenti_di = {
+    &quot;GIULIA&quot;: [&quot;FRANCO&quot;, &quot;BENEDETTA&quot;],
+    &quot;FRANCO&quot;: [&quot;GIULIA&quot;, &quot;MATTEO&quot;],
+    &quot;MATTEO&quot;: [&quot;FRANCO&quot;, &quot;BENEDETTA&quot;],
+    &quot;BENEDETTA&quot;: [&quot;GIULIA&quot;, &quot;MATTEO&quot;],
+}
+
+num_parenti_di_giulia = len(parenti_di[&quot;GIULIA&quot;])
+print(num_parenti_di_giulia)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>da_2_bit_a_intero = {
+    (0, 0): 0,
+    (0, 1): 1,
+    (1, 0): 2,
+    (1, 1): 3,
+}
+</pre></div>
+</div>
+<p>Occhio che non posso usare delle liste come chiavi: le liste
+non sono immutabili!</p>
+<p>Scelgo di stampare il valore corrispondente a 1, 0:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(da_2_bit_a_intero[(1, 0)])
+#                       ^^^^^^
+#                        tupla
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>rapporti = {
+    (&quot;A&quot;, &quot;T&quot;): 10.0 / 3.0,
+    (&quot;A&quot;, &quot;C&quot;): 10.0 / 7.0,
+    (&quot;A&quot;, &quot;G&quot;): 10.0 / 6.0,
+    (&quot;T&quot;, &quot;C&quot;): 3.0 / 7.0,
+    (&quot;T&quot;, &quot;G&quot;): 3.0 / 6.0,
+    (&quot;C&quot;, &quot;G&quot;): 7.0 / 6.0,
+}
+
+
+print(len(rapporti))                             # 6
+print(len(rapporti.keys()))                      # 6
+print(len(rapporti.values()))                    # 6
+print(len(rapporti.items()))                     # 6
+# tutti contano il numero di coppie chiave-valore!
+
+
+# stampo le chiavi del dizionario per farmi un&#39;idea
+print(rapporti.keys())                           # e&#39; una vista su tuple!
+print(type(rapporti.keys()))                     # dict_keys
+print(type(rapporti.keys()[0]))                  # tuple
+
+contiene_T_A = (&quot;T&quot;, &quot;A&quot;) in rapporti.keys()
+print(contiene_T_A)                              # False
+
+contiene_C_G = (&quot;C&quot;, &quot;G&quot;) in rapporti.keys()
+print(contiene_C_G)                              # True
+
+# posso fare la stessa cosa direttamente con l&#39;oggetto dizionario:
+print((&quot;T&quot;, &quot;A&quot;) in rapporti)                    # False
+print((&quot;C&quot;, &quot;G&quot;) in rapporti)                    # True
+
+
+# stampo i valori del dizionario per farmi un&#39;idea
+print(rapporti.values())                         # e&#39; una vista su interi!
+print(type(rapporti.values()[0]))                # int
+
+contiene_2 = 2 in rapporti.values()
+print(contiene_2)                                # True
+
+contiene_3 = 3 in rapporti.values()
+print(contiene_3)                                # False
+
+
+# stampo le coppie chiave-valore per farmi un&#39;idea
+print(rapporti.items())
+# e&#39; una vista su coppie (tuple): il primo elemento, la chiave, e&#39;
+# una coppia esso stesso, il secondo e&#39; un intero
+
+print(((&quot;A&quot;, &quot;T&quot;), 2) in rapporti.items())       # True
+print(((&quot;C&quot;, &quot;G&quot;), 1000) in rapport.items())     # False
+
+
+# le list comprehension sono
+chiavi = [chiave_valore[0]
+          for chiave_valore in rapporti.items()]
+valori = [chiave_valore[-1]
+          for chiave_valore in rapporti.items()]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>mappa = {
+    &quot;zero&quot;: 1,
+    &quot;uno&quot;: 2,
+    &quot;due&quot;: 4,
+    &quot;tre&quot;: 8,
+    &quot;quattro&quot;: 16,
+    &quot;cinque&quot;: 32,
+}
+
+
+# le chiavi di mappa sono tutte stringhe, quindi keys() mi
+# restituisce una vista su stringhe: posso usare
+# direttamente join()
+stringa_delle_chiavi = &quot; &quot;.join(mappa.keys())
+
+
+# i valori di mappa sono interi, quindi non posso usare
+# join() direttamente: devo prima trasformare tutti i
+# valori da interi a stringhe
+stringa_dei_valori = &quot; &quot;.join(str(valore)
+                              for valore in mappa.values())
+
+
+vista_sulle_chiavi = mappa.keys()
+print(vista_sulle_chiavi)                        # non e&#39; ordinata
+
+
+lista_ordinata_delle_chiavi = list(mappa.keys())
+lista_ordinata_delle_chiavi.sort()
+print(lista_ordinata_delle_chiavi)               # ora e&#39; ordinata
+
+
+lista_dei_valori_ordinati_per_chiavi = \
+    [mappa[chiave] for chiave in lista_ordinata_delle_chiavi]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># usando una list comprehension posso applicare il dizionario
+# alla lista: qui e&#39; necessario usare lower() *prima* di
+# usare un aminoacido come chiave di traduzione_di!
+traduzione = [traduzione_di[aa.lower()] for aa in lista]
+print(traduzione)
+
+# a questo punto posso usare join() per concatenare le varie
+# parti
+risultato = &quot; &quot;.join(traduzione)
+print(risultato)
+</pre></div>
+</div>
+<p>oppure, in un solo comando:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(&quot; &quot;.join([traduzione_di[aa.lower()] for aa in lista]))
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-sets">
+<h1>Python: Sets<a class="headerlink" href="#python-sets" title="Permalink to this headline">¶</a></h1>
+<p>I set (insiemi) sono una collezione non ordinata di elementi senza ripetizioni.</p>
+<p>Per definire un insieme, posso scrivere:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sette_nani = {&quot;Brontolo&quot;, &quot;Pisolo&quot;, &quot;Dotto&quot;, ...}
+</pre></div>
+</div>
+<p>I set possono essere visti come dizionari di <em>sole chiavi</em>.</p>
+<p>La sintassi e’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>{ valore1, valore2, ...}
+</pre></div>
+</div>
+<p>Posso creare un set vuoto utilizzando la funzione <code class="docutils literal notranslate"><span class="pre">set</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>empty_set = set()
+print(type(empty_set))            # set
+print(len(empty_set))             # 0
+
+empty_set2 = {}
+print(type(empty_set2))           # dict
+</pre></div>
+</div>
+<p>La stessa funzione puo’ essere utilizzata per creare un set a partire da una lista:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>set_numeri = set([1, 2, 3])
+print(set_numeri)                 # {1, 2, 3}
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>I set possono essere utilizzati per rimuovere le ripetizioni da una lista::</dt>
+<dd>lista = [0, 1, 0, 0, 2, 0]
+insieme = set(lista)
+print(insieme)                    # {0, 1, 2}</dd>
+</dl>
+<hr class="docutils" />
+<div class="section" id="id21">
+<h2>Operazioni<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="28%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Operatore</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">len(set)</span></code></td>
+<td>Restituisce il numero di elementi nel set</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">object</span> <span class="pre">in</span> <span class="pre">set</span></code></td>
+<td>Controlla se l’elemento e’ presente nel set</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.add(object)</span></code></td>
+<td>Inserisce un elemento</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.update(list)</span></code></td>
+<td>Inserisce una lista di elementi</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.remove(object)</span></code></td>
+<td>Rimuove un elemento (errore se non presente)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">None</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.discard(object)</span></code></td>
+<td>Rimuove un elemento</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Partendo da un set vuoto:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri_fortunati = set()
+
+print(numeri_fortunati)              # set()
+print(len(numeri_fortunati))         # 0
+</pre></div>
+</div>
+<p>inserisco i primi cinque numeri naturali:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>primi_cinque = range(5)
+numeri_fortunati.update(primi_cinque)
+print(len(numeri_fortunati))         # 5
+</pre></div>
+</div>
+<p>inserisco i numeri pari tra 0 e 10 (incluso):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>pari = [x for x in range(11) if x % 2 == 0]
+numeri_fortunati.update(pari)
+print(len(numeri_fortunati))         # 8
+</pre></div>
+</div>
+<p>provo a rimuovere <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri_fortunati.discard(&quot;0&quot;)        # non fa nulla
+numeri_fortunati.remove(&quot;0&quot;)         # errore
+</pre></div>
+</div>
+<p>aggiungo la stringa <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code> al set e controllo che sia presente:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri_fortunati.add(&quot;0&quot;)
+&quot;0&quot; in numeri_fortunati              # True
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Come per i dizionari, c’e’ <em>alcuna garanzia</em> che un set preservi l’ordine in cui
+vengono inseriti gli elementi.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>I set sono oggetti <strong>mutabili</strong>, come nel caso delle liste conviene prestare attenzione per evitare situazioni spiacevoli, ad esempio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>pasto_completo = {&#39;antipasto&#39;, &#39;primo&#39;, &#39;secondo&#39;, &#39;dolce&#39;, &quot;caffe&#39;&quot;}
+
+pasto_ridotto = pasto_completo
+pasto_ridotto.remove(&#39;antipasto&#39;, &#39;dolce&#39;)
+
+print(pasto_completo)
+{&#39;primo&#39;, &#39;secondo&#39;, &quot;caffe&#39;&quot;}    # Doh!
+</pre></div>
+</div>
+<p>Per creare una copia di un set:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>L = {1, 2, 3}
+copia_di_L = set(L)
+copia_di_L.remove(2)
+print(copia_di_L)                 # {1, 3}
+print(L)                          # {1, 2, 3}
+</pre></div>
+</div>
+</div>
+<p><strong>PROVATE VOI Esercizi</strong></p>
+<ol class="arabic simple">
+<li>Creare:<ol class="arabic">
+<li>Un set vuoto <code class="docutils literal notranslate"><span class="pre">set_vuoto</span></code>. Controllare che sia vuoto con <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</li>
+<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10</span></code> contenente i primi 10 numeri naturali. Controllare se contiene 10, in caso contrario, inserirlo e ricontrollare che sia presente. Rimuoverlo nuovamente.</li>
+<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code> contenente i primi 10 numeri naturali, tranne 7 (partendo da <code class="docutils literal notranslate"><span class="pre">primi10</span></code> ma lasciandolo inalterato). Controllo che 7 sia presente in <code class="docutils literal notranslate"><span class="pre">primi10</span></code> e assente in <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>.</li>
+<li>Ricreare <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>, questa volta utilizzando una list comprehension.</li>
+</ol>
+</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="id22">
+<h2>Operazioni<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="30%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Operatore</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">set</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.union(set)</span></code></td>
+<td>Restituisce l’unione di due set</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">set</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.intersection(set)</span></code></td>
+<td>Restituisce l’intersezione tra due set</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">set</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set.difference(set)</span></code></td>
+<td>Restituisce la differenza tra due set</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Creo il set dei primi dieci numeri naturali:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>set_A = set(range(10))
+</pre></div>
+</div>
+<p>Creo il set dei multipli di 3 compresi tra 0 e 20:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>set_B = set([x for x in range(20) if x % 3 == 0])
+</pre></div>
+</div>
+<p>Creo l’unione di <code class="docutils literal notranslate"><span class="pre">set_A</span></code> e <code class="docutils literal notranslate"><span class="pre">set_B</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>unione = set_A.union(set_B)
+print(unione)                             # {0, 1, 2, 3, .., 8, 9, 12, 15, 18}
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="images/sets_union.png"><img alt="images/sets_union.png" class="align-center" src="images/sets_union.png" style="width: 322.7px; height: 222.6px;" /></a>
+<p>Ora creo l’intersezione di <code class="docutils literal notranslate"><span class="pre">set_A</span></code> e <code class="docutils literal notranslate"><span class="pre">set_B</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>intersezione = set_A.intersection(set_B)
+print(intersezione)                       # {0, 3, 6, 9}
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="images/sets_intersection.png"><img alt="images/sets_intersection.png" class="align-center" src="images/sets_intersection.png" style="width: 322.7px; height: 222.6px;" /></a>
+<p><strong>Nota</strong>: le operazioni di unione e intersezione sono simmetriche, per qualsiasi <code class="docutils literal notranslate"><span class="pre">set_A</span></code> e <code class="docutils literal notranslate"><span class="pre">set_B</span></code> vale:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>set_A.union(set_B) == set_B.union(set_A)                 # True
+set_A.intersection(set_B) == set_B.intersection(set_A)   # True
+</pre></div>
+</div>
+<p>Ottengo i numeri naturali tra 0 e 9 che <strong>NON</strong> sono multipli di 3:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>diff1 = set_A.difference(set_B)
+print(diff1)                              # {1, 2, 4, 5, 7, 8}
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="images/sets_difference.png"><img alt="images/sets_difference.png" class="align-center" src="images/sets_difference.png" style="width: 322.7px; height: 222.6px;" /></a>
+<p>Analogamente, ottengo i multipli di 3 fino al 18 che <strong>NON</strong> sono compresi tra 0 e 9:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>diff2 = set_B.difference(set_A)
+print(diff2)                              # {12, 15, 18}
+</pre></div>
+</div>
+<p><strong>Nota</strong> al contrario di unione ed intersezione, la differenza non e’ simmetrica!</p>
+</div>
+<div class="section" id="id23">
+<h2>Esercizi<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Per ogni testo, creare l’insieme delle parole che contiene (maiuscole/minuscole non contano):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>testo_A = &quot;Le due ore di informatica piu&#39; noiose della vostra vita&quot;
+testo_B = &quot;La vita e&#39; come una scatola di cioccolatini&quot;
+testo_C = &quot;Cioccolatini come se piovesse LA La lA laaa&quot;
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>Contare il numero di parole diverse per ognuno dei tre testi.</li>
+<li>Ottenere gli insiemi delle parole in comune tra i tre testi: <code class="docutils literal notranslate"><span class="pre">condivise_A_B</span></code>, <code class="docutils literal notranslate"><span class="pre">condivise_A_C</span></code>, <code class="docutils literal notranslate"><span class="pre">condivise_B_C</span></code>.</li>
+<li>Dati i set creati precedentemente, ottenere l’insieme delle parole che compaiono in <em>almeno</em> due testi, utilizzando soltanto operazioni tra set.</li>
+<li>Ottenere l’insieme delle parole che compaiono esattamente in un testo. <em>Hint</em> posso farlo utililizzando il risultato precedente?</li>
+<li>Ottenere l’insieme delle parole che compaiono ripetute nello stesso testo.</li>
+</ol>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-tuple">
+<h1>Python: Tuple<a class="headerlink" href="#python-tuple" title="Permalink to this headline">¶</a></h1>
+<p>Le tuple sono liste <strong>immutabili</strong>.</p>
+<p>Per definire una tupla uso le parentesi tonde:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>partners = (&quot;BIOGRID:112315&quot;, &quot;BIOGRID:108607&quot;)
+</pre></div>
+</div>
+<p><strong>Esempio</strong>. Se voglio creare una tupla con un solo elemento (puo’ capitare…)
+devo ricordarmi di usare la virgola, oltre alle parentesi tonde:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tupla = (0,)
+print(tupla)
+print(type(tupla))
+print(len(tupla))
+
+non_tupla = (0)
+print(non_tupla)
+print(type(non_tupla))
+</pre></div>
+</div>
+<p>Come si vede, <code class="docutils literal notranslate"><span class="pre">non_tupla</span></code> e’ un intero, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="section" id="id24">
+<h2>Operazioni<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="24%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Operatore</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">len(tuple)</span></code></td>
+<td>Restituisce la lunghezza della tuple</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">tuple</span> <span class="pre">+</span> <span class="pre">tuple</span></code></td>
+<td>Concatena le due tuple</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">tuple</span> <span class="pre">*</span> <span class="pre">int</span></code></td>
+<td>Replica la tupla</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bool</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">object</span> <span class="pre">in</span> <span class="pre">tuple</span></code></td>
+<td>Contolla se un oggetto arbitrario appare nella tupla</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">tuple</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">tuple[int:int]</span></code></td>
+<td>Estrae una sotto-tupla</td>
+</tr>
+</tbody>
+</table>
+<p>Le tuple supportanto tutti gli operatori delle stringhe e delle liste,
+tranne l’assegnamento.</p>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Creo una tupla con elementi misti:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>proteina = (&quot;2B0Q&quot;, &quot;phosphotransferase&quot;, &quot;PF03881&quot;)
+</pre></div>
+</div>
+<p>che contiene informazioni su una proteina. Posso accedere ai vari elementi come
+farei con una lista:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>id_proteina = proteina[0]
+print(id_proteina)
+
+nome_proteina = proteina[1]
+print(nome_proteina)
+</pre></div>
+</div>
+<p>Pero’ non posso modificare la tupla:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; proteina[0] = &quot;1A3A&quot;
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Proprio come le liste e gli intervalli, posso usare le
+tuple come <em>input</em> ad una list comprehension:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tripla = (1, 2, 3)
+
+risultato = [2*numero for numero in tripla]
+print(risultato)
+print(type(risultato))
+</pre></div>
+</div>
+<p>Il risultato di una <strong>list</strong> <em>comprehension</em> e’ comunque una lista.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id25">
+<h2>Metodi<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="29%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Ritorna</th>
+<th class="head">Metodo</th>
+<th class="head">Significato</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">tuple.index(object)</span></code></td>
+<td>Restituisce la posizione di object.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">tuple.count(object)</span></code></td>
+<td>Conta il numero di ripetizioni di un valore</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="conversione-lista-tupla">
+<h2>Conversione Lista-Tupla<a class="headerlink" href="#conversione-lista-tupla" title="Permalink to this headline">¶</a></h2>
+<p>Per convertire tra liste e tuple uso <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> e <code class="docutils literal notranslate"><span class="pre">list()</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>lista = list(range(10))
+
+tupla = tuple(lista)
+print(tupla, type(tupla))
+
+lista_2 = list(tupla)
+print(lista_2, type(lista_2))
+</pre></div>
+</div>
+<p>Ne segue che se <em>proprio</em> voglio “modificare” una tupla posso scrivere:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tupla = (&quot;sono&quot;, &quot;una&quot;, &quot;tupla&quot;)
+print(tupla)
+
+copia = list(tupla)
+copia.insert(2, &quot;bella&quot;)
+tupla = tuple(copia)
+print(tupla)
+</pre></div>
+</div>
+<p>In realta’ quello che ottengo e’ una <em>nuova</em> tupla che contiene gli elementi
+della vecchia tupla in aggiunta a …</p>
+</div>
+<div class="section" id="id26">
+<h2>Esercizi<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Creare:</p>
+<ol class="arabic">
+<li><p class="first">Una tupla di due interi di valore <code class="docutils literal notranslate"><span class="pre">0</span></code> e <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</li>
+<li><p class="first">Una tupla di due stringhe, <code class="docutils literal notranslate"><span class="pre">&quot;una&quot;</span></code> e <code class="docutils literal notranslate"><span class="pre">&quot;tupla&quot;</span></code>.</p>
+</li>
+<li><p class="first">Una tupla di un solo elemento, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><em>Hint</em>: ci sono due modi di farlo: usare la sintassi vista all’inzio
+del capitolo, oppure usare la conversione lista-tupla.</p>
+</li>
+<li><p class="first">Una tupla di cento elementi: i numeri interi da <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">99</span></code>.</p>
+<p><em>Hint</em>: posso usare (indirettamente) <code class="docutils literal notranslate"><span class="pre">range()</span></code>?</p>
+</li>
+<li><p class="first">Una tupla con due elementi: la <em>lista</em> degli interi da <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">49</span></code> e
+la <em>lista</em> degli interi da <code class="docutils literal notranslate"><span class="pre">50</span></code> a <code class="docutils literal notranslate"><span class="pre">99</span></code>.</p>
+</li>
+<li><p class="first">Una tupla con due elementi: la <em>tupla</em> degli interi da <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">49</span></code> e
+la <em>tupla</em> degli interi da <code class="docutils literal notranslate"><span class="pre">50</span></code> a <code class="docutils literal notranslate"><span class="pre">99</span></code>.</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Date <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2]</span></code> e <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">2)</span></code>, che differenza c’e’ tra:</p>
+<ol class="arabic">
+<li><p class="first">Primo caso:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>x = l
+x[0] = 100
+</pre></div>
+</div>
+</li>
+<li><p class="first">Secondo caso:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>x = t
+x[0] = 100
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Data la tupla:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tupla = (0, 1, 2, [3, 4, 5], 6, 7, 8)
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>Di che tipo e’ il primo elemento della tupla? Quanto vale?</li>
+<li>Di che tipo e’ il quarto elemento della tupla? Quanto vale?</li>
+<li>Quanti elementi contiene la tupla?</li>
+<li>Quanti elementi contiene la lista contenuta nella tupla?</li>
+<li>Cambiare l’ultimo elemento della lista contenuta in <code class="docutils literal notranslate"><span class="pre">tupla</span></code> in <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code>.</li>
+<li>Cambiare l’ultimo elemento di <code class="docutils literal notranslate"><span class="pre">tupla</span></code> in <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code>. (Si puo’ fare?)</li>
+</ol>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -5593,6 +6282,17 @@ poi modificate il codice per tenere conto di questa idiosincrasia.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://youtu.be/gOZnV9OqC48?list=PLGMXrbDNfqTxRhF0GFBniZKJVbiqHb7sy&amp;t=9">list comprehension</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-7">
+<h2>Laboratorio 7<a class="headerlink" href="#laboratorio-7" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=Q7ASZ98QsPU">Lab 7</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/Q7ASZ98QsPU?t=37">Correzione Fake test</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Q7ASZ98QsPU?t=2116">Dizionari</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Q7ASZ98QsPU?t=3313">Operazioni</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Q7ASZ98QsPU?t=3535">Metodi</a>.</li>
+<li><a class="reference external" href="https://youtu.be/Q7ASZ98QsPU">Esercizi</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -5675,12 +6375,27 @@ poi modificate il codice per tenere conto di questa idiosincrasia.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_test.html#esercizio">Esercizio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_test.html#soluzione">Soluzione</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#operazioni">Operazioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#metodi">Metodi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_dictionaries.html#dizionari-soluzioni">Dizionari (Soluzioni)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_sets.html">Python: Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_sets.html#operazioni">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_sets.html#id1">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_sets.html#esercizi">Esercizi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_tuples.html#operazioni">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tuples.html#metodi">Metodi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tuples.html#conversione-lista-tupla">Conversione Lista-Tupla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tuples.html#esercizi">Esercizi</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
@@ -5690,6 +6405,7 @@ poi modificate il codice per tenere conto di questa idiosincrasia.</p>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-4">Laboratorio 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-5">Laboratorio 5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-6">Laboratorio 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-7">Laboratorio 7</a></li>
 </ul>
 </li>
 </ul>

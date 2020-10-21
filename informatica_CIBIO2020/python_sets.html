@@ -35,7 +35,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python: Tuple" href="python_tuples.html" />
+    <link rel="prev" title="Python: Dizionari" href="python_dictionaries.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,7 +86,7 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python: Fondamentali</a></li>
@@ -94,6 +96,13 @@
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_test.html">Python: Fake Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python: Sets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#operazioni">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Operazioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esercizi">Esercizi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -290,6 +299,16 @@ vengono inseriti gli elementi.</p>
 </pre></div>
 </div>
 </div>
+<p><strong>PROVATE VOI Esercizi</strong></p>
+<ol class="arabic simple">
+<li>Creare:<ol class="arabic">
+<li>Un set vuoto <code class="docutils literal notranslate"><span class="pre">set_vuoto</span></code>. Controllare che sia vuoto con <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</li>
+<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10</span></code> contenente i primi 10 numeri naturali. Controllare se contiene 10, in caso contrario, inserirlo e ricontrollare che sia presente. Rimuoverlo nuovamente.</li>
+<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code> contenente i primi 10 numeri naturali, tranne 7 (partendo da <code class="docutils literal notranslate"><span class="pre">primi10</span></code> ma lasciandolo inalterato). Controllo che 7 sia presente in <code class="docutils literal notranslate"><span class="pre">primi10</span></code> e assente in <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>.</li>
+<li>Ricreare <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>, questa volta utilizzando una list comprehension.</li>
+</ol>
+</li>
+</ol>
 </div>
 <hr class="docutils" />
 <div class="section" id="id1">
@@ -363,14 +382,6 @@ vengono inseriti gli elementi.</p>
 <div class="section" id="esercizi">
 <h2>Esercizi<a class="headerlink" href="#esercizi" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Creare:</p>
-<ol class="arabic simple">
-<li>Un set vuoto <code class="docutils literal notranslate"><span class="pre">set_vuoto</span></code>. Controllare che sia vuoto con <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</li>
-<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10</span></code> contenente i primi 10 numeri naturali. Controllare se contiene 10, in caso contrario, inserirlo e ricontrollare che sia presente. Rimuoverlo nuovamente.</li>
-<li>Un set <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code> contenente i primi 10 numeri naturali, tranne 7 (partendo da <code class="docutils literal notranslate"><span class="pre">primi10</span></code> ma lasciandolo inalterato). Controllo che 7 sia presente in <code class="docutils literal notranslate"><span class="pre">primi10</span></code> e assente in <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>.</li>
-<li>Ricreare <code class="docutils literal notranslate"><span class="pre">primi10no7</span></code>, questa volta utilizzando una list comprehension.</li>
-</ol>
-</li>
 <li><p class="first">Per ogni testo, creare l’insieme delle parole che contiene (maiuscole/minuscole non contano):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">testo_A</span> <span class="o">=</span> <span class="s2">&quot;Le due ore di informatica piu&#39; noiose della vostra vita&quot;</span>
 <span class="n">testo_B</span> <span class="o">=</span> <span class="s2">&quot;La vita e&#39; come una scatola di cioccolatini&quot;</span>
@@ -394,6 +405,15 @@ vengono inseriti gli elementi.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_tuples.html" class="btn btn-neutral float-right" title="Python: Tuple" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_dictionaries.html" class="btn btn-neutral float-left" title="Python: Dizionari" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

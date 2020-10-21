@@ -109,6 +109,20 @@ aggiungo la stringa ``"0"`` al set e controllo che sia presente::
       print(L)                          # {1, 2, 3}      
       
 
+**PROVATE VOI Esercizi**
+
+#. Creare:
+
+   #. Un set vuoto ``set_vuoto``. Controllare che sia vuoto con ``len()``.
+
+   #. Un set ``primi10`` contenente i primi 10 numeri naturali. Controllare se contiene 10, in caso contrario, inserirlo e ricontrollare che sia presente. Rimuoverlo nuovamente.
+
+   #. Un set ``primi10no7`` contenente i primi 10 numeri naturali, tranne 7 (partendo da ``primi10`` ma lasciandolo inalterato). Controllo che 7 sia presente in ``primi10`` e assente in ``primi10no7``.
+
+   #. Ricreare ``primi10no7``, questa volta utilizzando una list comprehension.
+
+
+
 ****
 
 Operazioni
@@ -176,16 +190,6 @@ Analogamente, ottengo i multipli di 3 fino al 18 che **NON** sono compresi tra 0
 
 Esercizi
 --------
-
-#. Creare:
-
-   #. Un set vuoto ``set_vuoto``. Controllare che sia vuoto con ``len()``.
-
-   #. Un set ``primi10`` contenente i primi 10 numeri naturali. Controllare se contiene 10, in caso contrario, inserirlo e ricontrollare che sia presente. Rimuoverlo nuovamente.
-
-   #. Un set ``primi10no7`` contenente i primi 10 numeri naturali, tranne 7 (partendo da ``primi10`` ma lasciandolo inalterato). Controllo che 7 sia presente in ``primi10`` e assente in ``primi10no7``.
-
-   #. Ricreare ``primi10no7``, questa volta utilizzando una list comprehension.
 
 #. Per ogni testo, creare l'insieme delle parole che contiene (maiuscole/minuscole non contano)::
 

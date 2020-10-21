@@ -112,3 +112,18 @@ Laboratorio 6
 
 
 
+
+Laboratorio 7
+-----------
+
+`Lab 7 <https://www.youtube.com/watch?v=Q7ASZ98QsPU>`_.
+
+ 
+- `Correzione Fake test <https://youtu.be/Q7ASZ98QsPU?t=37>`_. 
+- `Dizionari <https://youtu.be/Q7ASZ98QsPU?t=2116>`_. 
+- `Operazioni <https://youtu.be/Q7ASZ98QsPU?t=3313>`_. 
+- `Metodi <https://youtu.be/Q7ASZ98QsPU?t=3535>`_.  
+- `Esercizi <https://youtu.be/Q7ASZ98QsPU>`_. 
+
+
+

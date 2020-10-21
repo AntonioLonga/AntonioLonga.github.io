@@ -4,7 +4,7 @@ Python: Tuple
 
 Le tuple sono liste **immutabili**.
 
-Per definire una lista uso le parentesi tonde::
+Per definire una tupla uso le parentesi tonde::
 
     partners = ("BIOGRID:112315", "BIOGRID:108607")
 

@@ -96,9 +96,12 @@
 <li class="toctree-l1"><a class="reference internal" href="python_lists.html">Python: Liste</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python: Fake Test</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#esercizio">Esercizio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluzione">Soluzione</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_dictionaries.html">Python: Dizionari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_sets.html">Python: Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -188,6 +191,53 @@
 </pre></div>
 </div>
 <p><strong>L’esercizio è interamente risolvibile con quello cha abbiamo fatto fino a qui</strong></p>
+</div>
+<div class="section" id="soluzione">
+<h2>Soluzione<a class="headerlink" href="#soluzione" title="Permalink to this headline">¶</a></h2>
+<p>Definisco la variabile DNA copiando e incollando la stringa sopra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;tatgtaaactgccaaggtgaacgttggaatcacctcgtatgtgactcgcgtgtgacctggatactgtcaaaccaggtcaggaaagcctatgagtacgagc&quot;</span>
+</pre></div>
+</div>
+<p>per poter risolvere il punto 1 è sufficiente contare le sequenze con il metodo count delle stringhe,
+e dividere per la lunghezza del DNA (len(DNA)):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f_a</span> <span class="o">=</span> <span class="n">DNA</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
+<span class="n">f_c</span> <span class="o">=</span> <span class="n">DNA</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
+<span class="n">f_g</span> <span class="o">=</span> <span class="n">DNA</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
+<span class="n">f_t</span> <span class="o">=</span> <span class="n">DNA</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>per concludere stampo il res 1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;res1: &quot;</span><span class="p">,</span><span class="n">f_a</span><span class="p">,</span><span class="n">f_c</span><span class="p">,</span><span class="n">f_g</span><span class="p">,</span><span class="n">f_t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Per quanto riguarda il punto 2, devo poter ordianre la stringa. Per l’ordinamento noi abbiamo visto il sort un metodo degli array.
+Quindi converto in array (con il list comprehension), ordino(con il metodo sort), e per finire ricreo la stringa (metodo join):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA_sort</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">]</span>          <span class="c1"># converto la lista in stringa</span>
+<span class="n">DNA_sort</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>                      <span class="c1"># ordino la lista</span>
+<span class="n">string_dna_sort</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DNA_sort</span><span class="p">)</span>  <span class="c1"># riunisco la lista ordinata in una stringa</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;res2: &quot;</span><span class="p">,</span><span class="n">string_dna_sort</span><span class="p">)</span>      <span class="c1"># stampo la stringa</span>
+</pre></div>
+</div>
+<p>Il punto 3 sembra essere un pò più complesso, ma in realtà è molto semplice. Posso usare il replace per sostituire gli aminoacidi
+con le loro frequnze, io per semplicità ci ho aggiunto pure uno spazio vuoto (che mi servirà dopo per fare lo split!):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array_DNA</span> <span class="o">=</span> <span class="n">DNA</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">f_a</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>         <span class="c1"># replace di a con la sua freq</span>
+<span class="n">array_DNA</span> <span class="o">=</span> <span class="n">array_DNA</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">f_c</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>   <span class="c1"># replace di a con la sua freq</span>
+<span class="n">array_DNA</span> <span class="o">=</span> <span class="n">array_DNA</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">f_g</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>   <span class="c1"># replace di a con la sua freq</span>
+<span class="n">array_DNA</span> <span class="o">=</span> <span class="n">array_DNA</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">f_t</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>   <span class="c1"># replace di a con la sua freq</span>
+<span class="n">array_DNA</span> <span class="o">=</span> <span class="n">array_DNA</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>                  <span class="c1"># splitto la stringa e la trasformo in un array</span>
+<span class="n">array_DNA</span> <span class="o">=</span> <span class="n">array_DNA</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                        <span class="c1"># rimuovo l&#39;ultimo elemento (perche è vuoto)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;res3: &quot;</span><span class="p">,</span><span class="n">array_DNA</span><span class="p">)</span>                         <span class="c1"># stampo il risultato</span>
+</pre></div>
+</div>
+<p>In fine, per poter calcolare la media mobile, posso calcolare prima la somma degli elementi precedenti:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sum_array_DNA</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">array_DNA</span><span class="p">[:</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_DNA</span><span class="p">))]</span>
+</pre></div>
+</div>
+<p>in <strong>sum_array_DNA</strong> l’elemento i-esimo rappresenta la somma degli elementi dalla posizione 0 alla posizione i.
+Successivamente, posso calcolare la media mobile, dividendo l’ i-esimo elemento di <strong>sum_array_DNA</strong> per i:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">media_mobile</span> <span class="o">=</span> <span class="p">[</span><span class="n">sum_array_DNA</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sum_array_DNA</span><span class="p">))]</span>
+</pre></div>
+</div>
 </div>
 </div>
 

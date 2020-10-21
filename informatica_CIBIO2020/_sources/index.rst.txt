@@ -114,6 +114,17 @@ Note Introduttive
 |
 |
 
+.. highlight:: I set 
+
+.. include:: python_sets.rst
+|
+|
+
+.. highlight:: Le tuple 
+
+.. include:: python_tuples.rst
+|
+|
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -133,4 +144,7 @@ Note Introduttive
     python_lists.rst
     python_test.rst
     python_dictionaries.rst
-    video.rst       
+    python_sets.rst
+    python_tuples.rst
+    video.rst 
+
