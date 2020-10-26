@@ -5981,6 +5981,116 @@ testo_C = &quot;Cioccolatini come se piovesse LA La lA laaa&quot;
 </ol>
 </li>
 </ol>
+</div>
+<div class="section" id="id24">
+<h2>Soluzioni<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>set_vuoto = {}
+print(set_vuoto)
+print(len(set_vuoto))                        # 0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>primi10 = set(range(10))
+print(10 in primi10)                         # False
+primi10.add(10)
+print(10 in primi10)                         # True
+primi10.remove(10)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione, provo cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>primi10no7 = primi10
+primi10no7.remove(7)
+print(7 in primi10)                          # False
+</pre></div>
+</div>
+<p>Ricordo che i set sono strutture <strong>mutabili</strong>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>primi10 = set(range(10))                     # Ricreo il set originale
+primi10no7 = set(primi10)
+primi10no7.remove(7)
+print(7 in primi10)                          # True
+print(7 in primi10no7)                       # False
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>primi10no7 = set([x in range(10) if x != 7])
+print(primi10no7)                            # Controllo
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<blockquote>
+<div><blockquote>
+<div><p>Convertendo i testi in minuscolo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tA_lower = testo_A.lower()
+tB_lower = testo_B.lower()
+tC_lower = testo_C.lower()
+</pre></div>
+</div>
+<p>Creo gli insiemi delle parole contenute nei testi:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>parole_in_A = set(tA_lower.split())
+parole_in_B = set(tB_lower.split())
+parole_in_C = set(tC_lower.split())
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Conto per ogni testo il numero di parole diverse:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>len(parole_in_A)                             # 10
+len(parole_in_B)                             # 8
+len(parole_in_C)                             # 6
+</pre></div>
+</div>
+</li>
+<li><p class="first">Ottengo le parole in comune utilizzando l’intersezione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>condivise_A_B = parole_in_A.intersection(parole_in_B)
+condivise_A_C = parole_in_A.intersection(parole_in_C)
+condivise_B_C = parole_in_B.intersection(parole_in_C)
+</pre></div>
+</div>
+<p>Controllo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(condivise_A_B)           # {&#39;vita&#39;, &#39;di&#39;}
+print(condivise_A_C)           # set()
+print(condivise_B_C)           # {&#39;la&#39;, &#39;cioccolatini&#39;, &#39;come&#39;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>almeno_in_2 = condivise_A_B.union(condivise_A_C).union(condivise_B_C)
+print(almeno_in_2)             # {&#39;vita&#39;, &#39;di&#39;, &#39;la&#39;, &#39;cioccolatini&#39;, &#39;come&#39;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creo l’insieme di tutte le parole contenute nei tre testi:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tutte_le_parole = parole_in_A.union(parole_in_B).union(parole_in_C)
+</pre></div>
+</div>
+<p>Ottengo le parole che appaiono esattamente in <a href="#id25"><span class="problematic" id="id26">**</span></a>UN* testo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>solo_in_uno = tutte_le_parole.difference(almeno_in_2)
+print(solo_in_uno)
+{&#39;le&#39;, &#39;una&#39;, &#39;se&#39;, &#39;vostra&#39;, &#39;della&#39;, &#39;laaa&#39;, &quot;piu&#39;&quot;, &#39;ore&#39;, &quot;e&#39;&quot;, \
+&#39;piovesse&#39;, &#39;scatola&#39;, &#39;noiose&#39;, &#39;informatica&#39;, &#39;due&#39;}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Ci sono diversi modi per farlo. Una soluzione (consideriamo solo testo_A per brevita’):</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>ripetute_in_A = set([p for p in parole_in_A \
+                     if tA_lower.count(p) &gt; 1])
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -6007,8 +6117,8 @@ print(type(non_tupla))
 </pre></div>
 </div>
 <p>Come si vede, <code class="docutils literal notranslate"><span class="pre">non_tupla</span></code> e’ un intero, <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<div class="section" id="id24">
-<h2>Operazioni<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h2>Operazioni<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="11%" />
@@ -6080,8 +6190,8 @@ print(type(risultato))
 <p>Il risultato di una <strong>list</strong> <em>comprehension</em> e’ comunque una lista.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id25">
-<h2>Metodi<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h2>Metodi<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
@@ -6131,8 +6241,8 @@ print(tupla)
 <p>In realta’ quello che ottengo e’ una <em>nuova</em> tupla che contiene gli elementi
 della vecchia tupla in aggiunta a …</p>
 </div>
-<div class="section" id="id26">
-<h2>Esercizi<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h2>Esercizi<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Creare:</p>
 <ol class="arabic">
@@ -6183,6 +6293,90 @@ x[0] = 100
 <li>Cambiare l’ultimo elemento della lista contenuta in <code class="docutils literal notranslate"><span class="pre">tupla</span></code> in <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code>.</li>
 <li>Cambiare l’ultimo elemento di <code class="docutils literal notranslate"><span class="pre">tupla</span></code> in <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code>. (Si puo’ fare?)</li>
 </ol>
+</li>
+</ol>
+</div>
+<div class="section" id="id30">
+<h2>Soluzioni<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>coppia_di_interi = (0, 1)
+print(type(coppia_di_interi))            # tuple
+
+
+coppia_di_stringhe = (&quot;una&quot;, &quot;tupla&quot;)
+print(type(coppia_di_stringhe))          # tuple
+
+
+un_solo_elemento = (0,)
+print(type(un_solo_elemento))            # tuple
+print(len(un_solo_elemento))             # 1
+
+un_solo_elemento_alt = tuple([0])
+print(type(un_solo_elemento_alt))        # tuple
+print(len(un_solo_elemento_alt))         # 1
+
+sbagliato = (0)
+print(type(sbagliato))                   # int
+print(len(sbagliato))                    # errore!
+
+
+cento_elementi = tuple(range(100))
+print(type(cento_elementi))              # tuple
+
+
+coppia_di_liste = (range(50), range(50, 100))
+print(type(coppia_di_liste))
+print(type(coppia_di_liste[0]))
+
+
+coppia_di_tuple = (tuple(range(50)), tuple(range(50, 100)))
+print(type(coppia_di_tuple))
+print(type(coppia_di_tuple[0]))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>l = [0, 1, 2]
+t = (0, 1, 2)
+
+# x si riferisce ad una lista, il codice sostituisce
+# il primo elemento con 100
+x = l
+x[0] = 100
+
+# x ora si riferisce ad una tupla, che e&#39; immutabile:
+# non posso sostituire i suoi elementi, Python da&#39;
+# errore
+x = t
+x[0] = 100                          # errore!
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzioni:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tupla = (0, 1, 2, [3, 4, 5], 6, 7, 8)
+
+print(tupla[0])                      # 0
+print(type(tupla[0]))                # int
+
+print(tupla[3])                      # [3, 4, 5]
+print(type(tupla[3]))                # list
+
+print(len(tupla))                    # 9
+
+print(len(tupla[3]))                 # 3
+
+tupla[3][-1] = &quot;ultimo&quot;
+print(tupla)
+# ebbene lo posso fare! ho &quot;modificato&quot; la
+# tupla modificando la lista contenuta
+# in essa.
+
+tupla[-1] = &quot;ultimo&quot;                # errore!
+# non posso modificare la tupla &quot;direttamente&quot;
+# e&#39; un oggetto immutabile
+</pre></div>
+</div>
 </li>
 </ol>
 <div class="line-block">
@@ -6255,8 +6449,8 @@ print(&quot;la loro somma e&#39;&quot;, numero_1 + numero_2)
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id27">
-<h2>Esercizi<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id31">
+<h2>Esercizi<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Usando <code class="docutils literal notranslate"><span class="pre">input()</span></code>, chiedere all’utente il suo piatto preferito, mettere
 il risultato in una variabile <code class="docutils literal notranslate"><span class="pre">cibo</span></code>, poi stampare a schermo:
@@ -6450,8 +6644,8 @@ print(contenuti)
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id28">
-<h2>Esercizi<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id32">
+<h2>Esercizi<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Se <code class="docutils literal notranslate"><span class="pre">open()</span></code> vi da’ errore, puo’ darsi che vi troviate nella directory
@@ -6721,6 +6915,7 @@ a schermo.</p>
 <li class="toctree-l2"><a class="reference internal" href="python_sets.html#operazioni">Operazioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_sets.html#id1">Operazioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_sets.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_sets.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a><ul>
@@ -6728,6 +6923,7 @@ a schermo.</p>
 <li class="toctree-l2"><a class="reference internal" href="python_tuples.html#metodi">Metodi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_tuples.html#conversione-lista-tupla">Conversione Lista-Tupla</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_tuples.html#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_tuples.html#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_io.html">Python: Input-Output</a><ul>

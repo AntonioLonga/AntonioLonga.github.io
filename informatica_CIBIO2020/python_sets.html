@@ -100,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#operazioni">Operazioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Operazioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#esercizi">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#soluzioni">Soluzioni</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
@@ -396,6 +397,116 @@ vengono inseriti gli elementi.</p>
 <li>Ottenere l’insieme delle parole che compaiono esattamente in un testo. <em>Hint</em> posso farlo utililizzando il risultato precedente?</li>
 <li>Ottenere l’insieme delle parole che compaiono ripetute nello stesso testo.</li>
 </ol>
+</li>
+</ol>
+</div>
+<div class="section" id="soluzioni">
+<h2>Soluzioni<a class="headerlink" href="#soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">set_vuoto</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_vuoto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">set_vuoto</span><span class="p">))</span>                        <span class="c1"># 0</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primi10</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">in</span> <span class="n">primi10</span><span class="p">)</span>                         <span class="c1"># False</span>
+<span class="n">primi10</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="ow">in</span> <span class="n">primi10</span><span class="p">)</span>                         <span class="c1"># True</span>
+<span class="n">primi10</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione, provo cosi’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primi10no7</span> <span class="o">=</span> <span class="n">primi10</span>
+<span class="n">primi10no7</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="ow">in</span> <span class="n">primi10</span><span class="p">)</span>                          <span class="c1"># False</span>
+</pre></div>
+</div>
+<p>Ricordo che i set sono strutture <strong>mutabili</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primi10</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>                     <span class="c1"># Ricreo il set originale</span>
+<span class="n">primi10no7</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">primi10</span><span class="p">)</span>
+<span class="n">primi10no7</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="ow">in</span> <span class="n">primi10</span><span class="p">)</span>                          <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="ow">in</span> <span class="n">primi10no7</span><span class="p">)</span>                       <span class="c1"># False</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">primi10no7</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primi10no7</span><span class="p">)</span>                            <span class="c1"># Controllo</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<blockquote>
+<div><blockquote>
+<div><p>Convertendo i testi in minuscolo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tA_lower</span> <span class="o">=</span> <span class="n">testo_A</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">tB_lower</span> <span class="o">=</span> <span class="n">testo_B</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">tC_lower</span> <span class="o">=</span> <span class="n">testo_C</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Creo gli insiemi delle parole contenute nei testi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parole_in_A</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tA_lower</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">parole_in_B</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tB_lower</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">parole_in_C</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tC_lower</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Conto per ogni testo il numero di parole diverse:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">parole_in_A</span><span class="p">)</span>                             <span class="c1"># 10</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">parole_in_B</span><span class="p">)</span>                             <span class="c1"># 8</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">parole_in_C</span><span class="p">)</span>                             <span class="c1"># 6</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Ottengo le parole in comune utilizzando l’intersezione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">condivise_A_B</span> <span class="o">=</span> <span class="n">parole_in_A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">parole_in_B</span><span class="p">)</span>
+<span class="n">condivise_A_C</span> <span class="o">=</span> <span class="n">parole_in_A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">parole_in_C</span><span class="p">)</span>
+<span class="n">condivise_B_C</span> <span class="o">=</span> <span class="n">parole_in_B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">parole_in_C</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Controllo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">condivise_A_B</span><span class="p">)</span>           <span class="c1"># {&#39;vita&#39;, &#39;di&#39;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">condivise_A_C</span><span class="p">)</span>           <span class="c1"># set()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">condivise_B_C</span><span class="p">)</span>           <span class="c1"># {&#39;la&#39;, &#39;cioccolatini&#39;, &#39;come&#39;}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">almeno_in_2</span> <span class="o">=</span> <span class="n">condivise_A_B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">condivise_A_C</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">condivise_B_C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">almeno_in_2</span><span class="p">)</span>             <span class="c1"># {&#39;vita&#39;, &#39;di&#39;, &#39;la&#39;, &#39;cioccolatini&#39;, &#39;come&#39;}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creo l’insieme di tutte le parole contenute nei tre testi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tutte_le_parole</span> <span class="o">=</span> <span class="n">parole_in_A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">parole_in_B</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">parole_in_C</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ottengo le parole che appaiono esattamente in <a href="#id2"><span class="problematic" id="id3">**</span></a>UN* testo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solo_in_uno</span> <span class="o">=</span> <span class="n">tutte_le_parole</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">almeno_in_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solo_in_uno</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;le&#39;</span><span class="p">,</span> <span class="s1">&#39;una&#39;</span><span class="p">,</span> <span class="s1">&#39;se&#39;</span><span class="p">,</span> <span class="s1">&#39;vostra&#39;</span><span class="p">,</span> <span class="s1">&#39;della&#39;</span><span class="p">,</span> <span class="s1">&#39;laaa&#39;</span><span class="p">,</span> <span class="s2">&quot;piu&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;ore&#39;</span><span class="p">,</span> <span class="s2">&quot;e&#39;&quot;</span><span class="p">,</span> \
+<span class="s1">&#39;piovesse&#39;</span><span class="p">,</span> <span class="s1">&#39;scatola&#39;</span><span class="p">,</span> <span class="s1">&#39;noiose&#39;</span><span class="p">,</span> <span class="s1">&#39;informatica&#39;</span><span class="p">,</span> <span class="s1">&#39;due&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Ci sono diversi modi per farlo. Una soluzione (consideriamo solo testo_A per brevita’):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ripetute_in_A</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parole_in_A</span> \
+                     <span class="k">if</span> <span class="n">tA_lower</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
 </li>
 </ol>
 </div>
