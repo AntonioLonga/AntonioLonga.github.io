@@ -125,6 +125,13 @@ Note Introduttive
 .. include:: python_tuples.rst
 |
 |
+
+.. highlight:: Input Output
+
+.. include:: python_io.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -146,5 +153,6 @@ Note Introduttive
     python_dictionaries.rst
     python_sets.rst
     python_tuples.rst
+    python_io.rst
     video.rst 
 

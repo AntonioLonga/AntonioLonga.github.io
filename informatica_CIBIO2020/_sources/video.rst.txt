@@ -127,3 +127,25 @@ Laboratorio 7
 
 
 
+
+Laboratorio 8
+-----------
+
+`Parte A <https://www.youtube.com/watch?v=e_HzHaAECvU&t=8s>`_.
+
+- `Set <https://youtu.be/e_HzHaAECvU?t=121>`_. 
+- `Operazioni <https://youtu.be/e_HzHaAECvU?t=227>`_. 
+- `Altre Operazioni <https://youtu.be/e_HzHaAECvU?t=1452>`_. 
+- `Esercizi <https://youtu.be/e_HzHaAECvU?t=1745>`_. 
+
+
+
+`Parte B <https://www.youtube.com/watch?v=cyKGp42LijU>`_.
+
+- `Tuple <https://youtu.be/cyKGp42LijU?t=32>`_. 
+- `Operazioni <https://youtu.be/cyKGp42LijU?t=80>`_. 
+- `Metodi <https://youtu.be/cyKGp42LijU?t=175>`_. 
+- `Conversioni Lista-Tupla <https://youtu.be/cyKGp42LijU?t=195>`_. 
+- `Esercizi <https://youtu.be/cyKGp42LijU?t=240>`_. 
+
+
