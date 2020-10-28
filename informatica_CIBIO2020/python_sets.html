@@ -11,8 +11,8 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
 
   
   
@@ -21,17 +21,17 @@
 
   
   <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
+    <script src="static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <script type="text/javascript" src="static/underscore.js"></script>
+        <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -357,13 +357,13 @@ vengono inseriti gli elementi.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">unione</span><span class="p">)</span>                             <span class="c1"># {0, 1, 2, 3, .., 8, 9, 12, 15, 18}</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/sets_union.png"><img alt="_images/sets_union.png" class="align-center" src="_images/sets_union.png" style="width: 322.7px; height: 222.6px;" /></a>
+<a class="reference internal image-reference" href="images/sets_union.png"><img alt="images/sets_union.png" class="align-center" src="images/sets_union.png" style="width: 322.7px; height: 222.6px;" /></a>
 <p>Ora creo l’intersezione di <code class="docutils literal notranslate"><span class="pre">set_A</span></code> e <code class="docutils literal notranslate"><span class="pre">set_B</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">intersezione</span> <span class="o">=</span> <span class="n">set_A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set_B</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">intersezione</span><span class="p">)</span>                       <span class="c1"># {0, 3, 6, 9}</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/sets_intersection.png"><img alt="_images/sets_intersection.png" class="align-center" src="_images/sets_intersection.png" style="width: 322.7px; height: 222.6px;" /></a>
+<a class="reference internal image-reference" href="images/sets_intersection.png"><img alt="images/sets_intersection.png" class="align-center" src="images/sets_intersection.png" style="width: 322.7px; height: 222.6px;" /></a>
 <p><strong>Nota</strong>: le operazioni di unione e intersezione sono simmetriche, per qualsiasi <code class="docutils literal notranslate"><span class="pre">set_A</span></code> e <code class="docutils literal notranslate"><span class="pre">set_B</span></code> vale:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">set_A</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set_B</span><span class="p">)</span> <span class="o">==</span> <span class="n">set_B</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set_A</span><span class="p">)</span>                 <span class="c1"># True</span>
 <span class="n">set_A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set_B</span><span class="p">)</span> <span class="o">==</span> <span class="n">set_B</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set_A</span><span class="p">)</span>   <span class="c1"># True</span>
@@ -374,7 +374,7 @@ vengono inseriti gli elementi.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">diff1</span><span class="p">)</span>                              <span class="c1"># {1, 2, 4, 5, 7, 8}</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/sets_difference.png"><img alt="_images/sets_difference.png" class="align-center" src="_images/sets_difference.png" style="width: 322.7px; height: 222.6px;" /></a>
+<a class="reference internal image-reference" href="images/sets_difference.png"><img alt="images/sets_difference.png" class="align-center" src="images/sets_difference.png" style="width: 322.7px; height: 222.6px;" /></a>
 <p>Analogamente, ottengo i multipli di 3 fino al 18 che <strong>NON</strong> sono compresi tra 0 e 9:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff2</span> <span class="o">=</span> <span class="n">set_B</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">set_A</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diff2</span><span class="p">)</span>                              <span class="c1"># {12, 15, 18}</span>
