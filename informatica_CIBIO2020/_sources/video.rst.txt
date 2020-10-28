@@ -149,3 +149,13 @@ Laboratorio 8
 - `Esercizi <https://youtu.be/cyKGp42LijU?t=240>`_. 
 
 
+
+Laboratorio 9
+-------------
+
+`Lab  <https://www.youtube.com/watch?v=CTCQsl_wRyo>`_.
+
+- `Interfaccia Utente <https://youtu.be/CTCQsl_wRyo?t=76>`_. 
+- `Esercizi <https://youtu.be/CTCQsl_wRyo?t=302>`_. 
+- `Interfaccia Filesystem <https://youtu.be/CTCQsl_wRyo?t=3414>`_. 
+- `Esercizi <https://youtu.be/CTCQsl_wRyo?t=4003>`_. 

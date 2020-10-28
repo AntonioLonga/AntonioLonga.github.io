@@ -35,9 +35,7 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Video" href="video.html" />
-    <link rel="prev" title="Python: Input-Output" href="python_io.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,7 +84,7 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="shell_basics.html">Shell: Fondamentali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell_commands1.html">Shell: Parte 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_basics.html">Python: Fondamentali</a></li>
@@ -99,16 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_sets.html">Python: Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_io.html">Python: Input-Output</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python: Statement Complessi</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#codice-condizionale-if">Codice condizionale: <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#esercizi">Esercizi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#codice-iterativo-for">Codice iterativo: <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#codice-iterativo-while">Codice iterativo: <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Esercizi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#codice-annidato">Codice annidato</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Esercizi</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="python_complex_statements.html">Python: Statement Complessi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -162,7 +151,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/python_complex_statements.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/python_complex_statements_originale.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -508,7 +497,26 @@ se l’elemento che ho sotto mano e’ piu’ grande di <code class="docutils li
 <code class="docutils literal notranslate"><span class="pre">massimo_fino_ad_ora</span></code> conterra’ (<em>suspance</em>!) il massimo elemento trovato
 fino ad ora.</li>
 </ul>
-<p><strong>PROVATE VOI</strong></p>
+<p>Scrivo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="c1"># creo la variabile ausiliaria, la inizializzo con il</span>
+<span class="c1"># primo numero della lista per convenienza</span>
+<span class="n">massimo_fino_ad_ora</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># itero su tutti gli elementi tranne il primo</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+
+    <span class="c1"># l&#39;elemento che ho sotto mano e&#39; piu&#39; grande del</span>
+    <span class="c1"># piu&#39; grande che ho visto fino ad ora?</span>
+    <span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="n">massimo_fino_ad_ora</span><span class="p">:</span>
+
+        <span class="c1"># si&#39;: aggiorno massimo_fino_ad_ora</span>
+        <span class="n">massimo_fino_ad_ora</span> <span class="o">=</span> <span class="n">numero</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;il massimo e&#39;:&quot;</span><span class="p">,</span> <span class="n">massimo_fino_ad_ora</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Esempio</strong>. Data la seguente tabella (che potrebbe essere il risultato
 di <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> su un file):</p>
@@ -533,7 +541,23 @@ di <code class="docutils literal notranslate"><span class="pre">readlines()</spa
 <p>che contiene per ogni dominio (riga) di <code class="docutils literal notranslate"><span class="pre">tabella</span></code>, esclusa l’intestazione,
 come chiave la proteina corrispondente (prima colonna) e come valore le
 informazioni associate (altre colonne: nome, inizio e fine del dominio).</p>
-<p><strong>PROVATE VOI</strong></p>
+<p>Scrivo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># parto da un dizionario vuoto</span>
+<span class="n">dati</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># per ogni riga, esclusa l&#39;intestazione</span>
+<span class="k">for</span> <span class="n">riga</span> <span class="ow">in</span> <span class="n">tabella</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">parole</span> <span class="o">=</span> <span class="n">riga</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="n">proteina</span> <span class="o">=</span> <span class="n">parole</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dominio</span> <span class="o">=</span> <span class="n">parole</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">inizio</span> <span class="o">=</span> <span class="n">parole</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">fine</span> <span class="o">=</span> <span class="n">parole</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># aggiorno il dizionario</span>
+    <span class="n">dati</span><span class="p">[</span><span class="n">proteina</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dominio</span><span class="p">,</span> <span class="n">inizio</span><span class="p">,</span> <span class="n">fine</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Esempio</strong>. <code class="docutils literal notranslate"><span class="pre">break</span></code> permette di <em>interrompere</em> il ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ad
 esempio:</p>
@@ -1411,15 +1435,6 @@ come se fossero righe vuote.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="video.html" class="btn btn-neutral float-right" title="Video" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="python_io.html" class="btn btn-neutral float-left" title="Python: Input-Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

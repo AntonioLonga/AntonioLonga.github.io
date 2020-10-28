@@ -132,6 +132,12 @@ Note Introduttive
 |
 |
 
+.. highlight:: Complex Statements
+
+.. include:: python_complex_statements.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -154,5 +160,6 @@ Note Introduttive
     python_sets.rst
     python_tuples.rst
     python_io.rst
+    python_complex_statements.rst
     video.rst 
 

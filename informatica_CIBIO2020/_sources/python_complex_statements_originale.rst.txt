@@ -371,7 +371,25 @@ L'idea e' questa:
   ``massimo_fino_ad_ora`` conterra' (*suspance*!) il massimo elemento trovato
   fino ad ora.
 
-**PROVATE VOI**
+Scrivo::
+
+    lista = [1, 25, 6, 27, 57, 12]
+
+    # creo la variabile ausiliaria, la inizializzo con il
+    # primo numero della lista per convenienza
+    massimo_fino_ad_ora = lista[0]
+
+    # itero su tutti gli elementi tranne il primo
+    for numero in lista[1:]:
+
+        # l'elemento che ho sotto mano e' piu' grande del
+        # piu' grande che ho visto fino ad ora?
+        if numero > massimo_fino_ad_ora:
+
+            # si': aggiorno massimo_fino_ad_ora
+            massimo_fino_ad_ora = numero
+
+    print("il massimo e':", massimo_fino_ad_ora)
 
 ****
 
@@ -399,7 +417,22 @@ che contiene per ogni dominio (riga) di ``tabella``, esclusa l'intestazione,
 come chiave la proteina corrispondente (prima colonna) e come valore le
 informazioni associate (altre colonne: nome, inizio e fine del dominio).
 
-**PROVATE VOI**
+Scrivo::
+
+    # parto da un dizionario vuoto
+    dati = {}
+
+    # per ogni riga, esclusa l'intestazione
+    for riga in tabella[1:]:
+        parole = riga.split()
+
+        proteina = parole[0]
+        dominio = parole[1]
+        inizio = parole[2]
+        fine = parole[3]
+
+        # aggiorno il dizionario
+        dati[proteina] = (dominio, inizio, fine)
 
 ****
 
