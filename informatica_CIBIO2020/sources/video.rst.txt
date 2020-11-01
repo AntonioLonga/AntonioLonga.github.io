@@ -159,3 +159,18 @@ Laboratorio 9
 - `Esercizi <https://youtu.be/CTCQsl_wRyo?t=302>`_. 
 - `Interfaccia Filesystem <https://youtu.be/CTCQsl_wRyo?t=3414>`_. 
 - `Esercizi <https://youtu.be/CTCQsl_wRyo?t=4003>`_. 
+
+
+https://www.youtube.com/watch?v=92qPrHPCm1g
+
+
+Laboratorio 10
+-------------
+
+`Lab  <https://www.youtube.com/watch?v=92qPrHPCm1g>`_.
+
+- `If <https://youtu.be/92qPrHPCm1g?t=39>`_. 
+- `Esercizi + Soluzioni <https://youtu.be/92qPrHPCm1g?t=619>`_. 
+- `For <https://youtu.be/92qPrHPCm1g?t=1801>`_. 
+- `While <https://youtu.be/92qPrHPCm1g?t=2381>`_. 
+- `Esercizi + Soluzioni <https://youtu.be/92qPrHPCm1g?t=2534>`_. 
