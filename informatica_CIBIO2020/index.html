@@ -99,6 +99,8 @@
 <li class="toctree-l1"><a class="reference internal" href="python_tuples.html">Python: Tuple</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_io.html">Python: Input-Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_complex_statements.html">Python: Statement Complessi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_functions.html">Python: Funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_simEsame1.html">Python: Simulazione esame</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -7927,6 +7929,1583 @@ come se fossero righe vuote.</p>
 </ol>
 </li>
 </ol>
+</div>
+<div class="section" id="statement-complessi-soluzioni">
+<h2>Statement Complessi (Soluzioni)<a class="headerlink" href="#statement-complessi-soluzioni" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="if-soluzioni">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> (Soluzioni)<a class="headerlink" href="#if-soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero = int(input(&quot;scrivi un numero: &quot;))
+
+if numero % 2 == 0:
+    print(&quot;pari&quot;)
+else:
+    print(&quot;dispari&quot;)
+</pre></div>
+</div>
+<p>Uso <code class="docutils literal notranslate"><span class="pre">else</span></code> perche’ pari e dispari sono le uniche due possibilita’.</p>
+<p>Volendo, posso esplicitare la terza possibilita’, cioe’ il caso in cui
+<code class="docutils literal notranslate"><span class="pre">numero</span></code> non e’ ne’ pari ne’ dispari, cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>if numero % 2 == 0:
+    print(&quot;pari&quot;)
+elif numero % 2 == 1:
+    print(&quot;dispari&quot;)
+else:
+    print(&quot;impossibile!&quot;)
+</pre></div>
+</div>
+<p>ma il codice nell’<code class="docutils literal notranslate"><span class="pre">else</span></code> non verra’ eseguito per nessun valore di <code class="docutils literal notranslate"><span class="pre">numero</span></code>!</p>
+<p>Visto che le due possibilita’ (<code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ pari, <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ dispari)
+sono mutualmente esclusive, posso anche permettermi di scrivere:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>if numero % 2 == 0:
+    print(&quot;pari&quot;)
+if numero % 2 == 1:
+    print(&quot;dispari&quot;)
+</pre></div>
+</div>
+<p>perche’ anche in assenza dell’<code class="docutils literal notranslate"><span class="pre">else</span></code>, uno e solo uno dei due
+<code class="docutils literal notranslate"><span class="pre">if</span></code> puo’ essere eseguito.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero = float(input(&quot;scrivi un razionale: &quot;))
+
+if numero &gt;= -1 and numero &lt;= 1:
+    print(&quot;okay&quot;)
+</pre></div>
+</div>
+<p>Non servono ne’<code class="docutils literal notranslate"><span class="pre">elif</span></code> (c’e’ una sola condizione) ne’ <code class="docutils literal notranslate"><span class="pre">else</span></code> (se la
+condizione e’ falsa, non devo fare niente).</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risposta = input(&quot;scrivi due numeri separati da spazio: &quot;)
+
+parole = risposta.split()
+numero1 = int(parole[0])
+numero2 = int(parole[1])
+
+if numero1 &gt; numero2:
+    print(&quot;primo&quot;)
+elif numero2 &gt; numero1:
+    print(&quot;secondo&quot;)
+else:
+    print(&quot;nessuno dei due&quot;)
+</pre></div>
+</div>
+<p>In alternativa:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risposta = input(&quot;scrivi due numeri separati da spazio: &quot;)
+
+numeri = [int(parola) for parola in risposta.split()]
+
+if numeri[0] &gt; numeri[1]:
+    print(&quot;primo&quot;)
+elif numeri[0] &lt; numeri[1]:
+    print(&quot;secondo&quot;)
+else:
+    print(&quot;nessuno dei due&quot;)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>oroscopo_di = {
+    &quot;gennaio&quot;: &quot;fortuna estrema&quot;,
+    &quot;febbraio&quot;: &quot;fortuna galattica&quot;,
+    &quot;marzo&quot;: &quot;fortuna incredibile&quot;,
+    &quot;aprile&quot;: &quot;ultra-fortuna&quot;,
+}
+
+mese = input(&quot;dimmi il tuo mese di nascita: &quot;)
+
+if mese in oroscopo_di:
+    print(oroscopo_di[mese])
+else:
+    print(&quot;non disponibile&quot;)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>percorso = input(&quot;scrivi il percorso: &quot;)
+
+righe = open(percorso, &quot;r&quot;).readlines()
+if len(righe) == 0:
+    print(&quot;vuoto&quot;)
+elif len(righe) &lt; 100:
+    print(&quot;piccolo&quot;, len(righe))
+elif len(righe) &lt; 1000:
+    print(&quot;medio&quot;, len(righe))
+else:
+    print(&quot;grande&quot;, len(righe))
+</pre></div>
+</div>
+<p>Si noti che non e’ necessario specificare per intero le condizioni: nel
+codice abbrevio <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">&lt;</span> <span class="pre">len(righe)</span> <span class="pre">&lt;</span> <span class="pre">1000</span></code> con <code class="docutils literal notranslate"><span class="pre">len(righe)</span> <span class="pre">&lt;</span> <span class="pre">1000</span></code>. Me
+lo posso permettere perche’ quando <code class="docutils literal notranslate"><span class="pre">len(righe)</span></code> e’ minore di <code class="docutils literal notranslate"><span class="pre">100</span></code>
+eseguo il primo <code class="docutils literal notranslate"><span class="pre">elif</span></code>: il secondo <code class="docutils literal notranslate"><span class="pre">elif</span></code> non viene neanche considerato.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>punto1 = [float(parola) for parola
+          in input(&quot;scrivi tre coordinate: &quot;).split()]
+
+punto2 = [float(parola) for parola
+          in input(&quot;scrivi tre coordinate: &quot;).split()]
+
+if punto1[0] &gt;= 0 and punto1[1] &gt;= 0 and punto1[2] &gt;= 0 and \
+   punto2[0] &gt;= 0 and punto2[1] &gt;= 0 and punto2[2] &gt;= 0:
+    diff_x = punto1[0] - punto2[0]
+    diff_y = punto1[1] - punto2[1]
+    diff_z = punto1[2] - punto2[2]
+
+    print(&quot;la distanza e&#39;&quot;, (diff_x**2 + diff_y**2 +  diff_z**2)**0.5)
+</pre></div>
+</div>
+<p>Si noti che il <code class="docutils literal notranslate"><span class="pre">print</span></code> e’ <em>dentro</em> l’<code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+</li>
+<li><p class="first">Soluzione: sappiamo che <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ un intero arbitrario (puo’ essere
+qualunque intero deciso dall’utente). Il codice che ci interessa e’ questo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>if numero % 3 == 0:
+    print(&quot;divide 3!&quot;)
+elif numero % 3 != 0:
+    print(&quot;non divide 3!&quot;)
+else:
+    print(&quot;boh&quot;)
+</pre></div>
+</div>
+<p>L’<code class="docutils literal notranslate"><span class="pre">if</span></code>, l’<code class="docutils literal notranslate"><span class="pre">elif</span></code> e l’<code class="docutils literal notranslate"><span class="pre">else</span></code> formano una catena: solo uno tra loro
+viene eseguito.</p>
+<ol class="arabic simple">
+<li>L’<code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito se e solo se <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ divisibile per tre.</li>
+<li>L’<code class="docutils literal notranslate"><span class="pre">elif</span></code> viene eseguito se e solo se l’<code class="docutils literal notranslate"><span class="pre">if</span></code> precedente non viene
+eseguito e se <code class="docutils literal notranslate"><span class="pre">numero</span></code> <em>non</em> e’ divisibile per tre.</li>
+<li>L’<code class="docutils literal notranslate"><span class="pre">else</span></code> viene eseguito quando ne’ l’<code class="docutils literal notranslate"><span class="pre">if</span></code> ne’ l’<code class="docutils literal notranslate"><span class="pre">elif</span></code> vengono
+eseguito.</li>
+</ol>
+<p>Visto che non ci sono numeri che non siano ne’ divisibili ne’ non-divisibili
+per <code class="docutils literal notranslate"><span class="pre">3</span></code>, non resta alcuna altra possibilita’. O viene eseguito l’<code class="docutils literal notranslate"><span class="pre">if</span></code>,
+o viene eseguito l’<code class="docutils literal notranslate"><span class="pre">elif</span></code>: l’<code class="docutils literal notranslate"><span class="pre">else</span></code> non viene <em>mai</em> eseguito.</p>
+<p>Quindi la risposta e’ no.</p>
+</li>
+<li><p class="first">Soluzione: come sopra, <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ un intero arbitrario. Il codice e’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero = int(input(&quot;scrivi un numero: &quot;))
+if numero % 2 == 0:
+    print(&quot;divide 2!&quot;)
+if numero % 3 == 0:
+    print(&quot;divide 3!&quot;)
+if numero % 2 != 0 and numero % 3 != 0:
+    print(&quot;boh&quot;)
+</pre></div>
+</div>
+<p>Qui non ci sono “catene” di <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> ed <code class="docutils literal notranslate"><span class="pre">else</span></code>: ci sono tre <code class="docutils literal notranslate"><span class="pre">if</span></code>
+indipendenti.</p>
+<ol class="arabic simple">
+<li>Il primo <code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito se e solo se <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ divisibile per
+due.</li>
+<li>Il secondo <code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito se e solo se <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ divisibile
+per tre.</li>
+<li>Il terzo <code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito se e solo se <code class="docutils literal notranslate"><span class="pre">numero</span></code> <em>non</em> e’ divisibile
+ne’ per due, ne’ per tre.</li>
+</ol>
+<p>Se <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ es. 6, che e’ divisibile sia per due che per tre, allora i
+primi due <code class="docutils literal notranslate"><span class="pre">if</span></code> vengono entrambi eseguiti, mentre il terzo non viene
+eseguito.</p>
+<p>Se <code class="docutils literal notranslate"><span class="pre">numero</span></code> e’ es. 5, che non e’ divisibile ne’ per due ne’ per tre, allora
+i primi due <code class="docutils literal notranslate"><span class="pre">if</span></code> <em>non</em> vengono eseguiti; in compenso viene eseguito il
+terzo.</p>
+<p>Quindi la risposta e’ si’.</p>
+<p>(Altri esempi: per <code class="docutils literal notranslate"><span class="pre">numero</span> <span class="pre">=</span> <span class="pre">2</span></code> viene eseguito solo il primo <code class="docutils literal notranslate"><span class="pre">if</span></code>, per
+<code class="docutils literal notranslate"><span class="pre">numero</span> <span class="pre">=</span> <span class="pre">3</span></code> solo il secondo. Si noti pero’ che non c’e’ verso di <em>non</em>
+eseguire nessuno uno dei tre <code class="docutils literal notranslate"><span class="pre">if</span></code>.)</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risposta = input(&quot;somma o prodotto?: &quot;)
+
+if risposta == &quot;somma&quot;:
+    numero1 = int(input(&quot;numero 1: &quot;))
+    numero2 = int(input(&quot;numero 2: &quot;))
+    print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+
+elif risposta == &quot;prodotto&quot;:
+    numero1 = int(input(&quot;numero 1: &quot;))
+    numero2 = int(input(&quot;numero 2: &quot;))
+    print(&quot;il prodotto e&#39;&quot;, numero1 * numero2)
+</pre></div>
+</div>
+<p>Usare un <code class="docutils literal notranslate"><span class="pre">if</span></code> o un <code class="docutils literal notranslate"><span class="pre">elif</span></code> non altera l’esecuzione del programma.</p>
+<p>Posso semplificare cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risposta = input(&quot;somma o prodotto?: &quot;)
+numero1 = int(input(&quot;numero 1: &quot;))
+numero2 = int(input(&quot;numero 2: &quot;))
+
+if risposta == &quot;somma&quot;:
+    print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+
+elif risposta == &quot;prodotto&quot;:
+    print(&quot;il prodotto e&#39;&quot;, numero1 * numero2)
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="for-while-soluzioni">
+<h2>For While (Soluzioni)<a class="headerlink" href="#for-while-soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>for numero in range(10):
+    print(numero)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>for numero in range(10):
+    print(numero**2)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>somma_quadrati = 0
+for numero in range(10):
+    somma_quadrati = somma_quadrati + numero**2
+print(somma_quadrati)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prodotto = 1 # occhio che qui parto da 1!
+for numero in range(1,10):
+    prodotto = prodotto * numero
+print(prodotto)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>volume_di = {
+    &quot;A&quot;:  67.0, &quot;C&quot;:  86.0, &quot;D&quot;:  91.0,
+    &quot;E&quot;: 109.0, &quot;F&quot;: 135.0, &quot;G&quot;:  48.0,
+    &quot;H&quot;: 118.0, &quot;I&quot;: 124.0, &quot;K&quot;: 135.0,
+    &quot;L&quot;: 124.0, &quot;M&quot;: 124.0, &quot;N&quot;:  96.0,
+    &quot;P&quot;:  90.0, &quot;Q&quot;: 114.0, &quot;R&quot;: 148.0,
+    &quot;S&quot;:  73.0, &quot;T&quot;:  93.0, &quot;V&quot;: 105.0,
+    &quot;W&quot;: 163.0, &quot;Y&quot;: 141.0,
+}
+
+somma_volumi = 0
+for volume in volume_di.values():
+    somma_volumi = somma_volumi + volume
+print(somma_volumi)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>volume_di = {
+    &quot;A&quot;:  67.0, &quot;C&quot;:  86.0, &quot;D&quot;:  91.0,
+    &quot;E&quot;: 109.0, &quot;F&quot;: 135.0, &quot;G&quot;:  48.0,
+    &quot;H&quot;: 118.0, &quot;I&quot;: 124.0, &quot;K&quot;: 135.0,
+    &quot;L&quot;: 124.0, &quot;M&quot;: 124.0, &quot;N&quot;:  96.0,
+    &quot;P&quot;:  90.0, &quot;Q&quot;: 114.0, &quot;R&quot;: 148.0,
+    &quot;S&quot;:  73.0, &quot;T&quot;:  93.0, &quot;V&quot;: 105.0,
+    &quot;W&quot;: 163.0, &quot;Y&quot;: 141.0,
+}
+
+fasta = &quot;&quot;&quot;&gt;1BA4:A|PDBID|CHAIN|SEQUENCE
+DAEFRHDSGYEVHHQKLVFFAEDVGSNKGAIIGLMVGGVV&quot;&quot;&quot;
+
+# estraggo la sequenza
+sequenza = fasta.split(&quot;\n&quot;)[1]
+
+somma_volumi = 0
+
+# per ciascun carattere nella sequenza...
+for aa in sequenza:
+    volume_di_aa = volume_di[aa]
+    somma_volumi = somma_volumi + volume_di_aa
+
+print(somma_volumi)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione: adatto il codice dell’esempio sopra:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>lista = [1, 25, 6, 27, 57, 12]
+
+minimo_fino_ad_ora = lista[0]
+for numero in lista[1:]:
+    if numero &lt; minimo_fino_ad_ora:
+        minimo_fino_ad_ora = numero
+
+print(&quot;il minimo e&#39;:&quot;, minimo_fino_ad_ora)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione: combino l’esempio e l’esercizio sopra:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>lista = [1, 25, 6, 27, 57, 12]
+
+massimo = lista[0]
+minimo = lista[0]
+
+for numero in lista[1:]:
+    if numero &gt; massimo:
+        massimo = numero
+    if numero &lt; minimo:
+        minimo = numero
+
+print(&quot;minimo =&quot;, minimo, &quot;massimo =&quot;, massimo)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione: <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">len(sequenza),</span> <span class="pre">3)</span></code> restituisce <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9,</span> <span class="pre">...]</span></code>,
+che sono le posizioni di inizio delle varie triplette.</p>
+<p>E’ sufficiente scrivere:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sequenza = &quot;ATGGCGCCCGAACAGGGA&quot;
+
+# parto da una lista vuota
+triplette = []
+
+for pos_inizio in range(0, len(sequenza), 3):
+    tripletta = sequenza[pos_inizio:pos_inizio+3]
+    triplette.append(tripletta)
+
+print(triplette)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>testo = &quot;&quot;&quot;&gt;2HMI:A|PDBID|CHAIN|SEQUENCE
+PISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKI
+&gt;2HMI:B|PDBID|CHAIN|SEQUENCE
+PISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKI
+&gt;2HMI:C|PDBID|CHAIN|SEQUENCE
+DIQMTQTTSSLSASLGDRVTISCSASQDISSYLNWYQQKPEGTVKLLIYY
+&gt;2HMI:D|PDBID|CHAIN|SEQUENCE
+QITLKESGPGIVQPSQPFRLTCTFSGFSLSTSGIGVTWIRQPSGKGLEWL
+&gt;2HMI:E|PDBID|CHAIN|SEQUENCE
+ATGGCGCCCGAACAGGGAC
+&gt;2HMI:F|PDBID|CHAIN|SEQUENCE
+GTCCCTGTTCGGGCGCCA&quot;&quot;&quot;
+
+# prima di tutto rompo il testo in righe
+righe = testo.split(&quot;\n&quot;)
+
+# creo il dizionario dove metto il risultato voluto
+sequenza_di = {}
+
+# ora posso iterare sulle varie righe
+for riga in righe:
+
+    if riga[0] == &quot;&gt;&quot;:
+        # se la riga e&#39; un&#39;intestazione, estraggo il nome
+        # della sequenza
+        nome = riga.split(&quot;|&quot;)[0]
+    else:
+        # altrimenti, e&#39; la sequenza vera a propria. il
+        # nome l&#39;ho ricavato nell&#39;iterazione precedente
+        # (che corrisponde alla riga sopra nel file FASTA)
+        # quindi lo posso usare per aggiornare il dizionario
+        sequenza_di[nome] = riga
+
+print(sequenza_di)
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>while input(&quot;scrivi &#39;STOP&#39;: &quot;) != &quot;STOP&quot;:
+    print(&quot;devi scrivere &#39;STOP&#39;...&quot;)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>while input(&quot;scrivi stop: &quot;).lower() != &quot;stop&quot;:
+    print(&quot;devi scrivere stop...&quot;)
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Soluzioni:</p>
+<ol class="arabic simple">
+<li>Soluzione: tutti i numeri in <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>.</li>
+<li>Soluzione: il numero <code class="docutils literal notranslate"><span class="pre">0</span></code>. Il <code class="docutils literal notranslate"><span class="pre">break</span></code> interrompe immediatamente il <code class="docutils literal notranslate"><span class="pre">for</span></code>.</li>
+<li>Soluzione: tutti i numeri in <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>. Il <code class="docutils literal notranslate"><span class="pre">continue</span></code> salta all’iterazione successiva, cosa che Python fa automaticamente quando finisce il corpo del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Visto che <code class="docutils literal notranslate"><span class="pre">continue</span></code> in questo caso si trova proprio alla fine del corpo del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>, e come se non ci fosse.</li>
+<li>Soluzione: il numero <code class="docutils literal notranslate"><span class="pre">0</span></code>. Nella primissima iterazione, quando <code class="docutils literal notranslate"><span class="pre">numero</span></code> vale <code class="docutils literal notranslate"><span class="pre">0</span></code>, prima Python esegue <code class="docutils literal notranslate"><span class="pre">print(numero)</span></code>, che stampa appunto <code class="docutils literal notranslate"><span class="pre">0</span></code>; poi l’<code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito, e cosi’ il <code class="docutils literal notranslate"><span class="pre">break</span></code> che contiene, che fa interrompere immediatamente il <code class="docutils literal notranslate"><span class="pre">for</span></code>.</li>
+<li>Soluzione: niente. Nella primissima iterazione, quando <code class="docutils literal notranslate"><span class="pre">numero</span></code> vale <code class="docutils literal notranslate"><span class="pre">0</span></code>, l’<code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito e cosi’ il <code class="docutils literal notranslate"><span class="pre">break</span></code> che contiene, che fa interrompere immediatamente il <code class="docutils literal notranslate"><span class="pre">for</span></code>. Il <code class="docutils literal notranslate"><span class="pre">print</span></code> non viene mai eseguito.</li>
+<li>Soluzione: niente. Il corpo del <code class="docutils literal notranslate"><span class="pre">while</span></code> non viene mai eseguito, la condizione e’ <code class="docutils literal notranslate"><span class="pre">False</span></code>!</li>
+<li>Soluzione: niente. Visto che il corpo del <code class="docutils literal notranslate"><span class="pre">while</span></code> non viene mai eseguito (la condizione e’ <code class="docutils literal notranslate"><span class="pre">False</span></code>!), la riga <code class="docutils literal notranslate"><span class="pre">condizione</span> <span class="pre">=</span> <span class="pre">True</span></code> non viene mai eseguita.</li>
+<li>Soluzione: <code class="docutils literal notranslate"><span class="pre">&quot;la</span> <span class="pre">condizione</span> <span class="pre">e'</span> <span class="pre">vera&quot;</span></code> un numero indefinito di volte. Visto che la condizione e’ sempre <code class="docutils literal notranslate"><span class="pre">True</span></code>, il <code class="docutils literal notranslate"><span class="pre">while</span></code> non finisce mai di iterare!</li>
+<li>Soluzione: dieci stringhe della forma <code class="docutils literal notranslate"><span class="pre">&quot;all'indice</span> <span class="pre">0</span> <span class="pre">c'e'</span> <span class="pre">l'elemento</span> <span class="pre">0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;all'indice</span> <span class="pre">1</span> <span class="pre">c'e'</span> <span class="pre">l'elemento</span> <span class="pre">1&quot;</span></code>, <em>etc.</em></li>
+<li>Soluzione: tutti gli elementi di <code class="docutils literal notranslate"><span class="pre">righe</span></code> (processati da <code class="docutils literal notranslate"><span class="pre">strip()</span></code>) che vengono prima della prima riga vuota, vale a dire <code class="docutils literal notranslate"><span class="pre">&quot;riga</span> <span class="pre">1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;riga</span> <span class="pre">2&quot;</span></code> e <code class="docutils literal notranslate"><span class="pre">&quot;riga</span> <span class="pre">3&quot;</span></code>. Appena <code class="docutils literal notranslate"><span class="pre">riga</span></code> vale <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> (il quarto elemento di <code class="docutils literal notranslate"><span class="pre">righe</span></code>) l’<code class="docutils literal notranslate"><span class="pre">if</span></code> viene eseguito, e con esso il <code class="docutils literal notranslate"><span class="pre">break</span></code>, che interrompe il ciclo. Si noti che la quarta riga <em>non</em> viene stampata.</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = (0, 1, 1, 0, 0, 0, 1, 1, 2, 1, 2)
+
+for i in range(len(numeri)):
+    numero_in_pos_i = numeri[i]
+
+    if numero_in_pos_i == 2:
+        print(&quot;la posizione e&#39;&quot;, i)
+        break
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>stringhe = (&quot;000&quot;, &quot;51&quot;, &quot;51&quot;, &quot;32&quot;, &quot;57&quot;, &quot;26&quot;)
+
+for i in range(len(stringhe)):
+    stringa_in_pos_i = stringhe[i]
+
+    if &quot;2&quot; in stringa_in_pos_i:
+        print(&quot;posizione =&quot;, i, &quot;valore =&quot;, stringa_in_pos_i)
+        break
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="codice-annidato-soluzioni">
+<h2>Codice annidato (Soluzioni)<a class="headerlink" href="#codice-annidato-soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>n = 5
+matrice = [list(range(n)) for i in range(n)]
+
+for riga in matrice:
+    for elemento in riga:
+        print(elemento)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<ol class="arabic simple">
+<li>Tutti gli elementi della matrice.</li>
+<li>La <em>somma</em> di tutti gli elementi della matrice.</li>
+<li>Di nuovo tutti gli elementi della matrice.</li>
+<li>Di nuovo tutti gli elementi della matrice.</li>
+<li>La lista degli elementi sulla diagonale.</li>
+</ol>
+</li>
+<li><p class="first">Uso due cicli <code class="docutils literal notranslate"><span class="pre">for</span></code> per iterare sulle coppie di elementi:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [8, 3, 2, 9, 7, 1, 8]
+
+for numero_1 in numeri:
+    for numero_2 in numeri:
+        print(numero_1, numero_2)
+</pre></div>
+</div>
+<p>E’ molto simile all’esempio dell’orologio!</p>
+</li>
+<li><p class="first">Scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [8, 3, 2, 9, 7, 1, 8]
+
+coppie_gia_stampate = []
+
+for i in range(len(numeri)):
+    for j in range(len(numeri)):
+
+        coppia = (numeri[i], numeri[j])
+
+        # controllo se ho gia&#39; stampato la coppia simmetrica
+        if (coppia[1], coppia[0]) in coppie_gia_stampate:
+            continue
+
+        # se arrivo qui vuol dire che non ho gia&#39; stampato la coppia
+        # simmetrica (altrimenti avrei fatto `continue`), quindi stampo
+        # la coppia; poi aggiorno coppie_gia_stampate
+        print(coppia)
+
+        coppie_gia_stampate.append(coppia)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Come sopra.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = range(10)
+
+for elemento_1 in numeri:
+    for elemento_2 in numeri:
+        if 2 * elemento_1 == elemento_2:
+            print(elemento_1, elemento_2)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [8, 3, 2, 9, 7, 1, 8]
+
+for elemento_1 in numeri:
+    for elemento_2 in numeri:
+        if elemento_1 + elemento_2 == 10:
+            print(elemento_1, elemento_2)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [8, 3, 2, 9, 7, 1, 8]
+
+# parto da una lista vuota
+lista_delle_coppie = []
+
+for elemento_1 in numeri:
+    for elemento_2 in numeri:
+        if elemento_1 + elemento_2 == 10:
+            # aggiorno la lista con append()
+            lista_delle_coppie.append((elemento_1, elemento_2))
+
+# stampo la lista che ho appena costruito
+print(lista_delle_coppie)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri_1 = [5, 9, 4, 4, 9, 2]
+numeri_2 = [7, 9, 6, 2]
+
+# qui itero sulla *prima* lista
+for i in range(len(numeri_1)):
+    numero_in_pos_i = numeri_1[i]
+
+    # qui itero sulla *seconda* lista
+    for j in range(len(numeri_2)):
+        numero_in_pos_j = numeri_2[j]
+
+        if numero_in_pos_i == numero_in_pos_j:
+            print(&quot;posizioni:&quot;, i, j, &quot;; valore ripetuto:&quot;, numero_in_pos_i)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri_1 = [5, 9, 4, 4, 9, 2]
+numeri_2 = [7, 9, 6, 2]
+
+# parto da una lista vuota
+lista_delle_triplette = []
+
+# qui itero sulla *prima* lista
+for i in range(len(numeri_1)):
+    numero_in_pos_i = numeri_1[i]
+
+    # qui itero sulla *seconda* lista
+    for j in range(len(numeri_2)):
+        numero_in_pos_j = numeri_2[j]
+
+        if numero_in_pos_i == numero_in_pos_j:
+            # al posto di stampare, aggiorno la lista
+            lista_delle_triplette.append((i, j, numero_in_pos_i))
+
+# stampo la lista che ho appena costruito
+print(lista_delle_triplette)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>n = 5
+matrice = [list(range(n)) for i in range(n)]
+
+# inizializzo con il primo elemento (un qualunque altro elemento
+# andrebbe comunque bene)
+max_elemento_fino_ad_ora = matrice[0][0]
+
+# itero...
+for riga in matrice:
+    for elemento in riga:
+        # se trovo un elemento piu&#39; grande di max_elemento_fino_ad_ora,
+        # aggiorno quest&#39;ultimo
+        if elemento &gt; max_elemento_fino_ad_ora:
+            max_elemento_fino_ad_ora = elemento
+
+print(max_elemento_fino_ad_ora)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sequenze = [
+    &quot;ATGGCGCCCGAACAGGGA&quot;,
+    &quot;GTCCCTGTTCGGGCGCCA&quot;,
+]
+
+# parto da una lista vuota
+risultato = []
+
+# itero...
+for sequenza in sequenze:
+    # spezzo la sequenza corrente in triplette
+    triplette = []
+    for i in range(0, len(sequenza), 3):
+        triplette.append(sequenza[i:i+3])
+
+    # appendo (*non* extend()!!!) le triplette
+    # ottenute alla lista risultato
+    risultato.append(triplette)
+
+# stampo la lista che ho appena costruito
+print(risultato)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [5, 9, 4, 4, 9, 2]
+
+num_ripetizioni = {}
+
+for numero in numeri:
+    if not numero in num_ripetizioni:
+        num_ripetizioni[numero] = 1
+    else:
+        num_ripetizioni[numero] += 1
+</pre></div>
+</div>
+<p>o in alternativa:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [5, 9, 4, 4, 9, 2]
+
+num_ripetizioni = {}
+
+for numero in numeri:
+    if not numero in num_ripetizioni:
+        num_ripetizioni[numero] = 0
+    num_ripetizioni[numero] += 1
+</pre></div>
+</div>
+<p>oppure, sfruttando <code class="docutils literal notranslate"><span class="pre">count()</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [5, 9, 4, 4, 9, 2]
+
+num_ripetizioni = {}
+
+for numero in numeri:
+    if not numero in num_ripetizioni:
+        num_ripetizioni[numero] = numeri.count(numero)
+</pre></div>
+</div>
+<p>Si noti che in quest’ultima variante, l’<code class="docutils literal notranslate"><span class="pre">if</span></code> (ma non il suo “contenuto”!)
+e’ opzionale.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Nella formulazione originale, l’esercizio richiedeva di usare due cicli
+<code class="docutils literal notranslate"><span class="pre">for</span></code> innestati. Una possibile soluzione a questa versione dell’esercizio
+e’ la seguente:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [5, 9, 4, 4, 9, 2]
+
+num_ripetizioni = {}
+
+for numero in numeri:
+    if numero in num_ripetizioni:
+        continue
+    else:
+        num_ripetizioni[numero] = 0
+        for numero_2 in numeri:
+            if numero == numero_2:
+                num_ripetizioni[numero] += 1
+</pre></div>
+</div>
+<p>Una versione meno “ottimizzata”:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numeri = [5, 9, 4, 4, 9, 2]
+
+num_ripetizioni = {}
+
+for numero in numeri:
+    num_ripetizioni[numero] = 0
+    for numero_2 in numeri:
+        if numero == numero_2:
+            num_ripetizioni[numero] += 1
+</pre></div>
+</div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>gruppi = [[&quot;gene1&quot;, &quot;gene2&quot;], [&quot;gene3&quot;], [], [&quot;gene4&quot;, &quot;gene5&quot;]]
+
+# inizializzo con il primo gruppo
+gruppo_piu_grande_fino_ad_ora = gruppi[0]
+
+# itero...
+for gruppo in gruppi[1:]:
+    if len(gruppo) &gt; len(gruppo_piu_grande_fino_ad_ora):
+        gruppo_piu_grande_fino_ad_ora = gruppo
+
+print(gruppo_piu_grande_fino_ad_ora)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sequenze_2HMI = {
+    &quot;A&quot;: &quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI&quot;,
+    &quot;B&quot;: &quot;PISPIETVPVKLKPGMDGPKVKQWPLTEEKI&quot;,
+    &quot;C&quot;: &quot;DIQMTQTTSSLSASLGDRVTISCSASQDISS&quot;,
+    &quot;D&quot;: &quot;QITLKESGPGIVQPSQPFRLTCTFSGFSLST&quot;,
+    &quot;E&quot;: &quot;ATGGCGCCCGAACAGGGAC&quot;,
+    &quot;F&quot;: &quot;GTCCCTGTTCGGGCGCCA&quot;,
+}
+
+# parto dal dizionario vuoto
+istogrammi = {}
+
+for chiave, sequenza in sequenze_2HMI.items():
+
+    # associo a questa chiave un istogramma vuoto
+    istogrammi[chiave] = {}
+
+    for residuo in sequenza:
+        if not residuo in istogrammi[chiave]:
+            istogrammi[chiave][residuo] = 1
+        else:
+            istogrammi[chiave][residuo] += 1
+
+# stampo il risultato
+print(istogrammi)
+
+# stampo il risultato in modo piu&#39; leggibile
+for chiave, istogramma in istogrammi.items():
+    print(chiave)
+    print(istogramma)
+    print()
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>tabella = [
+    &quot;protein domain start end&quot;,
+    &quot;YNL275W PF00955 236 498&quot;,
+    &quot;YHR065C SM00490 335 416&quot;,
+    &quot;YKL053C-A PF05254 5 72&quot;,
+    &quot;YOR349W PANTHER 353 414&quot;,
+]
+
+# come prima cosa estraggo i nomi delle colonne dalla prima riga
+nomi_colonne = tabella[0].split()
+
+# parto da una lista vuota
+righe_come_dizionari = []
+
+# ora itero sulle altre righe
+for riga in tabella[1:]:
+
+    # compilo il dizionario per questa riga
+    dizionario = {}
+    parole = riga.split()
+    for i in range(len(parole)):
+
+        # estraggo la parola corrispondente
+        parola = parole[i]
+
+        # estraggo il nome della colonna corrispondente
+        nome_colonna = nomi_colonne[i]
+
+        # aggiorno il dizionario
+        dizionario[nome_colonna] = parola
+
+    # ho compilato il dizionario per la riga corrente,
+    # aggiorno la lista completa
+    righe_come_dizionari.append(dizionario)
+
+# ho finito! stampo il risultato (una riga per volta,
+# per renderlo un po&#39; piu&#39; leggibile)
+for riga_come_dizionario in righe_come_dizionari:
+    print(riga_come_dizionario)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>alfabeto_min = &quot;abcdefghijklmnopqrstuvwxyz&quot;
+alfabeto_mai = alfabeto_min.upper()
+
+# costruisco il dizionario
+min_to_mai = {}
+for i in range(len(alfabeto_min)):
+    min_to_mai[alfabeto_min[i]] = alfabeto_mai[i]
+
+
+stringa = &quot;sono una stringa&quot;
+
+# converto la stringa
+caratteri_convertiti = []
+for carattere in stringa:
+    if carattere in min_to_mai:
+        # e&#39; un carattere alfabetico, lo devo convertire
+        caratteri_convertiti.append(min_to_mai[carattere])
+    else:
+        # non e&#39; un carattere alfabetico, non lo converto
+        caratteri_convertiti.append(carattere)
+stringa_convertita = &quot;&quot;.join(caratteri_convertiti)
+
+print(stringa_convertita)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>righe_1 = open(input(&quot;percorso 1: &quot;)).readlines()
+righe_2 = open(input(&quot;percoros 2: &quot;)).readlines()
+
+# devo stare attento perche&#39; i due file possono essere di
+# lunghezza diversa!
+max_righe = len(righe_1)
+if len(righe_2) &gt; max_righe:
+    max_righe = len(righe_2)
+
+# itero sulle righe di entrambi i file
+for i in range(max_righe):
+
+    # prendo la i-esima riga del primo file,
+    # sempre che esista
+    if i &lt; len(righe_1):
+        riga_1 = righe_1[i].strip()
+    else:
+        riga_1 = &quot;&quot;
+
+    # prendo la i-esima riga del secondo file,
+    # sempre che esista
+    if i &lt; len(righe_2):
+        riga_2 = righe_2[i].strip()
+    else:
+        riga_2 = &quot;&quot;
+
+    print(riga_1 + &quot; &quot; + riga_2)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># qui leggo il file fasta
+fasta_come_dizionario = {}
+for riga in open(&quot;data/dna-fasta/fasta.1&quot;).readlines():
+
+    # mi sbarazzo di eventuali a capo
+    riga = riga.strip()
+
+    if riga[0] == &quot;&gt;&quot;:
+        intestazione = riga
+        fasta_come_dizionario[intestazione] = &quot;&quot;
+
+    else:
+        fasta_come_dizionario[intestazione] += riga
+
+# itero sulle coppie intestazione-sequenza
+for intestazione, sequenza in fasta_come_dizionario.items():
+
+    print(&quot;processo&quot;, intestazione)
+
+    # conto quante volte appare ogni nucleotide
+    conta = {}
+    for nucleotide in (&quot;A&quot;, &quot;C&quot;, &quot;T&quot;, &quot;G&quot;):
+        conta[nucleotide] = sequenza.count(nucleotide)
+    print(&quot;le conte sono&quot;, conta)
+
+    # calcolo il gc-content
+    gc_content = (conta[&quot;G&quot;] + conta[&quot;C&quot;]) / float(len(sequenza))
+    print(&quot;il GC-content e&#39;&quot;, gc_content)
+
+    # calcolo il AT/GC-ratio
+    somma_at = conta[&quot;A&quot;] + conta[&quot;T&quot;]
+    somma_cg = conta[&quot;C&quot;] + conta[&quot;G&quot;]
+    at_gc_ratio = float(somma_at) / float(somma_cg)
+    print(&quot;la AT/GC-ratio e&#39;&quot;, at_gc_ratio)
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-funzioni">
+<h1>Python: Funzioni<a class="headerlink" href="#python-funzioni" title="Permalink to this headline">¶</a></h1>
+<p>Le funzioni sono <em>blocchi di codice</em> a cui associamo un <em>nome</em>.</p>
+<p>Per definire una nuova funzione, scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def nome_funzione(argomento_1, argomento_2, ...):
+
+    # qui metto il codice che usa argomento_1, argomento_2,
+    # etc. per calcolare il valore della variabile risultato
+
+    return risultato
+</pre></div>
+</div>
+<p>Una volta definita la funzione, la posso chiamare/invocare dal resto
+del codice, cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>valore_ritornato = nome_funzione(valore_1, valore_2, ...)
+
+# qui uso valore_ritornato
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Definisco una funzione che prende due argomenti (che chiamo
+arbitrariamente <code class="docutils literal notranslate"><span class="pre">numero1</span></code> e <code class="docutils literal notranslate"><span class="pre">numero2</span></code>) e ne <strong>stampa</strong> la somma:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def stampa_somma(numero1, numero2):
+    print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+</pre></div>
+</div>
+<p>che uso cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># stampa: la somma e&#39; 10
+stampa_somma(4, 6)
+
+# stampa: la somma e&#39; 17
+stampa_somma(5, 12)
+
+# stampa: la somma e&#39; 20
+stampa_somma(19, 1)
+</pre></div>
+</div>
+<p>Il codice qui sopra e’ del tutto equivalente a questo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero1 = 4
+numero2 = 6
+print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+
+numero1 = 5
+numero2 = 12
+print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+
+numero1 = 19
+numero2 = 1
+print(&quot;la somma e&#39;&quot;, numero1 + numero2)
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">stampa_somma()</span></code> non c’e’ un <code class="docutils literal notranslate"><span class="pre">return</span></code>. Quando manca il <code class="docutils literal notranslate"><span class="pre">return</span></code>,
+il risultato della funzione e’ sempre <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risultato = stampa_somma(19, 1) # stampa: la somma e&#39; 20
+
+print(risultato)                 # stampa: None
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Riscrivo la funzione <code class="docutils literal notranslate"><span class="pre">stampa_somma()</span></code>, che <em>stampava</em> la somma
+dei suoi argomenti, in modo che invece <strong>restituisca</strong> (con <code class="docutils literal notranslate"><span class="pre">return</span></code>) la
+somma come risultato:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def calcola_somma(numero1, numero2):
+    return numero1 + numero2
+</pre></div>
+</div>
+<p>Quando la chiamo succede questo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># non stampa niente
+calcola_somma(4, 6)
+
+# non stampa niente
+calcola_somma(5, 12)
+
+# non stampa niente
+calcola_somma(19, 1)
+</pre></div>
+</div>
+<p>Perche’? Proviamo a riscrivere quest’ultimo codice per esteso:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero1 = 4
+numero2 = 6
+numero1 + numero2
+
+numero1 = 5
+numero2 = 12
+numero1 + numero2
+
+numero1 = 19
+numero2 = 1
+numero1 + numero2
+</pre></div>
+</div>
+<p>Qui e’ vero che effettivamente <em>calcolo</em> le varie somme, ma e’ anche vero
+che non le <em>stampo</em> mai: non c’e’ nessun <code class="docutils literal notranslate"><span class="pre">print</span></code>!</p>
+<p>Quello che devo fare e’ mettere il risultato di <code class="docutils literal notranslate"><span class="pre">calcola_somma()</span></code> in una
+variabile, e poi stamparlo a parte, cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># non stampa niente
+risultato = calcola_somma(19, 1)
+
+# stampa 20
+print(risultato)
+</pre></div>
+</div>
+<p>(Oppure, abbreviando: <code class="docutils literal notranslate"><span class="pre">print(calcola_somma(19,</span> <span class="pre">1))</span></code>). Scritto per esteso,
+questo codice e’ equivalente a:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>numero1 = 19
+numero2 = 1
+risultato = numero1 + numero2
+print(risultato)
+</pre></div>
+</div>
+<p>Ora tutto torna: faccio la somma e ne stampo il risultato.</p>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Il codice “contenuto” in una funzione non fa <em>niente</em> finche’ la funzione
+non viene chiamata!</p>
+<p>Se scrivo un modulo <code class="docutils literal notranslate"><span class="pre">esempio.py</span></code> con questo codice:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def funzione():
+    print(&quot;sto eseguendo la funzione!&quot;)
+</pre></div>
+</div>
+<p>e lo eseguo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>python3 esempio.py
+</pre></div>
+</div>
+<p>Python non stampera’ <em>niente</em>, perche’ la funzione non viene mai chiamata.
+Se voglio che venga eseguita, devo modificare il modulo <code class="docutils literal notranslate"><span class="pre">esempio.py</span></code> cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def funzione():
+    print(&quot;sto eseguendo la funzione!&quot;)
+
+funzione()  # &lt;-- qui chiamo la funzione
+</pre></div>
+</div>
+<p>Quano lo eseguo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>python3 esempio.py
+</pre></div>
+</div>
+<p>Python trova la chiamata alla funzione (l’ultima riga del modulo) ed
+esegue la funzione: di conseguenza, stampera’:</p>
+<div class="last highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>sto eseguendo la funzione!
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Creo una funzione <code class="docutils literal notranslate"><span class="pre">fattoriale()</span></code> che prende un intero <code class="docutils literal notranslate"><span class="pre">n</span></code>
+e ne calcola il fattoriale <span class="math">n!</span>, definito cosi’:</p>
+<div class="math">
+<p><span class="math">n! = 1 \times 2 \times 3 \times \ldots (n - 2) \times (n - 1) \times n</span></p>
+</div><p>So farlo senza una funzione? Certo. Assumiamo di avere gia’ la variabile <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+Scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>fattoriale = 1
+for k in range(1, n + 1):
+    fattoriale = fattoriale * k
+</pre></div>
+</div>
+<p>Bene. Come faccio a convertire questo codice in una funzione? Semplice:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def calcola_fattoriale(n):
+    # n contiene il valore di cui voglio calcolare il fattoriale
+
+    # qui inserisco il codice sopra
+    fattoriale = 1
+    for k in range(1, n+1):
+        fattoriale = fattoriale * k
+
+    # a questo punto ho calcolato il fattoriale, e lo
+    # posso restituire
+    return fattoriale
+</pre></div>
+</div>
+<p>Ora sono libero di chiamare la funzione quante volte mi pare:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(calcola_fattoriale(1))     # 1
+print(calcola_fattoriale(2))     # 2
+print(calcola_fattoriale(3))     # 6
+print(calcola_fattoriale(4))     # 24
+print(calcola_fattoriale(5))     # 120
+</pre></div>
+</div>
+<p>o anche in modi piu’ complessi:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>lista = [calcola_fattoriale(n) for n in range(10)]
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>Il nome della funzione ed il nome degli argomenti li scegliamo noi!</li>
+</ul>
+</div>
+<p><strong>Quiz</strong>. Che differenza c’e’ tra questo frammento di codice:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def calcola(somma_o_prodotto, a, b):
+    if somma_o_prodotto == &quot;somma&quot;:
+        return a + b
+    elif somma_o_prodotto == &quot;prodotto&quot;:
+        return a * b
+    else:
+        return 0
+
+print(calcola(&quot;somma&quot;, 10, 10))
+print(calcola(&quot;prodotto&quot;, 2, 2))
+</pre></div>
+</div>
+<p>e questo?:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def f(operation, x, y):
+    if operation == &quot;sum&quot;:
+        return x + y
+    elif operation == &quot;product&quot;:
+        return x * y
+    else:
+        return 0
+
+print(f(&quot;sum&quot;, 10, 10))
+print(f(&quot;product&quot;, 2, 2))
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>Il codice della funzione non vede le variabili <em>esterne</em> alla funzione:
+vede solo gli argomenti!</li>
+<li>Il codice della funzione puo’ restituire un risultato solo attraverso
+<code class="docutils literal notranslate"><span class="pre">return</span></code>!</li>
+</ul>
+</div>
+<p><strong>Quiz</strong>. Consideriamo questo codice:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def una_funzione(a, b):
+    somma = a + b
+    return somma
+
+a = 1
+b = 2
+somma = 3
+
+una_funzione(100, 100)
+
+print(somma)
+</pre></div>
+</div>
+<p>Cosa viene stampato a schermo?</p>
+<hr class="docutils" />
+<p><strong>Esempio</strong>. Definisco due funzioni:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def leggi_fasta(percorso):
+    righe = open(percorso).readlines()
+
+    dizionario = {}
+    for riga in righe:
+        if riga[0] == &quot;&gt;&quot;:
+            intestazione = riga
+        else:
+            sequenza = riga
+            dizionario[intestazione] = sequenza
+
+    return dizionario
+
+def calcola_istogramma(sequenza):
+    istogramma = {}
+    for carattere in sequenza:
+        if not carattere in  istogramma:
+            istogramma[carattere] = 1
+        else:
+            istogramma[carattere] += 1
+    return istogramma
+</pre></div>
+</div>
+<p>Date le due funzioni, posso implementare un programma complesso che (1) legge
+un file fasta in un dizionario, (2) per ciascuna sequenza nel file fasta
+calcola l’istogramma dei nucleotidi, e (3) stampa ciascun istogramma a
+schermo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>dizionario_fasta = leggi_fasta(percorso)
+
+for intestazione, sequenza in dizionario_fasta.items():
+    istogramma = calcola_istogramma(sequenza)
+
+    print(istogramma)
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id36">
+<h2>Esercizi<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Data la funzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def funzione(arg):
+    return arg
+</pre></div>
+</div>
+<p>di che tipo e’ il risultato delle seguenti chiamate?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">funzione(1)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">funzione({&quot;1A3A&quot;:</span> <span class="pre">123,</span> <span class="pre">&quot;2B1F&quot;:</span> <span class="pre">66})</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">funzione([2*x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(10)])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">funzione(2**-2)</span></code></li>
+</ol>
+</li>
+<li><p class="first">Data la funzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def addizione(a, b):
+    return a + b
+</pre></div>
+</div>
+<p>di che tipo e’ il risultato delle seguenti chiamate?</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">addizione(2,</span> <span class="pre">2)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">addizione([1,2,3],</span> <span class="pre">[True,</span> <span class="pre">False])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">addizione(&quot;sono</span> <span class="pre">una&quot;,</span> <span class="pre">&quot;stringa&quot;)</span></code></li>
+</ol>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">stampa_pari_dispari()</span></code> che prende un intero e <strong>stampa a
+schermo</strong> <code class="docutils literal notranslate"><span class="pre">&quot;pari&quot;</span></code> se il numero e’ pari e <code class="docutils literal notranslate"><span class="pre">&quot;dispari&quot;</span></code> altrimenti.</p>
+<p>Cosa succede se scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>risultato = stampa_pari_dispari(99)
+print(risultato)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">calcola_pari_dispari()</span></code> che prende un intero e <strong>restituisce</strong>
+la stringa <code class="docutils literal notranslate"><span class="pre">&quot;pari&quot;</span></code> se il numero e’ pari e la stringa <code class="docutils literal notranslate"><span class="pre">&quot;dispari&quot;</span></code> altrimenti.</p>
+<p>Cosa succede se scrivo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>calcola_pari_dispari(99)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">controlla_alfanumerico()</span></code> che prende una stringa e
+<strong>restituisce</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code> se la stringa e’ alfanumerica (contiene solo
+caratteri alfabetici o numerici) e <code class="docutils literal notranslate"><span class="pre">False</span></code> altrimenti.</p>
+<p>Per controllare se un carattere e’ alfanumerico, usare <code class="docutils literal notranslate"><span class="pre">in</span></code> e la
+stringa:: <code class="docutils literal notranslate"><span class="pre">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;</span></code>.</p>
+<p><em>Hint</em>. Anche i caratteri minuscoli possono essere alfanumerici!</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">domanda()</span></code> che non prende nessun argomento,
+chiede all’utente un percorso ad un file e <strong>stampa a schermo</strong> i contenuti
+del file. (Testarla ad esempio con il file <code class="docutils literal notranslate"><span class="pre">data/aatable</span></code>.)</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">wc()</span></code> che prende una stringa e <strong>restituisce</strong> una
+tripla (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) di tre valori:</p>
+<ol class="arabic simple">
+<li>Il primo elemento della coppia deve essere la lunghezza della stringa.</li>
+<li>Il secondo elemento deve essere il numero di <em>a capo</em> nella stringa.</li>
+<li>Il terzo elemento deve essere il numero di parole (separate da spazi o <em>a capo</em>) nella stringa.</li>
+</ol>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">stampa_dizionario()</span></code> che prende un dizionario e
+<strong>stampa a schermo</strong> le coppie chiave-valore del dizionario formattate come
+da esempio sotto.</p>
+<p>Esempio: quando applico <code class="docutils literal notranslate"><span class="pre">stampa_dizionario()</span></code> a:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>dizionario = {
+    &quot;arginina&quot;: 0.7,
+    &quot;lisina&quot;: 0.1,
+    &quot;cisteina&quot;: 0.1,
+    &quot;istidina&quot;: 0.1,
+}
+</pre></div>
+</div>
+<p>che e’ un istogramma di frequenze, il risultato deve essere:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; stampa_dizionario(dizionario)
+istidina -&gt; 10.0%
+cisteina -&gt; 10.0%
+arginina -&gt; 70.0%
+lisina -&gt; 10.0%
+</pre></div>
+</div>
+<p>Qui l’ordine in cui vengono stampate le righe non importa.</p>
+</li>
+<li><p class="first">Come sopra, ma le chiavi devono essere ordinate <em>alfanumericamente</em>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; stampa_dizionario_ordinato(dizionario)
+arginina -&gt; 70%
+cisteina -&gt; 10%
+istidina -&gt; 10%
+lisina -&gt; 10%
+</pre></div>
+</div>
+<p><em>Hint</em>: conviene estrarre le chiavi del dizionario, ordinarle a parte,
+scorrere le chiavi ordinate e di volta in volta stampare la riga
+corrispondente.</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">crea_lista_di_fattoriali()</span></code> che prende un intero
+<code class="docutils literal notranslate"><span class="pre">n</span></code>, e <strong>restituisce</strong> una lista di <code class="docutils literal notranslate"><span class="pre">n</span></code> elementi.</p>
+<p>L’<code class="docutils literal notranslate"><span class="pre">i</span></code>-esimo elemento deve essere il fattoriale di <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>Ad esempio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; lista = crea_lista_di_fattoriali(5)
+&gt;&gt;&gt; print(len(lista))
+5                                       # 5 elementi, come richiesto
+&gt;&gt;&gt; print(lista[0])
+1                                       # e&#39; il fattoriale di 0
+&gt;&gt;&gt; print(lista[1])
+1                                       # e&#39; il fattoriale di 1
+&gt;&gt;&gt; print(lista[2])
+2                                       # e&#39; il fattoriale di 2
+&gt;&gt;&gt; print(lista[3])
+6                                       # e&#39; il fattoriale di 3
+&gt;&gt;&gt; print(lista[4])
+24                                      # e&#39; il fattoriale di 4
+</pre></div>
+</div>
+<p><em>Hint</em>: conviene usare la funzione <code class="docutils literal notranslate"><span class="pre">fattoriale()</span></code> definita in uno
+degli esempi precedenti per calcolare i valori della lista.</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">conta_carattere()</span></code> che prende due stringhe, la
+prima che rappresenta testo e la seconda che rappresenta un carattere.</p>
+<p>La funzione deve <strong>restituire</strong> il numero di ripetizioni del carattere
+nel testo.</p>
+<p>Ad esempio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(conta_carattere(&quot;abbaa&quot;, &quot;a&quot;))
+3                                           # &quot;a&quot; compare 3 volte
+&gt;&gt;&gt; print(conta_carattere(&quot;abbaa&quot;, &quot;b&quot;))
+2                                           # &quot;b&quot; compare 2 volte
+&gt;&gt;&gt; print(conta_carattere(&quot;abbaa&quot;, &quot;?&quot;))
+0                                           # &quot;?&quot; non compare mai
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">conta_caratteri()</span></code> che prende due stringhe, la
+prima che rappresenta testo e la seconda che rappresenta un tot di
+caratteri.</p>
+<p>La funzione deve <strong>restituire</strong> un dizionario, in cui le chiavi sono
+i caratteri da cercare, e il valore associato il loro numero di
+ripetizioni.</p>
+<p>Ad esempio:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; print(conta_caratteri(&quot;abbaa&quot;, &quot;ab?&quot;))
+{&quot;a&quot;: 3, &quot;b&quot;: 2, &quot;?&quot;: 0}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">distanza()</span></code> che prende due coppie <code class="docutils literal notranslate"><span class="pre">(x1,y1)</span></code> e
+<code class="docutils literal notranslate"><span class="pre">(x2,y2)</span></code> di punto bidimensionali e ne restituisce la distanza Euclidea.</p>
+<p><em>Hint</em>. La distanza Euclidea e’ <span class="math">\sqrt{(x1-x2)^2 + (y1-y2)^2}</span></p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">sottostringa()</span></code> che date due stringhe ritorna <code class="docutils literal notranslate"><span class="pre">True</span></code>
+se la seconda e’ sottostringa della prima.</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">sottostringhe_non_vuote()</span></code> che data una stringa,
+restituisca la lista delle sue sottostringhe non vuote.</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">conta_sottostringhe()</span></code> che, date due stringhe <code class="docutils literal notranslate"><span class="pre">pagliaio</span></code>
+ed <code class="docutils literal notranslate"><span class="pre">ago</span></code>, ritorni il numero di ripetizioni di <code class="docutils literal notranslate"><span class="pre">ago</span></code> in <code class="docutils literal notranslate"><span class="pre">pagliaio</span></code>.</p>
+</li>
+<li><p class="first">Creare una funzione <code class="docutils literal notranslate"><span class="pre">sottostringa_piu_lunga()</span></code> che date due stringhe
+restituisca la loro sottostringa comune piu’ lunga.</p>
+<p><em>Hint</em>. Si puo’ risolvere usando l’esercizio precedente!</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-simulazione-esame">
+<h1>Python: Simulazione esame<a class="headerlink" href="#python-simulazione-esame" title="Permalink to this headline">¶</a></h1>
+<p>Proviamo a simulare insieme una prova d’esame! in particolare stiamo simulando l’esame del 24 7 2020</p>
+<div class="section" id="testo">
+<h2>TESTO<a class="headerlink" href="#testo" title="Permalink to this headline">¶</a></h2>
+<p>Scrivere un programma che</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>prenda in ingresso:</dt>
+<dd><ol class="first last arabic">
+<li>un file con annotazioni di score di artefatti in ecografie polmonari, fatte da più medici diversi.</li>
+<li>due indici di medici di cui confrontare le annotazioni</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>per ogni coppia di score s i , s j stampi il numero di volte in cui il primo medico ha annotato un’ecografica come s i ed il secondo come s j (anche quando s i = s j )</li>
+<li>stampi il numero totale di volte in cui i due medici sono stati d’accordo, ed il numero di volte in cui sono stati in disaccordo</li>
+</ol>
+<p><strong>ESMPIO File in input</strong></p>
+<p>video_scores.csv:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>Video       Score M1        Score M2        Score M3        Score M4        Score M5        Score M6
+1   2       1       2       3       3       2
+2   1       2       1       1       1       2
+3   3       3       3       3       3       1
+4   3       3       3       3       3       3
+</pre></div>
+</div>
+<p><strong>ESMPIO DI OUTPUT</strong></p>
+<p>python agreement.py:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>Inserire nome file: video_scores.csv
+Indice primo medico: 0
+Indice secondo medico: 4
+M0  M4  Count
+2   3   8
+1   1   5
+3   3   5
+0   0   11
+0   1   6
+Totale accordo: 28
+Totale disaccordo: 32
+</pre></div>
+</div>
+<p><strong>SUGGERIMENTI</strong></p>
+<p>Si possono implementare 5 funzioni separate:</p>
+<ol class="arabic simple">
+<li>una che legga il file dati e restituisca una lista di liste di score (una per ogni video)</li>
+<li>una che data la lista di liste ed un indice, restituisca la lista di score associati al medico con quell’indice</li>
+<li>una che data la lista di liste e due indici, restituisca un dizionario che per ogni coppia di score (s i , s j ) contiene il numero di volte in cui il primo medico ha annotato con s i e il secondo con s j</li>
+<li>una che dato il dizonario (e gli indici dei medici per l’intestazione) stampi i conteggi delle varie coppie di score e calcoli e stampi i totali di accordo e disaccordo</li>
+<li>una (o un main) che realizzi il programma richiesto usando le funzioni di cui sopra</li>
+</ol>
+</div>
+<div class="section" id="id37">
+<h2>Soluzione<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+<p><strong>LEGGETE E RI LEGGETE la consegna per capire se è chiara</strong></p>
+<p>iniziamo seguendo i suggerimenti:</p>
+<dl class="docutils">
+<dt>suggerimento 1</dt>
+<dd><ol class="first last arabic simple">
+<li>una che legga il file dati e restituisca una <strong>lista di liste</strong> di score (una per ogni video)</li>
+</ol>
+</dd>
+</dl>
+<p><strong>SEMPLICE</strong>
+lo abbiamo sempre fatto:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def load_file(filename):   #definisco la funzione
+
+    file = open(filename,&quot;r&quot;) #apro il file in modalità read
+    righe = file.readlines()  #leggo le tighe
+    res = []                  #creo una variabile contenente il risultato
+
+    for i in righe[1:]:       # itero sulle righe saltando la prima
+                              # perche è un intestazione
+        res.append(i.split()[1:])   # splitto la riga, e prendo tutti gli elementi
+                                    # eccetto il primo, perche è il numero del video
+</pre></div>
+</div>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma posso verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prova = load_file(filename)
+print(prova)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<dl class="docutils">
+<dt>suggerimento 2</dt>
+<dd><ol class="first last arabic simple">
+<li>una che data la lista di liste ed un indice, restituisca la lista di score associati al medico con quell’indice</li>
+</ol>
+</dd>
+</dl>
+<p>mmmm, che cosa ci sta chiedendo?
+ci chiede di creare una funzione che prenda in input la lista di liste (il file che abbiamo appena caricato con load_file),
+e un indice (riferito ad un medico), ci restituisca una <strong>lista</strong> contenente gli score che ha dato il medico.
+Quindi, se come indice abbiamo inserito 1, allora il la nostra funzione deve restituire la lista [2,1,3,3,…]</p>
+<p><strong>SEMPLICE</strong>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def get_score(table,index):
+    scores = []
+    for row in table:               #itero sulla ogni riga della tabella
+        scores.append(row[index])   #mi salvo solo i valori in posizione index
+    return(scores)
+</pre></div>
+</div>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma posso verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prova = load_file(filename)
+scores = get_score(prova,index)
+print(scores)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<dl class="docutils">
+<dt>suggerimento 3</dt>
+<dd><ol class="first last arabic simple">
+<li>una che data la lista di liste e due indici, restituisca un dizionario che per ogni coppia di score (s i , s j ) contiene il numero di volte in cui il primo medico ha annotato con s i e il secondo con s j</li>
+</ol>
+</dd>
+</dl>
+<p>mmmm, che cosa ci sta chiedendo?
+ci chiede di creare una funzione che prenda in input la lista di liste (il file che abbiamo appena caricato con load_file),
+e <em>due</em> indici (riferiti a due medici), ci restituisca un <strong>dizionario</strong>. Il dizionario deve aver come chiave la coppia degli score data dai medici, e come valore il totale delle volte in cui si è verificata questa situazione.
+Esempio, supponiamo che le liste degli scores dei medici m1 e m2 siano le seguenti:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>Score M1 = [2,1,3,3]
+Score M2 = [1,2,3,3]
+</pre></div>
+</div>
+<p>allora il dizionario in output è il seguente:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>diz = {
+    (2,1): 1,
+    (1,2): 1,
+    (3,3): 3,
+    }
+</pre></div>
+</div>
+<p>Ora che abbiamo capito la consegna, scrivere il codice è easy :)</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def get_agreement(table,m1,m2):
+    score_m1 = get_score(table,m1)  #uso la funzione che ho fatto prima per prendere gli score del medico m1
+    score_m2 = get_score(table,m2)  #uso la funzione che ho fatto prima per prendere gli score del medico m2
+
+    diz = dict()
+    for i in range(len(score_m1)):       #itero sul range della lungheza degli score i.e il numero di video
+
+        key = (score_m1[i],score_m2[i])  # creo la chiave, che è una coppia di score (score di m1, score di m2)
+        if key in diz:                   # se la chiave è già presente nel dizionario, allora incremento il suo valore
+            diz[key] = diz[key] + 1
+        else:                            # altrimenti (se non è presente)
+            diz[key] = 1                 # aggiungo la chiave al dizionario con valore 1
+
+    return(diz)
+</pre></div>
+</div>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma posso verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prova = load_file(filename)
+dizionario = get_agreement(prova,m1,m2)
+print(dizionario)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<p>suggerimento 4</p>
+<ol class="arabic simple">
+<li>una che dato il dizonario (e gli indici dei medici per l’intestazione) stampi i conteggi delle varie coppie di score e calcoli e stampi i totali di accordo e disaccordo</li>
+</ol>
+<p>In sostanza qui ci sta chiedendo di stampare l’output in un formato piu leggibile (come quelle del esempio del output),
+e ci sta anche chiedendo di calcolare il numero di volte in cui i medici sono in accordo e quelle in cui sono in disaccordo.</p>
+<p>semplice:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def print_agreemnt(diz,m1,m2):
+    tot_agree = 0                       #inizializzo gli agree
+    tot_disagree = 0                    #inizializzo i  disagree
+    print(&quot;M%d\tM%d\tCount&quot; %(m1,m2))   #stampo un intestazione
+    for i,j in diz.keys():              #itero sulle chiavi del dizionario
+        print(i,&quot;\t&quot;,j,&quot;\t&quot;,diz[(i,j)]) #stampo score di m1, score di m2, e valore
+        if i == j:                      # se sono in accordo
+            tot_agree = tot_agree + diz[(i,j)]  # incremento il tot_agree
+        else:                                         # se non sono in accordo
+            tot_disagree = tot_disagree + diz[(i,j)]  # incremento il tot_disagree
+
+    print(&quot;Totale accordo: &quot;,tot_agree)
+    print(&quot;Totale disaccordo: &quot;,tot_disagree)
+</pre></div>
+</div>
+<p>suggerimento 5</p>
+<ol class="arabic simple">
+<li>una (o un main) che realizzi il programma richiesto usando le funzioni di cui sopra</li>
+</ol>
+<p>semplice ci chiede di mettere tutto insieme:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def load_file(filename):
+
+    file = open(filename,&quot;r&quot;)
+    righe = file.readlines()
+    res = []
+    for i in righe[1:]:
+        res.append(i.split()[1:])
+
+    return(res)
+
+def get_score(table,index):
+    scores = []
+    for row in table:
+        scores.append(row[index])
+
+    return(scores)
+
+def get_agreement(table,m1,m2):
+    score_m1 = get_score(table,m1)
+    score_m2 = get_score(table,m2)
+
+    diz = dict()
+    for i in range(len(score_m1)):
+        key = (score_m1[i],score_m2[i])
+
+        if key in diz:
+            diz[key] = diz[key] + 1
+        else:
+            diz[key] = 1
+
+    return(diz)
+
+
+
+def print_agreemnt(diz,m1,m2):
+    tot_agree = 0
+    tot_disagree = 0
+    print(&quot;M%d\tM%d\tCount&quot; %(m1,m2))
+    for i,j in diz.keys():
+        print(i,&quot;\t&quot;,j,&quot;\t&quot;,diz[(i,j)])
+
+        if i == j:
+            tot_agree = tot_agree + diz[(i,j)]
+        else:
+            tot_disagree = tot_disagree + diz[(i,j)]
+
+    print(&quot;Totale accordo: &quot;,tot_agree)
+    print(&quot;Totale disaccordo: &quot;,tot_disagree)
+
+
+
+
+filename = input(&quot;Inserire nome file&quot;)
+m1 = int(input(&quot;indice medico 1: &quot;))
+m2 = int(input(&quot;indice medico 2: &quot;))
+
+
+res = load_file(filename)
+agreement = get_agreement(res,m1,m2)
+print_agreemnt(agreement,m1,m2)
+</pre></div>
+</div>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -8076,6 +9655,14 @@ come se fossero righe vuote.</p>
 <li><a class="reference external" href="https://youtu.be/92qPrHPCm1g?t=2381">While</a>.</li>
 <li><a class="reference external" href="https://youtu.be/92qPrHPCm1g?t=2534">Esercizi + Soluzioni</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-11">
+<h2>Laboratorio 11<a class="headerlink" href="#laboratorio-11" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=ud3tZ01jdIA">Lab</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/ud3tZ01jdIA?t=1278">Codice annidato</a>.</li>
+<li><a class="reference external" href="https://youtu.be/ud3tZ01jdIA?t=3474">Esercizi</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -8198,6 +9785,19 @@ come se fossero righe vuote.</p>
 <li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#id1">Esercizi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#codice-annidato">Codice annidato</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#id2">Esercizi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#statement-complessi-soluzioni">Statement Complessi (Soluzioni)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#if-soluzioni"><code class="docutils literal notranslate"><span class="pre">if</span></code> (Soluzioni)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#for-while-soluzioni">For While (Soluzioni)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_complex_statements.html#codice-annidato-soluzioni">Codice annidato (Soluzioni)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_functions.html">Python: Funzioni</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_functions.html#esercizi">Esercizi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_simEsame1.html">Python: Simulazione esame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_simEsame1.html#testo">TESTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_simEsame1.html#soluzione">Soluzione</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
@@ -8211,6 +9811,7 @@ come se fossero righe vuote.</p>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-8">Laboratorio 8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-9">Laboratorio 9</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-10">Laboratorio 10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-11">Laboratorio 11</a></li>
 </ul>
 </li>
 </ul>

@@ -174,3 +174,12 @@ Laboratorio 10
 - `For <https://youtu.be/92qPrHPCm1g?t=1801>`_. 
 - `While <https://youtu.be/92qPrHPCm1g?t=2381>`_. 
 - `Esercizi + Soluzioni <https://youtu.be/92qPrHPCm1g?t=2534>`_. 
+
+
+Laboratorio 11
+--------------
+
+`Lab  <https://www.youtube.com/watch?v=ud3tZ01jdIA>`_.
+
+- `Codice annidato <https://youtu.be/ud3tZ01jdIA?t=1278>`_. 
+- `Esercizi  <https://youtu.be/ud3tZ01jdIA?t=3474>`_. 

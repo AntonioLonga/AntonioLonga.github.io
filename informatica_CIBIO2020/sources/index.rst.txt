@@ -138,6 +138,18 @@ Note Introduttive
 |
 |
 
+.. highlight:: Funzioni Python
+
+.. include:: python_functions.rst
+|
+|
+
+.. highlight:: Simulazione Esame 
+
+.. include:: python_simEsame1.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -161,5 +173,7 @@ Note Introduttive
     python_tuples.rst
     python_io.rst
     python_complex_statements.rst
+    python_functions.rst
+    python_simEsame1.rst
     video.rst 
 
