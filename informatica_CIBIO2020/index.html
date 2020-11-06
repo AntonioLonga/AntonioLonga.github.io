@@ -9506,6 +9506,351 @@ agreement = get_agreement(res,m1,m2)
 print_agreemnt(agreement,m1,m2)
 </pre></div>
 </div>
+</div>
+<div class="section" id="funzioni-soluzioni">
+<h2>Funzioni (Soluzioni)<a class="headerlink" href="#funzioni-soluzioni" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Soluzione: lo stesso tipo del valore che gli passo! La funzione restituisce
+il valore dell’argomento senza toccarlo.</p>
+<ol class="arabic simple">
+<li>un intero.</li>
+<li>un dizionario.</li>
+<li>una lista.</li>
+<li>un razionale.</li>
+</ol>
+</li>
+<li><p class="first">Soluzione: la somma o concatenazione dei due argomenti. Quindi:</p>
+<ol class="arabic simple">
+<li>un intero.</li>
+<li>una lista.</li>
+<li>una stringa.</li>
+</ol>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def stampa_pari_dispari(numero):
+    if numero % 2 == 0:
+        print(&quot;pari&quot;)
+    else:
+        print(&quot;dispari&quot;)
+
+stampa_pari_dispari(98)
+stampa_pari_dispari(99)
+</pre></div>
+</div>
+<p>Occhio che <code class="docutils literal notranslate"><span class="pre">stampa_pari_dispari()</span></code> stampa gia’ da se’ a schermo,
+non e’ necessario fare:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>print(stampa_pari_dispari(99))
+</pre></div>
+</div>
+<p>altrimenti Python stampera’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>pari
+None
+</pre></div>
+</div>
+<p>Il <code class="docutils literal notranslate"><span class="pre">None</span></code> viene dal <code class="docutils literal notranslate"><span class="pre">print</span></code> aggiuntivo: visto che <code class="docutils literal notranslate"><span class="pre">stampa_pari_dispari()</span></code>
+non ha <code class="docutils literal notranslate"><span class="pre">return</span></code>, il suo risultato e’ sempre <code class="docutils literal notranslate"><span class="pre">None</span></code>. Il <code class="docutils literal notranslate"><span class="pre">print</span></code> aggiuntivo
+stampa proprio questo <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def calcola_pari_dispari(numero):
+    if numero % 2 == 0:
+        return &quot;pari&quot;
+    else:
+        return &quot;dispari&quot;
+
+print(calcola_pari_dispari(98))
+print(calcola_pari_dispari(99))
+</pre></div>
+</div>
+<p>In questo caso invece, visto che non c’e’ nessun <code class="docutils literal notranslate"><span class="pre">print</span></code> in <code class="docutils literal notranslate"><span class="pre">calcola_pari_dispari()</span></code>,
+e’ necessario aggiungere a mano un <code class="docutils literal notranslate"><span class="pre">print</span></code> che ne stampi il risultato!</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def controlla_alfanumerico(stringa):
+    caratteri_alfanumerici = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;
+
+    alfanumerica = True
+    for carattere in stringa:
+        if not carattere in caratteri_alfanumerici:
+            alfanumerica = False
+
+    return alfanumerica
+
+# testo la funzione
+print(controlla_alfanumerico(&quot;ABC123&quot;))
+print(controlla_alfanumerico(&quot;A!%$*@&quot;))
+</pre></div>
+</div>
+<p>Posso anche usare <code class="docutils literal notranslate"><span class="pre">break</span></code> per interrompere il ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> appena trovo
+un carattere alfanumerico (e’ impossibile che una stringa dove ho appena
+trovato un carattere non-alfanumerico ridiventi alfanumerica), cosi’:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def controlla_alfanumerico(stringa):
+    caratteri_alfanumerici = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;
+
+    alfanumerica = True
+    for carattere in stringa:
+        if not carattere in caratteri_alfanumerici:
+            alfanumerica = False
+            break # &lt;-- esco dal for
+
+    # &lt;-- il break mi fa arrivare qui
+    return alfanumerica
+
+# testo la funzione
+print(controlla_alfanumerico(&quot;ABC123&quot;))
+print(controlla_alfanumerico(&quot;A!%$*@&quot;))
+</pre></div>
+</div>
+<p>In alternativa, visto che quando faccio <code class="docutils literal notranslate"><span class="pre">break</span></code> arrivo direttamente al
+<code class="docutils literal notranslate"><span class="pre">return</span></code>, posso saltare un passaggio e fare direttamente <code class="docutils literal notranslate"><span class="pre">return</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def controlla_alfanumerico(stringa):
+    caratteri_alfanumerici = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;
+
+    for carattere in stringa:
+        if not carattere.upper() in caratteri_alfanumerici:
+            # ho incontrato un carattere non alfanumerico
+            # posso rispondere False
+            return False
+
+    # arrivo alla fine del for solo se non ho mai fatto `return`, il
+    # che succede solo se la condizione dell&#39;`if` e&#39; sempre stata False
+    # per tutti i caratteri: vuol dire che sono tutti caratteri alfanumerici
+    # rispondo True
+    return True
+
+# testo la funzione
+print(controlla_alfanumerico(&quot;ABC123&quot;))
+print(controlla_alfanumerico(&quot;A!%$*@&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def domanda():
+    percorso = input(&quot;scrivi un percorso: &quot;)
+    print(open(percorso).readlines())
+
+# la testo
+domanda()
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def wc(stringa):
+    num_caratteri = len(stringa)
+    num_a_capo = stringa.count(&quot;\n&quot;)
+    num_parole = len(stringa.split()) # split rompe sia sugli spazi che sugli a-capo
+    return (num_caratteri, num_a_capo, num_parole)
+
+# la testo
+print(wc(&quot;sono\nuna bella\nstringa&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def stampa_dizionario(un_dizionario):
+    # l&#39;ordine in cui vanno stampate le righe non importa, percio&#39;
+    # posso usare l&#39;ordine naturale in cui mi vengono fornite da
+    # `items()`
+    for chiave, valore in un_dizionario.items():
+        print(chiave, &quot;-&gt;&quot;, (str(valore * 100.0) + &quot;%&quot;))
+
+# la testo
+
+dizionario = {
+    &quot;arginina&quot;: 0.7,
+    &quot;lisina&quot;: 0.1,
+    &quot;cisteina&quot;: 0.1,
+    &quot;istidina&quot;: 0.1,
+}
+
+stampa_dizionario(dizionario)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def stampa_dizionario_ordinato(un_dizionario):
+    # estraggo le chiavi e le ordino
+    chiavi_ordinate = list(un_dizionario.keys())
+    chiavi_ordinate.sort()
+
+    # ora stampo le coppie chiave-valore in ordine
+    for chiave in chiavi_ordinate:
+        valore = un_dizionario[chiave]
+
+        print(chiave, &quot;-&gt;&quot;, (str(valore * 100.0) + &quot;%&quot;))
+
+# la testo
+
+dizionario = {
+    &quot;arginina&quot;: 0.7,
+    &quot;lisina&quot;: 0.1,
+    &quot;cisteina&quot;: 0.1,
+    &quot;istidina&quot;: 0.1,
+}
+
+stampa_dizionario_ordinato(dizionario)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span># presa dall&#39;esempio
+def calcola_fattoriale(n):
+    fattoriale = 1
+    for k in range(1, n+1):
+        fattoriale = fattoriale * k
+    return fattoriale
+
+def crea_lista_di_fattoriali(n):
+    lista_di_fattoriali = []
+    for i in range(n):
+        lista_di_fattoriali.append(calcola_fattoriale(i))
+    return lista_di_fattoriali
+
+# la testo
+print(crea_lista_di_fattoriali(2))
+print(crea_lista_di_fattoriali(4))
+print(crea_lista_di_fattoriali(6))
+</pre></div>
+</div>
+<p>qui ho <em>riutilizzato</em> la funzione <code class="docutils literal notranslate"><span class="pre">calcola_fattoriale()</span></code> definita in uno
+degli esempi.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def conta_carattere(testo, carattere_voluto):
+    conta = 0
+    for carattere in testo:
+        if carattere == carattere_voluto:
+            conta += 1
+    return conta
+
+# la testo
+print(conta_carattere(&quot;abbaa&quot;, &quot;a&quot;))
+print(conta_carattere(&quot;abbaa&quot;, &quot;b&quot;))
+print(conta_carattere(&quot;abbaa&quot;, &quot;?&quot;))
+</pre></div>
+</div>
+<p>oppure, piu’ semplicemente, posso sfruttare <code class="docutils literal notranslate"><span class="pre">count()</span></code>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def conta_carattere(testo, carattere_voluto):
+    return testo.count(carattere_voluto)
+
+# la testo
+print(conta_carattere(&quot;abbaa&quot;, &quot;a&quot;))
+print(conta_carattere(&quot;abbaa&quot;, &quot;b&quot;))
+print(conta_carattere(&quot;abbaa&quot;, &quot;?&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def conta_caratteri(testo, caratteri_voluti):
+    conta = {}
+    for carattere_voluto in caratteri_voluti:
+        conta[carattere_voluto] = conta_carattere(testo, carattere_voluto)
+    return conta
+
+# la testo
+print(conta_caratteri(&quot;abbaa&quot;, &quot;ab?&quot;))
+</pre></div>
+</div>
+<p>dove ho riutilizzato la funzione dell’esercizio precedente.</p>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def distanza(coppia1, coppia2):
+    x1, y1 = coppia1
+    x2, y2 = coppia2
+
+    dx = x1 - x2
+    dy = y1 - y2
+
+    return (float(dx)**2 + float(dy)**2)**0.5
+
+# la testo
+print(distanza((0, 0), (1, 1)))
+print(distanza((2, 3), (3, 2)))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def sottostringa(prima, seconda):
+    return seconda in prima
+
+# la testo
+print(sottostringa(&quot;ACGT&quot;, &quot;T&quot;))
+print(sottostringa(&quot;ACGT&quot;, &quot;x&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def sottostringhe_non_vuote(stringa):
+    sottostringhe = []
+
+    # tutte le possibili posizioni in cui far iniziare la sottostringa
+    for inizio in range(len(stringa)):
+
+        # tutte le poss. posizioni in cui far finire la sottostringa
+        for fine in range(inizio + 1, len(stringa) + 1):
+
+            # estraggo la sottostringa ed aggiorno la lista
+            sottostringhe.append(stringa[inizio:fine])
+    return sottostringhe
+
+# la testo
+print(sottostringhe_non_vuote(&quot;ACTG&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def conta_sottostringhe(pagliaio, ago):
+    ripetizioni = 0
+    for inizio in range(len(pagliaio)):
+        for fine in range(inizio+1, len(pagliaio)+1):
+
+            # stampo quanto vale la sottostringa, per sicurezza
+            print(inizio, fine, &quot;:&quot;, pagliaio[inizio:fine], &quot;==&quot;, ago, &quot;?&quot;)
+
+            # controllo se la sottostringa e&#39; uguale ad `ago`
+            if pagliaio[inizio:fine] == ago:
+                print(&quot;ho trovato una ripetizione!&quot;)
+                ripetizioni += 1
+
+    return ripetizioni
+
+# la testo
+print(conta_sottostringhe(&quot;ACTGXACTG&quot;, &quot;ACTG&quot;))
+</pre></div>
+</div>
+</li>
+<li><p class="first">Soluzione:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def sottostringa_piu_lunga(stringa1, stringa2):
+
+    # riutilizzo la soluzione sopra
+    sottostringhe1 = sottostringhe_non_vuote(stringa1)
+    sottostringhe2 = sottostringhe_non_vuote(stringa2)
+
+    # controllo tra tutte le coppie di sottostringhe
+    # quale e&#39; quella piu&#39; lunga che appare sia in
+    # stringa1 che in stringa2
+    piu_lunga = &quot;&quot;
+    for sottostringa1 in sottostringhe1:
+        for sottostringa2 in sottostringhe2:
+
+            # se sono uguali e piu&#39; lunghe della sottostringa
+            # comune piu&#39; lunga trovata fin&#39;ora...
+            if sottostringa1 == sottostringa2 and \
+               len(sottostringa1) &gt; len(piu_lunga):
+
+                # aggiorno
+                piu_lunga = sottostringa1
+
+    return piu_lunga
+
+# la testo
+print(sottostringa_piu_lunga(&quot;ACTG&quot;, &quot;GCTA&quot;))
+print(sottostringa_piu_lunga(&quot;&quot;, &quot;ACTG&quot;))
+print(sottostringa_piu_lunga(&quot;ACTG&quot;, &quot;&quot;))
+</pre></div>
+</div>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -9663,6 +10008,14 @@ print_agreemnt(agreement,m1,m2)
 <li><a class="reference external" href="https://youtu.be/ud3tZ01jdIA?t=1278">Codice annidato</a>.</li>
 <li><a class="reference external" href="https://youtu.be/ud3tZ01jdIA?t=3474">Esercizi</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-12">
+<h2>Laboratorio 12<a class="headerlink" href="#laboratorio-12" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=AjMVw4ctaVQ">Lab</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/AjMVw4ctaVQ?t=545">Funzioni</a>.</li>
+<li><a class="reference external" href="https://youtu.be/AjMVw4ctaVQ?t=2413">Esercizi</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -9798,6 +10151,7 @@ print_agreemnt(agreement,m1,m2)
 <li class="toctree-l1"><a class="reference internal" href="python_simEsame1.html">Python: Simulazione esame</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_simEsame1.html#testo">TESTO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_simEsame1.html#soluzione">Soluzione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_simEsame1.html#funzioni-soluzioni">Funzioni (Soluzioni)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
@@ -9812,6 +10166,7 @@ print_agreemnt(agreement,m1,m2)
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-9">Laboratorio 9</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-10">Laboratorio 10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-11">Laboratorio 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-12">Laboratorio 12</a></li>
 </ul>
 </li>
 </ul>

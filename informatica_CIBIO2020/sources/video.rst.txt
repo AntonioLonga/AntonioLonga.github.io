@@ -183,3 +183,13 @@ Laboratorio 11
 
 - `Codice annidato <https://youtu.be/ud3tZ01jdIA?t=1278>`_. 
 - `Esercizi  <https://youtu.be/ud3tZ01jdIA?t=3474>`_. 
+
+
+
+Laboratorio 12
+--------------
+
+`Lab  <https://www.youtube.com/watch?v=AjMVw4ctaVQ>`_.
+
+- `Funzioni <https://youtu.be/AjMVw4ctaVQ?t=545>`_. 
+- `Esercizi  <https://youtu.be/AjMVw4ctaVQ?t=2413>`_. 
