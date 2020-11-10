@@ -144,9 +144,15 @@ Note Introduttive
 |
 |
 
-.. highlight:: Simulazione Esame 
+.. highlight:: Simulazione Esame 1
 
 .. include:: python_simEsame1.rst
+|
+|
+
+.. highlight:: Simulazione Esame 2 
+
+.. include:: python_simEsame2.rst
 |
 |
 
@@ -175,5 +181,6 @@ Note Introduttive
     python_complex_statements.rst
     python_functions.rst
     python_simEsame1.rst
+    python_simEsame2.rst
     video.rst 
 
