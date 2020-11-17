@@ -156,6 +156,12 @@ Note Introduttive
 |
 |
 
+.. highlight:: Simulazione Esame 3 
+
+.. include:: python_simEsame3.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -182,5 +188,6 @@ Note Introduttive
     python_functions.rst
     python_simEsame1.rst
     python_simEsame2.rst
+    python_simEsame3.rst
     video.rst 
 
