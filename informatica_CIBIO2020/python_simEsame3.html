@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Video" href="video.html" />
+    <link rel="next" title="Python: Simulazione esame 4" href="python_simEsame4.html" />
     <link rel="prev" title="Python: Simulazione esame 2" href="python_simEsame2.html" /> 
 </head>
 
@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#soluzione">Soluzione</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="python_simEsame4.html">Python: Simulazione esame 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -283,25 +284,19 @@ una funzione che prenda in input una coppia (sequenza proteica, legame(+,-))e re
 </pre></div>
 </div>
 <p><strong>SEMPLICE</strong>:</p>
-<dl class="docutils">
-<dt>def longest_binding(seq, bind):</dt>
-<dd><p class="first">longest = “”
-i = bind.find(“+”)
-while i != -1:</p>
-<blockquote>
-<div><p>j = bind.find(“-“, i)
-if j == -1:</p>
-<blockquote>
-<div>j = len(seq)</div></blockquote>
-<dl class="docutils">
-<dt>if j-i &gt; len(longest):</dt>
-<dd>longest = seq[i:j]</dd>
-</dl>
-<p>i = bind.find(“+”, j)</p>
-</div></blockquote>
-<p class="last">return longest</p>
-</dd>
-</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">longest_binding</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">bind</span><span class="p">):</span>
+    <span class="n">longest</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">bind</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">bind</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">j</span><span class="o">-</span><span class="n">i</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
+            <span class="n">longest</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bind</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">longest</span>
+</pre></div>
+</div>
 <p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
 non lo so, ma posso verificarlo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prova</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -427,7 +422,7 @@ non lo so, ma posso verificarlo:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="video.html" class="btn btn-neutral float-right" title="Video" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_simEsame4.html" class="btn btn-neutral float-right" title="Python: Simulazione esame 4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="python_simEsame2.html" class="btn btn-neutral float-left" title="Python: Simulazione esame 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

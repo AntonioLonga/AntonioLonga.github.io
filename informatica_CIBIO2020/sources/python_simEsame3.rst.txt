@@ -121,17 +121,17 @@ una funzione che prenda in input una coppia (sequenza proteica, legame(+,-))e re
 
 **SEMPLICE**::
 
-def longest_binding(seq, bind):
-    longest = ""
-    i = bind.find("+")
-    while i != -1:
-        j = bind.find("-", i)
-        if j == -1:
-            j = len(seq)
-        if j-i > len(longest):
-            longest = seq[i:j]
-        i = bind.find("+", j)
-    return longest
+    def longest_binding(seq, bind):
+        longest = ""
+        i = bind.find("+")
+        while i != -1:
+            j = bind.find("-", i)
+            if j == -1:
+                j = len(seq)
+            if j-i > len(longest):
+                longest = seq[i:j]
+            i = bind.find("+", j)
+        return longest
 
 
 **E' corretto il codice che abbiamo scritto fino ad ora?**

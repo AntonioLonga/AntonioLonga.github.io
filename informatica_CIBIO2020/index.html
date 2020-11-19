@@ -103,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python_simEsame1.html">Python: Simulazione esame 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_simEsame2.html">Python: Simulazione esame 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_simEsame3.html">Python: Simulazione esame 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_simEsame4.html">Python: Simulazione esame 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a></li>
 </ul>
 
@@ -10214,25 +10215,19 @@ bind = &#39;+++++++-----------++++-&#39;
 </pre></div>
 </div>
 <p><strong>SEMPLICE</strong>:</p>
-<dl class="docutils">
-<dt>def longest_binding(seq, bind):</dt>
-<dd><p class="first">longest = “”
-i = bind.find(“+”)
-while i != -1:</p>
-<blockquote>
-<div><p>j = bind.find(“-“, i)
-if j == -1:</p>
-<blockquote>
-<div>j = len(seq)</div></blockquote>
-<dl class="docutils">
-<dt>if j-i &gt; len(longest):</dt>
-<dd>longest = seq[i:j]</dd>
-</dl>
-<p>i = bind.find(“+”, j)</p>
-</div></blockquote>
-<p class="last">return longest</p>
-</dd>
-</dl>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>def longest_binding(seq, bind):
+    longest = &quot;&quot;
+    i = bind.find(&quot;+&quot;)
+    while i != -1:
+        j = bind.find(&quot;-&quot;, i)
+        if j == -1:
+            j = len(seq)
+        if j-i &gt; len(longest):
+            longest = seq[i:j]
+        i = bind.find(&quot;+&quot;, j)
+    return longest
+</pre></div>
+</div>
 <p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
 non lo so, ma posso verificarlo:</p>
 <div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>prova = load_data(filename)
@@ -10350,6 +10345,180 @@ print_longest(longest_bindings(prots))
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-simulazione-esame-4">
+<h1>Python: Simulazione esame 4<a class="headerlink" href="#python-simulazione-esame-4" title="Permalink to this headline">¶</a></h1>
+<p>Proviamo a simulare insieme una prova d’esame! in particolare stiamo simulando l’esame del 12 1 2020</p>
+<div class="section" id="id42">
+<h2>TESTO<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<p>Scrivere un programma che prenda in ingresso un file con un elenco di regioni conservate in UTR e un numero n e stampi:</p>
+<ol class="arabic simple">
+<li>I primi n geni ordinati per lunghezza media delle loro regioni conservate</li>
+<li>I primi n cromosomi ordinati per lunghezza media delle regioni conservate nei loro geni</li>
+</ol>
+<p><strong>ESMPIO File in input</strong></p>
+<p>conserved_regions:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>HGNC        ucsc    chr     start   end     strand  region.length   region.sequence utr.type
+SDF4        uc001adj.1      chr1    1159309 1159325 -       17      GAGGAACCGTGACTAGA       5UTR
+SDF4        uc001adj.1      chr1    1159341 1159347 -       7       GTAGGTG 5UTR
+DVL1        uc002quu.2      chr1    1275478 1275556 -       79      CTACCTCGGTTACATCTACGGCGGCAGAGGTGCCAGCAACGAGACGGGGTGCTACGACTACGGGTCTTTCACTACAGAA 5UTR
+</pre></div>
+</div>
+<p><strong>ESMPIO DI OUTPUT</strong>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>python regions_stats.py
+Inserire nome file: conserved_regions
+Inserire numero elementi: 5
+Genes with longest conserved on average
+RYR1     2619
+DDX3X    2549
+NOVA1    2074
+BCL11A   1718
+TSHZ3    1599
+Chromosomes with longest conserved on average
+chr15    181
+chr2     123
+chrX     122
+chr10    122
+chr8     105
+</pre></div>
+</div>
+<p><strong>SUGGERIMENTI</strong></p>
+<p>Si possono implementare 5 funzioni separate:</p>
+<ol class="arabic simple">
+<li>una che legga il file dati e restituisca una lista con nome gene, cromosoma e lunghezza della regione conservata</li>
+<li>una che data la lista e un’indicazione se usare gene o cromosoma, restituisca un dizionario da gene (o da cromosoma) a elenco di lunghezze di regioni conservate per quel gene (o cromosoma)</li>
+<li>una che dato un dizionario chiave → lista di valori, restituisca una lista ordinata di coppie chiave, media dei suoi valori (si può usare la funzione mean del modulo statistics per calcolare la media di una lista)</li>
+<li>una che data una lista ordinata e un numero n, stampi le prime n coppie come da esempio</li>
+<li>una (o un main) che realizzi il programma richiesto usando le funzioni di cui sopra</li>
+</ol>
+</div>
+<div class="section" id="id43">
+<h2>Soluzione<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<p><strong>LEGGETE E RI LEGGETE la consegna per capire se è chiara</strong></p>
+<p>iniziamo seguendo i suggerimenti:</p>
+<dl class="docutils">
+<dt>suggerimento 1</dt>
+<dd><ol class="first last arabic simple">
+<li>una che legga il file dati e restituisca una lista con nome gene, cromosoma e lunghezza della regione conservata</li>
+</ol>
+</dd>
+</dl>
+<p>Quindi dobbiamo creare una lista di questo tipo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>[
+    (&#39;SDF4&#39;, &#39;chr1&#39;, 17),
+    (&#39;SDF4&#39;, &#39;chr1&#39;, 7),
+    (&#39;DVL1&#39;, &#39;chr1&#39;, 79),
+    (&#39;CCNL2&#39;, &#39;chr1&#39;, 324),
+    ...
+    ...
+]
+</pre></div>
+</div>
+<p><strong>Soluzione</strong></p>
+<blockquote>
+<div>FATELA VOI :)</div></blockquote>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma potete verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>:)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<dl class="docutils">
+<dt>suggerimento 2</dt>
+<dd><ol class="first last arabic simple">
+<li>una che data la lista e un’indicazione se usare gene o cromosoma, restituisca un dizionario da gene (o da cromosoma) a elenco di lunghezze di regioni conservate per quel gene (o cromosoma)</li>
+</ol>
+</dd>
+</dl>
+<p>mmmm, che cosa ci sta chiedendo?
+una funzione che prenda in input la lista che abbiamo caricato prima e una variabile che rappresenti gene o cromosoma. La funzione deve ritornare un diz tipo,
+se noi chiamiamo la funzione con gene:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>{
+    &#39;SDF4&#39;: [17, 7],
+    &#39;DVL1&#39;: [79],
+    &#39;CCNL2&#39;: [324, 9, 28, 47],
+    &#39;MIB2&#39;: [55, 154, 37, 81, 45],
+    &#39;MMP23B&#39;: [8, 14, 5, 5, 8, 7, 14, 16, 18, 7, 8],
+    &#39;CDK11B&#39;: [29, 7],
+}
+</pre></div>
+</div>
+<p>se noi chiamiamo la funzione con cromosoma:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>{
+    &#39;chr1&#39;: [17, 7, 79, 324 211, 169, 18, 20, 15, 94, ....]
+    &#39;chr12&#39;: [5, 38, 7, 14, 741, 29, 43, 245, ......]
+}
+</pre></div>
+</div>
+<p><strong>Soluzione</strong></p>
+<blockquote>
+<div>FATELA VOI :)</div></blockquote>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma potete verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>:)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<dl class="docutils">
+<dt>suggerimento 3</dt>
+<dd><ol class="first last arabic simple">
+<li>una che dato un dizionario chiave → lista di valori, restituisca una lista ordinata di coppie chiave, media dei suoi valori (si può usare la funzione mean del modulo statistics per calcolare la media di una lista)</li>
+</ol>
+</dd>
+</dl>
+<p>mmmm, che cosa ci sta chiedendo?</p>
+<p>ci chiede di scrivere una funzione che prenda un diz (gene -&gt; lista di valori oppure cromosoma -&gt; lista di valori) e restituisca una lista <strong>ordinata</strong> di coppie. Dove gli elementi della coppia sono la chiave e la media dei valori.</p>
+<p>Es, se chiamo la funzione con il diz di cromosomi ottengo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>[
+    (180.72164948453607, &#39;chr15&#39;),
+    (123.26499032882012, &#39;chr2&#39;),
+    (121.99459459459459, &#39;chrX&#39;),
+    (121.76344086021506, &#39;chr10&#39;),
+    ...
+]
+</pre></div>
+</div>
+<p><strong>Soluzione</strong></p>
+<blockquote>
+<div>FATELA VOI :)</div></blockquote>
+<p><strong>E’ corretto il codice che abbiamo scritto fino ad ora?</strong>
+non lo so, ma potete verificarlo:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>:)
+</pre></div>
+</div>
+<p>si, funziona!</p>
+<p>suggerimento 4</p>
+<ol class="arabic simple">
+<li>una che data una lista ordinata e un numero n, stampi le prime n coppie come da esempio</li>
+</ol>
+<p><strong>ESMPIO DI OUTPUT</strong>:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>python regions_stats.py
+Inserire nome file: conserved_regions
+Inserire numero elementi: 5
+Genes with longest conserved on average
+RYR1     2619
+DDX3X    2549
+NOVA1    2074
+BCL11A   1718
+TSHZ3    1599
+Chromosomes with longest conserved on average
+chr15    181
+chr2     123
+chrX     122
+chr10    122
+chr8     105
+</pre></div>
+</div>
+<p>suggerimento 5</p>
+<ol class="arabic simple">
+<li>una (o un main) che realizzi il programma richiesto usando le funzioni di cui sopra</li>
+</ol>
+<p>semplice ci chiede di mettere tutto insieme:</p>
+<div class="highlight-Ripasso notranslate"><div class="highlight"><pre><span></span>|
+|
+</pre></div>
 </div>
 </div>
 </div>
@@ -10526,6 +10695,13 @@ print_longest(longest_bindings(prots))
 <ul class="simple">
 <li><a class="reference external" href="https://youtu.be/NkafVQJ-pQs?t=361">Sim. esame</a>.</li>
 </ul>
+</div>
+<div class="section" id="laboratorio-15">
+<h2>Laboratorio 15<a class="headerlink" href="#laboratorio-15" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=tfuJOqwrMkc">Lab</a>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://youtu.be/tfuJOqwrMkc?t=8">Sim. esame</a>.</li>
+</ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -10674,6 +10850,11 @@ print_longest(longest_bindings(prots))
 <li class="toctree-l2"><a class="reference internal" href="python_simEsame3.html#soluzione">Soluzione</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="python_simEsame4.html">Python: Simulazione esame 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_simEsame4.html#testo">TESTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_simEsame4.html#soluzione">Soluzione</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="video.html">Video</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-1">Laboratorio 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-2">Laboratorio 2</a></li>
@@ -10689,6 +10870,7 @@ print_longest(longest_bindings(prots))
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-12">Laboratorio 12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-13">Laboratorio 13</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-14">Laboratorio 14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video.html#laboratorio-15">Laboratorio 15</a></li>
 </ul>
 </li>
 </ul>
