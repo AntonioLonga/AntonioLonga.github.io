@@ -168,6 +168,12 @@ Note Introduttive
 |
 |
 
+.. highlight:: Simulazione Esame 5 
+
+.. include:: python_simEsame5.rst
+|
+|
+
 .. highlight:: Video Lezioni
 
 .. include:: video.rst
@@ -196,5 +202,6 @@ Note Introduttive
     python_simEsame2.rst
     python_simEsame3.rst
     python_simEsame4.rst
+    python_simEsame5.rst
     video.rst 
 
