@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7BJ36JN6Y0');
+</script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    /* Create four equal columns that sits next to each other */
+    .column {
+      -ms-flex: 25%; /* IE10 */
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+    }
+    
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 800px) {
+      .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+    
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    </style>
+<style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row > .column {
+    padding: 0 8px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 15%;
+    top: 15%;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    background-color: black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  img {
+    margin-bottom: -4px;
+  }
+  
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+  
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  </style>
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Antonio Longa</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/resume.css" rel="stylesheet">
+  <link href="code.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Antonio Longa</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded mx-auto mb-2" src="../img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../index.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../index.html#teaching">Teaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../index.html#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../index.html#pub">Pubblications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../index.html#talks">Talks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="../CV.pdf">Download CV</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <h1 class="m-2">Egocentric Temporal Motifs Miner</h1>
+      <p class="lead mt-5">
+          In the following we explain in detains how Egocentric Temporal Motifs Miner works. <br>
+          The code can be found <a href="https://github.com/AntonioLonga/Egocentric-Temporal-Motifs-Miner-ETMM">here</a>
+      </p>
+
+      <h3>Introduction</h3>
+      <p class="lead m-5">
+        A decade ago, Milo et al.[1] had introduced the notion of network motifs for static graphs, that were mainly used in biology and later
+        researchers started to use this concept in other disciplines such as applications to temporal graphs.
+        Temporal graphs are indispensable in modelling social interactions, being a standard graph not able to capture the related temporal dynamics. 
+        The idea of our Egocentric Temporal Motifs Miner is to jump inside the network and follow the path of a speciﬁc node, 
+        ﬁnding node-dependent spatio-temporal patterns.
+      </p>
+      
+      <p class="lead m-5">
+        In this blog post we further extend the concept of temporal motifs going beyond the traditional point of view.  
+        The standard approach is indeed based on observing temporal networks from the outside and decomposing them in their small components. 
+        In particular, for each node we observe its neighbors and how its connections to them change in a given period of time. 
+        We neglect the connections among neighbors of the chosen <i>ego</i> node, and we only focus on studying how the set of neighbors evolves in time,
+        following an <i>ego perspective</i>.
+        In social settings this allows to identify the patterns of interactions of individuals, selecting the most relevant behaviors as those which are most 
+        repeated in time by the same or different persons. We give to these ones the name of <i>egocentric temporal motifs (ETM)</i>.
+        The ego perspective allows to address the motif identification procedure very efficiently by comparing egocentric temporal sub-networks in
+        terms of their signature, simply consisting of a bit vector. 
+        This represents a huge simplification with respect to mining standard motifs, which necessarily requires to  address the graph isomorphism problem,
+        which slows down the procedure and makes it hard to identify graph motifs with more than a handful of nodes
+      </p>
+      <p class="lead m-5">
+      <img src="img_ETMM/ETMM_intro.svg" class="img-fluid" alt="Egocentric Temporal Motifs Miner">
+      <b>Fig 1.</b> The left panel shows the input temporal graph. Labels on edges represent the time in which the interaction happens. Given a temporal
+       gap, the input temporal graph is split in an ordered sequence of static graphs, shown in the middle left panel. The middle right panel shows 
+       Egocentric Temporal Motifs with ego node E, and k equal to 2. As you can see, only first-order interactions are considered. The green node 
+       represents the ego and the brown nodes represent neighbours of the ego. Black edges connect the ego with its neighbours in a given temporal
+       layer, while green and brown edges connect the same node in different temporal layers. Finally, the right panel show how the egocentric temporal 
+       neighbourhood signature (ETNS) is computed. First, each non-ego node is embedded in a bit vector of length k+1, the i-th value of the vector 
+       is 1 if the node is connected to the ego at the i-th layer. Finally, node encodings are sorted and concatenated, producing the Egocentric 
+       Temporal Neighborhood Signature.
+      </p>
+
+
+      <h3>Download the Repository</h3>
+      <p class="lead">
+        You can download the code from the <a href="https://github.com/AntonioLonga/Egocentric-Temporal-Motifs-Miner-ETMM">official git repository</a><br>
+        In the repository, you will find four python files:
+        <ul class="lead ml-5">
+            <li >construction.py</li>
+            <li >distances.py</li>
+            <li >ETN.py</li>
+            <li >ETMM.py</li>
+          </ul>
+      </p>
+          <p class="lead">
+        <b>construction.py</b> It is used to build the input graph! It takes in input a file containgin time, source node and targhet node one per line, 
+        like the one below:
+        <div class="code">
+            time node_A node_B<br>
+            0 1 2<br>
+            0 2 3<br>
+            1 1 3<br>
+            ...<br>
+            40 2 5 
+        </div>
+
+      </p>
+
+      <p class="lead">
+        <b>distances.py</b> It is used compute distances among grpahs. In particular, you can compute distances between two different temporal graphs
+        using <b>etmm base distance</b>,<i>NetSimile distances</i>, a modified version of <i>NetSimile</i> and <i>Weighted Laplacian</i>. All details are
+        explainde in the paper [2]
+      </p>
+      <p class="lead">
+        <b>ETN.py</b> This calss allow you to count ETN in a given input temporal graph, you can also save ETNS counts, load ETNS counts and plot the 
+        graph associated to an ETNS.
+
+        <div class="code">
+            <span class="import">import</span> construction <span class="import">as</span> cs  <span class="comment"># import libraries</span> <br>
+            <span class="import">from</span> ETN <span class="import">import</span> * <br>
+            <span class="import">from</span> ETMM <span class="import">import</span> *<br><br><br>
+
+            data = cs.load_data(<span class="string">"file_name"</span>   <span class="comment"># file_name is teh file you would like to load</span> <br>
+            graphs = cs.build_graphs(data,gap=299,with_labels=False) <span class="comment"># we are building an array of static Networkx graphs</span> <br>
+        </div>
+      </p>
+
+      <p class="lead">
+        Now we can count the number of ETN in our graphs, by simpy:
+        <div class="code">
+          S = count_ETN(graphs,k=2,meta=<span class="import">None</span>) <span class="comment"># Count etn in graphs with k = 2</span> <br> 
+          S = {k: v <span class="import">for</span> k, v <span class="import">in</span> <span class="sorted">sorted</span>(S.items(), key=<span class="import">lambda</span> item: item[1], reverse=1)} <span class="comment"># Sort dict S by value</span> <br>
+          <br>
+          <span class="sorted">print</span>(S)
+      </div>
+      output: 
+      </p>
+      <div class="output">
+        > { <br>
+        > &nbsp&nbsp'0b1000': 2221, <br>
+        > &nbsp&nbsp'0b1100': 501,  <br>
+        > &nbsp&nbsp'0b1111': 435,  <br>
+        > &nbsp&nbsp'0b10001000': 270, <br> 
+        > &nbsp&nbsp'0b1110': 217,  <br> 
+        > &nbsp&nbsp'0b01001000': 164, <br>
+        > &nbsp&nbsp'0b00011000': 122, <br>
+        > &nbsp&nbsp ... <br>
+        > }
+      </div>
+      <p class="lead">
+        as you can see, each key of the dictionary S is an ETNS and the value is the number of occurencies of ETNS in the temporal graph.<br>
+        We can now save and load ETNS as follow:
+      </p>
+      <div class="code">
+        store_etns(S,<span class="string">"file_name"</span>, gap=299,k=2,label=False)  <span class="comment"># Store S in res/file_name/ETNS/gap_299_k_2.json</span> <br> 
+        S = load_etns(<span class="string">"file_name"</span>,gap=299,k=2,label=False)
+    </div> 
+    <p class="lead">
+      We can convert an ETNS into a Networkx graph and the we can draw it, with the following code:
+    </p>
+    <div class="code">
+      S_array = <span class="sorted">list</span>(S.keys()) <br>
+      draw_ETN(from_ETNS_to_ETN(S_array[10],k=3,meta=<span class="import">None</span> ),multiple=False)
+  </div>
+  <p class="lead">
+    obtaining <br>
+    <img src="img_ETMM/ETN.png">
+  </p>
+  <p class="lead">
+    <b>ETMM.py</b> It is used to count ETNS from a a list of Temporal Graphs (used as null models). 
+    For instance suppose, you have a list of null models (you can see an example of null models generation <a href="https://github.com/AntonioLonga/Egocentric-Temporal-Motifs-Miner-ETMM/blob/master/Example%20ETMM.ipynb">here</a>)
+    then you can count a give set of ETNS in the null models, like follow:
+  </p>
+  <div class="code">
+    S = load_etns(<span class="string">"file_name"</span>,gap=299,k=2,label=False) <span class="comment"># Load precomputed ETNS</span> <br> <br>
+    counts = counts_ETN_null_models(null_models,S,k=3,label=False,meta_data=None,verbose=True) <span class="comment"># count the occurrence of ETNS in S on the null models</span> <br>
+    store_etm_counts(counts,<span class="string">"file_name"</span>,gap=299,k=3,label) <span class="comment"># store ETM counts in res/file_name/ETM_counts/gap_299_k_3.json</span> <br>
+</div> 
+<p class="lead">
+  the <i>counts</i> is a dictionary of the following format: </p>
+  <div class="output">
+    >{ <br>
+    >&nbsp&nbsp'0b1000': [2221, 3536, 3594, 3554, 3549, 3569],<br>
+    >&nbsp&nbsp'0b1100': [501, 75, 85, 89, 90, 77],<br>
+    >&nbsp&nbsp'0b1111': [435, 0, 4, 2, 2, 0],<br>
+    >&nbsp&nbsp'0b10001000': [270, 518, 530, 512, 523, 520],<br>
+    >&nbsp&nbsp'0b1110': [217, 5, 5, 8, 4, 3],<br>
+    >&nbsp&nbsp'0b01001000': [164, 226, 237, 241, 224, 227],<br>
+    >&nbsp&nbsp ...<br>
+    > }
+  </div>
+  <p class="lead">
+    in witch the key is ETNS given in input by S, while the value is an array of occurencies in the original and in the null models. 
+    For instance, the ETNS '0b1100' appeirs 501 times in the original temporal network, and 75, 85, 89, ... times in the first, second, third,..null model, respectivelly.<br><br>
+
+    Finally, we can apply a statistical test to filter those that are statistically significant
+</p>
+<div class="code">
+    alpha=0.01 <br>
+    beta=0.1<br>
+    gamma=10<br> <br>
+    ETM = get_ETM(counts,alpha,beta,gamma)
+</div> 
+<div class="output">
+  >  number of etns:	 392 <br>
+  >  number of etm: 	 31
+</div>
+<h3>Usage</h3>
+In the repository, you will find also two jupiter-notebook that can be used to test what we did here.
+<h3>Coclusion</h3>
+In this blog post we show how to extract Egocentric Temporal Motifs from a given temporal graph. More details about the algorith can be found on Longa et al [2] paper.
+<hr>
+<h3>Reference</h3>
+<p class="lead m-5">
+[1]<cite>R. Milo, S. Shen-Orr, S. Itzkovitz, N. Kashtan, D. Chklovskii, and U. Alon.  Network motifs: simple building blocks of complex networks. Science, 298  (5594):824–827, 2002.</cite> <br>
+[2]<cite><a href="https://arxiv.org/pdf/2110.01391.pdf">Longa, Antonio, et al. "An Efficient Procedure for Mining Egocentric Temporal Motifs.".</a>(2021)</cite> <br>
+</p>
+</body>
+</html>
