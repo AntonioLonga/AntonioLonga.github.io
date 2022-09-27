@@ -18,29 +18,29 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/js/jupman.js"></script>
-        <script type="text/javascript" src="_static/js/pytutor-embed.bundle.min.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <script type="text/javascript" src="static/underscore.js"></script>
+        <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="static/js/jupman.js"></script>
+        <script type="text/javascript" src="static/js/pytutor-embed.bundle.min.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman-web.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman-web.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module 1, Practical 10b" href="M1_practical10b.html" />
@@ -654,7 +654,7 @@ documentation :-).</p>
 </pre></div>
 </div>
 <p>if the execution gives:</p>
-<img alt="imp1" src="_images/import.png" />
+<img alt="imp1" src="images/import.png" />
 <p>Biopython needs to be installed.</p>
 <p><strong>In windows</strong> installing Biopython should be as easy as opening the command prompt as admininstrator (typing <code class="docutils literal notranslate"><span class="pre">cmd</span></code> and then right clicking on the link choosing run as admininstrator) and then <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">biopython</span></code>. If that does not work, you should be able to install biopython with the following: <code class="docutils literal notranslate"><span class="pre">python3.xx</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">biopython</span></code> (where you should change python3.xx with the path to your python3.xx executable).</p>
 <p><strong>In linux</strong> <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">biopython</span></code> will install biopython for python3 up to python3.5. On python 3.6 and later the command is: <code class="docutils literal notranslate"><span class="pre">python3.6</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">biopython</span></code> or, more in general, <code class="docutils literal notranslate"><span class="pre">pythonX.X</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">biopython</span></code>.</p>
@@ -863,7 +863,7 @@ Reverse complement:     GCGATTTTCGATCCTATATAGGCCCATCGATC
 <section id="Transcription-and-translation">
 <h3>Transcription and translation<a class="headerlink" href="#Transcription-and-translation" title="Permalink to this headline">¶</a></h3>
 <p>Remember that:</p>
-<img alt="tt" src="_images/trans_transl.png" />
+<img alt="tt" src="images/trans_transl.png" />
 <p>[taken from the Biopython tutorial].</p>
 <p>Biopython has a method to transcribe a DNA sequence into a mRNA sequence (and one to go back):</p>
 <ol class="arabic simple">
@@ -874,7 +874,7 @@ Reverse complement:     GCGATTTTCGATCCTATATAGGCCCATCGATC
 <p>Alike, a DNA or mRNA sequence can be translated into a protein with:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Seq.translate(table=N,</span> <span class="pre">to_stop=True/False,</span> <span class="pre">stop_symbol</span> <span class="pre">=symbol)</span></code> that converts a DNA sequence or mRNA into the corresponding protein.</p>
 <p>Optionally, the translate method accepts a parameter <code class="docutils literal notranslate"><span class="pre">table</span></code> to specify the NCBI translation table used (see below for codes). <code class="docutils literal notranslate"><span class="pre">to_stop</span></code> makes the translation stop at the first stop codon if True (<strong>in this case the stop codon is not translated!</strong>), <code class="docutils literal notranslate"><span class="pre">stop_symbol</span></code> to replace the asterisk with any other stop character (Es. “&#64;”).</p>
-<p><img alt="ncbitab" src="_images/ncbi_table.png" /> Stop codons will be represented by an asterisk.</p>
+<p><img alt="ncbitab" src="images/ncbi_table.png" /> Stop codons will be represented by an asterisk.</p>
 <p><strong>Example:</strong> Let’s transcribe into mRNA and translate into protein the following coding sequence: ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -1523,7 +1523,7 @@ MVTVEEFRRAQCAEGPATVMAIGTATPSNCVDQSTYPDYYFRITNSEHKVELKEKFKRMCEKSMIKKRYMHLTEEILKEN
 <section id="Multiple-sequence-alignment">
 <h2>Multiple sequence alignment<a class="headerlink" href="#Multiple-sequence-alignment" title="Permalink to this headline">¶</a></h2>
 <p><strong>Multiple Sequence Alignments</strong>, as the name says, are a collection of multiple sequences which have been aligned together – usually with the insertion of gap characters, and addition of leading or trailing gaps – such that all the sequence strings have the same length.</p>
-<img alt="msa" src="_images/msa.gif" />
+<img alt="msa" src="images/msa.gif" />
 <p>Such an alignment can be regarded as a matrix of letters, in biopython each row is a <code class="docutils literal notranslate"><span class="pre">SeqRecord</span></code> object. These alignments are stored in an object <code class="docutils literal notranslate"><span class="pre">MultipleSeqAlignment</span></code></p>
 <section id="Parsing-multiple-sequence-alignments">
 <h3>Parsing multiple sequence alignments<a class="headerlink" href="#Parsing-multiple-sequence-alignments" title="Permalink to this headline">¶</a></h3>
@@ -1728,7 +1728,7 @@ ACTAGTACAGCT- Theta
 </pre></div></div>
 </div>
 <p>The content of the file is reported in the following screenshot:</p>
-<img alt="phylimg" src="_images/phylip_aligns.png" />
+<img alt="phylimg" src="images/phylip_aligns.png" />
 <p>Note that it is also possible to convert one format into the other (provided that all information needed for the second format is available) by using the function:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Bio.AlignIO.convert(input_file, input_file_format, output_file, output_file_format)
 </pre></div>
