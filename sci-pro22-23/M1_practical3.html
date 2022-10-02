@@ -147,9 +147,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#Methods-of-the-class-list">Methods of the class list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#From-strings-to-lists-(split-method)">From strings to lists (split method)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#from-list-to-strings-(join-method)">from list to strings (join method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(LIST)">Exercises (LIST)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Tuples">Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Introduction-to-sets">Introduction to sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(difficult)">Exercises (difficult)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical4.html">Module 1, Practical 4</a><ul>
@@ -774,9 +776,9 @@ Is A*2 equal to E? True
 A: [1, 2, 3, 4, 5, 6]
 B: [1, 3, 5]
 Is B in A? False
-A&#39;s ID: 140164114605824
+A&#39;s ID: 140661389830592
 [1, 2, 3, 4, 5, [1, 3, 5]]
-A&#39;s ID: 140164114605824
+A&#39;s ID: 140661389830592
 A has length: 6
 Is now B in A? True
 </pre></div></div>
@@ -870,7 +872,7 @@ last element:  6
 </li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -910,7 +912,7 @@ M*v:  [50, 30, 45]
 </div>
 <p>Some usage examples follow:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -956,9 +958,9 @@ M*v:  [50, 30, 45]
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 [1, 2, 3]
-A has id: 140163619424192
+A has id: 140661389498624
 [1, 2, 3, 72]
-A has id: 140163619424192
+A has id: 140661389498624
 [1, 2, 3, 72, 1, 5, 124, 99]
 [99, 124, 5, 1, 72, 3, 2, 1]
 [1, 1, 2, 3, 5, 72, 99, 124]
@@ -980,7 +982,7 @@ Sorted fruits:
 </div>
 <p>An important thing to remember that we mentioned already a couple of times is that lists <strong>are mutable objects</strong> and therefore <strong>virtually all the previous methods (except count) do not have an output value</strong>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1018,7 +1020,7 @@ True
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [23]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 13&gt;</span><span class="ansi-blue-fg">()</span>
+Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 13&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">     11</span> <span style="color: rgb(95,135,135)">#A_new is None. We cannot apply methods to it...</span>
 <span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(A_new <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
 <span class="ansi-green-fg">---&gt; 13</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A_new has </span><span style="color: rgb(175,0,0)">&#34;</span> , <span class="ansi-yellow-bg">A_new</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">count</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">D</span><span style="color: rgb(175,0,0)">&#34;</span>), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)"> Ds</span><span style="color: rgb(175,0,0)">&#34;</span>)
@@ -1032,7 +1034,7 @@ Input <span class="ansi-green-fg">In [23]</span>, in <span class="ansi-cyan-fg">
 <li><p>append and extend work quite differently:</p></li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1058,7 +1060,7 @@ Input <span class="ansi-green-fg">In [23]</span>, in <span class="ansi-cyan-fg">
 <li><p>To remove an object it must exist:</p></li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1089,7 +1091,7 @@ Input <span class="ansi-green-fg">In [23]</span>, in <span class="ansi-cyan-fg">
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [25]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span> A<span style="color: rgb(98,98,98)">.</span>remove([[<span style="color: rgb(98,98,98)">4</span>],[<span style="color: rgb(98,98,98)">5</span>,<span style="color: rgb(98,98,98)">6</span>]])
 <span class="ansi-green-intense-fg ansi-bold">      6</span> <span style="color: rgb(0,135,0)">print</span>(A)
 <span class="ansi-green-fg">----&gt; 7</span> <span class="ansi-yellow-bg">A</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">remove</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">7</span><span class="ansi-yellow-bg">)</span>
@@ -1101,7 +1103,7 @@ Input <span class="ansi-green-fg">In [25]</span>, in <span class="ansi-cyan-fg">
 <li><p>To sort a list, its elements must be sortable (i.e. homogeneous)!</p></li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1134,7 +1136,7 @@ A: [1, 2, 3, 4, 7, &#39;banana&#39;]
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [26]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
+Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span> A<span style="color: rgb(98,98,98)">.</span>append(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">banana</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-intense-fg ansi-bold">      6</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A:</span><span style="color: rgb(175,0,0)">&#34;</span>, A)
 <span class="ansi-green-fg">----&gt; 7</span> <span class="ansi-yellow-bg">A</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">sort</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
@@ -1149,7 +1151,7 @@ Input <span class="ansi-green-fg">In [26]</span>, in <span class="ansi-cyan-fg">
 <p>Lists are <strong>mutable objects</strong> and this has some consequences! Since lists are mutable objects, they hold references to objects rather than objects.</p>
 <p>Take a look at the following examples:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1203,7 +1205,7 @@ l1 now [1, -1, 7]
 <p><strong>Making copies</strong></p>
 <p>There are several ways to copy a list into another. Let’s see the difference between = and [:]. Note what happens when lists get complicated.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1264,7 +1266,7 @@ A now: [&#39;hello&#39;, &#39;there&#39;, &#39;from&#39;, &#39;java&#39;]
 <p><strong>Equality and identity</strong></p>
 <p>Two different operators exist to check the <strong>equality</strong> of two lists (==) and the <strong>identity</strong> of two lists (is).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1298,9 +1300,9 @@ Is A actually B? True
 Is A equal to C? True
 Is A actually C? False
 
-A&#39;s id: 140163618559040
-B&#39;s id: 140163618559040
-C&#39;s id: 140163618700608
+A&#39;s id: 140661388695936
+B&#39;s id: 140661388695936
+C&#39;s id: 140661388700608
 
 A now:  [1, 2, 3, 4, 5]
 B now:  [1, 2, 3, 4, 5]
@@ -1347,6 +1349,13 @@ lista.reverse().sort()
 </pre></div>
 </div>
 <p>make a new list containing the sorted list.</p>
+<ol class="arabic simple" start="4">
+<li><p>Given the list</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>text = [&quot;Hello&quot;,&quot;how&quot;,&quot;are&quot;,&quot;you&quot;,&quot;?&quot;,&quot;?&quot;]
+</pre></div>
+</div>
+<p>insert the a comma “,” after the word “Hello”, then remove one question mark and print the array!</p>
 </div>
 </section>
 <section id="From-strings-to-lists-(split-method)">
@@ -1471,6 +1480,103 @@ is a world leader in genome research.&quot;&quot;&quot;
 </div>
 <p>The first row contains the names of the colomns. Put each elemnet of the first row in a list.</p>
 </section>
+<section id="Exercises-(LIST)">
+<h2>Exercises (LIST)<a class="headerlink" href="#Exercises-(LIST)" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Given a list, write a Python program to swap first and last element of the list.
+<strong>input</strong> [1,2,3,4,5] <strong>output</strong> [5,2,3,4,1]</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exlist1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exlist1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">pos_0_newList</span> <span class="o">=</span> <span class="p">[</span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#  because do we need to put list[-1] into a list?</span>
+<span class="n">content_newList</span> <span class="o">=</span> <span class="n">list1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pos_end_newList</span> <span class="o">=</span> <span class="p">[</span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">newList</span> <span class="o">=</span>  <span class="n">pos_0_newList</span> <span class="o">+</span> <span class="n">content_newList</span> <span class="o">+</span> <span class="n">pos_end_newList</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newList</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[5, 2, 3, 4, 1]
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>We are given a list of numbers and our task is to write a Python program to find the smallest number in given list. Do not use min() :)</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exlist2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exlist2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">439</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">58</span><span class="p">,</span><span class="mi">39</span><span class="p">]</span>
+<span class="n">list1</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">min_val</span> <span class="o">=</span> <span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">min_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-58
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>We are given a list of words</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>test_list = [&#39;Gfg&#39;, &#39;is&#39;, &#39;best&#39;, &#39;for&#39;, &#39;Geeks&#39;]
+</pre></div>
+</div>
+<p>substitute each “G” with an “e” and each “e” with a “G” <strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>res = [&#39;efg&#39;, &#39;is&#39;, &#39;bGst&#39;, &#39;for&#39;, &#39;eGGks&#39;]
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exlist3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exlist3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Gfg&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="s1">&#39;for&#39;</span><span class="p">,</span> <span class="s1">&#39;Geeks&#39;</span><span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">test_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
+
+<span class="n">res_list</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Gfg, is, best, for, Geeks
+_fg, is, best, for, _eeks
+_fg, is, bGst, for, _GGks
+[&#39;efg&#39;, &#39; is&#39;, &#39; bGst&#39;, &#39; for&#39;, &#39; eGGks&#39;]
+</pre></div></div>
+</div>
+</div></section>
 <section id="Tuples">
 <h2>Tuples<a class="headerlink" href="#Tuples" title="Permalink to this headline">¶</a></h2>
 <p>Tuples are the <strong>immutable</strong> version of lists (i.e. it is not possible to change their content without actually changing the object). They are sequential collections of objects, and elements of tuples are assumed to be in a particular order. They can hold heterogeneous information. They are defined with the brackets <strong>()</strong>. Some examples:</p>
@@ -2205,6 +2311,159 @@ B is closer to A than C to D: True
 </pre></div></div>
 </div>
 </div></section>
+<section id="Exercises-(difficult)">
+<h2>Exercises (difficult)<a class="headerlink" href="#Exercises-(difficult)" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Given a list, count the number of unique elements <strong>input</strong></p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [1,1,1,3,3,3,2,1,2]
+</pre></div>
+</div>
+<p><strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nb unique elements = 3
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exD1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exD1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Given a List, extract all elements whose frequency is greater than K.</p></li>
+</ol>
+<p><strong>input</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>test_list = [4, 6, 4, 3, 3, 4, 3, 4, 3, 8], K = 3
+</pre></div>
+</div>
+<p><strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[4,3]
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exD2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exD2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_list</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">test_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">K</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[3, 4]
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Given two pists, create a list of tuples containing all possible UNIQUE combinations of the lists</p></li>
+</ol>
+<p><strong>input</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;a&quot;]
+b = [1,2,3]
+</pre></div>
+</div>
+<p><strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[(&#39;c&#39;, 3), (&#39;b&#39;, 1), (&#39;c&#39;, 2), (&#39;a&#39;, 2), (&#39;a&#39;, 1), (&#39;b&#39;, 3), (&#39;c&#39;, 1), (&#39;a&#39;, 3), (&#39;b&#39;, 2)]
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exD3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exD3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(&#39;c&#39;, 3), (&#39;b&#39;, 1), (&#39;c&#39;, 2), (&#39;a&#39;, 2), (&#39;a&#39;, 1), (&#39;b&#39;, 3), (&#39;c&#39;, 1), (&#39;a&#39;, 3), (&#39;b&#39;, 2)]
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Given a list, K and N, create a list of tuples containing elements with K appearing at least N times.</p></li>
+</ol>
+<p><strong>input</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>test_list = [(4, 5, 5, 4), (5, 4, 3)]
+K = 5
+N = 2
+</pre></div>
+</div>
+<p><strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[(4, 5, 5, 4)]
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exD4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exD4" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test_list</span><span class="p">:</span>
+    <span class="n">to_keep</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(4, 5, 5, 4)]
+</pre></div></div>
+</div>
+</div></div></section>
 </section>
 
 
