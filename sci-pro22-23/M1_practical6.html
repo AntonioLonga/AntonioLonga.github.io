@@ -209,6 +209,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(difficult)">Exercises (difficult)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
@@ -1856,83 +1858,39 @@ N |sqrt |square
 <section id="Exercises">
 <h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Implement a function that takes in input a string representing a DNA sequence and computes its reverse-complement. Take care to reverse complement any character other than (A,T,C,G,a,t,c,g) to N. The function should preserve the case of each letter (i.e. A becomes T, but a becomes t). For simplicity all bases that do not represent nucleotides are converted to a capital N. <strong>Hint: create a dictionary revDict with bases as keys and their complements as values</strong>. Ex. revDict = {“A” : “T” , “a” :
-“t”, …}.</p>
-<ol class="arabic simple">
-<li><p>Apply the function to the DNA sequence “ATTACATATCATACTATCGCNTTCTAAATA”</p></li>
-<li><p>Apply the function to the DNA sequence “acaTTACAtagataATACTaccataGCNTTCTAAATA”</p></li>
-<li><p>Apply the function to the DNA sequence “TTTTACCKKKAKTUUUITTTARRRRRAIUTYYA”</p></li>
-<li><p>Check that the reverse complement of the reverse complement of the sequence in 1. is exactly as the original sequence.</p></li>
+<li><p>Write a Python program to create a new dictionary by extracting the keys<code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">salary</span></code> from the below dictionary.</p></li>
 </ol>
-</li>
-</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sample_dict = {
+    &quot;name&quot;: &quot;Kelly&quot;,
+    &quot;age&quot;: 25,
+    &quot;salary&quot;: 8000,
+    &quot;city&quot;: &quot;New york&quot;
+    }
+</pre></div>
+</div>
+<p><strong>Def a function ``get_sub_dict(dictionary_in,keys)`` that takes in input a dictionary and the keys to be extracted.</strong></p>
 <div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">reverse_complement</span><span class="p">(</span><span class="n">DNA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;the function reverse complements a string of DNA&quot;&quot;&quot;</span>
-    <span class="n">revDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span> <span class="p">:</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;C&quot;</span> <span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;G&quot;</span> <span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span> <span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;T&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span> <span class="p">:</span> <span class="s2">&quot;a&quot;</span>
-            <span class="p">}</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">:</span>
-        <span class="c1">### dict.get(val, default) : returns default if val not in</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">revDict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">result</span>
+<span></span><span class="k">def</span> <span class="nf">get_sub_dict</span><span class="p">(</span><span class="n">dictionary_in</span><span class="p">,</span><span class="n">keys</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dictionary_in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">res</span>
 
-<span class="c1"># Second version (equivalent)</span>
-<span class="k">def</span> <span class="nf">reverse_complement2</span><span class="p">(</span><span class="n">DNA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;the function reverse complements a string of DNA&quot;&quot;&quot;</span>
-    <span class="n">revDict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span> <span class="p">:</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;C&quot;</span> <span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">:</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;G&quot;</span> <span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span> <span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;T&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span> <span class="p">:</span> <span class="s2">&quot;a&quot;</span>
-            <span class="p">}</span>
-
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">DNAlist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
-    <span class="n">DNAlist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-    <span class="n">revComp</span> <span class="o">=</span><span class="p">[</span><span class="n">revDict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DNAlist</span><span class="p">]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">revComp</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-<span class="c1"># Third version (equivalent) to version2, &quot;lazy&quot; creation of dictionary</span>
-<span class="k">def</span> <span class="nf">reverse_complement3</span><span class="p">(</span><span class="n">DNA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;the function reverse complements a string of DNA&quot;&quot;&quot;</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="s2">&quot;AaTtCcGg&quot;</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="s2">&quot;TtAaGgCc&quot;</span>
-    <span class="n">revDict</span>  <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span>
-        <span class="n">revDict</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">DNAlist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
-    <span class="n">DNAlist</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-    <span class="n">revComp</span> <span class="o">=</span><span class="p">[</span><span class="n">revDict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DNAlist</span><span class="p">]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">revComp</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-
-
-<span class="n">S1</span> <span class="o">=</span> <span class="s2">&quot;ATTACATATCATACTATCGCNTTCTAAATA&quot;</span>
-<span class="n">S2</span> <span class="o">=</span> <span class="s2">&quot;acaTTACAtagataATACTaccataGCNTTCTAAATA&quot;</span>
-<span class="n">S3</span> <span class="o">=</span> <span class="s2">&quot;TTTTACCKKKAKTUUUITTTARRRRRAIUTYYA&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;S1 </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rc S1&quot;</span><span class="p">,</span> <span class="n">reverse_complement</span><span class="p">(</span><span class="n">S1</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">S2   &quot;</span><span class="p">,</span> <span class="n">S2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rc S2&quot;</span><span class="p">,</span> <span class="n">reverse_complement</span><span class="p">(</span><span class="n">S2</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">S3   &quot;</span><span class="p">,</span> <span class="n">S3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rc S3&quot;</span><span class="p">,</span> <span class="n">reverse_complement</span><span class="p">(</span><span class="n">S3</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">rev_comp(rev_comp(S1)): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reverse_complement</span><span class="p">(</span><span class="n">reverse_complement</span><span class="p">(</span><span class="n">S1</span><span class="p">))))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">rev_comp(rev_comp(S1) == S1?)&quot;</span><span class="p">,</span> <span class="n">reverse_complement</span><span class="p">(</span><span class="n">reverse_complement</span><span class="p">(</span><span class="n">S1</span><span class="p">))</span> <span class="o">==</span> <span class="n">S1</span><span class="p">)</span>
+<span class="n">sample_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kelly&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;salary&quot;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;New york&quot;</span>
+    <span class="p">}</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="s2">&quot;salary&quot;</span><span class="p">]</span>
+<span class="n">sub_dict</span> <span class="o">=</span> <span class="n">get_sub_dict</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span><span class="n">keys</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1941,81 +1899,49 @@ N |sqrt |square
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-S1 ATTACATATCATACTATCGCNTTCTAAATA
-rc S1 TATTTAGAANGCGATAGTATGATATGTAAT
-
-S2    acaTTACAtagataATACTaccataGCNTTCTAAATA
-rc S2 TATTTAGAANGCtatggtAGTATtatctaTGTAAtgt
-
-S3    TTTTACCKKKAKTUUUITTTARRRRRAIUTYYA
-rc S3 TNNANNTNNNNNTAAANNNNANTNNNGGTAAAA
-
-rev_comp(rev_comp(S1)): ATTACATATCATACTATCGCNTTCTAAATA
-
-rev_comp(rev_comp(S1) == S1?) True
+{&#39;name&#39;: &#39;Kelly&#39;, &#39;salary&#39;: 8000}
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="2">
-<li><p>Write the following python functions and test them with some parameters of your choice:</p>
+</div></section>
+<section id="id1">
+<h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><em>getDivisors</em>: the function has a positive integer as parameter and returns a list of all the positive divisors of the integer in input (excluding the number itself). Example: <code class="docutils literal notranslate"><span class="pre">getDivisors(6)</span> <span class="pre">--&gt;</span> <span class="pre">[1,2,3]</span></code></p></li>
-<li><p><em>checkSum</em>: the function has a list and an integer as parameters and returns True if the sum of all elements in the list equals the integer, False otherwise. Example: <code class="docutils literal notranslate"><span class="pre">checkSum([1,2,3],</span> <span class="pre">6)</span> <span class="pre">--&gt;</span> <span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">checkSum([1,2,3],1)</span> <span class="pre">--&gt;</span> <span class="pre">False</span></code>.</p></li>
-<li><p><em>checkPerfect</em>: the function gets an integer as parameter and returns True if the integer is a <a class="reference external" href="https://en.wikipedia.org/wiki/Perfect_number">perfect number</a>, False otherwise. A number is perfect if all its divisors (excluding itself) sum to its value. Example: <code class="docutils literal notranslate"><span class="pre">checkPerfect(6)</span> <span class="pre">--&gt;</span> <span class="pre">True</span></code> because 1+2+3 = 6. Hint: use the functions implemented before.</p></li>
+<li><p>Write a Python program to modify a key of a dictionary. From the below dictionary. <strong>input</strong></p></li>
 </ol>
-</li>
-</ol>
-<p>Use the three implemented functions to write a fourth function:</p>
-<p><em>getFirstNperfects</em>: the function gets an integer N as parameter and returns a dictionary with the first N perfect numbers. The key of the dictionary is the perfect number, while the value of the dictionary is the list of its divisors. Example: <code class="docutils literal notranslate"><span class="pre">getFirstNperfects(1)</span> <span class="pre">--&gt;</span> <span class="pre">{6</span> <span class="pre">:</span> <span class="pre">[1,2,3]}</span></code></p>
-<p>Get and print the first 4 perfect numbers and finally test if 33550336 is a perfect number.</p>
-<p><strong>WARNING:</strong> do not try to find more than 4 perfect numbers as it might take a while!!!</p>
-<div class="tggle" onclick="toggleVisibility(&#39;ex6&#39;);"><p>Show/Hide Solution</p>
-</div><div id="ex6" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sample_dict = {
+    &quot;name&quot;: &quot;Kelly&quot;,
+    &quot;age&quot;: 25,
+    &quot;salary&quot;: 8000,
+    &quot;city&quot;: &quot;New york&quot;
+    }
+change = [&quot;city&quot;,&quot;location&quot;]
+</pre></div>
+</div>
+<p><strong>Def a function ``modify_dict(dictionary_in,change)`` that takes in input a dictionary and the key to be changed.</strong></p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">getDivisors</span><span class="p">(</span><span class="n">intVal</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns the integer divisors of intVal&quot;&quot;&quot;</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">intVal</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">intVal</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="c1">#OR:</span>
-    <span class="c1">#for i in range(1,intVal//2+1):</span>
-    <span class="c1">#    if intVal % i == 0:</span>
-    <span class="c1">#        ret.append(i)</span>
-    <span class="k">return</span> <span class="n">ret</span>
+<span></span><span class="k">def</span> <span class="nf">modify_dict</span><span class="p">(</span><span class="n">dictionary_in</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+    <span class="n">new_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dictionary_in</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">new_dict</span><span class="p">[</span><span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">new_dict</span>
 
-<span class="k">def</span> <span class="nf">checkSum</span><span class="p">(</span><span class="n">intList</span><span class="p">,</span> <span class="n">intVal</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;checks if the sum of elements in intList equals intVal&quot;&quot;&quot;</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">intList</span><span class="p">:</span>
-        <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">s</span> <span class="o">==</span> <span class="n">intVal</span>
-
-<span class="k">def</span> <span class="nf">checkPerfect</span><span class="p">(</span><span class="n">intVal</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;checks if intVal is a perfect number&quot;&quot;&quot;</span>
-    <span class="n">divisors</span> <span class="o">=</span> <span class="n">getDivisors</span><span class="p">(</span><span class="n">intVal</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">checkSum</span><span class="p">(</span><span class="n">divisors</span><span class="p">,</span><span class="n">intVal</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">getFirstNPerfects</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds the first N perfect numbers&quot;&quot;&quot;</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">val</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">checkPerfect</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-            <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
-            <span class="n">ret</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">getDivisors</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-        <span class="n">val</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="n">ret</span>
-
-
-<span class="n">perfects</span> <span class="o">=</span> <span class="n">getFirstNPerfects</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#do not go higher than 4, or it might take a while</span>
-<span class="n">perKeys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">perfects</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="n">perKeys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perKeys</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot; = &quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">perfects</span><span class="p">[</span><span class="n">p</span><span class="p">]]))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Is 33550336 a perfect number?&quot;</span><span class="p">,</span> <span class="n">checkPerfect</span><span class="p">(</span><span class="mi">33550336</span><span class="p">))</span>
+<span class="n">sample_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kelly&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;salary&quot;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;New york&quot;</span>
+    <span class="p">}</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">,</span><span class="s2">&quot;location&quot;</span><span class="p">]</span>
+<span class="n">sub_dict</span> <span class="o">=</span> <span class="n">modify_dict</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span><span class="n">keys</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sub_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2024,14 +1950,63 @@ rev_comp(rev_comp(S1) == S1?) True
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-6  =  1+2+3
-28  =  1+2+4+7+14
-496  =  1+2+4+8+16+31+62+124+248
-8128  =  1+2+4+8+16+32+64+127+254+508+1016+2032+4064
-Is 33550336 a perfect number? True
+{&#39;name&#39;: &#39;Kelly&#39;, &#39;age&#39;: 25, &#39;salary&#39;: 8000, &#39;location&#39;: &#39;New york&#39;}
 </pre></div></div>
 </div>
 </div><ol class="arabic simple" start="3">
+<li><p>Write a Python program to change Brad’s salary to 8500 in the following dictionary. <strong>input</strong></p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sample_dict = {
+    &#39;emp1&#39;: {&#39;name&#39;: &#39;Jhon&#39;, &#39;salary&#39;: 7500},
+    &#39;emp2&#39;: {&#39;name&#39;: &#39;Emma&#39;, &#39;salary&#39;: 8000},
+    &#39;emp3&#39;: {&#39;name&#39;: &#39;Brad&#39;, &#39;salary&#39;: 500}
+}
+</pre></div>
+</div>
+<p><strong>output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
+   &#39;emp1&#39;: {&#39;name&#39;: &#39;Jhon&#39;, &#39;salary&#39;: 7500},
+   &#39;emp2&#39;: {&#39;name&#39;: &#39;Emma&#39;, &#39;salary&#39;: 8000},
+   &#39;emp3&#39;: {&#39;name&#39;: &#39;Brad&#39;, &#39;salary&#39;: 8500}
+}
+</pre></div>
+</div>
+<p><strong>Def a function ``get_employ(dictionary_in,name)`` that takes in input a dictionary and the name of Brad.</strong> then use the result to change the value.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_employ</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">k</span>
+
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error, no name found&quot;</span><span class="p">)</span>
+
+<span class="n">sample_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;emp1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jhon&#39;</span><span class="p">,</span> <span class="s1">&#39;salary&#39;</span><span class="p">:</span> <span class="mi">7500</span><span class="p">},</span>
+    <span class="s1">&#39;emp2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Emma&#39;</span><span class="p">,</span> <span class="s1">&#39;salary&#39;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">},</span>
+    <span class="s1">&#39;emp3&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Brad&#39;</span><span class="p">,</span> <span class="s1">&#39;salary&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">employ</span> <span class="o">=</span> <span class="n">get_employ</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">,</span><span class="s2">&quot;Brad&quot;</span><span class="p">)</span>
+
+<span class="n">sample_dict</span><span class="p">[</span><span class="n">employ</span><span class="p">][</span><span class="s2">&quot;salary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8500</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sample_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;emp1&#39;: {&#39;name&#39;: &#39;Jhon&#39;, &#39;salary&#39;: 7500}, &#39;emp2&#39;: {&#39;name&#39;: &#39;Emma&#39;, &#39;salary&#39;: 8000}, &#39;emp3&#39;: {&#39;name&#39;: &#39;Brad&#39;, &#39;salary&#39;: 8500}}
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
 <li><p>A pangram is a sentence that contains all the letters of the alphabet at least once (let’s ignore numbers and other characters for simplicity).</p>
 <ol class="arabic simple">
 <li><p>Write a function that gets a text in input and returns True if it is a pangram.</p></li>
@@ -2042,7 +2017,7 @@ Is 33550336 a perfect number? True
 </ol>
 <div class="tggle" onclick="toggleVisibility(&#39;f-ex3&#39;);"><p>Show/Hide Solution</p>
 </div><div id="f-ex3" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2130,188 +2105,7 @@ The quick brown fox jumps over the dog, is it a pangram? False
 The quick brown fox jumps over the dog, is it a pangram in mod alphabet? True
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="4">
-<li><p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Restriction_enzyme">restriction enzyme</a> is an enzyme that cleaves DNA into fragments at or near specific recognition sites within molecules known as restriction sites. A lot of restriction enzymes exist that cleave the DNA at different sites. For simplicity let’s focus on only the 5’-3’ orientation of DNA. Consider the following enzymes, stored as a dictionary:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>restriction_enzymes = {&#39;EcoRI&#39; : (&#39;GAATTC&#39;,&#39;G&#39;,&#39;AATTC&#39;), &#39;TaqI&#39;: (&#39;TCGA&#39;,&#39;T&#39;,&#39;CGA&#39;), &#39;PvII: (&#39;CAGCTG&#39;,&#39;CAG&#39;,&#39;CTG&#39;)}
-</pre></div>
-</div>
-<p>meaning for example that enzyme ‘EcoRI’ would split a sequence xxxxGAATTCxxxxx into the two sequences xxxxG and AATTCxxxxx.</p>
-<ol class="upperalpha simple">
-<li><p>Implement a function (<em>restrict_DNA(sequence, enzyme)</em>) that takes a DNA string in input, and the specification of a restriction enzyme (e.g. “TaqI”) and returns a list with all the possible pairs of cleaved DNA sequences.</p></li>
-<li><p>Extend this code in such a way that it can process a list of DNA sequences rather than a single one and returns a list of lists (write a function <em>restrict_DNA_sequences(list_of_sequences, enzyme)</em>. <strong>If the enzyme specified in input is not recognized, the script should output a warning message without crashing</strong>.</p></li>
-</ol>
-<p>Test your function(s) with the following calls:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>seq = &quot;TACTACCTACGAATTCAAATGAATTCCCTTAAGAATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&quot;
-
-print(&quot;Restriction with EcoRI&quot;)
-print(restrict_DNA(seq, &#39;EcoRI&#39;))
-print(&quot;\nRestriction with PvII&quot;)
-print(restrict_DNA(seq, &#39;PvII&#39;))
-print(&quot;\nRestriction with TaqI&quot;)
-R = restrict_DNA(seq, &#39;TaqI&#39;)
-print(R)
-print(&quot;\nSecond restriction with EcoRI&quot;)
-print(restrict_DNA_sequences(R, &#39;EcoRI&#39;))
-print(restrict_DNA_sequences(R, &#39;MyEnzyme&#39;))
-</pre></div>
-</div>
-<div class="tggle" onclick="toggleVisibility(&#39;RES-ex3&#39;);"><p>Show/Hide Solution</p>
-</div><div id="RES-ex3" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-
-<span></span><span class="k">def</span> <span class="nf">restrict_DNA</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">enzyme</span><span class="p">):</span>
-    <span class="n">restriction_enzymes</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;EcoRI&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="s1">&#39;GAATTC&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;AATTC&#39;</span><span class="p">),</span>
-                           <span class="s1">&#39;TaqI&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;TCGA&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;CGA&#39;</span><span class="p">),</span>
-                           <span class="s1">&#39;PvII&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;CAGCTG&#39;</span><span class="p">,</span><span class="s1">&#39;CAG&#39;</span><span class="p">,</span><span class="s1">&#39;CTG&#39;</span><span class="p">)</span>
-                          <span class="p">}</span>
-
-    <span class="n">site</span> <span class="o">=</span> <span class="n">restriction_enzymes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">enzyme</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">site</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enzyme &#39;</span><span class="si">{}</span><span class="s2"> does not exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">enzyme</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">))</span> <span class="k">if</span> <span class="n">sequence</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">site</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span> <span class="o">==</span> <span class="n">site</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="p">[(</span><span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">site</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> <span class="n">sequence</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">site</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">:</span> <span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">]</span>
-        <span class="c1"># if restriction site not present:</span>
-        <span class="c1"># we need to return [(sequence, &quot;&quot;)]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[(</span><span class="n">sequence</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)]</span>
-        <span class="k">return</span> <span class="n">ret</span>
-
-<span class="k">def</span> <span class="nf">restrict_DNA_sequences</span><span class="p">(</span><span class="n">seqs</span><span class="p">,</span> <span class="n">enzyme</span><span class="p">):</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">restrict_DNA</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">enzyme</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">r</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">return</span> <span class="n">ret</span>
-
-
-<span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;TACTACCTACGAATTCAAATGAATTCCCTTAAGAATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Restriction with EcoRI&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">restrict_DNA</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="s1">&#39;EcoRI&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Restriction with PvII&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">restrict_DNA</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="s1">&#39;PvII&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Restriction with TaqI&quot;</span><span class="p">)</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">restrict_DNA</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="s1">&#39;TaqI&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Second restriction with EcoRI&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">restrict_DNA_sequences</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="s1">&#39;EcoRI&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">restrict_DNA_sequences</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="s1">&#39;MyEnzyme&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Restriction with EcoRI
-[(&#39;TACTACCTACG&#39;, &#39;AATTCAAATGAATTCCCTTAAGAATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;), (&#39;TACTACCTACGAATTCAAATG&#39;, &#39;AATTCCCTTAAGAATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;), (&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAG&#39;, &#39;AATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;)]
-
-Restriction with PvII
-[(&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAGAATTCATTCGATCGATTAAAGAGCTGATTAGAATATCCAG&#39;, &#39;CTG&#39;)]
-
-Restriction with TaqI
-[(&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAGAATTCATT&#39;, &#39;CGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;), (&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAGAATTCATTCGAT&#39;, &#39;CGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;)]
-
-Second restriction with EcoRI
-[[(&#39;TACTACCTACG&#39;, &#39;AATTCAAATGAATTCCCTTAAGAATTCATT&#39;), (&#39;TACTACCTACGAATTCAAATG&#39;, &#39;AATTCCCTTAAGAATTCATT&#39;), (&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAG&#39;, &#39;AATTCATT&#39;)], [(&#39;CGATCGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;, &#39;&#39;)], [(&#39;TACTACCTACG&#39;, &#39;AATTCAAATGAATTCCCTTAAGAATTCATTCGAT&#39;), (&#39;TACTACCTACGAATTCAAATG&#39;, &#39;AATTCCCTTAAGAATTCATTCGAT&#39;), (&#39;TACTACCTACGAATTCAAATGAATTCCCTTAAG&#39;, &#39;AATTCATTCGAT&#39;)], [(&#39;CGATTAAAGAGCTGATTAGAATATCCAGCTG&#39;, &#39;&#39;)]]
-Enzyme &#39;MyEnzyme does not exist
-None
-</pre></div></div>
-</div>
-</div><ol class="arabic simple" start="5">
-<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/2231712">Blast</a> is a well known tool to perform sequence alignment between a pool of query sequences and a pool of subject sequences. Among the other formats, it can produce a text output that is tab separated (<code class="docutils literal notranslate"><span class="pre">\t</span></code>) capturing user specified output. Comments in the file are written in lines starting with an hash key (“#”). A sample blast output file is <a class="reference external" href="file_samples/blast_sample.tsv">blast_sample.tsv</a>, please download it and spend some time to look
-at it. The meaning of all columns is specified in the file header:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Fields: query id, subject id, query length, % identity, alignment length,
-identical, gap opens, q. start, q. end, s. start, s. end, evalue
-</pre></div>
-</div>
-<p>Write a python program with:</p>
-<ol class="arabic simple">
-<li><p>A function (<em>readBlast</em>) that reads in the blast .tsv file (storing each line in a list) ignoring comment lines;</p></li>
-<li><p>A function (<em>filterBlast</em>) that gets a string in input representing a blast alignment and filters it according to the user specified parameters below. It should return True if all filters are passed, false otherwise:</p>
-<ol class="arabic simple">
-<li><p>% identity &gt; identity_threshold (default 0%)</p></li>
-<li><p>evalue &lt; evalue_thrshold (default 0.5)</p></li>
-<li><p>alignment length / query length &gt; align_threshold (default 0)</p></li>
-</ol>
-</li>
-</ol>
-<p>The program should report how many entries out of the total passed the filter.</p>
-<p>Test several combinations of filters like:</p>
-<ol class="arabic simple">
-<li><p>identity_theshold = 97, all others default</p></li>
-<li><p>evalue_threshold = 0.5, all others default</p></li>
-<li><p>align_threshold = 0.9, all others default</p></li>
-<li><p>align_threshold = 0.9, identity_threshold = 97</p></li>
-</ol>
-<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
-</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-
-<span></span><span class="k">def</span> <span class="nf">filterBlast</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">id_thr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">eval_thr</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">al_thr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;filters an alignment represented as a string. Returns True if filters OK, False otherwise&quot;&quot;&quot;</span>
-    <span class="n">infos</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">id_thr</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">eval_thr</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span><span class="o">/</span><span class="nb">int</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">al_thr</span>
-
-<span class="k">def</span> <span class="nf">readBlast</span><span class="p">(</span><span class="n">inFile</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reads the blast .tsv file and returns a list&quot;&quot;&quot;</span>
-    <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-    <span class="n">alignments</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
-            <span class="n">alignments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">alignments</span>
-
-<span class="k">def</span> <span class="nf">filterAndCount</span><span class="p">(</span><span class="n">alignList</span><span class="p">,</span> <span class="n">id_thr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">eval_thr</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">al_thr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;filters alignments and counts the ones passing the filter&quot;&quot;&quot;</span>
-    <span class="n">passed</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">alignList</span> <span class="k">if</span> <span class="n">filterBlast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">id_thr</span><span class="p">,</span> <span class="n">eval_thr</span><span class="p">,</span> <span class="n">al_thr</span><span class="p">)]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> out of </span><span class="si">{}</span><span class="s2"> aligns passed filter (id_thr:</span><span class="si">{}</span><span class="s2">,eval_thr:</span><span class="si">{}</span><span class="s2">,al_thr:</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="nb">len</span><span class="p">(</span><span class="n">passed</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">alignList</span><span class="p">),</span> <span class="n">id_thr</span><span class="p">,</span><span class="n">eval_thr</span><span class="p">,</span><span class="n">al_thr</span><span class="p">))</span>
-
-<span class="n">blastF</span> <span class="o">=</span> <span class="s2">&quot;file_samples/blast_sample.tsv&quot;</span>
-
-<span class="n">myAligns</span> <span class="o">=</span> <span class="n">readBlast</span><span class="p">(</span><span class="n">blastF</span><span class="p">)</span>
-
-<span class="n">filterAndCount</span><span class="p">(</span><span class="n">myAligns</span><span class="p">,</span> <span class="n">id_thr</span><span class="o">=</span><span class="mi">97</span><span class="p">)</span>
-<span class="n">filterAndCount</span><span class="p">(</span><span class="n">myAligns</span><span class="p">,</span> <span class="n">eval_thr</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">filterAndCount</span><span class="p">(</span><span class="n">myAligns</span><span class="p">,</span> <span class="n">al_thr</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-<span class="n">filterAndCount</span><span class="p">(</span><span class="n">myAligns</span><span class="p">,</span> <span class="n">al_thr</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">id_thr</span><span class="o">=</span><span class="mi">97</span><span class="p">)</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-8390 out of 90790 aligns passed filter (id_thr:97,eval_thr:0.5,al_thr:0)
-90780 out of 90790 aligns passed filter (id_thr:0,eval_thr:1,al_thr:0)
-27711 out of 90790 aligns passed filter (id_thr:0,eval_thr:0.5,al_thr:0.9)
-804 out of 90790 aligns passed filter (id_thr:97,eval_thr:0.5,al_thr:0.9)
-</pre></div></div>
-</div>
-</div><ol class="arabic simple" start="6">
+</div></div></div><ol class="arabic simple" start="5">
 <li><p>Fasta is a <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">format</a> representing nucleotide or peptide sequences. Each entry of a fasta file starts with a “&gt;” followed by the identifier of the entry (the header of the sequence). All the lines following a header represent the sequence belonging to that identifier. Here you can find an example of fasta file: <a class="reference external" href="file_samples/contigs82.fasta">contigs82.fasta</a>. Please download it and have a look at its content.</p></li>
 </ol>
 <p>Write a python program that reads a fasta file and prints to screen the identifier of the sequence and the frequency of all the characters in the sequence (note that sequences might contain all IUPAC codes in case of SNPs). Hint: use a dictionary.</p>
@@ -2333,7 +2127,7 @@ MDC001115.177 :
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2988,12 +2782,12 @@ MDC009771.217 :
          N has freq 0.001
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="7">
+</div><ol class="arabic simple" start="6">
 <li><p>Write a python program that reads two files. The first is a one column text file (<a class="reference external" href="file_samples/contig_ids.txt">contig_ids.txt</a>) with the identifiers of some contigs that are present in the second file, which is a fasta formatted file (<a class="reference external" href="file_samples/contigs82.fasta">contigs82.fasta</a>). The program will write on a third, fasta formatted file (e.g. filtered_contigs.fasta) only those entries in <em>contigs82.fasta</em> having identifier in <em>contig_ids.txt</em>.</p></li>
 </ol>
 <div class="tggle" onclick="toggleVisibility(&#39;ex4&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex4" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3090,7 +2884,7 @@ Writing contig  MDC007097.457
 Writing contig  MDC016278.70
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="8">
+</div><ol class="arabic simple" start="7">
 <li><p>Write a python program that:</p>
 <ol class="arabic simple">
 <li><p>reads the text file <a class="reference external" href="file_samples/sample_text.txt">sample_text.txt</a> and stores in a dictionary how many times each word appears (hint: the key is the word and the count is the value);</p></li>
@@ -3102,7 +2896,7 @@ Writing contig  MDC016278.70
 </ol>
 <div class="tggle" onclick="toggleVisibility(&#39;ex5&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex5" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3179,6 +2973,15 @@ Word &#34;thunder&#34; is present 11 times
 Word &#34;umbrella&#34; is present 10 times
 </pre></div></div>
 </div>
+</section>
+<section id="Exercises-(difficult)">
+<h2>Exercises (difficult)<a class="headerlink" href="#Exercises-(difficult)" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Read the file <a class="reference external" href="nobel.csv">nobel.csv</a></p></li>
+<li><p>define a function that prints the first female who won a nobel price</p></li>
+<li><p>define a function that prints the names of winners still alive.</p></li>
+<li><p>define a function that prints how many nobel prices have have been won for each country</p></li>
+</ol>
 </div></section>
 </section>
 
