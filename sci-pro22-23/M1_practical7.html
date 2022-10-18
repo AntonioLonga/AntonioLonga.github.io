@@ -1013,6 +1013,154 @@ import numpy as np
 </div>
 </div>
 </div><ol class="arabic simple" start="2">
+<li><p>have a look to this website <a class="reference external" href="http://www.sociopatterns.org/">sociopattern.org</a>. This cooperation is super cool! they developed a wearable device called sociobadge. Peaple are wearing this badge during some days, and the device collects face-to-face interacions data. On the section data of the website, you find a list of datasets collected in different social context (hospital, primaryschool, highschool, workplaces, conferences, …).</p></li>
+</ol>
+<p>In this exercise we are gona play with those datasets. In particular download the <a class="reference external" href="http://www.sociopatterns.org/datasets/hospital-ward-dynamic-contact-network/">hospital</a> dataset. The dataset is like below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Time idA idB typeA typeB
+</pre></div>
+</div>
+<p>For instance.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>140 1157    1232    MED ADM
+160 1157    1191    MED MED
+500 1157    1159    MED MED
+520 1157    1159    MED MED
+560 1159    1191    MED MED
+580 1159    1191    MED MED
+</pre></div>
+</div>
+<p>you have data separated by a tabular. From the first row we can see that at timestamp 140(seconds) user 1157 talks with 1232, from the same row we know that the user 1157 is a Medical doctor, while user 1232 is works in the amministrative stuff.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Write a function that ask the user an id and you have to print either: &quot;the user is not present&quot; or the typer of the user X, for instance: &quot;the user X is an Med/Nurse/Adm/Patient&quot;
+2. Write a function that ask the user an id type (Med/Nur/Adm/Pat) and the name of a file (like: &quot;only doctors.txt&quot;) and write a new file containing the list of interactions only for that type of user.
+3. Print to the scrin the pair of users that has the the maximum number of interaction. for instance, id 10 and id 30 are probablilly friend because the has the the maximum number of interactions among them.
+4.  **Difficult!**! Do doctors have longer continuous interactions with patients or doctors? Suppose that a doctor is interacting with another doctor for 300 seconds in the first day, but then he talks with the same doctor in another day for 400 seconds. Then the longhest continuous interaction would be 400 seconds. My question is: Do doctor prefer to talk with other doctors or patients? :). You have to compute the longhest interaction among each doctor to doctor and between doctor to patients, then you can answare the question **solution not given**
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;miodifficile&#39;);"><p>Show/Hide Solution</p>
+</div><div id="miodifficile" style="display:none;"><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="c1"># read the file</span>
+<span class="k">def</span> <span class="nf">read_the_data</span><span class="p">(</span><span class="n">input_file</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="c1">#1</span>
+<span class="k">def</span> <span class="nf">get_unique_ids</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">unique_ids</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">type_i</span><span class="p">,</span><span class="n">type_j</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_ids</span><span class="p">:</span>
+            <span class="n">unique_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">type_i</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_ids</span><span class="p">:</span>
+            <span class="n">unique_ids</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">type_j</span>
+
+    <span class="k">return</span> <span class="n">unique_ids</span>
+
+<span class="k">def</span> <span class="nf">check_id</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="n">get_unique_ids</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the user&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">,</span><span class="s2">&quot;is in the data and it is a &quot;</span><span class="p">,</span><span class="n">unique</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the id does not exists&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2</span>
+<span class="k">def</span> <span class="nf">get_sub_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">type_user</span><span class="p">):</span>
+    <span class="n">sub_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">type_i</span><span class="p">,</span><span class="n">type_j</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">type_i</span> <span class="o">==</span> <span class="n">type_user</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">and</span> <span class="n">type_j</span> <span class="o">==</span> <span class="n">type_user</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span>
+            <span class="n">tmp_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">+</span><span class="n">type_i</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">+</span><span class="n">type_j</span>
+            <span class="n">sub_data</span> <span class="o">+=</span> <span class="n">tmp_str</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">sub_data</span>
+
+<span class="k">def</span> <span class="nf">store_sub_data</span><span class="p">(</span><span class="n">sub_data</span><span class="p">,</span><span class="n">output_file</span><span class="p">):</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sub_data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;file stored in&quot;</span><span class="p">,</span><span class="n">output_file</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">interaction_frequencies</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">interaction</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">interaction</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">interaction</span><span class="p">:</span>
+            <span class="n">interaction</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">interaction</span><span class="p">:</span>
+                <span class="n">interaction</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">interaction</span><span class="p">:</span>
+                <span class="n">interaction</span><span class="p">[(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">interaction</span>
+
+<span class="k">def</span> <span class="nf">serach_biggest_interaction</span><span class="p">(</span><span class="n">interaction</span><span class="p">):</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">coppia</span><span class="p">,</span><span class="n">val</span> <span class="ow">in</span> <span class="n">interaction</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">val</span><span class="o">&gt;</span><span class="n">maximum</span><span class="p">:</span>
+            <span class="n">maximum</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">coppia</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the biggest interaction is between&quot;</span><span class="p">,</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;.In particular, they had&quot;</span><span class="p">,</span><span class="n">maximum</span><span class="p">,</span><span class="s2">&quot;interactions.&quot;</span><span class="p">)</span>
+
+
+
+
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Sociopattern data LH10&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-I&quot;</span><span class="p">,</span><span class="s2">&quot;--input&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span> <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;The input file&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-O&quot;</span><span class="p">,</span> <span class="s2">&quot;--output&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;where to store the file&quot;</span><span class="p">)</span>
+
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-S&quot;</span><span class="p">,</span> <span class="s2">&quot;--search&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">int</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;id to search&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-T&quot;</span><span class="p">,</span><span class="s2">&quot;--type&quot;</span><span class="p">,</span><span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;type to search&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">input_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">input</span>
+<span class="n">search_id</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">search</span>
+
+<span class="n">output_file</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">output</span>
+<span class="n">type_search</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">type</span>
+
+
+<span class="c1"># read the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_the_data</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+
+<span class="c1"># 1</span>
+<span class="c1"># if the user specify the id then search it</span>
+<span class="k">if</span> <span class="n">search_id</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">check_id</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">search_id</span><span class="p">)</span>
+
+
+<span class="c1"># 2</span>
+<span class="c1"># if user specify to search an user type, then it has to specify both the output file and the i</span>
+<span class="k">if</span> <span class="n">output_file</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="n">type_search</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="n">sub_data</span> <span class="o">=</span> <span class="n">get_sub_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">type_search</span><span class="p">)</span>
+    <span class="n">store_sub_data</span><span class="p">(</span><span class="n">sub_data</span><span class="p">,</span><span class="n">output_file</span><span class="p">)</span>
+
+<span class="c1"># 3</span>
+<span class="n">interaction_F</span> <span class="o">=</span> <span class="n">interaction_frequencies</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">serach_biggest_interaction</span><span class="p">(</span><span class="n">interaction_F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div><ol class="arabic simple" start="3">
 <li><p>Write a python script that takes in input a single-entry .fasta file (specified from the command line) of the amino-acidic sequence of a protein and prints off (1) the total number of aminoacids, (2) for each aminoacid, its count and percentage of the whole. Optionally, it the user specifies the flag “-S” (–search) followed by a string representing an aminoacid sequence, the program should count and print how many times that input sequence appears. Download the <a class="reference external" href="file_samples/P0DTC2.fasta.txt">Sars-Cov-2 Spike
 Protein</a> and test your script on it. <em>Please use functions</em>.</p></li>
 </ol>
@@ -1118,94 +1266,6 @@ I is present 76 times (5.97 %)
 E is present 48 times (3.77 %)
 Sequence &#39;SSVL&#39; is present 2 times
 </pre></div>
-</div>
-</div><ol class="arabic simple" start="3">
-<li><p>Given a <a class="reference external" href="https://en.wikipedia.org/wiki/FASTA_format">fasta</a> file like <a class="reference external" href="file_samples/contigs82.fasta">contigs82.fasta</a> specified in input by a user, write a python script that counts, for each sequence, the number of times that a DNA or protein string specified in input appears.</p></li>
-</ol>
-<p>If we run something like: python3 <code class="docutils literal notranslate"><span class="pre">find_stringInFasta.py</span> <span class="pre">contigs82.fasta</span> <span class="pre">TGCTCACAG</span></code></p>
-<p>the result should print lines like:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TGCTCACAG in MDC052568.000: 1 times
-TGCTCACAG in MDC002479.192: 1 times
-TGCTCACAG in MDC040033.7: 1 times
-</pre></div>
-</div>
-<p>Modify the program so that it outputs also the list of all the indexes where the string appears in each sequence in the fasta file. Try to look for the following sequences:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TTTTCCTAGG
-TGCTCCGAGCATGTGATAATCATTCCAAGCTCCAT
-TAAACAT
-GATTACA
-</pre></div>
-</div>
-<div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
-</div><div id="ex3" style="display:none;"><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;exercises/find_stringInFasta.py&quot;&quot;&quot;</span>
-
-
-<span class="kn">import</span> <span class="nn">argparse</span>
-
-<span class="k">def</span> <span class="nf">getIndexes</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span><span class="n">string2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;checks if string2 is present in string1 and returns</span>
-<span class="sd">    all the positions at which string2 occurs in string1&quot;&quot;&quot;</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">ind</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">string2</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="n">ind</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">ind</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">string1</span><span class="p">)):</span>
-        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
-        <span class="n">ind</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">string2</span><span class="p">,</span><span class="n">ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">ret</span>
-
-<span class="k">def</span> <span class="nf">processFasta</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="n">testStr</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;reads a fasta file entry by entry checks if the input string</span>
-<span class="sd">       testStr is present in each sequence. Reporting how many times and where.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">)):</span>
-                <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>
-                    <span class="c1">#first entry:</span>
-                    <span class="n">header</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="c1">#this is a new entry</span>
-                    <span class="n">indexes</span> <span class="o">=</span> <span class="n">getIndexes</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span><span class="n">testStr</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> in </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> times (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testStr</span><span class="p">,</span>
-                                                               <span class="n">header</span><span class="p">,</span>
-                                                               <span class="nb">len</span><span class="p">(</span><span class="n">indexes</span><span class="p">),</span>
-                                                               <span class="n">indexes</span><span class="p">))</span>
-                    <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-                    <span class="n">header</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">seq</span> <span class="o">+=</span><span class="n">line</span>
-    <span class="c1">#processing the final entry</span>
-    <span class="n">indexes</span> <span class="o">=</span> <span class="n">getIndexes</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span><span class="n">testStr</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> in </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> times (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testStr</span><span class="p">,</span>
-                                               <span class="n">header</span><span class="p">,</span>
-                                               <span class="nb">len</span><span class="p">(</span><span class="n">indexes</span><span class="p">),</span>
-                                               <span class="n">indexes</span><span class="p">))</span>
-
-<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
-    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Checks if a sequence is exactly contained in a fasta file&quot;&quot;&quot;</span>
-<span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The fasta file name&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The query string&quot;</span><span class="p">)</span>
-
-<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<span class="c1">#inFasta = args.filename</span>
-<span class="c1">#testS = args.query</span>
-<span class="n">inFasta</span> <span class="o">=</span> <span class="s2">&quot;file_samples/contigs82.fasta&quot;</span>
-<span class="n">testS</span> <span class="o">=</span> <span class="s2">&quot;TAAACAT&quot;</span>
-<span class="n">processFasta</span><span class="p">(</span><span class="n">inFasta</span><span class="p">,</span> <span class="n">testS</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div><ol class="arabic simple" start="4">
 <li><p>The <a class="reference external" href="http://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x/abstract">Fisher’s dataset</a> regarding Petal and Sepal length and width in csv format can be found <a class="reference external" href="file_samples/Fishers_Iris.csv">here</a>. These are the measurements of the flowers of fifty plants each of the two species Iris setosa and Iris versicolor.</p></li>
