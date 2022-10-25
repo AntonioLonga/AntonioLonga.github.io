@@ -243,6 +243,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(2)-DS">Exercises (2) DS</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical9.html">Module 1, Practical 9</a><ul>
@@ -3754,6 +3755,488 @@ Right Join DF - DF1
 </pre></div></div>
 </div>
 </div></section>
+<section id="Exercises-(2)-DS">
+<h2>Exercises (2) DS<a class="headerlink" href="#Exercises-(2)-DS" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Write a program to convert the sample data (dictionary) into a dataframe</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Sample data: {&#39;X&#39;:[78,85,96,80,86], &#39;Y&#39;:[84,94,89,83,86],&#39;Z&#39;:[86,97,96,72,83]}
+</pre></div>
+</div>
+<p>output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    X   Y   Z
+0  78  84  86
+1  85  94  97
+2  96  89  96
+3  80  83  72
+4  86  86  83
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2_1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2_1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">sample_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:[</span><span class="mi">78</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">86</span><span class="p">],</span> <span class="s1">&#39;Y&#39;</span><span class="p">:[</span><span class="mi">84</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">83</span><span class="p">,</span><span class="mi">86</span><span class="p">],</span><span class="s1">&#39;Z&#39;</span><span class="p">:[</span><span class="mi">86</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="mi">83</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+    X   Y   Z
+0  78  84  86
+1  85  94  97
+2  96  89  96
+3  80  83  72
+4  86  86  83
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Write a program to select the ‘name’ and ‘score’ columns from the following DataFrame.</p></li>
+</ol>
+<p>Sample DataFrame:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>exam_data = {&#39;name&#39;: [&#39;Anastasia&#39;, &#39;Dima&#39;, &#39;Katherine&#39;, &#39;James&#39;, &#39;Emily&#39;, &#39;Michael&#39;, &#39;Matthew&#39;, &#39;Laura&#39;, &#39;Kevin&#39;, &#39;Jonas&#39;],
+&#39;score&#39;: [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+&#39;attempts&#39;: [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+&#39;qualify&#39;: [&#39;yes&#39;, &#39;no&#39;, &#39;yes&#39;, &#39;no&#39;, &#39;no&#39;, &#39;yes&#39;, &#39;yes&#39;, &#39;no&#39;, &#39;no&#39;, &#39;yes&#39;]}
+labels = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;]
+</pre></div>
+</div>
+<p>output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        name  score
+a  Anastasia   12.5
+b       Dima    9.0
+c  Katherine   16.5
+d      James    NaN
+e      Emily    9.0
+f    Michael   20.0
+g    Matthew   14.5
+h      Laura    NaN
+i      Kevin    8.0
+j      Jonas   19.0
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2_2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2_2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">exam_data</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Anastasia&#39;</span><span class="p">,</span> <span class="s1">&#39;Dima&#39;</span><span class="p">,</span> <span class="s1">&#39;Katherine&#39;</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Emily&#39;</span><span class="p">,</span> <span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="s1">&#39;Matthew&#39;</span><span class="p">,</span> <span class="s1">&#39;Laura&#39;</span><span class="p">,</span> <span class="s1">&#39;Kevin&#39;</span><span class="p">,</span> <span class="s1">&#39;Jonas&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+        <span class="s1">&#39;attempts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;qualify&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">]}</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">exam_data</span> <span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Select specific columns:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Select specific columns:
+        name  score
+a  Anastasia   12.5
+b       Dima    9.0
+c  Katherine   16.5
+d      James   10.0
+e      Emily    9.0
+f    Michael   20.0
+g    Matthew   14.5
+h      Laura    3.0
+i      Kevin    8.0
+j      Jonas   19.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Write a program to convert those strings in datetime object.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 3/11/2000
+1 3/12/2000
+2 3/13/2000
+</pre></div>
+</div>
+<p>output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 2000-03-11
+1 2000-03-12
+2 2000-03-13
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2_3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2_3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;3/11/2000&#39;</span><span class="p">,</span> <span class="s1">&#39;3/12/2000&#39;</span><span class="p">,</span> <span class="s1">&#39;3/13/2000&#39;</span><span class="p">])</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original DataFrame (string to datetime):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Original DataFrame (string to datetime):
+           0
+0 2000-03-11
+1 2000-03-12
+2 2000-03-13
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Write a Pandas program to select all columns, except one given column in a DataFrame. input:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>col1 col2 col3
+0 1 4 7
+1 2 5 8
+2 3 6 12
+3 4 9 1
+4 7 5 11
+</pre></div>
+</div>
+<p>output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>col1 col2
+0 1 4
+1 2 5
+2 3 6
+3 4 9
+4 7 5
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2_4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2_4" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;col1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="s1">&#39;col2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;col3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All columns except &#39;col3&#39;:&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;col3&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+All columns except &#39;col3&#39;:
+   col1  col2
+0     1     4
+1     2     5
+2     3     6
+3     4     9
+4     7     5
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="5">
+<li><p>The file <a class="reference external" href="file_samples/top_3000_words.txt">top_3000_words.txt</a> is a one-column file representing the top 3000 English words. Read the file and for each letter, count how many words start with that letter. Store this information in a dictionary. Create a pandas series from the dictionary and plot an histogram of all initials counting more than 100 words starting with them.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex0&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex0" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">initials</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">init</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">init</span> <span class="ow">in</span> <span class="n">initials</span><span class="p">:</span>
+            <span class="n">initials</span><span class="p">[</span><span class="n">init</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">initials</span><span class="p">[</span><span class="n">init</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">initials</span>
+
+
+
+<span class="k">def</span> <span class="nf">filter_and_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">minCount</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1">#if you want to see the content of the series uncomment:</span>
+    <span class="c1">#print(series)</span>
+    <span class="n">filt_series</span> <span class="o">=</span> <span class="n">series</span><span class="p">[</span><span class="n">series</span> <span class="o">&gt;</span> <span class="n">minCount</span><span class="p">]</span>
+    <span class="n">filt_series</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">inFile</span> <span class="o">=</span> <span class="s2">&quot;file_samples/top_3000_words.txt&quot;</span>
+
+<span class="n">myDict</span> <span class="o">=</span> <span class="n">readFile</span><span class="p">(</span><span class="n">inFile</span><span class="p">)</span>
+<span class="n">filter_and_plot</span><span class="p">(</span><span class="n">myDict</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+
+
+<span class="sd">&quot;&quot;&quot;Solution 2 with DataFrame&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">readFile2</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="c1">#print(data)</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">filter_and_plot2</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">minCount</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;words&#39;</span><span class="p">]</span> <span class="c1">#rename the column</span>
+    <span class="c1">#Had to use lambda functions...</span>
+    <span class="c1">#ex. lambda x : x + 1</span>
+    <span class="c1">#check:</span>
+    <span class="c1">#https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html</span>
+    <span class="c1">#axis = 1 means we apply the function on all raws.</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;initial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span> <span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;words&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#uncomment to see the data</span>
+    <span class="c1">#print(data)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;initial&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1">#An histogram!</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+    <span class="c1">#uncomment to see the final data</span>
+    <span class="c1">#print(d)</span>
+    <span class="n">filt_data</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">d</span> <span class="o">&gt;</span> <span class="n">minCount</span><span class="p">]</span>
+    <span class="n">filt_data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----- Second solution -----&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------&quot;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">readFile2</span><span class="p">(</span><span class="n">inFile</span><span class="p">)</span>
+<span class="n">filter_and_plot2</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="images/M1_practical8_69_0.png" src="images/M1_practical8_69_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+---------------------------
+----- Second solution -----
+---------------------------
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="images/M1_practical8_69_2.png" src="images/M1_practical8_69_2.png" />
+</div>
+</div>
+</div><ol class="arabic simple" start="6">
+<li><p>Download the <a class="reference external" href="file_samples/train.csv">train.csv</a> dataset. As the name says it is a .csv file. The file contains information regarding loans given or refused to applicants. Information on the gender, marital status, education, work and income of the applicant is reported alongside the amount and length of the loan and credit history (i.e. 0 if no previous loan was given, 1 otherwise). Open it in a text editor or excel and inspect it first. Then, answer the following questions (if you have
+any doubts check <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.20/api.html">here</a>):</p>
+<ol class="arabic simple" start="0">
+<li><p>Load it into a pandas DataFrame (use column <code class="docutils literal notranslate"><span class="pre">Loan_ID</span></code> as index. Hint: use parm index_col).</p></li>
+<li><p>Get an idea of the data by visualizing its first 5 entries;</p></li>
+<li><p>How many total entries are present in the file? How many males and females?</p></li>
+<li><p>What is the average applicant income? Does the gender affect the income? Compute the average of the applicant income on the whole dataset and the average of the data grouped by Gender. How many Females have an income &gt; than the average?</p></li>
+<li><p>How many loans have been given (i.e. Loan_Status equals Y)? What is the percentage of the loans given and that of the loans refused?</p></li>
+<li><p>What is the percentage of given/refused loans in the case of married people?</p></li>
+<li><p>What is the percentage of given/refused loans in the case of applicants with positive credit history (i.e. Credit_History equals 1)?</p></li>
+</ol>
+</li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;file_samples/train.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s2">&quot;Loan_ID&quot;</span><span class="p">)</span>
+<span class="c1">#Question 1:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="c1">#Question 2:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">entries</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The toal number of entries is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entries</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Males and Females&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1">#Question 3:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">avgIncome</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;ApplicantIncome&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average income is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avgIncome</span><span class="p">))</span>
+<span class="n">train</span><span class="p">[[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;ApplicantIncome&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">train</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ApplicantIncome&quot;</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;Gender&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">females</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Female&quot;</span><span class="p">]</span>
+<span class="n">fhi</span> <span class="o">=</span> <span class="n">females</span><span class="p">[</span><span class="n">females</span><span class="p">[</span><span class="s2">&quot;ApplicantIncome&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">avgIncome</span><span class="p">][[</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span><span class="s2">&quot;ApplicantIncome&quot;</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Female applicants with income higher than avg (</span><span class="si">{}</span><span class="s2">): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avgIncome</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">fhi</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fhi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">#Question 4:</span>
+<span class="n">loanSt</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;Loan_Status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of given loans is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loanSt</span><span class="p">[</span><span class="s2">&quot;Y&quot;</span><span class="p">]))</span>
+<span class="c1">#loanSt is a Series, I can apply operator broadcasting on it</span>
+<span class="c1">#to get the percentage</span>
+<span class="n">loanSt</span> <span class="o">=</span> <span class="n">loanSt</span> <span class="o">/</span> <span class="n">entries</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The percentage of loans is the following&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loanSt</span><span class="p">)</span>
+
+<span class="c1">#Question 5:</span>
+<span class="n">loanSt</span> <span class="o">=</span>  <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Married&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">][</span><span class="s2">&quot;Loan_Status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">married</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;Married&quot;</span><span class="p">][</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Married&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">married</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The percentage of loans to married people (</span><span class="si">{}</span><span class="s2"> applicants)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">married</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loanSt</span><span class="o">/</span><span class="n">married</span><span class="p">)</span>
+
+<span class="c1">#Question 6:</span>
+<span class="n">loanSt</span> <span class="o">=</span>  <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Credit_History&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Loan_Status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">chist</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;Credit_History&quot;</span><span class="p">][</span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;Credit_History&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chist</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The percentage of loans to applicants with credit history (</span><span class="si">{}</span><span class="s2"> applicants)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chist</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loanSt</span><span class="o">/</span><span class="n">chist</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+         Gender Married Dependents     Education Self_Employed  \
+Loan_ID
+LP001002   Male      No          0      Graduate            No
+LP001003   Male     Yes          1      Graduate            No
+LP001005   Male     Yes          0      Graduate           Yes
+LP001006   Male     Yes          0  Not Graduate            No
+LP001008   Male      No          0      Graduate            No
+
+          ApplicantIncome  CoapplicantIncome  LoanAmount  Loan_Amount_Term  \
+Loan_ID
+LP001002             5849                0.0         NaN             360.0
+LP001003             4583             1508.0       128.0             360.0
+LP001005             3000                0.0        66.0             360.0
+LP001006             2583             2358.0       120.0             360.0
+LP001008             6000                0.0       141.0             360.0
+
+          Credit_History Property_Area Loan_Status
+Loan_ID
+LP001002             1.0         Urban           Y
+LP001003             1.0         Rural           N
+LP001005             1.0         Urban           Y
+LP001006             1.0         Urban           Y
+LP001008             1.0         Urban           Y
+
+The toal number of entries is 614
+
+Males and Females
+Male      489
+Female    112
+Name: Gender, dtype: int64
+
+The average income is 5403.459283387622
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="images/M1_practical8_71_1.png" src="images/M1_practical8_71_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Female applicants with income higher than avg (5403.459283387622): 21
+          Gender  ApplicantIncome
+Loan_ID
+LP001186  Female            11500
+LP001392  Female             7451
+LP001422  Female            10408
+LP001516  Female            14866
+LP001519  Female            10000
+LP001708  Female            10000
+LP001776  Female             8333
+LP001871  Female             7200
+LP001945  Female             5417
+LP002142  Female             5500
+LP002194  Female            15759
+LP002231  Female             6000
+LP002301  Female             7441
+LP002377  Female             8624
+LP002393  Female            10047
+LP002407  Female             7142
+LP002582  Female            17263
+LP002634  Female            13262
+LP002731  Female            18165
+LP002813  Female            19484
+LP002959  Female            12000
+
+The number of given loans is: 422
+
+The percentage of loans is the following
+Y    0.687296
+N    0.312704
+Name: Loan_Status, dtype: float64
+398
+The percentage of loans to married people (398 applicants)
+Y    0.71608
+N    0.28392
+Name: Loan_Status, dtype: float64
+475
+The percentage of loans to applicants with credit history (475 applicants)
+Y    0.795789
+N    0.204211
+Name: Loan_Status, dtype: float64
+</pre></div></div>
+</div>
+</div><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
 
