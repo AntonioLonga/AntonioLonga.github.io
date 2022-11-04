@@ -18,29 +18,29 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/js/jupman.js"></script>
-        <script type="text/javascript" src="_static/js/pytutor-embed.bundle.min.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <script type="text/javascript" src="static/underscore.js"></script>
+        <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="static/js/jupman.js"></script>
+        <script type="text/javascript" src="static/js/pytutor-embed.bundle.min.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman-web.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman-web.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module 1, Practical 7" href="M1_practical7.html" />
@@ -1156,7 +1156,7 @@ Global now:  [&#39;old value&#39;, &#39;new value1&#39;, &#39;old value&#39;, &#
 </pre></div></div>
 </div>
 <p>Recall what seen in the lecture:</p>
-<img alt="i1" src="_images/argument_passing.png" />
+<img alt="i1" src="images/argument_passing.png" />
 <p>The behaviour above is because <strong>immutable objects</strong> are passed <strong>by value</strong> (therefore it is like making a copy), while <strong>mutable objects</strong> are passed <strong>by reference</strong> (therefore changing them effectively changes the original object).</p>
 <p>To avoid making changes to a <strong>mutable object</strong> passed as parameter one needs to <strong>explicitely make a copy</strong> of it.</p>
 <p>Consider the example seen before. <strong>Example:</strong> Let’s write a function that, given a list of integers, returns the number of elements, the maximum and minimum.</p>
@@ -1501,7 +1501,7 @@ sum is 13: [1.732, 2.236, 4.243]
 <h2>File input and output<a class="headerlink" href="#File-input-and-output" title="Permalink to this headline">¶</a></h2>
 <p>Files are non volatile data stored at specific locations in memory. To read or write from/to a file, one first needs to create a reference to the file. This is called the <strong>handle</strong> to the file.</p>
 <p>Recall from the lecture that Python provides programmers with the following functions and methods:</p>
-<img alt="i2" src="_images/io_met_fun.png" />
+<img alt="i2" src="images/io_met_fun.png" />
 <p>To read or write to a file one first needs to open it with the python’s built-in function <strong>open</strong> that returns a handler to the file. The handler can then be used to read or write the content of the file.</p>
 <p><strong>Example:</strong> Download the file <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a> to your favourite location and read it from python, printing out all its content. <strong>NOTE:</strong> the path of your file might be different from mine.</p>
 <div class="nbinput docutils container">

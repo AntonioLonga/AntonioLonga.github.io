@@ -18,29 +18,29 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/js/jupman.js"></script>
-        <script type="text/javascript" src="_static/js/pytutor-embed.bundle.min.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <script type="text/javascript" src="static/underscore.js"></script>
+        <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="static/js/jupman.js"></script>
+        <script type="text/javascript" src="static/js/pytutor-embed.bundle.min.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman-web.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman-web.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Part 1" href="M1_practical10.html" />
@@ -1149,7 +1149,7 @@ Back to array:
 </pre></div></div>
 </div>
 <p>Be careful though, if shapes don’t match an error <strong>cannot reshape array</strong> is returned:</p>
-<img alt="i1" src="_images/errorReshape.png" />
+<img alt="i1" src="images/errorReshape.png" />
 </section>
 <section id="Iterating-over-arrays-and-Indexing">
 <h2>Iterating over arrays and Indexing<a class="headerlink" href="#Iterating-over-arrays-and-Indexing" title="Permalink to this headline">¶</a></h2>
@@ -1227,7 +1227,7 @@ Row:  [ 9 10 11] is a &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <p>Indexing and slicing can be performed as usual with the <strong>[]</strong> operator. <code class="docutils literal notranslate"><span class="pre">np.ndarray[i,j]</span></code> returns the element at row <code class="docutils literal notranslate"><span class="pre">i</span></code> and column <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
 <p>A multi-dimensional matrix has more than 2 dimensions. They can be thought as several 2D matrices stacked one on top of the other:</p>
-<img alt="i2" src="_images/ndmat.png" />
+<img alt="i2" src="images/ndmat.png" />
 <p>Note that <code class="docutils literal notranslate"><span class="pre">np.ndarray[0,:,:]</span></code> is the whole first matrix. <code class="docutils literal notranslate"><span class="pre">np.ndarray[:,0,:]</span></code> is all the first rows, while <code class="docutils literal notranslate"><span class="pre">np.ndarray[:,:,0]</span></code> is all the first columns. Regarding slicing and indexing, the same reasoning applies to n-dimensional matrices. For example, <code class="docutils literal notranslate"><span class="pre">myB</span></code> below is a 3x3x3 matrix.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1474,7 +1474,7 @@ Sub array B - 20
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_24_0.png" src="_images/M1_practical9_24_0.png" />
+<img alt="images/M1_practical9_24_0.png" src="images/M1_practical9_24_0.png" />
 </div>
 </div>
 </section>
@@ -1591,7 +1591,7 @@ Indexes:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_29_0.png" src="_images/M1_practical9_29_0.png" />
+<img alt="images/M1_practical9_29_0.png" src="images/M1_practical9_29_0.png" />
 </div>
 </div>
 <p>Note that in the code above, <code class="docutils literal notranslate"><span class="pre">np.all</span></code> tests if the two conditions are True at the same time (i.e. AND). If we want to test if at least one is True we use <code class="docutils literal notranslate"><span class="pre">np.any</span></code>. See <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.16.1/reference/generated/numpy.all.html#numpy.all">np.all</a> and <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.16.1/reference/generated/numpy.all.html#numpy.any">np.any</a> for more info:</p>
@@ -1645,7 +1645,7 @@ ALL(vals) on rows:
 </pre></div></div>
 </div>
 <p>We can apply all and any on 3D matrices as well, note the behaviour of <code class="docutils literal notranslate"><span class="pre">axis</span></code> in this case, that can assume values in [0,1,2] as in the following picture and example:</p>
-<img alt="allany3d" src="_images/allany3d.png" />
+<img alt="allany3d" src="images/allany3d.png" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1952,7 +1952,7 @@ Ax:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_41_0.png" src="_images/M1_practical9_41_0.png" />
+<img alt="images/M1_practical9_41_0.png" src="images/M1_practical9_41_0.png" />
 </div>
 </div>
 <p><strong>Example:</strong> Let’s plot simultaneusly <span class="math notranslate nohighlight">\(sin(2 * \Pi * x)\)</span>, <span class="math notranslate nohighlight">\(cos(2 \Pi x)\)</span> and <span class="math notranslate nohighlight">\(sin(2 \Pi x)*cos(2 \Pi x)\)</span> for x ranging from 0 to 5.</p>
@@ -1985,7 +1985,7 @@ Ax:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_43_0.png" src="_images/M1_practical9_43_0.png" />
+<img alt="images/M1_practical9_43_0.png" src="images/M1_practical9_43_0.png" />
 </div>
 </div>
 </section>
@@ -2090,14 +2090,14 @@ T max in Farenheit
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_46_1.png" src="_images/M1_practical9_46_1.png" />
+<img alt="images/M1_practical9_46_1.png" src="images/M1_practical9_46_1.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_46_2.png" src="_images/M1_practical9_46_2.png" />
+<img alt="images/M1_practical9_46_2.png" src="images/M1_practical9_46_2.png" />
 </div>
 </div>
 </div><ol class="arabic simple" start="2">
@@ -2350,13 +2350,13 @@ eucDist(V,V) = 0.0
 </ol>
 <div class="math notranslate nohighlight">
 \[\frac{x}{\sqrt(x^2+y^2+z^2}, \frac{y}{\sqrt(x^2+y^2+z^2}, \frac{z}{\sqrt(x^2+y^2+z^2}\]</div>
-<img alt="idcos" src="_images/dcos.png" />
+<img alt="idcos" src="images/dcos.png" />
 <ol class="arabic simple" start="3">
 <li><p>The angle between two vectors <code class="docutils literal notranslate"><span class="pre">angle(A,B)</span></code>. Given two vectors <span class="math notranslate nohighlight">\(A = (a_x,a_y,a_z)\)</span> and <span class="math notranslate nohighlight">\(B = (b_x,b_y,b_z)\)</span>, <span class="math notranslate nohighlight">\(cos(\alpha) = \frac{A \cdot B}{||A||_2||B||_2}\)</span> where the Euclidean norms are computed as in the previous example.</p></li>
 </ol>
-<img alt="iangle" src="_images/angle.png" />
+<img alt="iangle" src="images/angle.png" />
 <ol class="arabic simple" start="4">
-<li><p>The volume of the pyramid described by three 3D vectors <span class="math notranslate nohighlight">\(\overline{a},\overline{b},\overline{c}\)</span>: <img alt="ipyram" src="_images/pyram.png" /></p></li>
+<li><p>The volume of the pyramid described by three 3D vectors <span class="math notranslate nohighlight">\(\overline{a},\overline{b},\overline{c}\)</span>: <img alt="ipyram" src="images/pyram.png" /></p></li>
 </ol>
 <p>the volume <code class="docutils literal notranslate"><span class="pre">pyrVol(a,b,c)</span></code> can be computed as: <span class="math notranslate nohighlight">\(\frac{1}{6} |det(M)|\)</span>, where <span class="math notranslate nohighlight">\(M = \begin{bmatrix}\overline{a} \\ \overline{b} \\ \overline{c}\end{bmatrix}\)</span>, det is the determinant of the matrix anx || represents the absolute value.</p>
 <p>Define some numpy arrays starting from the following lists:</p>
@@ -2606,28 +2606,28 @@ FROM linalg: (43.144457622432796+0j)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_61_0.png" src="_images/M1_practical9_61_0.png" />
+<img alt="images/M1_practical9_61_0.png" src="images/M1_practical9_61_0.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_61_1.png" src="_images/M1_practical9_61_1.png" />
+<img alt="images/M1_practical9_61_1.png" src="images/M1_practical9_61_1.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_61_2.png" src="_images/M1_practical9_61_2.png" />
+<img alt="images/M1_practical9_61_2.png" src="images/M1_practical9_61_2.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/M1_practical9_61_3.png" src="_images/M1_practical9_61_3.png" />
+<img alt="images/M1_practical9_61_3.png" src="images/M1_practical9_61_3.png" />
 </div>
 </div>
 </div></section>

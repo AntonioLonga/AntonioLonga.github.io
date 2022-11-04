@@ -18,29 +18,29 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/js/jupman.js"></script>
-        <script type="text/javascript" src="_static/js/pytutor-embed.bundle.min.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <script type="text/javascript" src="static/underscore.js"></script>
+        <script type="text/javascript" src="static/doctools.js"></script>
+        <script type="text/javascript" src="static/language_data.js"></script>
+        <script type="text/javascript" src="static/js/jupman.js"></script>
+        <script type="text/javascript" src="static/js/pytutor-embed.bundle.min.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/jupman-web.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/jupman-web.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module 1, Practical 8" href="M1_practical8.html" />
@@ -693,7 +693,7 @@ Param 3: 3 (&lt;class &#39;str&#39;&gt;)
 </div>
 </div>
 <p>Which, depending on user input, should give something like:</p>
-<img alt="i1" src="_images/math.png" />
+<img alt="i1" src="images/math.png" />
 <p>note that we need to check if the values given in input are actually numbers, otherwise the execution will crash (third example). This is easy in case of integers (<code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code>) but in case of floats it is more complex and might require Exception handling.</p>
 <p>A more flexible and powerful way of getting input from command line makes use of the <code class="docutils literal notranslate"><span class="pre">Argparse</span></code> <a class="reference external" href="https://docs.python.org/3/howto/argparse.html">module</a>.</p>
 </section>
@@ -777,7 +777,7 @@ myOptArg = args.optional_arg
 </div>
 </div>
 <p>That returns the following:</p>
-<img alt="iap2" src="_images/systest_argparse.png" />
+<img alt="iap2" src="images/systest_argparse.png" />
 <p>Note that we did not have to check the types of the inputs (i.e. the last time we run the script) but this is automatically done by argparse.</p>
 <p><strong>Example:</strong> Let’s write a program that gets a string (S) and an integer (N) in input and prints the string repeated N times. Three optional parameters are specified: verbosity (-v) to make the software print a more descriptive output, separator (-s) to separate each copy of the string (defaults to ” “) and trailpoints (-p) to add several”.” at the end of the string (defaults to 1).</p>
 <div class="nbinput nblast docutils container">
@@ -818,13 +818,13 @@ myOptArg = args.optional_arg
 </div>
 </div>
 <p>Executing the program from command line without parameters gives the message:</p>
-<img alt="i2" src="_images/noargs.png" />
+<img alt="i2" src="images/noargs.png" />
 <p>Calling it with the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag:</p>
-<img alt="i3" src="_images/help.png" />
+<img alt="i3" src="images/help.png" />
 <p>With the positional arguments <code class="docutils literal notranslate"><span class="pre">&quot;ciao</span> <span class="pre">a</span> <span class="pre">tutti&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
-<img alt="i4" src="_images/pos_args.png" />
+<img alt="i4" src="images/pos_args.png" />
 <p>With the positional arguments <code class="docutils literal notranslate"><span class="pre">&quot;ciao</span> <span class="pre">a</span> <span class="pre">tutti&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>, and with the optional parameters <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">&quot;___&quot;</span> <span class="pre">-p</span> <span class="pre">3</span> <span class="pre">-v</span></code></p>
-<img alt="i5" src="_images/sample.png" />
+<img alt="i5" src="images/sample.png" />
 <p><strong>Example:</strong> Let’s write a program that reads and prints to screen a text file specified by the user. Optionally, the file might be compressed with gzip to save space. The user should be able to read also gzipped files. Hint: use the module gzip which is very similar to the standard file management method (<a class="reference external" href="https://docs.python.org/3/library/gzip.html?highlight=gzip#module-gzip">more info here</a>). You can find a text file here <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a> and its gzipped version
 here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:</p>
 <div class="nbinput nblast docutils container">
@@ -858,7 +858,7 @@ here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:<
 </div>
 </div>
 <p>The output:</p>
-<img alt="i6" src="_images/read_gz.png" />
+<img alt="i6" src="images/read_gz.png" />
 <p><strong>Example:</strong> Let’s write a program that reads the content of a file and prints to screen some stats like the number of lines, the number of characters and maximum number of characters in one line. Optionally (if flag -v is set) it should print the content of the file. You can find a text file here <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -906,9 +906,9 @@ here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:<
 </div>
 </div>
 <p>Output with -v flag:</p>
-<img alt="i7" src="_images/fileread.png" />
+<img alt="i7" src="images/fileread.png" />
 <p>Output without -v flag:</p>
-<img alt="i8" src="_images/filereadnov.png" />
+<img alt="i8" src="images/filereadnov.png" />
 </section>
 <section id="Libraries-installation-for-the-next-practicals">
 <h2>Libraries installation for the next practicals<a class="headerlink" href="#Libraries-installation-for-the-next-practicals" title="Permalink to this headline">¶</a></h2>
