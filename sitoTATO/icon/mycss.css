@@ -25,6 +25,26 @@
     background: url('tv.svg');
   }
   
+  .icon-servizi-deposito{
+    background: url('deposito.svg');
+  }
+  
+  .icon-servizi-animali{
+    background: url('animali.svg');
+  }
+  
+  .icon-servizi-phone{
+    background: url('phone.svg');
+  }
+  
+  .icon-servizi-asciugamani{
+    background: url('asciugamani.svg');
+  }
+  
+  .icon-servizi-balcone{
+    background: url('balcone.svg');
+  }
+  
 
 
 .logobk{
