@@ -1,0 +1,35 @@
+
+.icon-my{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    /* Other styles here */
+  }
+  
+  .icon-my-servicies{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    /* Other styles here */
+  }
+  .icon-servizi-wifi{
+    background: url('wifi.svg');
+  }
+  .icon-servizi-chiavi{
+    background: url('chiavi.svg');
+  }  
+  .icon-servizi-parcheggio{
+    background: url('parcheggio.svg');
+  }
+  .icon-servizi-tv{
+    background: url('tv.svg');
+  }
+  
+
+
+.logobk{
+  max-height: 270px;
+}
+
+
+  
