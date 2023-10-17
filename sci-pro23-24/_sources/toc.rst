@@ -15,11 +15,6 @@
     Module 1, Practical 5 <M1_practical5.ipynb>
     Module 1, Practical 6 <M1_practical6.ipynb>
     Module 1, Practical 7 <M1_practical7.ipynb>
-    Module 1, Practical 8 <M1_practical8.ipynb>
-    Module 1, Practical 9 <M1_practical9.ipynb>
-    Module 1, Practical 10 <M1_practical10.ipynb>
-    Module 1, Exams <M1_Exams.ipynb>    
-
 
 |space|
 ==========
