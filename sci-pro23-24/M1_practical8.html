@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -210,7 +210,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Exercises">Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#id1">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#exercises-1">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
@@ -2755,7 +2755,7 @@ The most profitable is Technology
 </div><ol class="arabic simple" start="2">
 <li><p>The file <a class="reference external" href="file_samples/filt_aligns.tsv">filt_aligns.tsv</a> is a tab separated value file representing alignments of paired-end reads on some apple chromosomes. Paired end reads have the property of being X bases apart from each other as they have been sequenced from the two ends of some size-selected DNA molecules.</p></li>
 </ol>
-<img alt="iex2" src="images/pe.png" />
+<p><img alt="iex2" src="images/pe.png" /></p>
 <p>Each line of the file has the following information <code class="docutils literal notranslate"><span class="pre">readID\tChrPE1\tAlignmentPosition1\tChrPE2\tAlignmentPosition2</span></code>. The two ends of the same pair have the same readID. Load the read pairs aligning on the same chromosome into two dictionaries. The first (<code class="docutils literal notranslate"><span class="pre">inserts</span></code>) having readID as keys and the insert size (i.e. the absolute value of AlignmentPosition1 - AlignmentPosition2) as value. The second dictionary (<code class="docutils literal notranslate"><span class="pre">chrs</span></code>)will have readID as key and chromosome ID as value. Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>readID Chr11 31120 Chr11 31472
 readID1 Chr7 12000 Chr11 11680
@@ -3110,7 +3110,7 @@ Name: Loan_Status, dtype: float64
 </div><ol class="arabic simple" start="4">
 <li><p>[Thanks to Stefano Teso] DNA transcription and translation into proteins follows this schema:</p></li>
 </ol>
-<img alt="iex4" src="images/genestructure.jpg" />
+<p><img alt="iex4" src="images/genestructure.jpg" /></p>
 <p>The file <a class="reference external" href="file_samples/gene_table.csv">gene_table.csv</a> is a comma separated value file representing a summary of the annotation of several human genes based on the <a class="reference external" href="http://www.ensembl.org/index.html">Ensembl</a> annotation. For each gene it contains the following information:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gene_name,gene_biotype,chromosome,strand,transcript_count
 </pre></div>
@@ -3488,7 +3488,7 @@ vaultRNA                                    1.000000
 <span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">createRandomDF</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; returns a random dataframe with columns having names equal to the</span>
+    <span class="sd">&quot;&quot;&quot; returns a random dataframe with columns having names equal to the</span>
 <span class="sd">    input labels&quot;&quot;&quot;</span>
     <span class="n">tmp_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>

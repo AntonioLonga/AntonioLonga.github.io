@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -210,7 +210,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Exercises">Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#id1">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#exercises-1">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
@@ -1115,7 +1115,7 @@ Back to array:
 </pre></div></div>
 </div>
 <p>Be careful though, if shapes don’t match an error <strong>cannot reshape array</strong> is returned:</p>
-<img alt="i1" src="images/errorReshape.png" />
+<p><img alt="i1" src="images/errorReshape.png" /></p>
 </section>
 <section id="Iterating-over-arrays-and-Indexing">
 <h2>Iterating over arrays and Indexing<a class="headerlink" href="#Iterating-over-arrays-and-Indexing" title="Permalink to this headline">¶</a></h2>
@@ -1193,7 +1193,7 @@ Row:  [ 9 10 11] is a &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <p>Indexing and slicing can be performed as usual with the <strong>[]</strong> operator. <code class="docutils literal notranslate"><span class="pre">np.ndarray[i,j]</span></code> returns the element at row <code class="docutils literal notranslate"><span class="pre">i</span></code> and column <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
 <p>A multi-dimensional matrix has more than 2 dimensions. They can be thought as several 2D matrices stacked one on top of the other:</p>
-<img alt="i2" src="images/ndmat.png" />
+<p><img alt="i2" src="images/ndmat.png" /></p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">np.ndarray[0,:,:]</span></code> is the whole first matrix. <code class="docutils literal notranslate"><span class="pre">np.ndarray[:,0,:]</span></code> is all the first rows, while <code class="docutils literal notranslate"><span class="pre">np.ndarray[:,:,0]</span></code> is all the first columns. Regarding slicing and indexing, the same reasoning applies to n-dimensional matrices. For example, <code class="docutils literal notranslate"><span class="pre">myB</span></code> below is a 3x3x3 matrix.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1611,7 +1611,7 @@ ALL(vals) on rows:
 </pre></div></div>
 </div>
 <p>We can apply all and any on 3D matrices as well, note the behaviour of <code class="docutils literal notranslate"><span class="pre">axis</span></code> in this case, that can assume values in [0,1,2] as in the following picture and example:</p>
-<img alt="allany3d" src="images/allany3d.png" />
+<p><img alt="allany3d" src="images/allany3d.png" /></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -2131,7 +2131,7 @@ Identities are OK!
 
 
 <span class="k">def</span> <span class="nf">createRandomList</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;creates a list of N random numbers in [min,max]&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;creates a list of N random numbers in [min,max]&quot;&quot;&quot;</span>
     <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -2141,13 +2141,13 @@ Identities are OK!
 
 
 <span class="k">def</span> <span class="nf">getIdentical</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;return indexes of identical values</span>
+    <span class="sd">&quot;&quot;&quot;return indexes of identical values</span>
 <span class="sd">    (lists assumed of same size)&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">))</span> <span class="k">if</span> <span class="n">list1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">list2</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 
 <span class="k">def</span> <span class="nf">getIdenticalNpy</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;return indexes of identical values</span>
+    <span class="sd">&quot;&quot;&quot;return indexes of identical values</span>
 <span class="sd">    (lists assumed of same size)&quot;&quot;&quot;</span>
     <span class="n">nda1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
     <span class="n">nda2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
@@ -2231,11 +2231,11 @@ Identities are OK!
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span>
 
 <span class="k">def</span> <span class="nf">eucNorm</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="c1">### equivalent to np.linalg.norm</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the Euclidean norm of the array arr&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the Euclidean norm of the array arr&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">eucDist</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the Euclidean distance of two N-dimensional vectors&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the Euclidean distance of two N-dimensional vectors&quot;&quot;&quot;</span>
     <span class="n">dV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">v2</span><span class="o">-</span><span class="n">v1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dV</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="c1">#AX = b</span>
@@ -2316,11 +2316,11 @@ eucDist(V,V) = 0.0
 </ol>
 <div class="math notranslate nohighlight">
 \[\frac{x}{\sqrt(x^2+y^2+z^2}, \frac{y}{\sqrt(x^2+y^2+z^2}, \frac{z}{\sqrt(x^2+y^2+z^2}\]</div>
-<img alt="idcos" src="images/dcos.png" />
+<p><img alt="idcos" src="images/dcos.png" /></p>
 <ol class="arabic simple" start="3">
 <li><p>The angle between two vectors <code class="docutils literal notranslate"><span class="pre">angle(A,B)</span></code>. Given two vectors <span class="math notranslate nohighlight">\(A = (a_x,a_y,a_z)\)</span> and <span class="math notranslate nohighlight">\(B = (b_x,b_y,b_z)\)</span>, <span class="math notranslate nohighlight">\(cos(\alpha) = \frac{A \cdot B}{||A||_2||B||_2}\)</span> where the Euclidean norms are computed as in the previous example.</p></li>
 </ol>
-<img alt="iangle" src="images/angle.png" />
+<p><img alt="iangle" src="images/angle.png" /></p>
 <ol class="arabic simple" start="4">
 <li><p>The volume of the pyramid described by three 3D vectors <span class="math notranslate nohighlight">\(\overline{a},\overline{b},\overline{c}\)</span>: <img alt="ipyram" src="images/pyram.png" /></p></li>
 </ol>
@@ -2345,26 +2345,26 @@ eucDist(V,V) = 0.0
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span>
 
 <span class="k">def</span> <span class="nf">comp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;component of vector starting in p1 and ending in p2&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;component of vector starting in p1 and ending in p2&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span>
 
 <span class="k">def</span> <span class="nf">dirCos</span><span class="p">(</span><span class="n">v1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;direction cosines of v1&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;direction cosines of v1&quot;&quot;&quot;</span>
     <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">v1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span><span class="p">,</span> <span class="n">v1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span><span class="p">,</span> <span class="n">v1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span>
 
 <span class="k">def</span> <span class="nf">eucNorm</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the Euclidean norm of the array arr&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the Euclidean norm of the array arr&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the angle between two vectors v1 and v2&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the angle between two vectors v1 and v2&quot;&quot;&quot;</span>
     <span class="n">dp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">)</span>
     <span class="n">cosVal</span> <span class="o">=</span> <span class="n">dp</span> <span class="o">/</span> <span class="p">(</span><span class="n">eucNorm</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span> <span class="o">*</span> <span class="n">eucNorm</span><span class="p">(</span><span class="n">v2</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">cosVal</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">pyrVol</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns the volume of the pyramid described by v1,v2 and v3&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;returns the volume of the pyramid described by v1,v2 and v3&quot;&quot;&quot;</span>
     <span class="n">matM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">))</span>
     <span class="n">matM</span> <span class="o">=</span> <span class="n">matM</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">v1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
     <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">matM</span><span class="p">))</span><span class="o">/</span><span class="mi">6</span>
@@ -2438,7 +2438,7 @@ eucDist(V,V) = 0.0
 
 
 <span class="k">def</span> <span class="nf">eucDist</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the Euclidean distance of two N-dimensional vectors&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the Euclidean distance of two N-dimensional vectors&quot;&quot;&quot;</span>
     <span class="n">dV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">v2</span><span class="o">-</span><span class="n">v1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dV</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
@@ -2520,7 +2520,7 @@ FROM linalg: (43.144457622432796+0j)
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="k">def</span> <span class="nf">movingAvg</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;computes the moving average of n values in the array v&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;computes the moving average of n values in the array v&quot;&quot;&quot;</span>
     <span class="n">cs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
     <span class="c1">#print(cs)</span>
     <span class="c1">#print(&quot;\t&quot;,cs[n:])</span>

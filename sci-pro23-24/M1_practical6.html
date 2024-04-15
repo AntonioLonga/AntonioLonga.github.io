@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -210,7 +210,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises-1">Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
@@ -734,7 +734,7 @@ Sum of all:  33.00174903543975
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">int_list_sum</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;implements the sum of two lists of integers having the same size</span>
+    <span class="sd">&quot;&quot;&quot;implements the sum of two lists of integers having the same size</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l1</span><span class="p">)):</span>
@@ -775,7 +775,7 @@ L1+L1 [2, 4, 6, 8, 10, 12, 14, 16, 18]
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_even_placed</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns the even placed elements of myList&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;returns the even placed elements of myList&quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">myList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
 
@@ -814,7 +814,7 @@ even L2:
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;easy! this changes the original list!!!&quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns len of myList, min and max value</span>
+    <span class="sd">&quot;&quot;&quot;returns len of myList, min and max value</span>
 <span class="sd">    (assumes elements are integers) but it would work with str&quot;&quot;&quot;</span>
 
     <span class="n">myList</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
@@ -849,7 +849,7 @@ A now: [-1, 0, 1, 4, 7, 125]
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns len of myList, min and max value</span>
+    <span class="sd">&quot;&quot;&quot;returns len of myList, min and max value</span>
 <span class="sd">    (assumes elements are integers) but it would work with str&quot;&quot;&quot;</span>
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">myList</span><span class="p">[:]</span> <span class="c1">#copy the input list</span>
     <span class="n">tmp</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
@@ -1125,7 +1125,7 @@ Global now:  [&#39;old value&#39;, &#39;new value1&#39;, &#39;old value&#39;, &#
 </pre></div></div>
 </div>
 <p>Recall what seen in the lecture:</p>
-<img alt="i1" src="images/argument_passing.png" />
+<p><img alt="i1" src="images/argument_passing.png" /></p>
 <p>The behaviour above is because <strong>immutable objects</strong> are passed <strong>by value</strong> (therefore it is like making a copy), while <strong>mutable objects</strong> are passed <strong>by reference</strong> (therefore changing them effectively changes the original object).</p>
 <p>To avoid making changes to a <strong>mutable object</strong> passed as parameter one needs to <strong>explicitely make a copy</strong> of it.</p>
 <p>Consider the example seen before. <strong>Example:</strong> Let’s write a function that, given a list of integers, returns the number of elements, the maximum and minimum.</p>
@@ -1135,13 +1135,13 @@ Global now:  [&#39;old value&#39;, &#39;new value1&#39;, &#39;old value&#39;, &#
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns len of myList, min and max value (assumes elements are integers)&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;returns len of myList, min and max value (assumes elements are integers)&quot;&quot;&quot;</span>
     <span class="n">myList</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">),</span> <span class="n">myList</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">myList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#return type is a tuple</span>
 
 
 <span class="k">def</span> <span class="nf">get_info_copy</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns len of myList, min and max value (assumes elements are integers)&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;returns len of myList, min and max value (assumes elements are integers)&quot;&quot;&quot;</span>
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">myList</span><span class="p">[:]</span> <span class="c1">#copy the input list!!!!</span>
     <span class="n">tmp</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmp</span><span class="p">),</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#return type is a tuple</span>
@@ -1470,7 +1470,7 @@ sum is 13: [1.732, 2.236, 4.243]
 <h2>File input and output<a class="headerlink" href="#File-input-and-output" title="Permalink to this headline">¶</a></h2>
 <p>Files are non volatile data stored at specific locations in memory. To read or write from/to a file, one first needs to create a reference to the file. This is called the <strong>handle</strong> to the file.</p>
 <p>Recall from the lecture that Python provides programmers with the following functions and methods:</p>
-<img alt="i2" src="images/io_met_fun.png" />
+<p><img alt="i2" src="images/io_met_fun.png" /></p>
 <p>To read or write to a file one first needs to open it with the python’s built-in function <strong>open</strong> that returns a handler to the file. The handler can then be used to read or write the content of the file.</p>
 <p><strong>Example:</strong> Download the file <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a> to your favourite location and read it from python, printing out all its content. <strong>NOTE:</strong> the path of your file might be different from mine.</p>
 <div class="nbinput docutils container">
@@ -1847,8 +1847,8 @@ N |sqrt |square
 </pre></div></div>
 </div>
 </div></section>
-<section id="id1">
-<h2>Exercises<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="exercises-1">
+<h2>Exercises<a class="headerlink" href="#exercises-1" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Write a Python program to modify a key of a dictionary. From the below dictionary. <strong>input</strong></p></li>
 </ol>
@@ -2056,7 +2056,7 @@ MDC001115.177 :
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">countFrequency</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;gets a sequence in input and returns</span>
+    <span class="sd">&quot;&quot;&quot;gets a sequence in input and returns</span>
 <span class="sd">    a dictionary with bases as keys and frequence as value&quot;&quot;&quot;</span>
     <span class="n">bases</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
@@ -2070,7 +2070,7 @@ MDC001115.177 :
     <span class="k">return</span> <span class="n">bases</span>
 
 <span class="k">def</span> <span class="nf">printData</span><span class="p">(</span><span class="n">ident</span><span class="p">,</span> <span class="n">freqDict</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;get the identifier and a dictionary with all frequencies</span>
+    <span class="sd">&quot;&quot;&quot;get the identifier and a dictionary with all frequencies</span>
 <span class="sd">    and prints both information on the screen&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ident</span><span class="p">,</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">freqDict</span><span class="p">:</span>
@@ -2716,7 +2716,7 @@ MDC009771.217 :
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">readIDS</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;reads a one column file in and stores</span>
+    <span class="sd">&quot;&quot;&quot;reads a one column file in and stores</span>
 <span class="sd">    the ids in a dictionary that is returned at the end&quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -2825,7 +2825,7 @@ Writing contig  MDC016278.70
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">wordHisto</span><span class="p">(</span><span class="n">myText</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;this function returns a dictionary</span>
+    <span class="sd">&quot;&quot;&quot;this function returns a dictionary</span>
 <span class="sd">    with the count of each word in myText (separated by &quot; &quot; or &quot;\n&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">myDict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -2839,7 +2839,7 @@ Writing contig  MDC016278.70
     <span class="k">return</span> <span class="n">myDict</span>
 
 <span class="k">def</span> <span class="nf">writeWordHisto</span><span class="p">(</span><span class="n">outF</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;this function writes to outFile</span>
+    <span class="sd">&quot;&quot;&quot;this function writes to outFile</span>
 <span class="sd">    the word histogram data contained in the dictionary data</span>
 <span class="sd">    the output format is comma separated</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2854,7 +2854,7 @@ Writing contig  MDC016278.70
     <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#remember to close the file</span>
 
 <span class="k">def</span> <span class="nf">printWords</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;prints the words in data that have a count higher than N&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;prints the words in data that have a count higher than N&quot;&quot;&quot;</span>
     <span class="n">dictKeys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
     <span class="n">dictKeys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">dictKeys</span><span class="p">:</span>
