@@ -1,98 +1,53 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 1, Practical 7 &mdash; DS Scientific Programming Lab</title>
-  
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman-web.css?v=9f465e15" />
 
   
-  
-  
-  
-
-  
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script type="text/javascript" src="static/jquery.js"></script>
-        <script type="text/javascript" src="static/underscore.js"></script>
-        <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
-        <script type="text/javascript" src="static/js/jupman.js"></script>
-        <script type="text/javascript" src="static/js/pytutor-embed.bundle.min.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/jupman.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/jupman-web.css" type="text/css" />
+    <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_practical7.html" />
+      <script src="static/documentation_options.js?v=632f9628"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="static/js/jupman.js?v=eb437c40"></script>
+      <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Module 1, Practical 8" href="M1_practical8.html" />
-    <link rel="prev" title="Module 1, Practical 6" href="M1_practical6.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="toc-page.html" class="icon icon-home"> DS Scientific Programming Lab
           
-
-          
+          <a href="toc-page.html" class="icon icon-home">
+            DS Scientific Programming Lab
           </a>
-
-          
-            
-            
-              <div class="version">
-                dev
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
@@ -120,7 +75,7 @@
 <li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installation">Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let’s-try-together">Let’s try together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-together">Let’s try together</a></li>
 <li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises">Exercises</a></li>
 </ul>
 </li>
@@ -210,88 +165,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Exercises">Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#exercises-1">Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 7</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Gentle-reminder-on-functions">Gentle reminder on functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Getting-input-from-the-command-line">Getting input from the command line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Argparse">Argparse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Libraries-installation-for-the-next-practicals">Libraries installation for the next practicals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="M1_practical8.html">Module 1, Practical 8</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Libraries-installation">Libraries installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Series">Series</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#How-to-define-and-access-a-Series">How to define and access a Series</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Operator-broadcasting">Operator broadcasting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Filtering">Filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Missing-data">Missing data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Computing-stats">Computing stats</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Plotting-data">Plotting data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas-DataFrames">Pandas DataFrames</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Define-a-DataFrame">Define a DataFrame</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Loading-data-from-external-files">Loading data from external files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Extract-values-by-row-and-column">Extract values by row and column</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Broadcasting,-filtering-and-computing-stats">Broadcasting, filtering and computing stats</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Merging-DataFrames">Merging DataFrames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Grouping">Grouping</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises">Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises-(2)-DS">Exercises (2) DS</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="M1_practical9.html">Module 1, Practical 9</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy">Numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-ndarray">Numpy ndarray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Random-arrays">Random arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-to-and-from-pandas">Numpy to and from pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Reshaping">Reshaping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Iterating-over-arrays-and-Indexing">Iterating over arrays and Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Broadcasting-and-arithmetic-functions">Broadcasting and arithmetic functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Filtering">Filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Linear-algebra">Linear algebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Matplotlib">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Exercises">Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="M1_practical10.html">Module 1, Practical 10</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="M1_practical10.html#Part-1">Part 1</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="M1_Exams.html">Module 1, Exams</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="M1_Exams.html#Exams-and-Simulation">Exams and Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Long-exercise:-Word-Frequency-Analysis">Long exercise: Word Frequency Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="toc-page.html">DS Scientific Programming Lab</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -322,274 +212,17 @@
          see https://github.com/DavidLeoni/jupman/issues/39
     <li><a href="toc-page.html">Docs</a> &raquo;</li>
     
-        <li><a href="toc.html"> </a> &raquo;</li>
-    
     <li>Module 1, Practical 7</li>
     -->
 
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    background: #f5f5f5;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Module-1,-Practical-7">
-<h1>Module 1, Practical 7<a class="headerlink" href="#Module-1,-Practical-7" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="Module-1,-Practical-7">
+<h1>Module 1, Practical 7<a class="headerlink" href="#Module-1,-Practical-7" title="Link to this heading">¶</a></h1>
 <p>In this practical we will see how to get input from the command line.</p>
 <section id="Gentle-reminder-on-functions">
-<h2>Gentle reminder on functions<a class="headerlink" href="#Gentle-reminder-on-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Gentle reminder on functions<a class="headerlink" href="#Gentle-reminder-on-functions" title="Link to this heading">¶</a></h2>
 <p>Reminder. The basic definition of a function is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def function_name(input) :
     #code implementing the function
@@ -601,7 +234,7 @@ div.rendered_html tbody tr:hover {
 <p>Functions are defined with the <strong>def</strong> keyword that proceeds the <em>function_name</em> and then a list of parameters is passed in the brackets. A colon <strong>:</strong> is used to end the line holding the definition of the function. The code implementing the function is specified by using indentation. A function <strong>might</strong> or <strong>might not</strong> return a value. In the first case a <strong>return</strong> statement is used.</p>
 </section>
 <section id="Getting-input-from-the-command-line">
-<h2>Getting input from the command line<a class="headerlink" href="#Getting-input-from-the-command-line" title="Permalink to this headline">¶</a></h2>
+<h2>Getting input from the command line<a class="headerlink" href="#Getting-input-from-the-command-line" title="Link to this heading">¶</a></h2>
 <p>To call a program <code class="docutils literal notranslate"><span class="pre">my_python_program.py</span></code> from command line, you just have to open a terminal (in Linux) or the command prompt (in Windows) and, assuming that python is present in the path, you can <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the folder containing your python program, (eg. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\python\my_exercises\</span></code>) and just type in <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">my_python_program.py</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_python_program.py</span></code> In case of arguments to be passed by command line, one has to put them after the specification of the program name (eg.
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">my_python_program.py</span> <span class="pre">parm1</span> <span class="pre">param2</span> <span class="pre">param3</span></code>).</p>
 <p>Python provides the module <strong>sys</strong> to interact with the interpreter. In particular, <strong>sys.argv</strong> is a list representing all the arguments passed to the python script from the command line.</p>
@@ -610,8 +243,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="sd">&quot;&quot;&quot;Test input from command line in systest.py&quot;&quot;&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span> <span class="c1">#note that this is the number of params +1!!!</span>
@@ -640,8 +272,7 @@ Param 3: 3 (&lt;class &#39;str&#39;&gt;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="sd">&quot;&quot;&quot;Maths example with input from command line&quot;&quot;&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
@@ -657,17 +288,16 @@ Param 3: 3 (&lt;class &#39;str&#39;&gt;)
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> / </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span> <span class="n">i1</span> <span class="o">/</span> <span class="n">i2</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> / </span><span class="si">{}</span><span class="s2"> = Infinite&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">))</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <p>Which, depending on user input, should give something like:</p>
-<p><img alt="i1" src="images/math.png" /></p>
+<img alt="i1" src="images/math.png" />
 <p>note that we need to check if the values given in input are actually numbers, otherwise the execution will crash (third example). This is easy in case of integers (<code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code>) but in case of floats it is more complex and might require Exception handling.</p>
 <p>A more flexible and powerful way of getting input from command line makes use of the <code class="docutils literal notranslate"><span class="pre">Argparse</span></code> <a class="reference external" href="https://docs.python.org/3/howto/argparse.html">module</a>.</p>
 </section>
 <section id="Argparse">
-<h2>Argparse<a class="headerlink" href="#Argparse" title="Permalink to this headline">¶</a></h2>
+<h2>Argparse<a class="headerlink" href="#Argparse" title="Link to this heading">¶</a></h2>
 <p>Argparse is a command line parsing module which deals with user specified parameters (positional arguments) and optional arguments.</p>
 <p>Very briefly, the basic syntax of the <code class="docutils literal notranslate"><span class="pre">Argparse</span> <span class="pre">module</span></code> (for more information check the <a class="reference external" href="https://docs.python.org/3/howto/argparse.html">official documentation</a>) is the following.</p>
 <ol class="arabic simple">
@@ -698,7 +328,7 @@ Param 3: 3 (&lt;class &#39;str&#39;&gt;)
                         help = &quot;Description of the parameter)
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">-p</span></code> is a short form of the parameter (and it is optional), <code class="docutils literal notranslate"><span class="pre">--optional_arg</span></code> is the extended name and it requires a value after it is specified, <code class="docutils literal notranslate"><span class="pre">type</span></code> is the data type of the parameter passed (e.g. str, int, float, ..), <code class="docutils literal notranslate"><span class="pre">default</span></code> is optional and gives a default value to the parameter. If not specified and no argument is passed, the argument will get the value “None”. <code class="docutils literal notranslate"><span class="pre">Help</span></code> is again the description string.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">-p</span></code> is a short form of the parameter (and it is optional), <code class="docutils literal notranslate"><span class="pre">--optional_arg</span></code> is the extended name and it requires a value after it is specified, <code class="docutils literal notranslate"><span class="pre">type</span></code> is the data type of the parameter passed (e.g. str, int, float, ..), <code class="docutils literal notranslate"><span class="pre">default</span></code> is optional and gives a default value to the parameter. If not specified and no argument is passed, the argument will get the value “None”. <code class="docutils literal notranslate"><span class="pre">Help</span></code> is again the description string.</p>
 <ol class="arabic simple" start="5">
 <li><p>Parse the arguments:</p></li>
 </ol>
@@ -720,8 +350,7 @@ myOptArg = args.optional_arg
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="sd">&quot;&quot;&quot;Maths example with input from command line&quot;&quot;&quot;</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This script gets two integers  in input</span>
 <span class="s2">and performs some operations on them&quot;&quot;&quot;</span><span class="p">)</span>
@@ -746,15 +375,14 @@ myOptArg = args.optional_arg
 </div>
 </div>
 <p>That returns the following:</p>
-<p><img alt="iap2" src="images/systest_argparse.png" /></p>
-<p>Note that we did not have to check the types of the inputs (i.e. the last time we run the script) but this is automatically done by argparse.</p>
-<p><strong>Example:</strong> Let’s write a program that gets a string (S) and an integer (N) in input and prints the string repeated N times. Three optional parameters are specified: verbosity (-v) to make the software print a more descriptive output, separator (-s) to separate each copy of the string (defaults to “ “) and trailpoints (-p) to add several”.” at the end of the string (defaults to 1).</p>
+<img alt="iap2" src="images/systest_argparse.png" />
+<p>Note that we did not have to check the types of the inputs (i.e. the last time we run the script) but this is automatically done by argparse.</p>
+<p><strong>Example:</strong> Let’s write a program that gets a string (S) and an integer (N) in input and prints the string repeated N times. Three optional parameters are specified: verbosity (-v) to make the software print a more descriptive output, separator (-s) to separate each copy of the string (defaults to “ “) and trailpoints (-p) to add several “.” at the end of the string (defaults to 1).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This script gets a string</span>
 <span class="s2">                                 and an integer and repeats the string N times&quot;&quot;&quot;</span><span class="p">)</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
@@ -782,26 +410,24 @@ myOptArg = args.optional_arg
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the string </span><span class="si">{}</span><span class="s2"> repeated </span><span class="si">{}</span><span class="s2"> is:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">str</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">N</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <p>Executing the program from command line without parameters gives the message:</p>
-<p><img alt="i2" src="images/noargs.png" /></p>
+<img alt="i2" src="images/noargs.png" />
 <p>Calling it with the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag:</p>
-<p><img alt="i3" src="images/help.png" /></p>
+<img alt="i3" src="images/help.png" />
 <p>With the positional arguments <code class="docutils literal notranslate"><span class="pre">&quot;ciao</span> <span class="pre">a</span> <span class="pre">tutti&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>:</p>
-<p><img alt="i4" src="images/pos_args.png" /></p>
+<img alt="i4" src="images/pos_args.png" />
 <p>With the positional arguments <code class="docutils literal notranslate"><span class="pre">&quot;ciao</span> <span class="pre">a</span> <span class="pre">tutti&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>, and with the optional parameters <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">&quot;___&quot;</span> <span class="pre">-p</span> <span class="pre">3</span> <span class="pre">-v</span></code></p>
-<p><img alt="i5" src="images/sample.png" /></p>
+<img alt="i5" src="images/sample.png" />
 <p><strong>Example:</strong> Let’s write a program that reads and prints to screen a text file specified by the user. Optionally, the file might be compressed with gzip to save space. The user should be able to read also gzipped files. Hint: use the module gzip which is very similar to the standard file management method (<a class="reference external" href="https://docs.python.org/3/library/gzip.html?highlight=gzip#module-gzip">more info here</a>). You can find a text file here <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a> and its gzipped version
 here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">gzip</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Reads and prints a text file&quot;&quot;&quot;</span><span class="p">)</span>
@@ -822,23 +448,21 @@ here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:<
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
 <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <p>The output:</p>
-<p><img alt="i6" src="images/read_gz.png" /></p>
+<img alt="i6" src="images/read_gz.png" />
 <p><strong>Example:</strong> Let’s write a program that reads the content of a file and prints to screen some stats like the number of lines, the number of characters and maximum number of characters in one line. Optionally (if flag -v is set) it should print the content of the file. You can find a text file here <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 
 <span class="k">def</span> <span class="nf">readText</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;reads the file and returns a list with</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;reads the file and returns a list with</span>
 <span class="sd">    each line as separate element&quot;&quot;&quot;</span>
     <span class="n">myF</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="n">myF</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1">#careful with big files!</span>
@@ -846,7 +470,7 @@ here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:<
 
 
 <span class="k">def</span> <span class="nf">computeStats</span><span class="p">(</span><span class="n">fileList</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns a tuple (num.lines, num.characters,max_char.line)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns a tuple (num.lines, num.characters,max_char.line)&quot;&quot;&quot;</span>
     <span class="n">num_lines</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fileList</span><span class="p">)</span>
     <span class="n">lines_len</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fileList</span><span class="p">]</span>
     <span class="n">num_char</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lines_len</span><span class="p">)</span>
@@ -870,17 +494,16 @@ here <a class="reference external" href="file_samples/textFile.gz">text.gz</a>:<
 <span class="nb">print</span><span class="p">(</span>
     <span class="s2">&quot;Stats:</span><span class="se">\n</span><span class="s2">N.lines:</span><span class="si">{}</span><span class="se">\n</span><span class="s2">N.chars:</span><span class="si">{}</span><span class="se">\n</span><span class="s2">Max. char in line:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
         <span class="n">stats</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">stats</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">stats</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <p>Output with -v flag:</p>
-<p><img alt="i7" src="images/fileread.png" /></p>
+<img alt="i7" src="images/fileread.png" />
 <p>Output without -v flag:</p>
-<p><img alt="i8" src="images/filereadnov.png" /></p>
+<img alt="i8" src="images/filereadnov.png" />
 </section>
 <section id="Libraries-installation-for-the-next-practicals">
-<h2>Libraries installation for the next practicals<a class="headerlink" href="#Libraries-installation-for-the-next-practicals" title="Permalink to this headline">¶</a></h2>
+<h2>Libraries installation for the next practicals<a class="headerlink" href="#Libraries-installation-for-the-next-practicals" title="Link to this heading">¶</a></h2>
 <p>This section is not mandatory for the current practical, but set the basis for the next ones. For perfoming the next practicals we will need three additional libraries. Try and see if they are already available by typing the following commands in the console or put them in a python script:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import pandas as pd
 import matplotlib.pyplot as plt
@@ -890,26 +513,25 @@ import numpy as np
 <p>if, upon execution, you do not get any error messages, you are sorted. Otherwise, you need to install them.</p>
 <p>In <strong>Linux</strong> you can install the libraries by typing in a terminal <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">numpy</span></code> (or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">python3.X</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">python3.X</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">python3.X</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code>), where X is your python version.</p>
 <p>In <strong>Windows</strong> you can install the libraries by typing in the command prompt (to open it type <code class="docutils literal notranslate"><span class="pre">cmd</span></code> in the search box) <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">numpy</span></code>. If you are using anaconda you need to run these commands from the <em>anaconda prompt</em>.</p>
-<p><strong>Please install them in this order</strong> (i.e. <strong>matplotlib</strong> first, then <strong>pandas</strong> and finally <strong>numpy</strong>). You might not need to install numpy as matplotlib requires it. Once done that, try to perform the above imports again and they should work this time around.</p>
+<p><strong>Please install them in this order</strong> (i.e. <strong>matplotlib</strong> first, then <strong>pandas</strong> and finally <strong>numpy</strong>). You might not need to install numpy as matplotlib requires it. Once done that, try to perform the above imports again and they should work this time around.</p>
 </section>
 <section id="Exercises">
-<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Modify the program of Exercise 6 of Practical 6 in order to allow users to specify the input and output files from command line. Then test it with the provided files. The text of the exercise follows:</p></li>
 </ol>
-<p>Write a python program that reads two files. The first is a one column text file (<a class="reference external" href="file_samples/contig_ids.txt">contig_ids.txt</a>) with the identifiers of some contigs that are present in the second file, which is a fasta formatted file (<a class="reference external" href="file_samples/contigs82.fasta">contigs82.fasta</a>). The program will write on a third, fasta formatted file (e.g. filtered_contigs.fasta) only those entries in <em>contigs82.fasta</em> having identifier in <em>contig_ids.txt</em>.</p>
+<p>Write a python program that reads two files. The first is a one column text file (<a class="reference external" href="file_samples/contig_ids.txt">contig_ids.txt</a>) with the identifiers of some contigs that are present in the second file, which is a fasta formatted file (<a class="reference external" href="file_samples/contigs82.fasta">contigs82.fasta</a>). The program will write on a third, fasta formatted file (e.g. filtered_contigs.fasta) only those entries in <em>contigs82.fasta</em> having identifier in <em>contig_ids.txt</em>.</p>
 <div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex1" style="display:none;"><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;exercises/filterFasta.py&quot;&quot;&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;exercises/filterFasta.py&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="k">def</span> <span class="nf">readIDS</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;reads a one column file in and stores</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;reads a one column file in and stores</span>
 <span class="sd">    the ids in a dictionary that is returned at the end&quot;&quot;&quot;</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -984,9 +606,7 @@ import numpy as np
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-<span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="c1"># read the file</span>
 <span class="k">def</span> <span class="nf">read_the_data</span><span class="p">(</span><span class="n">input_file</span><span class="p">):</span>
@@ -1113,8 +733,7 @@ Protein</a> and test your script on it. <em>Please use functions</em>.</p></li>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;exercises/process_fasta.py&quot;&quot;&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;exercises/process_fasta.py&quot;&quot;&quot;</span>
 
 <span class="sd">&quot;&quot;&quot; test example:</span>
 <span class="sd">python3 process_fasta.py ../file_samples/P0DTC2.fasta.txt -S SSVL &quot;&quot;&quot;</span>
@@ -1224,9 +843,8 @@ Sequence &#39;SSVL&#39; is present 2 times
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">readCSV</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;reads the csv dataset and returns a dictionary with</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">readCSV</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;reads the csv dataset and returns a dictionary with</span>
 <span class="sd">    species name as key and, as value, a dictionary with</span>
 <span class="sd">    four keys : petalLen, sepalLen, petalWidth, sepalWidth</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1278,51 +896,30 @@ Sequence &#39;SSVL&#39; is present 2 times
 
 
            </div>
-           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="M1_practical8.html" class="btn btn-neutral float-right" title="Module 1, Practical 8" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="M1_practical6.html" class="btn btn-neutral float-left" title="Module 1, Practical 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright # 2023 - 2024, Antonio Longa
-
-    </p>
+    <p>&#169; Copyright # 2023 - 2024, Antonio Longa.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
