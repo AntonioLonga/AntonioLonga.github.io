@@ -25,7 +25,8 @@
       <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 1, Practical 6" href="M1_practical6.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +48,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
@@ -168,6 +169,22 @@
 <li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Long-exercise:-Word-Frequency-Analysis">Long exercise: Word Frequency Analysis</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Gentle-reminder-on-functions">Gentle reminder on functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Getting-input-from-the-command-line">Getting input from the command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Argparse">Argparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Libraries-installation-for-the-next-practicals">Libraries installation for the next practicals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1st-ML-model">1st ML model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Machine-Learning">Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#What-is-k-Nearest-Neighbors-(k-NN)?">What is k-Nearest Neighbors (k-NN)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Main-Idea-Behind-k-NN">Main Idea Behind k-NN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#For-instance:">For instance:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#todo">todo</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
 </ul>
 
@@ -211,6 +228,8 @@
     <!-- Commented because doesn't work with sections,
          see https://github.com/DavidLeoni/jupman/issues/39
     <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+        <li><a href="toc.html"> </a> &raquo;</li>
     
     <li>Module 1, Practical 7</li>
     -->
@@ -892,12 +911,75 @@ Sequence &#39;SSVL&#39; is present 2 times
 </div>
 </div>
 </div></section>
+<section id="1st-ML-model">
+<h2>1st ML model<a class="headerlink" href="#1st-ML-model" title="Link to this heading">¶</a></h2>
+<section id="Machine-Learning">
+<h3>Machine Learning<a class="headerlink" href="#Machine-Learning" title="Link to this heading">¶</a></h3>
+<p>You’ll explore this in more depth in other courses, but here’s a super simple explanation. You are given a set of data (like images), and each piece of data has a label or category (like “dog” or “cat”). Your goal is to build a model that learns from this data so that, when it sees new, unlabeled data, it can predict the correct label (i.e., whether an image shows a dog or a cat). This process involves training the model on examples to help it make accurate predictions in the future.</p>
+<p>In general, your data is split into a training set and a test set (ignoring validation for now). The main idea is to train your model on the training set, where the labels are available, and then evaluate its performance on the test set to see how well it can predict unseen data.</p>
+<img alt="ML" src="images/ml.png" />
+<p>In the image above, you have 9 images to train your model and 2 images to test how well your model performs.</p>
+<p>In this lab you have to implement a simple ML model: k-Nearest Neighbors (k-NN)</p>
+</section>
+<hr class="docutils" />
+<section id="What-is-k-Nearest-Neighbors-(k-NN)?">
+<h3>What is k-Nearest Neighbors (k-NN)?<a class="headerlink" href="#What-is-k-Nearest-Neighbors-(k-NN)?" title="Link to this heading">¶</a></h3>
+<p>k-Nearest Neighbors (k-NN) is one of the simplest machine learning algorithms used for classification and regression. Here, we’ll focus on using it for classification, which means dividing data into categories (e.g., classifying flowers as different species).</p>
+</section>
+<section id="Main-Idea-Behind-k-NN">
+<h3>Main Idea Behind k-NN<a class="headerlink" href="#Main-Idea-Behind-k-NN" title="Link to this heading">¶</a></h3>
+<p>The basic idea behind k-NN is <strong>“things that are similar are likely to belong to the same group (or class).”</strong> To classify a new data point, we look at the data points closest to it (its “neighbors”). We then decide what class the new data point belongs to based on the majority class among its neighbors.</p>
+</section>
+<section id="For-instance:">
+<h3>For instance:<a class="headerlink" href="#For-instance:" title="Link to this heading">¶</a></h3>
+<p>You are given the roundness and diameter of both grapes and pears, and your task is to predict whether a fruit is a grape or a pear based on these two features (roundness and diameter). So your input data is something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [[0.91, 1.1],[0.88, 1.3], [...] ... [0.7,4.2]]
+label = [1,1,...,0]
+</pre></div>
+</div>
+<p>The data includes the roundness and diameter of the fruits, while the label is a list where each value indicates the type of fruit (1 for grape, 0 for pear). For example, the first fruit has a roundness of 0.91 and a diameter of 1.1, and its label is 1, meaning it is a grape.</p>
+<p>Now, suppose you have a new fruit with a roundness of 0.82 and a diameter of 2.1. Based on the data, you need to predict whether it’s a grape or a pear. let’s see this with a figure:</p>
+<img alt="knn" src="https://images.datacamp.com/image/upload/v1676909140/image2_26000761c3.png" />
+<p>As you can see, grapes (blue points) tend to have a higher roundness and a smaller diameter, which is why the blue points are clustered in the top-left corner of the plot. On the other hand, pears have lower roundness and larger diameter values. Now, suppose a new fruit appears (represented by a red point)—is it a pear or a grape?</p>
+<p>K-NN works by selecting the k closest data points (neighbors) to the input based on a distance metric (usually Euclidean distance). Then, it looks at the labels of those k neighbors and assigns the label that appears most frequently (majority vote) to the input. In our case, it would find the k nearest fruits based on roundness and diameter, and classify the new fruit as either a grape or a pear based on the majority label of its closest neighbors.</p>
+</section>
+<section id="todo">
+<h3>todo<a class="headerlink" href="#todo" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download the iris dataset from <a class="reference external" href="img/IRIS.csv">here</a></p></li>
+<li><p>load the data and process it to obtain a list of lists i.e.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [[7.1, 3.0, 5.9, 2.1],
+        [5.4, 3.7, 1.5, 0.2],
+        [5.6, 2.5, 3.9, 1.1],
+        ...]
+labels = [&#39;Iris-virginica&#39;, &#39;Iris-setosa&#39;, &#39;Iris-versicolor&#39;]
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">where the first flower has four features (7.1, 3.0, 5.9, 2.1) and it is an Iris-virginica.</div>
+<div class="line">3. split the data in test and train (you can use 80% of the data for train and the rest for test)</div>
+<div class="line">4. build your knn model! to compute the distance you can use a simple equilidean distance. The Euclidean distance between two points <span class="math notranslate nohighlight">\(p = (p_1, p_2, \dots, p_n)\)</span> and <span class="math notranslate nohighlight">\(q = (q_1, q_2, \dots, q_n)\)</span> in an n-dimensional space is given by the formula:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[d(p, q) = \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 + \dots + (p_n - q_n)^2}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Evaluate your model! Compute predictions for the test set and use its label to compute the accuracy</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}}\]</div>
+</div></blockquote>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M1_practical6.html" class="btn btn-neutral float-left" title="Module 1, Practical 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
