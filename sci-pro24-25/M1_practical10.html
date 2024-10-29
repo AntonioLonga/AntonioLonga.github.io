@@ -25,7 +25,8 @@
       <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 1, Practical 9" href="M1_practical9.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +48,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
@@ -223,6 +224,10 @@
 <li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Exercises">Exercises</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 10</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Part-1">Part 1</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
 </ul>
 
@@ -267,6 +272,8 @@
          see https://github.com/DavidLeoni/jupman/issues/39
     <li><a href="toc-page.html">Docs</a> &raquo;</li>
     
+        <li><a href="toc.html"> </a> &raquo;</li>
+    
     <li>Module 1, Practical 10</li>
     -->
 
@@ -277,13 +284,13 @@
 <h1>Module 1, Practical 10<a class="headerlink" href="#Module-1,-Practical-10" title="Link to this heading">¶</a></h1>
 <section id="Part-1">
 <h2>Part 1<a class="headerlink" href="#Part-1" title="Link to this heading">¶</a></h2>
-<p>Some years ago, researchers collected a dataset called <a class="reference external" href="https://figshare.com/articles/dataset/The_Copenhagen_Networks_Study_interaction_data/7267433">“Copenhagen Network study”</a>. They collected several informations among 700 universitary students. In this exam, we are intrested in:</p>
+<p>Several years ago, researchers compiled a dataset known as the <a class="reference external" href="https://figshare.com/articles/dataset/The_Copenhagen_Networks_Study_interaction_data/7267433">“Copenhagen Network study”</a>. This dataset includes a range of information collected from 700 university students. In this exam, we will focus on the following files:</p>
 <ol class="arabic simple">
-<li><p>the list of phone calls <a class="reference external" href="DTU/calls.csv">calls.csv</a></p></li>
-<li><p>Information about Facebook friendships <a class="reference external" href="DTU/fb_friends.csv">fb_friends.csv</a></p></li>
-<li><p>The gender of the students <a class="reference internal" href="DTU/genders.html"><span class="doc">genders.txt</span></a></p></li>
+<li><p>A list of phone calls: <a class="reference external" href="DTU/calls.csv">calls.csv</a></p></li>
+<li><p>Information about Facebook friendships: <a class="reference external" href="DTU/fb_friends.csv">fb_friends.csv</a></p></li>
+<li><p>Student gender data: <a class="reference internal" href="DTU/genders.html"><span class="doc">genders.txt</span></a></p></li>
 </ol>
-<p>the data are like follows:</p>
+<p>The data in these files are structured as follows:</p>
 <p><strong>calls.csv</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>timestamp,caller,callee,duration
 184,300,301,121
@@ -301,13 +308,14 @@
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0_M 2_M 3_M 4_M 5_M ...
 </pre></div>
 </div>
-<p>you have to write a program that computes the following:</p>
+<p>Write a program that performs the following tasks:</p>
 <ol class="arabic simple">
-<li><p>Search for the call with the longest duration.</p></li>
-<li><p>Are the caller and the callee friend on Facebook?</p></li>
-<li><p>Print the gender of the students belonging to the longest call</p></li>
-<li><p>Interactions are given in seconds, you have to discretize them! Each interactions appening in 1 houar have to be discretized into 1. for instance input CALLS</p></li>
+<li><p><strong>Find the Longest Call:</strong> Identify the call with the longest duration from the dataset.</p></li>
+<li><p><strong>Check Facebook Friendship:</strong> Determine if the caller and receiver in the longest call are friends on Facebook.</p></li>
+<li><p><strong>Display Genders:</strong> Print the gender of both students involved in the longest call.</p></li>
+<li><p><strong>Discretize Interaction Durations:</strong> Convert the duration of each interaction from seconds into hourly units. Any interaction that occurs within one hour should be rounded up to 1 (for example, 45 minutes or 3600 seconds both discretize to 1 hour).</p></li>
 </ol>
+<p><strong>Input:</strong> The program should take in the file CALLS.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    time  id_a id_b duration
 [
     [  184,   300,   301,   121],
@@ -342,12 +350,13 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>then plot those interactions, you should obtain a plot like the one bellow! pay attention to x and y labels <img alt="nb_interactions" src="images/nb_interactions.png" /></p></li>
+<li><p>then plot those interactions, you should obtain a plot like the one bellow! pay attention to x and y labels</p></li>
 </ol>
+<img alt="nb_interactions" src="images/nb_interactions.png" />
 <p><strong>NOTE</strong> you should define a function for each point.</p>
 <div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -468,42 +477,17 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-1) the longest call is: 136 and 137
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/tmp/ipykernel_34290/2122565101.py:14: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  user_a = i[0]
-/tmp/ipykernel_34290/2122565101.py:15: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  user_b = i[1]
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-2) 137  and  136  are friend of FB
-3)
-gender of  137  =  F
-gender of  136  =  M
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="images/M1_practical10_1_3.png" src="images/M1_practical10_1_3.png" />
-</div>
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">Running cells with &#39;Python 3.10.6&#39; requires the ipykernel package.
+
+</span><span class="ansi-red-intense-fg ansi-bold">Run the following command to install &#39;ipykernel&#39; into the Python environment.
+
+</span><span class="ansi-red-intense-fg ansi-bold">Command: &#39;/usr/bin/python3 -m pip install ipykernel -U --user --force-reinstall&#39;</span>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -645,7 +629,9 @@ M F
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M1_practical9.html" class="btn btn-neutral float-left" title="Module 1, Practical 9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
