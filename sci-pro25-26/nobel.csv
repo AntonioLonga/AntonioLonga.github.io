@@ -1,0 +1,947 @@
+index	id	firstname	surname	born	died	bornCountry	diedCountry	gender	year	category
+0	846	Elinor	Ostrom	8/7/1933	6/12/2012	USA	USA	female	2009.0	economics
+1	846	Elinor	Ostrom	8/7/1933	6/12/2012	USA	USA	female	2009.0	economics
+2	783	Wangari Muta	Maathai	4/1/1940	9/25/2011	Kenya	Kenya	female	2004.0	peace
+3	230	Dorothy Crowfoot	Hodgkin	5/12/1910	7/29/1994	Egypt	United Kingdom	female	1964.0	chemistry
+4	918	Youyou	Tu	12/30/1930	0000-00-00	China		female	2015.0	medicine
+5	428	Barbara	McClintock	6/16/1902	9/2/1992	USA	USA	female	1983.0	medicine
+6	773	Shirin	Ebadi	6/21/1947	0000-00-00	Iran		female	2003.0	peace
+7	597	Grazia	Deledda	09/27/1871	8/15/1936	Italy	Italy	female	1926.0	literature
+8	615	Gabriela	Mistral	04/07/1889	1/10/1957	Chile	USA	female	1945.0	literature
+9	782	Elfriede	Jelinek	10/20/1946	0000-00-00	Austria		female	2004.0	literature
+10	553	Aung San Suu Kyi		6/19/1945	0000-00-00	Burma (now Myanmar)		female	1991.0	peace
+11	640	Nelly	Sachs	12/10/1891	5/12/1970	Germany	Sweden	female	1966.0	literature
+12	924	Svetlana	Alexievich	5/31/1948	0000-00-00	Ukraine		female	2015.0	literature
+13	610	Pearl	Buck	06/26/1892	3/6/1973	USA	USA	female	1938.0	literature
+14	673	Wislawa	Szymborska	7/2/1923	2/1/2012	Poland	Poland	female	1996.0	literature
+15	843	Ada E.	Yonath	6/22/1939	0000-00-00	British Mandate of Palestine (now Israel)		female	2009.0	chemistry
+16	413	Rosalyn	Yalow	7/19/1921	5/30/2011	USA	USA	female	1977.0	medicine
+17	836	Carol W.	Greider	4/15/1961	0000-00-00	USA		female	2009.0	medicine
+18	835	Elizabeth H.	Blackburn	11/26/1948	0000-00-00	Australia		female	2009.0	medicine
+19	79	Maria	Goeppert Mayer	6/28/1906	2/20/1972	Germany (now Poland)	USA	female	1963.0	physics
+20	453	Christiane	Nôsslein-Volhard	10/20/1942	0000-00-00	Germany		female	1995.0	medicine
+21	904	May-Britt	Moser	1/4/1963	0000-00-00	Norway		female	2014.0	medicine
+22	435	Rita	Levi-Montalcini	4/22/1909	12/30/2012	Italy	Italy	female	1986.0	medicine
+23	438	Gertrude B.	Elion	1/23/1918	2/21/1999	USA	USA	female	1988.0	medicine
+24	775	Linda B.	Buck	1/29/1947	0000-00-00	USA		female	2004.0	medicine
+25	824	Franoise	Barr_-Sinoussi	7/30/1947	0000-00-00	France		female	2008.0	medicine
+26	344	Gerty Theresa	Cori, n_e Radnitz	08/15/1896	10/26/1957	Austria-Hungary (now Czech Republic)	USA	female	1947.0	medicine
+27	869	Ellen	Johnson Sirleaf	10/29/1938	0000-00-00	Liberia		female	2011.0	peace
+28	870	Leymah	Gbowee	2/1/1972	0000-00-00	Liberia		female	2011.0	peace
+29	871	Tawakkol	Karman	2/7/1979	0000-00-00	Yemen		female	2011.0	peace
+30	914	Malala	Yousafzai	7/12/1997	0000-00-00	Pakistan		female	2014.0	peace
+31	565	Jody	Williams	10/9/1950	0000-00-00	USA		female	1997.0	peace
+32	579	Selma Ottilia Lovisa	Lagerl_f	11/20/1858	3/16/1940	Sweden	Sweden	female	1909.0	literature
+33	6	Marie	Curie, n_e Sklodowska	11/07/1867	7/4/1934	Russian Empire (now Poland)	France	female	1911.0	chemistry
+34	554	Rigoberta	Menchì Tum	1/9/1959	0000-00-00	Guatemala		female	1992.0	peace
+35	6	Marie	Curie, n_e Sklodowska	11/07/1867	7/4/1934	Russian Empire (now Poland)	France	female	1903.0	physics
+36	194	Irne	Joliot-Curie	09/12/1897	3/17/1956	France	France	female	1935.0	chemistry
+37	892	Alice	Munro	7/10/1931	0000-00-00	Canada		female	2013.0	literature
+38	601	Sigrid	Undset	05/20/1882	6/10/1949	Denmark	Norway	female	1928.0	literature
+39	817	Doris	Lessing	10/22/1919	11/17/2013	Persia (now Iran)	United Kingdom	female	2007.0	literature
+40	670	Toni	Morrison	2/18/1931	0000-00-00	USA		female	1993.0	literature
+41	668	Nadine	Gordimer	11/19/1923	7/13/2014	South Africa	South Africa	female	1991.0	literature
+42	844	Herta	Môller	8/17/1953	0000-00-00	Romania		female	2009.0	literature
+43	535	Betty	Williams	5/22/1943	0000-00-00	Northern Ireland		female	1976.0	peace
+44	536	Mairead	Corrigan	1/27/1944	0000-00-00	Northern Ireland		female	1976.0	peace
+45	543	Alva	Myrdal	1/31/1902	2/1/1986	Sweden	Sweden	female	1982.0	peace
+46	540	Mother Teresa		8/26/1910	9/5/1997	Ottoman Empire (now Republic of Macedonia)	India	female	1979.0	peace
+47	468	Baroness Bertha Sophie Felicita	von Suttner, n_e Countess Kinsky von Chinic und Tettau	06/09/1843	6/21/2014	Austrian Empire (now Czech Republic)	Austria	female	1905.0	peace
+48	496	Jane	Addams	09/06/1860	5/21/1935	USA	USA	female	1931.0	peace
+49	506	Emily Greene	Balch	01/08/1867	1/9/1961	USA	USA	female	1946.0	peace
+50	572	BjËrnstjerne Martinus	BjËrnson	12/08/1832	4/26/2010	Norway	France	male	1903.0	literature
+51	580	Paul Johann Ludwig	Heyse	03/15/1830	4/2/2014	Prussia (now Germany)	Germany	male	1910.0	literature
+52	584	Romain	Rolland	01/29/1866	12/30/1944	France	France	male	1915.0	literature
+53	832	Jean-Marie Gustave	Le Cl_zio	4/13/1940	0000-00-00	France		male	2008.0	literature
+54	575	Henryk	Sienkiewicz	05/05/1846	11/15/2016	Poland	Switzerland	male	1905.0	literature
+55	583	Rabindranath	Tagore	05/07/1861	8/7/1941	India	India	male	1913.0	literature
+56	868	Tomas	Transtr_mer	4/15/1931	3/26/2015	Sweden	Sweden	male	2011.0	literature
+57	653	Vicente	Aleixandre	04/26/1898	12/14/1984	Spain	Spain	male	1977.0	literature
+58	649	Eyvind	Johnson	7/29/1900	8/25/1976	Sweden	Sweden	male	1974.0	literature
+59	717	Robert C.	Merton	7/31/1944	0000-00-00	USA		male	1997.0	economics
+60	718	Myron S.	Scholes	7/1/1941	0000-00-00	Canada		male	1997.0	economics
+61	669	Derek	Walcott	1/23/1930	0000-00-00	Saint Lucia		male	1992.0	literature
+62	645	Pablo	Neruda	7/12/1904	9/23/1973	Chile	Chile	male	1971.0	literature
+63	666	Camilo Jos_	Cela	5/11/1916	1/17/2002	Spain	Spain	male	1989.0	literature
+64	734	Gao	Xingjian	1/4/1940	0000-00-00	China		male	2000.0	literature
+65	664	Joseph	Brodsky	5/24/1940	1/28/1996	USSR (now Russia)	USA	male	1987.0	literature
+66	648	Patrick	White	5/28/1912	9/30/1990	United Kingdom	Australia	male	1973.0	literature
+67	727	Herbert	Kroemer	8/25/1928	0000-00-00	Germany		male	2000.0	physics
+68	726	Zhores I.	Alferov	3/15/1930	0000-00-00	USSR (now Belarus)		male	2000.0	physics
+69	154	William D.	Phillips	11/5/1948	0000-00-00	USA		male	1997.0	physics
+70	153	Claude	Cohen-Tannoudji	4/1/1933	0000-00-00	French Algeria (now Algeria)		male	1997.0	physics
+71	153	Claude	Cohen-Tannoudji	4/1/1933	0000-00-00	French Algeria (now Algeria)		male	1997.0	physics
+72	152	Steven	Chu	2/28/1948	0000-00-00	USA		male	1997.0	physics
+73	141	Pierre-Gilles	de Gennes	10/24/1932	5/18/2007	France	France	male	1991.0	physics
+74	370	Peter Brian	Medawar	2/28/1915	10/2/1987	Brazil	United Kingdom	male	1960.0	medicine
+75	369	Sir Frank Macfarlane	Burnet	09/03/1899	8/31/1985	Australia	Australia	male	1960.0	medicine
+76	159	Martinus J.G.	Veltman	6/27/1931	0000-00-00	the Netherlands		male	1999.0	physics
+77	158	Gerardus	't Hooft	7/5/1946	0000-00-00	the Netherlands		male	1999.0	physics
+78	92	Louis Eugne F_lix	N_el	11/22/1904	11/17/2000	France	France	male	1970.0	physics
+79	91	Hannes Olof G_sta	Alfv_n	5/30/1908	4/2/1995	Sweden	Sweden	male	1970.0	physics
+80	81	Charles Hard	Townes	7/28/1915	1/27/2015	USA	USA	male	1964.0	physics
+81	83	Aleksandr Mikhailovich	Prokhorov	7/11/1916	1/8/2002	Australia	Russia	male	1964.0	physics
+82	82	Nicolay Gennadiyevich	Basov	12/14/1922	7/1/2001	USSR (now Russia)	Russia	male	1964.0	physics
+83	877	David J.	Wineland	2/24/1944	0000-00-00	USA		male	2012.0	physics
+84	877	David J.	Wineland	2/24/1944	0000-00-00	USA		male	2012.0	physics
+85	876	Serge	Haroche	9/11/1944	0000-00-00	Morocco		male	2012.0	physics
+86	876	Serge	Haroche	9/11/1944	0000-00-00	Morocco		male	2012.0	physics
+87	838	Charles Kuen	Kao	11/4/1933	0000-00-00	China		male	2009.0	physics
+88	838	Charles Kuen	Kao	11/4/1933	0000-00-00	China		male	2009.0	physics
+89	849	Andre	Geim	10/21/1958	0000-00-00	Russia		male	2010.0	physics
+90	850	Konstantin	Novoselov	8/23/1974	0000-00-00	Russia		male	2010.0	physics
+91	677	Ragnar	Frisch	03/03/1895	1/31/1973	Norway	Norway	male	1969.0	economics
+92	678	Jan	Tinbergen	4/12/1903	6/9/1994	the Netherlands	the Netherlands	male	1969.0	economics
+93	714	Robert E.	Lucas Jr.	9/15/1937	0000-00-00	USA		male	1995.0	economics
+94	800	Thomas C.	Schelling	4/14/1921	0000-00-00	USA		male	2005.0	economics
+95	799	Robert J.	Aumann	6/8/1930	0000-00-00	Germany		male	2005.0	economics
+96	760	Vernon L.	Smith	1/1/1927	0000-00-00	USA		male	2002.0	economics
+97	708	Gary S.	Becker	12/2/1930	5/3/2014	USA	USA	male	1992.0	economics
+98	697	Gerard	Debreu	7/4/1921	12/31/2004	France	France	male	1983.0	economics
+99	759	Daniel	Kahneman	3/5/1934	0000-00-00	British Mandate of Palestine (now Israel)		male	2002.0	economics
+100	822	Roger B.	Myerson	3/29/1951	0000-00-00	USA		male	2007.0	economics
+101	820	Leonid	Hurwicz	8/21/1917	6/24/2008	Russia	USA	male	2007.0	economics
+102	821	Eric S.	Maskin	12/12/1950	0000-00-00	USA		male	2007.0	economics
+103	698	Richard	Stone	8/30/1913	12/6/1991	United Kingdom	United Kingdom	male	1984.0	economics
+104	709	Robert W.	Fogel	7/1/1927	6/11/2013	USA	USA	male	1993.0	economics
+105	710	Douglass C.	North	11/5/1920	11/23/2015	USA	USA	male	1993.0	economics
+106	747	Sir Vidiadhar Surajprasad	Naipaul	8/17/1932	0000-00-00	Trinidad		male	2001.0	literature
+107	688	Milton	Friedman	7/31/1912	11/16/2006	USA	USA	male	1976.0	economics
+108	593	William Butler	Yeats	06/13/1865	1/28/1939	Ireland	France	male	1923.0	literature
+109	926	Angus	Deaton	10/19/1945	0000-00-00	United Kingdom		male	2015.0	economics
+110	847	Oliver E.	Williamson	9/27/1932	0000-00-00	USA		male	2009.0	economics
+111	695	James	Tobin	3/5/1918	3/11/2002	USA	USA	male	1981.0	economics
+112	807	Edmund S.	Phelps	7/26/1933	0000-00-00	USA		male	2006.0	economics
+113	915	Jean	Tirole	8/9/1953	0000-00-00	France		male	2014.0	economics
+114	720	Robert A.	Mundell	10/24/1932	0000-00-00	Canada		male	1999.0	economics
+115	834	Paul	Krugman	2/28/1953	0000-00-00	USA		male	2008.0	economics
+116	587	Henrik	Pontoppidan	07/24/1857	8/21/1943	Denmark	Denmark	male	1917.0	literature
+117	110	Pyotr Leonidovich	Kapitsa	07/09/1894	4/8/1984	Russian Empire (now Russia)	USSR (now Russia)	male	1978.0	physics
+118	166	Eduard	Buchner	05/20/1860	8/13/2017	Bavaria (now Germany)	Romania	male	1907.0	chemistry
+119	607	Luigi	Pirandello	06/28/1867	12/10/1936	Italy	Italy	male	1934.0	literature
+120	854	Mario	Vargas Llosa	3/28/1936	0000-00-00	Peru		male	2010.0	literature
+121	703	Trygve	Haavelmo	12/13/1911	7/26/1999	Norway	Norway	male	1989.0	economics
+122	618	Andr_ Paul Guillaume	Gide	11/22/1869	2/19/1951	France	France	male	1947.0	literature
+123	280	George A.	Olah	5/22/1927	0000-00-00	Hungary		male	1994.0	chemistry
+124	120	Kai M.	Siegbahn	4/19/1918	7/20/2007	Sweden	Sweden	male	1981.0	physics
+125	48	Otto	Stern	02/17/1888	8/17/1969	Germany (now Poland)	USA	male	1943.0	physics
+126	791	Roy J.	Glauber	9/1/1925	0000-00-00	USA		male	2005.0	physics
+127	251	Peter D.	Mitchell	9/29/1920	4/10/1992	United Kingdom	United Kingdom	male	1978.0	chemistry
+128	90	Murray	Gell-Mann	9/15/1929	0000-00-00	USA		male	1969.0	physics
+129	209	William Francis	Giauque	05/12/1895	3/28/1982	Canada	USA	male	1949.0	chemistry
+130	250	Ilya	Prigogine	1/25/1917	5/28/2003	Russia	Belgium	male	1977.0	chemistry
+131	250	Ilya	Prigogine	1/25/1917	5/28/2003	Russia	Belgium	male	1977.0	chemistry
+132	195	Petrus (Peter) Josephus Wilhelmus	Debye	03/24/1884	11/2/1966	the Netherlands	USA	male	1936.0	chemistry
+133	195	Petrus (Peter) Josephus Wilhelmus	Debye	03/24/1884	11/2/1966	the Netherlands	USA	male	1936.0	chemistry
+134	179	Frederick	Soddy	09/02/1877	9/22/1956	United Kingdom	United Kingdom	male	1921.0	chemistry
+135	276	Richard R.	Ernst	8/14/1933	0000-00-00	Switzerland		male	1991.0	chemistry
+136	240	Gerhard	Herzberg	12/25/1904	3/3/1999	Germany	Canada	male	1971.0	chemistry
+137	701	Robert M.	Solow	8/23/1924	0000-00-00	USA		male	1987.0	economics
+138	277	Rudolph A.	Marcus	7/21/1923	0000-00-00	Canada		male	1992.0	chemistry
+139	88	Hans Albrecht	Bethe	7/2/1906	3/6/2005	Germany (now France)	USA	male	1967.0	physics
+140	78	Eugene Paul	Wigner	11/17/1902	1/1/1995	Austria-Hungary (now Hungary)	USA	male	1963.0	physics
+141	719	Amartya	Sen	11/3/1933	0000-00-00	India		male	1998.0	economics
+142	762	Jimmy	Carter	10/1/1924	0000-00-00	USA		male	2002.0	peace
+143	89	Luis Walter	Alvarez	6/13/1911	9/1/1988	USA	USA	male	1968.0	physics
+144	613	Frans Eemil	Sillanp__	09/16/1888	6/3/1964	Russian Empire (now Finland)	Finland	male	1939.0	literature
+145	182	Richard Adolf	Zsigmondy	04/01/1865	9/24/2029	Austrian Empire (now Austria)	Germany	male	1925.0	chemistry
+146	60	Frits	Zernike	07/16/1888	3/10/1966	the Netherlands	the Netherlands	male	1953.0	physics
+147	46	Enrico	Fermi	9/29/1901	11/28/1954	Italy	USA	male	1938.0	physics
+148	291	John A.	Pople	10/31/1925	3/15/2004	United Kingdom	USA	male	1998.0	chemistry
+149	259	Aaron	Klug	8/11/1926	0000-00-00	Lithuania		male	1982.0	chemistry
+150	261	Robert Bruce	Merrifield	7/15/1921	5/14/2006	USA	USA	male	1984.0	chemistry
+151	758	Kurt	Wôthrich	10/4/1938	0000-00-00	Switzerland		male	2002.0	chemistry
+152	758	Kurt	Wôthrich	10/4/1938	0000-00-00	Switzerland		male	2002.0	chemistry
+153	700	James M.	Buchanan Jr.	10/3/1919	1/9/2013	USA	USA	male	1986.0	economics
+154	290	Walter	Kohn	3/9/1923	4/19/2016	Austria	USA	male	1998.0	chemistry
+155	55	Cecil Frank	Powell	12/5/1903	8/9/1969	United Kingdom	Italy	male	1950.0	physics
+156	275	Elias James	Corey	7/12/1928	0000-00-00	USA		male	1990.0	chemistry
+157	53	Patrick Maynard Stuart	Blackett	11/18/1897	7/13/1974	United Kingdom	United Kingdom	male	1948.0	physics
+158	733	Daniel L.	McFadden	7/29/1937	0000-00-00	USA		male	2000.0	economics
+159	732	James J.	Heckman	4/19/1944	0000-00-00	USA		male	2000.0	economics
+160	191	Irving	Langmuir	01/31/1881	8/16/1957	USA	USA	male	1932.0	chemistry
+161	29	Karl Manne Georg	Siegbahn	12/03/1886	9/26/1978	Sweden	Sweden	male	1924.0	physics
+162	366	Joshua	Lederberg	5/23/1925	2/2/2008	USA	USA	male	1958.0	medicine
+163	384	Charles Brenton	Huggins	9/22/1901	1/12/1997	Canada	USA	male	1966.0	medicine
+164	63	Willis Eugene	Lamb	7/12/1913	5/15/2008	USA	USA	male	1955.0	physics
+165	422	Roger W.	Sperry	8/19/1913	4/17/1994	USA	USA	male	1981.0	medicine
+166	397	Earl W.	Sutherland, Jr.	11/19/1915	3/9/1974	USA	USA	male	1971.0	medicine
+167	359	Axel Hugo Theodor	Theorell	7/6/1903	8/15/1982	Sweden	Sweden	male	1955.0	medicine
+168	325	Thomas Hunt	Morgan	09/25/1866	12/4/1945	USA	USA	male	1933.0	medicine
+169	352	Max	Theiler	01/30/1899	8/11/1972	South Africa	USA	male	1951.0	medicine
+170	332	Albert	von Szent-Gy_rgyi Nagyrpolt	09/16/1893	10/22/1986	Austria-Hungary (now Hungary)	USA	male	1937.0	medicine
+171	216	Hermann	Staudinger	03/23/1881	9/8/1965	Germany	West Germany (now Germany)	male	1953.0	chemistry
+172	216	Hermann	Staudinger	03/23/1881	9/8/1965	Germany	West Germany (now Germany)	male	1953.0	chemistry
+173	927	Yoshinori	Ohsumi	0000/00/00	0000-00-00	Japan		male	2016.0	medicine
+174	371	Georg	von B_k_sy	06/03/1899	6/13/1972	Hungary	USA	male	1961.0	medicine
+175	16	Wilhelm	Wien	01/13/1864	8/30/1928	Prussia (now Russia)	Germany	male	1911.0	physics
+176	309	Jules	Bordet	06/13/1870	4/6/1961	Belgium	Belgium	male	1919.0	medicine
+177	363	Daniel	Bovet	3/23/1907	4/8/1992	Switzerland	Italy	male	1957.0	medicine
+178	707	Ronald H.	Coase	12/29/1910	9/2/2013	United Kingdom	USA	male	1991.0	economics
+179	223	Jaroslav	Heyrovsky	12/20/1890	3/27/1967	Austria-Hungary (now Czech Republic)	Czechoslovakia	male	1959.0	chemistry
+180	355	Fritz Albert	Lipmann	06/12/1899	7/24/1986	Germany (now Russia)	USA	male	1953.0	medicine
+181	355	Fritz Albert	Lipmann	06/12/1899	7/24/1986	Germany (now Russia)	USA	male	1953.0	medicine
+182	42	Victor Franz	Hess	06/24/1883	12/17/1964	Austria	USA	male	1936.0	physics
+183	192	Harold Clayton	Urey	04/29/1893	1/5/1981	USA	USA	male	1934.0	chemistry
+184	321	Karl	Landsteiner	06/14/1868	6/26/1943	Austrian Empire (now Austria)	USA	male	1930.0	medicine
+185	823	Harald	zur Hausen	3/11/1936	0000-00-00	Germany		male	2008.0	medicine
+186	457	Stanley B.	Prusiner	5/28/1942	0000-00-00	USA		male	1997.0	medicine
+187	353	Selman Abraham	Waksman	07/22/1888	8/16/1973	Russian Empire (now Ukraine)	USA	male	1952.0	medicine
+188	239	Luis F.	Leloir	9/6/1906	12/2/1987	France	Argentina	male	1970.0	chemistry
+189	319	Christiaan	Eijkman	08/11/1858	11/5/1930	the Netherlands	the Netherlands	male	1929.0	medicine
+190	310	Schack August Steenberg	Krogh	11/15/1874	9/13/1949	Denmark	Denmark	male	1920.0	medicine
+191	22	Charles Glover	Barkla	06/07/1877	10/23/1944	United Kingdom	Scotland	male	1917.0	physics
+192	336	Edward Adelbert	Doisy	11/13/1893	10/23/1986	USA	USA	male	1943.0	medicine
+193	354	Hans Adolf	Krebs	8/25/1900	11/22/1981	Germany	United Kingdom	male	1953.0	medicine
+194	863	Ralph M.	Steinman	1/14/1943	9/30/2011	Canada		male	2011.0	medicine
+195	19	Max	von Laue	10/09/1879	4/23/1960	Germany	West Germany (now Germany)	male	1914.0	physics
+196	24	Johannes	Stark	04/15/1874	6/21/1957	Germany	West Germany (now Germany)	male	1919.0	physics
+197	33	Arthur Holly	Compton	09/10/1892	3/15/1962	USA	USA	male	1927.0	physics
+198	202	Otto	Hahn	03/08/1879	7/28/1968	Germany	West Germany (now Germany)	male	1944.0	chemistry
+199	312	Otto Fritz	Meyerhof	04/12/1884	10/6/1951	Germany	USA	male	1922.0	medicine
+200	347	Walter Rudolf	Hess	03/17/1881	8/12/1973	Switzerland	Switzerland	male	1949.0	medicine
+201	436	Susumu	Tonegawa	9/6/1939	0000-00-00	Japan		male	1987.0	medicine
+202	320	Sir Frederick Gowland	Hopkins	06/20/1861	5/16/1947	United Kingdom	United Kingdom	male	1929.0	medicine
+203	346	Paul Hermann	Môller	01/12/1899	10/12/1965	Switzerland	Switzerland	male	1948.0	medicine
+204	315	Willem	Einthoven	05/21/1860	9/29/2027	Java, Dutch East Indies (now Indonesia)	the Netherlands	male	1924.0	medicine
+205	322	Otto Heinrich	Warburg	10/08/1883	8/1/1970	Germany	West Germany (now Germany)	male	1931.0	medicine
+206	329	Hans	Spemann	06/27/1869	9/12/1941	W&uuml;rttemberg (now Germany)	Germany	male	1935.0	medicine
+207	345	Bernardo Alberto	Houssay	04/10/1887	9/21/1971	Argentina	Argentina	male	1947.0	medicine
+208	43	Carl David	Anderson	9/3/1905	1/11/1991	USA	USA	male	1936.0	physics
+209	316	Johannes Andreas Grib	Fibiger	04/23/1867	1/30/2028	Denmark	Denmark	male	1926.0	medicine
+210	348	Antonio Caetano de Abreu Freire Egas	Moniz	11/29/1874	12/13/1955	Portugal	Portugal	male	1949.0	medicine
+211	348	Antonio Caetano de Abreu Freire Egas	Moniz	11/29/1874	12/13/1955	Portugal	Portugal	male	1949.0	medicine
+212	317	Julius	Wagner-Jauregg	03/07/1857	9/27/1940	Austria	Austria	male	1927.0	medicine
+213	36	Prince Louis-Victor Pierre Raymond	de Broglie	08/15/1892	3/19/1987	France	France	male	1929.0	physics
+214	383	Peyton	Rous	10/05/1879	2/16/1972	USA	USA	male	1966.0	medicine
+215	335	Henrik Carl Peter	Dam	02/21/1895	4/17/1976	Denmark	Denmark	male	1943.0	medicine
+216	311	Archibald Vivian	Hill	09/26/1886	6/3/1977	United Kingdom	United Kingdom	male	1922.0	medicine
+217	204	James Batcheller	Sumner	11/19/1887	8/12/1955	USA	USA	male	1946.0	chemistry
+218	180	Francis William	Aston	09/01/1877	11/20/1945	United Kingdom	United Kingdom	male	1922.0	chemistry
+219	651	Eugenio	Montale	10/12/1896	9/12/1981	Italy	Italy	male	1975.0	literature
+220	605	John	Galsworthy	08/14/1867	1/31/1933	United Kingdom	United Kingdom	male	1932.0	literature
+221	635	Giorgos	Seferis	3/13/1900	9/20/1971	Ottoman Empire (now Turkey)	Greece	male	1963.0	literature
+222	680	Simon	Kuznets	4/30/1901	7/8/1985	Russian Empire (now Belarus)	USA	male	1971.0	economics
+223	845	Barack H.	Obama	8/4/1961	0000-00-00	USA		male	2009.0	peace
+224	246	Paul J.	Flory	6/19/1910	9/8/1985	USA	USA	male	1974.0	chemistry
+225	279	Michael	Smith	4/26/1932	10/4/2000	United Kingdom	Canada	male	1993.0	chemistry
+226	61	Max	Born	12/11/1882	1/5/1970	Germany (now Poland)	West Germany (now Germany)	male	1954.0	physics
+227	254	Paul	Berg	6/30/1926	0000-00-00	USA		male	1980.0	chemistry
+228	232	Robert S.	Mulliken	06/07/1896	10/31/1986	USA	USA	male	1966.0	chemistry
+229	127	Ernst	Ruska	12/25/1906	5/27/1988	Germany	Germany	male	1986.0	physics
+230	594	Wladyslaw Stanislaw	Reymont	05/07/1867	12/5/2025	Russian Empire (now Poland)	Poland	male	1924.0	literature
+231	654	Isaac Bashevis	Singer	7/14/1904	7/24/1991	Russian Empire (now Poland)	USA	male	1978.0	literature
+232	629	Boris Leonidovich	Pasternak	02/10/1890	5/30/1960	Russia	Russia	male	1958.0	literature
+233	833	Martti	Ahtisaari	6/23/1937	0000-00-00	Finland (now Russia)		male	2008.0	peace
+234	628	Albert	Camus	11/7/1913	1/4/1960	French Algeria (now Algeria)	France	male	1957.0	literature
+235	617	Hermann	Hesse	07/02/1877	8/9/1962	Germany	Switzerland	male	1946.0	literature
+236	142	Georges	Charpak	8/1/1924	9/29/2010	Poland	France	male	1992.0	physics
+237	142	Georges	Charpak	8/1/1924	9/29/2010	Poland	France	male	1992.0	physics
+238	93	Dennis	Gabor	6/5/1900	2/8/1979	Hungary	United Kingdom	male	1971.0	physics
+239	17	Nils Gustaf	Dal_n	11/30/1869	12/9/1937	Sweden	Sweden	male	1912.0	physics
+240	181	Fritz	Pregl	09/03/1869	12/13/1930	Austria-Hungary (now Slovenia)	Austria	male	1923.0	chemistry
+241	278	Kary B.	Mullis	12/28/1944	0000-00-00	USA		male	1993.0	chemistry
+242	297	Robert	Koch	12/11/1843	5/27/2010	Germany	Germany	male	1905.0	medicine
+243	167	Ernest	Rutherford	08/30/1871	10/19/1937	New Zealand	United Kingdom	male	1908.0	chemistry
+244	184	Heinrich Otto	Wieland	06/04/1877	8/5/1957	Germany	West Germany (now Germany)	male	1927.0	chemistry
+245	8	Lord Rayleigh	(John William Strutt)	11/12/1842	6/30/1919	United Kingdom	United Kingdom	male	1904.0	physics
+246	52	Sir Edward Victor	Appleton	09/06/1892	4/21/1965	United Kingdom	Scotland	male	1947.0	physics
+247	196	Walter Norman	Haworth	03/19/1883	3/19/1950	United Kingdom	United Kingdom	male	1937.0	chemistry
+248	197	Paul	Karrer	04/21/1889	6/18/1971	Russia	Switzerland	male	1937.0	chemistry
+249	207	Sir Robert	Robinson	09/13/1886	2/8/1975	United Kingdom	United Kingdom	male	1947.0	chemistry
+250	18	Heike	Kamerlingh Onnes	09/21/1853	2/21/1926	the Netherlands	the Netherlands	male	1913.0	physics
+251	552	Mikhail Sergeyevich	Gorbachev	3/2/1931	0000-00-00	USSR (now Russia)		male	1990.0	peace
+252	855	Liu	Xiaobo	12/28/1955	0000-00-00	China		male	2010.0	peace
+253	627	Juan Ramn	Jim_nez	12/24/1881	5/29/1958	Spain	Puerto Rico	male	1956.0	literature
+254	630	Salvatore	Quasimodo	8/19/1901	6/14/1968	Italy	Italy	male	1959.0	literature
+255	624	Sir Winston Leonard Spencer	Churchill	11/30/1874	1/24/1965	United Kingdom	United Kingdom	male	1953.0	literature
+256	625	Ernest Miller	Hemingway	07/21/1899	7/2/1961	USA	USA	male	1954.0	literature
+257	173	Paul	Sabatier	11/05/1854	8/14/1941	France	France	male	1912.0	chemistry
+258	34	Charles Thomson Rees	Wilson	02/14/1869	11/15/1959	Scotland	Scotland	male	1927.0	physics
+259	12	Gabriel	Lippmann	08/16/1845	7/13/1921	Luxembourg		male	1908.0	physics
+260	224	Willard Frank	Libby	12/17/1908	9/8/1980	USA	USA	male	1960.0	chemistry
+261	589	Knut Pedersen	Hamsun	08/04/1859	2/19/1952	Norway	Norway	male	1920.0	literature
+262	642	Yasunari	Kawabata	06/11/1899	4/16/1972	Japan	Japan	male	1968.0	literature
+263	659	Gabriel	GarcÍa Mrquez	3/6/1927	4/17/2014	Colombia	Mexico	male	1982.0	literature
+264	660	William	Golding	9/19/1911	6/19/1993	United Kingdom	United Kingdom	male	1983.0	literature
+265	11	Albert Abraham	Michelson	12/19/1852	5/9/1931	Prussia (now Poland)	USA	male	1907.0	physics
+266	231	Robert Burns	Woodward	4/10/1917	7/8/1979	USA	USA	male	1965.0	chemistry
+267	619	Thomas Stearns	Eliot	09/26/1888	1/4/1965	USA	United Kingdom	male	1948.0	literature
+268	728	Jack S.	Kilby	11/8/1923	6/20/2005	USA	USA	male	2000.0	physics
+269	699	Franco	Modigliani	6/18/1918	9/25/2003	Italy	USA	male	1985.0	economics
+270	702	Maurice	Allais	5/31/1911	10/9/2010	France	France	male	1988.0	economics
+271	691	Herbert A.	Simon	6/15/1916	2/9/2001	USA	USA	male	1978.0	economics
+272	75	Robert	Hofstadter	2/5/1915	11/17/1990	USA	USA	male	1961.0	physics
+273	77	Lev Davidovich	Landau	1/22/1908	4/1/1968	Russian Empire (now Azerbaijan)	USSR (now Russia)	male	1962.0	physics
+274	661	Jaroslav	Seifert	9/23/1901	1/10/1986	Austria-Hungary (now Czech Republic)	Czechoslovakia	male	1984.0	literature
+275	655	Odysseus	Elytis	11/2/1911	3/18/1996	Crete (now Greece)	Greece	male	1979.0	literature
+276	620	William	Faulkner	09/25/1897	7/6/1962	USA	USA	male	1949.0	literature
+277	64	Polykarp	Kusch	1/26/1911	3/20/1993	Germany	USA	male	1955.0	physics
+278	54	Hideki	Yukawa	1/23/1907	9/8/1981	Japan	Japan	male	1949.0	physics
+279	54	Hideki	Yukawa	1/23/1907	9/8/1981	Japan	Japan	male	1949.0	physics
+280	639	Shmuel Yosef	Agnon	07/17/1888	2/17/1970	Austria-Hungary (now Ukraine)	Israel	male	1966.0	literature
+281	634	John	Steinbeck	2/27/1902	12/20/1968	USA	USA	male	1962.0	literature
+282	203	Artturi Ilmari	Virtanen	01/15/1895	11/11/1973	Russian Empire (now Finland)	Finland	male	1945.0	chemistry
+283	217	Linus Carl	Pauling	2/28/1901	8/19/1994	USA	USA	male	1954.0	chemistry
+284	248	Vladimir	Prelog	7/23/1906	1/7/1998	Austria-Hungary (now Bosnia and Herzegovina)	Switzerland	male	1975.0	chemistry
+285	208	Arne Wilhelm Kaurin	Tiselius	8/10/1902	10/29/1971	Sweden	Sweden	male	1948.0	chemistry
+286	225	Melvin	Calvin	4/8/1911	1/8/1997	USA	USA	male	1961.0	chemistry
+287	76	Rudolf Ludwig	M_ssbauer	1/31/1929	9/14/2011	Germany		male	1961.0	physics
+288	76	Rudolf Ludwig	M_ssbauer	1/31/1929	9/14/2011	Germany		male	1961.0	physics
+289	188	Hans	Fischer	07/27/1881	3/31/1945	Germany	Germany	male	1930.0	chemistry
+290	176	Richard Martin	Willst_tter	08/13/1872	8/3/1942	Germany	Switzerland	male	1915.0	chemistry
+291	934	Juan Manuel	Santos	0000/00/00	0000-00-00	Colombia		male	2016.0	peace
+292	49	Isidor Isaac	Rabi	07/29/1898	1/11/1988	Austria-Hungary (now Poland)	USA	male	1944.0	physics
+293	696	George J.	Stigler	1/17/1911	12/1/1991	USA	USA	male	1982.0	economics
+294	27	Niels Henrik David	Bohr	10/07/1885	11/18/1962	Denmark	Denmark	male	1922.0	physics
+295	26	Albert	Einstein	03/14/1879	4/18/1955	Germany	USA	male	1921.0	physics
+296	816	Gerhard	Ertl	10/10/1936	0000-00-00	Germany		male	2007.0	chemistry
+297	806	Roger D.	Kornberg	4/24/1947	0000-00-00	USA		male	2006.0	chemistry
+298	292	Ahmed H.	Zewail	2/26/1946	8/2/2016	Egypt		male	1999.0	chemistry
+299	249	William N.	Lipscomb	12/9/1919	4/14/2011	USA	USA	male	1976.0	chemistry
+300	123	William Alfred	Fowler	8/9/1911	3/14/1995	USA	USA	male	1983.0	physics
+301	99	Brian David	Josephson	1/4/1940	0000-00-00	United Kingdom		male	1973.0	physics
+302	122	Subramanyan	Chandrasekhar	10/19/1910	8/21/1995	India (now Pakistan)	USA	male	1983.0	physics
+303	121	Kenneth G.	Wilson	6/8/1936	6/15/2013	USA	USA	male	1982.0	physics
+304	586	Karl Adolph	Gjellerup	06/02/1857	10/11/2019	Denmark	Germany	male	1917.0	literature
+305	603	Sinclair	Lewis	02/07/1885	1/10/1951	USA	Italy	male	1930.0	literature
+306	626	Halldr Kiljan	Laxness	4/23/1902	2/8/1998	Iceland	Iceland	male	1955.0	literature
+307	641	Miguel Angel	Asturias	10/19/1899	6/9/1974	Guatemala	Spain	male	1967.0	literature
+308	725	Kim	Dae-jung	12/3/1925	8/18/2009	Korea (now South Korea)		male	2000.0	peace
+309	549	Oscar	Arias Snchez	9/13/1941	0000-00-00	Costa Rica		male	1987.0	peace
+310	218	Vincent	du Vigneaud	5/18/1901	12/11/1978	USA	USA	male	1955.0	chemistry
+311	198	Richard	Kuhn	12/3/1900	7/31/1967	Austria-Hungary (now Austria)	West Germany (now Germany)	male	1938.0	chemistry
+312	198	Richard	Kuhn	12/3/1900	7/31/1967	Austria-Hungary (now Austria)	West Germany (now Germany)	male	1938.0	chemistry
+313	9	Philipp Eduard Anton	von Lenard	06/07/1862	5/20/1947	Hungary (now Slovakia)	Germany	male	1905.0	physics
+314	743	K. Barry	Sharpless	4/28/1941	0000-00-00	USA		male	2001.0	chemistry
+315	183	The (Theodor)	Svedberg	08/30/1884	2/25/1971	Sweden	Sweden	male	1926.0	chemistry
+316	294	Ronald	Ross	05/13/1857	9/16/1932	India	United Kingdom	male	1902.0	medicine
+317	221	Lord (Alexander R.)	Todd	10/2/1907	1/10/1997	Scotland	United Kingdom	male	1957.0	chemistry
+318	200	Leopold	Ruzicka	09/13/1887	9/26/1976	Austria-Hungary (now Croatia)	Switzerland	male	1939.0	chemistry
+319	241	Christian B.	Anfinsen	3/26/1916	5/14/1995	USA	USA	male	1972.0	chemistry
+320	293	Emil Adolf	von Behring	03/15/1854	3/31/2017	Prussia (now Poland)	Germany	male	1901.0	medicine
+321	199	Adolf Friedrich Johann	Butenandt	3/24/1903	1/18/1995	Germany	Germany	male	1939.0	chemistry
+322	199	Adolf Friedrich Johann	Butenandt	3/24/1903	1/18/1995	Germany	Germany	male	1939.0	chemistry
+323	305	Allvar	Gullstrand	06/05/1862	7/28/1930	Sweden	Sweden	male	1911.0	medicine
+324	32	Jean Baptiste	Perrin	09/30/1870	4/17/1942	France	USA	male	1926.0	physics
+325	28	Robert Andrews	Millikan	03/22/1868	12/19/1953	USA	USA	male	1923.0	physics
+326	15	Johannes Diderik	van der Waals	11/23/1837	3/8/1923	the Netherlands	the Netherlands	male	1910.0	physics
+327	260	Henry	Taube	11/30/1915	11/16/2005	Canada	USA	male	1983.0	chemistry
+328	308	Robert	Brny	04/22/1876	4/8/1936	Austria	Sweden	male	1914.0	medicine
+329	303	Emil Theodor	Kocher	08/25/1841	7/27/2017	Switzerland	Switzerland	male	1909.0	medicine
+330	37	Sir Chandrasekhara Venkata	Raman	11/07/1888	11/21/1970	India	India	male	1930.0	physics
+331	247	John Warcup	Cornforth	9/7/1917	12/8/2013	Australia		male	1975.0	chemistry
+332	222	Frederick	Sanger	8/13/1918	11/19/2013	United Kingdom	United Kingdom	male	1958.0	chemistry
+333	35	Owen Willans	Richardson	04/26/1879	2/15/1959	United Kingdom	United Kingdom	male	1928.0	physics
+334	201	George	de Hevesy	08/01/1885	7/5/1966	Austria-Hungary (now Hungary)	West Germany (now Germany)	male	1943.0	chemistry
+335	318	Charles Jules Henri	Nicolle	09/21/1866	2/28/1936	France	Tunisia	male	1928.0	medicine
+336	596	George Bernard	Shaw	07/26/1856	11/2/1950	Ireland	United Kingdom	male	1925.0	literature
+337	637	Jean-Paul	Sartre	6/21/1905	4/15/1980	France	France	male	1964.0	literature
+338	647	Heinrich	B_ll	12/21/1917	7/16/1985	Germany	West Germany (now Germany)	male	1972.0	literature
+339	643	Samuel	Beckett	4/13/1906	12/22/1989	Ireland	France	male	1969.0	literature
+340	667	Octavio	Paz	3/31/1914	4/19/1998	Mexico	Mexico	male	1990.0	literature
+341	923	Aziz	Sancar	9/8/1946	0000-00-00	Turkey		male	2015.0	chemistry
+342	922	Paul	Modrich	6/13/1946	0000-00-00	USA		male	2015.0	chemistry
+343	922	Paul	Modrich	6/13/1946	0000-00-00	USA		male	2015.0	chemistry
+344	921	Tomas	Lindahl	1/28/1938	0000-00-00	Sweden		male	2015.0	chemistry
+345	921	Tomas	Lindahl	1/28/1938	0000-00-00	Sweden		male	2015.0	chemistry
+346	772	Clive W.J.	Granger	9/4/1934	5/27/2009	United Kingdom	USA	male	2003.0	economics
+347	771	Robert F.	Engle III	11/10/1942	0000-00-00	USA		male	2003.0	economics
+348	853	Akira	Suzuki	9/12/1930	0000-00-00	Japan		male	2010.0	chemistry
+349	852	Ei-ichi	Negishi	7/14/1935	0000-00-00	China		male	2010.0	chemistry
+350	851	Richard F.	Heck	8/15/1931	10/9/2015	USA	Philippines	male	2010.0	chemistry
+351	753	Raymond	Davis Jr.	10/14/1914	5/31/2006	USA	USA	male	2002.0	physics
+352	754	Masatoshi	Koshiba	9/19/1926	0000-00-00	Japan		male	2002.0	physics
+353	755	Riccardo	Giacconi	10/6/1931	0000-00-00	Italy		male	2002.0	physics
+354	766	Alexei A.	Abrikosov	6/25/1928	0000-00-00	USSR (now Russia)		male	2003.0	physics
+355	767	Vitaly L.	Ginzburg	10/4/1916	11/8/2009	Russia		male	2003.0	physics
+356	768	Anthony J.	Leggett	3/26/1938	0000-00-00	United Kingdom		male	2003.0	physics
+357	770	Roderick	MacKinnon	2/19/1956	0000-00-00	USA		male	2003.0	chemistry
+358	770	Roderick	MacKinnon	2/19/1956	0000-00-00	USA		male	2003.0	chemistry
+359	878	Robert J.	Lefkowitz	4/15/1943	0000-00-00	USA		male	2012.0	chemistry
+360	879	Brian K.	Kobilka	5/30/1955	0000-00-00	USA		male	2012.0	chemistry
+361	878	Robert J.	Lefkowitz	4/15/1943	0000-00-00	USA		male	2012.0	chemistry
+362	841	Venkatraman	Ramakrishnan	0000/00/00	0000-00-00	India		male	2009.0	chemistry
+363	842	Thomas A.	Steitz	8/23/1940	0000-00-00	USA		male	2009.0	chemistry
+364	842	Thomas A.	Steitz	8/23/1940	0000-00-00	USA		male	2009.0	chemistry
+365	740	Carl E.	Wieman	3/26/1951	0000-00-00	USA		male	2001.0	physics
+366	738	Eric A.	Cornell	12/19/1961	0000-00-00	USA		male	2001.0	physics
+367	739	Wolfgang	Ketterle	10/21/1957	0000-00-00	West Germany (now Germany)		male	2001.0	physics
+368	912	Patrick	Modiano	7/30/1945	0000-00-00	France		male	2014.0	literature
+369	638	Mikhail Aleksandrovich	Sholokhov	5/24/1905	2/21/1984	Russia	USSR	male	1965.0	literature
+370	609	Roger	Martin du Gard	03/23/1881	8/22/1958	France	France	male	1937.0	literature
+371	622	P_r Fabian	Lagerkvist	05/23/1891	7/11/1974	Sweden	Sweden	male	1951.0	literature
+372	62	Walther	Bothe	01/08/1891	2/8/1957	Germany	West Germany (now Germany)	male	1954.0	physics
+373	62	Walther	Bothe	01/08/1891	2/8/1957	Germany	West Germany (now Germany)	male	1954.0	physics
+374	694	Lawrence R.	Klein	9/14/1920	10/20/2013	USA	USA	male	1980.0	economics
+375	38	Werner Karl	Heisenberg	12/5/1901	2/1/1976	Germany	West Germany (now Germany)	male	1932.0	physics
+376	623	Franois	Mauriac	10/11/1885	9/1/1970	France	France	male	1952.0	literature
+377	932	Sir J. Fraser	Stoddart	0000/00/00	0000-00-00	United Kingdom		male	2016.0	chemistry
+378	933	Bernard L.	Feringa	0000/00/00	0000-00-00	the Netherlands		male	2016.0	chemistry
+379	931	Jean-Pierre	Sauvage	0000/00/00	0000-00-00	France		male	2016.0	chemistry
+380	148	Frederick	Reines	3/16/1918	8/26/1998	USA	USA	male	1995.0	physics
+381	270	Johann	Deisenhofer	9/30/1943	0000-00-00	Germany		male	1988.0	chemistry
+382	272	Hartmut	Michel	7/18/1948	0000-00-00	West Germany (now Germany)		male	1988.0	chemistry
+383	271	Robert	Huber	2/20/1937	0000-00-00	Germany		male	1988.0	chemistry
+384	270	Johann	Deisenhofer	9/30/1943	0000-00-00	Germany		male	1988.0	chemistry
+385	418	Godfrey N.	Hounsfield	8/28/1919	8/12/2004	United Kingdom	United Kingdom	male	1979.0	medicine
+386	417	Allan M.	Cormack	2/23/1924	5/7/1998	South Africa	USA	male	1979.0	medicine
+387	848	Robert G.	Edwards	9/27/1925	4/10/2013	United Kingdom	United Kingdom	male	2010.0	medicine
+388	889	Martin	Karplus	3/15/1930	0000-00-00	Austria		male	2013.0	chemistry
+389	891	Arieh	Warshel	11/20/1940	0000-00-00	British Mandate of Palestine (now Israel)		male	2013.0	chemistry
+390	890	Michael	Levitt	5/9/1947	0000-00-00	South Africa		male	2013.0	chemistry
+391	889	Martin	Karplus	3/15/1930	0000-00-00	Austria		male	2013.0	chemistry
+392	145	Bertram N.	Brockhouse	7/15/1918	10/13/2003	Canada	Canada	male	1994.0	physics
+393	909	Eric	Betzig	1/13/1960	0000-00-00	USA		male	2014.0	chemistry
+394	910	Stefan W.	Hell	12/23/1962	0000-00-00	Romania		male	2014.0	chemistry
+395	910	Stefan W.	Hell	12/23/1962	0000-00-00	Romania		male	2014.0	chemistry
+396	911	William E.	Moerner	6/24/1953	0000-00-00	USA		male	2014.0	chemistry
+397	683	Wassily	Leontief	8/5/1906	2/5/1999	Russia	USA	male	1973.0	economics
+398	137	Wolfgang	Paul	8/10/1913	12/7/1993	Germany	Germany	male	1989.0	physics
+399	136	Hans G.	Dehmelt	9/9/1922	0000-00-00	Prussia (now Germany)		male	1989.0	physics
+400	796	Richard R.	Schrock	1/4/1945	0000-00-00	USA		male	2005.0	chemistry
+401	795	Robert H.	Grubbs	2/27/1942	0000-00-00	USA		male	2005.0	chemistry
+402	794	Yves	Chauvin	10/10/1930	1/27/2015	Belgium	France	male	2005.0	chemistry
+403	146	Clifford G.	Shull	9/23/1915	3/31/2001	USA	USA	male	1994.0	physics
+404	730	Alan G.	MacDiarmid	4/14/1927	2/7/2007	New Zealand	USA	male	2000.0	chemistry
+405	729	Alan J.	Heeger	1/22/1936	0000-00-00	USA		male	2000.0	chemistry
+406	731	Hideki	Shirakawa	8/20/1936	0000-00-00	Japan		male	2000.0	chemistry
+407	87	Alfred	Kastler	5/3/1902	1/7/1984	Germany (now France)	France	male	1966.0	physics
+408	829	Osamu	Shimomura	8/27/1928	0000-00-00	Japan		male	2008.0	chemistry
+409	830	Martin	Chalfie	1/15/1947	0000-00-00	USA		male	2008.0	chemistry
+410	831	Roger Y.	Tsien	2/1/1952	8/24/2016	USA	USA	male	2008.0	chemistry
+411	829	Osamu	Shimomura	8/27/1928	0000-00-00	Japan		male	2008.0	chemistry
+412	831	Roger Y.	Tsien	2/1/1952	8/24/2016	USA	USA	male	2008.0	chemistry
+413	70	Pavel Alekseyevich	Cherenkov	7/28/1904	1/6/1990	Russia	USSR	male	1958.0	physics
+414	721	Ilja Mikhailovich	Frank	10/23/1908	6/22/1990	Russia	USSR (now Russia)	male	1958.0	physics
+415	721	Ilja Mikhailovich	Frank	10/23/1908	6/22/1990	Russia	USSR (now Russia)	male	1958.0	physics
+416	71	Igor Yevgenyevich	Tamm	07/08/1895	4/12/1971	Russia	USSR (now Russia)	male	1958.0	physics
+417	71	Igor Yevgenyevich	Tamm	07/08/1895	4/12/1971	Russia	USSR (now Russia)	male	1958.0	physics
+418	144	Joseph H.	Taylor Jr.	3/29/1941	0000-00-00	USA		male	1993.0	physics
+419	143	Russell A.	Hulse	11/28/1950	0000-00-00	USA		male	1993.0	physics
+420	778	Frank	Wilczek	5/15/1951	0000-00-00	USA		male	2004.0	physics
+421	777	H. David	Politzer	8/31/1949	0000-00-00	USA		male	2004.0	physics
+422	776	David J.	Gross	2/19/1941	0000-00-00	USA		male	2004.0	physics
+423	815	Peter	Grônberg	5/18/1939	0000-00-00	Czechoslovakia (now Czech Republic)		male	2007.0	physics
+424	814	Albert	Fert	3/7/1938	0000-00-00	France		male	2007.0	physics
+425	814	Albert	Fert	3/7/1938	0000-00-00	France		male	2007.0	physics
+426	837	Jack W.	Szostak	11/9/1952	0000-00-00	United Kingdom		male	2009.0	medicine
+427	837	Jack W.	Szostak	11/9/1952	0000-00-00	United Kingdom		male	2009.0	medicine
+428	837	Jack W.	Szostak	11/9/1952	0000-00-00	United Kingdom		male	2009.0	medicine
+429	314	John James Rickard	Macleod	09/06/1876	3/16/1935	Scotland	Scotland	male	1923.0	medicine
+430	313	Frederick Grant	Banting	11/14/1891	2/21/1941	Canada	Canada	male	1923.0	medicine
+431	919	Takaaki	Kajita	3/9/1959	0000-00-00	Japan		male	2015.0	physics
+432	920	Arthur B.	McDonald	8/29/1943	0000-00-00	Canada		male	2015.0	physics
+433	39	Erwin	Schr_dinger	08/12/1887	1/4/1961	Austria	Austria	male	1933.0	physics
+434	40	Paul Adrien Maurice	Dirac	8/8/1902	10/20/1984	United Kingdom	USA	male	1933.0	physics
+435	339	Sir Alexander	Fleming	08/06/1881	3/11/1955	Scotland	United Kingdom	male	1945.0	medicine
+436	340	Ernst Boris	Chain	6/19/1906	8/12/1979	Germany	Ireland	male	1945.0	medicine
+437	341	Sir Howard Walter	Florey	09/24/1898	2/21/1968	Australia	United Kingdom	male	1945.0	medicine
+438	867	Dan	Shechtman	1/24/1941	0000-00-00	British Mandate of Palestine (now Israel)		male	2011.0	chemistry
+439	416	Hamilton O.	Smith	8/23/1931	0000-00-00	USA		male	1978.0	medicine
+440	415	Daniel	Nathans	10/30/1928	11/16/1999	USA	USA	male	1978.0	medicine
+441	414	Werner	Arber	6/3/1929	0000-00-00	Switzerland		male	1978.0	medicine
+442	866	Adam G.	Riess	12/16/1969	0000-00-00	USA		male	2011.0	physics
+443	866	Adam G.	Riess	12/16/1969	0000-00-00	USA		male	2011.0	physics
+444	864	Saul	Perlmutter	0000/00/00	0000-00-00	USA		male	2011.0	physics
+445	864	Saul	Perlmutter	0000/00/00	0000-00-00	USA		male	2011.0	physics
+446	865	Brian P.	Schmidt	2/24/1967	0000-00-00	USA		male	2011.0	physics
+447	334	Gerhard	Domagk	10/30/1895	4/24/1964	Germany (now Poland)	West Germany (now Germany)	male	1939.0	medicine
+448	102	Aage Niels	Bohr	6/19/1922	9/8/2009	Denmark	Denmark	male	1975.0	physics
+449	103	Ben Roy	Mottelson	7/9/1926	0000-00-00	USA		male	1975.0	physics
+450	104	Leo James	Rainwater	12/9/1917	3/31/1986	USA	USA	male	1975.0	physics
+451	50	Wolfgang	Pauli	4/25/1900	12/15/1958	Austria	Switzerland	male	1945.0	physics
+452	826	Yoichiro	Nambu	1/18/1921	7/5/2015	Japan	Japan	male	2008.0	physics
+453	41	James	Chadwick	10/20/1891	7/24/1974	United Kingdom	United Kingdom	male	1935.0	physics
+454	828	Toshihide	Maskawa	2/7/1940	0000-00-00	Japan		male	2008.0	physics
+455	828	Toshihide	Maskawa	2/7/1940	0000-00-00	Japan		male	2008.0	physics
+456	827	Makoto	Kobayashi	4/7/1944	0000-00-00	Japan		male	2008.0	physics
+457	342	Hermann Joseph	Muller	12/21/1890	4/5/1967	USA		male	1946.0	medicine
+458	126	Klaus	von Klitzing	6/28/1943	0000-00-00	German-occupied Poland (now Poland)		male	1985.0	physics
+459	236	Lars	Onsager	11/27/1903	10/5/1976	Norway	USA	male	1968.0	chemistry
+460	333	Corneille Jean Franois	Heymans	03/28/1892	7/18/1968	Belgium	Belgium	male	1938.0	medicine
+461	172	Victor	Grignard	05/06/1871	12/13/1935	France	France	male	1912.0	chemistry
+462	147	Martin L.	Perl	6/24/1927	9/30/2014	USA	USA	male	1995.0	physics
+463	780	Avram	Hershko	12/31/1937	0000-00-00	Hungary		male	2004.0	chemistry
+464	779	Aaron	Ciechanover	10/1/1947	0000-00-00	British Protectorate of Palestine (now Israel)		male	2004.0	chemistry
+465	781	Irwin	Rose	7/16/1926	6/3/2015	USA	USA	male	2004.0	chemistry
+466	116	James Watson	Cronin	9/29/1931	8/25/2016	USA	USA	male	1980.0	physics
+467	117	Val Logsdon	Fitch	3/10/1923	2/5/2015	USA	USA	male	1980.0	physics
+468	769	Peter	Agre	1/30/1949	0000-00-00	USA		male	2003.0	chemistry
+469	874	Sir John B.	Gurdon	10/2/1933	0000-00-00	United Kingdom		male	2012.0	medicine
+470	875	Shinya	Yamanaka	9/4/1962	0000-00-00	Japan		male	2012.0	medicine
+471	875	Shinya	Yamanaka	9/4/1962	0000-00-00	Japan		male	2012.0	medicine
+472	461	Gônter	Blobel	5/21/1936	0000-00-00	Germany (now Poland)		male	1999.0	medicine
+473	461	Gônter	Blobel	5/21/1936	0000-00-00	Germany (now Poland)		male	1999.0	medicine
+474	633	Ivo	Andric	10/10/1892	3/13/1975	Bosnia (now Bosnia and Herzegovina)	Yugoslavia (now Serbia)	male	1961.0	literature
+475	644	Aleksandr Isayevich	Solzhenitsyn	12/11/1918	8/3/2008	Russia	Russia	male	1970.0	literature
+476	289	Jens C.	Skou	10/8/1918	0000-00-00	Denmark		male	1997.0	chemistry
+477	592	Jacinto	Benavente	08/12/1866	7/14/1954	Spain	Spain	male	1922.0	literature
+478	652	Saul	Bellow	6/10/1915	4/5/2005	Canada	USA	male	1976.0	literature
+479	47	Ernest Orlando	Lawrence	8/8/1901	8/27/1958	USA	USA	male	1939.0	physics
+480	51	Percy Williams	Bridgman	04/21/1882	8/20/1961	USA	USA	male	1946.0	physics
+481	840	George E.	Smith	5/10/1930	0000-00-00	USA		male	2009.0	physics
+482	839	Willard S.	Boyle	8/19/1924	5/7/2011	Canada	Canada	male	2009.0	physics
+483	907	Hiroshi	Amano	9/11/1960	0000-00-00	Japan		male	2014.0	physics
+484	906	Isamu	Akasaki	1/30/1929	0000-00-00	Japan		male	2014.0	physics
+485	906	Isamu	Akasaki	1/30/1929	0000-00-00	Japan		male	2014.0	physics
+486	908	Shuji	Nakamura	5/22/1954	0000-00-00	Japan		male	2014.0	physics
+487	74	Donald Arthur	Glaser	9/21/1926	2/28/2013	USA	USA	male	1960.0	physics
+488	135	Norman F.	Ramsey	8/27/1915	11/4/2011	USA	USA	male	1989.0	physics
+489	132	Leon M.	Lederman	7/15/1922	0000-00-00	USA		male	1988.0	physics
+490	134	Jack	Steinberger	5/25/1921	0000-00-00	Germany		male	1988.0	physics
+491	133	Melvin	Schwartz	11/2/1932	8/28/2006	USA	USA	male	1988.0	physics
+492	608	Eugene Gladstone	O'Neill	10/16/1888	11/27/1953	USA	USA	male	1936.0	literature
+493	614	Johannes Vilhelm	Jensen	01/20/1873	11/25/1950	Denmark	Denmark	male	1944.0	literature
+494	679	Paul A.	Samuelson	5/15/1915	12/13/2009	USA	USA	male	1970.0	economics
+495	185	Adolf Otto Reinhold	Windaus	12/25/1876	6/9/1959	Germany	West Germany (now Germany)	male	1928.0	chemistry
+496	631	Saint-John	Perse	05/31/1887	9/20/1975	Guadeloupe Island	France	male	1960.0	literature
+497	606	Ivan Alekseyevich	Bunin	10/22/1870	11/8/1953	Russia	France	male	1933.0	literature
+498	177	Fritz	Haber	12/09/1868	1/29/1934	Prussia (now Poland)	Switzerland	male	1918.0	chemistry
+499	887	Franois	Englert	11/6/1932	0000-00-00	Belgium		male	2013.0	physics
+500	888	Peter W.	Higgs	5/29/1929	0000-00-00	United Kingdom		male	2013.0	physics
+501	882	Alvin E.	Roth	12/18/1951	0000-00-00	USA		male	2012.0	economics
+502	882	Alvin E.	Roth	12/18/1951	0000-00-00	USA		male	2012.0	economics
+503	883	Lloyd S.	Shapley	6/2/1923	3/12/2016	USA	USA	male	2012.0	economics
+504	744	George A.	Akerlof	6/17/1940	0000-00-00	USA		male	2001.0	economics
+505	746	Joseph E.	Stiglitz	2/9/1943	0000-00-00	USA		male	2001.0	economics
+506	745	A. Michael	Spence	00/00/1943	0000-00-00	USA		male	2001.0	economics
+507	857	Dale T.	Mortensen	2/2/1939	1/9/2014	USA	USA	male	2010.0	economics
+508	856	Peter A.	Diamond	4/29/1940	0000-00-00	USA		male	2010.0	economics
+509	857	Dale T.	Mortensen	2/2/1939	1/9/2014	USA	USA	male	2010.0	economics
+510	858	Christopher A.	Pissarides	2/20/1948	0000-00-00	Cyprus		male	2010.0	economics
+511	118	Nicolaas	Bloembergen	3/11/1920	0000-00-00	the Netherlands		male	1981.0	physics
+512	119	Arthur Leonard	Schawlow	5/5/1921	4/28/1999	USA	USA	male	1981.0	physics
+513	243	William H.	Stein	6/25/1911	2/2/1980	USA	USA	male	1972.0	chemistry
+514	242	Stanford	Moore	9/4/1913	8/23/1982	USA	USA	male	1972.0	chemistry
+515	222	Frederick	Sanger	8/13/1918	11/19/2013	United Kingdom	United Kingdom	male	1980.0	chemistry
+516	255	Walter	Gilbert	3/21/1932	0000-00-00	USA		male	1980.0	chemistry
+517	265	Yuan T.	Lee	11/19/1936	0000-00-00	Taiwan		male	1986.0	chemistry
+518	264	Dudley R.	Herschbach	6/18/1932	0000-00-00	USA		male	1986.0	chemistry
+519	266	John C.	Polanyi	1/23/1929	0000-00-00	Germany		male	1986.0	chemistry
+520	787	Edward C.	Prescott	12/26/1940	0000-00-00	USA		male	2004.0	economics
+521	786	Finn E.	Kydland	12/1/1943	0000-00-00	Norway		male	2004.0	economics
+522	786	Finn E.	Kydland	12/1/1943	0000-00-00	Norway		male	2004.0	economics
+523	787	Edward C.	Prescott	12/26/1940	0000-00-00	USA		male	2004.0	economics
+524	792	John L.	Hall	8/21/1934	0000-00-00	USA		male	2005.0	physics
+525	792	John L.	Hall	8/21/1934	0000-00-00	USA		male	2005.0	physics
+526	793	Theodor W.	H_nsch	10/30/1941	0000-00-00	Germany		male	2005.0	physics
+527	793	Theodor W.	H_nsch	10/30/1941	0000-00-00	Germany		male	2005.0	physics
+528	237	Derek H. R.	Barton	9/8/1918	3/16/1998	United Kingdom	USA	male	1969.0	chemistry
+529	238	Odd	Hassel	05/17/1897	5/11/1981	Norway	Norway	male	1969.0	chemistry
+530	686	Leonid Vitaliyevich	Kantorovich	1/19/1912	4/7/1986	Russian Empire (now Russia)	USSR (now Russia)	male	1975.0	economics
+531	687	Tjalling C.	Koopmans	8/28/1910	2/26/1985	the Netherlands	USA	male	1975.0	economics
+532	113	Sheldon Lee	Glashow	12/5/1932	0000-00-00	USA		male	1979.0	physics
+533	115	Steven	Weinberg	5/3/1933	0000-00-00	USA		male	1979.0	physics
+534	114	Abdus	Salam	1/29/1926	11/21/1996	India (now Pakistan)	United Kingdom	male	1979.0	physics
+535	114	Abdus	Salam	1/29/1926	11/21/1996	India (now Pakistan)	United Kingdom	male	1979.0	physics
+536	124	Carlo	Rubbia	3/31/1934	0000-00-00	Italy	Switzerland	male	1984.0	physics
+537	125	Simon	van der Meer	11/24/1925	3/4/2011	the Netherlands	Switzerland	male	1984.0	physics
+538	129	Heinrich	Rohrer	6/6/1933	5/16/2013	Switzerland	Switzerland	male	1986.0	physics
+539	128	Gerd	Binnig	7/20/1947	0000-00-00	West Germany (now Germany)		male	1986.0	physics
+540	267	Donald J.	Cram	4/22/1919	6/17/2001	USA	USA	male	1987.0	chemistry
+541	268	Jean-Marie	Lehn	9/30/1939	0000-00-00	France		male	1987.0	chemistry
+542	268	Jean-Marie	Lehn	9/30/1939	0000-00-00	France		male	1987.0	chemistry
+543	269	Charles J.	Pedersen	10/3/1904	10/26/1989	Korea (now South Korea)	USA	male	1987.0	chemistry
+544	59	Edward Mills	Purcell	8/30/1912	3/7/1997	USA	USA	male	1952.0	physics
+545	58	Felix	Bloch	10/23/1905	9/10/1983	Switzerland	Switzerland	male	1952.0	physics
+546	757	Koichi	Tanaka	8/3/1959	0000-00-00	Japan		male	2002.0	chemistry
+547	756	John B.	Fenn	6/15/1917	12/10/2010	USA	USA	male	2002.0	chemistry
+548	253	Georg	Wittig	06/16/1897	8/26/1987	Germany	West Germany (now Germany)	male	1979.0	chemistry
+549	252	Herbert C.	Brown	5/22/1912	12/19/2004	United Kingdom	USA	male	1979.0	chemistry
+550	916	William C.	Campbell	6/28/1930	0000-00-00	Ireland		male	2015.0	medicine
+551	917	Satoshi	&#332;mura	7/12/1935	0000-00-00	Japan		male	2015.0	medicine
+552	381	Andr_	Lwoff	5/8/1902	9/30/1994	France	France	male	1965.0	medicine
+553	382	Jacques	Monod	2/9/1910	5/31/1976	France	France	male	1965.0	medicine
+554	380	Franois	Jacob	6/17/1920	4/19/2013	France	France	male	1965.0	medicine
+555	750	Sydney	Brenner	1/13/1927	0000-00-00	South Africa		male	2002.0	medicine
+556	752	John E.	Sulston	3/27/1942	0000-00-00	United Kingdom		male	2002.0	medicine
+557	751	H. Robert	Horvitz	5/8/1947	0000-00-00	USA		male	2002.0	medicine
+558	421	George D.	Snell	12/19/1903	6/6/1996	USA	USA	male	1980.0	medicine
+559	419	Baruj	Benacerraf	10/29/1920	8/2/2011	Venezuela	USA	male	1980.0	medicine
+560	420	Jean	Dausset	10/19/1916	6/6/2009	France	Spain	male	1980.0	medicine
+561	361	Werner	Forssmann	8/29/1904	6/1/1979	Germany	West Germany (now Germany)	male	1956.0	medicine
+562	361	Werner	Forssmann	8/29/1904	6/1/1979	Germany	West Germany (now Germany)	male	1956.0	medicine
+563	360	Andr_ Fr_d_ric	Cournand	09/24/1895	2/19/1988	France	USA	male	1956.0	medicine
+564	362	Dickinson W.	Richards	10/30/1895	2/23/1973	USA	USA	male	1956.0	medicine
+565	424	Torsten N.	Wiesel	6/3/1924	0000-00-00	Sweden		male	1981.0	medicine
+566	423	David H.	Hubel	2/27/1926	9/22/2013	Canada	USA	male	1981.0	medicine
+567	328	William Parry	Murphy	02/06/1892	10/9/1987	USA	USA	male	1934.0	medicine
+568	327	George Richards	Minot	12/02/1885	2/25/1950	USA	USA	male	1934.0	medicine
+569	328	William Parry	Murphy	02/06/1892	10/9/1987	USA	USA	male	1934.0	medicine
+570	326	George Hoyt	Whipple	08/28/1878	2/1/1976	USA	USA	male	1934.0	medicine
+571	765	Sir Peter	Mansfield	10/9/1933	0000-00-00	United Kingdom		male	2003.0	medicine
+572	764	Paul C.	Lauterbur	5/6/1929	3/27/2007	USA	USA	male	2003.0	medicine
+573	410	D. Carleton	Gajdusek	9/9/1923	12/12/2008	USA	Norway	male	1976.0	medicine
+574	409	Baruch S.	Blumberg	7/28/1925	4/5/2011	USA	USA	male	1976.0	medicine
+575	458	Robert F.	Furchgott	6/4/1916	5/19/2009	USA	USA	male	1998.0	medicine
+576	460	Ferid	Murad	9/14/1936	0000-00-00	USA		male	1998.0	medicine
+577	459	Louis J.	Ignarro	5/31/1941	0000-00-00	USA		male	1998.0	medicine
+578	80	J. Hans D.	Jensen	6/25/1907	2/11/1973	Germany	West Germany (now Germany)	male	1963.0	physics
+579	442	Joseph E.	Murray	4/1/1919	11/26/2012	USA	USA	male	1990.0	medicine
+580	443	E. Donnall	Thomas	3/15/1920	10/20/2012	USA	USA	male	1990.0	medicine
+581	401	Konrad	Lorenz	11/7/1903	2/27/1989	Austria	Austria	male	1973.0	medicine
+582	400	Karl	von Frisch	11/20/1886	6/12/1982	Austria	West Germany (now Germany)	male	1973.0	medicine
+583	402	Nikolaas	Tinbergen	4/15/1907	12/21/1988	the Netherlands	United Kingdom	male	1973.0	medicine
+584	427	John R.	Vane	3/29/1927	11/19/2004	United Kingdom	United Kingdom	male	1982.0	medicine
+585	426	Bengt I.	Samuelsson	5/21/1934	0000-00-00	Sweden		male	1982.0	medicine
+586	425	Sune K.	Bergstr_m	1/10/1916	8/15/2004	Sweden	Sweden	male	1982.0	medicine
+587	447	Edwin G.	Krebs	6/6/1918	12/21/2009	USA	USA	male	1992.0	medicine
+588	446	Edmond H.	Fischer	4/6/1920	0000-00-00	China		male	1992.0	medicine
+589	722	Arvid	Carlsson	1/25/1923	0000-00-00	Sweden		male	2000.0	medicine
+590	723	Paul	Greengard	12/11/1925	0000-00-00	USA		male	2000.0	medicine
+591	724	Eric R.	Kandel	11/7/1929	0000-00-00	Austria		male	2000.0	medicine
+592	861	Bruce A.	Beutler	12/29/1957	0000-00-00	USA		male	2011.0	medicine
+593	861	Bruce A.	Beutler	12/29/1957	0000-00-00	USA		male	2011.0	medicine
+594	862	Jules A.	Hoffmann	8/2/1941	0000-00-00	Luxembourg		male	2011.0	medicine
+595	398	Gerald M.	Edelman	7/1/1929	5/17/2014	USA	USA	male	1972.0	medicine
+596	399	Rodney R.	Porter	10/8/1917	9/6/1985	United Kingdom	United Kingdom	male	1972.0	medicine
+597	444	Erwin	Neher	3/20/1944	0000-00-00	Germany		male	1991.0	medicine
+598	445	Bert	Sakmann	6/12/1942	0000-00-00	Germany		male	1991.0	medicine
+599	452	Edward B.	Lewis	5/19/1918	7/21/2004	USA	USA	male	1995.0	medicine
+600	454	Eric F.	Wieschaus	6/8/1947	0000-00-00	USA		male	1995.0	medicine
+601	396	Julius	Axelrod	5/30/1912	12/29/2004	USA	USA	male	1970.0	medicine
+602	394	Sir Bernard	Katz	3/26/1911	4/20/2003	Germany	United Kingdom	male	1970.0	medicine
+603	395	Ulf	von Euler	2/7/1905	3/9/1983	Sweden	Sweden	male	1970.0	medicine
+604	406	David	Baltimore	3/7/1938	0000-00-00	USA		male	1975.0	medicine
+605	407	Renato	Dulbecco	2/22/1914	2/19/2012	Italy	USA	male	1975.0	medicine
+606	408	Howard Martin	Temin	12/10/1934	2/9/1994	USA	USA	male	1975.0	medicine
+607	376	Alan Lloyd	Hodgkin	2/5/1914	12/20/1998	United Kingdom	United Kingdom	male	1963.0	medicine
+608	375	Sir John Carew	Eccles	1/27/1903	5/2/1997	Australia	Switzerland	male	1963.0	medicine
+609	377	Andrew Fielding	Huxley	11/22/1917	5/30/2012	United Kingdom	United Kingdom	male	1963.0	medicine
+610	378	Konrad	Bloch	1/21/1912	10/15/2000	Germany (now Poland)	USA	male	1964.0	medicine
+611	379	Feodor	Lynen	4/6/1911	8/6/1979	Germany	Germany	male	1964.0	medicine
+612	372	Francis Harry Compton	Crick	6/8/1916	7/28/2004	United Kingdom	USA	male	1962.0	medicine
+613	373	James Dewey	Watson	4/6/1928	0000-00-00	USA		male	1962.0	medicine
+614	374	Maurice Hugh Frederick	Wilkins	12/15/1916	10/5/2004	New Zealand	United Kingdom	male	1962.0	medicine
+615	412	Andrew V.	Schally	11/30/1926	0000-00-00	Poland (now Lithuania)		male	1977.0	medicine
+616	411	Roger	Guillemin	1/11/1924	0000-00-00	France		male	1977.0	medicine
+617	387	George	Wald	11/18/1906	4/12/1997	USA	USA	male	1967.0	medicine
+618	386	Haldan Keffer	Hartline	12/22/1903	3/17/1983	USA	USA	male	1967.0	medicine
+619	385	Ragnar	Granit	10/30/1900	3/12/1991	Russian Empire (now Finland)	Sweden	male	1967.0	medicine
+620	433	Joseph L.	Goldstein	4/18/1940	0000-00-00	USA		male	1985.0	medicine
+621	432	Michael S.	Brown	4/13/1941	0000-00-00	USA		male	1985.0	medicine
+622	393	Salvador E.	Luria	8/13/1912	2/6/1991	Italy	USA	male	1969.0	medicine
+623	392	Alfred D.	Hershey	12/4/1908	5/22/1997	USA	USA	male	1969.0	medicine
+624	391	Max	Delbrôck	9/4/1906	3/9/1981	Germany	USA	male	1969.0	medicine
+625	455	Peter C.	Doherty	10/15/1940	0000-00-00	Australia		male	1996.0	medicine
+626	456	Rolf M.	Zinkernagel	1/6/1944	0000-00-00	Switzerland		male	1996.0	medicine
+627	404	Christian	de Duve	10/2/1917	5/4/2013	United Kingdom	Belgium	male	1974.0	medicine
+628	403	Albert	Claude	08/24/1898	5/22/1983	Belgium	Belgium	male	1974.0	medicine
+629	405	George E.	Palade	11/19/1912	10/7/2008	Romania	USA	male	1974.0	medicine
+630	404	Christian	de Duve	10/2/1917	5/4/2013	United Kingdom	Belgium	male	1974.0	medicine
+631	212	Edwin Mattison	McMillan	9/18/1907	9/7/1991	USA	USA	male	1951.0	chemistry
+632	213	Glenn Theodore	Seaborg	4/19/1912	2/25/1999	USA	USA	male	1951.0	chemistry
+633	229	Giulio	Natta	2/26/1903	5/2/1979	Italy	Italy	male	1963.0	chemistry
+634	228	Karl	Ziegler	11/26/1898	8/12/1973	Germany	West Germany (now Germany)	male	1963.0	chemistry
+635	903	John	O'Keefe	11/18/1939	0000-00-00	USA		male	2014.0	medicine
+636	905	Edvard I.	Moser	4/27/1962	0000-00-00	Norway		male	2014.0	medicine
+637	434	Stanley	Cohen	11/17/1922	0000-00-00	USA		male	1986.0	medicine
+638	437	Sir James W.	Black	6/14/1924	3/21/2010	Scotland		male	1988.0	medicine
+639	439	George H.	Hitchings	4/18/1905	2/27/1998	USA	USA	male	1988.0	medicine
+640	736	Tim	Hunt	2/19/1943	0000-00-00	United Kingdom		male	2001.0	medicine
+641	737	Sir Paul M.	Nurse	1/25/1949	0000-00-00	United Kingdom		male	2001.0	medicine
+642	735	Leland H.	Hartwell	10/30/1939	0000-00-00	USA		male	2001.0	medicine
+643	885	Randy W.	Schekman	12/30/1948	0000-00-00	USA		male	2013.0	medicine
+644	884	James E.	Rothman	11/3/1950	0000-00-00	USA		male	2013.0	medicine
+645	886	Thomas C.	Sôdhof	12/22/1955	0000-00-00	Germany		male	2013.0	medicine
+646	885	Randy W.	Schekman	12/30/1948	0000-00-00	USA		male	2013.0	medicine
+647	886	Thomas C.	Sôdhof	12/22/1955	0000-00-00	Germany		male	2013.0	medicine
+648	774	Richard	Axel	7/2/1946	0000-00-00	USA		male	2004.0	medicine
+649	812	Sir Martin J.	Evans	1/1/1941	0000-00-00	United Kingdom		male	2007.0	medicine
+650	813	Oliver	Smithies	6/23/1925	0000-00-00	United Kingdom		male	2007.0	medicine
+651	811	Mario R.	Capecchi	10/6/1937	0000-00-00	Italy		male	2007.0	medicine
+652	811	Mario R.	Capecchi	10/6/1937	0000-00-00	Italy		male	2007.0	medicine
+653	448	Richard J.	Roberts	9/6/1943	0000-00-00	United Kingdom		male	1993.0	medicine
+654	449	Phillip A.	Sharp	6/6/1944	0000-00-00	USA		male	1993.0	medicine
+655	324	Edgar Douglas	Adrian	11/30/1889	8/8/1977	United Kingdom	United Kingdom	male	1932.0	medicine
+656	323	Sir Charles Scott	Sherrington	11/27/1857	3/4/1952	United Kingdom	United Kingdom	male	1932.0	medicine
+657	331	Otto	Loewi	06/03/1873	12/25/1961	Germany	USA	male	1936.0	medicine
+658	330	Sir Henry Hallett	Dale	06/09/1875	7/23/1968	United Kingdom	United Kingdom	male	1936.0	medicine
+659	338	Herbert Spencer	Gasser	07/05/1888	5/11/1963	USA	USA	male	1944.0	medicine
+660	337	Joseph	Erlanger	01/05/1874	12/5/1965	USA	USA	male	1944.0	medicine
+661	350	Tadeus	Reichstein	07/20/1897	8/1/1996	Poland	Switzerland	male	1950.0	medicine
+662	349	Edward Calvin	Kendall	03/08/1886	5/4/1972	USA	USA	male	1950.0	medicine
+663	351	Philip Showalter	Hench	02/28/1896	3/30/1965	USA	Jamaica	male	1950.0	medicine
+664	211	Kurt	Alder	7/10/1902	6/20/1958	Prussia (now Poland)	West Germany (now Germany)	male	1950.0	chemistry
+665	210	Otto Paul Hermann	Diels	01/23/1876	3/7/1954	Germany	West Germany (now Germany)	male	1950.0	chemistry
+666	156	Horst L.	St_rmer	4/6/1949	0000-00-00	West Germany (now Germany)		male	1998.0	physics
+667	157	Daniel C.	Tsui	2/28/1939	0000-00-00	China		male	1998.0	physics
+668	155	Robert B.	Laughlin	11/1/1950	0000-00-00	USA		male	1998.0	physics
+669	274	Thomas R.	Cech	12/8/1947	0000-00-00	USA		male	1989.0	chemistry
+670	273	Sidney	Altman	5/7/1939	0000-00-00	Canada		male	1989.0	chemistry
+671	111	Arno Allan	Penzias	4/26/1933	0000-00-00	Germany		male	1978.0	physics
+672	112	Robert Woodrow	Wilson	1/10/1936	0000-00-00	USA		male	1978.0	physics
+673	285	Sir Harold W.	Kroto	10/7/1939	4/30/2016	United Kingdom	United Kingdom	male	1996.0	chemistry
+674	284	Robert F.	Curl Jr.	8/23/1933	0000-00-00	USA		male	1996.0	chemistry
+675	286	Richard E.	Smalley	6/6/1943	10/28/2005	USA	USA	male	1996.0	chemistry
+676	450	Alfred G.	Gilman	7/1/1941	12/23/2015	USA	USA	male	1994.0	medicine
+677	451	Martin	Rodbell	12/1/1925	12/7/1998	USA	USA	male	1994.0	medicine
+678	825	Luc	Montagnier	8/18/1932	0000-00-00	France		male	2008.0	medicine
+679	802	Andrew Z.	Fire	4/27/1959	0000-00-00	USA		male	2006.0	medicine
+680	803	Craig C.	Mello	10/19/1960	0000-00-00	USA		male	2006.0	medicine
+681	149	David M.	Lee	1/20/1931	0000-00-00	USA		male	1996.0	physics
+682	151	Robert C.	Richardson	6/26/1937	2/19/2013	USA	USA	male	1996.0	physics
+683	150	Douglas D.	Osheroff	8/1/1945	0000-00-00	USA		male	1996.0	physics
+684	357	Thomas Huckle	Weller	6/15/1915	8/23/2008	USA	USA	male	1954.0	medicine
+685	356	John Franklin	Enders	02/10/1897	9/8/1985	USA	USA	male	1954.0	medicine
+686	356	John Franklin	Enders	02/10/1897	9/8/1985	USA	USA	male	1954.0	medicine
+687	358	Frederick Chapman	Robbins	8/25/1916	8/4/2003	USA	USA	male	1954.0	medicine
+688	72	Emilio Gino	Segr	2/1/1905	4/22/1989	Italy	USA	male	1959.0	physics
+689	73	Owen	Chamberlain	7/10/1920	2/28/2006	USA	USA	male	1959.0	physics
+690	789	Barry J.	Marshall	9/30/1951	0000-00-00	Australia		male	2005.0	medicine
+691	790	J. Robin	Warren	6/11/1937	0000-00-00	Australia		male	2005.0	medicine
+692	789	Barry J.	Marshall	9/30/1951	0000-00-00	Australia		male	2005.0	medicine
+693	805	George F.	Smoot	2/20/1945	0000-00-00	USA		male	2006.0	physics
+694	804	John C.	Mather	8/7/1946	0000-00-00	USA		male	2006.0	physics
+695	440	J. Michael	Bishop	2/22/1936	0000-00-00	USA		male	1989.0	medicine
+696	441	Harold E.	Varmus	12/18/1939	0000-00-00	USA		male	1989.0	medicine
+697	343	Carl Ferdinand	Cori	12/05/1896	10/20/1984	Austria-Hungary (now Czech Republic)	USA	male	1947.0	medicine
+698	30	James	Franck	08/26/1882	5/21/1964	Germany	West Germany (now Germany)	male	1925.0	physics
+699	31	Gustav Ludwig	Hertz	07/22/1887	10/30/1975	Germany	East Germany	male	1925.0	physics
+700	367	Severo	Ochoa	9/24/1905	11/1/1993	Spain	Spain	male	1959.0	medicine
+701	368	Arthur	Kornberg	3/3/1918	10/26/2007	USA	USA	male	1959.0	medicine
+702	365	Edward Lawrie	Tatum	12/14/1909	11/5/1975	USA	USA	male	1958.0	medicine
+703	364	George Wells	Beadle	10/22/1903	6/9/1989	USA	USA	male	1958.0	medicine
+704	819	Albert Arnold (Al)	Gore Jr.	3/31/1948	0000-00-00	USA		male	2007.0	peace
+705	809	Muhammad	Yunus	6/28/1940	0000-00-00	British India (now Bangladesh)		male	2006.0	peace
+706	559	Yitzhak	Rabin	3/1/1922	11/4/1995	British Mandate of Palestine (now Israel)	Israel	male	1994.0	peace
+707	558	Shimon	Peres	8/16/1923	9/28/2016	Poland (now Belarus)	Israel	male	1994.0	peace
+708	557	Yasser	Arafat	8/24/1929	11/11/2004	Egypt		male	1994.0	peace
+709	560	Joseph	Rotblat	11/4/1908	8/31/2005	Russian Empire (now Poland)	United Kingdom	male	1995.0	peace
+710	566	John	Hume	1/18/1937	0000-00-00	Northern Ireland		male	1998.0	peace
+711	567	David	Trimble	10/15/1944	0000-00-00	Northern Ireland		male	1998.0	peace
+712	798	Mohamed	ElBaradei	6/17/1942	0000-00-00	Egypt		male	2005.0	peace
+713	288	John E.	Walker	1/7/1941	0000-00-00	United Kingdom		male	1997.0	chemistry
+714	287	Paul D.	Boyer	7/31/1918	0000-00-00	USA		male	1997.0	chemistry
+715	894	Eugene F.	Fama	2/14/1939	0000-00-00	USA		male	2013.0	economics
+716	895	Lars Peter	Hansen	10/26/1952	0000-00-00	USA		male	2013.0	economics
+717	896	Robert J.	Shiller	3/29/1946	0000-00-00	USA		male	2013.0	economics
+718	872	Thomas J.	Sargent	7/19/1943	0000-00-00	USA		male	2011.0	economics
+719	873	Christopher A.	Sims	10/21/1942	0000-00-00	USA		male	2011.0	economics
+720	98	Ivar	Giaever	4/5/1929	0000-00-00	Norway		male	1973.0	physics
+721	97	Leo	Esaki	3/12/1925	0000-00-00	Japan		male	1973.0	physics
+722	45	George Paget	Thomson	05/03/1892	9/10/1975	United Kingdom	United Kingdom	male	1937.0	physics
+723	44	Clinton Joseph	Davisson	10/22/1881	2/1/1958	USA	USA	male	1937.0	physics
+724	715	James A.	Mirrlees	7/5/1936	0000-00-00	Scotland		male	1996.0	economics
+725	716	William	Vickrey	6/21/1914	10/11/1996	Canada	USA	male	1996.0	economics
+726	108	Sir Nevill Francis	Mott	9/30/1905	8/8/1996	United Kingdom	United Kingdom	male	1977.0	physics
+727	109	John Hasbrouck	van Vleck	03/13/1899	10/27/1980	USA	USA	male	1977.0	physics
+728	107	Philip Warren	Anderson	12/13/1923	0000-00-00	USA		male	1977.0	physics
+729	85	Julian	Schwinger	2/12/1918	7/16/1994	USA	USA	male	1965.0	physics
+730	86	Richard P.	Feynman	5/11/1918	2/15/1988	USA	USA	male	1965.0	physics
+731	84	Sin-Itiro	Tomonaga	3/31/1906	7/8/1979	Japan	Japan	male	1965.0	physics
+732	130	J. Georg	Bednorz	5/16/1950	0000-00-00	West Germany (now Germany)		male	1987.0	physics
+733	131	K. Alexander	Môller	4/19/1927	0000-00-00	Switzerland		male	1987.0	physics
+734	390	Marshall W.	Nirenberg	4/10/1927	1/15/2010	USA	USA	male	1968.0	medicine
+735	388	Robert W.	Holley	1/28/1922	2/11/1993	USA	USA	male	1968.0	medicine
+736	389	Har Gobind	Khorana	1/9/1922	11/9/2011	India	USA	male	1968.0	medicine
+737	215	Richard Laurence Millington	Synge	10/28/1914	8/18/1994	United Kingdom	United Kingdom	male	1952.0	chemistry
+738	214	Archer John Porter	Martin	3/1/1910	7/28/2002	United Kingdom	United Kingdom	male	1952.0	chemistry
+739	186	Arthur	Harden	10/12/1865	6/17/1940	United Kingdom	United Kingdom	male	1929.0	chemistry
+740	187	Hans Karl August Simon	von Euler-Chelpin	02/15/1873	11/6/1964	Germany	Sweden	male	1929.0	chemistry
+741	96	John Robert	Schrieffer	5/31/1931	0000-00-00	USA		male	1972.0	physics
+742	95	Leon Neil	Cooper	2/28/1930	0000-00-00	USA		male	1972.0	physics
+743	66	John	Bardeen	5/23/1908	1/30/1991	USA	USA	male	1972.0	physics
+744	262	Herbert A.	Hauptman	2/14/1917	10/23/2011	USA	USA	male	1985.0	chemistry
+745	263	Jerome	Karle	6/18/1918	6/6/2013	USA		male	1985.0	chemistry
+746	690	James E.	Meade	6/23/1907	12/22/1995	United Kingdom	United Kingdom	male	1977.0	economics
+747	689	Bertil	Ohlin	04/23/1899	8/3/1979	Sweden	Sweden	male	1977.0	economics
+748	69	Tsung-Dao (T.D.)	Lee	11/24/1926	0000-00-00	China		male	1957.0	physics
+749	68	Chen Ning	Yang	9/22/1922	0000-00-00	China		male	1957.0	physics
+750	57	Ernest Thomas Sinton	Walton	10/6/1903	6/25/1995	Ireland	Northern Ireland	male	1951.0	physics
+751	56	Sir John Douglas	Cockcroft	05/27/1897	9/18/1967	United Kingdom	United Kingdom	male	1951.0	physics
+752	711	John C.	Harsanyi	5/29/1920	8/9/2000	Hungary	USA	male	1994.0	economics
+753	713	Reinhard	Selten	10/5/1930	8/23/2016	Germany (now Poland)	Poland	male	1994.0	economics
+754	712	John F.	Nash Jr.	6/13/1928	5/23/2015	USA	USA	male	1994.0	economics
+755	682	Kenneth J.	Arrow	8/23/1921	0000-00-00	USA		male	1972.0	economics
+756	681	John R.	Hicks	4/8/1904	5/20/1989	United Kingdom	United Kingdom	male	1972.0	economics
+757	138	Jerome I.	Friedman	3/28/1930	0000-00-00	USA		male	1990.0	physics
+758	139	Henry W.	Kendall	12/9/1926	2/15/1999	USA	USA	male	1990.0	physics
+759	140	Richard E.	Taylor	11/2/1929	0000-00-00	Canada		male	1990.0	physics
+760	100	Sir Martin	Ryle	9/27/1918	10/14/1984	United Kingdom	United Kingdom	male	1974.0	physics
+761	101	Antony	Hewish	5/11/1924	0000-00-00	United Kingdom		male	1974.0	physics
+762	692	Theodore W.	Schultz	4/30/1902	2/26/1998	USA	USA	male	1979.0	economics
+763	693	Sir Arthur	Lewis	1/23/1915	6/15/1991	British West Indies (now Saint Lucia)	Barbados	male	1979.0	economics
+764	106	Samuel Chao Chung	Ting	1/27/1936	0000-00-00	USA		male	1976.0	physics
+765	105	Burton	Richter	3/22/1931	0000-00-00	USA		male	1976.0	physics
+766	705	Merton H.	Miller	5/16/1923	6/3/2000	USA	USA	male	1990.0	economics
+767	704	Harry M.	Markowitz	8/24/1927	0000-00-00	USA		male	1990.0	economics
+768	706	William F.	Sharpe	6/16/1934	0000-00-00	USA		male	1990.0	economics
+769	684	Gunnar	Myrdal	12/06/1898	5/17/1987	Sweden	Sweden	male	1974.0	economics
+770	685	Friedrich August	von Hayek	05/08/1899	3/23/1992	Austria	Germany	male	1974.0	economics
+771	245	Geoffrey	Wilkinson	7/14/1921	9/26/1996	United Kingdom	United Kingdom	male	1973.0	chemistry
+772	244	Ernst Otto	Fischer	11/10/1918	7/23/2007	Germany	Germany	male	1973.0	chemistry
+773	206	Wendell Meredith	Stanley	8/16/1904	6/15/1971	USA	Spain	male	1946.0	chemistry
+774	205	John Howard	Northrop	07/05/1891	5/27/1987	USA	USA	male	1946.0	chemistry
+775	220	Nikolay Nikolaevich	Semenov	04/03/1896	9/25/1986	Russia	USSR	male	1956.0	chemistry
+776	219	Sir Cyril Norman	Hinshelwood	05/19/1897	10/9/1967	United Kingdom	United Kingdom	male	1956.0	chemistry
+777	65	William Bradford	Shockley	2/13/1910	8/12/1989	United Kingdom	USA	male	1956.0	physics
+778	67	Walter Houser	Brattain	2/10/1902	10/13/1987	China	USA	male	1956.0	physics
+779	66	John	Bardeen	5/23/1908	1/30/1991	USA	USA	male	1956.0	physics
+780	20	Sir William Henry	Bragg	07/02/1862	3/12/1942	United Kingdom	United Kingdom	male	1915.0	physics
+781	21	William Lawrence	Bragg	03/31/1890	7/1/1971	Australia	United Kingdom	male	1915.0	physics
+782	913	Kailash	Satyarthi	1/11/1954	0000-00-00	India		male	2014.0	peace
+783	234	Ronald George Wreyford	Norrish	11/09/1897	6/7/1978	United Kingdom	United Kingdom	male	1967.0	chemistry
+784	233	Manfred	Eigen	5/9/1927	0000-00-00	Germany		male	1967.0	chemistry
+785	235	George	Porter	12/6/1920	8/31/2002	United Kingdom	United Kingdom	male	1967.0	chemistry
+786	226	Max Ferdinand	Perutz	5/19/1914	2/6/2002	Austria	United Kingdom	male	1962.0	chemistry
+787	227	John Cowdery	Kendrew	3/24/1917	8/23/1997	United Kingdom	United Kingdom	male	1962.0	chemistry
+788	258	Roald	Hoffmann	7/18/1937	0000-00-00	Poland (now Ukraine)		male	1981.0	chemistry
+789	257	Kenichi	Fukui	10/4/1918	1/9/1998	Japan	Japan	male	1981.0	chemistry
+790	749	Kofi	Annan	4/8/1938	0000-00-00	Gold Coast (now Ghana)		male	2001.0	peace
+791	556	Frederik Willem	de Klerk	3/18/1936	0000-00-00	South Africa		male	1993.0	peace
+792	555	Nelson	Mandela	7/18/1918	12/5/2013	South Africa	South Africa	male	1993.0	peace
+793	282	Mario J.	Molina	3/19/1943	0000-00-00	Mexico		male	1995.0	chemistry
+794	283	F. Sherwood	Rowland	6/28/1927	3/10/2012	USA	USA	male	1995.0	chemistry
+795	281	Paul J.	Crutzen	12/3/1933	0000-00-00	the Netherlands		male	1995.0	chemistry
+796	742	Ryoji	Noyori	9/3/1938	0000-00-00	Japan		male	2001.0	chemistry
+797	741	William S.	Knowles	6/1/1917	6/13/2012	USA	USA	male	2001.0	chemistry
+798	562	Carlos Filipe Ximenes	Belo	2/3/1948	0000-00-00	East Timor		male	1996.0	peace
+799	563	Jos_	Ramos-Horta	12/26/1949	0000-00-00	East Timor		male	1996.0	peace
+800	929	F. Duncan M.	Haldane	0000/00/00	0000-00-00	United Kingdom		male	2016.0	physics
+801	930	J. Michael	Kosterlitz	0000/00/00	0000-00-00	United Kingdom		male	2016.0	physics
+802	928	David J.	Thouless	0000/00/00	0000-00-00	United Kingdom		male	2016.0	physics
+803	430	Georges J.F.	K_hler	4/17/1946	3/1/1995	Germany	Germany	male	1984.0	medicine
+804	429	Niels K.	Jerne	12/23/1911	10/7/1994	United Kingdom	France	male	1984.0	medicine
+805	431	C_sar	Milstein	10/8/1927	3/24/2002	Argentina	United Kingdom	male	1984.0	medicine
+806	672	Seamus	Heaney	4/13/1939	8/30/2013	Northern Ireland	Ireland	male	1995.0	literature
+807	761	Imre	Kert_sz	11/9/1929	0000-00-00	Hungary	Hungary	male	2002.0	literature
+808	658	Elias	Canetti	7/25/1905	8/14/1994	Bulgaria	Switzerland	male	1981.0	literature
+809	650	Harry	Martinson	5/6/1904	2/11/1978	Sweden	Sweden	male	1974.0	literature
+810	581	Count Maurice (Mooris) Polidore Marie Bernhard	Maeterlinck	08/29/1862	5/6/1949	Belgium	France	male	1911.0	literature
+811	577	Rudyard	Kipling	12/30/1865	1/18/1936	British India (now India)	United Kingdom	male	1907.0	literature
+812	175	Theodore William	Richards	01/31/1868	4/2/2028	USA	USA	male	1914.0	chemistry
+813	590	Anatole	France	04/16/1844	10/12/2024	France	France	male	1921.0	literature
+814	295	Niels Ryberg	Finsen	12/15/1860	9/24/2004	Faroe Islands (Denmark)	Denmark	male	1903.0	medicine
+815	578	Rudolf Christoph	Eucken	01/05/1846	9/14/2026	East Friesland (now Germany)	Germany	male	1908.0	literature
+816	600	Henri	Bergson	10/18/1859	1/4/1941	France	France	male	1927.0	literature
+817	164	Johann Friedrich Wilhelm Adolf	von Baeyer	10/31/1835	8/20/2017	Prussia (now Germany)	Germany	male	1905.0	chemistry
+818	163	Sir William	Ramsay	10/02/1852	7/23/2016	Scotland	United Kingdom	male	1904.0	chemistry
+819	169	Otto	Wallach	03/27/1847	2/26/1931	Germany (now Russia)	Germany	male	1910.0	chemistry
+820	585	Carl Gustaf Verner	von Heidenstam	07/06/1859	5/20/1940	Sweden	Sweden	male	1916.0	literature
+821	621	Earl (Bertrand Arthur William)	Russell	05/18/1872	2/2/1970	United Kingdom	United Kingdom	male	1950.0	literature
+822	178	Walther Hermann	Nernst	06/25/1864	11/18/1941	Prussia (now Germany)	Germany	male	1920.0	chemistry
+823	307	Charles Robert	Richet	08/26/1850	12/4/1935	France	France	male	1913.0	medicine
+824	168	Wilhelm	Ostwald	09/02/1853	4/4/1932	Russian Empire (now Latvia)	Germany	male	1909.0	chemistry
+825	174	Alfred	Werner	12/12/1866	11/15/2019	France	Switzerland	male	1913.0	chemistry
+826	296	Ivan Petrovich	Pavlov	09/14/1849	2/27/1936	Russia	Russia	male	1904.0	medicine
+827	300	Charles Louis Alphonse	Laveran	06/18/1845	5/18/2022	France	France	male	1907.0	medicine
+828	306	Alexis	Carrel	06/28/1873	11/5/1944	France	France	male	1912.0	medicine
+829	304	Albrecht	Kossel	09/16/1853	7/5/2027	Mecklenburg (now Germany)	Germany	male	1910.0	medicine
+830	3	Pieter	Zeeman	05/25/1865	10/9/1943	the Netherlands	the Netherlands	male	1902.0	physics
+831	2	Hendrik Antoon	Lorentz	07/18/1853	2/4/1928	the Netherlands	the Netherlands	male	1902.0	physics
+832	4	Antoine Henri	Becquerel	12/15/1852	8/25/1908	France	France	male	1903.0	physics
+833	161	Hermann Emil	Fischer	10/09/1852	7/15/2019	Prussia (now Germany)	Germany	male	1902.0	chemistry
+834	160	Jacobus Henricus	van 't Hoff	08/30/1852	3/1/2011	the Netherlands	Germany	male	1901.0	chemistry
+835	1	Wilhelm Conrad	R_ntgen	03/27/1845	2/10/1923	Prussia (now Germany)	Germany	male	1901.0	physics
+836	162	Svante August	Arrhenius	02/19/1859	10/2/2027	Sweden	Sweden	male	1903.0	chemistry
+837	5	Pierre	Curie	05/15/1859	4/19/1906	France	France	male	1903.0	physics
+838	573	Fr_d_ric	Mistral	09/08/1830	3/25/2014	France	France	male	1904.0	literature
+839	10	Joseph John	Thomson	12/18/1856	8/30/1940	United Kingdom	United Kingdom	male	1906.0	physics
+840	165	Henri	Moissan	09/28/1852	2/20/2007	France	France	male	1906.0	chemistry
+841	574	Jos_	Echegaray y Eizaguirre	04/19/1832	9/4/2016	Spain	Spain	male	1904.0	literature
+842	25	Charles Edouard	Guillaume	02/15/1861	6/13/1938	Switzerland	France	male	1920.0	physics
+843	23	Max Karl Ernst Ludwig	Planck	04/23/1858	10/4/1947	Schleswig (now Germany)	West Germany (now Germany)	male	1918.0	physics
+844	13	Guglielmo	Marconi	04/25/1874	7/20/1937	Italy	Italy	male	1909.0	physics
+845	14	Karl Ferdinand	Braun	06/06/1850	4/19/1918	Hesse-Kassel (now Germany)	USA	male	1909.0	physics
+846	189	Carl	Bosch	08/27/1874	4/26/1940	Germany	Germany	male	1931.0	chemistry
+847	189	Carl	Bosch	08/27/1874	4/26/1940	Germany	Germany	male	1931.0	chemistry
+848	190	Friedrich	Bergius	10/11/1884	3/30/1949	Germany (now Poland)	Argentina	male	1931.0	chemistry
+849	190	Friedrich	Bergius	10/11/1884	3/30/1949	Germany (now Poland)	Argentina	male	1931.0	chemistry
+850	193	Fr_d_ric	Joliot	3/19/1900	8/14/1958	France	France	male	1935.0	chemistry
+851	302	Paul	Ehrlich	03/14/1854	8/20/2015	Prussia (now Poland)	Germany	male	1908.0	medicine
+852	302	Paul	Ehrlich	03/14/1854	8/20/2015	Prussia (now Poland)	Germany	male	1908.0	medicine
+853	301	Ilya Ilyich	Mechnikov	05/15/1845	7/15/2016	Russian Empire (now Ukraine)	France	male	1908.0	medicine
+854	299	Santiago	Ramn y Cajal	05/01/1852	10/17/1934	Spain	Spain	male	1906.0	medicine
+855	298	Camillo	Golgi	07/07/1843	1/21/2026	Italy	Italy	male	1906.0	medicine
+856	588	Carl Friedrich Georg	Spitteler	04/24/1845	12/29/2024	Switzerland	Switzerland	male	1919.0	literature
+857	569	Sully	Prudhomme	03/16/1839	9/7/2007	France	France	male	1901.0	literature
+858	576	Giosu	Carducci	07/27/1835	2/16/2007	Tuscany (now Italy)	Italy	male	1906.0	literature
+859	582	Gerhart Johann Robert	Hauptmann	11/15/1862	6/6/1946	Prussia (now Germany)	Germany (now Poland)	male	1912.0	literature
+860	602	Thomas	Mann	06/06/1875	8/12/1955	Germany	Switzerland	male	1929.0	literature
+861	571	Christian Matthias Theodor	Mommsen	11/30/1817	11/1/2003	Schleswig (now Germany)	Germany	male	1902.0	literature
+862	604	Erik Axel	Karlfeldt	07/20/1864	4/8/1931	Sweden	Sweden	male	1931.0	literature
+863	674	Dario	Fo	3/24/1926	0000-00-00	Italy		male	1997.0	literature
+864	663	Wole	Soyinka	7/13/1934	0000-00-00	Nigeria		male	1986.0	literature
+865	662	Claude	Simon	10/10/1913	7/6/2005	Madagascar	France	male	1985.0	literature
+866	801	Harold	Pinter	10/10/1930	12/24/2008	United Kingdom	United Kingdom	male	2005.0	literature
+867	763	John M.	Coetzee	2/9/1940	0000-00-00	South Africa		male	2003.0	literature
+868	808	Orhan	Pamuk	6/7/1952	0000-00-00	Turkey		male	2006.0	literature
+869	880	Mo	Yan	2/2/1955	0000-00-00	China		male	2012.0	literature
+870	675	Jos_	Saramago	11/16/1922	6/18/2010	Portugal	Spain	male	1998.0	literature
+871	671	Kenzaburo	Oe	1/31/1935	0000-00-00	Japan		male	1994.0	literature
+872	657	Czeslaw	Milosz	6/30/1911	8/14/2004	Russian Empire (now Lithuania)	Poland	male	1980.0	literature
+873	665	Naguib	Mahfouz	12/11/1911	8/30/2006	Egypt	Egypt	male	1988.0	literature
+874	676	Gônter	Grass	10/16/1927	4/13/2015	Free City of Danzig (now Poland)	Germany	male	1999.0	literature
+875	511	Ralph	Bunche	8/7/1904	12/9/1971	USA	USA	male	1950.0	peace
+876	497	Nicholas Murray	Butler	04/02/1862	12/7/1947	USA	USA	male	1931.0	peace
+877	472	Louis	Renault	05/21/1843	2/8/2018	France	France	male	1907.0	peace
+878	217	Linus Carl	Pauling	2/28/1901	8/19/1994	USA	USA	male	1962.0	peace
+879	546	Desmond Mpilo	Tutu	10/7/1931	0000-00-00	South Africa		male	1984.0	peace
+880	541	Adolfo	P_rez Esquivel	11/26/1931	0000-00-00	Argentina		male	1980.0	peace
+881	551	The 14th Dalai Lama (Tenzin Gyatso)		7/6/1935	0000-00-00	Tibet (now People's Republic of China)		male	1989.0	peace
+882	545	Lech	Walesa	9/29/1943	0000-00-00	Poland		male	1983.0	peace
+883	533	Eisaku	Sato	3/27/1901	6/3/1975	Japan	Japan	male	1974.0	peace
+884	532	Sen	MacBride	1/26/1904	1/15/1988	France	Ireland	male	1974.0	peace
+885	520	Dag Hjalmar Agne Carl	Hammarskj_ld	7/29/1905	9/18/1961	Sweden	Northern Rhodesia (now Zambia)	male	1961.0	peace
+886	517	Georges	Pire	2/10/1910	1/30/1969	Belgium	Belgium	male	1958.0	peace
+887	544	Alfonso	GarcÍa Robles	3/19/1911	9/2/1991	Mexico		male	1982.0	peace
+888	531	Le Duc Tho		10/14/1911	10/13/1990	Vietnam	Vietnam	male	1973.0	peace
+889	539	Menachem	Begin	8/16/1913	3/9/1992	Russian Empire (now Belarus)	Israel	male	1978.0	peace
+890	529	Willy	Brandt	12/18/1913	10/8/1992	Germany	Germany	male	1971.0	peace
+891	528	Norman E.	Borlaug	3/25/1914	9/12/2009	USA	USA	male	1970.0	peace
+892	538	Mohamed Anwar	al-Sadat	12/25/1918	10/6/1981	Egypt	Egypt	male	1978.0	peace
+893	534	Andrei Dmitrievich	Sakharov	5/21/1921	12/14/1989	Russia	USSR (now Russia)	male	1975.0	peace
+894	530	Henry A.	Kissinger	5/27/1923	0000-00-00	Germany		male	1973.0	peace
+895	548	Elie	Wiesel	9/30/1928	7/2/2016	Romania	USA	male	1986.0	peace
+896	524	Martin Luther	King Jr.	1/15/1929	4/4/1968	USA	USA	male	1964.0	peace
+897	897			0000/00/00	0000-00-00			male		
+898	898			0000/00/00	0000-00-00			male		
+899	899			0000/00/00	0000-00-00			male		
+900	900			0000/00/00	0000-00-00			male		
+901	901			0000/00/00	0000-00-00			male		
+902	902			0000/00/00	0000-00-00			male		
+903	463	Fr_d_ric	Passy	05/20/1822	6/12/2012	France	France	male	1901.0	peace
+904	466	William Randal	Cremer	03/18/1828	7/22/2008	United Kingdom	United Kingdom	male	1903.0	peace
+905	462	Jean Henry	Dunant	05/08/1828	10/30/2010	Switzerland	Switzerland	male	1901.0	peace
+906	475	Auguste Marie Franois	Beernaert	07/26/1829	10/6/2012	Belgium	Switzerland	male	1909.0	peace
+907	464	lie	Ducommun	02/19/1833	12/7/2006	Switzerland	Switzerland	male	1902.0	peace
+908	471	Ernesto Teodoro	Moneta	09/20/1833	2/10/2018	Austrian Empire (now Italy)	Italy	male	1907.0	peace
+909	474	Fredrik	Bajer	04/21/1837	1/22/2022	Denmark	Denmark	male	1908.0	peace
+910	478	Tobias Michael Carel	Asser	04/28/1838	7/29/2013	the Netherlands	the Netherlands	male	1911.0	peace
+911	492	Ferdinand	Buisson	12/20/1841	2/16/1932	France	France	male	1927.0	peace
+912	465	Charles Albert	Gobat	05/21/1843	3/16/2014	Switzerland	Switzerland	male	1902.0	peace
+913	473	Klas Pontus	Arnoldson	10/27/1844	2/20/2016	Sweden	Sweden	male	1908.0	peace
+914	480	Elihu	Root	02/15/1845	2/7/1937	USA	USA	male	1912.0	peace
+915	484	L_on Victor Auguste	Bourgeois	05/21/1851	9/29/2025	France	France	male	1920.0	peace
+916	476	Paul Henri Benjamin Balluet	d'Estournelles de Constant, Baron de Constant de Rebecque	11/22/1852	5/15/2024	France	France	male	1909.0	peace
+917	481	Henri	La Fontaine	04/22/1854	5/14/1943	Belgium	Belgium	male	1913.0	peace
+918	494	Frank Billings	Kellogg	12/22/1856	12/21/1937	USA	USA	male	1929.0	peace
+919	483	Thomas Woodrow	Wilson	12/28/1856	2/3/2024	USA	USA	male	1919.0	peace
+920	493	Ludwig	Quidde	03/23/1858	3/4/1941	Germany	Switzerland	male	1927.0	peace
+921	470	Theodore	Roosevelt	10/27/1858	1/6/2019	USA	USA	male	1906.0	peace
+922	485	Karl Hjalmar	Branting	11/23/1860	2/24/2025	Sweden	Sweden	male	1921.0	peace
+923	487	Fridtjof	Nansen	10/10/1861	5/13/1930	Norway	Norway	male	1922.0	peace
+924	490	Aristide	Briand	03/28/1862	3/7/1932	France	France	male	1926.0	peace
+925	499	Arthur	Henderson	09/13/1863	10/20/1935	Scotland	United Kingdom	male	1934.0	peace
+926	488	Sir Austen	Chamberlain	10/16/1863	3/16/1937	United Kingdom	United Kingdom	male	1925.0	peace
+927	502	Cecil of Chelwood, Viscount	(Lord Edgar Algernon Robert Gascoyne Cecil)	09/14/1864	11/24/1958	United Kingdom	United Kingdom	male	1937.0	peace
+928	479	Alfred Hermann	Fried	11/11/1864	5/5/2021	Austria	Austria	male	1911.0	peace
+929	507	John Raleigh	Mott	05/25/1865	1/31/1955	USA	USA	male	1946.0	peace
+930	489	Charles Gates	Dawes	08/27/1865	4/23/1951	USA	USA	male	1925.0	peace
+931	495	Lars Olof Jonathan (Nathan)	S_derblom	01/15/1866	7/12/1931	Sweden	Sweden	male	1930.0	peace
+932	486	Christian Lous	Lange	09/17/1869	12/11/1938	Norway	Norway	male	1921.0	peace
+933	505	Cordell	Hull	10/02/1871	7/23/1955	USA	USA	male	1945.0	peace
+934	498	Sir Norman	Angell (Ralph Lane)	12/26/1872	10/7/1967	United Kingdom	United Kingdom	male	1933.0	peace
+935	513	Albert	Schweitzer	01/14/1875	9/4/1965	Germany (now France)	Gabon	male	1952.0	peace
+936	491	Gustav	Stresemann	05/10/1878	10/3/2029	Germany	Germany	male	1926.0	peace
+937	501	Carlos	Saavedra Lamas	11/01/1878	5/5/1959	Argentina	Argentina	male	1936.0	peace
+938	512	L_on	Jouhaux	07/01/1879	4/28/1954	France	France	male	1951.0	peace
+939	510	Lord (John)	Boyd Orr of Brechin	09/23/1880	6/25/1971	Scotland	Scotland	male	1949.0	peace
+940	514	George Catlett	Marshall	12/31/1880	10/16/1959	USA	USA	male	1953.0	peace
+941	526	Ren_	Cassin	10/05/1887	2/20/1976	France	France	male	1968.0	peace
+942	500	Carl	von Ossietzky	10/03/1889	5/4/1938	Germany	Germany	male	1935.0	peace
+943	518	Philip J.	Noel-Baker	11/01/1889	10/8/1982	United Kingdom	United Kingdom	male	1959.0	peace
+944	516	Lester Bowles	Pearson	04/23/1897	12/27/1972	Canada	Canada	male	1957.0	peace
+945	519	Albert John	Lutuli	00/00/1898	7/21/1967	Southern Rhodesia (now Zimbabwe)	South Africa	male	1960.0	peace

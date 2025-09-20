@@ -1,0 +1,1371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1, Practical 2 &mdash; DS Scientific Programming Lab</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="_static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="_static/css/jupman-web.css?v=9f465e15" />
+
+  
+    <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_practical2.html" />
+      <script src="_static/documentation_options.js?v=632f9628"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/js/jupman.js?v=eb437c40"></script>
+      <script src="_static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="toc-page.html" class="icon icon-home">
+            DS Scientific Programming Lab
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Equipment">Equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical1.html">Module 1, Practical 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Setting-up-the-environment">Setting up the environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Our-toolbox">Our toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Linux">Installing Visual studio Code (VScode) in Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Windows">Installing Visual studio Code (VScode) in Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-MAC">Installing Visual studio Code (VScode) in MAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-console">The console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#VScode">VScode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-debugger">The debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)">A quick Jupyter primer (just for your information, skip if not interested)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-together">Let’s try together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises-(Difficult)">Exercises (Difficult)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-Linux">Let’s try Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Linux-on-windows">Linux on windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#A-dual-boot-system">A dual boot system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="toc-page.html">DS Scientific Programming Lab</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+    <div id='jupman-langs'></div>
+
+    <!-- SMALL TEMPLATE FOR LANGUAGES (VERY CUSTOM FOR softpython.org !!)
+    <script>
+    var hn = window.location.hostname;
+    var pn = window.location.pathname;
+
+    if (hn.includes('softpython.org')){
+        JUPMAN_LANG = hn.slice(0,window.location.hostname.indexOf('.'));
+    } else if (pn.includes('/_build/html')){
+        var pos = pn.indexOf('/_build/html');
+        JUPMAN_LANG = pn.slice(pos-2, pos);
+    } else {
+        JUPMAN_LANG = 'en';
+    }
+    console.log('JUPMAN_LANG=',JUPMAN_LANG);
+    </script>
+    -->
+    
+    
+     <!-- <li> <h2 style="background-color:red; color:yellow">WARNING! THIS VERSION IS OLD !  <br/>
+    <a style=" text-decoration: underline;" href="https://jupman.readthedocs.io/en/latest">GOT TO LATEST VERSION</a></li>
+ </h2></li>-->
+    <!-- Commented because doesn't work with sections,
+         see https://github.com/DavidLeoni/jupman/issues/39
+    <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+    <li>Module 1, Practical 2</li>
+    -->
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Module-1,-Practical-2">
+<h1>Module 1, Practical 2<a class="headerlink" href="#Module-1,-Practical-2" title="Link to this heading">¶</a></h1>
+<p>In this practical we will start interacting more with Python, practicing on how to handle data, functions and methods. We will see several built-in data types and then dive deeper into the data type <strong>string</strong>.</p>
+<section id="Modules">
+<h2>Modules<a class="headerlink" href="#Modules" title="Link to this heading">¶</a></h2>
+<p>Python modules are simply text files having the extension <strong>.py</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">exercise.py</span></code>). When you were writing the code in the IDE in the previous practical, you were in fact implementing a <strong>module</strong>.</p>
+<p>As said in the previous practical, once you implemented and saved the code of the module, you can execute it by typing</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">exercise1.py</span></code></p>
+<p>(which <strong>in Windows</strong> might be <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">exercise1.py</span></code>, just make sure you are using python 3.x) or, in Visual Studio Code, by right clicking on the code panel and selecting <strong>Run Python File in Terminal</strong>.</p>
+<p>For instance <strong>math</strong> is a module, and it has many functions:</p>
+<ol class="arabic simple">
+<li><p>math.sqrt() -&gt; square root</p></li>
+<li><p>math.cos() -&gt; cosine</p></li>
+<li><p>math.log() -&gt; log (base E)</p></li>
+</ol>
+<p>We have to import the module <strong>before</strong> use it, with:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+<p><strong>let’s try</strong></p>
+<p>Write a program that compute the square root of 4:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2.0
+</pre></div></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>your turn</strong></div>
+<div class="line">1. Take in input a number, print the square root, the log and the cosine.</div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">input_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;insert a number &quot;</span><span class="p">)</span>
+<span class="n">input_value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+
+<span class="n">sq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+<span class="n">log</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+<span class="n">cos</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">,</span><span class="n">log</span><span class="p">,</span><span class="n">cos</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+7.0710678118654755 3.912023005428146 0.9649660284921133
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Why those codes are not working?</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#########################</span>
+<span class="c1"># 1</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="c1">#########################</span>
+<span class="c1"># 2</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">input_val</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;insert a number&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong></p>
+<p>When importing modules we do not need to specify the extension “.py” of the file.</p>
+</div>
+</section>
+<section id="Objects">
+<h2>Objects<a class="headerlink" href="#Objects" title="Link to this heading">¶</a></h2>
+<p>Python understands very well objects, and in fact everything is an object in Python.</p>
+<p>Objects have <strong>properties</strong> (characteristic features) and <strong>methods</strong> (things they can do). For example, an object <em>car</em> could be defined to have the <strong>properties</strong> <em>model, make, color, number of doors, position</em> etc., and the <strong>methods</strong> <em>steer right, steer left, accelerate, break, stop, change gear, repaint,</em>… whose application might affect the state of the object.</p>
+<p>According to Python’s official documentation:</p>
+<p>“Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects.”</p>
+<p>All you need to know for now is that in Python objects have an <strong>identifier (ID)</strong> (i.e. their name), a <strong>type</strong> (numbers, text, collections,…) and a <strong>value</strong> (the actual data represented by the objects). Once an object has been created the <em>identifier</em> and the <em>type</em> never change, while its <em>value</em> can either change (<strong>mutable objects</strong>) or stay constant (<strong>immutable objects</strong>).</p>
+<p>Python provides the following built-in data types:</p>
+<img alt="img0" src="_images/types.png" />
+<p>We will stick with the simplest ones for now, but later on we will dive deeper into all of them.</p>
+</section>
+<section id="Variables">
+<h2>Variables<a class="headerlink" href="#Variables" title="Link to this heading">¶</a></h2>
+<p>Variables are just <strong>references to objects</strong>, in other words they are the <strong>name</strong> given to an object. Variables can be <strong>assigned</strong> to objects by using the assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>The instruction</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sides</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<p>might represent the number of sides of a square. What happens when we execute it in Python? An object is created, it is given an identifier, its <strong>type</strong> is set to “int” (an integer number), its <strong>value</strong> to 4 and a <strong>name</strong> <em>sides</em> is placed in the current namespace to point to that object, so that after that instruction we can access that object through its name. The type of an object can be accessed with the function <strong>type()</strong> and the identifier with the function <strong>id()</strong>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sides</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">sides</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="nb">id</span><span class="p">(</span><span class="n">sides</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;int&#39;&gt;
+140314339279184
+</pre></div></div>
+</div>
+<p>Consider now the following code:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sides</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#a square</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;value:&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="s2">&quot; type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">sides</span><span class="p">),</span> <span class="s2">&quot; id:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">sides</span><span class="p">))</span>
+<span class="n">sides</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#a pentagon</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;value:&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="s2">&quot; type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">sides</span><span class="p">),</span> <span class="s2">&quot; id:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">sides</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+value: 4  type: &lt;class &#39;int&#39;&gt;  id: 140314339279184
+value: 5  type: &lt;class &#39;int&#39;&gt;  id: 140314339279216
+</pre></div></div>
+</div>
+<p>The value of the variable sides has been changed from 4 to 5, but as stated in the table above, the type <code class="docutils literal notranslate"><span class="pre">int</span></code> is <strong>immutable</strong>. <strong>Luckily, this did not prevent us to change the value of sides from 4 to 5.</strong> What happened behind the scenes when we executed the instruction sides = 5 is that a new object has been created of type int (5 is still an integer) and it has been made accessible with the same name <em>sides</em>, but since it is a different object (i.e. the integer 5). As a poof of this,
+<strong>check that the that the identifier printed above is actually different.</strong></p>
+<div class="admonition note">
+<p><strong>Note:</strong> You do not have to really worry about what happens behind the scenes, as the Python interpreter will take care of these aspects for you, but it is nice to know what it does.</p>
+</div>
+<p>You can even change the type of a variable during execution but that is normally a <strong>bad idea</strong> as it makes understanding the code more complicated and leaves more room for errors.</p>
+<p>Python allows you to do (<strong>but, please, REFRAIN FROM DOING SO!</strong>):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sides</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#a square</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;value:&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="s2">&quot; type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">sides</span><span class="p">),</span> <span class="s2">&quot; id:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">sides</span><span class="p">))</span>
+<span class="n">sides</span> <span class="o">=</span> <span class="s2">&quot;four&quot;</span> <span class="c1">#the sides in text format</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;value:&quot;</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="s2">&quot; type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">sides</span><span class="p">),</span> <span class="s2">&quot; id:&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">sides</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+value: 4  type: &lt;class &#39;int&#39;&gt;  id: 140314339279184
+value: four  type: &lt;class &#39;str&#39;&gt;  id: 140313851926128
+</pre></div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title fa fa-exclamation-circle"><strong>IMPORTANT NOTE:</strong> You can choose the name that you like for your variables (I advise to pick something reminding their meaning), but you need to adhere to some simple rules.</p>
+<ol class="arabic simple">
+<li><p>Names can only contain upper/lower case digits (<code class="docutils literal notranslate"><span class="pre">A-Z</span></code>, <code class="docutils literal notranslate"><span class="pre">a-z</span></code>), numbers (<code class="docutils literal notranslate"><span class="pre">0-9</span></code>) or underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>;</p></li>
+<li><p>Names cannot start with a number;</p></li>
+<li><p>Names cannot be equal to reserved keywords:</p></li>
+</ol>
+<img alt="_images/keywords.png" src="_images/keywords.png" />
+</div>
+</section>
+<section id="Numeric-types">
+<h2>Numeric types<a class="headerlink" href="#Numeric-types" title="Link to this heading">¶</a></h2>
+<p>We already mentioned that numbers are <strong>immutable objects</strong>. Python provides different numeric types: integers, booleans, reals (floats) and even complex numbers and fractions (but we will not get into those).</p>
+<section id="Integers">
+<h3>Integers<a class="headerlink" href="#Integers" title="Link to this heading">¶</a></h3>
+<p>Their range of values is limited only by the memory available. As we have already seen, python provides also a set of standard operators to work with numbers:</p>
+<p><strong>let’s try</strong> 1. Given two integer, try sum (+), subtractions (-), integer division (//), multiplication (*), power(**), division (/)</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 11</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># integer division: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 28</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># power: 2401</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># division 1.75</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+11
+3
+1
+28
+2401
+1.75
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>what is the type of a/b?</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a &lt;class &#39;int&#39;&gt;
+b &lt;class &#39;int&#39;&gt;
+c &lt;class &#39;float&#39;&gt;
+</pre></div></div>
+</div>
+</div><p>Note that in the latter case the result is no more an integer, but a float (we will get to that later).</p>
+</section>
+<section id="Booleans">
+<h3>Booleans<a class="headerlink" href="#Booleans" title="Link to this heading">¶</a></h3>
+<p>These objects are used for the boolean algebra. Truth values are represented with the keywords <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> in Python. A boolean object can only have value <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. We can convert booleans into integers with the builtin function <code class="docutils literal notranslate"><span class="pre">int</span></code>. Any integer can be converted into a boolean (and vice-versa) with:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">72</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a: &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot; b: &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot; c: &quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s2">&quot; d: &quot;</span><span class="p">,</span> <span class="n">d</span> <span class="p">,</span> <span class="s2">&quot; t: &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot; f: &quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:  True  b:  False  c:  True  d:  True  t:  1  f:  0
+</pre></div></div>
+</div>
+<p>any integer is evaluated to true, except 0. Note that, the truth values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> respectively behave like the integers 1 and 0.</p>
+<p>We can operate on boolean values with the boolean operators <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>. Recall boolean algebra for their use:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">F</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;T: &quot;</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s2">&quot; F:&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;T and F: &quot;</span><span class="p">,</span> <span class="n">T</span> <span class="ow">and</span> <span class="n">F</span><span class="p">)</span> <span class="c1">#False</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;T and T: &quot;</span><span class="p">,</span> <span class="n">T</span> <span class="ow">and</span> <span class="n">T</span><span class="p">)</span> <span class="c1">#True</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;F and F: &quot;</span><span class="p">,</span> <span class="n">F</span> <span class="ow">and</span> <span class="n">F</span><span class="p">)</span> <span class="c1">#False</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;not T: &quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">T</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;not F: &quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">F</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;T or F: &quot;</span><span class="p">,</span> <span class="n">T</span> <span class="ow">or</span> <span class="n">F</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;T or T: &quot;</span><span class="p">,</span> <span class="n">T</span> <span class="ow">or</span> <span class="n">T</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;F or F: &quot;</span><span class="p">,</span> <span class="n">F</span> <span class="ow">or</span> <span class="n">F</span><span class="p">)</span> <span class="c1"># False</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+T:  True  F: False
+T and F:  False
+T and T:  True
+F and F:  False
+not T:  False
+not F:  True
+T or F:  True
+T or T:  True
+F or F:  False
+</pre></div></div>
+</div>
+<p>Numeric comparators are operators that return a boolean value. Here are some examples:</p>
+<img alt="img1" src="_images/comparators.png" />
+<p><strong>Example</strong>: Given a variable a = 10 and a variable b = 77, let’s swap their values (i.e. at the end a will be equal to 77 and b to 10). Let’s also check the values at the beginning and at the end.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span>  <span class="mi">77</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a: &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot; b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is a equal to 10?&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is b equal to 77?&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">77</span><span class="p">)</span>
+
+<span class="n">TMP</span> <span class="o">=</span> <span class="n">b</span>  <span class="c1">#we need to store the value of b safely</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>    <span class="c1">#ok, the old value of b is gone... is it?</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">TMP</span>  <span class="c1">#a gets the old value of b... :-)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a: &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot; b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is a equal to 10?&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is a equal to 77?&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">77</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is b equal to 10?&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is b equal to 77?&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">77</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:  10  b: 77
+is a equal to 10? True
+is b equal to 77? True
+a:  77  b: 10
+is a equal to 10? False
+is a equal to 77? True
+is b equal to 10? True
+is b equal to 77? False
+</pre></div></div>
+</div>
+</section>
+<section id="Real-numbers">
+<h3>Real numbers<a class="headerlink" href="#Real-numbers" title="Link to this heading">¶</a></h3>
+<p>Python stores real numbers (floating point numbers) in 64 bits of information divided in sign, exponent and mantissa.</p>
+<p><strong>Let’s try</strong></p>
+<ol class="arabic simple">
+<li><p>Calculate the area of circle (radius = 9.15m) recalling that <span class="math notranslate nohighlight">\(area= \Pi*R^2\)</span>:</p></li>
+</ol>
+<p><strong>note</strong> do you remember the Pi value? if not just use math.pi</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex4" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="mf">9.15</span>
+<span class="n">Pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="n">Pi</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">Area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+263.02199094017146
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Write a program to compute: <span class="math notranslate nohighlight">\(\dfrac{\sqrt{x+3}}{(x+2)^3}\)</span>, with x = 0.000003. Result = 0.21650548492311453</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex5&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex5" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.000003</span>
+<span class="n">res</span> <span class="o">=</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-0.21650548492311453
+</pre></div></div>
+</div>
+</div></section>
+</section>
+<section id="Strings">
+<h2>Strings<a class="headerlink" href="#Strings" title="Link to this heading">¶</a></h2>
+<p>Strings are <strong>immutable objects</strong> (note the actual type is <strong>str</strong>) used by python to handle text data. Strings are sequences of <em>unicode code points</em> that can represent characters, but also formatting information (e.g. ‘\n’ for new line). <strong>Unlike other programming languages, python does not have the data type character, which is represented as a string of length 1</strong>.</p>
+<p>There are several ways to define a string:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="s2">&quot;my first string, in double quotes&quot;</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="s1">&#39;my second string, in single quotes&#39;</span>
+
+<span class="n">S2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;my third string is</span>
+<span class="s1">in triple quotes</span>
+<span class="s1">therefore it can span several lines&#39;&#39;&#39;</span>
+
+<span class="n">S3</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;my fourth string, in triple double-quotes</span>
+<span class="s2">can also span</span>
+<span class="s2">several lines&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#let&#39;s add a new line at the end of the string with \n</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S3</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>To put special characters like ‘,” and so on you need to “escape them” (i.e. write them following a back-slash).</p>
+<img alt="img3" src="_images/escapes.png" />
+<p><strong>Example</strong>: Let’s print a string containing a quote and double quote (i.e. ‘ and “).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myString</span> <span class="o">=</span> <span class="s2">&quot;This is how I </span><span class="se">\&#39;</span><span class="s2">quote</span><span class="se">\&#39;</span><span class="s2"> and </span><span class="se">\&quot;</span><span class="s2">double quote</span><span class="se">\&quot;</span><span class="s2"> things in strings&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myString</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Strings can be converted to and from numbers with the functions <code class="docutils literal notranslate"><span class="pre">str()</span></code>, <code class="docutils literal notranslate"><span class="pre">int()</span></code> or <code class="docutils literal notranslate"><span class="pre">float()</span></code>.</p>
+<p><strong>Example</strong>: Let’s define a string <em>myString</em> with the value “47001” and convert it into an int. Try adding one and print the result.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;47001&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">,</span> <span class="s2">&quot; has type &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_string</span><span class="p">))</span>
+
+<span class="n">my_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_int</span><span class="p">,</span> <span class="s2">&quot; has type &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">my_int</span><span class="p">))</span>
+
+<span class="n">my_int</span> <span class="o">=</span> <span class="n">my_int</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1">#adds one</span>
+
+<span class="n">my_string</span> <span class="o">=</span> <span class="n">my_string</span> <span class="o">+</span> <span class="s2">&quot;1&quot;</span> <span class="c1">#cannot add 1 (we need to use a string).</span>
+                          <span class="c1">#This will append 1 at the end of the string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Be careful though that if the string cannot be converted into an integer, then you get an error</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_wrong_number</span> <span class="o">=</span> <span class="s2">&quot;13a&quot;</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_wrong_number</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Python defines some operators to work with strings. Recall the slides shown during the lecture:</p>
+<img alt="img4" src="_images/stringoperators.png" />
+<p><strong>Example</strong></p>
+<p>let’s print “Ciao” 100 times…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Ciao&quot;</span>
+<span class="n">my_100_times_string</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">*</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_100_times_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiaoCiao
+</pre></div></div>
+</div>
+<p>let’s concatenate two (or more) strings</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string1</span> <span class="o">=</span> <span class="s2">&quot;Ciao, &quot;</span>
+<span class="n">my_string2</span> <span class="o">=</span> <span class="s2">&quot;How&quot;</span>
+
+<span class="n">my_combination</span> <span class="o">=</span> <span class="n">my_string1</span> <span class="o">+</span> <span class="n">my_string2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_combination</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string1</span> <span class="o">=</span> <span class="s2">&quot;Ciao, &quot;</span>
+<span class="n">my_string2</span> <span class="o">=</span> <span class="s2">&quot;how&quot;</span>
+<span class="n">my_string3</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+<span class="n">my_string4</span> <span class="o">=</span> <span class="s2">&quot;are you?&quot;</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">my_string1</span> <span class="o">+</span> <span class="n">my_string2</span> <span class="o">+</span> <span class="n">my_string3</span> <span class="o">+</span> <span class="n">my_string4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Ciao, How are you?
+</pre></div></div>
+</div>
+<p>let’s create a toy example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_input_string</span> <span class="o">=</span> <span class="s2">&quot;Hi, How are you? Do you want a beer?&quot;</span>
+
+<span class="c1"># add a new line</span>
+<span class="n">my_input_string</span> <span class="o">=</span> <span class="n">my_input_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># verify if the string contains &quot;How&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How&quot;</span> <span class="ow">in</span> <span class="n">my_input_string</span><span class="p">)</span>
+<span class="c1"># remember that it is case sensitive...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;how&quot;</span> <span class="ow">in</span> <span class="n">my_input_string</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+False
+</pre></div></div>
+</div>
+<p>We can access strings at specific positions (indexing) or get a substring starting from a position S to a position E. The only thing to remember is that numbering starts from 0. The<code class="docutils literal notranslate"><span class="pre">i</span></code>-th character of a string can be accessed as <code class="docutils literal notranslate"><span class="pre">str[i-1]</span></code>. Substrings can be accessed as <code class="docutils literal notranslate"><span class="pre">str[S:E]</span></code>, optionally a third parameter can be specified to set the step (i.e. <code class="docutils literal notranslate"><span class="pre">str[S:E:STEP]</span></code>).</p>
+<div class="admonition warning">
+<p><strong>Important note.</strong> Remember that when you do str[S:E], <strong>S is inclusive, while E is exclusive</strong> (see S[0:6] below).</p>
+</div>
+<img alt="img5" src="_images/slicingstring.png" />
+<p>Let’s see these aspects in action with an example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="s2">&quot;Luther College&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="c1">#print the whole string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#first character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1">#fourth character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#last character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="c1">#first six characters</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">:])</span> <span class="c1">#final seven characters</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">):</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#every other character starting from the first</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">):</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#every other character starting from the second</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Luther College
+L
+h
+e
+Luther
+College
+Lte olg
+uhrClee
+</pre></div></div>
+</div>
+<section id="Methods-for-the-str-object">
+<h3>Methods for the str object<a class="headerlink" href="#Methods-for-the-str-object" title="Link to this heading">¶</a></h3>
+<p>The object <code class="docutils literal notranslate"><span class="pre">str</span></code> has some methods that can be applied to it (remember methods are things you can do on objects). Recall from the lecture that the main methods are:</p>
+<img alt="img6" src="_images/strmethods.png" />
+<div class="admonition warning">
+<p><strong>IMPORTANT NOTE</strong>: Since Strings are immutable, every operation that changes the string actually produces a new <em>str</em> object having the modified string as value.</p>
+</div>
+<p><strong>lets play with methods</strong></p>
+<p>upper and lower are easy</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Trento&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;original string</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">my_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;upper string   </span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">my_string</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+original string  Trento
+upper string     TRENTO
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;TrENtO&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;original string</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">my_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lower string   </span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">my_string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+original string  TrENtO
+lower string     trento
+</pre></div></div>
+</div>
+<div class="line-block">
+<div class="line">as you can see, methods are applied to object!!!</div>
+<div class="line">object <strong>.method(parameters)</strong></div>
+</div>
+<p>in our case… sting.method()</p>
+<p>methods like upper and lower do not take any parameter!</p>
+<p>Others like strip or find take also parameters…</p>
+<p><strong>let’s see this in practice</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;&gt;Hi how are you?&gt;&quot;</span>
+
+<span class="n">my_modified_sting</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_modified_sting</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hi how are you?
+</pre></div></div>
+</div>
+<p>we can do it only to the left <strong>lstrip</strong> or to the right <strong>rstrip</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;&gt;&lt;&gt; This is TRENTO! das&quot;</span>
+
+<span class="n">fixed_left</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot;&gt;&lt;&gt;&quot;</span><span class="p">)</span>
+<span class="n">fixed</span> <span class="o">=</span> <span class="n">fixed_left</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot; das&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fixed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ This is TRENTO!
+</pre></div></div>
+</div>
+<p>The replace method is really intuitive…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My name is Pablo&quot;</span>
+
+<span class="n">new_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Pablo&quot;</span><span class="p">,</span><span class="s2">&quot;Antonio&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">new_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+My name is Antonio
+</pre></div></div>
+</div>
+<p><strong>startwith endswith</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is Trento&quot;</span>
+
+<span class="c1"># startwith</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Thi&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;This&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Thiss&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># endwith</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;nto&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;rento&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;rrento&quot;</span><span class="p">))</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+True
+False
+
+
+True
+True
+False
+</pre></div></div>
+</div>
+<p><strong>find</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;We are learning python3, we are also bla bla bla&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;are&quot;</span><span class="p">))</span> <span class="c1"># the first occorence</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;We&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;WE&quot;</span><span class="p">))</span> <span class="c1"># not present</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+0
+-1
+</pre></div></div>
+</div>
+<p><strong>rfind</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;We are learning python3, we are also bla bla bla&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">&quot;are&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+28
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># is it true?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">28</span><span class="p">:</span><span class="mi">28</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;are&quot;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+are
+</pre></div></div>
+</div>
+<p>yes it worked :)</p>
+<p><strong>count</strong> just counts</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Tfasjskdlftrentojasdjfkasjdjskdlfjasdlfjasdjfasdjaklsfaskljkljfdasaklantonioflasdfjklajdfwiojasflkfjasdllucakfjdiosjtalkjcjsadlfjlasd&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;sk&quot;</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+15
+4
+3
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Given the following string on two lines:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>text = &quot;&quot;&quot;Nobody said it was easy
+No one ever said it would be this hard&quot;&quot;&quot;
+</pre></div>
+</div>
+<p>write some python code that</p>
+<ol class="loweralpha simple">
+<li><p>prints the whole string; b)prints the first and last character; c) prints the first 10 characters; d) prints from the 19th character to the e) pints the string all in capital letters.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exs0&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs0" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Nobody said it was easy</span>
+<span class="s2">No one ever said it would be this hard&quot;&quot;&quot;</span>
+<span class="c1"># a) prints the whole text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="c1">#some empty space...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># b) 1st and last character</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1st char: &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; last char: &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1">#c) the 1st 10 characters:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1st 10 chars:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="c1">#d) from the 19th to the 31st char</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Characters from 19 to 31:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">31</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All upper case:&quot;</span><span class="p">)</span>
+<span class="n">upper_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">upper_text</span><span class="p">)</span> <span class="c1">#equivalent to: print(text.upper())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">#NOTE THAT:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">#is different from</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">upper_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">#as confirmed by python:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text and upper_text are equal: &quot;</span><span class="p">,</span> <span class="n">text</span> <span class="o">==</span> <span class="n">upper_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newline? &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Nobody said it was easy
+No one ever said it would be this hard
+
+1st char:  N  last char:  d
+1st 10 chars: Nobody sai
+
+Characters from 19 to 31:
+ easy
+No one
+
+All upper case:
+NOBODY SAID IT WAS EASY
+NO ONE EVER SAID IT WOULD BE THIS HARD
+
+Nobody said it was easy
+No one ever said it would be this hard
+
+NOBODY SAID IT WAS EASY
+NO ONE EVER SAID IT WOULD BE THIS HARD
+
+text and upper_text are equal:  False
+
+Newline?  True
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>given the input string S = “a 1 b 2 c 3”, replace each digit(1,2,3) with “DIGIT” and each character with “CHARACTER</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exs2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stringa</span> <span class="o">=</span> <span class="s2">&quot;a 1 b 2 c 3&quot;</span>
+
+<span class="n">digit</span> <span class="o">=</span> <span class="s2">&quot;DIGIT&quot;</span>
+<span class="n">character</span> <span class="o">=</span> <span class="s2">&quot;CHARACTER&quot;</span>
+
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">stringa</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">digit</span><span class="p">)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">risultato</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="n">digit</span><span class="p">)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">risultato</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="n">digit</span><span class="p">)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">risultato</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">character</span><span class="p">)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">risultato</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">character</span><span class="p">)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">risultato</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">character</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">risultato</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CHARACTER DIGIT CHARACTER DIGIT CHARACTER DIGIT
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Compute 1/7 in Python, you ll get a float, store the result in a variable, verify if:</p></li>
+</ol>
+<p>a)It contains the number 9 b)The first six decimal are equal to the next six.</p>
+<p>Hint: convert the float into string</p>
+<div class="tggle" onclick="toggleVisibility(&#39;exs3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valore</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">7.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valore</span><span class="p">)</span>                        <span class="c1"># 0.14285714285714285</span>
+
+<span class="n">valore_come_stringa</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">valore</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valore_come_stringa</span><span class="p">)</span>           <span class="c1"># &quot;0.14285714285714285&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;9&quot;</span> <span class="ow">in</span> <span class="n">valore_come_stringa</span><span class="p">)</span>    <span class="c1"># False</span>
+
+<span class="n">indice_punto</span> <span class="o">=</span> <span class="n">valore_come_stringa</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">primi_sei_decimali</span> <span class="o">=</span> <span class="n">valore_come_stringa</span><span class="p">[</span><span class="n">indice_punto</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">indice_punto</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">secondi_sei_decimali</span> <span class="o">=</span> <span class="n">valore_come_stringa</span><span class="p">[</span><span class="n">indice_punto</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span> <span class="p">:</span> <span class="n">indice_punto</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primi_sei_decimali</span> <span class="o">==</span> <span class="n">secondi_sei_decimali</span><span class="p">)</span>    <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.14285714285714285
+0.14285714285714285
+False
+True
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>You’ve got some money, so you decide to buy two models of supercars. Since you already know accidents are on the way, for each model you will buy as many cars as there are characters in each model name.</p></li>
+</ol>
+<p>Write some code which stores in the string s the number of cars you will buy.</p>
+<p><strong>for instance</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>car1 = &quot;Ferrari&quot;
+car2 = &quot;Tesla&quot;
+</pre></div>
+</div>
+<p>then the result is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I&#39;ll buy 7 Ferrari and 5 tesla
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exs4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs4" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">car1</span><span class="p">,</span> <span class="n">car2</span> <span class="o">=</span> <span class="s1">&#39;Jaguar&#39;</span><span class="p">,</span><span class="s1">&#39;Ferrari&#39;</span>        <span class="c1"># I will buy 6 Jaguar and 7 Ferrari supercars</span>
+<span class="c1">#car1, car2 = &#39;Porsche&#39;,&#39;Lamborghini&#39;  # I will buy 7 Porsche and 11 Lamborghini supercars</span>
+
+<span class="c1"># write here</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;I will buy </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> and </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> supercars&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">car1</span><span class="p">),</span> <span class="n">car1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">car2</span><span class="p">),</span> <span class="n">car2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I will buy 6 Jaguar and 7 Ferrari supercars
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="5">
+<li><p>Given a small sequenze of biological stuff</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bio_stuff = &quot;&quot;&quot;SER A 96 77.253 20.522 75.007
+VAL A 97 76.066 22.304 71.921
+PRO A 98 77.731 23.371 68.681
+SER A 99 80.136 26.246 68.973
+GLN A 100 79.039 29.534 67.364
+LYS A 101 81.787 32.022 68.157&quot;&quot;&quot;
+</pre></div>
+</div>
+<p>we know that the first, second and third colums are not important, then we know that the 4th 5th and 6th columns represent x,y,z of something. you have to:</p>
+<ol class="loweralpha simple">
+<li><p>extract x,y and z of the second row and save them into variables, b) do the same for the third colum c) compute the distance. <span class="math notranslate nohighlight">\(d((x,y,z),(x',y',z')) = \sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}\)</span></p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exs5&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs5" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_chain_a</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SER A 96 77.253 20.522 75.007</span>
+<span class="s2">VAL A 97 76.066 22.304 71.921</span>
+<span class="s2">PRO A 98 77.731 23.371 68.681</span>
+<span class="s2">SER A 99 80.136 26.246 68.973</span>
+<span class="s2">GLN A 100 79.039 29.534 67.364</span>
+<span class="s2">LYS A 101 81.787 32.022 68.157&quot;&quot;&quot;</span>
+
+<span class="c1"># let me use a shorter name :)</span>
+<span class="n">chain</span> <span class="o">=</span> <span class="n">structure_chain_a</span>
+
+<span class="n">index_first_newline</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">index_second_newline</span> <span class="o">=</span> <span class="n">chain</span><span class="p">[</span><span class="n">index_first_newline</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">chain</span><span class="p">[:</span><span class="n">index_first_newline</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">index_third_newline</span> <span class="o">=</span> <span class="n">chain</span><span class="p">[</span><span class="n">index_second_newline</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">chain</span><span class="p">[:</span><span class="n">index_second_newline</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">index_first_newline</span><span class="p">,</span> <span class="n">index_second_newline</span><span class="p">,</span> <span class="n">index_third_newline</span><span class="p">)</span>
+
+<span class="n">second_row</span> <span class="o">=</span> <span class="n">chain</span><span class="p">[</span><span class="n">index_first_newline</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">index_second_newline</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">second_row</span><span class="p">)</span>                      <span class="c1"># &quot;VAL A 97 76.066 22.304 71.921&quot;</span>
+                                         <span class="c1">#           |    | |    | |    |</span>
+                                         <span class="c1">#  01234567890123456789012345678</span>
+                                         <span class="c1">#  0         1         2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">second_row</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">second_row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">22</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">second_row</span><span class="p">[</span><span class="mi">23</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="c1"># NOTE: they are strings</span>
+
+
+<span class="n">third_row</span> <span class="o">=</span> <span class="n">chain</span><span class="p">[</span><span class="n">index_second_newline</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">index_third_newline</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">third_row</span><span class="p">)</span>                        <span class="c1"># &quot;PRO A 98 77.731 23.371 68.681&quot;</span>
+                                         <span class="c1">#           |    | |    | |    |</span>
+                                         <span class="c1">#  01234567890123456789012345678</span>
+                                         <span class="c1">#  0         1         2</span>
+
+<span class="n">x_prime</span> <span class="o">=</span> <span class="n">third_row</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">y_prime</span> <span class="o">=</span> <span class="n">third_row</span><span class="p">[</span><span class="mi">16</span><span class="p">:</span><span class="mi">22</span><span class="p">]</span>
+<span class="n">z_prime</span> <span class="o">=</span> <span class="n">third_row</span><span class="p">[</span><span class="mi">23</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_prime</span><span class="p">,</span> <span class="n">y_prime</span><span class="p">,</span> <span class="n">z_prime</span><span class="p">)</span>
+<span class="c1"># NOTE: they are strings</span>
+
+<span class="c1"># convert variables into float,</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">x_prime</span><span class="p">,</span> <span class="n">y_prime</span><span class="p">,</span> <span class="n">z_prime</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x_prime</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">y_prime</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">z_prime</span><span class="p">)</span>
+
+<span class="n">diff_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x_prime</span>
+<span class="n">diff_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_prime</span>
+<span class="n">diff_z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">-</span> <span class="n">z_prime</span>
+
+<span class="n">distanza</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distanza</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+29 59 89
+VAL A 97 76.066 22.304 71.921
+76.066 22.304 71.921
+PRO A 98 77.731 23.371 68.681
+77.731 23.371 68.681
+3.7958284998139775
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="6">
+<li><p>Given in input</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>str = &quot;14, 625, 498.002&quot;
+</pre></div>
+</div>
+<ol class="loweralpha simple">
+<li><p>convert each comma in a dot, and print it b)convert each dot in comma, and print it c)replace each dot in comma and each comma in dot.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exs6&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs6" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;14, 625, 498.002&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+
+<span class="n">str3</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
+
+<span class="n">str1</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;third &#39;</span><span class="p">)</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;third &#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+14, 625, 498.002
+14. 625. 498.002
+14, 625, 498,002
+14. 625. 498,002
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="7">
+<li><p>Calculate the zeros of the equation <span class="math notranslate nohighlight">\(ax^2-b = 0\)</span> where a = 10 and b = 1. Hint: use math.sqrt or ** 0.5. Finally check that substituting the obtained value of x in the equation gives zero.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;exs7&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exs7" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10X**2 - 1 = 0 for X:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10X**2 - 1 = 0 for X: 0.31622776601683794
+True
+</pre></div></div>
+</div>
+</div></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright # 2023 - 2025, Antonio Longa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
