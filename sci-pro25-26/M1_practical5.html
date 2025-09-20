@@ -7,23 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 1, Practical 5 &mdash; DS Scientific Programming Lab</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
-      <link rel="stylesheet" type="text/css" href="_static/css/jupman.css?v=767961f0" />
-      <link rel="stylesheet" type="text/css" href="_static/css/jupman-web.css?v=9f465e15" />
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman-web.css?v=9f465e15" />
 
   
     <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_practical5.html" />
-      <script src="_static/documentation_options.js?v=632f9628"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="static/documentation_options.js?v=632f9628"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script src="_static/js/jupman.js?v=eb437c40"></script>
-      <script src="_static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
-    <script src="_static/js/theme.js"></script>
+      <script src="static/js/jupman.js?v=eb437c40"></script>
+      <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -136,7 +136,7 @@
 <section id="More-on-loops">
 <h2>More on loops<a class="headerlink" href="#More-on-loops" title="Link to this heading">¶</a></h2>
 <p>As seen in the previous practical and in the lecture, there are three different ways of execution flow:</p>
-<img alt="i1" src="_images/structured_programming.png" />
+<img alt="i1" src="images/structured_programming.png" />
 <p>We have already seen the <em>if</em>, <em>for</em> and <em>while</em> loops and their variants. Please remember that the code block of each of these statements is defined by the <em>indentation</em> (i.e. spacing).</p>
 <section id="Ternary-operator">
 <h3>Ternary operator<a class="headerlink" href="#Ternary-operator" title="Link to this heading">¶</a></h3>
@@ -649,7 +649,7 @@ True
 <section id="Functions-working-on-dictionaries">
 <h3>Functions working on dictionaries<a class="headerlink" href="#Functions-working-on-dictionaries" title="Link to this heading">¶</a></h3>
 <p>As for the other data types, python provides several operators that can be applied to dictionaries. The following operators are available and they basically work as in lists. The only exception being that the operator <strong>in</strong> checks whether the specified object is present among the <strong>keys</strong>.</p>
-<img alt="i2" src="_images/operators.png" />
+<img alt="i2" src="images/operators.png" />
 <p>Some usage examples follow:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -691,7 +691,7 @@ Is &#34;seven&#34; in dictionary? False
 <section id="Dictionary-methods">
 <h3>Dictionary methods<a class="headerlink" href="#Dictionary-methods" title="Link to this heading">¶</a></h3>
 <p>Recall what seen in the lecture, the following methods are available for dictionaries:</p>
-<img alt="i3" src="_images/methods.png" />
+<img alt="i3" src="images/methods.png" />
 <p>These methods are new to dictionaries and can be used to loop through the elements in them.</p>
 <div class="admonition warning">
 <p><strong>ERRATUM:</strong> <code class="docutils literal notranslate"><span class="pre">dict.keys()</span></code> returns a <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code> object not a list. To cast it to list, we need to call <code class="docutils literal notranslate"><span class="pre">list(dict.keys())</span></code>. The same applies to <code class="docutils literal notranslate"><span class="pre">dict.values()</span></code> that returns a <code class="docutils literal notranslate"><span class="pre">dict_values</span></code> object that needs conversion to a list with <code class="docutils literal notranslate"><span class="pre">list(dict.values())</span></code>.</p>

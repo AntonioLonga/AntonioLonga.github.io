@@ -7,23 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 1, Practical 6 &mdash; DS Scientific Programming Lab</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
-      <link rel="stylesheet" type="text/css" href="_static/css/jupman.css?v=767961f0" />
-      <link rel="stylesheet" type="text/css" href="_static/css/jupman-web.css?v=9f465e15" />
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman-web.css?v=9f465e15" />
 
   
     <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_practical6.html" />
-      <script src="_static/documentation_options.js?v=632f9628"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="static/documentation_options.js?v=632f9628"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script src="_static/js/jupman.js?v=eb437c40"></script>
-      <script src="_static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
-    <script src="_static/js/theme.js"></script>
+      <script src="static/js/jupman.js?v=eb437c40"></script>
+      <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -653,7 +653,7 @@ Global now:  [&#39;old value&#39;, &#39;new value1&#39;, &#39;old value&#39;, &#
 </pre></div></div>
 </div>
 <p>Recall what seen in the lecture:</p>
-<img alt="i1" src="_images/argument_passing.png" />
+<img alt="i1" src="images/argument_passing.png" />
 <p>The behaviour above is because <strong>immutable objects</strong> are passed <strong>by value</strong> (therefore it is like making a copy), while <strong>mutable objects</strong> are passed <strong>by reference</strong> (therefore changing them effectively changes the original object).</p>
 <p>To avoid making changes to a <strong>mutable object</strong> passed as parameter one needs to <strong>explicitely make a copy</strong> of it.</p>
 <p>Consider the example seen before. <strong>Example:</strong> Let’s write a function that, given a list of integers, returns the number of elements, the maximum and minimum.</p>
@@ -987,7 +987,7 @@ sum is 13: [1.732, 2.236, 4.243]
 <h2>File input and output<a class="headerlink" href="#File-input-and-output" title="Link to this heading">¶</a></h2>
 <p>Files are non volatile data stored at specific locations in memory. To read or write from/to a file, one first needs to create a reference to the file. This is called the <strong>handle</strong> to the file.</p>
 <p>Recall from the lecture that Python provides programmers with the following functions and methods:</p>
-<img alt="i2" src="_images/io_met_fun.png" />
+<img alt="i2" src="images/io_met_fun.png" />
 <p>To read or write to a file one first needs to open it with the python’s built-in function <strong>open</strong> that returns a handler to the file. The handler can then be used to read or write the content of the file.</p>
 <p><strong>Example:</strong> Download the file <a class="reference external" href="file_samples/textFile.txt">textFile.txt</a> to your favourite location and read it from python, printing out all its content. <strong>NOTE:</strong> the path of your file might be different from mine.</p>
 <div class="nbinput docutils container">
