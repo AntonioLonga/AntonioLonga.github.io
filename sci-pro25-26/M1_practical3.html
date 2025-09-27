@@ -25,7 +25,8 @@
       <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 1, Practical 2" href="M1_practical2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +48,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
@@ -98,6 +99,26 @@
 <li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Exercises-Difficult">Exercises Difficult</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Operators-for-lists">Operators for lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Methods-of-the-class-list">Methods of the class list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#From-strings-to-lists-(split-method)">From strings to lists (split method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-list-to-strings-(join-method)">from list to strings (join method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(LIST)">Exercises (LIST)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Tuples">Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Introduction-to-sets">Introduction to sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(difficult)">Exercises (difficult)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Email-Rules">Email Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Constraints">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Tip:-Use-assert-for-Constraints">Tip: Use <code class="docutils literal notranslate"><span class="pre">assert</span></code> for Constraints</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
 </ul>
 
@@ -141,6 +162,8 @@
     <!-- Commented because doesn't work with sections,
          see https://github.com/DavidLeoni/jupman/issues/39
     <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+        <li><a href="toc.html"> </a> &raquo;</li>
     
     <li>Module 1, Practical 3</li>
     -->
@@ -1311,47 +1334,25 @@ Last word: this
 </pre></div></div>
 </div>
 </div><ol class="arabic simple" start="2">
-<li><p>The variant calling format (<a class="reference external" href="http://www.internationalgenome.org/wiki/Analysis/vcf4.0/">VCF</a>) is a format to represent structural variants of genomes (i.e. SNPs, insertions, deletions) . Each line of this format represents a variant, every piece of information within a line is separated by a tab (\t in python). The first 5 fields of this format report the chromosome (chr), the position (pos), the name of the variant (name), the reference allele (REF) and the alternative allele (ALT).
-Assuming to have a variable VCF defined containing the following three lines (representing three SNPs):</p></li>
+<li><p>You are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters. Print the score of s.</p></li>
 </ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>VCF = &quot;&quot;&quot;MDC000001.124\t7112\tFB_AFFY_0000024\tG\tA
-MDC000002.328\t941\tFB_AFFY_0000144\tC\tT
-MDC000004.272\t2015\tFB_AFFY_0000222\tG\tA&quot;&quot;&quot;
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Store these three variants as a list of lists, where each one of the fields is kept separate (e.g. the list should be similar to: [[chr1,pos1,name1,ref1,alt1], [chr2, pos2, name2, ref2, alt2], …] where all the elements are as specified in the string VCF (note that “…” means that the list is not complete);</p></li>
-<li><p>Print each variant changing its format in: “name|chr|pos|REF/ALT”.</p></li>
-</ul>
+<p><strong>Example:</strong></p>
+<p>Input: s = “hello”</p>
+<p>Output: 13</p>
+<p>Explanation:</p>
+<p>The ASCII values of the characters in s are: ‘h’ = 104, ‘e’ = 101, ‘l’ = 108, ‘o’ = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.</p>
+<p><em>hint</em> to get the ASCII number use ord(x), where x is a character.</p>
 <div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VCF</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;MDC000001.124</span><span class="se">\t</span><span class="s2">7112</span><span class="se">\t</span><span class="s2">FB_AFFY_0000024</span><span class="se">\t</span><span class="s2">G</span><span class="se">\t</span><span class="s2">A</span>
-<span class="s2">MDC000002.328</span><span class="se">\t</span><span class="s2">941</span><span class="se">\t</span><span class="s2">FB_AFFY_0000144</span><span class="se">\t</span><span class="s2">C</span><span class="se">\t</span><span class="s2">T</span>
-<span class="s2">MDC000004.272</span><span class="se">\t</span><span class="s2">2015</span><span class="se">\t</span><span class="s2">FB_AFFY_0000222</span><span class="se">\t</span><span class="s2">G</span><span class="se">\t</span><span class="s2">A&quot;&quot;&quot;</span>
-
-<span class="n">variants</span> <span class="o">=</span> <span class="n">VCF</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variants</span><span class="p">)</span>
-
-<span class="n">variants</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">variants</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">variants</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">variants</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">variants</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variants</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variants</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">info</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="n">info</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="n">info</span> <span class="o">=</span> <span class="n">variants</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span><span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">info</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<br/><br/></pre></div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">score</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Score of string:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1359,15 +1360,7 @@ MDC000004.272\t2015\tFB_AFFY_0000222\tG\tA&quot;&quot;&quot;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&#39;MDC000001.124\t7112\tFB_AFFY_0000024\tG\tA&#39;, &#39;MDC000002.328\t941\tFB_AFFY_0000144\tC\tT&#39;, &#39;MDC000004.272\t2015\tFB_AFFY_0000222\tG\tA&#39;]
-[[&#39;MDC000001.124&#39;, &#39;7112&#39;, &#39;FB_AFFY_0000024&#39;, &#39;G&#39;, &#39;A&#39;], [&#39;MDC000002.328&#39;, &#39;941&#39;, &#39;FB_AFFY_0000144&#39;, &#39;C&#39;, &#39;T&#39;], [&#39;MDC000004.272&#39;, &#39;2015&#39;, &#39;FB_AFFY_0000222&#39;, &#39;G&#39;, &#39;A&#39;]]
-[&#39;MDC000001.124&#39;, &#39;7112&#39;, &#39;FB_AFFY_0000024&#39;, &#39;G&#39;, &#39;A&#39;]
-[&#39;MDC000002.328&#39;, &#39;941&#39;, &#39;FB_AFFY_0000144&#39;, &#39;C&#39;, &#39;T&#39;]
-[&#39;MDC000004.272&#39;, &#39;2015&#39;, &#39;FB_AFFY_0000222&#39;, &#39;G&#39;, &#39;A&#39;]
-
-FB_AFFY_0000024|MDC000001.124|7112|G/A
-FB_AFFY_0000144|MDC000002.328|941|C/T
-FB_AFFY_0000222|MDC000004.272|2015|G/A
+Score of string: 30
 </pre></div></div>
 </div>
 </div><ol class="arabic simple" start="3">
@@ -1416,118 +1409,58 @@ FB_AFFY_0000222|MDC000004.272|2015|G/A
 </pre></div></div>
 </div>
 </div><ol class="arabic simple" start="4">
-<li><p>Fastq is a standard format for storing sequences and quality information. More information on the format can be found <a class="reference external" href="https://en.wikipedia.org/wiki/FASTQ_format">here</a>. This format can be used to store sequencing information coming from the sequencer. Each entry represents a read (i.e. a sequence) and carries four different pieces of information. A sample entry is the following:</p></li>
+<li><p>Goal Parser Interpretation: You own a Goal Parser that can interpret a string <code class="docutils literal notranslate"><span class="pre">command</span></code>. The command consists of an alphabet of <strong>“G”</strong>, <strong>“()”</strong>, and/or <strong>“(al)”</strong> in some order.</p></li>
 </ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>entry = &quot;&quot;&quot;@HWI-ST1296:75:C3F7CACXX:1:1101:19142:14904
-CCAACAACTTTGACGCTAAGGATAGCTCCATGGCAGCATATCTGGCACAA
-+
-FHIIJIJJGIJJJJJIHHHFFFFFEE:;CIDDDDDDDDDDDDEDDDDDDB&quot;&quot;&quot;
-</pre></div>
-</div>
-<p>where:</p>
-<ul class="simple">
-<li><ol class="lowerroman simple">
-<li><p>the first line is the read identifier starts with a “&#64;” and carries several types of information regarding the instrument used for sequencing (the reported example is an illumina read - if you are interested, you can find more info on the format of the ID <a class="reference external" href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">here</a>.</p></li>
-</ol>
-</li>
-<li><ol class="lowerroman simple" start="2">
-<li><p>the second information is the sequence of the read (note that it can span several lines, not in our simple example though);</p></li>
-</ol>
-</li>
-<li><ol class="lowerroman simple" start="3">
-<li><p>a “+” sign to mark the end of the sequence information (optionally the read identifier can be repeated);</p></li>
-</ol>
-</li>
-<li><ol class="lowerroman simple" start="4">
-<li><p>the phred quality score of the read encoded as a text string. It must contain the same number of elements that are in the sequence. To decode each character into a the corresponding phred score, one needs to convert it into the unicode integer representation of it - 33. For example, the conversion of a character “I” in python can be done using the <em>ord</em> built in function in the following way: ord(“I”) - 33 = 40. Finally the phred score can be converted into probability of the base to be
-wrong with the following formula: <span class="math notranslate nohighlight">\(P = 10^{-Q/10}\)</span>, where <span class="math notranslate nohighlight">\(Q\)</span> is the phred quality score.</p></li>
-</ol>
-</li>
-</ul>
-<p>Given the entry above:</p>
-<ul class="simple">
-<li><ol class="arabic simple">
-<li><p>Check that the ID starts with a &#64;</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="2">
-<li><p>Store the sequence as a list where each element is one single base (e.g. sequence =[‘T’, ‘A’,…])</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="3">
-<li><p>Store the quality as a list where each element is one single quality character (e.g. qualChar = [‘C’, ‘C’, …])</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="4">
-<li><p>Check that the length of the sequence and quality are the same</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="5">
-<li><p>Count how many times the sequence “TCCA” appears in the read</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="6">
-<li><p>Retrieve the sub-list containing the quality values corresponding to the “TCCA” string</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="7">
-<li><p>Convert each value in the list at point 6 in the corresponding probability of the base being wrong</p></li>
-</ol>
-</li>
-</ul>
+<p>The Goal Parser interprets: - <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> - <code class="docutils literal notranslate"><span class="pre">&quot;()&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;o&quot;</span></code> - <code class="docutils literal notranslate"><span class="pre">&quot;(al)&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;al&quot;</span></code></p>
+<p>The interpreted strings are then concatenated in the original order.</p>
+<p><strong>Task</strong> Given the string <code class="docutils literal notranslate"><span class="pre">command</span></code>, return the Goal Parser’s interpretation of <code class="docutils literal notranslate"><span class="pre">command</span></code>.</p>
+<p><strong>Examples</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Output</p></th>
+<th class="head"><p>Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">=</span> <span class="pre">&quot;G()(al)&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Goal&quot;</span></code></p></td>
+<td><p>G → G, () → o, (al) → al</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">=</span> <span class="pre">&quot;G()()()()(al)&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Gooooal&quot;</span></code></p></td>
+<td><p>multiple <code class="docutils literal notranslate"><span class="pre">()</span></code> become multiple <code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">=</span> <span class="pre">&quot;(al)G(al)()()G&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;alGalooG&quot;</span></code></p></td>
+<td><p>interpret each part and concatenate</p></td>
+</tr>
+</tbody>
+</table>
 <div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;@HWI-ST1296:75:C3F7CACXX:1:1101:19142:14904</span>
-<span class="s2">CCAACAACTTTGACGCTAAGGATAGCTCCATGGCAGCATATCTGGCACAA</span>
-<span class="s2">+</span>
-<span class="s2">FHIIJIJJGIJJJJJIHHHFFFFFEE:;CIDDDDDDDDDDDDEDDDDDDB</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;G()(al)&quot;</span>          <span class="c1"># Goal</span>
+<span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;G()()()()(al)&quot;</span>    <span class="c1"># Gooooal</span>
+<span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;(al)G(al)()()G&quot;</span>   <span class="c1"># alGalooG</span>
 
-<span class="c1">#1. Check that the ID starts with a @</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Does header start with @? &quot;</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">))</span>
-<span class="n">entryList</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="c1">#2. and 3. Store the sequence/quality as a list where each element is one single base</span>
-<span class="n">sequence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">entryList</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">qualChar</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">entryList</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-
-<span class="c1">#4. Check that the length of the sequence and quality are the same</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sequence and quality have the same length:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">qualChar</span><span class="p">))</span>
-
-<span class="c1">#5. Count how many times the sequence &quot;TCCA&quot; appears in the read</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sequence </span><span class="se">\&quot;</span><span class="s2">TCAA</span><span class="se">\&quot;</span><span class="s2"> is present &quot;</span><span class="p">,</span> <span class="n">entryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;TCCA&quot;</span><span class="p">),</span> <span class="s2">&quot; times&quot;</span> <span class="p">)</span>
-
-<span class="c1">#6. Retrieve the sub-list containing the quality values corresponding to the &quot;TCCA&quot; string</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">entryList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;TCCA&quot;</span><span class="p">)</span>
-
-<span class="n">qVals</span> <span class="o">=</span> <span class="n">qualChar</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">pos</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sequence: &quot;</span><span class="p">,</span> <span class="n">entryList</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">pos</span><span class="p">:</span><span class="n">pos</span><span class="o">+</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quality: &quot;</span><span class="p">,</span> <span class="n">qVals</span><span class="p">)</span>
-
-<span class="c1">#7. Convert each value in the list at point 6 in the corresponding probability of the base</span>
-<span class="c1"># being wrong</span>
-
-<span class="n">phredS</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">phredS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">qVals</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">33</span><span class="p">)</span>
-<span class="n">phredS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">qVals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">33</span><span class="p">)</span>
-<span class="n">phredS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">qVals</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">-</span> <span class="mi">33</span><span class="p">)</span>
-<span class="n">phredS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">qVals</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">-</span> <span class="mi">33</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phred score:&quot;</span><span class="p">,</span> <span class="n">phredS</span><span class="p">)</span>
-
-<span class="n">probVals</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">probVals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">phredS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">probVals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">phredS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">probVals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">phredS</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">probVals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">phredS</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Probabilities:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">probVals</span><span class="p">)</span>
-<br/><br/></pre></div>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">command</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">command</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;()&#39;</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># must be &quot;(al)&quot;</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;al&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">4</span>
+<span class="n">result</span> <span class="o">=</span>  <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<br/></pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1535,16 +1468,7 @@ wrong with the following formula: <span class="math notranslate nohighlight">\(P
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Does header start with @?  True
-Sequence and quality have the same length: True
-Sequence &#34;TCAA&#34; is present  1  times
-26
-[&#39;T&#39;, &#39;C&#39;, &#39;C&#39;, &#39;A&#39;]
-Sequence:  TCCA
-Quality:  [&#39;:&#39;, &#39;;&#39;, &#39;C&#39;, &#39;I&#39;]
-Phred score: [25, 26, 34, 40]
-Error Probabilities:
- [0.0031622776601683794, 0.0025118864315095794, 0.00039810717055349735, 0.0001]
+alGalooG
 </pre></div></div>
 </div>
 </div><ol class="arabic simple" start="5">
@@ -1772,10 +1696,7 @@ B is closer to A than C to D: True
 [[30, 36, 42], [66, 81, 96], [102, 126, 150]]
 </pre></div></div>
 </div>
-</div></section>
-<section id="Exercises-(difficult)">
-<h2>Exercises (difficult)<a class="headerlink" href="#Exercises-(difficult)" title="Link to this heading">¶</a></h2>
-<ol class="arabic simple">
+</div><ol class="arabic simple" start="10">
 <li><p>Given a list, count the number of unique elements <strong>input</strong></p></li>
 </ol>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = [1,1,1,3,3,3,2,1,2]
@@ -1787,7 +1708,7 @@ B is closer to A than C to D: True
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;exD1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="exD1" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
@@ -1804,7 +1725,7 @@ B is closer to A than C to D: True
 3
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="2">
+</div><ol class="arabic simple" start="11">
 <li><p>Given a List, extract all elements whose frequency is greater than K.</p></li>
 </ol>
 <p><strong>input</strong></p>
@@ -1817,7 +1738,7 @@ B is closer to A than C to D: True
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;exD2&#39;);"><p>Show/Hide Solution</p>
 </div><div id="exD2" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
@@ -1840,7 +1761,7 @@ B is closer to A than C to D: True
 [3, 4]
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="3">
+</div><ol class="arabic simple" start="12">
 <li><p>Given two pists, create a list of tuples containing all possible UNIQUE combinations of the lists</p></li>
 </ol>
 <p><strong>input</strong></p>
@@ -1854,7 +1775,7 @@ b = [1,2,3]
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;exD3&#39;);"><p>Show/Hide Solution</p>
 </div><div id="exD3" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
@@ -1875,10 +1796,10 @@ b = [1,2,3]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[(&#39;c&#39;, 3), (&#39;b&#39;, 1), (&#39;c&#39;, 2), (&#39;a&#39;, 2), (&#39;a&#39;, 1), (&#39;b&#39;, 3), (&#39;c&#39;, 1), (&#39;a&#39;, 3), (&#39;b&#39;, 2)]
+[(&#39;c&#39;, 2), (&#39;a&#39;, 2), (&#39;b&#39;, 3), (&#39;c&#39;, 1), (&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;c&#39;, 3), (&#39;a&#39;, 3), (&#39;b&#39;, 1)]
 </pre></div></div>
 </div>
-</div><ol class="arabic simple" start="4">
+</div><ol class="arabic simple" start="13">
 <li><p>Given a list, K and N, create a list of tuples containing elements with K appearing at least N times.</p></li>
 </ol>
 <p><strong>input</strong></p>
@@ -1893,7 +1814,7 @@ N = 2
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;exD4&#39;);"><p>Show/Hide Solution</p>
 </div><div id="exD4" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
@@ -1918,7 +1839,7 @@ N = 2
 [(4, 5, 5, 4)]
 </pre></div></div>
 </div>
-</div></div><ol class="arabic simple" start="5">
+</div><ol class="arabic simple" start="13">
 <li><p>Given a list, split every K elements, if len(list)/K is not an integer, then the last element should contain the rest</p></li>
 </ol>
 <p><strong>input</strong></p>
@@ -1932,7 +1853,7 @@ K = 3
 </div>
 <div class="tggle" onclick="toggleVisibility(&#39;exD5&#39;);"><p>Show/Hide Solution</p>
 </div><div id="exD5" style="display:none;"><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
@@ -1965,21 +1886,461 @@ K = 3
 [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 </pre></div></div>
 </div>
-</div><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</div></section>
+<section id="Exercises-(difficult)">
+<h2>Exercises (difficult)<a class="headerlink" href="#Exercises-(difficult)" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>You are given two strings s and t such that every character occurs at most once in s and t is a permutation of s.</p></li>
+</ol>
+<p>The permutation difference between s and t is defined as the sum of the absolute difference between the index of the occurrence of each character in s and the index of the occurrence of the same character in t.</p>
+<p>Return the permutation difference between s and t.</p>
+<p>Example 1:</p>
+<p>Input: s = “abc”, t = “bac”</p>
+<p>Output: 2</p>
+<p>Explanation:</p>
+<p>For s = “abc” and t = “bac”, the permutation difference of s and t is equal to the sum of:</p>
+<ul class="simple">
+<li><p>The absolute difference between the index of the occurrence of “a” in s and the index of the occurrence of “a” in t.</p></li>
+<li><p>The absolute difference between the index of the occurrence of “b” in s and the index of the occurrence of “b” in t.</p></li>
+<li><p>The absolute difference between the index of the occurrence of “c” in s and the index of the occurrence of “c” in t.</p></li>
+</ul>
+<p>That is, the permutation difference between s and t is equal to |0 - 1| + |1 - 0| + |2 - 2| = 2.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;es_leetcode_1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="es_leetcode_1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;bac&quot;</span>
+
+<span class="c1"># Map: Character -&gt; index in s</span>
+<span class="n">pos_in_s</span> <span class="o">=</span> <span class="p">{</span><span class="n">ch</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">)}</span>
+
+<span class="c1"># Sum of absolute differences on indices</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">pos_in_s</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="c1">#if you don&#39;t like enumerate:</span>
+<span class="c1"># for j in range(len(t)):</span>
+<span class="c1">#     ch = t[j]</span>
+<span class="c1">#     total += abs(pos_in_s[ch] - j)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>There is a snake in an n x n matrix grid and can move in four possible directions. Each cell in the grid is identified by the position: <code class="docutils literal notranslate"><span class="pre">grid[i][j]</span> <span class="pre">=</span> <span class="pre">(i</span> <span class="pre">*</span> <span class="pre">n)</span> <span class="pre">+</span> <span class="pre">j</span></code>.</p></li>
+</ol>
+<p>The snake starts at cell 0 and follows a sequence of commands.</p>
+<div class="line-block">
+<div class="line">You are given an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> representing the size of the grid and an array of strings <code class="docutils literal notranslate"><span class="pre">commands</span></code> where each <code class="docutils literal notranslate"><span class="pre">commands[i]</span></code> is either <code class="docutils literal notranslate"><span class="pre">&quot;UP&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;RIGHT&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;DOWN&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;LEFT&quot;</span></code>.</div>
+<div class="line">It’s guaranteed that the snake will remain within the grid boundaries throughout its movement.</div>
+</div>
+<p>Return the position of the final cell where the snake ends up after executing commands.</p>
+<hr class="docutils" />
+<p><strong>Example 1</strong></p>
+<div class="line-block">
+<div class="line"><strong>Input</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">commands</span> <span class="pre">=</span> <span class="pre">[&quot;RIGHT&quot;,&quot;DOWN&quot;]</span></code></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">3</span></code></div>
+</div>
+<p><strong>Explanation</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Example 2</strong></p>
+<div class="line-block">
+<div class="line"><strong>Input</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">commands</span> <span class="pre">=</span> <span class="pre">[&quot;DOWN&quot;,&quot;RIGHT&quot;,&quot;UP&quot;]</span></code></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+</div>
+<p><strong>Explanation</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tggle" onclick="toggleVisibility(&#39;es_leetcode3248&#39;);"><p>Show/Hide Solution</p>
+</div><div id="es_leetcode3248" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Given an n x n grid where each cell&#39;s value is (i * n + j),</span>
+<span class="sd">find the final position of a snake starting at cell 0</span>
+<span class="sd">after following the movement commands.</span>
+<span class="sd">The snake always stays inside the grid.</span>
+
+<span class="sd">:param n: size of the grid (n x n)</span>
+<span class="sd">:param commands: list of movement commands (&quot;UP&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;, &quot;RIGHT&quot;)</span>
+<span class="sd">:print: integer position of the final cell</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># 3</span>
+<span class="n">commands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RIGHT&quot;</span><span class="p">,</span> <span class="s2">&quot;DOWN&quot;</span><span class="p">]</span> <span class="c1"># [&quot;DOWN&quot;, &quot;RIGHT&quot;, &quot;UP&quot;]</span>
+
+
+<span class="c1"># Start at the top-left corner: row = 0, column = 0</span>
+<span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="c1"># Process each command and update the snake&#39;s position</span>
+<span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;UP&quot;</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">-=</span> <span class="mi">1</span>          <span class="c1"># move one cell up</span>
+    <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;DOWN&quot;</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>          <span class="c1"># move one cell down</span>
+    <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;LEFT&quot;</span><span class="p">:</span>
+        <span class="n">col</span> <span class="o">-=</span> <span class="mi">1</span>          <span class="c1"># move one cell left</span>
+    <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;RIGHT&quot;</span><span class="p">:</span>
+        <span class="n">col</span> <span class="o">+=</span> <span class="mi">1</span>          <span class="c1"># move one cell right</span>
+    <span class="c1"># No need to check boundaries, as guaranteed by the problem</span>
+
+<span class="c1"># Convert final (row, col) back to cell number = row * n + col</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">row</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="n">col</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Given a 2D integer array <code class="docutils literal notranslate"><span class="pre">matrix</span></code>, return the <strong>transpose</strong> of <code class="docutils literal notranslate"><span class="pre">matrix</span></code>.</p></li>
+</ol>
+<div class="line-block">
+<div class="line">The <strong>transpose</strong> of a matrix is the matrix flipped over its main diagonal,</div>
+<div class="line">switching the matrix’s row and column indices.</div>
+</div>
+<hr class="docutils" />
+<p><strong>Example 1</strong></p>
+<div class="line-block">
+<div class="line"><strong>Input</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">matrix</span> <span class="pre">=</span> <span class="pre">[[1,2,3],[4,5,6],[7,8,9]]</span></code></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[[1,4,7],[2,5,8],[3,6,9]]</span></code></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>7</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>9</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Example 2</strong></p>
+<div class="line-block">
+<div class="line"><strong>Input</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">matrix</span> <span class="pre">=</span> <span class="pre">[[1,2,3],[4,5,6]]</span></code></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><strong>Output</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[[1,4],[2,5],[3,6]]</span></code></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>1</p></th>
+<th class="head"><p>4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tggle" onclick="toggleVisibility(&#39;es_leetcode867&#39;);"><p>Show/Hide Solution</p>
+</div><div id="es_leetcode867" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Return the transpose of a given 2D integer array (matrix)</span>
+<span class="sd">without using Python&#39;s built-in zip function.</span>
+
+<span class="sd">The transpose of a matrix is obtained by flipping it over</span>
+<span class="sd">its main diagonal, turning rows into columns.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="c1"># matrix = [[1, 2, 3], [4, 5, 6]]</span>
+
+
+
+<span class="c1"># Number of rows and columns in the input matrix</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Create a new matrix with reversed dimensions: cols x rows</span>
+<span class="n">transposed</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">rows</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">)]</span>
+
+<span class="c1"># Fill the transposed matrix</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="c1"># Element at (r, c) in the original matrix</span>
+        <span class="c1"># goes to (c, r) in the transposed matrix</span>
+        <span class="n">transposed</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">transposed</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Every valid email consists of a <strong>local name</strong> and a <strong>domain name</strong>, separated by the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> sign.
+Besides lowercase letters, the email may contain one or more <code class="docutils literal notranslate"><span class="pre">.</span></code> or <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+</ol>
+<p>For example, in <code class="docutils literal notranslate"><span class="pre">alice&#64;leetcode.com</span></code>, <strong>alice</strong> is the local name, and <strong>leetcode.com</strong> is the domain name.</p>
+<hr class="docutils" />
+<section id="Email-Rules">
+<h3>Email Rules<a class="headerlink" href="#Email-Rules" title="Link to this heading">¶</a></h3>
+<ul>
+<li><div class="line-block">
+<div class="line">If you add periods <code class="docutils literal notranslate"><span class="pre">.</span></code> between some characters in the <strong>local name</strong> part of an email address,</div>
+<div class="line">mail sent there will be forwarded to the same address without dots in the local name.</div>
+<div class="line">(This rule does <strong>not</strong> apply to domain names.)</div>
+</div>
+<div class="line-block">
+<div class="line">Example:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">alice.z&#64;leetcode.com</span></code> → forwards to → <code class="docutils literal notranslate"><span class="pre">alicez&#64;leetcode.com</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">If you add a plus <code class="docutils literal notranslate"><span class="pre">+</span></code> in the local name, everything after the first plus sign will be ignored.</div>
+<div class="line">(This rule does <strong>not</strong> apply to domain names.)</div>
+</div>
+<div class="line-block">
+<div class="line">Example:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.y+name&#64;email.com</span></code> → forwards to → <code class="docutils literal notranslate"><span class="pre">my&#64;email.com</span></code></div>
+</div>
+</li>
+<li><p>You can use <strong>both rules together</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="Problem">
+<h3>Problem<a class="headerlink" href="#Problem" title="Link to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line">Given an array of strings <code class="docutils literal notranslate"><span class="pre">emails</span></code> where we send one email to each <code class="docutils literal notranslate"><span class="pre">emails[i]</span></code>,</div>
+<div class="line"><strong>return the number of different addresses that actually receive mails</strong>.</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Examples">
+<h3>Examples<a class="headerlink" href="#Examples" title="Link to this heading">¶</a></h3>
+<p><strong>Example 1</strong></p>
+<div class="line-block">
+<div class="line">Input:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">emails</span> <span class="pre">=</span> <span class="pre">[&quot;test.email+alex&#64;leetcode.com&quot;,&quot;test.e.mail+bob.cathy&#64;leetcode.com&quot;,&quot;testemail+david&#64;lee.tcode.com&quot;]</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">Output:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">2</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">Explanation:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">testemail&#64;leetcode.com</span></code> and <code class="docutils literal notranslate"><span class="pre">testemail&#64;lee.tcode.com</span></code> actually receive mails.</div>
+</div>
+<hr class="docutils" />
+<p><strong>Example 2</strong></p>
+<div class="line-block">
+<div class="line">Input:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">emails</span> <span class="pre">=</span> <span class="pre">[&quot;a&#64;leetcode.com&quot;,&quot;b&#64;leetcode.com&quot;,&quot;c&#64;leetcode.com&quot;]</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">Output:</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">3</span></code></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="Constraints">
+<h3>Constraints<a class="headerlink" href="#Constraints" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">emails.length</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">emails[i].length</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emails[i]</span></code> consist of lowercase English letters, <code class="docutils literal notranslate"><span class="pre">'+'</span></code>, <code class="docutils literal notranslate"><span class="pre">'.'</span></code> and <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code>.</p></li>
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">emails[i]</span></code> contains exactly one <code class="docutils literal notranslate"><span class="pre">'&#64;'</span></code> character.</p></li>
+<li><p>All local and domain names are non-empty.</p></li>
+<li><p>Local names do not start with a <code class="docutils literal notranslate"><span class="pre">'+'</span></code> character.</p></li>
+<li><p>Domain names end with the <code class="docutils literal notranslate"><span class="pre">&quot;.com&quot;</span></code> suffix.</p></li>
+<li><p>Domain names must contain at least one character before <code class="docutils literal notranslate"><span class="pre">&quot;.com&quot;</span></code> suffix.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="Tip:-Use-assert-for-Constraints">
+<h3>Tip: Use <code class="docutils literal notranslate"><span class="pre">assert</span></code> for Constraints<a class="headerlink" href="#Tip:-Use-assert-for-Constraints" title="Link to this heading">¶</a></h3>
+<p>In Python you can use the <strong>``assert``</strong> statement to check that constraints are respected during execution.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;emails length out of range&quot;</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;single email length out of range&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If the condition is <strong>True</strong>, the program continues.</p></li>
+<li><p>If the condition is <strong>False</strong>, an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> is raised with the optional message.</p></li>
+</ul>
+<p>This is useful during debugging or when you want to enforce input rules quickly.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;es_leetcode929&#39;);"><p>Show/Hide Solution</p>
+</div><div id="es_leetcode929" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;test.email+alex@leetcode.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;test.e.mail+bob.cathy@leetcode.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;testemail+david@lee.tcode.com&quot;</span>
+<span class="p">]</span>
+<span class="c1"># Example 2</span>
+<span class="c1">#emails = [&quot;a@leetcode.com&quot;, &quot;b@leetcode.com&quot;, &quot;c@leetcode.com&quot;]</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Print the number of unique email addresses that actually receive mails,</span>
+<span class="sd">applying the &#39;.&#39; and &#39;+&#39; filtering rules to the local name of each email.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Optional: enforce constraints using assert</span>
+<span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;emails length out of range&quot;</span>
+
+<span class="n">unique</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># will store normalized email addresses</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;single email length out of range&quot;</span>
+    <span class="k">assert</span> <span class="n">e</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;invalid email format&quot;</span>
+
+    <span class="n">local</span><span class="p">,</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Ignore everything after the first &#39;+&#39; in the local name</span>
+    <span class="k">if</span> <span class="s1">&#39;+&#39;</span> <span class="ow">in</span> <span class="n">local</span><span class="p">:</span>
+        <span class="n">local</span> <span class="o">=</span> <span class="n">local</span><span class="p">[:</span><span class="n">local</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)]</span>
+
+    <span class="c1"># Remove all &#39;.&#39; characters in the local name</span>
+    <span class="n">local</span> <span class="o">=</span> <span class="n">local</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Reconstruct the normalized email and add it to the set</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="n">local</span> <span class="o">+</span> <span class="s1">&#39;@&#39;</span> <span class="o">+</span> <span class="n">domain</span>
+    <span class="n">unique</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">normalized</span><span class="p">)</span>
+
+<span class="c1"># The number of unique normalized emails equals the count of real receivers</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">))</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2
+</pre></div></div>
+</div>
+</div></section>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M1_practical2.html" class="btn btn-neutral float-left" title="Module 1, Practical 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
