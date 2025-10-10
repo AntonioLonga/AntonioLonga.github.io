@@ -25,7 +25,8 @@
       <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
     <script src="static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 1, Practical 5" href="M1_practical5.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +48,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
@@ -159,6 +160,27 @@
 <li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Exercises-Difficult">Exercises Difficult</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Namespace-and-variable-scope">Namespace and variable scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Argument-passing">Argument passing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Positional-arguments">Positional arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Passing-arguments-by-keyword">Passing arguments by keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Specifying-default-values">Specifying default values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#File-input-and-output">File input and output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Opening-a-file">Opening a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Closing-a-file">Closing a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Reading-from-a-file">Reading from a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Writing-to-a-file">Writing to a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#String-formatting-with-format">String formatting with format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Long-exercise:-Word-Frequency-Analysis">Long exercise: Word Frequency Analysis</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
 </ul>
 
@@ -202,6 +224,8 @@
     <!-- Commented because doesn't work with sections,
          see https://github.com/DavidLeoni/jupman/issues/39
     <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+        <li><a href="toc.html"> </a> &raquo;</li>
     
     <li>Module 1, Practical 6</li>
     -->
@@ -2485,7 +2509,186 @@ Word &#34;umbrella&#34; is present 10 times
 <div class="line">C. define a function that prints the names of winners still alive.</div>
 <div class="line">D. define a function that prints how many nobel prices have have been won for each country</div>
 </div>
-</section>
+<ol class="arabic simple" start="9">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">flatten(L)</span></code> that takes a <em>nested list</em> (e.g. <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">[2,</span> <span class="pre">[3,</span> <span class="pre">4]],</span> <span class="pre">5]</span></code>)
+and returns a flat list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>.</p></li>
+</ol>
+<p><strong>Rules:</strong> - You may not use external libraries (<code class="docutils literal notranslate"><span class="pre">itertools</span></code>, etc.). - You can use recursion or an inner helper function.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex9_chat&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex9_chat" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Recursively flattens a nested list into a single list.&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">el</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="mi">5</span><span class="p">]))</span>  <span class="c1"># [1, 2, 3, 4, 5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flatten</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">]]]]))</span>  <span class="c1"># [1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="10">
+<li><p>Given a dictionary where multiple keys may share the same value, return a new dictionary that groups keys by their values.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span> <span class="err">→</span> <span class="p">{</span><span class="mi">1</span><span class="p">:[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="mi">2</span><span class="p">:[</span><span class="s2">&quot;b&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex10_chat&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex10_chat" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">invert_dict</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Inverts a dictionary: values become keys, keys become grouped lists.&quot;&quot;&quot;</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">inv</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inv</span>
+
+<span class="c1"># Test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">invert_dict</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{1: [&#39;a&#39;, &#39;c&#39;], 2: [&#39;b&#39;]}
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="11">
+<li><p>Create a function <code class="docutils literal notranslate"><span class="pre">group_by_length(words)</span></code> that returns a dictionary where the keys are word lengths and the values are lists of words having that length.</p></li>
+</ol>
+<p>Then write another function that returns the most populated group (longest list).</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex11_chat&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex11_chat" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">group_by_length</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Groups words by their length.&quot;&quot;&quot;</span>
+    <span class="n">grouped</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">grouped</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">grouped</span>
+
+<span class="k">def</span> <span class="nf">most_populated_group</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the length and list of words in the largest group.&quot;&quot;&quot;</span>
+    <span class="n">max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">max_len</span><span class="p">,</span> <span class="n">groups</span><span class="p">[</span><span class="n">max_len</span><span class="p">]</span>
+
+<span class="c1"># Test</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;ciao&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="s2">&quot;sun&quot;</span><span class="p">,</span> <span class="s2">&quot;sky&quot;</span><span class="p">]</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">group_by_length</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">most_populated_group</span><span class="p">(</span><span class="n">groups</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{2: [&#39;hi&#39;, &#39;ok&#39;], 4: [&#39;ciao&#39;], 1: [&#39;a&#39;], 3: [&#39;sun&#39;, &#39;sky&#39;]}
+(2, [&#39;hi&#39;, &#39;ok&#39;])
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="12">
+<li><p>Define a function <code class="docutils literal notranslate"><span class="pre">make_multiplier(n)</span></code> that returns another function which multiplies its argument by n.</p></li>
+</ol>
+<p>i.e.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="o">=</span> <span class="n">make_multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 10</span>
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex12_chat&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex12_chat" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_multiplier</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a function that multiplies by n.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">multiplier</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">multiplier</span>
+
+<span class="c1"># Test</span>
+<span class="n">double</span> <span class="o">=</span> <span class="n">make_multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">triple</span> <span class="o">=</span> <span class="n">make_multiplier</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">triple</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 15</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+15
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="13">
+<li><p>Write a function apply_and_sum(L, f) that applies a function f to each element in list L and returns the sum of the results. Then use it to compute:</p></li>
+</ol>
+<ul class="simple">
+<li><p>the sum of squares,</p></li>
+<li><p>the sum of square roots,</p></li>
+<li><p>the sum of inverses.</p></li>
+</ul>
+<div class="tggle" onclick="toggleVisibility(&#39;ex13_chat&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex13_chat" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">apply_and_sum</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Applies function f to each element of L and returns the sum of results.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">)</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of squares:&quot;</span><span class="p">,</span> <span class="n">apply_and_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of roots:&quot;</span><span class="p">,</span> <span class="n">apply_and_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of inverses:&quot;</span><span class="p">,</span> <span class="n">apply_and_sum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sum of squares: 55
+Sum of roots: 8.382332347441762
+Sum of inverses: 2.283333333333333
+</pre></div></div>
+</div>
+</div></section>
 <section id="Long-exercise:-Word-Frequency-Analysis">
 <h2>Long exercise: Word Frequency Analysis<a class="headerlink" href="#Long-exercise:-Word-Frequency-Analysis" title="Link to this heading">¶</a></h2>
 <p><strong>Objective:</strong></p>
@@ -2591,7 +2794,9 @@ word: frequency
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M1_practical5.html" class="btn btn-neutral float-left" title="Module 1, Practical 5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
