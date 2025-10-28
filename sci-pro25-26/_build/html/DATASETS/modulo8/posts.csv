@@ -1,6 +1,0 @@
-post_id,user_id,title,body,creation_date,likes
-10,1,Hello world,"First post",2023-01-10,5
-11,2,Data Science,"Pandas is fun",2023-02-25,7
-12,1,Second Post,"More content",2023-03-12,3
-13,3,Intro,"Hi everyone",2022-08-05,10
-14,4,New Post,"Just joined",2023-05-02,1
