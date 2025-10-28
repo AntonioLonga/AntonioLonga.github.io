@@ -384,13 +384,15 @@
 <p>where <span class="math notranslate nohighlight">\(\mathbb{1}\{\cdot\}\)</span> is the indicator function, equal to 1 if the condition holds and 0 otherwise.</p>
 </li>
 </ul>
-<p>-The <em>Persistent Score</em> of a student <span class="math notranslate nohighlight">\(S\)</span> is then: $ PS(S) = <span class="math">\sum</span><em>{B :nbsphinx-math:`neq `S} P</em>{SB}$</p>
+<p>-The <em>Persistent Score</em> of a student <span class="math notranslate nohighlight">\(S\)</span> is then: <span class="math notranslate nohighlight">\(PS(S) = \sum_{B \neq S} P_{SB}\)</span></p>
 <p>That is, the total number of persistent interactions in which student <span class="math notranslate nohighlight">\(S\)</span> participates.</p>
 <p>In other words, we look at all the calls exchanged between every pair of students. For each pair <span class="math notranslate nohighlight">\((A, B)\)</span>, we sort their calls by time and check how many times they call each other again within two hours of a previous call (i.e. within 7,200 seconds). Each such occurrence counts as a persistent interaction for that pair. Then, for each student <span class="math notranslate nohighlight">\(S\)</span>, we compute their Persistent Score by summing up all the persistent interactions they are involved in — that is, all the times <span class="math notranslate nohighlight">\(S\)</span>
 called or was called again within two hours by any other student.</p>
 <p>Intuitively, a higher Persistent Score means that the student tends to interact repeatedly with the same people in short time intervals, showing a more persistent communication pattern.</p>
 <p>Write a function that: - Computes the persistent score for all students. - Returns the top 3 students with the highest persistent scores. - Prints for each of them: 1. Their ID 2. The total number of persistent interactions 3. Their gender</p>
-<p><strong>NOTE</strong> you should define a function for each point.</p>
+<p><strong>NOTE</strong> Define a function for each analysis step, and a main() function using argparse.</p>
+<p>The arguments should be: - the paths to the input files (calls.csv, fb_friends.csv, genders.txt) - and the name of the output file for saving the plot.</p>
+<p>Each function must handle one point of the analysis, and the main() should execute them in order.</p>
 <div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
 </div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
