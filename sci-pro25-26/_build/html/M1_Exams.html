@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1, Exams &mdash; DS Scientific Programming Lab</title>
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman-web.css?v=9f465e15" />
+
+  
+    <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_Exams.html" />
+      <script src="static/documentation_options.js?v=632f9628"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="static/js/jupman.js?v=eb437c40"></script>
+      <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="toc-page.html" class="icon icon-home">
+            DS Scientific Programming Lab
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Equipment">Equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical1.html">Module 1, Practical 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Setting-up-the-environment">Setting up the environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Our-toolbox">Our toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Linux">Installing Visual studio Code (VScode) in Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Windows">Installing Visual studio Code (VScode) in Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-MAC">Installing Visual studio Code (VScode) in MAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-console">The console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#VScode">VScode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-debugger">The debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)">A quick Jupyter primer (just for your information, skip if not interested)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-together">Let’s try together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises-(Difficult)">Exercises (Difficult)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-Linux">Let’s try Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Linux-on-windows">Linux on windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#A-dual-boot-system">A dual boot system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical2.html">Module 1, Practical 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Objects">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Numeric-types">Numeric types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Integers">Integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Booleans">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Real-numbers">Real numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Strings">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Methods-for-the-str-object">Methods for the str object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Exercises-Difficult">Exercises Difficult</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical3.html">Module 1, Practical 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Operators-for-lists">Operators for lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Methods-of-the-class-list">Methods of the class list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#From-strings-to-lists-(split-method)">From strings to lists (split method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#from-list-to-strings-(join-method)">from list to strings (join method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises-(LIST)">Exercises (LIST)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Tuples">Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Introduction-to-sets">Introduction to sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises-(difficult)">Exercises (difficult)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Email-Rules">Email Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Constraints">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Tip:-Use-assert-for-Constraints">Tip: Use <code class="docutils literal notranslate"><span class="pre">assert</span></code> for Constraints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical4.html">Module 1, Practical 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical4.html#Execution-flow">Execution flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical4.html#Conditionals">Conditionals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#The-basic-if---else-statement">The basic <em>if - else</em> statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#The-if---elif---else-statement">The <em>if - elif - else</em> statement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical4.html#Loops">Loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#For-loop">For loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#Looping-over-a-range">Looping over a range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#Nested-for-loops">Nested for loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical4.html#While-loops">While loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical4.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical4.html#Exercises-(difficult)">Exercises (difficult)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical5.html">Module 1, Practical 5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#More-on-loops">More on loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Ternary-operator">Ternary operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Break-and-continue">Break and continue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="M1_practical5.html#Continue-statement">Continue statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="M1_practical5.html#Break-statement">Break statement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#List-comprehension">List comprehension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Dictionaries">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Functions-working-on-dictionaries">Functions working on dictionaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Dictionary-methods">Dictionary methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Module-1-–-Self-Test">Module 1 – Self Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Exercises-Difficult">Exercises Difficult</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical6.html">Module 1, Practical 6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Namespace-and-variable-scope">Namespace and variable scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Argument-passing">Argument passing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Positional-arguments">Positional arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Passing-arguments-by-keyword">Passing arguments by keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Specifying-default-values">Specifying default values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#File-input-and-output">File input and output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Opening-a-file">Opening a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Closing-a-file">Closing a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Reading-from-a-file">Reading from a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Writing-to-a-file">Writing to a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#String-formatting-with-format">String formatting with format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Long-exercise:-Word-Frequency-Analysis">Long exercise: Word Frequency Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Gentle-reminder-on-functions">Gentle reminder on functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Getting-input-from-the-command-line">Getting input from the command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Argparse">Argparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Libraries-installation-for-the-next-practicals">Libraries installation for the next practicals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Exercise-(difficult)-1">Exercise (difficult) 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#1st-ML-model">1st ML model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#Machine-Learning">Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#What-is-k-Nearest-Neighbors-(k-NN)?">What is k-Nearest Neighbors (k-NN)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#Main-Idea-Behind-k-NN">Main Idea Behind k-NN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#For-instance:">For instance:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#todo">todo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical8.html">Module 1, Practical 8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Libraries-installation">Libraries installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Series">Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#How-to-define-and-access-a-Series">How to define and access a Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Operator-broadcasting">Operator broadcasting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Filtering">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Missing-data">Missing data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Computing-stats">Computing stats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Plotting-data">Plotting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas-DataFrames">Pandas DataFrames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Define-a-DataFrame">Define a DataFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Loading-data-from-external-files">Loading data from external files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Extract-values-by-row-and-column">Extract values by row and column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Broadcasting,-filtering-and-computing-stats">Broadcasting, filtering and computing stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Merging-DataFrames">Merging DataFrames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Grouping">Grouping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises-Difficult">Exercises Difficult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercise-Difficult-(Relational-Database)">Exercise Difficult (Relational Database)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Relational-Database">Relational Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Tasks">Tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical9.html">Module 1, Practical 9</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-ndarray">Numpy ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Random-arrays">Random arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-to-and-from-pandas">Numpy to and from pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Iterating-over-arrays-and-Indexing">Iterating over arrays and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Broadcasting-and-arithmetic-functions">Broadcasting and arithmetic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Filtering">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Linear-algebra">Linear algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Matplotlib">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical10.html">Module 1, Practical 10</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical10.html#Part-1">Part 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="toc-page.html">DS Scientific Programming Lab</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+    <div id='jupman-langs'></div>
+
+    <!-- SMALL TEMPLATE FOR LANGUAGES (VERY CUSTOM FOR softpython.org !!)
+    <script>
+    var hn = window.location.hostname;
+    var pn = window.location.pathname;
+
+    if (hn.includes('softpython.org')){
+        JUPMAN_LANG = hn.slice(0,window.location.hostname.indexOf('.'));
+    } else if (pn.includes('/_build/html')){
+        var pos = pn.indexOf('/_build/html');
+        JUPMAN_LANG = pn.slice(pos-2, pos);
+    } else {
+        JUPMAN_LANG = 'en';
+    }
+    console.log('JUPMAN_LANG=',JUPMAN_LANG);
+    </script>
+    -->
+    
+    
+     <!-- <li> <h2 style="background-color:red; color:yellow">WARNING! THIS VERSION IS OLD !  <br/>
+    <a style=" text-decoration: underline;" href="https://jupman.readthedocs.io/en/latest">GOT TO LATEST VERSION</a></li>
+ </h2></li>-->
+    <!-- Commented because doesn't work with sections,
+         see https://github.com/DavidLeoni/jupman/issues/39
+    <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+    <li>Module 1, Exams</li>
+    -->
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Module-1,-Exams">
+<h1>Module 1, Exams<a class="headerlink" href="#Module-1,-Exams" title="Link to this heading">¶</a></h1>
+<section id="Exams-and-Simulation">
+<h2>Exams and Simulation<a class="headerlink" href="#Exams-and-Simulation" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Sim. <a class="reference external" href="Exams24_25/sim_with_sol.zip">05 11 24</a></p></li>
+<li><p>Exa. <a class="reference external" href="Exams24_25/exam1_sol.zip">21 02 25</a></p></li>
+<li><p>Exa. <a class="reference external" href="Exams24_25/exam2_sol.zip">25 01 25</a></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright # 2023 - 2025, Antonio Longa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

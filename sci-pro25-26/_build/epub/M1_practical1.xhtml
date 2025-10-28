@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 1, Practical 1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/epub.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/jupman.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/jupman-web.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="Module-1,-Practical-1">
+<h1>Module 1, Practical 1</h1>
+<p>The practicals of the first teaching module are a refinement of those prepared by Luca Bianco. Many thanks for his help.</p>
+<p>The aim of this practical is to set up a working Python3.x development environment and will start familiarizing a bit with Python.</p>
+<section id="Setting-up-the-environment">
+<h2>Setting up the environment</h2>
+<p>We will need to install several pieces of software to get a working programming environment suitable for this practical. In this section we will install everything that we are going to need in the next few weeks.</p>
+<p>Python3 is available for Windows, Linux and Mac, therefore you can run it on your preferred platform.</p>
+<section id="Our-toolbox">
+<h3>Our toolbox</h3>
+<p>If you decide to work on Windows or Mac, you can safely skip the following information and go straight to the section <strong>“Installing Python3 in Windows/Mac”</strong>. Note that, regardless your operating system, a useful source of information on how to install python can be found <a class="reference external" href="http://docs.python-guide.org/en/latest/">here</a><span class="link-target"> [http://docs.python-guide.org/en/latest/]</span>.</p>
+</section>
+<section id="Installing-Visual-studio-Code-(VScode)-in-Linux">
+<h3>Installing Visual studio Code (VScode) in Linux</h3>
+<p>Please follow the following <a class="reference external" href="https://youtu.be/NX8SHmkuLn4">video tutorial VScode Ubuntu</a><span class="link-target"> [https://youtu.be/NX8SHmkuLn4]</span>.</p>
+</section>
+<section id="Installing-Visual-studio-Code-(VScode)-in-Windows">
+<h3>Installing Visual studio Code (VScode) in Windows</h3>
+<div class="line-block">
+<div class="line">Please follow the following <a class="reference external" href="https://www.youtube.com/watch?v=mIVB-SNycKI">video tutorial VScode Windows</a><span class="link-target"> [https://www.youtube.com/watch?v=mIVB-SNycKI]</span>. Follow the tutorial up to <strong>minute 5:27</strong>.</div>
+<div class="line">The rest is interesting but <strong>not required</strong> for our course.</div>
+</div>
+</section>
+<section id="Installing-Visual-studio-Code-(VScode)-in-MAC">
+<h3>Installing Visual studio Code (VScode) in MAC</h3>
+<p>Please follow the following <a class="reference external" href="https://www.youtube.com/watch?v=NirAuEAblvo">video tutorial VScode Mac</a><span class="link-target"> [https://www.youtube.com/watch?v=NirAuEAblvo]</span>.</p>
+</section>
+</section>
+<section id="The-console">
+<h2>The console</h2>
+<p>To access the console on Linux just open a terminal and type:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span></code></p>
+<p>while in Windows you have to look for “Python” and run “Python 3.x”. The console should look like this:</p>
+<img alt="img6" src="_images/pythonconsole.png" />
+<p>Now we are all set to start interacting with the Python interpreter. In the console, type the following instructions (i.e. the first line and then press ENTER):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+8
+</pre></div></div>
+</div>
+<p>All as expected. The “In [1]” line is the input, while the “Out [1]” reports the output of the interpreter. Let’s challenge python with some other operations:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">/</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2.4
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">133</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.007518796992481203
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
+</pre></div></div>
+</div>
+<p>And some assignments:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sum is:&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">,</span> <span class="s2">&quot; division is:&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+sum is: 17  division is: 1.4285714285714286
+</pre></div></div>
+</div>
+<p>In the first four lines, values have been assigned to variables through the = operator. In the last line, the print function is used to display the output. For the time being, we will skip all the details and just notice that the print function somehow managed to get text and variables in input and coherently merged them in an output text. Although quite useful in some occasions, the console is quite limited therefore you can close it for now. To exit press Ctrl-D or type exit() and press ENTER.</p>
+</section>
+<section id="VScode">
+<h2>VScode</h2>
+<p>Open VScode and create a file name <code class="docutils literal notranslate"><span class="pre">test.py</span></code>, copy and paste the following code and try to execute it!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is the first example of Python script.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># variable a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">33</span> <span class="c1"># variable b</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="c1"># variable c holds the ratio</span>
+
+<span class="c1"># Let&#39;s print the result to screen.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot; b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot; a/b=&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a: 10  b: 33  a/b= 0.30303030303030304
+</pre></div></div>
+</div>
+<p>A couple of things worth nothing: the first three lines opened and closed by “”” are some text describing the content of the script. Moreover, comments are proceeded by the hash key (#) and they are just ignored by the python interpreter.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong></p>
+<p>Good <em>Pythonic</em> code follows some syntactic rules on how to write things, naming conventions etc. The IDE will help you writing pythonic code even though we will not enforce this too much in this course. If you are interested in getting more details on this, you can have a look at the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 Python Style Guide</a><span class="link-target"> [https://www.python.org/dev/peps/pep-0008/]</span> (Python Enanchement Proposals - index 8).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Warning</strong></p>
+<p><strong>Please remember to comment your code, as it helps readability and will make your life easier when you have to modify or just understand the code you wrote some time in the past.</strong></p>
+</div>
+<p>Please notice that Visual Studio Code will help you writing your Python scripts. For example, when you start writing the <strong>print</strong> line it will complete the code for you (<strong>if the Pylint extension mentioned above is installed</strong>), suggesting the functions that match the letters typed in. This useful feature is called <strong>code completion</strong> and, alongside suggesting possible matches, it also visualizes a description of the function and parameters it needs. Here is an example:</p>
+<img alt="img10" src="_images/codecompletion.png" />
+<p>Save the file (Ctrl+S as shortcut). It is convenient to ask the IDE to highlight potential <em>syntactic</em> problems found in the code. You can toggle this function on/off by clicking on <strong>View –&gt; Problems</strong>. The <em>Problems</em> panel should look like this</p>
+<img alt="img11" src="_images/problems.png" />
+<p>Visual Studio Code is warning us that the variable names <em>a,b,c</em> at lines 4,5,6 do not follow Python naming conventions for constants (do you understand why? Check <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#constants">here</a><span class="link-target"> [https://www.python.org/dev/peps/pep-0008/#constants]</span> to find the answer). This warning is because they have been defined at the top level (there is no structure to our script yet) and therefore are interpreted as constants. The naming convention for constants states that they should be in capital letters. To amend the code,
+you can just replace all the names with the corresponding capitalized name (i.e. A,B,C). If you do that, and you save the file again (Ctrl+S), you will see all these problems disappearing as well as the green underlining of the variable names. If your code does not have an empty line before the end, you might get another warning “<em>Final new line missing</em>”.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Info</strong></p>
+<p>Note that these were just warnings and the interpreter <strong>in this case</strong> will happily and correctly execute the code anyway, but it is always good practice to understand what the warnings are telling us before deciding to ignore them! Please, note also that these warnings could be not dispalyed with some versions of python and Visual Studio Code.</p>
+</div>
+<p>Had we by mistake mispelled the <strong>print</strong> function name (something that should not happen with the code completion tool that suggests functions names!) writing <em>printt</em> (note the double t), upon saving the file, the IDE would have underlined in red the function name and flagged it up as a problem.</p>
+<img alt="img12" src="_images/errors.png" />
+<p>This is because the builtin function <em>printt</em> does not exist and the python interpreter does not know what to do when it reads it. Note that <em>printt</em> is actually underlined in red, meaning that there is an error which will cause the interpreter to stop the execution with a failure. <strong>Please remember ALL ERRORS MUST BE FIXED before running any piece of code.</strong></p>
+<p>Now it is time to execute the code. By <strong>right-clicking</strong> in the code panel and selecting <strong>Run Python File in Terminal</strong> (see picture below) you can execute the code you have just written.</p>
+<img alt="img13" src="_images/pythonrun.png" />
+<p>Upon clicking on <em>Run Python File in Terminal</em> a terminal panel should pop up in the lower section of the coding panel and the result shown above should be reported.</p>
+<p>Saving script files like the <strong>example1.py</strong> above is also handy because they can be invoked several times (later on we will learn how to get inputs from the command line to make them more useful…). To do so, you just need to call the python intepreter passing the script file as parameter. From the folder containing the <em>example1.py</em> script:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">example1.py</span></code></p>
+<p>will in fact return:</p>
+<p>a: 10 b: 33 a/b= 0.30303030303030304</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Info: syntactic vs semantic errors</strong></p>
+<p>Before ending this section, let me add another note on errors. The IDE will diligently point you out <strong>syntactic</strong> warnings and errors (i.e. errors/warnings concerning the structure of the written code like name of functions, number and type of parameters, etc.) but it will not detect <strong>semantic</strong> or <strong>runtime</strong> errors (i.e. connected to the meaning of your code or to the value of your variables). These sort of errors will most probably make your code crash or may result in unexpected
+results/behaviours. In the next section we will introduce the debugger, which is a useful tool to help detecting these errors.</p>
+</div>
+<p>Before getting into that, consider the following lines of code (do not focus on the <em>import</em> line, this is only to load the mathematics module and use its method <em>sqrt</em> to compute the square root of its parameter):</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Runtime error example, compute square root of numbers</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A:&quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="s2">&quot; B:&quot;</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="s2">&quot; C:&quot;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">C</span><span class="p">)</span> <span class="c1"># whoops, A-C is now -4!!!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+A: 16  B: 4.0  C: 20.0
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 11&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> C <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">5</span><span style="color: rgb(98,98,98)">*</span>B
+<span class="ansi-green-intense-fg ansi-bold">      9</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A:</span><span style="color: rgb(175,0,0)">&#34;</span>, A, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)"> B:</span><span style="color: rgb(175,0,0)">&#34;</span>, B, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)"> C:</span><span style="color: rgb(175,0,0)">&#34;</span>, C)
+<span class="ansi-green-fg">---&gt; 11</span> D <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">math</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">sqrt</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">A</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">-</span><span class="ansi-yellow-bg">C</span><span class="ansi-yellow-bg">)</span> <span style="color: rgb(95,135,135)"># whoops, A-C is now -4!!!</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(D)
+
+<span class="ansi-red-fg">ValueError</span>: math domain error
+</pre></div></div>
+</div>
+<p>If you add that code to a python file (e.g. sqrt_example.py), you save it and you try to execute it, you should get an error message as reported above. You can see that the interpreter has happily printed off the vaule of A,B and C but then stumbled into an error at line 9 (math domain error) when trying to compute <span class="math notranslate nohighlight">\(\sqrt{A-C} = \sqrt{-4}\)</span>, because the sqrt method of the math module cannot be applied to negative values (i.e. it works in the domain of real numbers).</p>
+<p><em>Please take some time to familiarize with Visual Studio Code (creating files, saving files etc.) as in the next practicals we will take this ability for granted.</em></p>
+</section>
+<section id="The-debugger">
+<h2>The debugger</h2>
+<p>Another important feature of advanced Integrated Development Environments (IDEs) is their debugging capabilities. Visual Studio Code comes with a debugging tool that can help you trace the execution of your code and understand where possible errors hide.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong></p>
+<p>Please note that the following part of the guide presents a set of commands that <strong>could be different</strong> from the ones of the most updated versions of Visual Studio Code. For example, in my current version of the editor the debugger can be launched with <strong>Run –&gt; Start Debugging</strong> (shortcut F5). Before doing this, you should add a breakpoint to the code with <strong>Run –&gt; Toggle Breakpoint</strong> (shortcut F9).</p>
+</div>
+<p>Write the following code on a new file (let’s call it <em>integer_sum.py</em>) and execute it to get the result.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; integer_sum.py is a script to</span>
+<span class="sd"> compute the sum of the first 1200 integers. &quot;&quot;&quot;</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1201</span><span class="p">):</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The sum of the first 1200 integers is: &quot;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The sum of the first 1200 integers is:  720600
+</pre></div></div>
+</div>
+<p>Without getting into too many details, the code you just wrote starts initializing a variable S to zero, and then loops from 0 to 1200 assigning each time the value to a variable i, accumulating the sum of S + i in the variable S.</p>
+<p><strong>A final thing to notice is indentation.</strong></p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Info</strong></p>
+<p>In Python it is important to indent the code properly as this provides the right scope for variables (e.g. see that the line <em>S = S + 1</em> starts more to the right than the previous and following line – this is because it is inside the for loop). You do not have to worry about this for the time being, we will get to this in a later practical…</p>
+</div>
+<p>How does this code work? How does the value of S and i change as the code is executed? These are questions that can be answered by the debugger.</p>
+<p>To start the debugger, click on <strong>Debug –&gt; Start Debugging</strong> (shortcut F5). The following small panel should pop up:</p>
+<img alt="img14" src="_images/debug.png" />
+<p>We will use it shortly, but before that, let’s focus on what we want to track. On the left hand side of the main panel, a <em>Watch</em> panel appeared. This is where we need to add the things we want to monitor as the execution of the program goes. With respect to the code written above, we are interested in keeping an eye on the variables S, i and also of the expression S+i (that will give us the value of S of the next iteration). Add these three expressions in the watch panel (click on <strong>+</strong> to add
+new expressions). The watch panel should look like this:</p>
+<img alt="img15" src="_images/watch.png" />
+<p>do not worry about the message “<em>name X is not defined</em>”, this is normal as no execution has taken place yet and the interpreter still does not know the value of these expressions.</p>
+<p>The final thing before starting to debug is to set some breakpoints, places where the execution will stop so that we can check the value of the watched expressions. This can be done by hovering with the mouse on the left of the line number. A small reddish dot should appear, place the mouse over the correct line (e.g. the line corresponding to <em>S = S + 1</em> and click to add the breakpoint (a red dot should appear once you click).</p>
+<img alt="img16" src="_images/breakpoint.png" />
+<p>Now we are ready to start debugging the code. Click on the green triangle on the small debug panel and you will see that the yellow arrow moved to the breakpoint and that the watch panel updated the value of all our expressions.</p>
+<img alt="img17" src="_images/step0.png" />
+<p>The value of all expressions is zero because the debugger stopped <strong>before</strong> executing the code specified at the breakpoint line (recall that S is initialized to 0 and that i will range from 0 to 1200). If you click again on the green arrow, execution will continue until the next breakpoint (we are in a for loop, so this will be again the same line - trust me for the time being).</p>
+<img alt="img18" src="_images/step1.png" />
+<p>Now i has been increased to 1, S is still 0 (remember that the execution stopped <strong>before</strong> executing the code at the breakpoint) and therefore S + i is now 1. Click one more time on the green arrow and values should update accordingly (i.e. S to 1, i to 2 and S + i to 3), another round of execution should update S to 3, i to 3 and S + i to 6. Got how this works? Variable i is increased by one each time, while S increases by i. You can go on for a few more iterations and see if this makes any
+sense to you, once you are done with debugging you can stop the execution by pressing the red square on the small debug panel.</p>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note</strong></p>
+<p>The debugger is very useful to understand what your program does. Please spend some time to understand how this works as being able to run the debugger properly is a good help to identify and solve <strong>semantic errors</strong> of your code.</p>
+</div>
+<p>Other editors are available, if you already have your favourite one you can stick to it. Some examples are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pythonhosted.org/spyder/installation.html">Spyder</a><span class="link-target"> [https://pythonhosted.org/spyder/installation.html]</span></p></li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm Community Edition</a><span class="link-target"> [https://www.jetbrains.com/pycharm/]</span></p></li>
+<li><p><a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a><span class="link-target"> [http://jupyter.org/]</span>. Note: we might use it later on in the course.</p></li>
+</ul>
+</section>
+<section id="A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)">
+<h2>A quick Jupyter primer (just for your information, skip if not interested)</h2>
+<p>Jupyter allows to write notebooks organized in cells (these can be saved in files with .ipynb extension). Notebooks contain both the <strong>code</strong>, some <strong>text describing the code</strong> and the <strong>output of the code execution</strong>, they are quite useful to produce some quick reports on data analysis. where there is both code, output of running that code and text. The code by default is Python, but can also support other languages like R). The text is formatted using the <a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown
+language</a><span class="link-target"> [https://en.wikipedia.org/wiki/Markdown]</span> - see <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheatsheet</a><span class="link-target"> [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet]</span> for its details. <em>Jupyter is becoming the de-facto standard for writing technical documentation</em>.</p>
+<section id="Installation">
+<h3>Installation</h3>
+<p>To install it (if you have not installed python with Anaconda otherwise you should have it already):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m pip install jupyter
+</pre></div>
+</div>
+<p>you can find more information <a class="reference external" href="https://jupyter.org/install">here</a><span class="link-target"> [https://jupyter.org/install]</span></p>
+<p>Upon successful installation, you can run it with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter-notebook
+</pre></div>
+</div>
+<p>This should fire up a browser on a page where you can start creating your notebooks or modifying existing ones. To create a new notebook you simply click on <strong>New</strong>:</p>
+<img alt="img19" src="_images/jupyter.png" />
+<p>and then you can start adding cells (i.e. containers of code and text). The type of each cell is specified by selecting the cell and selecting the right type in the dropdown list:</p>
+<img alt="img20" src="_images/juptyter2b.png" />
+<p>Cells can be executed by clicking on the <strong>Run</strong> button. This will get the code to execute (and output to be written) and text to be processed to provide the final page layout. To go back to the edit mode, just double click on an executed cell.</p>
+<img alt="img21" src="_images/jupyter3.png" />
+<p><em>Please take some more time to familiarize with Visual Studio Code (creating files, saving files, interacting with the debugger etc.) as in the next practicals we will take this ability for granted. Once you are done you can move on and do the following exercises.</em></p>
+</section>
+</section>
+<section id="Let's-try-together">
+<h2>Let’s try together</h2>
+<ol class="arabic simple">
+<li><p>Compute the area of a triangle having base 120 units (B) and height 33 (H). Assign the result to a variable named area and print it.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex_new&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex_new" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">33</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">H</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Triangle area is:&quot;</span><span class="p">,</span> <span class="n">Area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Triangle area is: 1980.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Aquire the side S (base of a square) from the user at runtime and compute the area of a square. Then, assign the result to a variable named area and print it.
+Hint: use the input function (details <a class="reference external" href="https://docs.python.org/3/library/functions.html#input">here</a><span class="link-target"> [https://docs.python.org/3/library/functions.html#input]</span>) and remember to convert the acquired value into an int.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S_str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Insert size: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">S_str</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S_str</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">S_str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="n">S</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Square area is:&quot;</span><span class="p">,</span><span class="n">Area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;str&#39;&gt;
+5
+&lt;class &#39;int&#39;&gt;
+5
+Square area is: 25
+</pre></div></div>
+</div>
+</section>
+<section id="Exercises">
+<h2>Exercises</h2>
+<ol class="arabic simple">
+<li><p>If you have not done so already, put the two previous scripts in two separate files (e.g. triangle_area.py and square_area.py and execute them from the terminal).</p></li>
+<li><p>Write a small script (trapezoid.py) that computes the area of a trapezoid having major base (MB) equal to 30 units, minor base (mb) equal to 12 and height (H) equal to 17. Print the resulting area. Try executing the script from inside Visual Studio Code and from the terminal.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;trapezoid.py&quot;&quot;&quot;</span>
+<span class="n">MB</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">mb</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">MB</span> <span class="o">+</span> <span class="n">mb</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trapezoid area is: &quot;</span><span class="p">,</span> <span class="n">Area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Trapezoid area is:  357.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Write a program to compute the sum of the first 1200 integers by using the following equation: <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^n i = \frac{n (n+1)}{2}\)</span>.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex4" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1200</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of first 1200 integers: &quot;</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sum of first 1200 integers:  720600.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Modify the program at point 3. to make it acquire the number of integers to sum N from the user at runtime.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex5&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex5" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input number N:&quot;</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of first &quot;</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="s2">&quot; integers: &quot;</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Input number N:
+Sum of first  6  integers:  21.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="5">
+<li><p>Write a small script to compute the length of the hypotenuse (c) of a right triangle having sides a=133 and b=72 units (see picture below). Hint: <em>remember the Pythagorean theorem and use math.sqrt</em>.</p></li>
+</ol>
+<img alt="img22" src="_images/triangle.png" />
+<div class="tggle" onclick="toggleVisibility(&#39;ex6&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex6" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">133</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">72</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hypotenuse: &quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hypotenuse:  151.23822268196622
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="6">
+<li><p>Rewrite the trapezoid script making it compute the area of the trapezoid starting from the major base (MB), minor base (mb) and height (H) taken in input. (Hint: <em>use the input function and remember to convert the acquired value into an int</em>).</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex7&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex7" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;trapezoidV2.py&quot;&quot;&quot;</span>
+<span class="n">MB</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Input the major base (MB):&quot;</span><span class="p">))</span>
+<span class="n">mb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Input the minor base (mb):&quot;</span><span class="p">))</span>
+<span class="n">H</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Input the height (H):&quot;</span><span class="p">))</span>
+<span class="n">Area</span> <span class="o">=</span> <span class="p">(</span><span class="n">MB</span> <span class="o">+</span> <span class="n">mb</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Given MB:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">MB</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot; mb:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">mb</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot; and H:&quot;</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The trapezoid area is: &quot;</span><span class="p">,</span> <span class="n">Area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Given MB: 12  mb: 55  and H: 66
+The trapezoid area is:  2211.0
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="7">
+<li><p>Write a script that reads the side of an hexagon in input and computes its perimeter and area printing them to the screen. <em>Hint:</em> <span class="math notranslate nohighlight">\(Area = \frac{3*\sqrt{3}*side^{2}}{2}\)</span></p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex8&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex8" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">side</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please insert the side of the hexagon: &quot;</span><span class="p">))</span>
+
+<span class="n">P</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">side</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">side</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perimeter: &quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="s2">&quot; Area: &quot;</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Perimeter:  3330  Area:  800272.4250021052
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="8">
+<li><p>You are given a very important deadline in: days = 4 hours = 13 minutes = 52
+Write some code that prints the total minutes.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex9&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex9" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">minutes</span> <span class="o">=</span> <span class="mi">52</span>
+
+<span class="c1"># write here</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In total there are&quot;</span><span class="p">,</span> <span class="n">days</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="n">hours</span><span class="o">*</span><span class="mi">60</span> <span class="o">+</span> <span class="n">minutes</span><span class="p">,</span> <span class="s2">&quot;minutes left&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+In total there are 6592 minutes left
+</pre></div></div>
+</div>
+</section>
+<section id="Exercises-(Difficult)">
+<h2>Exercises (Difficult)</h2>
+<ol class="arabic simple">
+<li><p><strong>Difficult</strong> Write a function is_balanced(word) that: 1)takes a string of lowercase letters, 2)returns True iff for every letter the number of occurrences equals the number of occurrences of its opposite in the alphabet (a↔z, b↔y, …). The empty string counts as balanced.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>is_balanced(&quot;azby&quot;)   # True
+is_balanced(&quot;aazz&quot;)   # True
+is_balanced(&quot;abc&quot;)    # False
+is_balanced(&quot;&quot;)       # True
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exdifficult&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exdifficult" style="display:none;"><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_balanced</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># frequency array for &#39;a&#39;..&#39;z&#39;</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">26</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="c1"># assume input is lowercase a-z as stated</span>
+        <span class="n">freq</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># check symmetry: i &lt;-&gt; 25 - i</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">freq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">freq</span><span class="p">[</span><span class="mi">25</span> <span class="o">-</span> <span class="n">i</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+<br/></pre></div>
+</div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p><strong>Difficult</strong> Write a function named is_magic_square(matrix), that takes a square matrix of integers (list of lists) and returns True if the sum of every row and every column is the same number, otherwise False. (We do not require diagonal sums to match; we only check rows and columns.)</p></li>
+</ol>
+<p>Examples</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>m1 = [
+    [2, 2],
+    [2, 2]
+]
+# all rows and columns sum to 4 → True
+print(is_magic_square(m1))   # True
+
+m2 = [
+    [1, 2],
+    [3, 4]
+]
+print(is_magic_square(m2))   # False
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exdifficult2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exdifficult2" style="display:none;"><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_magic_square</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># sum of first row as reference</span>
+
+    <span class="c1"># check all rows</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">!=</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># check all columns</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">!=</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div></section>
+<section id="Let's-try-Linux">
+<h2>Let’s try Linux</h2>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note:</strong></p>
+<p>Altough for this course you will be fine with any operating system, my advice is to get familiar with Linux.</p>
+</div>
+<p>The following section explains how to install Linux on a windows machine. This is for your reference, you can read the following instructions before the next practical and try to instally Linux if you want to test it out.</p>
+<section id="Linux-on-windows">
+<h3>Linux on windows</h3>
+<p>If your computer has Windows installed but you want to learn Linux you have several options to get it to run Linux:</p>
+<ol class="arabic simple">
+<li><p>You can install a virtualization software like <a class="reference external" href="https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0%7CPLAYER-1550%7Cproduct_downloads">vmware player</a><span class="link-target"> [https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/15_0%7CPLAYER-1550%7Cproduct_downloads]</span> and download the .iso image of a linux distribution like <a class="reference external" href="https://ubuntu.com/#download">ubuntu.</a><span class="link-target"> [https://ubuntu.com/#download]</span> and install/run it from vmware player. For more information you can look at <a class="reference external" href="https://www.youtube.com/watch?v=9rUhGWijf9U">this tutorial.</a><span class="link-target"> [https://www.youtube.com/watch?v=9rUhGWijf9U]</span> Another option is to install <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">virtual
+box</a><span class="link-target"> [https://www.virtualbox.org/wiki/Downloads]</span>.</p></li>
+<li><p>This video tutorial (only in Italian) shows you how to set up a usb stick to run Linux from it: <a class="reference external" href="https://youtu.be/8_SK8iEMyJk">https://youtu.be/8_SK8iEMyJk</a></p></li>
+</ol>
+<p><a class="reference external" href="https://www.osboxes.org/virtualbox-images/">Here</a><span class="link-target"> [https://www.osboxes.org/virtualbox-images/]</span> you can find some VDI images that you can load in virtual box or in vmware player with several different operating systems including Linux distributions like Ubuntu, Debian, Centos, Fedora, etc. Please refer to this <a class="reference external" href="https://www.osboxes.org/guide/">guide</a><span class="link-target"> [https://www.osboxes.org/guide/]</span> (for information on vmware please click on <strong>VM IMAGES –&gt; VMware IMAGES</strong> in the menu of the page).</p>
+</section>
+<section id="A-dual-boot-system">
+<h3>A dual boot system</h3>
+<p>You can also install <strong>Linux and Windows on the same machine</strong> and every time you boot your system up <strong>you can decide on which one of the two operating systems you want to use</strong>. Unlike the case described above in which Linux runs <strong>within</strong> Windows, in this case to switch from one operating system to the other you will always have to reboot the machine.</p>
+<p>The installation of a dual boot system is easy, in principle, but there are a few things that you have to be careful on, like creating a partition of the hard disk on which you want to install Linux. If you make a mistake here you might end up losing Windows for example. My advice is to read carefully one of the following (or other guides) before attempting this:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://itsfoss.com/install-ubuntu-dual-boot-mode-windows/">How To Install Ubuntu Along With Windows</a><span class="link-target"> [https://itsfoss.com/install-ubuntu-dual-boot-mode-windows/]</span></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=-iSAyiicyQY">How to Dual Boot Ubuntu 20.04 LTS and Windows 10</a><span class="link-target"> [https://www.youtube.com/watch?v=-iSAyiicyQY]</span></p></li>
+<li><p><a class="reference external" href="https://averagelinuxuser.com/dualboot-linux-windows/">How to Dual boot Windows 10 and Linux (Beginner’s Guide)</a><span class="link-target"> [https://averagelinuxuser.com/dualboot-linux-windows/]</span></p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div></section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

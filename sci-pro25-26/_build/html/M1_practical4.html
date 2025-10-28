@@ -1,0 +1,1552 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1, Practical 4 &mdash; DS Scientific Programming Lab</title>
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman.css?v=767961f0" />
+      <link rel="stylesheet" type="text/css" href="static/css/jupman-web.css?v=9f465e15" />
+
+  
+    <link rel="canonical" href="https://jupman.softpython.org/en/latest/M1_practical4.html" />
+      <script src="static/documentation_options.js?v=632f9628"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="static/js/jupman.js?v=eb437c40"></script>
+      <script src="static/js/pytutor-embed.bundle.min.js?v=91e4b631"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 1, Practical 5" href="M1_practical5.html" />
+    <link rel="prev" title="Module 1, Practical 3" href="M1_practical3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="toc-page.html" class="icon icon-home">
+            DS Scientific Programming Lab
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Scientific Programming for DS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#General-Info">General Info</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Timetable-and-lecture-rooms">Timetable and lecture rooms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Equipment">Equipment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#Acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical1.html">Module 1, Practical 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Setting-up-the-environment">Setting up the environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Our-toolbox">Our toolbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Linux">Installing Visual studio Code (VScode) in Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-Windows">Installing Visual studio Code (VScode) in Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installing-Visual-studio-Code-(VScode)-in-MAC">Installing Visual studio Code (VScode) in MAC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-console">The console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#VScode">VScode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#The-debugger">The debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)">A quick Jupyter primer (just for your information, skip if not interested)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-together">Let’s try together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Exercises-(Difficult)">Exercises (Difficult)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical1.html#Let's-try-Linux">Let’s try Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#Linux-on-windows">Linux on windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical1.html#A-dual-boot-system">A dual boot system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical2.html">Module 1, Practical 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Objects">Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Numeric-types">Numeric types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Integers">Integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Booleans">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Real-numbers">Real numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Strings">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical2.html#Methods-for-the-str-object">Methods for the str object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical2.html#Exercises-Difficult">Exercises Difficult</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical3.html">Module 1, Practical 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Operators-for-lists">Operators for lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Methods-of-the-class-list">Methods of the class list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#From-strings-to-lists-(split-method)">From strings to lists (split method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#from-list-to-strings-(join-method)">from list to strings (join method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises-(LIST)">Exercises (LIST)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Tuples">Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Introduction-to-sets">Introduction to sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical3.html#Exercises-(difficult)">Exercises (difficult)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Email-Rules">Email Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Constraints">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical3.html#Tip:-Use-assert-for-Constraints">Tip: Use <code class="docutils literal notranslate"><span class="pre">assert</span></code> for Constraints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module 1, Practical 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Execution-flow">Execution flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Conditionals">Conditionals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#The-basic-if---else-statement">The basic <em>if - else</em> statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#The-if---elif---else-statement">The <em>if - elif - else</em> statement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Loops">Loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#For-loop">For loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Looping-over-a-range">Looping over a range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Nested-for-loops">Nested for loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#While-loops">While loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises-(difficult)">Exercises (difficult)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical5.html">Module 1, Practical 5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#More-on-loops">More on loops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Ternary-operator">Ternary operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Break-and-continue">Break and continue</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="M1_practical5.html#Continue-statement">Continue statement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="M1_practical5.html#Break-statement">Break statement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#List-comprehension">List comprehension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Dictionaries">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Functions-working-on-dictionaries">Functions working on dictionaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Dictionary-methods">Dictionary methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical5.html#Module-1-–-Self-Test">Module 1 – Self Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical5.html#Exercises-Difficult">Exercises Difficult</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical6.html">Module 1, Practical 6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Namespace-and-variable-scope">Namespace and variable scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Argument-passing">Argument passing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Positional-arguments">Positional arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Passing-arguments-by-keyword">Passing arguments by keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Specifying-default-values">Specifying default values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#File-input-and-output">File input and output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Opening-a-file">Opening a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Closing-a-file">Closing a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Reading-from-a-file">Reading from a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#Writing-to-a-file">Writing to a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical6.html#String-formatting-with-format">String formatting with format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical6.html#Long-exercise:-Word-Frequency-Analysis">Long exercise: Word Frequency Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical7.html">Module 1, Practical 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Gentle-reminder-on-functions">Gentle reminder on functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Getting-input-from-the-command-line">Getting input from the command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Argparse">Argparse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Libraries-installation-for-the-next-practicals">Libraries installation for the next practicals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#Exercise-(difficult)-1">Exercise (difficult) 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical7.html#1st-ML-model">1st ML model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#Machine-Learning">Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#What-is-k-Nearest-Neighbors-(k-NN)?">What is k-Nearest Neighbors (k-NN)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#Main-Idea-Behind-k-NN">Main Idea Behind k-NN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#For-instance:">For instance:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical7.html#todo">todo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical8.html">Module 1, Practical 8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Libraries-installation">Libraries installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Series">Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#How-to-define-and-access-a-Series">How to define and access a Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Operator-broadcasting">Operator broadcasting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Filtering">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Missing-data">Missing data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Computing-stats">Computing stats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Plotting-data">Plotting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Pandas-DataFrames">Pandas DataFrames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Define-a-DataFrame">Define a DataFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Loading-data-from-external-files">Loading data from external files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Extract-values-by-row-and-column">Extract values by row and column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Broadcasting,-filtering-and-computing-stats">Broadcasting, filtering and computing stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Merging-DataFrames">Merging DataFrames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Grouping">Grouping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises">Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercises-Difficult">Exercises Difficult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical8.html#Exercise-Difficult-(Relational-Database)">Exercise Difficult (Relational Database)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Relational-Database">Relational Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="M1_practical8.html#Tasks">Tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical9.html">Module 1, Practical 9</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-ndarray">Numpy ndarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Random-arrays">Random arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Numpy-to-and-from-pandas">Numpy to and from pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Iterating-over-arrays-and-Indexing">Iterating over arrays and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Broadcasting-and-arithmetic-functions">Broadcasting and arithmetic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Filtering">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Linear-algebra">Linear algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Matplotlib">Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical9.html#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M1_practical10.html">Module 1, Practical 10</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="M1_practical10.html#Part-1">Part 1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toc.html"> </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="toc-page.html">DS Scientific Programming Lab</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+    <div id='jupman-langs'></div>
+
+    <!-- SMALL TEMPLATE FOR LANGUAGES (VERY CUSTOM FOR softpython.org !!)
+    <script>
+    var hn = window.location.hostname;
+    var pn = window.location.pathname;
+
+    if (hn.includes('softpython.org')){
+        JUPMAN_LANG = hn.slice(0,window.location.hostname.indexOf('.'));
+    } else if (pn.includes('/_build/html')){
+        var pos = pn.indexOf('/_build/html');
+        JUPMAN_LANG = pn.slice(pos-2, pos);
+    } else {
+        JUPMAN_LANG = 'en';
+    }
+    console.log('JUPMAN_LANG=',JUPMAN_LANG);
+    </script>
+    -->
+    
+    
+     <!-- <li> <h2 style="background-color:red; color:yellow">WARNING! THIS VERSION IS OLD !  <br/>
+    <a style=" text-decoration: underline;" href="https://jupman.readthedocs.io/en/latest">GOT TO LATEST VERSION</a></li>
+ </h2></li>-->
+    <!-- Commented because doesn't work with sections,
+         see https://github.com/DavidLeoni/jupman/issues/39
+    <li><a href="toc-page.html">Docs</a> &raquo;</li>
+    
+        <li><a href="toc.html"> </a> &raquo;</li>
+    
+    <li>Module 1, Practical 4</li>
+    -->
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Module-1,-Practical-4">
+<h1>Module 1, Practical 4<a class="headerlink" href="#Module-1,-Practical-4" title="Link to this heading">¶</a></h1>
+<p>In this practical we will work with conditionals (branching) and loops.</p>
+<section id="Execution-flow">
+<h2>Execution flow<a class="headerlink" href="#Execution-flow" title="Link to this heading">¶</a></h2>
+<p>Recall from the lecture that there are at least three types of execution flows. Our statements can be simple and structured <strong>sequentially</strong>, when one instruction is executed right after the previous one, but some more complex flows involve <strong>conditional</strong> branching (when the portion of the code to be executed depends on the value of some condition), or <strong>loops</strong> when a portion of the code is executed multiple times until a certain condition becomes False.</p>
+<img alt="i1" src="images/structured_programming.png" />
+<p>These portions of code are generally called <strong>blocks</strong> and Python, unlike most of the programming languages, <strong>uses indentation (and some keywords like else, ‘:’, ‘next’, etc.) to define blocks</strong>.</p>
+</section>
+<section id="Conditionals">
+<h2>Conditionals<a class="headerlink" href="#Conditionals" title="Link to this heading">¶</a></h2>
+<p>We can use conditionals any time a decision needs to be made depending on the value of some condition. A block of code will be executed if the condition is evaluated to the boolean <strong>True</strong> and another one if the condition is evaluated to <strong>False</strong>.</p>
+<section id="The-basic-if---else-statement">
+<h3>The basic <em>if - else</em> statement<a class="headerlink" href="#The-basic-if---else-statement" title="Link to this heading">¶</a></h3>
+<p>The basic syntax of conditionals is an if statement like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if condition :
+
+    #This is the True branch
+    #do something
+
+else:
+
+    #This is the False branch (or else branch)
+    #do something else
+</pre></div>
+</div>
+<p>where condition is a boolean expression that tells the interpreter which of the two blocks should be executed. <strong>If and only if</strong> the condition is <strong>True</strong> the first branch is executed, otherwise execution goes to the second branch (i.e. the else branch). Note that the <strong>condition is followed by a “:”</strong> character and that <strong>the two branches are indented</strong>. This is the way Python uses to identify the block of instructions that belong to the same branch. The <strong>else keyword is followed by “:”</strong> and
+<strong>is not indented</strong> (i.e. it is at the same level of the <em>if</em> statement. There is no keyword at the end of the “else branch”, but <strong>indentation tells when the block of code is finished</strong>.</p>
+<p><strong>Example:</strong> Let’s get an integer from the user and test if it is even or odd, printing the result to the screen.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dear user give me an integer:&quot;</span><span class="p">))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1">#The number is even</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;even&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1">#The number is odd</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;odd&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number &quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot; is &quot;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [47]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> num <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">int</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Dear user give me an integer:</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> res <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> num <span style="color: rgb(98,98,98)">%</span> <span style="color: rgb(98,98,98)">2</span> <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">0</span>:
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(95,135,135)">#The number is even</span>
+
+<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: &#39;&#39;
+</pre></div></div>
+</div>
+<p>Note that the execution is sequential until the <em>if</em> keyword, then it branches until the indentation goes back to the same level of the if (i.e. the two branches rejoin at the <em>print</em> statement in the final line). <strong>Remember that the else branch is optional.</strong></p>
+</section>
+<section id="The-if---elif---else-statement">
+<h3>The <em>if - elif - else</em> statement<a class="headerlink" href="#The-if---elif---else-statement" title="Link to this heading">¶</a></h3>
+<p>If statements can be chained in such a way that there are more than two possible branches to be followed. Chaining them with the <strong>if - elif - else</strong> statement will make execution follow only one of the possible paths.</p>
+<p>The syntax is the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if condition :
+
+    #This is branch 1
+    #do something
+
+elif condition1 :
+
+    #This is branch 2
+    #do something
+
+elif condition2 :
+
+    #This is branch 3
+    #do something
+
+else:
+
+    #else branch. Executed if all other conditions are false
+    #do something else
+</pre></div>
+</div>
+<p>Note that <strong>branch 1</strong> is executed if condition is <strong>True</strong>, <strong>branch 2</strong> if and only if <strong>condition is False and condition1 is True</strong>, <strong>branch 3</strong> if condition is <strong>False, condition 1 is False and condition2 is True</strong>. <strong>If all conditions are False the else branch is executed</strong>.</p>
+<p><strong>Example</strong>: The tax rate of a salary depends on the income. If the income is &lt; 10000 euros, no tax is due, if the income is between 10000 euros and 20000 the tax rate is 25%, if between 20000 and 45000 it is 35% otherwise it is 40%. What is the tax due by a person earning 35000 euros per year?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="mi">35000</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="k">if</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">:</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">20000</span><span class="p">:</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">45000</span><span class="p">:</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mf">0.35</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="mf">0.4</span>
+
+<span class="n">tax</span> <span class="o">=</span> <span class="n">income</span><span class="o">*</span><span class="n">rate</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The tax due is &quot;</span><span class="p">,</span> <span class="n">tax</span><span class="p">,</span> <span class="s2">&quot; euros (i.e &quot;</span><span class="p">,</span> <span class="n">rate</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;%)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The tax due is  12250.0  euros (i.e  35.0 %)
+</pre></div></div>
+</div>
+<p>Note the difference in the two following cases:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Example 1</span>
+
+<span class="n">val</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value &gt;5&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I said value is &gt;5!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value is &lt;= 5&quot;</span><span class="p">)</span>
+
+<span class="c1">#Example 2</span>
+
+<span class="n">val</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Value is &gt;5&quot;</span><span class="p">)</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I said Value is &gt;5!!!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Value &gt;5
+
+
+Value is &gt;5
+I said Value is &gt;5!!!
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Loops">
+<h2>Loops<a class="headerlink" href="#Loops" title="Link to this heading">¶</a></h2>
+<p>Looping is the ability of repeating a specific block of code several times (i.e. until a specific condition is True or there are no more elements to process).</p>
+<section id="For-loop">
+<h3>For loop<a class="headerlink" href="#For-loop" title="Link to this heading">¶</a></h3>
+<p>The <em>for</em> loop is used to loop over a collection of objects (e.g. a string, list, tuple, …). The basic syntax of the for loop is the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for elem in collection :
+    #OK, do something with elem
+    # instruction 1
+    # instruction 2
+</pre></div>
+</div>
+<p>the variable <em>elem</em> will get the value of each one of the elements present in <em>collection</em> one after the other. The end of the block of code to be executed for each element in the collection is again defined by indentation.</p>
+<p>Depending on the type of the collection elem will get different values. Recall from the lecture that:</p>
+<img alt="i2" src="images/iteration.png" />
+<p>Let’s see this in action:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="s2">&quot;Hi there from python&quot;</span>
+<span class="n">Slist</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="n">Stuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;from&quot;</span><span class="p">,</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;String:&quot;</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List:&quot;</span><span class="p">,</span> <span class="n">Slist</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuple:&quot;</span><span class="p">,</span> <span class="n">Stuple</span><span class="p">)</span>
+
+<span class="c1">#for loop on string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;On strings:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">S</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">On lists:&quot;</span><span class="p">)</span>
+<span class="c1">#for loop on list</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Slist</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">On tuples:&quot;</span><span class="p">)</span>
+<span class="c1">#for loop on list</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">Stuple</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+String: Hi there from python
+List: [&#39;Hi&#39;, &#39;there&#39;, &#39;from&#39;, &#39;python&#39;]
+Tuple: (&#39;Hi&#39;, &#39;there&#39;, &#39;from&#39;, &#39;python&#39;)
+On strings:
+H
+i
+
+t
+h
+e
+r
+e
+
+f
+r
+o
+m
+
+p
+y
+t
+h
+o
+n
+
+On lists:
+Hi
+there
+from
+python
+
+On tuples:
+Hi
+there
+from
+python
+</pre></div></div>
+</div>
+</section>
+<section id="Looping-over-a-range">
+<h3>Looping over a range<a class="headerlink" href="#Looping-over-a-range" title="Link to this heading">¶</a></h3>
+<p>It is possible to loop over a range of values with the pythom built-in function <em>range</em>. The <em>range</em> function accepts either two or three parameters (all of them are <strong>integers</strong>). Similarly to the slicing operator, it needs the <strong>starting point</strong>, <strong>end point</strong> and <strong>an optional step</strong>. Three distinct syntaxes are available:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>range(E)        # ranges from 0 to E-1
+range(S,E)      # ranges from S to E-1
+range(S,E,step) # ranges from S to E-1 with +step jumps
+</pre></div>
+</div>
+<p>Remember that <em>S</em> is <strong>included</strong> while <em>E</em> is <strong>excluded</strong>. Let’s see some examples.</p>
+<p><strong>Example:</strong> Given a list of integers, return a list with all the even numbers.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">82</span><span class="p">]</span>
+<span class="n">onlyEven</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">)):</span>  <span class="c1">#this is equivalent to range(len(myList)):</span>
+    <span class="k">if</span> <span class="n">myList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="n">onlyEven</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;original list:&quot;</span><span class="p">,</span> <span class="n">myList</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;only even numbers:&quot;</span><span class="p">,</span> <span class="n">onlyEven</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+original list: [1, 7, 9, 121, 77, 82]
+only even numbers: [82]
+</pre></div></div>
+</div>
+<p><strong>Example:</strong> Store in a list the multiples of 19 between 1 and 100.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiples</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">19</span><span class="p">):</span>    <span class="c1"># equal to: list(range(19,101,19))</span>
+    <span class="n">multiples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>       <span class="c1">#</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;multiples of 19: &quot;</span><span class="p">,</span> <span class="n">multiples</span><span class="p">)</span>
+
+<span class="c1">#alternative way:</span>
+<span class="n">multiples</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="o">//</span><span class="mi">19</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">multiples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">19</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;multiples of 19:&quot;</span><span class="p">,</span> <span class="n">multiples</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+multiples of 19:  [19, 38, 57, 76, 95]
+multiples of 19: [19, 38, 57, 76, 95]
+</pre></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle"><strong>Note:</strong> range works differently in Python 2.x and 3.x</p>
+<p>In Python 3 the <em>range</em> function returns an iterator rather storing the entire list.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Check out the difference:</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+range(0, 10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div></div>
+</div>
+</div>
+<p><strong>Example:</strong> Let’s consider the two DNA strings s1 = “ATACATATAGGGCCAATTATTATAAGTCAC” and s2 = “CGCCACTTAAGCGCCCTGTATTAAAGTCGC” that have the same length. Let’s create a third string <span class="math notranslate nohighlight">\(out\)</span> such that <span class="math notranslate nohighlight">\(out[i]\)</span> is <span class="math notranslate nohighlight">\(&quot;|&quot;\)</span> if <span class="math notranslate nohighlight">\(s1[i]==s2[i]\)</span>, <span class="math notranslate nohighlight">\(&quot;\ &quot;\)</span> otherwise.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;ATACATATAGGGCCAATTATTATAAGTCAC&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;CGCCACTTAAGCGCCCTGTATTAAAGTCGC&quot;</span>
+
+<span class="n">outSTR</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">outSTR</span> <span class="o">=</span> <span class="n">outSTR</span> <span class="o">+</span> <span class="s2">&quot;|&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">outSTR</span> <span class="o">=</span> <span class="n">outSTR</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outSTR</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ATACATATAGGGCCAATTATTATAAGTCAC
+   ||  || |  |  |   |  ||||| |
+CGCCACTTAAGCGCCCTGTATTAAAGTCGC
+</pre></div></div>
+</div>
+</section>
+<section id="Nested-for-loops">
+<h3>Nested for loops<a class="headerlink" href="#Nested-for-loops" title="Link to this heading">¶</a></h3>
+<p>In some occasions it is useful to nest one (or more) for loops into another one. The basic syntax is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in collection:
+    for j in another_collection:
+        #do some stuff with i and j
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<p>Given the matrix <span class="math notranslate nohighlight">\(\begin{bmatrix}1 &amp; 2 &amp; 3\\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{bmatrix}\)</span> stored as a list of lists (i.e. matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]].</p>
+<p>Print it out as: <span class="math notranslate nohighlight">\(\begin{matrix}1 &amp; 2 &amp; 3\\4 &amp; 5 &amp; 6\\7 &amp; 8 &amp; 9\end{matrix}\)</span></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="c1">#note int --&gt; str conversion!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+
+<span class="c1"># Without nested for (but this is not exactly the same).</span>
+<span class="c1"># NOTE: cannot do print(&quot; &quot;.join(row)) because we have integers</span>
+
+<span class="c1">#for row in matrix:</span>
+<span class="c1">#    print(&quot; &quot;.join(str(row)))</span>
+<span class="c1">#</span>
+<span class="c1">#Outputs:</span>
+<span class="c1">#[ 1 ,   2 ,   3 ]</span>
+<span class="c1">#[ 4 ,   5 ,   6 ]</span>
+<span class="c1">#[ 7 ,   8 ,   9 ]</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1 2 3
+4 5 6
+7 8 9
+</pre></div></div>
+</div>
+</section>
+<section id="While-loops">
+<h3>While loops<a class="headerlink" href="#While-loops" title="Link to this heading">¶</a></h3>
+<p>The <strong>for</strong> loop is great <strong>when we have to iterate over a finite sequence of elements</strong>. But when one needs <strong>to loop until a specific condition holds true</strong>, another construct must be used: the <strong>while</strong> statement. The loop will end when the condition becomes false.</p>
+<p>The basic syntax is the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>while condition:
+
+    #do something
+    #update the value of condition
+</pre></div>
+</div>
+<p>An example follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i now is:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">#THIS IS VERY IMPORTANT!</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+i now is: 0
+i now is: 1
+i now is: 2
+i now is: 3
+i now is: 4
+</pre></div></div>
+</div>
+<p>Note that if <em>condition</em> is false at the beginning the block of code is never executed.</p>
+<div class="admonition warning">
+<p><strong>Note:</strong> The loop will continue until <em>condition</em> holds true and the only code executed is the block defined through the indentation. This block of code must update the value of condition otherwise the interpreter will get stuck in the loop and will never exit.</p>
+</div>
+<p>We can combine <em>for</em> loops and <em>while</em> loops one into the code block of the other:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">output</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+6 5 4 3 2 1
+7 6 5 4 3 2 1
+8 7 6 5 4 3 2 1
+9 8 7 6 5 4 3 2 1
+</pre></div></div>
+</div>
+<p>Note the way the numbers are concatenated together to form the output string. Check the difference of the previous code to the following:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Given the integer 134479170, print if it is divisible for the numbers from 2 to 16. Hint: use for and if.</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex0&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex0" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="mi">134479170</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#boolean variable to monitor</span>
+             <span class="c1">#if we found at least 1 divisor</span>
+
+<span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">17</span><span class="p">):</span> <span class="c1">#2 included, 17 excluded</span>
+    <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1">#Print the divisor</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s2">&quot; can be divided by &quot;</span><span class="p">,</span> <span class="n">divisor</span><span class="p">)</span>
+        <span class="c1">#Give proof that it is a divisor</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">divisor</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">val</span><span class="o">//</span><span class="n">divisor</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">val</span> <span class="p">)</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span> <span class="c1">#this is false if no divisors have been found</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, could not find divisors&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+134479170  can be divided by  2
+         2 * 67239585 = 134479170
+134479170  can be divided by  3
+         3 * 44826390 = 134479170
+134479170  can be divided by  5
+         5 * 26895834 = 134479170
+134479170  can be divided by  6
+         6 * 22413195 = 134479170
+134479170  can be divided by  7
+         7 * 19211310 = 134479170
+134479170  can be divided by  9
+         9 * 14942130 = 134479170
+134479170  can be divided by  10
+         10 * 13447917 = 134479170
+134479170  can be divided by  14
+         14 * 9605655 = 134479170
+134479170  can be divided by  15
+         15 * 8965278 = 134479170
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Given the DNA string</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DNA=&quot;GATTACATATATCAGTACAGATATATACGCGCGGGCTTACTATTAAAAACCCC&quot;
+</pre></div>
+</div>
+<p>write a Python script that reverse-complements it. To reverse-complement a string of DNA, one needs to replace any A with T, T with A, C with G and G with C, while any other character is complemented in N. Finally, the sequence has to be reversed (e.g. the first base becomes the last). For example, ATCG becomes CGAT.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;ex3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;GATTACATATATCAGTACAGATATATACGCGCGGGCTTACTATTAAAAACCCC&quot;</span>
+
+<span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s2">&quot;T&quot;</span><span class="p">:</span>
+        <span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span> <span class="n">revComp</span>
+    <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span><span class="p">:</span>
+        <span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;T&quot;</span><span class="o">+</span> <span class="n">revComp</span>
+    <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span>
+        <span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;G&quot;</span><span class="o">+</span> <span class="n">revComp</span>
+    <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s2">&quot;G&quot;</span><span class="p">:</span>
+        <span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span> <span class="o">+</span> <span class="n">revComp</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;N&quot;</span> <span class="o">+</span> <span class="n">revComp</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5&#39;-&quot;</span><span class="p">,</span> <span class="n">DNA</span><span class="p">,</span> <span class="s2">&quot;-3&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3&#39;-&quot;</span><span class="p">,</span> <span class="n">revComp</span><span class="p">,</span> <span class="s2">&quot;-5&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5&#39;- GATTACATATATCAGTACAGATATATACGCGCGGGCTTACTATTAAAAACCCC -3&#39;
+3&#39;- GGGGTTTTTAATAGTAAGCCCGCGCGTATATATCTGTACTGATATATGTAATC -5&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Another solution&quot;&quot;&quot;</span>
+
+<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;GATTACATATATCAGTACAGATATATACGCGCGGGCTTACTATTAAAAACCCC&quot;</span>
+
+
+<span class="n">dna_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">DNA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna_list</span><span class="p">)</span>
+<span class="n">compl</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">dna_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">el</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
+        <span class="n">compl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">el</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
+        <span class="n">compl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">el</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+        <span class="n">compl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">el</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
+        <span class="n">compl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">compl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compl</span><span class="p">)</span>
+<span class="n">compl</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compl</span><span class="p">)</span>
+<span class="n">revComp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5&#39;-&quot;</span><span class="p">,</span> <span class="n">DNA</span><span class="p">,</span> <span class="s2">&quot;-3&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3&#39;-&quot;</span><span class="p">,</span> <span class="n">revComp</span><span class="p">,</span> <span class="s2">&quot;-5&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;G&#39;, &#39;A&#39;, &#39;T&#39;, &#39;T&#39;, &#39;A&#39;, &#39;C&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;C&#39;, &#39;A&#39;, &#39;G&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;G&#39;, &#39;G&#39;, &#39;C&#39;, &#39;T&#39;, &#39;T&#39;, &#39;A&#39;, &#39;C&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;]
+[&#39;C&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;T&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;G&#39;, &#39;T&#39;, &#39;C&#39;, &#39;A&#39;, &#39;T&#39;, &#39;G&#39;, &#39;T&#39;, &#39;C&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;G&#39;, &#39;A&#39;, &#39;A&#39;, &#39;T&#39;, &#39;G&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;G&#39;, &#39;G&#39;, &#39;G&#39;, &#39;G&#39;]
+[&#39;G&#39;, &#39;G&#39;, &#39;G&#39;, &#39;G&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;G&#39;, &#39;C&#39;, &#39;C&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;C&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;C&#39;, &#39;T&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;C&#39;, &#39;T&#39;, &#39;G&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;A&#39;, &#39;T&#39;, &#39;G&#39;, &#39;T&#39;, &#39;A&#39;, &#39;A&#39;, &#39;T&#39;, &#39;C&#39;]
+
+5&#39;- GATTACATATATCAGTACAGATATATACGCGCGGGCTTACTATTAAAAACCCC -3&#39;
+3&#39;- GGGGTTTTTAATAGTAAGCCCGCGCGTATATATCTGTACTGATATATGTAATC -5&#39;
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Count how many of the first 100 integers are divisible by 2, 3, 5, 7 but not by 10 and print these counts. Be aware that a number can be divisible by more than one of these numbers (e.g. 6) and therefore it must be counted as divisible by all of them (e.g. 6 must be counted as divisible by 2 and 3).</p></li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#cnts[0] counts for 2, cnts[1] counts for 3...</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span>  <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cnts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cnts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cnts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cnts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnts</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cnts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot; numbers are divisible by &quot;</span><span class="p">,</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;(but not 10) in the first 100&quot;</span><span class="p">)</span>
+
+
+
+<span class="sd">&quot;&quot;&quot;Another version, more compact.</span>
+<span class="sd">   Makes use of two for loops one into the other</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">cnts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#cnts[0] counts for 2, cnts[1] counts for 3...</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">vals</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cnts</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cnts</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cnts</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot; numbers are divisible by &quot;</span><span class="p">,</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;(but not 10) in the first 100&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+40  numbers are divisible by  2 (but not 10) in the first 100
+30  numbers are divisible by  3 (but not 10) in the first 100
+10  numbers are divisible by  5 (but not 10) in the first 100
+13  numbers are divisible by  7 (but not 10) in the first 100
+
+-----------------------------------------
+
+40  numbers are divisible by  2 (but not 10) in the first 100
+30  numbers are divisible by  3 (but not 10) in the first 100
+10  numbers are divisible by  5 (but not 10) in the first 100
+13  numbers are divisible by  7 (but not 10) in the first 100
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Write a python script that creates the following pattern:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>+
+++
++++
+++++
++++++
+++++++
++++++++ &lt;-- 7
+++++++
++++++
+++++
++++
+++
++
+</pre></div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;ex1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outStr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">outStr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">outStr</span> <span class="o">=</span> <span class="n">outStr</span> <span class="o">+</span> <span class="s2">&quot;+&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">outStr</span> <span class="o">=</span> <span class="n">outStr</span> <span class="o">+</span> <span class="s2">&quot; &lt;-- 7&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">outStr</span><span class="p">)</span> <span class="c1"># print the ascending part</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">outStr</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">outStr</span> <span class="o">=</span> <span class="n">outStr</span> <span class="o">+</span> <span class="s2">&quot;+&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outStr</span><span class="p">)</span> <span class="c1">#print the descending part</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
++
+++
++++
+++++
++++++
+++++++
++++++++ &lt;-- 7
+++++++
++++++
+++++
++++
+++
++
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="6">
+<li><p>Playing time! Write a python scripts that:</p>
+<ol class="arabic simple">
+<li><p>Picks a random number from 1 to 10, with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">myInt</span> <span class="pre">=</span> <span class="pre">random.randint(1,10)</span></code></p></li>
+</ul>
+</li>
+<li><p>Asks the user to guess a number and checks if the user has guessed the right one</p></li>
+<li><p>If the guess is right the program will stop with a congratulation message</p></li>
+<li><p>If the guess is wrong the program will continue asking a number, reporting the numbers already guessed (hint: store them in a list and print it).</p></li>
+<li><p>Modify the program to notify the user if he/she inputs the same number more than once.</p></li>
+</ol>
+</li>
+</ol>
+<div class="tggle" onclick="toggleVisibility(&#39;ex6&#39;);"><p>Show/Hide Solution</p>
+</div><div id="ex6" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">myInt</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">guessedNumbers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="n">found</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">userInt</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Guess a number from 1 to 10: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">userInt</span> <span class="o">==</span> <span class="n">myInt</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congratulations. The number I guessed was &quot;</span><span class="p">,</span> <span class="n">myInt</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">userInt</span> <span class="ow">in</span> <span class="n">guessedNumbers</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You already guessed &quot;</span><span class="p">,</span> <span class="n">userInt</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">guessedNumbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">userInt</span><span class="p">)</span>
+        <span class="n">guessedNumbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nope, try again. So far you guessed: &quot;</span><span class="p">,</span> <span class="n">guessedNumbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Nope, try again. So far you guessed:  [10]
+Congratulations. The number I guessed was  1
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="7">
+<li><p>Roman Numerals to Integer. Roman numerals use 7 symbols:</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>V</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>1000</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">Rules:</div>
+<div class="line">- Normally written from <strong>largest to smallest</strong> (left → right).</div>
+<div class="line">- <strong>Subtractive notation</strong> (6 cases):</div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">IV</span> <span class="pre">=</span> <span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">IX</span> <span class="pre">=</span> <span class="pre">9</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">XL</span> <span class="pre">=</span> <span class="pre">40</span></code>, <code class="docutils literal notranslate"><span class="pre">XC</span> <span class="pre">=</span> <span class="pre">90</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">CD</span> <span class="pre">=</span> <span class="pre">400</span></code>, <code class="docutils literal notranslate"><span class="pre">CM</span> <span class="pre">=</span> <span class="pre">900</span></code></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Examples:</strong></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">III</span> <span class="pre">→</span> <span class="pre">3</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">LVIII</span> <span class="pre">→</span> <span class="pre">58</span> <span class="pre">(50</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">+</span> <span class="pre">3)</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">MCMXCIV</span> <span class="pre">→</span> <span class="pre">1994</span> <span class="pre">(1000</span> <span class="pre">+</span> <span class="pre">900</span> <span class="pre">+</span> <span class="pre">90</span> <span class="pre">+</span> <span class="pre">4)</span></code></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Constraint:</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">s.length</span> <span class="pre">&lt;=</span> <span class="pre">15</span></code> and <code class="docutils literal notranslate"><span class="pre">s</span></code> contains only Roman numeral characters.</div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exleetcode_13&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exleetcode_13" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;MCMXCIV&quot;</span>
+
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="p">}</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># If this is a subtractive case</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MCMXCIV 1994
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="8">
+<li><p>String Substrings: Given an array of strings <code class="docutils literal notranslate"><span class="pre">words</span></code>, return all strings in <code class="docutils literal notranslate"><span class="pre">words</span></code> that are a substring of another word.
+You can return the answer in any order.</p></li>
+</ol>
+<p><strong>Examples</strong></p>
+<ul>
+<li><div class="line-block">
+<div class="line">Input: <code class="docutils literal notranslate"><span class="pre">[&quot;mass&quot;,&quot;as&quot;,&quot;hero&quot;,&quot;superhero&quot;]</span></code></div>
+<div class="line">Output: <code class="docutils literal notranslate"><span class="pre">[&quot;as&quot;,&quot;hero&quot;]</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Input: <code class="docutils literal notranslate"><span class="pre">[&quot;leetcode&quot;,&quot;et&quot;,&quot;code&quot;]</span></code></div>
+<div class="line">Output: <code class="docutils literal notranslate"><span class="pre">[&quot;et&quot;,&quot;code&quot;]</span></code></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Input: <code class="docutils literal notranslate"><span class="pre">[&quot;blue&quot;,&quot;green&quot;,&quot;bu&quot;]</span></code></div>
+<div class="line">Output: <code class="docutils literal notranslate"><span class="pre">[]</span></code></div>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Constraints</strong> - <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">words.length</span> <span class="pre">&lt;=</span> <span class="pre">100</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;=</span> <span class="pre">words[i].length</span> <span class="pre">&lt;=</span> <span class="pre">30</span></code></div>
+<div class="line">- <code class="docutils literal notranslate"><span class="pre">words[i]</span></code> contains only lowercase English letters</div>
+<div class="line">- All strings in <code class="docutils literal notranslate"><span class="pre">words</span></code> are unique</div>
+</div>
+<div class="tggle" onclick="toggleVisibility(&#39;exleetcode_1408&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exleetcode_1408" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;mass&quot;</span><span class="p">,</span><span class="s2">&quot;as&quot;</span><span class="p">,</span><span class="s2">&quot;hero&quot;</span><span class="p">,</span><span class="s2">&quot;superhero&quot;</span><span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span> <span class="ow">and</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+            <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;mass&#39;, &#39;as&#39;, &#39;hero&#39;, &#39;superhero&#39;] [&#39;as&#39;, &#39;hero&#39;]
+</pre></div></div>
+</div>
+</div></section>
+<section id="Exercises-(difficult)">
+<h2>Exercises (difficult)<a class="headerlink" href="#Exercises-(difficult)" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>You are given an image</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>img = [[ 0.,  0.,  5., 13.,  9.,  1.,  0.,  0.],
+       [ 0.,  0., 13., 15., 10., 15.,  5.,  0.],
+       [ 0.,  3., 15.,  2.,  0., 11.,  8.,  0.],
+       [ 0.,  4., 12.,  0.,  0.,  8.,  8.,  0.],
+       [ 0.,  5.,  8.,  0.,  0.,  9.,  8.,  0.],
+       [ 0.,  4., 11.,  0.,  1., 12.,  7.,  0.],
+       [ 0.,  2., 14.,  5., 10., 12.,  0.,  0.],
+       [ 0.,  0.,  6., 13., 10.,  0.,  0.,  0.]]
+</pre></div>
+</div>
+<p>Can you guess what it is showing? (do not use matplotlib.pyplot.matshow() )</p>
+<div class="tggle" onclick="toggleVisibility(&#39;exd1&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exd1" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="p">[[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span> <span class="mf">13.</span><span class="p">,</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span> <span class="mf">13.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span> <span class="mf">14.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span> <span class="mf">13.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">img</span><span class="p">:</span>
+    <span class="n">to_print</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">to_print</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">to_print</span> <span class="o">+=</span> <span class="s2">&quot;*&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">to_print</span><span class="p">)</span>
+
+
+<span class="c1"># With matshow is super easy :)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+**   ***
+**     *
+*   *  *
+*  **  *
+*  **  *
+*  **  *
+*     **
+**   ***
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.image.AxesImage at 0x7ff5ac2cd240&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="images/M1_practical4_55_2.png" src="images/M1_practical4_55_2.png" />
+</div>
+</div>
+</div><ol class="arabic simple" start="2">
+<li><p>Download <a class="reference external" href="https://drive.google.com/file/d/1zB-xRlEjHuZIvbmh-4yj9amX3-om7qH8/view?usp=sharing">this file</a>.
+The file contains movies informations on Netflix!</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>title,duration,genre,rating,stars,votes
+Cobra Kai,30 min,&quot;Action, Comedy, Drama&quot;,8.5,&quot;[&#39;Ralph Macchio, &#39;, ...]&quot;,&quot;177,031&quot;
+The Crown,58 min,&quot;Biography, Drama, History&quot;,8.7,&quot;[&#39;Claire Foy, &#39;, ...]&quot;,&quot;199,885&quot;
+Better Call Saul,46 min,&quot;Crime, Drama&quot;,8.9,&quot;[&#39;Bob Odenkirk, &#39;, ...]&quot;,&quot;501,384&quot;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Download the file, save it in a file with name <strong>n_movies_simple.csv</strong>, put the file into a folder named <strong>Netflix_movies</strong></div>
+<div class="line">Read the file using:</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = []
+f = open(&quot;Netflix_movies/n_movies_simple.csv&quot;, &quot;r&quot;)
+data = f.readlines()
+f.close()
+</pre></div>
+</div>
+<p>Print the title of the film with maximum rate.</p>
+<div class="tggle" onclick="toggleVisibility(&#39;exd2&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exd2" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Netflix_movies/n_movies_simple.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">ratings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">max_rate</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">rate</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">current_rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">max_rate</span> <span class="o">&lt;</span> <span class="n">current_rate</span><span class="p">:</span>
+            <span class="n">max_rate</span> <span class="o">=</span> <span class="n">current_rate</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="n">c</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">position</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="n">position</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">position</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+BoJack Horseman 9.9
+BoJack Horseman,26 min,9.9,&#34;[&#39;Amy Winfrey&#39;, &#39;| &#39;, &#39;    Stars:&#39;, &#39;Will Arnett, &#39;, &#39;Amy Sedaris, &#39;, &#39;Alison Brie, &#39;, &#39;Paul F. Tompkins&#39;]&#34;,&#34;16,066&#34;
+
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="3">
+<li><p>Load the same dataset as before</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = []
+f = open(&quot;Netflix_movies/n_movies_simple.csv&quot;, &quot;r&quot;)
+data = f.readlines()
+f.close()
+</pre></div>
+</div>
+<p>Print the title of the film with maximum rate with a duration in between <strong>100</strong> and <strong>500</strong> minutes</p>
+<div class="tggle" onclick="toggleVisibility(&#39;exd3&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exd3" style="display:none;"><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Netflix_movies/n_movies_simple.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">long_films</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">max_rate</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">long_film_max_rate</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">minutes</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">minutes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">minutes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">minutes</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">and</span> <span class="n">minutes</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">rate</span> <span class="o">&gt;</span> <span class="n">max_rate</span><span class="p">:</span>
+                <span class="n">max_rate</span> <span class="o">=</span> <span class="n">rate</span>
+                <span class="n">long_film_max_rate</span> <span class="o">=</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">long_film_max_rate</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Our Planet,403 min,9.3,[&#39;David Attenborough&#39;],&#34;43,175&#34;
+
+</pre></div></div>
+</div>
+</div><ol class="arabic simple" start="4">
+<li><p>Load the same dataset as before</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = []
+f = open(&quot;Netflix_movies/n_movies_simple.csv&quot;, &quot;r&quot;)
+data = f.readlines()
+f.close()
+</pre></div>
+</div>
+<p>How many films has Lisa Vicari made?</p>
+<div class="tggle" onclick="toggleVisibility(&#39;exd4&#39;);"><p>Show/Hide Solution</p>
+</div><div id="exd4" style="display:none;"></div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Netflix_movies/n_movies_simple.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">authors_counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">start_aut</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">end_aut</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
+    <span class="n">auth</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="n">start_aut</span><span class="p">:</span><span class="n">end_aut</span><span class="p">]</span>
+    <span class="n">list_auth</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">auth</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">:</span>
+            <span class="n">author</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">list_auth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">list_auth</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">authors_counts</span><span class="p">:</span>
+            <span class="n">authors_counts</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">authors_counts</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">authors_counts</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">authors_counts</span><span class="p">[</span><span class="s2">&quot;Lisa Vicari&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5
+</pre></div></div>
+</div>
+</div></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M1_practical3.html" class="btn btn-neutral float-left" title="Module 1, Practical 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="M1_practical5.html" class="btn btn-neutral float-right" title="Module 1, Practical 5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright # 2023 - 2025, Antonio Longa.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

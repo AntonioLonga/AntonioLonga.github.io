@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>DS Scientific Programming Lab</text>
+  </docTitle>
+  <navMap>    
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>&lt;no title&gt;</text>
+      </navLabel>
+      <content src="toc-page.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>Scientific Programming for DS</text>
+      </navLabel>
+      <content src="index.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint3" playOrder="3">
+      <navLabel>
+        <text>General Info</text>
+      </navLabel>
+      <content src="index.xhtml#General-Info" />  
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>General Info</text>
+        </navLabel>
+        <content src="index.xhtml#General-Info" />  
+      </navPoint>
+      <navPoint id="navPoint5" playOrder="4">
+        <navLabel>
+          <text>Timetable and lecture rooms</text>
+        </navLabel>
+        <content src="index.xhtml#Timetable-and-lecture-rooms" />  
+      </navPoint>
+      <navPoint id="navPoint6" playOrder="5">
+        <navLabel>
+          <text>Equipment</text>
+        </navLabel>
+        <content src="index.xhtml#Equipment" />  
+      </navPoint>
+      <navPoint id="navPoint7" playOrder="6">
+        <navLabel>
+          <text>Acknowledgements</text>
+        </navLabel>
+        <content src="index.xhtml#Acknowledgements" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint8" playOrder="7">
+      <navLabel>
+        <text>Module 1, Practical 1</text>
+      </navLabel>
+      <content src="M1_practical1.xhtml" />  
+      <navPoint id="navPoint9" playOrder="7">
+        <navLabel>
+          <text>Module 1, Practical 1</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint10" playOrder="8">
+        <navLabel>
+          <text>Setting up the environment</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#Setting-up-the-environment" />  
+        <navPoint id="navPoint11" playOrder="8">
+          <navLabel>
+            <text>Setting up the environment</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Setting-up-the-environment" />  
+        </navPoint>
+        <navPoint id="navPoint12" playOrder="9">
+          <navLabel>
+            <text>Our toolbox</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Our-toolbox" />  
+        </navPoint>
+        <navPoint id="navPoint13" playOrder="10">
+          <navLabel>
+            <text>Installing Visual studio Code (VScode) in Linux</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Installing-Visual-studio-Code-(VScode)-in-Linux" />  
+        </navPoint>
+        <navPoint id="navPoint14" playOrder="11">
+          <navLabel>
+            <text>Installing Visual studio Code (VScode) in Windows</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Installing-Visual-studio-Code-(VScode)-in-Windows" />  
+        </navPoint>
+        <navPoint id="navPoint15" playOrder="12">
+          <navLabel>
+            <text>Installing Visual studio Code (VScode) in MAC</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Installing-Visual-studio-Code-(VScode)-in-MAC" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint16" playOrder="13">
+        <navLabel>
+          <text>The console</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#The-console" />  
+      </navPoint>
+      <navPoint id="navPoint17" playOrder="14">
+        <navLabel>
+          <text>VScode</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#VScode" />  
+      </navPoint>
+      <navPoint id="navPoint18" playOrder="15">
+        <navLabel>
+          <text>The debugger</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#The-debugger" />  
+      </navPoint>
+      <navPoint id="navPoint19" playOrder="16">
+        <navLabel>
+          <text>A quick Jupyter primer (just for your information, skip if not interested)</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)" />  
+        <navPoint id="navPoint20" playOrder="16">
+          <navLabel>
+            <text>A quick Jupyter primer (just for your information, skip if not interested)</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#A-quick-Jupyter-primer-(just-for-your-information,-skip-if-not-interested)" />  
+        </navPoint>
+        <navPoint id="navPoint21" playOrder="17">
+          <navLabel>
+            <text>Installation</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Installation" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint22" playOrder="18">
+        <navLabel>
+          <text>Let’s try together</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#Let&#x27;s-try-together" />  
+      </navPoint>
+      <navPoint id="navPoint23" playOrder="19">
+        <navLabel>
+          <text>Exercises</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#Exercises" />  
+      </navPoint>
+      <navPoint id="navPoint24" playOrder="20">
+        <navLabel>
+          <text>Exercises (Difficult)</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#Exercises-(Difficult)" />  
+      </navPoint>
+      <navPoint id="navPoint25" playOrder="21">
+        <navLabel>
+          <text>Let’s try Linux</text>
+        </navLabel>
+        <content src="M1_practical1.xhtml#Let&#x27;s-try-Linux" />  
+        <navPoint id="navPoint26" playOrder="21">
+          <navLabel>
+            <text>Let’s try Linux</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Let&#x27;s-try-Linux" />  
+        </navPoint>
+        <navPoint id="navPoint27" playOrder="22">
+          <navLabel>
+            <text>Linux on windows</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#Linux-on-windows" />  
+        </navPoint>
+        <navPoint id="navPoint28" playOrder="23">
+          <navLabel>
+            <text>A dual boot system</text>
+          </navLabel>
+          <content src="M1_practical1.xhtml#A-dual-boot-system" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint29" playOrder="24">
+      <navLabel>
+        <text> </text>
+      </navLabel>
+      <content src="toc.xhtml" />  
+    </navPoint>
+  </navMap>
+</ncx>
