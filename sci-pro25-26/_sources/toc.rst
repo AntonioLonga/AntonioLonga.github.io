@@ -18,6 +18,7 @@
     Module 1, Practical 8 <M1_practical8.ipynb>
     Module 1, Practical 9 <M1_practical9.ipynb>
     Module 1, Practical 10 <M1_practical10.ipynb>
+    Module 1, Exams and Sim. <M1_Exams.ipynb>
 
 |space|
 ==========
