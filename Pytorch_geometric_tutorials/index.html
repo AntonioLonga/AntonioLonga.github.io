@@ -1,554 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Pytorch Geometric Tutorial</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pytorch Geometric Tutorial - Graph Neural Networks">
+    <meta name="author" content="Antonio Longa, Gabriele Santin, Giovanni Pellegrini">
+    
+    <title>Pytorch Geometric Tutorial</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7BJ36JN6Y0');
-</script>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <!-- Custom styles for this template -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7BJ36JN6Y0');
+    </script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Pytorch Geometric Tutorial</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1 style="font-size:70px">Pytorch Geometric tutorial</h1>
-            <span class="subheading">Pytorch Geometric</span>
-          </div>
-        </div>  
-      </div>
-    </div>
-  </header>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto" style="background-color:rgb(255, 255, 0) ;">
-        <br>  
-        <h2 style="color:red;text-align: center;">Join the session 2.0 :)</h2>
-        <p style="color:red;text-align: center;">
-          <b><a href="../Advanced_PyG_tutorials/index.html">Advance Pytorch Geometric Tutorial</a>
-          </b>
-            <br>
-        </p>
-      </div>
-    </div>
-  </div>
-
-<!--
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto" style="background-color:rgb(212, 212, 22) ;">
-        
-        <h2 style="color:red;text-align: center;">ARE YOU INTERESTED TO JOIN OUR WEEKLY TUTORIALS?</h2>
-        <p style="color:red;text-align: center;">
-          Write us an email and we will send you the link for the real-time tutorial.<br>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <h2 style="text-align: center;">What's next?</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Topic</th>
-              <th scope="col">Speaker</th>
-            </tr>
-          </thead>
-          <tbody>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a class="site-brand" href="index.html">PyG Tutorial</a>
             
-            <tr>
-              <th style="background-color: rgb(255, 0, 0); color: yellow;" scope="row">11/6/2021</th>
-              <td style="background-color: rgb(255, 0, 0); color: yellow;">Special Guest</td>
-              <td style="background-color: rgb(255, 0, 0); color: yellow;">Sergey Ivanov </td>
-            </tr>
-            <tr>
-              <th scope="row">18/6/2021</th>
-              <td>Pooling layers</td>
-              <td>Giovanni</td>
-            </tr>
-
-            <tr>
-              <th style="background-color: rgb(255, 0, 0); color: yellow;" scope="row">85/6/2021</th>
-              <td style="background-color: rgb(255, 0, 0); color: yellow;">Present your idea with Geometric Deep Learning</td>
-              <td style="background-color: rgb(255, 0, 0); color: yellow;">Open discussion</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
--->
-
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post1.html">
-            <h2 class="post-title">
-              Tutorial 1
-            </h2>
-            <h3 class="post-subtitle">
-              What is Geometric Deep Learning?
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on February 16, 2021</p>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+            
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <hr>
-      </div>
+    </header>
 
-
-
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview">
-            <a href="posts/post2.html">
-              <h2 class="post-title">
-                Tutorial 2
-              </h2>
-              <h3 class="post-subtitle">
-                PyTorch basics
-              </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="./contact.html">Gabriele Santin</a>
-              on February 23, 2021</p>
-          </div>
-          <hr>     
-      </div>
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post3.html">
-            <h2 class="post-title">
-              Tutorial 3
-            </h2>
-            <h3 class="post-subtitle">
-              Graph Attention Network GAT
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on March 5, 2021</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Pytorch Geometric Tutorial</h1>
+            <p class="subtitle">A comprehensive guide to Graph Neural Networks</p>
         </div>
-        <hr>
-      </div>
+    </section>
 
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post4.html">
-            <h2 class="post-title">
-              Tutorial 4
-            </h2>
-            <h3 class="post-subtitle">
-              Convolutional Layers - Spectral methods
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Gabriele Santin</a>
-            on March 12, 2021</p>
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Announcements -->
+        <div class="alert alert-warning">
+            <h3>Join the session 2.0 :)</h3>
+            <p>
+                <b><a href="../Advanced_PyG_tutorials/index.html">Advanced Pytorch Geometric Tutorial</a></b>
+            </p>
         </div>
-        <hr>
-      </div>
 
+        <!-- Posts Grid -->
+        <div class="card-grid">
+            
+            <!-- Tutorial 1 -->
+            <article class="post-card">
+                <h3><a href="posts/post1.html">Tutorial 1: What is Geometric Deep Learning?</a></h3>
+                <p class="subtitle">Introduction to GDL concepts.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on February 16, 2021
+                </div>
+            </article>
 
+            <!-- Tutorial 2 -->
+            <article class="post-card">
+                <h3><a href="posts/post2.html">Tutorial 2: PyTorch basics</a></h3>
+                <p class="subtitle">Getting started with PyTorch.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Gabriele Santin</a> on February 23, 2021
+                </div>
+            </article>
 
+            <!-- Tutorial 3 -->
+            <article class="post-card">
+                <h3><a href="posts/post3.html">Tutorial 3: Graph Attention Network GAT</a></h3>
+                <p class="subtitle">Understanding GAT architecture.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on March 5, 2021
+                </div>
+            </article>
 
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post5.html">
-            <h2 class="post-title">
-              Tutorial 5
-            </h2>
-            <h3 class="post-subtitle">
-              Aggregation Functions in GNNs
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Giovanni Pellegrini</a>
-            on March 19, 2021</p>
+            <!-- Tutorial 4 -->
+            <article class="post-card">
+                <h3><a href="posts/post4.html">Tutorial 4: Convolutional Layers - Spectral methods</a></h3>
+                <p class="subtitle">Spectral graph convolutions explained.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Gabriele Santin</a> on March 12, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 5 -->
+            <article class="post-card">
+                <h3><a href="posts/post5.html">Tutorial 5: Aggregation Functions in GNNs</a></h3>
+                <p class="subtitle">How aggregation works in GNNs.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Giovanni Pellegrini</a> on March 19, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 6 -->
+            <article class="post-card">
+                <h3><a href="posts/post6.html">Tutorial 6: Graph Autoencoder</a></h3>
+                <p class="subtitle">GAE and VGAE architectures.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on March 26, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 7 -->
+            <article class="post-card">
+                <h3><a href="posts/post7.html">Tutorial 7: Adversarial Regularizer Autoencoders</a></h3>
+                <p class="subtitle">ARGA and ARVGA models.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Gabriele Santin</a> on April 2, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 8 -->
+            <article class="post-card">
+                <h3><a href="posts/post8.html">Tutorial 8: Graph Generation</a></h3>
+                <p class="subtitle">Generating graphs with deep learning.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on April 9, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 9 -->
+            <article class="post-card">
+                <h3><a href="posts/post9.html">Tutorial 9: Recurrent Graph Neural Networks</a></h3>
+                <p class="subtitle">RGNNs explained.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Giovanni Pellegrini</a> on April 16, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 10 -->
+            <article class="post-card">
+                <h3><a href="posts/post10.html">Tutorial 10: DeepWalk and Node2Vec THEORY</a></h3>
+                <p class="subtitle">Theoretical foundations of node embeddings.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Gabriele Santin</a> on April 23, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 11 -->
+            <article class="post-card">
+                <h3><a href="posts/post12.html">Tutorial 11: DeepWalk and Node2Vec PRACTICE</a></h3>
+                <p class="subtitle">Implementation of node embeddings.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Gabriele Santin</a> on April 30, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 12 -->
+            <article class="post-card">
+                <h3><a href="posts/post12.html">Tutorial 12: Edge Analysis</a></h3>
+                <p class="subtitle">Analyzing edges in graphs.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on May 7, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 13 -->
+            <article class="post-card">
+                <h3><a href="posts/post13.html">Tutorial 13: MetaPath2vec</a></h3>
+                <p class="subtitle">Heterogeneous graph embeddings.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Antonio Longa</a> on May 14, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 14 -->
+            <article class="post-card">
+                <h3><a href="posts/post14.html">Tutorial 14: Data handling in PyG (Part 1)</a></h3>
+                <p class="subtitle">Working with datasets.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Giovanni Pellegrini</a> on May 21, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 15 -->
+            <article class="post-card">
+                <h3><a href="posts/post15.html">Tutorial 15: Data handling in PyG (Part 2)</a></h3>
+                <p class="subtitle">Advanced data handling.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Giovanni Pellegrini</a> on May 28, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 16 -->
+            <article class="post-card">
+                <h3><a href="posts/post16.html">Tutorial 16: Special Guest: Matthias Fey</a></h3>
+                <p class="subtitle">Creator of PyG.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Matthias Fey</a> on June 4, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 17 -->
+            <article class="post-card">
+                <h3><a href="posts/post17.html">Tutorial 17: Special Guest: Sergei Ivanov</a></h3>
+                <p class="subtitle">Graph ML Research.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Sergei Ivanov</a> on June 11, 2021
+                </div>
+            </article>
+
+            <!-- Tutorial 18 -->
+            <article class="post-card">
+                <h3><a href="posts/post18.html">Tutorial 18: Graph pooling: DIFFPOOL</a></h3>
+                <p class="subtitle">Hierarchical graph pooling.</p>
+                <div class="post-meta">
+                    Posted by <a href="./contact.html">Giovanni Pellegrini</a> on June 18, 2021
+                </div>
+            </article>
+
         </div>
-        <hr>
-      </div>
+    </main>
 
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post6.html">
-            <h2 class="post-title">
-              Tutorial 6
-            </h2>
-            <h3 class="post-subtitle">
-              Graph Autoencoder and Variational Graph Autoencoder
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on March 26, 2021</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/AntonioLonga/PytorchGeometricTutorial" aria-label="GitHub">
+                    <!-- GitHub Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+            <p class="copyright">Copyright &copy; Antonio Longa, Gabriele Santin & Giovanni Pellegrini 2021</p>
         </div>
-        <hr>
-      </div>
+    </footer>
 
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post7.html">
-            <h2 class="post-title">
-              Tutorial 7
-            </h2>
-            <h3 class="post-subtitle">
-              Adversarial Regularizer Autoencoders
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Gabriele Santin</a>
-            on April 2, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post8.html">
-            <h2 class="post-title">
-              Tutorial 8
-            </h2>
-            <h3 class="post-subtitle">
-              Graph Generation
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on April 9, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post9.html">
-            <h2 class="post-title">
-              Tutorial 9
-            </h2>
-            <h3 class="post-subtitle">
-              Recurrent Graph Neural Networks
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Giovanni Pellegrini</a>
-            on April 16, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post10.html">
-            <h2 class="post-title">
-              Tutorial 10 
-            </h2>
-            <h3 class="post-subtitle">
-              DeepWalk and Node2Vec THEORY
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Gabriele Santin</a>
-            on April 23, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-      
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post12.html">
-            <h2 class="post-title">
-              Tutorial 11
-            </h2>
-            <h3 class="post-subtitle">
-              DeepWalk and Node2Vec PRACTICE
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Gabriele Santin</a>
-            on April 30, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-      
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post12.html">
-            <h2 class="post-title">
-              Tutorial 12
-            </h2>
-            <h3 class="post-subtitle">
-              Edge Analysis
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on May 7, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-      
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post13.html">
-            <h2 class="post-title">
-              Tutorial 13
-            </h2>
-            <h3 class="post-subtitle">
-              MetaPath2vec
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Antonio Longa</a>
-            on May 14, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-
-
-
-      
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post14.html">
-            <h2 class="post-title">
-              Tutorial 14
-            </h2>
-            <h3 class="post-subtitle">
-              Data handling in PyG (part 1)
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Giovanni Pellegrini</a>
-            on May 21, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post15.html">
-            <h2 class="post-title">
-              Tutorial 15
-            </h2>
-            <h3 class="post-subtitle">
-              Data handling in PyG (part 2)
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Giovanni Pellegrini</a>
-            on May 28, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-      
-
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post16.html">
-            <h2 class="post-title">
-              Tutorial 16
-            </h2>
-            <h3 class="post-subtitle">
-              Specia Guest: Matthias Fey
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Matthias Fey</a>
-            on June 4, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-      
-
-
-
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post17.html">
-            <h2 class="post-title">
-              Tutorial 17
-            </h2>
-            <h3 class="post-subtitle">
-              Specia Guest: Sergei Ivanov
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Sergei Ivanov</a>
-            on June 11, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-
-
-
-
-
-
-
-
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="posts/post18.html">
-            <h2 class="post-title">
-              Tutorial 18
-            </h2>
-            <h3 class="post-subtitle">
-              Graph pooling: DIFFPOOL
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="./contact.html">Giovanni Pellegrini</a>
-            on June 18, 2021</p>
-        </div>
-        <hr>
-      </div>
-
-      
-
-
-
-
-
-      
-    </div>
-  </div>
-
-  <hr>
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          <li class="list-inline-item">
-            <a href="https://github.com/AntonioLonga/PytorchGeometricTutorial">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-        <p class="copyright text-muted">Copyright &copy; Antonio Longa, Gabriele Santin & Giovanni Pellegrini 2021</p>
-      </div>
-    </div>
-  </div>
-</footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
 
 </body>
-
-
 </html>
