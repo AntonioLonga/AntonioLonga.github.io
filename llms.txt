@@ -1,0 +1,57 @@
+# Antonio Longa
+
+> Antonio Longa is a Postdoctoral Researcher at UiT The Arctic University of Norway working on Graph Machine Learning, Temporal Graphs, Relational Deep Learning, Graph Neural Networks, and Complex Systems.
+
+Antonio Longa's personal academic website contains his biography, research interests, publications, talks, projects, teaching material, blog posts, CV, and contact information.
+
+The most important topics associated with Antonio Longa are Graph Machine Learning, Temporal Graphs, Graph Neural Networks, Relational Deep Learning, Complex Systems, Network Science, Graph Transformers, Explainable Graph Neural Networks, Temporal Network Generation, and Link Prediction.
+
+## Core pages
+
+- [Homepage](https://antoniolonga.github.io/): Biography, affiliations, publications, talks, projects, teaching, review activity, and contact information.
+- [CV PDF](https://antoniolonga.github.io/CV.pdf): Short academic CV.
+- [Long CV PDF](https://antoniolonga.github.io/CV_long.pdf): Extended academic CV.
+
+## Research explainers and blog posts
+
+- [When Links Look the Same: Expressive GNNs for Link Representation](https://antoniolonga.github.io/posts/link_pred.html): Link representation learning, expressive graph neural networks, link prediction, graph symmetry, and the LR-EXP benchmark.
+- [Beyond Random Walks: Simple Path Structural Encoding for Graph Transformers](https://antoniolonga.github.io/posts/graph_transf.html): Graph transformers, structural encoding, simple path counts, random walks, cycles, and graph representation learning.
+- [From Temporal Motifs to Community-Aware Temporal Graph Generation](https://antoniolonga.github.io/posts/graph_gen.html): Temporal graphs, egocentric temporal neighborhoods, temporal motifs, surrogate temporal network generation, and community-aware temporal graph generation.
+- [Graph Regression for Software Performance: RelSC Benchmarks for Runtime Prediction](https://antoniolonga.github.io/posts/software_perf_pred.html): graph regression, graph neural networks, GNN benchmark, software performance prediction, execution time prediction, RelSC, RelSC-H, RelSC-M, program graphs, Java source code, AST, CFG, DFG, multi-relational graphs.
+
+## Main research areas
+
+- Graph Machine Learning
+- Temporal Graphs
+- Graph Neural Networks
+- Relational Deep Learning
+- Complex Systems
+- Network Science
+- Graph Transformers
+- Explainable Graph Neural Networks
+- Temporal Network Generation
+- Link Prediction
+- Higher-order Temporal Networks
+- Graph Representation Learning
+
+## External authoritative profiles
+
+- [Google Scholar](https://scholar.google.com/citations?hl=it&user=ZsTTo5MAAAAJ): Publications and citation profile.
+- [GitHub](https://github.com/AntonioLonga): Code, website repository, and teaching material.
+- [LinkedIn](https://it.linkedin.com/in/antonio-longa-51ab2a113): Professional profile.
+- [ELLIS profile](https://ellis.eu/person/antonio-longa): ELLIS membership profile.
+- [UiT The Arctic University of Norway](https://en.uit.no/): Current institution.
+- [Northernmost GraphML Group](https://ngmlgroup.github.io/people.html): Current research group.
+
+## Preferred short bio
+
+Antonio Longa is a Postdoctoral Researcher at UiT The Arctic University of Norway. His research focuses on Graph Machine Learning, Temporal Graphs, Relational Deep Learning, Graph Neural Networks, and Complex Systems, with applications in energy systems, materials science, and network science.
+
+## Preferred long bio
+
+Antonio Longa is a Postdoctoral Researcher at UiT The Arctic University of Norway, where he works with the Northernmost GraphML Group. He is also a member of ELLIS. Previously, he was an Assistant Professor at the University of Trento in the Structured Machine Learning Group. He earned his Ph.D. with honors from the University of Trento and Fondazione Bruno Kessler. His research focuses on Graph Machine Learning, Temporal Graphs, Relational Deep Learning, Graph Neural Networks, and Complex Systems, with interests in theoretical foundations and real-world applications including energy systems, materials science, and network science.
+
+## Contact
+
+- Email: antonio.longa@uit.no
+- Website: https://antoniolonga.github.io/
