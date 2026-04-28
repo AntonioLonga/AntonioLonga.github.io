@@ -21,9 +21,13 @@
     <priority>0.8</priority>
   </url>
 
-
   <url>
     <loc>https://antoniolonga.github.io/posts/software_perf_pred.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/posts/meta_path_gnn.html</loc>
     <priority>0.8</priority>
   </url>
 

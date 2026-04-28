@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BJ36JN6Y0');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On the Importance of Meta-Paths: From MP-GNN to Explainable Relational Deep Learning - Antonio Longa</title>
+  <meta name="description" content="A clear introduction to MP-GNN and MPS-GNN: how learned meta-paths help multi-relational graph neural networks focus on the right relations, and how meta-path statistics extend this idea to relational deep learning.">
+  <meta name="keywords" content="meta-paths, MP-GNN, MPS-GNN, graph neural networks, heterogeneous graphs, multi-relational graph neural networks, relational deep learning, self-explainable GNN, relational databases">
+  <meta property="og:title" content="On the Importance of Meta-Paths: From MP-GNN to Explainable Relational Deep Learning">
+  <meta property="og:description" content="Why meta-paths matter in heterogeneous graph neural networks, how MP-GNN learns them automatically, and how MPS-GNN extends the idea to statistical patterns in relational databases.">
+  <meta property="og:type" content="article">
+
+  <!-- TODO: add DOI metadata if available for either paper. -->
+  <meta name="citation_title" content="Meta-Path Learning for Multi-relational Graph Neural Networks">
+  <meta name="citation_author" content="Ferrini, Francesco">
+  <meta name="citation_author" content="Longa, Antonio">
+  <meta name="citation_author" content="Passerini, Andrea">
+  <meta name="citation_author" content="Jaeger, Manfred">
+  <meta name="citation_publication_date" content="2023">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=gW9ZmT9hAe">
+  <meta name="citation_title" content="A Self-Explainable Heterogeneous GNN for Relational Deep Learning">
+  <meta name="citation_author" content="Ferrini, Francesco">
+  <meta name="citation_author" content="Longa, Antonio">
+  <meta name="citation_author" content="Passerini, Andrea">
+  <meta name="citation_author" content="Jaeger, Manfred">
+  <meta name="citation_publication_date" content="2025-02">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=8Q4qxe9a9Z">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "On the Importance of Meta-Paths: From MP-GNN to Explainable Relational Deep Learning",
+      "author": {
+        "@type": "Person",
+        "name": "Antonio Longa"
+      },
+      "about": [
+        "meta-path learning",
+        "graph neural networks",
+        "heterogeneous graphs",
+        "multi-relational graph neural networks",
+        "relational deep learning",
+        "self-explainable graph neural networks"
+      ],
+      "citation": [
+        "https://openreview.net/pdf?id=gW9ZmT9hAe",
+        "https://openreview.net/pdf?id=8Q4qxe9a9Z"
+      ],
+      "mentions": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Meta-Path Learning for Multi-relational Graph Neural Networks",
+          "author": [
+            { "@type": "Person", "name": "Francesco Ferrini" },
+            { "@type": "Person", "name": "Antonio Longa" },
+            { "@type": "Person", "name": "Andrea Passerini" },
+            { "@type": "Person", "name": "Manfred Jaeger" }
+          ],
+          "isPartOf": "Proceedings of the Second Learning on Graphs Conference",
+          "datePublished": "2023",
+          "url": "https://openreview.net/pdf?id=gW9ZmT9hAe"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "A Self-Explainable Heterogeneous GNN for Relational Deep Learning",
+          "author": [
+            { "@type": "Person", "name": "Francesco Ferrini" },
+            { "@type": "Person", "name": "Antonio Longa" },
+            { "@type": "Person", "name": "Andrea Passerini" },
+            { "@type": "Person", "name": "Manfred Jaeger" }
+          ],
+          "isPartOf": "Transactions on Machine Learning Research",
+          "datePublished": "2025-02",
+          "url": "https://openreview.net/pdf?id=8Q4qxe9a9Z"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "MPS-GNN code",
+          "codeRepository": "https://github.com/francescoferrini/MPS-GNN"
+        }
+      ]
+    }
+  </script>
+
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <script src="blog.js" defer></script>
+</head>
+
+<body>
+  <!--
+    Image assets requested:
+    1. MP-GNN Paper Figure 5 -> save as post_img/fig2.png
+       Place in section: What MP-GNN shows
+       Reason: The figure summarizes how MP-GNN behaves as the meta-path length and relational search space become harder.
+    2. MPS-GNN Paper Figure 1 -> save as post_img/fig1.png
+       Place in section: Why MP-GNN is not enough for relational databases
+       Reason: The figure explains why relational database prediction may depend on count-based meta-path patterns, not only on the existence of one path.
+    3. MPS-GNN Paper Figure 7 -> save as post_img/fig3.png
+       Place in section: What MPS-GNN shows
+       Reason: The figure shows learned meta-paths on EICU, MONDIAL, and ErgastF1, making the model-level explanations concrete.
+  -->
+
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+
+    <article>
+      <header class="blog-header">
+        <h1>On the Importance of Meta-Paths: From MP-GNN to Explainable Relational Deep Learning</h1>
+        <p class="blog-subtitle">
+          In heterogeneous graphs, the right prediction often depends on following the right chain of relations. MP-GNN learns these chains automatically; MPS-GNN extends the idea to relational databases, where repeated path patterns and their statistics can matter more than a single path occurrence.
+        </p>
+        <p class="blog-meta">
+          Antonio Longa
+        </p>
+      </header>
+
+      <h2>The problem: not every relation matters equally</h2>
+      <p>
+        Many graph neural networks are designed for homogeneous graphs, where all edges are treated as if they had the same meaning. Real data is often richer than that. Knowledge graphs, citation networks, movie graphs, and relational databases contain many node types and many relation types.
+      </p>
+      <p>
+        In these heterogeneous graphs, useful information is not usually spread uniformly across all relations. A prediction may depend on a specific relational route: for example, an actor connected to a movie, then to a director, then to an award-related attribute. This route is a <i>meta-path</i>: a sequence of relation types that tells the model where information should flow.
+      </p>
+      <p>
+        The hard part is finding the right meta-paths. Some methods ask domain experts to define them in advance. Other methods learn weights over many relations, but this becomes difficult when the number of candidate relations grows. The work summarized here addresses a direct question: can a graph neural network learn useful meta-paths by itself?
+      </p>
+
+      <h2>First step: what MP-GNN does</h2>
+      <p>
+        Meta-Path Graph Neural Network (MP-GNN) is built around the idea that a multi-relational graph neural network should not blindly aggregate across all relations. Instead, it should first identify a small set of informative meta-paths, then use those meta-paths to guide message passing.
+      </p>
+      <p>
+        MP-GNN learns meta-paths incrementally. Starting from the target node classification task, it scores candidate relations according to their potential informativeness. A relation receives a good score if, by following that relation, the model can reach nodes whose features or learned weights help explain the target labels.
+      </p>
+      <p>
+        After choosing the best first relation, MP-GNN turns the reached nodes into the next local learning problem. The same process is repeated to extend the meta-path one relation at a time. This creates a greedy search over the space of relation chains, without requiring the model to enumerate every possible meta-path.
+      </p>
+      <p>
+        Once a candidate meta-path is found, MP-GNN builds a graph neural network whose layers follow that meta-path. Each layer corresponds to one relation in the learned sequence. In this way, the learned architecture encodes the relational route used for prediction.
+      </p>
+
+      <h2>Why this is useful</h2>
+      <p>
+        MP-GNN makes meta-paths part of the model rather than a hand-crafted input. This matters for two reasons.
+      </p>
+      <ul>
+        <li>It reduces the need for expert-designed meta-paths.</li>
+        <li>It makes the model easier to inspect, because the learned meta-paths describe which chains of relations the model uses.</li>
+      </ul>
+      <p>
+        The method is especially relevant when many relation types are available. In that setting, searching for all possible paths is combinatorial, while learning relation chains step by step gives a more focused way to find useful structure.
+      </p>
+
+      <h2>What MP-GNN shows</h2>
+      <p>
+        The MP-GNN paper evaluates whether the method can recover informative meta-paths in synthetic settings where the correct relation chain is known. These experiments vary the number of relations, the number of shared relations, and the length of the ground-truth meta-path.
+      </p>
+      <p>
+        The reported results show that MP-GNN remains strong as the search space becomes more complex. In many synthetic settings, it reaches optimal or near-optimal F1 scores and recovers the ground-truth meta-path exactly. The paper also evaluates real-world benchmarks with few relations, such as DBLP, IMDB, and ACM, and many-relation tasks derived from FB15K-237.
+      </p>
+      <figure>
+        <img src="post_img/fig2.png" class="img-fluid" alt="Synthetic MP-GNN results showing F1 score as meta-path length and relational search complexity increase.">
+        <figcaption>
+          <b>Fig. 1.</b> Synthetic results from the MP-GNN paper. MP-GNN is compared with several multi-relational GNN baselines as the meta-path length and relational complexity increase.
+        </figcaption>
+      </figure>
+
+      <h2>The limitation: MP-GNN looks for existence</h2>
+      <p>
+        MP-GNN is a strong first step, but it relies on an existential view of meta-paths. In simple terms, a node can be classified using the existence of at least one useful meta-path occurrence.
+      </p>
+      <p>
+        This is reasonable in many knowledge graph settings. Sometimes one relational witness is enough. But relational databases often behave differently. There, the signal may not be whether one path exists, but how many times a path occurs, how occurrences are distributed, or whether repeated patterns satisfy some count-based condition.
+      </p>
+
+      <h2>Why relational databases need more than existence</h2>
+      <p>
+        A relational database can be converted into a heterogeneous graph: rows become nodes, attributes become node features, and foreign-key links become typed edges. This makes relational databases a natural target for heterogeneous GNNs.
+      </p>
+      <p>
+        However, database predictions often depend on aggregate information. For example, a patient may not be characterized by having one prescription linked to one medication, but by having multiple prescriptions, each linked to multiple medications. The relevant pattern is not just a path. It is a statistic over path occurrences.
+      </p>
+      <figure>
+        <img src="post_img/fig1.png" class="img-fluid" alt="Relational database schema converted into a heterogeneous graph with a count-based meta-path pattern.">
+        <figcaption>
+          <b>Fig. 2.</b> A relational database represented as a heterogeneous graph. The highlighted pattern illustrates why count-based meta-path information can be necessary: both positive and negative examples may have at least one relevant path, but differ in the number and structure of path occurrences.
+        </figcaption>
+      </figure>
+
+      <h2>Second step: how MPS-GNN extends MP-GNN</h2>
+      <p>
+        Meta-Path Statistics Graph Neural Network (MPS-GNN) keeps the central lesson of MP-GNN: learn the relational routes that matter. The difference is that MPS-GNN does not restrict usefulness to the existence of a single meta-path instance.
+      </p>
+      <p>
+        Instead, MPS-GNN learns meta-paths whose predictive content can come from statistics computed over their realizations. This includes count-based patterns such as having multiple related entities that themselves satisfy another repeated relational condition.
+      </p>
+      <p>
+        Technically, the main change is in the scoring step. MP-GNN uses a max-style mechanism that captures whether at least one useful neighbor exists. MPS-GNN uses a sum-based formulation and weighted multi-instance classification, allowing multiple neighbors and repeated occurrences to contribute to the score.
+      </p>
+      <p>
+        After a relation is selected, MPS-GNN creates a new local surrogate task over the reached nodes and continues the construction of the meta-path. The final GNN then performs message passing along the learned meta-paths, with skip connections that preserve access to node attributes across layers.
+      </p>
+
+      <h2>Why MPS-GNN is self-explainable</h2>
+      <p>
+        MPS-GNN is designed so that the explanation is part of the model. The scoring function identifies the relevant meta-paths, and the predictor is built on the subgraphs induced by those meta-paths.
+      </p>
+      <p>
+        This means the meta-paths are not post-hoc explanations added after training. They define the relational structure available to the model. As a result, the learned meta-paths provide a model-level explanation of how information is routed through the heterogeneous graph.
+      </p>
+
+      <h2>What MPS-GNN shows</h2>
+      <p>
+        The MPS-GNN paper evaluates the method on synthetic relational settings and on real relational database tasks: EICU, MONDIAL, and ErgastF1. In the synthetic settings, MPS-GNN is designed to handle cases where the label depends on counts and repeated occurrences, while MP-GNN is limited by its existential assumption.
+      </p>
+      <p>
+        On the real-world relational database tasks, the paper reports mean F1 scores of 0.92 on EICU, 0.74 on MONDIAL, and 0.83 on ErgastF1 for MPS-GNN. In the same table, MP-GNN obtains 0.87, 0.36, and 0.71. The paper reports MPS-GNN as the best-performing compared method on these three datasets.
+      </p>
+      <figure>
+        <img src="post_img/fig3.png" class="img-fluid" alt="Meta-paths learned by MPS-GNN on EICU, MONDIAL, and ErgastF1 relational database tasks.">
+        <figcaption>
+          <b>Fig. 3.</b> Learned meta-paths from the MPS-GNN paper. The examples show how the model selects relational routes in EICU, MONDIAL, and ErgastF1, making the learned structure inspectable.
+        </figcaption>
+      </figure>
+
+      <h2>The main idea</h2>
+      <p>
+        The progression from MP-GNN to MPS-GNN is simple but important. MP-GNN shows that learning meta-paths can make multi-relational GNNs more focused and interpretable. MPS-GNN shows that, for relational databases, meta-paths should not only be treated as existential patterns. Their statistics can carry the predictive signal.
+      </p>
+      <p>
+        Together, the two works argue for a meta-path-centered view of heterogeneous graph learning: first learn where information should flow, then let the GNN compute over that selected relational structure.
+      </p>
+
+      <h2>Limitations and scope</h2>
+      <p>
+        MP-GNN is most appropriate when the existence of a meta-path occurrence is informative. MPS-GNN extends this to statistical patterns over repeated occurrences, but it does not make every internal feature computation transparent. The meta-paths explain the relational routes used by the model, while full feature-level transparency remains a separate challenge.
+      </p>
+      <p>
+        Both methods are presented primarily for node classification. Their behavior also depends on how the original data is represented as a heterogeneous graph, including relation definitions, node attributes, and the target prediction task.
+      </p>
+
+      <h2>Source note</h2>
+      <p>
+        This page summarizes two papers by Francesco Ferrini, Antonio Longa, Andrea Passerini, and Manfred Jaeger: <i>Meta-Path Learning for Multi-relational Graph Neural Networks</i>, published in the Proceedings of the Second Learning on Graphs Conference, PMLR 231, 2023; and <i>A Self-Explainable Heterogeneous GNN for Relational Deep Learning</i>, published in Transactions on Machine Learning Research, February 2025.
+      </p>
+
+      <h2>Main references</h2>
+      <ul>
+        <li><a href="https://openreview.net/pdf?id=gW9ZmT9hAe">Meta-Path Learning for Multi-relational Graph Neural Networks</a>, Francesco Ferrini, Antonio Longa, Andrea Passerini, and Manfred Jaeger, LoG 2023.</li>
+        <li><a href="https://openreview.net/pdf?id=8Q4qxe9a9Z">A Self-Explainable Heterogeneous GNN for Relational Deep Learning</a>, Francesco Ferrini, Antonio Longa, Andrea Passerini, and Manfred Jaeger, TMLR 2025.</li>
+        <li><a href="https://github.com/francescoferrini/MPS-GNN">MPS-GNN code repository</a>.</li>
+      </ul>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+  </main>
+</body>
+</html>
