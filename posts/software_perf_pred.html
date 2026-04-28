@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BJ36JN6Y0');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph Regression for Software Performance: RelSC Benchmarks for Runtime Prediction - Antonio Longa</title>
+  <meta name="description" content="RelSC is a graph regression benchmark that represents Java source code as homogeneous and multi-relational program graphs for execution-time prediction.">
+  <meta name="keywords" content="graph regression, graph neural networks, GNN benchmark, software performance prediction, execution time prediction, RelSC, RelSC-H, RelSC-M, program graphs, Java source code, AST, CFG, DFG, multi-relational graphs">
+  <meta property="og:title" content="Graph Regression for Software Performance: RelSC Benchmarks for Runtime Prediction">
+  <meta property="og:description" content="A concise overview of RelSC, a benchmark for predicting Java execution time from source-code graphs with homogeneous and multi-relational variants.">
+  <meta property="og:type" content="article">
+
+  <!-- Add citation metadata only if available. Omit missing fields or add TODO comments. -->
+  <meta name="citation_title" content="A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants">
+  <meta name="citation_author" content="Peter Samoaa">
+  <meta name="citation_author" content="Marcus Vukojevic">
+  <meta name="citation_author" content="Morteza Haghir Chehreghani">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_publication_date" content="2025-03-15">
+  <meta name="citation_journal_title" content="Journal of Data-centric Machine Learning Research">
+
+  <!-- TODO: add DOI if available -->
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=bFTJEChRU7">
+
+  <!-- Add JSON-LD only if enough metadata is available. Do not invent fields. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants",
+      "name": "A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants",
+      "author": [
+        { "@type": "Person", "name": "Peter Samoaa" },
+        { "@type": "Person", "name": "Marcus Vukojevic" },
+        { "@type": "Person", "name": "Morteza Haghir Chehreghani" },
+        { "@type": "Person", "name": "Antonio Longa" }
+      ],
+      "datePublished": "2025-03-15",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Journal of Data-centric Machine Learning Research"
+      },
+      "url": "https://openreview.net/pdf?id=bFTJEChRU7",
+      "about": [
+        "graph regression",
+        "graph neural networks",
+        "software performance prediction",
+        "execution time prediction",
+        "program graphs",
+        "multi-relational graphs"
+      ]
+    }
+  </script>
+
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <script src="blog.js" defer></script>
+</head>
+
+<body>
+
+
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Graph Regression for Software Performance: RelSC Benchmarks for Runtime Prediction</h1>
+        <p class="blog-subtitle">
+          RelSC turns Java source code into program graphs and uses execution time as a continuous target, creating a benchmark for graph regression beyond the usual molecular and citation-network settings.
+        </p>
+        <p class="blog-meta">
+          Antonio Longa
+        </p>
+      </header>
+
+      <h2>The problem</h2>
+      <p>
+        Graph Neural Networks (GNNs) are widely used for graph-structured data, but graph-level regression benchmarks are still concentrated in a small set of domains, especially molecular property prediction. This makes it harder to evaluate whether models can handle other kinds of graphs, targets, and structural signals.
+      </p>
+      <p>
+        Software performance prediction is a useful stress test for graph regression. A Java program is not just a sequence of tokens: it has syntax, control flow, and data dependencies. Its execution time depends on these interacting structures, so predicting runtime from source code is naturally a graph-level regression problem.
+      </p>
+      <p>
+        The key idea in RelSC is simple: represent each Java test file as a graph and label the graph with the measured execution time of that file. The resulting task asks a model to predict a continuous runtime target from the structure and semantics of code.
+      </p>
+
+      <h2>Why this matters</h2>
+      <p>
+        Early estimates of execution time can support code optimization, refactoring decisions, and performance regression analysis. The paper does not propose a new model architecture. Instead, it provides benchmark datasets and baseline results so that researchers can test graph regression methods on software graphs with realistic structure.
+      </p>
+
+      <h2>How the graph is constructed</h2>
+      <p>
+        The construction starts from an Abstract Syntax Tree (AST), which captures the syntactic structure of a Java source file. The AST is parsed with <code>javalang</code>, which assigns nodes to predefined Java syntax categories. The tree is then converted into a directed graph from parent nodes to child nodes.
+      </p>
+      <p>
+        RelSC enriches this syntax graph with edges inspired by Control Flow Graphs (CFGs) and Data Flow Graphs (DFGs). These added edges encode relationships such as next token, next sibling, next use, if and else flow, loop execution flow, loop back edges, and next statement flow. The goal is to expose execution-relevant structure that a plain AST does not contain.
+      </p>
+      <figure>
+        <img src="post_img/fig1_software_perf.png" class="img-fluid" alt="RelSC-H and RelSC-M graph representations for a Java factorial example">
+        <figcaption>
+          <b>Fig. 1.</b> The same Java source-code example can be represented as a relational source-code graph and as a multi-relational source-code graph. The homogeneous version keeps a single edge type with richer node features, while the multi-relational version preserves relation types between node categories.
+        </figcaption>
+      </figure>
+      <p>
+        The benchmark is released in two complementary variants. <b>RelSC-H</b> is the homogeneous version: it uses a single edge type and represents nodes with semantic node-type features and summarized outgoing-edge information. <b>RelSC-M</b> is the multi-relational version: it groups nodes into seven categories, including declarations, data types, control flow, operations, structural elements, exceptions and errors, and others, and defines relation types between these categories.
+      </p>
+      <p>
+        This design makes it possible to compare two choices that often matter in graph learning: a compact homogeneous representation and a richer multi-relational representation. In RelSC-M, the construction can produce up to 49 relation types.
+      </p>
+
+      <h2>What data is included</h2>
+      <p>
+        The paper builds RelSC from Java test files paired with execution-time measurements. It uses two sources. <b>OssBuilds</b> contains 922 files from four open-source projects: SystemDS, H2, Dubbo, and RDF4J. <b>HadoopTests</b> contains 2,895 Hadoop unit-test files, each executed five times in a controlled environment.
+      </p>
+      <p>
+        The resulting graphs are large enough to be challenging. For example, Hadoop graphs average about 1,490 nodes. The multi-relational version contains more edges than the homogeneous version because it preserves richer relational structure.
+      </p>
+
+      <h2>Preliminary results</h2>
+      <p>
+        The experiments compare source-code, AST-based, homogeneous GNN, and heterogeneous GNN baselines. The evaluation uses normalized execution-time targets and Mean Absolute Error (MAE), with lower values indicating better predictions. The dataset split is 70% training, 15% validation, and 15% test.
+      </p>
+      <p>
+        On RelSC-H, graph-based models generally outperform the source-code and AST baselines. Principal Neighbourhood Aggregation (PNA) gives the best MAE across the reported RelSC-H datasets, including Hadoop, RDF4J, SystemDS, H2, Dubbo, and the combined OssBuilds dataset.
+      </p>
+      <p>
+        The multi-relational setting is more difficult. HeteroGAT and HeteroTransformer are among the strongest heterogeneous baselines, but the results also show instability on smaller projects. In particular, HeteroSAGE has high run-to-run variability on some RelSC-M subsets. This suggests that relation-rich program graphs are useful as a robustness test, not only as a performance benchmark.
+      </p>
+      <figure>
+        <img src="post_img/fig2_software_perf.png" class="img-fluid" alt="Scatter plots of PNA predictions versus normalized target values on OssBuilds and Hadoop">
+        <figcaption>
+          <b>Fig. 2.</b> Test predictions versus normalized target values for the PNA model on OssBuilds and Hadoop. The plots show useful signal, but also outliers and underestimation of some higher target values, especially in Hadoop.
+        </figcaption>
+      </figure>
+      <p>
+        A notable finding is that RelSC-H baselines outperform RelSC-M baselines in the reported experiments, even though RelSC-M carries more explicit relation information. This does not mean that relation types are unhelpful. Rather, it shows that off-the-shelf heterogeneous GNNs do not automatically exploit this structure reliably for software execution-time prediction.
+      </p>
+
+      <h2>Main takeaway</h2>
+      <p>
+        RelSC expands graph regression benchmarking into software engineering. It provides directed, semantics-enriched program graphs with continuous execution-time labels, together with homogeneous and multi-relational variants. The preliminary results show that graph structure helps, but also that multi-relational runtime prediction remains challenging.
+      </p>
+      <p>
+        For researchers, the benchmark is valuable because it separates two questions: how well a model predicts execution time from program structure, and how robustly it can use relation types when the graph is multi-relational and the dataset is not enormous.
+      </p>
+
+      <h2>Key references</h2>
+      <ul>
+        <li>Samoaa, Vukojevic, Haghir Chehreghani, and Longa. <i>A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants</i>. Journal of Data-centric Machine Learning Research, 2025. <a href="https://openreview.net/pdf?id=bFTJEChRU7">Paper PDF</a>.</li>
+        <li>Dataset and code repository: <a href="https://github.com/MarcusVukojevic/graph_regression_datasets">graph_regression_datasets on GitHub</a>.</li>
+        <li>Video overview: <a href="https://www.youtube.com/watch?v=NeL_WnjkZ80">YouTube presentation</a>.</li>
+        <li>Scarselli et al. (2008) and Micheli (2009) introduced early Graph Neural Network formulations; Gilmer et al. (2017) formalized neural message passing.</li>
+        <li>Allamanis, Brockschmidt, and Khademi (2018) showed how graph representations can support learning over programs.</li>
+        <li>Alon et al. (2019) introduced Code2Vec, and Feng et al. (2020) introduced CodeBERT, two non-GNN baselines used for source-code representation.</li>
+        <li>Kipf and Welling (2017), Hamilton et al. (2017), Velickovic et al. (2018), Xu et al. (2019), and Corso et al. (2020) provide key GNN architectures evaluated or discussed in relation to the benchmark.</li>
+        <li>Schlichtkrull et al. (2018) introduced Relational Graph Convolutional Networks, a central reference for multi-relational GNN modeling.</li>
+      </ul>
+
+      <h2>Source note</h2>
+      <p>
+        This page summarizes <i>A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants</i>, by Peter Samoaa, Marcus Vukojevic, Morteza Haghir Chehreghani, and Antonio Longa, published in the Journal of Data-centric Machine Learning Research in 2025 and reviewed on OpenReview.
+      </p>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+  </main>
+</body>
+</html>
