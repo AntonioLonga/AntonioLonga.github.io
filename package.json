@@ -1,32 +1,35 @@
 {
-    "title": "Resume",
-    "name": "startbootstrap-resume",
-    "version": "5.0.8",
+    "title": "Antonio Longa Personal Academic Website",
+    "name": "antoniolonga-github-io",
+    "version": "1.0.0",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
+    "description": "Personal academic website of Antonio Longa, Postdoctoral Researcher at UiT The Arctic University of Norway, working on Graph Machine Learning, Temporal Graphs, Relational Deep Learning, Graph Neural Networks, and Complex Systems.",
     "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
+        "Antonio Longa",
+        "Graph Machine Learning",
+        "Temporal Graphs",
+        "Graph Neural Networks",
+        "Relational Deep Learning",
+        "Complex Systems",
+        "Network Science",
+        "Graph Transformers",
+        "Explainable Graph Neural Networks",
+        "Temporal Network Generation",
+        "Link Prediction",
+        "Academic Website",
+        "Research Website"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/resume",
+    "homepage": "https://antoniolonga.github.io/",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-resume/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https://github.com/AntonioLonga/AntonioLonga.github.io/issues"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
+    "author": "Antonio Longa",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-resume.git"
+        "url": "https://github.com/AntonioLonga/AntonioLonga.github.io.git"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.10.2",
