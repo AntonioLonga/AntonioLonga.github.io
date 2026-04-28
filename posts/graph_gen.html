@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BJ36JN6Y0');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Temporal Motifs to Community-Aware Temporal Graph Generation - Antonio Longa</title>
+  <meta name="description" content="A concise research story on egocentric temporal neighborhoods, surrogate temporal graph generation, labeled temporal networks, and higher-order extensions.">
+  <meta name="keywords" content="temporal networks, temporal graph generation, surrogate temporal networks, egocentric temporal neighborhoods, egocentric temporal motifs, ETN-gen, Labeled ETN-gen, LETN, community-aware networks, face-to-face interactions, temporal hypergraphs, higher-order networks">
+  <meta property="og:title" content="From Temporal Motifs to Community-Aware Temporal Graph Generation">
+  <meta property="og:description" content="How egocentric temporal neighborhoods can mine local interaction patterns, generate surrogate temporal graphs, and preserve community-aware temporal structure.">
+  <meta property="og:type" content="article">
+
+  <!-- Citation metadata for the main paper discussed on this page. -->
+  <meta name="citation_title" content="Community aware temporal network generation">
+  <meta name="citation_author" content="Nicolò Alessandro Girardini">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Gaia Trebucchi">
+  <meta name="citation_author" content="Giulia Cencetti">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Bruno Lepri">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_doi" content="10.1007/s41109-025-00731-w">
+
+  <!-- TODO: add citation_pdf_url if a stable PDF URL should be exposed. -->
+  <!-- JSON-LD omitted because this page synthesizes several papers rather than describing only one article. -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <script src="blog.js" defer></script>
+</head>
+
+<body>
+
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+
+    <article>
+      <header class="blog-header">
+        <h1>From Temporal Motifs to Community-Aware Temporal Graph Generation</h1>
+        <p class="blog-subtitle">
+          A research line on egocentric temporal neighborhoods: first as a way to mine temporal motifs, then as building blocks for surrogate temporal networks, and finally as a route to labeled and higher-order temporal graphs.
+        </p>
+        <p class="blog-meta">
+          Antonio Longa
+        </p>
+      </header>
+
+      <h2>Why temporal graph generation matters</h2>
+      <p>
+        Many systems are not just networks. They are networks that change in time. In face-to-face interaction data, for example, people meet, separate, meet again, and form patterns that depend on time, duration, and social context. Temporal networks model this by representing interactions as a sequence of graph snapshots <a href="#ref-2">[2]</a>.
+      </p>
+      <p>
+        This matters because processes such as diffusion, contagion, mobility, and social coordination depend on when interactions happen, not only on whether two nodes have ever been connected. A static graph can preserve who met whom, but it loses the ordering and temporal rhythm of contacts <a href="#ref-2">[2]</a>.
+      </p>
+      <p>
+        The practical difficulty is that high-resolution temporal data are expensive to collect, often short in duration, limited in population size, and sometimes hard to share because of privacy concerns. Surrogate temporal networks address this problem by generating synthetic networks that reproduce selected properties of real temporal data without directly reusing the original records <a href="#ref-2">[2]</a>.
+      </p>
+
+      <h2>Mining temporal patterns from an ego perspective</h2>
+      <p>
+        The starting point is the egocentric temporal neighborhood. Instead of searching for arbitrary temporal subgraphs from the outside, the method follows one node, called the ego, and records how its neighbors appear and disappear across a short time window <a href="#ref-1">[1]</a>.
+      </p>
+      <p>
+        For each neighbor, the method writes a binary code: <code>1</code> when the neighbor is connected to the ego at a given snapshot and <code>0</code> otherwise. These neighbor codes are sorted and concatenated into an egocentric temporal neighborhood signature. The result is a compact representation of a local temporal pattern <a href="#ref-1">[1]</a>.
+      </p>
+      <p>
+        This is the core idea behind egocentric temporal motifs. By encoding neighborhoods as signatures, the mining procedure avoids repeatedly solving graph isomorphism for these local structures. It also keeps the patterns interpretable, because each motif describes how the social neighborhood of one node evolves in time <a href="#ref-1">[1]</a>.
+      </p>
+
+      <figure>
+        <img src="post_img/etm-mining-overview.png" class="img-fluid" alt="Egocentric temporal neighborhood and its binary signature encoding">
+        <figcaption>
+          <b>Fig. 1.</b> Egocentric temporal neighborhoods encode the temporal behavior around one ego node as a sorted binary signature.
+        </figcaption>
+      </figure>
+
+      <h2>From motifs to temporal graph generation</h2>
+      <p>
+        The same representation can be used not only to analyze temporal networks, but also to generate them. ETN-gen, the Egocentric Temporal Neighborhood Generator, treats egocentric temporal neighborhoods as building blocks learned from an input temporal network <a href="#ref-2">[2]</a>.
+      </p>
+      <p>
+        The generation process has three main steps. First, it extracts egocentric temporal neighborhood signatures from the original network. Second, it estimates local probability distributions: given a short temporal prefix, the model learns which temporal extensions are likely to follow. Third, it grows a new temporal network layer by layer by sampling these extensions for each ego node <a href="#ref-2">[2]</a>.
+      </p>
+      <p>
+        Because local samples may request incompatible links, ETN-gen builds a provisional layer and then validates it. Reciprocal requests are accepted, one-directional requests are handled probabilistically, and open stubs are paired to form the final layer. Repeating this procedure produces a surrogate temporal network of the desired length and, in the paper, can also support expansion in the number of nodes <a href="#ref-2">[2]</a>.
+      </p>
+
+      <figure>
+        <img src="post_img/etn-gen-overview.png" class="img-fluid" alt="ETN-gen pipeline for generating surrogate temporal networks">
+        <figcaption>
+          <b>Fig. 2.</b> ETN-gen learns local temporal neighborhoods from the original graph and uses them to generate new temporal layers.
+        </figcaption>
+      </figure>
+
+      <h2>Adding communities and labels</h2>
+      <p>
+        The original ETN-gen method captures local temporal behavior, but it does not explicitly distinguish different kinds of nodes. In social interaction data, that distinction can be important. A hospital network, for instance, contains patients, nurses, and medical doctors, and their interaction patterns need not be interchangeable <a href="#ref-3">[3]</a>.
+      </p>
+      <p>
+        Labeled ETN-gen extends the approach by adding node labels to the egocentric temporal neighborhood. A label may come from metadata, such as a role or class, or from a community partition when metadata are not available. The signature then records not only whether a neighbor is present, but also what kind of neighbor it is. The ego label is also attached to the signature <a href="#ref-3">[3]</a>.
+      </p>
+      <p>
+        This changes the generative model in a targeted way. The local probability dictionaries become label-aware, so the generator can learn different temporal rules for interactions within and across communities. The community structure is not imposed afterward as a separate global constraint; it is encoded in the local temporal rules used during generation <a href="#ref-3">[3]</a>.
+      </p>
+
+      <figure>
+        <img src="post_img/letn-generation-step.png" class="img-fluid" alt="Labeled egocentric temporal neighborhood signature encoding">
+        <figcaption>
+          <b>Fig. 3.</b> Labeled ETN-gen augments egocentric temporal signatures with node labels, allowing the generator to model interactions across roles or communities.
+        </figcaption>
+      </figure>
+
+      <h2>What the results show</h2>
+      <p>
+        Across multiple face-to-face interaction datasets, Labeled ETN-gen was evaluated against the original networks and compared with ETN-gen and motif-based temporal generation baselines. The evaluation focuses on structural measures that are meaningful for communities, both on aggregated networks and through time <a href="#ref-3">[3]</a>.
+      </p>
+      <ul>
+        <li>Labeled ETN-gen better reproduces interactions inside and between communities than unlabeled ETN-gen <a href="#ref-3">[3]</a>.</li>
+        <li>On the High School 2013 dataset, the generated community interaction matrix and temporal modularity trend are closer to the original network than those produced by the compared methods <a href="#ref-3">[3]</a>.</li>
+        <li>The method also improves the reproduction of interaction durations between nodes from different communities <a href="#ref-3">[3]</a>.</li>
+        <li>Across datasets, modularity and label assortativity distributions are closer to the original data when labels are included <a href="#ref-3">[3]</a>.</li>
+      </ul>
+      <p>
+        The main message is precise: local temporal patterns are useful, but labels make them more faithful when the original system has meaningful roles or communities. Modeling temporal behavior alone is not enough to reproduce community dynamics <a href="#ref-3">[3]</a>.
+      </p>
+
+      <h2>Toward higher-order temporal graphs</h2>
+      <p>
+        Pairwise temporal graphs are not always enough. Many social interactions happen in groups, and decomposing every group interaction into pairs can remove information about the group itself. The higher-order extension addresses this by moving from graphs to temporal hypergraphs, where a hyperedge can connect more than two nodes at the same time <a href="#ref-4">[4]</a>.
+      </p>
+      <p>
+        Hyper egocentric temporal neighborhoods extend the egocentric idea to these higher-order interactions. In addition to first-order pairwise contacts with the ego, the signature can encode second-order interactions, such as triplets involving the ego and two other nodes <a href="#ref-4">[4]</a>.
+      </p>
+      <p>
+        The higher-order paper uses this representation for analysis rather than presenting a full temporal graph generator. Still, it suggests a natural next step: the same building-block logic used by ETN-gen could be adapted to generate temporal hypergraphs, provided that the generator can sample and validate higher-order egocentric signatures <a href="#ref-2">[2]</a>, <a href="#ref-4">[4]</a>.
+      </p>
+
+      <figure>
+        <img src="post_img/hetn-signature.png" class="img-fluid" alt="Hyper egocentric temporal neighborhood encoding for temporal hypergraphs">
+        <figcaption>
+          <b>Fig. 4.</b> Hyper egocentric temporal neighborhoods extend the signature idea from pairwise temporal graphs to temporal hypergraphs with group interactions.
+        </figcaption>
+      </figure>
+
+      <h2>The clean story</h2>
+      <p>
+        This research line follows a simple progression. First, egocentric temporal neighborhoods provide an efficient and interpretable way to mine local temporal motifs <a href="#ref-1">[1]</a>. Second, those motifs become building blocks for generating surrogate temporal networks <a href="#ref-2">[2]</a>. Third, labels make the generator aware of roles and communities <a href="#ref-3">[3]</a>. Finally, higher-order egocentric structures point toward generators that can preserve group interactions rather than only pairwise contacts <a href="#ref-4">[4]</a>.
+      </p>
+      <p>
+        The common idea is to learn temporal structure locally, around each node, while keeping enough information to reconstruct realistic global behavior. The labeled extension shows that adding the right mesoscopic information can substantially improve the realism of generated temporal networks when communities matter <a href="#ref-3">[3]</a>.
+      </p>
+
+      <h2>References</h2>
+      <ul>
+        <li id="ref-1">
+          [1] Antonio Longa, Giulia Cencetti, Bruno Lepri, and Andrea Passerini. <i>An efficient procedure for mining egocentric temporal motifs</i>. <i>Data Mining and Knowledge Discovery</i>, 36, 355–378, 2022. DOI: <a href="https://doi.org/10.1007/s10618-021-00803-2">10.1007/s10618-021-00803-2</a>.
+        </li>
+        <li id="ref-2">
+          [2] Antonio Longa, Giulia Cencetti, Sune Lehmann, Andrea Passerini, and Bruno Lepri. <i>Generating fine-grained surrogate temporal networks</i>. <i>Communications Physics</i>, 7, 22, 2024. DOI: <a href="https://doi.org/10.1038/s42005-023-01517-1">10.1038/s42005-023-01517-1</a>.
+        </li>
+        <li id="ref-3">
+          [3] Nicolò Alessandro Girardini, Antonio Longa, Gaia Trebucchi, Giulia Cencetti, Andrea Passerini, and Bruno Lepri. <i>Community aware temporal network generation</i>. <i>Applied Network Science</i>, 10, 43, 2025. DOI: <a href="https://doi.org/10.1007/s41109-025-00731-w">10.1007/s41109-025-00731-w</a>.
+        </li>
+        <li id="ref-4">
+          [4] Beatriz Arregui-García, Antonio Longa, Quintino Francesco Lotito, Sandro Meloni, and Giulia Cencetti. <i>Patterns in Temporal Networks with Higher-Order Egocentric Structures</i>. <i>Entropy</i>, 26, 256, 2024. DOI: <a href="https://doi.org/10.3390/e26030256">10.3390/e26030256</a>.
+        </li>
+      </ul>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+  </main>
+</body>
+</html>

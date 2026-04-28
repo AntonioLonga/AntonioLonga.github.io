@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BJ36JN6Y0');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Links Look the Same: Expressive GNNs for Link Representation - Antonio Longa</title>
+  <meta name="description" content="A clear guide to link-level expressiveness in graph neural networks, the k-phi-k-rho-m framework, LR-EXP, and why graph symmetry affects link prediction.">
+  <meta name="keywords" content="graph neural networks, link representation learning, link prediction, GNN expressiveness, Weisfeiler-Lehman, automorphic links, message passing, SEAL, NCN, Neo-GNN, ELPH, BUDDY, LR-EXP, graph symmetry">
+  <meta property="og:title" content="When Links Look the Same: Expressive GNNs for Link Representation">
+  <meta property="og:description" content="A readable summary of a framework for comparing GNN link representations, a synthetic expressiveness benchmark, and evidence that symmetry changes which models work best.">
+  <meta property="og:type" content="article">
+
+  <meta name="citation_title" content="Bridging Theory and Practice in Link Representation with Graph Neural Networks">
+  <meta name="citation_author" content="Veronica Lachi">
+  <meta name="citation_author" content="Francesco Ferrini">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Bruno Lepri">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Manfred Jaeger">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="39th Conference on Neural Information Processing Systems (NeurIPS 2025)">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "Bridging Theory and Practice in Link Representation with Graph Neural Networks",
+      "headline": "Bridging Theory and Practice in Link Representation with Graph Neural Networks",
+      "author": [
+        { "@type": "Person", "name": "Veronica Lachi" },
+        { "@type": "Person", "name": "Francesco Ferrini" },
+        { "@type": "Person", "name": "Antonio Longa" },
+        { "@type": "Person", "name": "Bruno Lepri" },
+        { "@type": "Person", "name": "Andrea Passerini" },
+        { "@type": "Person", "name": "Manfred Jaeger" }
+      ],
+      "datePublished": "2025",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "name": "39th Conference on Neural Information Processing Systems (NeurIPS 2025)"
+      },
+      "about": [
+        "graph neural networks",
+        "link representation learning",
+        "link prediction",
+        "message passing",
+        "GNN expressiveness",
+        "graph symmetry"
+      ]
+    }
+  </script>
+
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <script src="blog.js" defer></script>
+</head>
+
+<body>
+
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+
+    <article>
+      <header class="blog-header">
+        <h1>When Links Look the Same: Expressive GNNs for Link Representation</h1>
+        <p class="blog-subtitle">
+          A link is more than two node embeddings. This work studies when message-passing graph neural networks can distinguish node pairs, how to compare their expressive power, and why graph symmetry matters for link prediction.
+        </p>
+        <p class="blog-meta">
+          Antonio Longa
+        </p>
+      </header>
+
+      <h2>The problem: links are not just two node embeddings</h2>
+      <p>
+        Graph neural networks (GNNs) are often used for link prediction, link classification, and link regression. In this paper, a <i>link</i> means any pair of nodes, whether or not an edge is currently observed between them.
+      </p>
+      <p>
+        The central problem is expressive power at the link level. Standard message-passing GNNs usually compute an embedding for each endpoint node and then combine the two endpoint embeddings. That works in many settings, but it can collapse different links into the same representation when the endpoint nodes are symmetric in the graph.
+      </p>
+      <p>
+        This matters because link prediction often depends on structural differences between node pairs. If a model cannot distinguish two structurally different candidate links, it cannot use that distinction downstream, no matter how well the final classifier is trained.
+      </p>
+
+      <h2>What existing link GNNs do</h2>
+      <p>
+        Earlier theory on GNN expressiveness mostly focused on graph-level representations and their relationship to the one-dimensional Weisfeiler-Lehman test, also called 1-WL. Link representation is different: the object to represent is a pair of nodes inside a graph.
+      </p>
+      <p>
+        Existing link methods address this in different ways. Pure GNN methods, such as graph auto-encoder style models, combine the final embeddings of the two endpoint nodes. NCN and NCNC add common-neighbor information. ELPH and BUDDY add count-based structural features, using sketching or precomputation for scalability. Neo-GNN uses neighborhood overlap-aware structural information. SEAL extracts an enclosing subgraph around the target link and labels nodes by their distances to the two endpoints.
+      </p>
+      <p>
+        These approaches all try, in different forms, to give the model information about the pair itself rather than only information about the two individual nodes. Before this paper, however, they were not organized in a single formal framework for comparing link-level expressiveness.
+      </p>
+
+      <h2>The contribution: a framework for link expressiveness</h2>
+      <p>
+        The paper introduces a unifying <code>kϕ-kρ-m</code> framework for message-passing link representation models. The framework separates two sources of information: representations of the two endpoint nodes, and representations aggregated from an <code>m</code>-hop neighborhood around the node pair.
+      </p>
+      <p>
+        This gives a principled way to compare models. The analysis shows that models using only endpoint representations have a fundamental limitation: even with expressive node encoders, they cannot distinguish certain links whose endpoints are automorphic. Adding link-neighborhood information can strictly increase expressiveness. Increasing the expressive power of the neighborhood encoder can also increase the ability to distinguish links.
+      </p>
+      <p>
+        Using this framework, the paper derives an expressiveness hierarchy for common link representation methods. In the analyzed setting, NCN, Neo-GNN, ELPH, and SEAL are more expressive than pure GNN link models, and SEAL is the most expressive among the compared methods.
+      </p>
+
+      <h2>The key idea: represent the link, not only its endpoints</h2>
+      <p>
+        The key idea is simple: a link representation should see the local structure around the pair. The framework combines endpoint representations with an aggregation over the target link's neighborhood, where the neighborhood can use modified node features and pairwise structural information.
+      </p>
+      <figure>
+        <img src="post_img/link_pred_framework.png" class="img-fluid" alt="Diagram of the k phi k rho m framework for link representation, combining endpoint embeddings with aggregated neighborhood representations around a target link.">
+        <figcaption>
+          <b>Fig. 1.</b> The <code>kϕ-kρ-m</code> framework represents a target link by combining endpoint representations with information aggregated from the pair's local neighborhood.
+        </figcaption>
+      </figure>
+      <p>
+        The framework also clarifies an important modeling choice. The radius <code>m</code> of the link neighborhood is not the same as the depth of the message-passing function used inside that neighborhood. A model can look at a larger neighborhood with shallow processing, or a smaller neighborhood with more message passing. The theory explains how those choices affect expressiveness.
+      </p>
+
+      <h2>Testing link-level expressiveness</h2>
+      <p>
+        To evaluate expressiveness directly, the paper introduces LR-EXP, a synthetic benchmark for link-level expressiveness. LR-EXP contains 1400 graphs. Each graph includes pairs of links that are non-automorphic, meaning graph symmetries cannot map one link to the other, while their endpoint nodes have the same 1-WL colors. This makes the task hard for standard endpoint-based GNNs.
+      </p>
+      <figure>
+        <img src="post_img/link_pred_dataset.png" class="img-fluid" alt="Examples from the LR-EXP benchmark showing graph pairs with colored nodes and dashed test links that standard GNNs cannot distinguish.">
+        <figcaption>
+          <b>Fig. 2.</b> LR-EXP examples. The dashed pairs mark test links that are structurally different but difficult for standard GNNs because the endpoint nodes are not separated by 1-WL colors.
+        </figcaption>
+      </figure>
+      <p>
+        The evaluation uses a siamese setup: the same model embeds two candidate links, and a contrastive objective encourages non-automorphic links to receive different representations. A reliable paired comparison procedure then checks whether the learned representations are distinguishable.
+      </p>
+      <p>
+        The reported LR-EXP results follow the theoretical hierarchy. Pure GNN baselines such as GCN, GAT, GAE, and GraphSAGE obtain 0 percent test precision. BUDDY reaches 45 percent, ELPH 62 percent, Neo-GNN and NCN 75 percent, and SEAL 97 percent, averaged over five runs where reported.
+      </p>
+
+      <h2>When expressiveness matters in practice</h2>
+      <p>
+        The paper then asks whether link-level expressiveness helps on real-world link prediction benchmarks. The answer depends on graph symmetry.
+      </p>
+      <p>
+        The authors define a graph symmetry measure based on node orbits under graph automorphisms, and approximate it with colors from the Weisfeiler-Lehman test: <code>r̂G = 1 - (|WLG| - 1) / (|VG| - 1)</code>. Higher values indicate more structural ambiguity among nodes and, by extension, a greater chance that endpoint-based link representations will struggle.
+      </p>
+      <p>
+        Across twelve real-world link prediction datasets evaluated with mean reciprocal rank (MRR), the results show a clear pattern. On low-symmetry datasets, pure GNNs can still be competitive. On the six most symmetric datasets in the reported table, none of the pure GNN models appears among the top three. SEAL, the most expressive model in the hierarchy, ranks first across the high-symmetry datasets reported in the paper.
+      </p>
+      <p>
+        The practical message is not that the most expressive model is always best. The message is more useful: model selection should depend on the structure of the dataset. When node features are informative and symmetry is low, simpler models may be enough. When structural ambiguity is high, link-aware expressive models become much more important.
+      </p>
+
+      <h2>Main takeaway</h2>
+      <p>
+        This work connects theory, diagnostics, and empirical behavior for GNN link representation. It shows why endpoint-only link embeddings can fail, provides a framework for comparing message-passing link models, introduces LR-EXP to test link-level expressiveness, and proposes graph symmetry as a practical signal for choosing a model.
+      </p>
+
+      <h2>Limitations</h2>
+      <p>
+        The framework is designed for message-passing models. The paper notes that it does not directly cover transformer-based or spectral methods for link representation. The authors also note that the high-symmetry real-world datasets used in the evaluation are relatively small, which motivates larger benchmarks for studying link-level expressiveness and generalization.
+      </p>
+
+      <h2>Main references</h2>
+      <ul>
+        <li><b>Xu, Hu, Leskovec, and Jegelka.</b> <i>How Powerful are Graph Neural Networks?</i> International Conference on Learning Representations, 2019.</li>
+        <li><b>Morris, Ritzert, Fey, Hamilton, Lenssen, Rattan, and Grohe.</b> <i>Weisfeiler and Leman Go Neural: Higher-Order Graph Neural Networks.</i> AAAI Conference on Artificial Intelligence, 2019.</li>
+        <li><b>Zhang and Chen.</b> <i>Link Prediction Based on Graph Neural Networks.</i> Advances in Neural Information Processing Systems, 2018.</li>
+        <li><b>Zhang, Li, Xia, Wang, and Jin.</b> <i>Labeling Trick: A Theory of Using Graph Neural Networks for Multi-Node Representation Learning.</i> Advances in Neural Information Processing Systems, 2021.</li>
+        <li><b>Chamberlain, Shirobokov, Rossi, Frasca, Markovich, Hammerla, Bronstein, and Hansmire.</b> <i>Graph Neural Networks for Link Prediction with Subgraph Sketching.</i> International Conference on Learning Representations, 2023.</li>
+        <li><b>Wang, Yang, and Zhang.</b> <i>Neural Common Neighbor with Completion for Link Prediction.</i> International Conference on Learning Representations, 2024.</li>
+        <li><b>Yun, Kim, Lee, Kang, and Kim.</b> <i>Neo-GNNs: Neighborhood Overlap-Aware Graph Neural Networks for Link Prediction.</i> Advances in Neural Information Processing Systems, 2021.</li>
+        <li><b>Li, Shomer, Mao, Zeng, Ma, Shah, Tang, and Yin.</b> <i>Evaluating Graph Neural Networks for Link Prediction: Current Pitfalls and New Benchmarking.</i> NeurIPS Datasets and Benchmarks Track, 2023.</li>
+        <li><b>Ball and Geyer-Schulz.</b> <i>How Symmetric are Real-World Graphs? A Large-Scale Study.</i> Symmetry, 2018.</li>
+        <li><b>Wang and Zhang.</b> <i>An Empirical Study of Realized GNN Expressiveness.</i> International Conference on Machine Learning, 2024.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Source note</h2>
+        <p>
+        This page summarizes
+        <a href="https://openreview.net/pdf?id=WYnvP3DePZ"><i>Bridging Theory and Practice in Link Representation with Graph Neural Networks</i></a>
+        by Veronica Lachi, Francesco Ferrini, Antonio Longa, Bruno Lepri, Andrea Passerini, and Manfred Jaeger, listed in the attached manuscript as appearing at the 39th Conference on Neural Information Processing Systems (NeurIPS 2025).
+        Code is available
+        <a href="https://github.com/francescoferrini/link-representation-gnn">here</a>.
+        </p>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+  </main>
+</body>
+</html>
