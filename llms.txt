@@ -19,6 +19,7 @@ The most important topics associated with Antonio Longa are Graph Machine Learni
 - [From Temporal Motifs to Community-Aware Temporal Graph Generation](https://antoniolonga.github.io/posts/graph_gen.html): Temporal graphs, egocentric temporal neighborhoods, temporal motifs, surrogate temporal network generation, and community-aware temporal graph generation.
 - [Graph Regression for Software Performance: RelSC Benchmarks for Runtime Prediction](https://antoniolonga.github.io/posts/software_perf_pred.html): graph regression, graph neural networks, GNN benchmark, software performance prediction, execution time prediction, RelSC, RelSC-H, RelSC-M, program graphs, Java source code, AST, CFG, DFG, multi-relational graphs.
 - [On the Importance of Meta-Paths: From MP-GNN to Explainable Relational Deep Learning](https://antoniolonga.github.io/posts/meta_path_gnn.html): meta-paths, MP-GNN, MPS-GNN, graph neural networks, heterogeneous graphs, multi-relational graph neural networks, relational deep learning, self-explainable GNN, relational databases.
+- [Why GNNs Look Robust to Missing Features — and Why They Often Aren’t](https://antoniolonga.github.io/posts/gnn_missing_features.html): graph neural networks, GNNs, missing node features, missing data, node classification, GNN robustness, feature sparsity, sparse benchmarks, dense node features, MCAR, MNAR, missingness mechanisms, missingness distribution shift, GNNmim, missing indicator method, graph machine learning benchmarks.
 
 ## Main research areas
 
