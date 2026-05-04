@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BJ36JN6Y0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7BJ36JN6Y0');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why GNNs Look Robust to Missing Features — and Why They Often Aren’t - Antonio Longa</title>
+  <meta name="description" content="A readable overview of a paper on Graph Neural Networks with missing node features: why sparse benchmarks can be misleading, how realistic missingness changes the picture, and why GNNmim is a strong simple baseline.">
+  <meta name="keywords" content="graph neural networks, GNNs, missing features, missing node features, missing data, node classification, GNN robustness, MCAR, MNAR, graph machine learning benchmarks, GNNmim, missing indicator method, feature sparsity">
+  <meta property="og:title" content="Why GNNs Look Robust to Missing Features — and Why They Often Aren’t">
+  <meta property="og:description" content="Sparse node-classification benchmarks can make GNNs appear robust to missing features. This post explains why, introduces more realistic datasets and missingness protocols, and summarizes GNNmim.">
+  <meta property="og:type" content="article">
+
+  <meta name="citation_title" content="Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_conference_title" content="ICML 2026 submission">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution",
+      "name": "Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution",
+      "author": [
+        { "@type": "Person", "name": "Antonio Longa" }
+      ],
+      "about": [
+        "graph neural networks",
+        "missing node features",
+        "missing data",
+        "node classification",
+        "feature sparsity",
+        "MCAR",
+        "MNAR",
+        "missing indicator method",
+        "graph machine learning benchmarks"
+      ]
+    }
+  </script>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <script src="blog.js" defer></script>
+</head>
+
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Why GNNs Look Robust to Missing Features — and Why They Often Aren’t</h1>
+        <p class="blog-subtitle">
+          Missing node features are everywhere in real graph applications. But if we evaluate GNNs on extremely sparse citation-style benchmarks and only remove features uniformly at random, we may conclude that models are robust for the wrong reason.
+        </p>
+        <p class="blog-meta">
+          Antonio Longa
+        </p>
+      </header>
+
+      <h2>The problem</h2>
+      <p>
+        Graph Neural Networks are increasingly used in domains where node attributes are incomplete: healthcare records, sensor networks, recommender systems, and many other settings where some measurements are unavailable, unreliable, or deliberately omitted. In this work, we study a specific but important question: how should GNNs behave when some node features are missing?
+      </p>
+      <p>
+        A common evaluation strategy is simple: take a standard node-classification benchmark, randomly delete part of the feature matrix, and compare methods. The problem is that many of these benchmarks were not designed for missing-feature evaluation. Datasets such as <b>Cora</b>, <b>Citeseer</b>, and <b>Pubmed</b> use high-dimensional bag-of-words features, where most entries are already zero. If almost everything is already zero, removing more entries may not actually remove much information.
+      </p>
+      <p>
+        This leads to the central message of the paper: many GNN methods look robust to missing node features because the evaluation setup is too forgiving. To understand robustness, we need better datasets, more realistic missingness mechanisms, and baselines that explicitly account for the missingness pattern.
+      </p>
+
+      <h2>Why sparse benchmarks can be misleading</h2>
+      <p>
+        Let $\mathbf{X}\in\mathbb{R}^{n\times d}$ be the node-feature matrix, $\mathbf{Y}$ the node labels, and $\mathbf{M}\in\{0,1\}^{n\times d}$ the missingness mask, where $M_{ij}=1$ means that feature $j$ of node $i$ is missing. The observed feature matrix can be represented as $\tilde{\mathbf{X}}$, where entries are either observed values or a missing symbol.
+      </p>
+      <p>
+        The paper formalizes feature sparsity as
+      </p>
+      <p>
+        $$
+        s(\mathbf{X}) = \frac{1}{nd}\sum_{i=1}^{n}\sum_{j=1}^{d}\mathbf{1}[X_{ij}=0].
+        $$
+      </p>
+      <p>
+        The key theoretical result studies the change in mutual information between labels and features after missingness is introduced:
+      </p>
+      <p>
+        $$
+        \Delta = I(\mathbf{Y};\tilde{\mathbf{X}}) - I(\mathbf{Y};\mathbf{X}).
+        $$
+      </p>
+      <p>
+        Under label-MAR missingness, the information cannot increase: $\Delta\le 0$. More importantly, for binary sparse features under uniform MCAR missingness with probability $\mu$, the paper proves the bound
+      </p>
+      <p>
+        $$
+        -nd\mu\,h_2\!\left(\mathbb{E}[s(\mathbf{X})]\right) \le \Delta \le 0,
+        $$
+      </p>
+      <p>
+        where $h_2$ is the binary entropy function. The intuition is straightforward: when features are extremely sparse, there is little information in individual nonzero entries, and randomly removing entries may barely change the information available to the model unless the missingness rate becomes extremely high.
+      </p>
+      <p>
+        This is exactly what happens in classic benchmarks. Cora and Citeseer have feature sparsity close to 99%, and Pubmed is also highly sparse. Under these conditions, many models maintain high F1 scores until more than 85–90% of entries are removed. That can look like robustness, but it is partly an artifact of the data representation.
+      </p>
+
+      <figure>
+        <img src="post_img/fig1_missing.png" class="img-fluid" alt="Comparison between sparse bag-of-words node features and dense raw node features">
+        <figcaption>
+          <b>Fig. 1.</b> Sparse bag-of-words features can make missing-feature evaluation too easy: most entries are already zero. Dense, semantically meaningful raw features make missingness much more consequential.
+        </figcaption>
+      </figure>
+
+      <h2>Better data for studying missing node features</h2>
+      <p>
+        To evaluate missing-feature robustness more meaningfully, the paper introduces one synthetic dataset and three real-world datasets with dense, semantically meaningful node features.
+      </p>
+      <p>
+        The <b>Synthetic</b> dataset is built on a Barabási–Albert graph. Node features are sampled from a Gaussian distribution, and labels are generated by a fixed two-layer GCN applied to the complete features. This gives a controlled setting where the ground-truth function is expressible by a GNN.
+      </p>
+      <p>
+        The three real-world datasets are designed to reflect settings where missingness is realistic. <b>Air</b> is based on air-quality sensor measurements; <b>Electric</b> comes from an electrical-grid sensor setting; and <b>Tadpole</b> is a medical graph dataset derived from Alzheimer’s disease patient data. In all three cases, features correspond to raw measurable quantities rather than artificial high-dimensional sparse vectors or learned embeddings.
+      </p>
+      <p>
+        These datasets are not only denser. The paper also checks that features and graph structure are both useful and complementary, using the RINGS framework. This matters because a good missing-feature benchmark should not be solvable from structure alone, nor from trivial feature artifacts alone.
+      </p>
+
+      <h2>Beyond uniform random missingness</h2>
+      <p>
+        The second issue is the missingness mechanism. Many prior studies use <b>U-MCAR</b>, where each feature entry is removed independently with the same probability. This is useful as a clean baseline, but it is rarely the whole story in real applications.
+      </p>
+      <p>
+        The paper evaluates several mechanisms:
+      </p>
+      <ul>
+        <li><b>U-MCAR</b>: entries are missing independently with a uniform probability.</li>
+        <li><b>S-MCAR</b>: entire feature vectors of randomly selected nodes are masked.</li>
+        <li><b>LD-MCAR</b>: more label-informative feature columns are more likely to be missing, while individual missingness is still independent of the actual node value.</li>
+        <li><b>FD-MNAR</b>: missingness depends on the feature value itself, for example when extreme values are more likely to be absent.</li>
+        <li><b>CD-MNAR</b>: missingness depends on class-related feature conditions, mimicking settings where predictive values are selectively omitted.</li>
+      </ul>
+      <p>
+        This distinction is important. In healthcare, for example, a measurement may be missing because its value is abnormal, sensitive, or selectively reported. In sensor systems, missingness may be caused by device failures that correlate with environmental conditions. These are not well captured by uniform random deletion.
+      </p>
+      <p>
+        The paper also evaluates train–test shifts in missingness. For instance, training data may come from historical records with MNAR missingness, while test data may come from an automated system where missingness is absent or closer to MCAR. A model that performs well when train and test missingness are identical may fail under such a shift.
+      </p>
+
+      <h2>The proposed baseline: GNNmim</h2>
+      <p>
+        The paper proposes <b>GNNmim</b>, a simple GNN-based version of the Missing Indicator Method. Instead of trying to learn a sophisticated imputation model, GNNmim gives the model two pieces of information: the observed features, with missing entries filled by a placeholder value, and the binary mask that says which entries were missing.
+      </p>
+      <p>
+        For each node $i$, the input representation is
+      </p>
+      <p>
+        $$
+        \operatorname{zero\text{-}fill}(\mathbf{X}^{obs})_{i,:}\;\Vert\;\mathbf{M}_{i,:},
+        $$
+      </p>
+      <p>
+        where $\Vert$ denotes concatenation. The zero-filled values are not treated as meaningful imputations. They are placeholders; the mask tells the model when a value should be interpreted as missing.
+      </p>
+      <p>
+        This makes GNNmim deliberately lightweight. It does not assume that missingness is MAR, and it avoids the complexity of explicitly modeling the full feature distribution. The surprising result is that this simple strategy is highly competitive with more specialized methods across datasets, missingness mechanisms, and train–test shifts.
+      </p>
+
+      <figure>
+        <img src="post_img/fig2_missing.png" class="img-fluid" alt="GNNmim concatenates zero-filled observed features with a binary missingness mask before applying a standard GNN">
+        <figcaption>
+          <b>Fig. 2.</b> GNNmim augments each node representation with a missingness mask. The GNN receives both the placeholder-filled feature vector and the information about which entries were missing.
+        </figcaption>
+      </figure>
+
+      <h2>What the experiments show</h2>
+      <p>
+        The experiments compare GNNmim against several methods for incomplete node features, including zero, mean, and median imputation, feature propagation, confidence-based propagation, graph sum-product networks, Gaussian-mixture-based feature modeling, label-propagation-based methods, and attention-based recovery methods.
+      </p>
+      <p>
+        The first result is about datasets. On Cora, Citeseer, and Pubmed, performance remains stable until missingness becomes extremely high. On the proposed dense datasets, F1 scores drop much earlier. This confirms that the traditional sparse benchmarks can hide the actual difficulty of missing features.
+      </p>
+
+      <figure>
+        <img src="post_img/fig3_missing.png" class="img-fluid" alt="F1 score trends as feature missingness increases across sparse benchmarks and proposed dense datasets">
+        <figcaption>
+          <b>Fig. 3.</b> On sparse citation benchmarks, models look robust until very high missingness rates. On dense datasets, performance degrades much earlier, revealing differences between methods.
+        </figcaption>
+      </figure>
+
+      <p>
+        The second result is about missingness mechanisms. Performance under uniform missingness is not a reliable predictor of performance under more realistic MNAR mechanisms. Some methods that perform well under one setting degrade sharply under another. GNNmim is among the most consistent methods across mechanisms.
+      </p>
+
+      <figure>
+        <img src="post_img/fig4_missing.png" class="img-fluid" alt="AUC heatmaps comparing robustness of models across missingness mechanisms and datasets">
+        <figcaption>
+          <b>Fig. 4.</b> AUC heatmaps over the F1–missingness curves show that robustness is mechanism-dependent. A method can be strong under U-MCAR and weak under FD-MNAR or CD-MNAR.
+        </figcaption>
+      </figure>
+
+      <p>
+        The third result is about distribution shift. When models are trained under MNAR missingness and tested under a different missingness process, performance often drops even if the test-time missingness rate is lower. This shows that the type of missingness matters, not only the percentage of missing entries.
+      </p>
+
+      <figure>
+        <img src="post_img/fig5_missing.png" class="img-fluid" alt="F1 scores under train-test distribution shifts in missingness mechanisms">
+        <figcaption>
+          <b>Fig. 5.</b> Missingness distribution shifts are challenging. Training on FD-MNAR and testing on U-MCAR can reduce performance even when test-time missingness is less severe.
+        </figcaption>
+      </figure>
+
+      <h2>Main takeaways</h2>
+      <p>
+        The paper does not just propose another architecture for missing features. Its broader message is that evaluation itself needs to be rethought. If we test on sparse bag-of-words features and remove entries uniformly at random, we may overestimate robustness and underestimate the differences between methods.
+      </p>
+      <p>
+        A more meaningful evaluation should use dense, semantically interpretable features; multiple missingness mechanisms, including MNAR settings; and train–test shifts that reflect real deployment conditions. Under this more demanding setup, simple and principled methods can be very strong.
+      </p>
+      <p>
+        GNNmim is intentionally simple: concatenate the observed feature vector with the missingness mask and let a standard GNN learn from both. Once the evaluation artifacts are removed, this lightweight baseline becomes surprisingly competitive with more complex specialized architectures.
+      </p>
+
+      <h2>Key references</h2>
+      <ul>
+        <li>Ferrini et al. <i>Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution</i>. ICML 2026.</li>
+        <li>Rubin (1976) introduced the classical missing-data framework and the MCAR, MAR, and MNAR terminology.</li>
+        <li>Little and Rubin (2019) provide a standard statistical reference for missing-data analysis.</li>
+        <li>You et al. (2020), Taguchi et al. (2021), Rossi et al. (2022), Guo et al. (2023), Um et al. (2023), Errica et al. (2024), and Yun et al. (2024) are representative references for GNN methods with incomplete node features.</li>
+        <li>Van Buuren (2023) discusses missing-data methods including missing-indicator approaches in supervised learning.</li>
+        <li>Bechler et al. (2025) and Coupette et al. (2025) discuss the need for more careful graph benchmark design.</li>
+        <li>Zheng et al. (2015), Birchfield et al. (2016), Baek et al. (2023), and Zhu et al. (2019) are references for the real-world datasets used in the paper.</li>
+      </ul>
+
+      <h2>Source note</h2>
+      <p>
+        This page summarizes <i>Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution</i>, a paper on evaluation protocols, datasets, and robust baselines for Graph Neural Networks with missing node features. The post is written as an accessible overview and omits technical proofs and full experimental tables; see the paper for formal statements, implementation details, and complete results.
+      </p>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#blog">
+      &larr; Back to home
+    </a>
+  </main>
+</body>
+</html>
