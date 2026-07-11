@@ -32,8 +32,36 @@
   </url>
 
   <url>
-    <loc>https://antoniolonga.github.io/posts/missing.html</loc>
+    <loc>https://antoniolonga.github.io/posts/gnn_missing_features.html</loc>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/community-aware-temporal-network-generation.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/global-local-gnn-calibration.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/gnn-link-representation-expressiveness.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/relsc-graph-regression-benchmark.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html</loc>
+  </url>
+
+  <url>
+    <loc>https://antoniolonga.github.io/papers/simple-path-structural-encoding.html</loc>
   </url>
 
   <url>

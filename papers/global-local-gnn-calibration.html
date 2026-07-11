@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Global and Local Calibration of GNNs | AISTATS 2026</title>
+  <title>On the Global and Local Calibration of Graph Neural Networks | Antonio Longa</title>
   <meta name="description" content="A tuned GNN matches specialized global calibration methods on citation graphs, while embedding-space LCE reveals substantial local miscalibration.">
   <meta name="author" content="Francesco Ferrini, Veronica Lachi, Antonio Longa, Cesare Barbera, Andrea Pugnana, Andrea Passerini, Manfred Jaeger">
   <meta name="keywords" content="graph neural networks, GNN calibration, confidence calibration, local calibration error, LCE, expected calibration error, ECE, node classification, GCN, Planetoid">
@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://antoniolonga.github.io/papers/global-local-gnn-calibration.html">
   <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Global and Local Calibration of GNNs | AISTATS 2026">
+  <meta name="twitter:title" content="On the Global and Local Calibration of Graph Neural Networks">
   <meta name="twitter:description" content="Global ECE can hide local GNN miscalibration in learned node-embedding space.">
   <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
 
@@ -29,7 +29,7 @@
   <meta name="citation_author" content="Manfred Jaeger">
   <meta name="citation_publication_date" content="2026-04-13">
   <meta name="citation_conference_title" content="Towards Trustworthy Predictions: Theory and Applications of Calibration for Modern AI at AISTATS 2026">
-  <meta name="citation_pdf_url" content="https://antoniolonga.github.io/papers/32_On_the_Global_and_Local_Cal.pdf">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=FHsEi0qz7t">
   <meta name="citation_abstract" content="Recent work on calibration of Graph Neural Networks (GNNs) has largely concluded that GNNs are miscalibrated and typically under-confident on standard node classification benchmarks, motivating the development of graph-specific calibration methods evaluated in terms of Expected Calibration Error (ECE) on citation datasets such as Cora, Citeseer, and Pubmed. We revisit these conclusions and show that much of the reported miscalibration is explained by hyperparameter choices rather than intrinsic limitations of GNN architectures. Properly tuned classical GNNs achieve comparable ECE with respect to existing calibration methods. We further provide the first study of local calibration in graph neural networks by computing Local Calibration Error (LCE) on graph data. In particular, we adapt LCE to the graph setting by defining locality through distances in the node embedding space learned by the GNN. While global calibration errors are small, we observe higher local miscalibration. As future direction, calibration of GNNs should be further studied locally and on larger graph benchmarks rather than relying solely on global metrics on small datasets.">
 
   <link rel="stylesheet" href="papers.css">
@@ -76,8 +76,8 @@
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "associatedMedia": {
       "@type": "MediaObject",
-      "name": "Paper PDF",
-      "contentUrl": "https://antoniolonga.github.io/papers/32_On_the_Global_and_Local_Cal.pdf",
+      "name": "Official OpenReview paper",
+      "contentUrl": "https://openreview.net/pdf?id=FHsEi0qz7t",
       "encodingFormat": "application/pdf"
     }
   }
@@ -95,6 +95,7 @@
         <p class="blog-subtitle">Towards Trustworthy Predictions: Theory and Applications of Calibration for Modern AI at AISTATS 2026 · Tangier, Morocco · 2026</p>
         <p class="blog-meta">Published workshop paper · CC BY 4.0</p>
         <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://openreview.net/pdf?id=FHsEi0qz7t">Official paper</a>
           <a class="paper-link" href="https://openreview.net/forum?id=FHsEi0qz7t">OpenReview</a>
         </nav>
       </header>

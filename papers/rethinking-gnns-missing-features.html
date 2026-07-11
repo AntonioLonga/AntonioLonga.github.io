@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rethinking GNNs and Missing Features | ICML 2026</title>
+  <title>Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution | Antonio Longa</title>
   <meta name="description" content="GNNmim and realistic benchmarks reveal why sparse datasets overstate GNN robustness to missing node features across MCAR, MNAR, and distribution shifts.">
-  <meta name="author" content="Francesco Ferrini, Veronica Lachi, Antonio Longa, Bruno Lepri, Matono Akiyoshi, Andrea Passerini, Xin Liu, Manfred Jaeger">
+  <meta name="author" content="Francesco Ferrini, Veronica Lachi, Antonio Longa, Bruno Lepri, Akiyoshi Matono, Andrea Passerini, Xin Liu, Manfred Jaeger">
   <meta name="keywords" content="graph neural networks, missing node features, incomplete graph data, GNNmim, missing indicator method, MCAR, MNAR, node classification, RelBench, graph machine learning benchmarks">
   <link rel="canonical" href="https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html">
 
@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html">
   <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rethinking GNNs and Missing Features | ICML 2026">
+  <meta name="twitter:title" content="Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution">
   <meta name="twitter:description" content="GNNmim and realistic benchmarks for evaluating GNNs with missing node features.">
   <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
 
@@ -24,7 +24,7 @@
   <meta name="citation_author" content="Veronica Lachi">
   <meta name="citation_author" content="Antonio Longa">
   <meta name="citation_author" content="Bruno Lepri">
-  <meta name="citation_author" content="Matono Akiyoshi">
+  <meta name="citation_author" content="Akiyoshi Matono">
   <meta name="citation_author" content="Andrea Passerini">
   <meta name="citation_author" content="Xin Liu">
   <meta name="citation_author" content="Manfred Jaeger">
@@ -32,7 +32,7 @@
   <meta name="citation_conference_title" content="43rd International Conference on Machine Learning">
   <meta name="citation_doi" content="10.48550/arXiv.2601.04855">
   <meta name="citation_arxiv_id" content="2601.04855">
-  <meta name="citation_pdf_url" content="https://antoniolonga.github.io/papers/24482_Rethinking_GNNs_and_Miss.pdf">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=E4gftzjqoh">
   <meta name="citation_abstract" content="Handling missing node features is a key challenge for deploying Graph Neural Networks (GNNs) in real-world domains such as healthcare and sensor networks. Existing studies mostly address relatively benign scenarios, namely benchmark datasets with (a) high-dimensional but sparse node features and (b) incomplete data generated under Missing Completely At Random (MCAR) mechanisms. For (a), we theoretically prove that high sparsity substantially limits the information loss caused by missingness, making all models appear robust and preventing a meaningful comparison of their performance. To overcome this limitation, we introduce one synthetic and three real-world datasets with dense, semantically meaningful features. For (b), we move beyond MCAR and design evaluation protocols with more realistic missingness mechanisms. Moreover, we provide a theoretical background to state explicit assumptions on the missingness process and analyze their implications for different methods. Building on this analysis, we show that a simple baseline adapted to the graph domain is competitive with respect to specialized architectures across diverse datasets and missingness regimes.">
 
   <link rel="stylesheet" href="papers.css">
@@ -49,7 +49,7 @@
       {"@type": "Person", "name": "Veronica Lachi"},
       {"@type": "Person", "name": "Antonio Longa"},
       {"@type": "Person", "name": "Bruno Lepri"},
-      {"@type": "Person", "name": "Matono Akiyoshi"},
+      {"@type": "Person", "name": "Akiyoshi Matono"},
       {"@type": "Person", "name": "Andrea Passerini"},
       {"@type": "Person", "name": "Xin Liu"},
       {"@type": "Person", "name": "Manfred Jaeger"}
@@ -85,8 +85,8 @@
     "codeRepository": "https://github.com/francescoferrini/gnnmim",
     "associatedMedia": {
       "@type": "MediaObject",
-      "name": "Paper PDF",
-      "contentUrl": "https://antoniolonga.github.io/papers/24482_Rethinking_GNNs_and_Miss.pdf",
+      "name": "Official OpenReview paper",
+      "contentUrl": "https://openreview.net/pdf?id=E4gftzjqoh",
       "encodingFormat": "application/pdf"
     }
   }
@@ -99,11 +99,12 @@
     <article>
       <header class="blog-header">
         <h1>Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution</h1>
-        <p class="paper-authors">Francesco Ferrini<sup>1</sup>, Veronica Lachi<sup>2</sup>, Antonio Longa<sup>2</sup>, Bruno Lepri<sup>3</sup>, Matono Akiyoshi<sup>4</sup>, Andrea Passerini<sup>1</sup>, Xin Liu<sup>4</sup>, Manfred Jaeger<sup>5</sup></p>
+        <p class="paper-authors">Francesco Ferrini<sup>1</sup>, Veronica Lachi<sup>2</sup>, Antonio Longa<sup>2</sup>, Bruno Lepri<sup>3</sup>, Akiyoshi Matono<sup>4</sup>, Andrea Passerini<sup>1</sup>, Xin Liu<sup>4</sup>, Manfred Jaeger<sup>5</sup></p>
         <p class="paper-affiliations"><sup>1</sup>University of Trento · <sup>2</sup>UiT, The Arctic University of Norway · <sup>3</sup>Fondazione Bruno Kessler · <sup>4</sup>AIST · <sup>5</sup>Aalborg University</p>
         <p class="blog-subtitle">Proceedings of the 43rd International Conference on Machine Learning (ICML), Seoul, South Korea · PMLR 306 · 2026</p>
         <p class="blog-meta">Published conference paper</p>
         <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://openreview.net/pdf?id=E4gftzjqoh">Official paper</a>
           <a class="paper-link" href="https://doi.org/10.48550/arXiv.2601.04855">arXiv DOI</a>
           <a class="paper-link" href="https://arxiv.org/abs/2601.04855">arXiv</a>
           <a class="paper-link" href="https://openreview.net/forum?id=E4gftzjqoh">OpenReview</a>
