@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking GNNs and Missing Features | ICML 2026</title>
+  <meta name="description" content="GNNmim and realistic benchmarks reveal why sparse datasets overstate GNN robustness to missing node features across MCAR, MNAR, and distribution shifts.">
+  <meta name="author" content="Francesco Ferrini, Veronica Lachi, Antonio Longa, Bruno Lepri, Matono Akiyoshi, Andrea Passerini, Xin Liu, Manfred Jaeger">
+  <meta name="keywords" content="graph neural networks, missing node features, incomplete graph data, GNNmim, missing indicator method, MCAR, MNAR, node classification, RelBench, graph machine learning benchmarks">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution">
+  <meta property="og:description" content="GNNmim and realistic benchmarks for evaluating graph neural networks with missing node features under MCAR, MNAR, and distribution shifts.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rethinking GNNs and Missing Features | ICML 2026">
+  <meta name="twitter:description" content="GNNmim and realistic benchmarks for evaluating GNNs with missing node features.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution">
+  <meta name="citation_author" content="Francesco Ferrini">
+  <meta name="citation_author" content="Veronica Lachi">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Bruno Lepri">
+  <meta name="citation_author" content="Matono Akiyoshi">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Xin Liu">
+  <meta name="citation_author" content="Manfred Jaeger">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="43rd International Conference on Machine Learning">
+  <meta name="citation_doi" content="10.48550/arXiv.2601.04855">
+  <meta name="citation_arxiv_id" content="2601.04855">
+  <meta name="citation_pdf_url" content="https://antoniolonga.github.io/papers/24482_Rethinking_GNNs_and_Miss.pdf">
+  <meta name="citation_abstract" content="Handling missing node features is a key challenge for deploying Graph Neural Networks (GNNs) in real-world domains such as healthcare and sensor networks. Existing studies mostly address relatively benign scenarios, namely benchmark datasets with (a) high-dimensional but sparse node features and (b) incomplete data generated under Missing Completely At Random (MCAR) mechanisms. For (a), we theoretically prove that high sparsity substantially limits the information loss caused by missingness, making all models appear robust and preventing a meaningful comparison of their performance. To overcome this limitation, we introduce one synthetic and three real-world datasets with dense, semantically meaningful features. For (b), we move beyond MCAR and design evaluation protocols with more realistic missingness mechanisms. Moreover, we provide a theoretical background to state explicit assumptions on the missingness process and analyze their implications for different methods. Building on this analysis, we show that a simple baseline adapted to the graph domain is competitive with respect to specialized architectures across diverse datasets and missingness regimes.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution",
+    "name": "Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution",
+    "description": "GNNmim and realistic benchmarks for evaluating graph neural networks with missing node features under MCAR, MNAR, and distribution shifts.",
+    "abstract": "Handling missing node features is a key challenge for deploying Graph Neural Networks (GNNs) in real-world domains such as healthcare and sensor networks. Existing studies mostly address relatively benign scenarios, namely benchmark datasets with (a) high-dimensional but sparse node features and (b) incomplete data generated under Missing Completely At Random (MCAR) mechanisms. For (a), we theoretically prove that high sparsity substantially limits the information loss caused by missingness, making all models appear robust and preventing a meaningful comparison of their performance. To overcome this limitation, we introduce one synthetic and three real-world datasets with dense, semantically meaningful features. For (b), we move beyond MCAR and design evaluation protocols with more realistic missingness mechanisms. Moreover, we provide a theoretical background to state explicit assumptions on the missingness process and analyze their implications for different methods. Building on this analysis, we show that a simple baseline adapted to the graph domain is competitive with respect to specialized architectures across diverse datasets and missingness regimes.",
+    "author": [
+      {"@type": "Person", "name": "Francesco Ferrini"},
+      {"@type": "Person", "name": "Veronica Lachi"},
+      {"@type": "Person", "name": "Antonio Longa"},
+      {"@type": "Person", "name": "Bruno Lepri"},
+      {"@type": "Person", "name": "Matono Akiyoshi"},
+      {"@type": "Person", "name": "Andrea Passerini"},
+      {"@type": "Person", "name": "Xin Liu"},
+      {"@type": "Person", "name": "Manfred Jaeger"}
+    ],
+    "datePublished": "2026",
+    "keywords": [
+      "graph neural networks",
+      "missing node features",
+      "incomplete graph data",
+      "GNNmim",
+      "missing indicator method",
+      "MCAR",
+      "MNAR",
+      "node classification",
+      "RelBench"
+    ],
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "arXiv", "value": "2601.04855"},
+      {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2601.04855"}
+    ],
+    "url": "https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/rethinking-gnns-missing-features.html",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Proceedings of the 43rd International Conference on Machine Learning",
+      "volumeNumber": "306"
+    },
+    "publisher": {"@type": "Organization", "name": "Proceedings of Machine Learning Research"},
+    "sameAs": [
+      "https://arxiv.org/abs/2601.04855",
+      "https://openreview.net/forum?id=E4gftzjqoh"
+    ],
+    "codeRepository": "https://github.com/francescoferrini/gnnmim",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "name": "Paper PDF",
+      "contentUrl": "https://antoniolonga.github.io/papers/24482_Rethinking_GNNs_and_Miss.pdf",
+      "encodingFormat": "application/pdf"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Rethinking GNNs and Missing Features: Challenges, Evaluation and a Robust Solution</h1>
+        <p class="paper-authors">Francesco Ferrini<sup>1</sup>, Veronica Lachi<sup>2</sup>, Antonio Longa<sup>2</sup>, Bruno Lepri<sup>3</sup>, Matono Akiyoshi<sup>4</sup>, Andrea Passerini<sup>1</sup>, Xin Liu<sup>4</sup>, Manfred Jaeger<sup>5</sup></p>
+        <p class="paper-affiliations"><sup>1</sup>University of Trento · <sup>2</sup>UiT, The Arctic University of Norway · <sup>3</sup>Fondazione Bruno Kessler · <sup>4</sup>AIST · <sup>5</sup>Aalborg University</p>
+        <p class="blog-subtitle">Proceedings of the 43rd International Conference on Machine Learning (ICML), Seoul, South Korea · PMLR 306 · 2026</p>
+        <p class="blog-meta">Published conference paper</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://doi.org/10.48550/arXiv.2601.04855">arXiv DOI</a>
+          <a class="paper-link" href="https://arxiv.org/abs/2601.04855">arXiv</a>
+          <a class="paper-link" href="https://openreview.net/forum?id=E4gftzjqoh">OpenReview</a>
+          <a class="paper-link" href="https://github.com/francescoferrini/gnnmim">Code &amp; datasets</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> This work replaces overly benign evaluation of GNNs with missing node features with dense-feature datasets and realistic missingness protocols, and proposes GNNmim as a lightweight, broadly robust baseline.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>Graph neural networks deployed in healthcare, sensor networks, recommender systems, and relational data often receive incomplete node attributes. Prior missing-feature and incomplete-graph evaluations mainly delete entries uniformly at random from sparse bag-of-words benchmarks such as Cora, Citeseer, and PubMed. The paper shows theoretically and empirically that feature sparsity can make these benchmarks appear robust until extreme missingness, obscuring differences between methods and overlooking Missing Not At Random (MNAR) processes and train–test shifts.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>An information-theoretic bound connects feature sparsity to the information loss induced by missingness.</li>
+          <li>One synthetic and three real-world dense-feature datasets provide more discriminating GNN robustness tests.</li>
+          <li>Five protocols cover uniform, structured, and label-dependent MCAR plus feature- and class-dependent MNAR, including distribution shifts.</li>
+          <li>GNNmim adapts the Missing Indicator Method to GNN node-level learning and is evaluated on naturally incomplete RelBench databases.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Method</h2>
+        <p>GNNmim zero-fills unobserved entries, concatenates every node’s feature vector with its binary missingness mask, and passes that representation to an otherwise standard GNN. Unlike learned or iterative imputation, this exposes the missingness pattern directly and does not require feature-MAR or label-MAR assumptions. The GNN layer type is selected on validation data.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Tasks</dt><dd>Transductive node classification; inductive analysis; RelBench node classification and regression.</dd>
+          <dt>Datasets</dt><dd>Cora, Citeseer, PubMed; Synthetic, Air, Electric, TADPOLE; Rel-Event, Rel-Trial, Rel-Arxiv, Rel-F1.</dd>
+          <dt>Metrics</dt><dd>F1 score, area under the F1–missingness curve, ROC-AUC, and mean absolute error (MAE).</dd>
+          <dt>Baselines</dt><dd>GNNzero, GNNmedian, GNNmi, GCNmf, GOODIE, GSPN, PCFI, Feature Propagation, FairAC, MICE+GNN, MLP+MIM, XGBoost, and RDL.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>On sparse citation benchmarks, models degrade mainly beyond 85–90% missingness; the dense-feature datasets expose failures much earlier. Across controlled mechanisms and shifts, GNNmim remains competitive. On naturally incomplete RelBench data, adding MIM improves RDL on every dataset with non-negligible missingness, with comparable runtime.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Selected RelBench results (mean ± standard deviation over three seeds).</caption>
+            <thead>
+              <tr><th scope="col">Dataset / task</th><th scope="col">Metric</th><th scope="col">RDLmim</th><th scope="col">RDL baseline</th><th scope="col">Difference</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Rel-Event / user-attendance</td><td>MAE ↓</td><td>0.2553 ± 0.0018</td><td>0.2628 ± 0.0020</td><td>−0.0075</td></tr>
+              <tr><td>Rel-Trial / site-success</td><td>MAE ↓</td><td>0.3746 ± 0.0170</td><td>0.4235 ± 0.0096</td><td>−0.0489</td></tr>
+              <tr><td>Rel-F1 / driver-top3</td><td>ROC-AUC ↑</td><td>0.768 ± 0.004</td><td>0.755 ± 0.006</td><td>+0.013</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>This paper is relevant when selecting methods for GNNs with incomplete node attributes, designing MCAR or MNAR robustness benchmarks, studying missingness distribution shift, or handling naturally missing clinical, environmental-sensor, electrical-grid, and relational-database features.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>The study covers node-level classification and regression with missing node features. It does not evaluate link prediction or graph classification, and assumes the graph structure and training labels are observed; missing edges, uncertain topology, and missing labels remain outside its scope. The authors also identify the need for larger benchmarks designed specifically for missing features.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Persistent identifiers:</strong> arXiv:2601.04855 · <a href="https://doi.org/10.48550/arXiv.2601.04855">https://doi.org/10.48550/arXiv.2601.04855</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@inproceedings{ferrini2026rethinking,
+  title     = {Rethinking {GNN}s and Missing Features: Challenges, Evaluation and a Robust Solution},
+  author    = {Ferrini, Francesco and Lachi, Veronica and Longa, Antonio and Lepri, Bruno and Matono, Akiyoshi and Passerini, Andrea and Liu, Xin and Jaeger, Manfred},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=E4gftzjqoh}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>

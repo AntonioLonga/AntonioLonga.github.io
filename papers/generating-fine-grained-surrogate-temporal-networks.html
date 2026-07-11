@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating Fine-Grained Surrogate Temporal Networks | Communications Physics 2024</title>
+  <meta name="description" content="ETN-gen learns short egocentric temporal patterns to generate scalable surrogate networks that efficiently preserve fine-grained interaction dynamics.">
+  <meta name="author" content="Antonio Longa, Giulia Cencetti, Sune Lehmann, Andrea Passerini, Bruno Lepri">
+  <meta name="keywords" content="ETN-gen, temporal networks, surrogate networks, egocentric temporal neighborhoods, synthetic graphs, temporal motifs, data augmentation, network generation">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Generating fine-grained surrogate temporal networks">
+  <meta property="og:description" content="ETN-gen generates scalable temporal surrogates from short, local patterns of interaction.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generating Fine-Grained Surrogate Temporal Networks">
+  <meta name="twitter:description" content="A scalable, interpretable generator for fine-grained temporal networks.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="Generating fine-grained surrogate temporal networks">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Giulia Cencetti">
+  <meta name="citation_author" content="Sune Lehmann">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Bruno Lepri">
+  <meta name="citation_publication_date" content="2024-01-09">
+  <meta name="citation_journal_title" content="Communications Physics">
+  <meta name="citation_volume" content="7">
+  <meta name="citation_issue" content="1">
+  <meta name="citation_doi" content="10.1038/s42005-023-01517-1">
+  <meta name="citation_pdf_url" content="https://www.nature.com/articles/s42005-023-01517-1.pdf">
+  <meta name="citation_abstract" content="Temporal network data are often expensive, small, or privacy sensitive. ETN-gen decomposes an observed network into short star-like egocentric temporal neighborhoods and learns how those local patterns evolve. The resulting generator is interpretable, scalable, and able to create networks with a chosen duration and number of nodes while preserving many temporal and structural properties.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Generating fine-grained surrogate temporal networks",
+    "name": "Generating fine-grained surrogate temporal networks",
+    "description": "ETN-gen learns short egocentric temporal patterns to generate scalable surrogate networks that efficiently preserve fine-grained interaction dynamics.",
+    "abstract": "Temporal network data are often expensive, small, or privacy sensitive. ETN-gen decomposes an observed network into short star-like egocentric temporal neighborhoods and learns how those local patterns evolve. The resulting generator is interpretable, scalable, and able to create networks with a chosen duration and number of nodes while preserving many temporal and structural properties.",
+    "author": [
+      {"@type": "Person", "name": "Antonio Longa"},
+      {"@type": "Person", "name": "Giulia Cencetti"},
+      {"@type": "Person", "name": "Sune Lehmann"},
+      {"@type": "Person", "name": "Andrea Passerini"},
+      {"@type": "Person", "name": "Bruno Lepri"}
+    ],
+    "datePublished": "2024-01-09",
+    "keywords": ["ETN-gen", "temporal networks", "surrogate networks", "egocentric temporal neighborhoods", "synthetic graphs", "temporal motifs", "data augmentation"],
+    "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1038/s42005-023-01517-1"},
+    "url": "https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html",
+    "isPartOf": {"@type": "PublicationVolume", "name": "Communications Physics", "volumeNumber": "7"},
+    "pagination": "Article 22",
+    "publisher": {"@type": "Organization", "name": "Springer Nature"},
+    "sameAs": ["https://doi.org/10.1038/s42005-023-01517-1", "https://www.nature.com/articles/s42005-023-01517-1"],
+    "codeRepository": "https://github.com/AntonioLonga/ETNgen",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "name": "Official publisher PDF",
+      "contentUrl": "https://www.nature.com/articles/s42005-023-01517-1.pdf",
+      "encodingFormat": "application/pdf"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Generating fine-grained surrogate temporal networks</h1>
+        <p class="paper-authors">Antonio Longa, Giulia Cencetti, Sune Lehmann, Andrea Passerini, Bruno Lepri</p>
+        <p class="paper-affiliations">Fondazione Bruno Kessler · University of Trento · Aix-Marseille Université, Université de Toulon &amp; CNRS · Technical University of Denmark · Copenhagen Center for Social Data Science</p>
+        <p class="blog-subtitle">Communications Physics · Volume 7 · Article 22</p>
+        <p class="blog-meta">Published journal article · 9 January 2024</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://www.nature.com/articles/s42005-023-01517-1.pdf">Official paper</a>
+          <a class="paper-link" href="https://www.nature.com/articles/s42005-023-01517-1">Publisher page</a>
+          <a class="paper-link" href="https://doi.org/10.1038/s42005-023-01517-1">DOI</a>
+          <a class="paper-link" href="https://github.com/AntonioLonga/ETNgen">Code</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> ETN-gen learns how short egocentric neighborhoods evolve and recombines those local patterns into realistic temporal networks of arbitrary duration and size.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>Fine-grained temporal networks are costly to collect, difficult to share, and often too small or short for studying contagion, mobility, or social dynamics. Existing generators may preserve topology without temporal correlations, model individual activity without realistic structure, or become too expensive when motifs and deep models are applied to many sparse snapshots.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>ETN-gen represents recent node activity through compact Egocentric Temporal Neighborhood signatures.</li>
+          <li>A learned distribution of signature continuations generates each new network layer without storing node identities.</li>
+          <li>The method scales linearly with nodes and timestamps and can enlarge a dataset in time, node count, or both.</li>
+          <li>Structural and dynamical tests compare ETN-gen with Dymond, STM, and TagGen.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Method</h2>
+        <p>For every node and sliding time window, ETN-gen removes links among neighbors and encodes the remaining star-like temporal pattern as a binary signature. Maximum-likelihood transition dictionaries estimate how each signature can extend into the next snapshot. Sampled node requests are reconciled into undirected edges, while separate dictionaries for times of day or weekdays preserve periodic activity.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Main datasets</dt><dd>Hospital (75 nodes), workplace (92 nodes), and high school (126 nodes) face-to-face networks.</dd>
+          <dt>Resolution</dt><dd>Five-minute snapshots and temporal horizon k = 2; larger social and communication datasets appear in supplementary tests.</dd>
+          <dt>Structure</dt><dd>Seventeen time-dependent and aggregated measures compared through Kolmogorov–Smirnov distance.</dd>
+          <dt>Dynamics</dt><dd>Temporal random walks and Susceptible–Infectious–Recovered spreading simulations.</dd>
+          <dt>Baselines</dt><dd>Dymond, Structural Temporal Modeling (STM), and TagGen; ten stochastic network realizations.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>ETN-gen is the only compared method that simultaneously preserves node count, interaction scale, and the original periodicity. It is strongest on fine-grained temporal properties and can extrapolate a second workplace week from the first. It also reconstructs high-school activity after retaining only part of the original nodes.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Summary of the reported empirical findings.</caption>
+            <thead><tr><th scope="col">Evaluation</th><th scope="col">Reported outcome</th></tr></thead>
+            <tbody>
+              <tr><td>Temporal structure</td><td>High fidelity for density, active individuals, new conversations, connected components, and hub-like structure.</td></tr>
+              <tr><td>Random walks</td><td>Mean first-passage times remain similar; coverage is competitive and depends on dataset and starting time.</td></tr>
+              <tr><td>Temporal extension</td><td>A model learned from week one recreates the workplace interaction pattern in week two.</td></tr>
+              <tr><td>Size expansion</td><td>Surrogates recover high-school activity from reduced networks containing 30% or 70% of the nodes.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>ETN-gen is relevant for temporal-network augmentation, scalable synthetic contact data, privacy-conscious data sharing, epidemic simulations, high-resolution human interactions, and interpretable alternatives to motif-heavy or neural temporal graph generators.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>The egocentric representation discards links among neighbors, reducing fidelity for clustering, assortativity, shortest paths, and communities. Its short memory cannot reproduce long-term relationship reinforcement or daily and weekly recurrences unless periodicity is provided explicitly. The paper argues that identities are obscured, but does not formally prove resistance to de-anonymization.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Persistent identifier:</strong> <a href="https://doi.org/10.1038/s42005-023-01517-1">https://doi.org/10.1038/s42005-023-01517-1</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@Article{longa2024generating,
+  title   = {Generating fine-grained surrogate temporal networks},
+  author  = {Longa, Antonio and Cencetti, Giulia and Lehmann, Sune and Passerini, Andrea and Lepri, Bruno},
+  journal = {Communications Physics},
+  volume  = {7},
+  number  = {1},
+  pages   = {22},
+  year    = {2024},
+  doi     = {10.1038/s42005-023-01517-1},
+  url     = {https://doi.org/10.1038/s42005-023-01517-1}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>

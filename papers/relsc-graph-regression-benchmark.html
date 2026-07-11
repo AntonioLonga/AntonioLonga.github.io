@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RelSC Graph Regression Benchmark | DMLR 2026</title>
+  <meta name="description" content="RelSC benchmarks execution-time regression on Java program graphs using complementary homogeneous and multi-relational representations for software analysis.">
+  <meta name="author" content="Peter Samoaa, Marcus Vukojevic, Morteza Haghir Chehreghani, Antonio Longa">
+  <meta name="keywords" content="RelSC, graph regression, software performance prediction, execution time prediction, program graphs, source code graphs, graph neural networks, homogeneous graphs, multi-relational graphs, AST, CFG, DFG, Java">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/relsc-graph-regression-benchmark.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants">
+  <meta property="og:description" content="RelSC-H and RelSC-M benchmark GNN execution-time prediction on homogeneous and multi-relational Java program graphs.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/relsc-graph-regression-benchmark.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RelSC Graph Regression Benchmark | DMLR 2026">
+  <meta name="twitter:description" content="A graph-regression benchmark for execution-time prediction from Java program graphs.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants">
+  <meta name="citation_author" content="Peter Samoaa">
+  <meta name="citation_author" content="Marcus Vukojevic">
+  <meta name="citation_author" content="Morteza Haghir Chehreghani">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_publication_date" content="2026-03-15">
+  <meta name="citation_journal_title" content="Journal of Data-centric Machine Learning Research">
+  <meta name="citation_volume" content="3">
+  <meta name="citation_firstpage" content="1">
+  <meta name="citation_lastpage" content="41">
+  <meta name="citation_doi" content="10.48550/arXiv.2505.23875">
+  <meta name="citation_arxiv_id" content="2505.23875">
+  <meta name="citation_pdf_url" content="https://antoniolonga.github.io/papers/109_A_Benchmark_Dataset_for_Gr.pdf">
+  <meta name="citation_abstract" content="Graph-level regression underpins many real-world applications, yet public benchmarks remain heavily skewed toward molecular graphs and citation networks. This limited diversity hinders progress on models that must generalize across both homogeneous and heterogeneous graph structures. Software performance prediction is an ideal domain to address this gap: program graphs are large, directed, and semantics-driven, enabling a regression benchmark that stresses structural reasoning beyond molecules and citation networks. We introduce RelSC, a new graph-regression dataset built from program graphs that combine syntactic and semantic information extracted from source code. Each graph is labelled with the execution-time cost of the corresponding program, providing a continuous target variable that differs markedly from those found in existing benchmarks. RelSC is released in two complementary variants. RelSC-H supplies rich node features under a single (homogeneous) edge type, while RelSC-M preserves the original multi-relational structure, connecting nodes through multiple edge types that encode distinct semantic relationships. Together, these variants let researchers probe how representation choice influences model behaviour. We evaluate a diverse set of graph neural network architectures on both variants of RelSC. The results reveal consistent performance differences between the homogeneous and multi-relational settings, emphasising the importance of structural representation. These findings demonstrate RelSC’s value as a challenging and versatile benchmark for advancing graph regression methods.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants",
+    "name": "A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants",
+    "description": "RelSC benchmarks execution-time regression on Java program graphs through complementary homogeneous and multi-relational representations.",
+    "abstract": "Graph-level regression underpins many real-world applications, yet public benchmarks remain heavily skewed toward molecular graphs and citation networks. This limited diversity hinders progress on models that must generalize across both homogeneous and heterogeneous graph structures. Software performance prediction is an ideal domain to address this gap: program graphs are large, directed, and semantics-driven, enabling a regression benchmark that stresses structural reasoning beyond molecules and citation networks. We introduce RelSC, a new graph-regression dataset built from program graphs that combine syntactic and semantic information extracted from source code. Each graph is labelled with the execution-time cost of the corresponding program, providing a continuous target variable that differs markedly from those found in existing benchmarks. RelSC is released in two complementary variants. RelSC-H supplies rich node features under a single (homogeneous) edge type, while RelSC-M preserves the original multi-relational structure, connecting nodes through multiple edge types that encode distinct semantic relationships. Together, these variants let researchers probe how representation choice influences model behaviour. We evaluate a diverse set of graph neural network architectures on both variants of RelSC. The results reveal consistent performance differences between the homogeneous and multi-relational settings, emphasising the importance of structural representation. These findings demonstrate RelSC’s value as a challenging and versatile benchmark for advancing graph regression methods.",
+    "author": [
+      {"@type": "Person", "name": "Peter Samoaa"},
+      {"@type": "Person", "name": "Marcus Vukojevic"},
+      {"@type": "Person", "name": "Morteza Haghir Chehreghani"},
+      {"@type": "Person", "name": "Antonio Longa"}
+    ],
+    "datePublished": "2026-03-15",
+    "keywords": [
+      "RelSC",
+      "graph regression",
+      "software performance prediction",
+      "execution time prediction",
+      "program graphs",
+      "graph neural networks",
+      "homogeneous graphs",
+      "multi-relational graphs",
+      "AST",
+      "CFG",
+      "DFG",
+      "Java"
+    ],
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "arXiv", "value": "2505.23875"},
+      {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2505.23875"},
+      {"@type": "PropertyValue", "propertyID": "OpenReview", "value": "bFTJEChRU7"}
+    ],
+    "url": "https://antoniolonga.github.io/papers/relsc-graph-regression-benchmark.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/relsc-graph-regression-benchmark.html",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Journal of Data-centric Machine Learning Research",
+      "volumeNumber": "3"
+    },
+    "pagination": "1-41",
+    "publisher": {"@type": "Organization", "name": "ML Research Press"},
+    "sameAs": [
+      "https://data.mlr.press/volumes/03.html",
+      "https://arxiv.org/abs/2505.23875",
+      "https://openreview.net/forum?id=bFTJEChRU7"
+    ],
+    "codeRepository": "https://github.com/MarcusVukojevic/graph_regression_datasets",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "name": "Paper PDF",
+      "contentUrl": "https://antoniolonga.github.io/papers/109_A_Benchmark_Dataset_for_Gr.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    "subjectOf": {
+      "@type": "Dataset",
+      "name": "RelSC dataset",
+      "url": "https://zenodo.org/records/18598713",
+      "identifier": "https://doi.org/10.5281/zenodo.18598713"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants</h1>
+        <p class="paper-authors">Peter Samoaa<sup>1</sup>, Marcus Vukojevic<sup>2</sup>, Morteza Haghir Chehreghani<sup>1</sup>, Antonio Longa<sup>2</sup></p>
+        <p class="paper-affiliations"><sup>1</sup>Division of Data Science and AI, Chalmers University of Technology, Gothenburg, Sweden · <sup>2</sup>Division of Computer Science, University of Trento, Trento, Italy</p>
+        <p class="blog-subtitle">Journal of Data-centric Machine Learning Research · Volume 3, Article 10, pages 1–41 · 2026</p>
+        <p class="blog-meta">Published journal article · Editor: Hongyang Ryan Zhang</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="109_A_Benchmark_Dataset_for_Gr.pdf">PDF</a>
+          <a class="paper-link" href="https://data.mlr.press/volumes/03.html">Publisher</a>
+          <a class="paper-link" href="https://doi.org/10.48550/arXiv.2505.23875">arXiv DOI</a>
+          <a class="paper-link" href="https://arxiv.org/abs/2505.23875">arXiv</a>
+          <a class="paper-link" href="https://openreview.net/forum?id=bFTJEChRU7">OpenReview</a>
+          <a class="paper-link" href="https://github.com/MarcusVukojevic/graph_regression_datasets">Code</a>
+          <a class="paper-link" href="https://zenodo.org/records/18598713">Dataset</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> RelSC broadens graph-regression evaluation beyond molecular data by pairing Java program graphs with execution-time targets in homogeneous and multi-relational representations.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>Public graph-level regression benchmarks are concentrated in chemistry and drug discovery, leaving large directed graphs with execution semantics and multiple relation types underrepresented. The paper addresses this gap through software performance prediction: estimating a Java program’s execution time from its source-code graph before running it.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>RelSC provides 3,817 execution-time-labelled graphs from HadoopTests and four OssBuilds projects.</li>
+          <li>RelSC-H represents augmented program graphs homogeneously, while RelSC-M retains multi-relational connectivity.</li>
+          <li>Fixed 70/15/15 splits, raw data, PyTorch Geometric objects, construction code, and reproduction scripts are publicly released.</li>
+          <li>Baselines and an ablation quantify representation difficulty and the value of control- and data-flow augmentation.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Dataset construction</h2>
+        <p>Each Java file is parsed with javalang into an Abstract Syntax Tree (AST) with 72 node types, then augmented with 11 edge types derived from syntax, Control Flow Graphs (CFGs), and Data Flow Graphs (DFGs). RelSC-H combines node-type information and outgoing-edge features under a homogeneous representation. RelSC-M groups nodes into seven semantic categories and defines up to 49 directed category-to-category relations. The continuous execution-time labels are normalized independently to [0,1] for each dataset.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Task</dt><dd>Graph-level regression for Java execution-time prediction.</dd>
+          <dt>Corpora</dt><dd>HadoopTests: 2,895 graphs, averaging 1,490 nodes; OssBuilds: 922 graphs from SystemDS, H2, Dubbo, and RDF4J, averaging 875 nodes.</dd>
+          <dt>Metrics</dt><dd>MAE (primary), RMSE, MAPE, Spearman’s rank correlation, and maximum relative error.</dd>
+          <dt>Baselines</dt><dd>CodeBERT, Code2Vec, GCN, ChebConv, GIN, GraphSAGE, PNA, GAT, Graph Transformer, HeteroSAGE, HeteroGAT, HeteroGCN, and HeteroTransformer.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>PNA obtains the lowest test MAE on every RelSC-H dataset. The best off-the-shelf heterogeneous models remain weaker on RelSC-M, particularly for small projects; HeteroSAGE reaches 6.22 ± 5.45 MAE on SystemDS and 4.35 ± 3.51 on H2. Adding control- and data-flow edges to plain ASTs reduces OssBuilds MAE by approximately 0.07–0.09 across the tested GNNs.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Selected test MAE results (mean ± standard deviation over five seeds; lower is better).</caption>
+            <thead>
+              <tr><th scope="col">Dataset</th><th scope="col">Best RelSC-H</th><th scope="col">Best RelSC-M</th><th scope="col">CodeBERT</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Hadoop</td><td>PNA: 0.09 ± 0.01</td><td>HeteroGAT: 0.14 ± 0.02</td><td>0.14 ± 0.11</td></tr>
+              <tr><td>SystemDS</td><td>PNA: 0.06 ± 0.00</td><td>HeteroTransformer: 0.30 ± 0.10</td><td>0.17 ± 0.13</td></tr>
+              <tr><td>OssBuilds</td><td>PNA: 0.11 ± 0.00</td><td>HeteroGAT/HeteroGCN/HeteroTransformer: 0.18</td><td>0.15 ± 0.08</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>RelSC is relevant for methods for graph regression beyond molecules, GNN-based software performance prediction, execution-time estimation from source code, homogeneous-versus-heterogeneous graph comparisons, relation-aware message passing, and program representations combining AST, CFG, and DFG information.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>RelSC is smaller than web-scale graph benchmarks because stable timing labels require repeated controlled executions and substantial compute. Target values are imbalanced, no hyperparameter search was performed, and independently normalized targets support within-dataset model comparison rather than direct comparison of absolute errors across projects.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Paper identifier:</strong> arXiv:2505.23875 · <a href="https://doi.org/10.48550/arXiv.2505.23875">https://doi.org/10.48550/arXiv.2505.23875</a><br><strong>Dataset DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18598713">https://doi.org/10.5281/zenodo.18598713</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@article{samoaa2026a,
+  title   = {A Benchmark Dataset for Graph Regression with Homogeneous and Multi-Relational Variants},
+  author  = {Peter Samoaa and Marcus Vukojevic and Morteza Haghir Chehreghani and Antonio Longa},
+  journal = {Journal of Data-centric Machine Learning Research},
+  volume  = {3},
+  pages   = {1--41},
+  year    = {2026},
+  url     = {https://openreview.net/forum?id=bFTJEChRU7}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Path Structural Encoding | ICML 2025</title>
+  <meta name="description" content="SPSE replaces random-walk probabilities with approximate simple-path counts to give graph transformers richer structural and cyclic edge information.">
+  <meta name="author" content="Louis Airale, Antonio Longa, Mattia Rigon, Andrea Passerini, Roberto Passerone">
+  <meta name="keywords" content="Simple Path Structural Encoding, SPSE, graph transformers, structural encoding, edge encoding, simple path counting, self-avoiding walks, RRWP, random walk probabilities, cycle counting, graph neural networks">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/simple-path-structural-encoding.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Simple Path Structural Encoding for Graph Transformers">
+  <meta property="og:description" content="SPSE uses approximate simple-path counts to capture graph structures that random-walk edge encodings can miss.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/simple-path-structural-encoding.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simple Path Structural Encoding | ICML 2025">
+  <meta name="twitter:description" content="Simple-path counts provide richer structural edge encodings for graph transformers than RRWP.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="Simple Path Structural Encoding for Graph Transformers">
+  <meta name="citation_author" content="Louis Airale">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Mattia Rigon">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Roberto Passerone">
+  <meta name="citation_publication_date" content="2025-07-13">
+  <meta name="citation_conference_title" content="42nd International Conference on Machine Learning">
+  <meta name="citation_journal_title" content="Proceedings of Machine Learning Research">
+  <meta name="citation_volume" content="267">
+  <meta name="citation_firstpage" content="857">
+  <meta name="citation_lastpage" content="873">
+  <meta name="citation_doi" content="10.48550/arXiv.2502.09365">
+  <meta name="citation_arxiv_id" content="2502.09365">
+  <meta name="citation_pdf_url" content="https://raw.githubusercontent.com/mlresearch/v267/main/assets/airale25a/airale25a.pdf">
+  <meta name="citation_abstract" content="Graph transformers extend global self-attention to graph-structured data, achieving notable success in graph learning. Recently, Relative Random Walk Probabilities (RRWP) has been found to further enhance their predictive power by encoding both structural and positional information into the edge representation. However, RRWP cannot always distinguish between edges that belong to different local graph patterns, which reduces its ability to capture the full structural complexity of graphs. This work introduces Simple Path Structural Encoding (SPSE), a novel method that utilizes simple path counts for edge encoding. We show theoretically and experimentally that SPSE overcomes the limitations of RRWP, providing a richer representation of graph structures, particularly in capturing local cyclic patterns. To make SPSE computationally tractable, we propose an efficient approximate algorithm for simple path counting. SPSE demonstrates significant performance improvements over RRWP on various benchmarks, including molecular and long-range graph datasets, achieving statistically significant gains in discriminative tasks. These results pose SPSE as a powerful edge encoding alternative for enhancing the expressivity of graph transformers.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Simple Path Structural Encoding for Graph Transformers",
+    "name": "Simple Path Structural Encoding for Graph Transformers",
+    "description": "SPSE replaces random-walk probabilities with approximate simple-path counts to give graph transformers richer structural and cyclic edge information.",
+    "abstract": "Graph transformers extend global self-attention to graph-structured data, achieving notable success in graph learning. Recently, Relative Random Walk Probabilities (RRWP) has been found to further enhance their predictive power by encoding both structural and positional information into the edge representation. However, RRWP cannot always distinguish between edges that belong to different local graph patterns, which reduces its ability to capture the full structural complexity of graphs. This work introduces Simple Path Structural Encoding (SPSE), a novel method that utilizes simple path counts for edge encoding. We show theoretically and experimentally that SPSE overcomes the limitations of RRWP, providing a richer representation of graph structures, particularly in capturing local cyclic patterns. To make SPSE computationally tractable, we propose an efficient approximate algorithm for simple path counting. SPSE demonstrates significant performance improvements over RRWP on various benchmarks, including molecular and long-range graph datasets, achieving statistically significant gains in discriminative tasks. These results pose SPSE as a powerful edge encoding alternative for enhancing the expressivity of graph transformers.",
+    "author": [
+      {"@type": "Person", "name": "Louis Airale"},
+      {"@type": "Person", "name": "Antonio Longa"},
+      {"@type": "Person", "name": "Mattia Rigon"},
+      {"@type": "Person", "name": "Andrea Passerini"},
+      {"@type": "Person", "name": "Roberto Passerone"}
+    ],
+    "datePublished": "2025-07-13",
+    "keywords": [
+      "Simple Path Structural Encoding",
+      "SPSE",
+      "graph transformers",
+      "structural edge encoding",
+      "simple path counting",
+      "self-avoiding walks",
+      "Relative Random Walk Probabilities",
+      "cycle counting",
+      "graph neural networks"
+    ],
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "PMLR", "value": "pmlr-v267-airale25a"},
+      {"@type": "PropertyValue", "propertyID": "arXiv", "value": "2502.09365"},
+      {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2502.09365"},
+      {"@type": "PropertyValue", "propertyID": "OpenReview", "value": "t3zwUqibMq"}
+    ],
+    "url": "https://antoniolonga.github.io/papers/simple-path-structural-encoding.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/simple-path-structural-encoding.html",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Proceedings of the 42nd International Conference on Machine Learning",
+      "volumeNumber": "267"
+    },
+    "pagination": "857-873",
+    "publisher": {"@type": "Organization", "name": "PMLR"},
+    "sameAs": [
+      "https://proceedings.mlr.press/v267/airale25a.html",
+      "https://arxiv.org/abs/2502.09365",
+      "https://openreview.net/forum?id=t3zwUqibMq"
+    ],
+    "codeRepository": "https://github.com/LouisBearing/Graph-SPSE-Encoding",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "name": "Official PMLR paper",
+      "contentUrl": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/airale25a/airale25a.pdf",
+      "encodingFormat": "application/pdf"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Simple Path Structural Encoding for Graph Transformers</h1>
+        <p class="paper-authors">Louis Airale, Antonio Longa, Mattia Rigon, Andrea Passerini, Roberto Passerone</p>
+        <p class="paper-affiliations">University of Trento, Trento, Italy</p>
+        <p class="blog-subtitle">Proceedings of the 42nd International Conference on Machine Learning (ICML 2025) · Vancouver, Canada · PMLR 267:857–873</p>
+        <p class="blog-meta">Published conference paper</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://raw.githubusercontent.com/mlresearch/v267/main/assets/airale25a/airale25a.pdf">Official paper</a>
+          <a class="paper-link" href="https://proceedings.mlr.press/v267/airale25a.html">Proceedings</a>
+          <a class="paper-link" href="https://doi.org/10.48550/arXiv.2502.09365">arXiv DOI</a>
+          <a class="paper-link" href="https://arxiv.org/abs/2502.09365">arXiv</a>
+          <a class="paper-link" href="https://openreview.net/forum?id=t3zwUqibMq">OpenReview</a>
+          <a class="paper-link" href="https://github.com/LouisBearing/Graph-SPSE-Encoding">Code</a>
+          <a class="paper-link" href="https://icml.cc/virtual/2025/poster/43794">ICML page</a>
+          <a class="paper-link" href="../posts/graph_transf.html">Explainer</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> SPSE replaces random-walk probabilities with approximate simple-path counts so graph transformers can encode cyclic and local structures that RRWP may treat identically.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>Graph transformers require positional and structural encodings because global self-attention does not inherently represent graph topology. Relative Random Walk Probabilities (RRWP) encode pairwise structure efficiently, but can assign identical edge encodings to distinct local patterns—including edges in paths and even cycles—limiting the model’s ability to recognize cyclic or higher-order structure.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>Theoretical results identify graph pairs and edges that RRWP cannot distinguish and connect simple-path counts to cycle information.</li>
+          <li>Simple Path Structural Encoding (SPSE) represents node pairs through counts of simple paths at multiple lengths.</li>
+          <li>A DFS/BFS-based sequence of directed acyclic graph decompositions approximates otherwise expensive path counts.</li>
+          <li>Controlled cycle counting and eight real benchmarks compare SPSE with RRWP in CSA, GRIT, and GraphGPS.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Method</h2>
+        <p>SPSE constructs a matrix for each path length whose entries count self-avoiding paths between node pairs, normalizes the potentially large counts through repeated logarithmic transforms, and feeds the resulting tensor to the transformer’s edge-encoding network. Exact enumeration is avoided: repeated graph decompositions combine depth-first and breadth-first search to discover long and alternative paths. SPSE can replace RRWP without changing the number of trainable parameters.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Tasks</dt><dd>Synthetic cycle counting; graph regression, graph classification, and node classification.</dd>
+          <dt>Datasets</dt><dd>ZINC, Peptides-functional, Peptides-structural, PCQM4Mv2, PATTERN, CLUSTER, MNIST, CIFAR10, plus 12,000 synthetic cycle graphs.</dd>
+          <dt>Metrics</dt><dd>MAE, average precision (AP), classification accuracy, and cycle-counting accuracy.</dd>
+          <dt>Models</dt><dd>CSA, GRIT, and GraphGPS with RRWP or SPSE; additional GNN and graph-transformer baselines.</dd>
+          <dt>Protocol</dt><dd>Ten seeds except one run for PCQM4Mv2; no task-specific hyperparameter tuning; two-sided t-tests at p ≤ 0.05.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>Replacing RRWP with SPSE improves 21 of 24 paired benchmark results. For CSA and GRIT on molecular tasks, five of six comparisons improve significantly. Gains are smaller or absent where approximate path counting is difficult, notably the dense CLUSTER graphs. The synthetic experiment also shows higher cycle-counting accuracy for SPSE in all but one model/configuration pair.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Selected paired test results (mean ± standard deviation; statistically significant improvements at p ≤ 0.05).</caption>
+            <thead>
+              <tr><th scope="col">Model / dataset</th><th scope="col">Metric</th><th scope="col">SPSE</th><th scope="col">RRWP</th><th scope="col">Difference</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CSA / ZINC</td><td>MAE ↓</td><td>0.061 ± 0.003</td><td>0.069 ± 0.003</td><td>−0.008</td></tr>
+              <tr><td>GRIT / Peptides-functional</td><td>AP ↑</td><td>0.6945 ± 0.0113</td><td>0.6803 ± 0.0085</td><td>+0.0142</td></tr>
+              <tr><td>GRIT / Peptides-structural</td><td>MAE ↓</td><td>0.2449 ± 0.0018</td><td>0.2480 ± 0.0025</td><td>−0.0031</td></tr>
+              <tr><td>GRIT / CIFAR10</td><td>Accuracy ↑</td><td>77.022 ± 0.430</td><td>76.246 ± 0.954</td><td>+0.776</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>This work is relevant for graph-transformer structural encodings, alternatives to random-walk positional encodings, learning cyclic molecular patterns, simple-path or self-avoiding-walk features, long-range graph learning, and drop-in edge encodings for CSA, GRIT, or GraphGPS.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>The approximate algorithm returns lower bounds rather than exact path counts and can miss paths in dense graphs, which may hurt performance. Precomputation ranges from about one to 80 hours on the reported datasets. Extremely large graphs, broader domains, and interactions with other transformer architectures require further study.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Persistent identifiers:</strong> PMLR: pmlr-v267-airale25a · arXiv:2502.09365 · <a href="https://doi.org/10.48550/arXiv.2502.09365">https://doi.org/10.48550/arXiv.2502.09365</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@InProceedings{pmlr-v267-airale25a,
+  title     = {Simple Path Structural Encoding for Graph Transformers},
+  author    = {Airale, Louis and Longa, Antonio and Rigon, Mattia and Passerini, Andrea and Passerone, Roberto},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  pages     = {857--873},
+  year      = {2025},
+  volume    = {267},
+  series    = {Proceedings of Machine Learning Research},
+  month     = {13--19 Jul},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v267/airale25a.html}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>

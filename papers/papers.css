@@ -1,0 +1,289 @@
+body {
+  font-family: "Muli", Verdana, sans-serif;
+  margin: 0;
+  color: #333;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.back-home {
+  display: inline-block;
+  margin-bottom: 48px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
+
+.back-home.bottom {
+  margin-top: 48px;
+}
+
+.blog-header {
+  margin-bottom: 48px;
+}
+
+.blog-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.blog-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.blog-meta {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.paper-authors {
+  color: #555;
+  font-size: 1.08rem;
+  margin-bottom: 12px;
+}
+
+.paper-affiliations {
+  color: #777;
+  font-size: 0.92rem;
+  margin: 0 0 16px;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.paper-link {
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  color: #007bff;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+
+.paper-link:hover,
+.paper-link:focus {
+  background: #007bff;
+  color: #fff;
+}
+
+.paper-summary {
+  background: #f7f9fc;
+  border-left: 4px solid #007bff;
+  font-size: 1.15rem;
+  margin: 32px 0;
+  padding: 20px 24px;
+}
+
+.paper-details {
+  display: grid;
+  gap: 8px 24px;
+  grid-template-columns: max-content 1fr;
+  margin: 20px 0;
+}
+
+.paper-details dt {
+  font-weight: 800;
+}
+
+.paper-details dd {
+  margin: 0;
+}
+
+.table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.paper-table {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.paper-table th,
+.paper-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.paper-table th {
+  background: #f4f4f4;
+  font-weight: 800;
+}
+
+.citation-id {
+  overflow-wrap: anywhere;
+}
+
+article h2 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+article h3 {
+  margin-top: 36px;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+article p,
+article li {
+  font-size: 1.08rem;
+}
+
+article img {
+  display: block;
+  max-width: 100%;
+  margin: 24px auto;
+}
+
+figure {
+  margin: 40px 0;
+}
+
+figcaption {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+hr {
+  margin: 48px 0;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.embed-responsive {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-container {
+    padding: 32px 18px;
+  }
+
+  .blog-header h1 {
+    font-size: 2.3rem;
+  }
+
+  article h2 {
+    font-size: 1.6rem;
+  }
+
+  .paper-details {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-details dd:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Code blocks */
+.code-block {
+  position: relative;
+  margin: 2rem 0;
+}
+
+div.code,
+div.output {
+  background: #f7f7f8;
+  border: 1px solid #e1e1e5;
+  border-radius: 12px;
+  color: #2f2f2f;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+div.code {
+  border-left: 4px solid #9c9c9c;
+}
+
+div.output {
+  background: #fcfcfc;
+  color: #555;
+  border-left: 4px solid #cccccc;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #d0d0d5;
+  background: #ffffff;
+  color: #555;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #f0f0f0;
+  color: #222;
+}
+
+.copy-button.copied {
+  background: #e8f5e9;
+  border-color: #a5d6a7;
+  color: #1b5e20;
+}
+
+/* Syntax colors */
+span.import {
+  color: #22863a;
+  font-weight: 700;
+}
+
+span.sorted {
+  color: #6f42c1;
+}
+
+span.comment {
+  color: #6a737d;
+  font-style: italic;
+}
+
+span.string {
+  color: #b31d28;
+}

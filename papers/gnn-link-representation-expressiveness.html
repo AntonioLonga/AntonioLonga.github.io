@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GNN Link Representation Expressiveness | NeurIPS 2025</title>
+  <meta name="description" content="The kφ-kρ-m framework and LR-EXP connect theoretical GNN link expressiveness to practical link-prediction performance as graph symmetry increases.">
+  <meta name="author" content="Veronica Lachi, Francesco Ferrini, Antonio Longa, Bruno Lepri, Andrea Passerini, Manfred Jaeger">
+  <meta name="keywords" content="GNN link representation, link prediction, GNN expressiveness, kφ-kρ-m framework, LR-EXP, graph symmetry, automorphic links, non-automorphic links, message-passing neural networks, SEAL, NCN">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/gnn-link-representation-expressiveness.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bridging Theory and Practice in Link Representation with Graph Neural Networks">
+  <meta property="og:description" content="A unified theory, synthetic benchmark, and graph-symmetry analysis for selecting expressive GNN link-representation models.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/gnn-link-representation-expressiveness.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GNN Link Representation Expressiveness | NeurIPS 2025">
+  <meta name="twitter:description" content="The kφ-kρ-m framework, LR-EXP, and graph symmetry connect link expressiveness theory to practice.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="Bridging Theory and Practice in Link Representation with Graph Neural Networks">
+  <meta name="citation_author" content="Veronica Lachi">
+  <meta name="citation_author" content="Francesco Ferrini">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Bruno Lepri">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_author" content="Manfred Jaeger">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="39th Conference on Neural Information Processing Systems">
+  <meta name="citation_journal_title" content="Advances in Neural Information Processing Systems">
+  <meta name="citation_volume" content="38">
+  <meta name="citation_doi" content="10.48550/arXiv.2506.24018">
+  <meta name="citation_arxiv_id" content="2506.24018">
+  <meta name="citation_pdf_url" content="https://papers.nips.cc/paper_files/paper/2025/file/b1cd72276feff8173462e3f733ac66f8-Paper-Conference.pdf">
+  <meta name="citation_abstract" content="Graph Neural Networks (GNNs) are widely used to compute representations of node pairs for downstream tasks such as link prediction. Yet, theoretical understanding of their expressive power has focused almost entirely on graph-level representations. In this work, we shift the focus to links and provide the first comprehensive study of GNN expressiveness in link representation. We introduce a unifying framework, the kφ-kρ-m framework, that subsumes existing message-passing link models and enables formal expressiveness comparisons. Using this framework, we derive a hierarchy of state-of-the-art methods and offer theoretical tools to analyze future architectures. To complement our analysis, we propose a synthetic evaluation protocol comprising the first benchmark specifically designed to assess link-level expressiveness. Finally, we ask: does expressiveness matter in practice? We use a graph symmetry metric that quantifies the difficulty of distinguishing links and show that while expressive models may underperform on standard benchmarks, they significantly outperform simpler ones as symmetry increases, highlighting the need for dataset-aware model selection.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Bridging Theory and Practice in Link Representation with Graph Neural Networks",
+    "name": "Bridging Theory and Practice in Link Representation with Graph Neural Networks",
+    "description": "The kφ-kρ-m framework and LR-EXP connect theoretical GNN link expressiveness to practical link-prediction performance as graph symmetry increases.",
+    "abstract": "Graph Neural Networks (GNNs) are widely used to compute representations of node pairs for downstream tasks such as link prediction. Yet, theoretical understanding of their expressive power has focused almost entirely on graph-level representations. In this work, we shift the focus to links and provide the first comprehensive study of GNN expressiveness in link representation. We introduce a unifying framework, the kφ-kρ-m framework, that subsumes existing message-passing link models and enables formal expressiveness comparisons. Using this framework, we derive a hierarchy of state-of-the-art methods and offer theoretical tools to analyze future architectures. To complement our analysis, we propose a synthetic evaluation protocol comprising the first benchmark specifically designed to assess link-level expressiveness. Finally, we ask: does expressiveness matter in practice? We use a graph symmetry metric that quantifies the difficulty of distinguishing links and show that while expressive models may underperform on standard benchmarks, they significantly outperform simpler ones as symmetry increases, highlighting the need for dataset-aware model selection.",
+    "author": [
+      {"@type": "Person", "name": "Veronica Lachi"},
+      {"@type": "Person", "name": "Francesco Ferrini"},
+      {"@type": "Person", "name": "Antonio Longa"},
+      {"@type": "Person", "name": "Bruno Lepri"},
+      {"@type": "Person", "name": "Andrea Passerini"},
+      {"@type": "Person", "name": "Manfred Jaeger"}
+    ],
+    "datePublished": "2025",
+    "keywords": [
+      "GNN link representation",
+      "link prediction",
+      "GNN expressiveness",
+      "kφ-kρ-m framework",
+      "LR-EXP",
+      "graph symmetry",
+      "automorphic links",
+      "message-passing neural networks",
+      "SEAL",
+      "NCN"
+    ],
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "arXiv", "value": "2506.24018"},
+      {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2506.24018"},
+      {"@type": "PropertyValue", "propertyID": "OpenReview", "value": "WYnvP3DePZ"}
+    ],
+    "url": "https://antoniolonga.github.io/papers/gnn-link-representation-expressiveness.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/gnn-link-representation-expressiveness.html",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Advances in Neural Information Processing Systems",
+      "volumeNumber": "38"
+    },
+    "sameAs": [
+      "https://papers.nips.cc/paper_files/paper/2025/hash/b1cd72276feff8173462e3f733ac66f8-Abstract-Conference.html",
+      "https://arxiv.org/abs/2506.24018",
+      "https://openreview.net/forum?id=WYnvP3DePZ"
+    ],
+    "codeRepository": "https://anonymous.4open.science/r/link-representation-gnn-8124/README.md",
+    "associatedMedia": {
+      "@type": "MediaObject",
+      "name": "Official NeurIPS paper",
+      "contentUrl": "https://papers.nips.cc/paper_files/paper/2025/file/b1cd72276feff8173462e3f733ac66f8-Paper-Conference.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    "subjectOf": {
+      "@type": "Dataset",
+      "name": "LR-EXP",
+      "description": "A synthetic benchmark for evaluating link-level expressiveness.",
+      "url": "https://anonymous.4open.science/r/link-representation-gnn-8124/README.md"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Bridging Theory and Practice in Link Representation with Graph Neural Networks</h1>
+        <p class="paper-authors">Veronica Lachi<sup>*1</sup>, Francesco Ferrini<sup>*2</sup>, Antonio Longa<sup>2</sup>, Bruno Lepri<sup>1</sup>, Andrea Passerini<sup>2</sup>, Manfred Jaeger<sup>3</sup></p>
+        <p class="paper-affiliations"><sup>1</sup>Fondazione Bruno Kessler, Trento, Italy · <sup>2</sup>University of Trento, Trento, Italy · <sup>3</sup>University of Aalborg, Aalborg, Denmark · <sup>*</sup>Equal contribution</p>
+        <p class="blog-subtitle">39th Conference on Neural Information Processing Systems (NeurIPS 2025) · Advances in Neural Information Processing Systems 38</p>
+        <p class="blog-meta">Published conference paper · Main Conference Track</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://papers.nips.cc/paper_files/paper/2025/file/b1cd72276feff8173462e3f733ac66f8-Paper-Conference.pdf">Official paper</a>
+          <a class="paper-link" href="https://papers.nips.cc/paper_files/paper/2025/hash/b1cd72276feff8173462e3f733ac66f8-Abstract-Conference.html">Proceedings</a>
+          <a class="paper-link" href="https://doi.org/10.48550/arXiv.2506.24018">arXiv DOI</a>
+          <a class="paper-link" href="https://arxiv.org/abs/2506.24018">arXiv</a>
+          <a class="paper-link" href="https://openreview.net/forum?id=WYnvP3DePZ">OpenReview</a>
+          <a class="paper-link" href="https://papers.nips.cc/paper_files/paper/2025/file/b1cd72276feff8173462e3f733ac66f8-Supplemental-Conference.zip">Supplement</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> This work unifies message-passing link models by expressiveness, introduces LR-EXP to test whether they distinguish structurally different links, and shows that graph symmetry predicts when expressive models are useful.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>GNN expressiveness theory largely concerns whole-graph representations, while link prediction depends on representations of node pairs. Standard GNNs aggregate endpoint embeddings and can collapse non-automorphic links when their endpoints are automorphic. The paper asks how link models can be compared formally and when additional link-level structural expressiveness improves real-world predictions.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>The kφ-kρ-m framework characterizes endpoint encoders, link-neighborhood encoders, their expressive power, and accessible radius.</li>
+          <li>Formal results place Pure GNNs, ELPH, Neo-GNN, NCN/NCNC, and SEAL in an expressiveness hierarchy.</li>
+          <li>LR-EXP supplies 1,400 synthetic graphs containing non-automorphic links with 1-WL-indistinguishable endpoints.</li>
+          <li>A graph-symmetry score connects structural ambiguity to model performance across 12 link-prediction datasets.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Framework and evaluation</h2>
+        <p>The framework builds a link representation from endpoint embeddings computed by a message-passing function φ and an aggregated m-hop neighborhood representation computed by ρ. Their Weisfeiler–Lehman expressiveness levels are kφ and kρ. LR-EXP trains siamese copies of each model with contrastive loss and applies a reliable paired comparison to determine whether two non-automorphic links receive distinguishable embeddings. Real-world experiments use an efficient WL-based approximation of graph symmetry.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Tasks</dt><dd>Link-representation discrimination on LR-EXP and link prediction under the HeaRT evaluation setting.</dd>
+          <dt>Datasets</dt><dd>LR-EXP; Cora, CiteSeer, PubMed; ogbl-citation2, ogbl-ddi, ogbl-ppa, ogbl-collab; NSC, YST, GRQ, AIFB, and EDIT-TSW.</dd>
+          <dt>Metrics</dt><dd>Precision on LR-EXP; mean reciprocal rank (MRR), Hits@10/20, and graph symmetry on real datasets.</dd>
+          <dt>Models</dt><dd>GCN, GAT, GraphSAGE, GAE, BUDDY/ELPH, Neo-GNN, NCN, NCNC, and SEAL.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>On LR-EXP, pure GNNs score zero precision, NCN and Neo-GNN reach 75%, and SEAL reaches 97%, matching the theoretical ordering. On low-symmetry real datasets, simpler models can remain competitive. Across the six most symmetric datasets, no pure GNN ranks in the top three, while SEAL ranks first, supporting symmetry-aware model selection.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Selected results (mean ± standard deviation over five runs; higher is better).</caption>
+            <thead>
+              <tr><th scope="col">Dataset / task</th><th scope="col">Metric</th><th scope="col">SEAL</th><th scope="col">Best pure-GNN baseline</th><th scope="col">Difference</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>LR-EXP / link distinction</td><td>Precision</td><td>97 ± 0</td><td>0 ± 0</td><td>+97 points</td></tr>
+              <tr><td>YST / link prediction</td><td>MRR</td><td>17.51 ± 0.94</td><td>GAE: 2.32 ± 0.01</td><td>+15.19</td></tr>
+              <tr><td>GRQ / link prediction</td><td>MRR</td><td>56.72 ± 1.35</td><td>GCN: 6.89 ± 0.47</td><td>+49.83</td></tr>
+              <tr><td>EDIT-TSW / link prediction</td><td>MRR</td><td>25.82 ± 1.47</td><td>GraphSAGE: 8.35 ± 7.27</td><td>+17.47</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>This paper is relevant for expressive GNNs for link prediction, pairwise or edge representations, limits of endpoint-only embeddings, automorphic-node failures, structural-feature methods, synthetic expressiveness benchmarks, and choosing between fast pure GNNs and subgraph-based models such as SEAL.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>The theory covers message-passing link models and does not directly include transformer-based or spectral link architectures. LR-EXP is intentionally small and tests discrimination rather than scalability. The real high-symmetry datasets are also relatively small, so larger benchmarks are needed to study generalization in this regime.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Persistent identifiers:</strong> arXiv:2506.24018 · <a href="https://doi.org/10.48550/arXiv.2506.24018">https://doi.org/10.48550/arXiv.2506.24018</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@inproceedings{lachi2025bridging,
+  title     = {Bridging Theory and Practice in Link Representation with Graph Neural Networks},
+  author    = {Lachi, Veronica and Ferrini, Francesco and Longa, Antonio and Lepri, Bruno and Passerini, Andrea and Jaeger, Manfred},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {38},
+  year      = {2025},
+  url       = {https://papers.nips.cc/paper_files/paper/2025/hash/b1cd72276feff8173462e3f733ac66f8-Abstract-Conference.html}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>
