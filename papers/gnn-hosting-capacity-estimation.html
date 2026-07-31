@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks | Antonio Longa</title>
+  <meta name="description" content="HCGNN estimates node-level hosting capacity in distribution grids using path-aware graph features, improving Linear DistFlow accuracy at millisecond speed.">
+  <meta name="author" content="Antonio Longa, Marco Rossi, Francesca Soldan, Ramon Zambetti, Andrea Cazzaniga, Andrea Passerini">
+  <meta name="keywords" content="HCGNN, hosting capacity estimation, graph neural networks, distribution networks, power systems, AC optimal power flow, Graph Isomorphism Network, node-level regression, distributed energy resources">
+  <link rel="canonical" href="https://antoniolonga.github.io/papers/gnn-hosting-capacity-estimation.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks">
+  <meta property="og:description" content="HCGNN combines graph message passing with path-based electrical features for fast node-level hosting capacity estimation.">
+  <meta property="og:url" content="https://antoniolonga.github.io/papers/gnn-hosting-capacity-estimation.html">
+  <meta property="og:image" content="https://antoniolonga.github.io/img/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks">
+  <meta name="twitter:description" content="A path-aware GNN estimates hosting capacity in milliseconds while improving on Linear DistFlow accuracy.">
+  <meta name="twitter:image" content="https://antoniolonga.github.io/img/profile.jpg">
+
+  <meta name="citation_title" content="Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks">
+  <meta name="citation_author" content="Antonio Longa">
+  <meta name="citation_author" content="Marco Rossi">
+  <meta name="citation_author" content="Francesca Soldan">
+  <meta name="citation_author" content="Ramon Zambetti">
+  <meta name="citation_author" content="Andrea Cazzaniga">
+  <meta name="citation_author" content="Andrea Passerini">
+  <meta name="citation_publication_date" content="2027-03">
+  <meta name="citation_journal_title" content="Electric Power Systems Research">
+  <meta name="citation_volume" content="264">
+  <meta name="citation_firstpage" content="113871">
+  <meta name="citation_issn" content="0378-7796">
+  <meta name="citation_doi" content="10.1016/j.epsr.2026.113871">
+  <meta name="citation_abstract" content="This paper presents a fast and accurate method for estimating node-level hosting capacity in distribution networks using Graph Neural Networks (GNNs). A large open dataset of synthetic networks, representative of Italian distribution grids, was created, and hosting capacity values were computed using AC optimal power flow (AC-OPF) simulations, which are computationally expensive. This dataset was used to train a GNN regressor based on the Graph Isomorphism Network architecture, integrating path-based electrical features to capture both local and global grid dependencies. The proposed GNN is compared to a fast physics-based estimation method, showing a reduction in mean absolute error of about 30%, highlighting its ability to capture the spatial and electrical relationships embedded in the network topology and to produce physically consistent estimates. In terms of efficiency, the model achieves an inference speed over 11,000 times faster than AC-OPF, enabling hosting capacity estimation in milliseconds. This significant speed-up allows real-time applications such as interactive hosting capacity maps, large-scale scenario analysis, and decision support for distribution system operators. The model’s robustness is also evaluated under out-of-distribution conditions, where some performance degradation is observed, particularly for small networks, emphasizing the importance of representative training data. Importantly, the GNN remains operational even when traditional power flow methods fail to converge, providing stable and reliable estimates without requiring manual intervention. Overall, the approach demonstrates strong potential for scalable, real-time hosting capacity assessment to support the integration of distributed energy resources.">
+
+  <link rel="stylesheet" href="papers.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks",
+    "name": "Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks",
+    "description": "HCGNN estimates node-level hosting capacity in distribution grids using path-aware graph features, improving Linear DistFlow accuracy at millisecond speed.",
+    "abstract": "This paper presents a fast and accurate method for estimating node-level hosting capacity in distribution networks using Graph Neural Networks (GNNs). A large open dataset of synthetic networks, representative of Italian distribution grids, was created, and hosting capacity values were computed using AC optimal power flow (AC-OPF) simulations, which are computationally expensive. This dataset was used to train a GNN regressor based on the Graph Isomorphism Network architecture, integrating path-based electrical features to capture both local and global grid dependencies. The proposed GNN is compared to a fast physics-based estimation method, showing a reduction in mean absolute error of about 30%, highlighting its ability to capture the spatial and electrical relationships embedded in the network topology and to produce physically consistent estimates. In terms of efficiency, the model achieves an inference speed over 11,000 times faster than AC-OPF, enabling hosting capacity estimation in milliseconds. This significant speed-up allows real-time applications such as interactive hosting capacity maps, large-scale scenario analysis, and decision support for distribution system operators. The model’s robustness is also evaluated under out-of-distribution conditions, where some performance degradation is observed, particularly for small networks, emphasizing the importance of representative training data. Importantly, the GNN remains operational even when traditional power flow methods fail to converge, providing stable and reliable estimates without requiring manual intervention. Overall, the approach demonstrates strong potential for scalable, real-time hosting capacity assessment to support the integration of distributed energy resources.",
+    "author": [
+      {"@type": "Person", "name": "Antonio Longa", "sameAs": "https://orcid.org/0000-0003-0337-1838"},
+      {"@type": "Person", "name": "Marco Rossi", "sameAs": "https://orcid.org/0000-0002-9721-0631"},
+      {"@type": "Person", "name": "Francesca Soldan", "sameAs": "https://orcid.org/0000-0001-9233-4945"},
+      {"@type": "Person", "name": "Ramon Zambetti", "sameAs": "https://orcid.org/0009-0001-1675-4961"},
+      {"@type": "Person", "name": "Andrea Cazzaniga", "sameAs": "https://orcid.org/0000-0003-2906-2347"},
+      {"@type": "Person", "name": "Andrea Passerini", "sameAs": "https://orcid.org/0000-0002-2765-5395"}
+    ],
+    "datePublished": "2027-03",
+    "keywords": ["HCGNN", "hosting capacity estimation", "graph neural networks", "distribution networks", "power systems", "AC optimal power flow", "Graph Isomorphism Network", "node-level regression", "distributed energy resources"],
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1016/j.epsr.2026.113871"},
+      {"@type": "PropertyValue", "propertyID": "PII", "value": "S0378779626011600"}
+    ],
+    "url": "https://antoniolonga.github.io/papers/gnn-hosting-capacity-estimation.html",
+    "mainEntityOfPage": "https://antoniolonga.github.io/papers/gnn-hosting-capacity-estimation.html",
+    "isPartOf": {
+      "@type": "PublicationVolume",
+      "name": "Electric Power Systems Research",
+      "volumeNumber": "264"
+    },
+    "pagination": "Article 113871",
+    "publisher": {"@type": "Organization", "name": "Elsevier"},
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "sameAs": [
+      "https://doi.org/10.1016/j.epsr.2026.113871",
+      "https://www.sciencedirect.com/science/article/pii/S0378779626011600"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main class="blog-container">
+    <a class="back-home" href="../index.html#pub">← Publications</a>
+
+    <article>
+      <header class="blog-header">
+        <h1>Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks</h1>
+        <p class="paper-authors">Antonio Longa<sup>1</sup>, Marco Rossi<sup>2</sup>, Francesca Soldan<sup>2</sup>, Ramon Zambetti<sup>2</sup>, Andrea Cazzaniga<sup>2</sup>, Andrea Passerini<sup>3</sup></p>
+        <p class="paper-affiliations"><sup>1</sup>UiT, The Arctic University of Norway, Tromsø, Norway · <sup>2</sup>Ricerca sul Sistema Energetico – RSE S.p.A., Milano, Italy · <sup>3</sup>DISI, University of Trento, Trento, Italy</p>
+        <p class="blog-subtitle">Electric Power Systems Research · Volume 264 · Article 113871 · March 2027</p>
+        <p class="blog-meta">Available online 28 July 2026 · Open access under CC BY 4.0</p>
+        <nav class="paper-links" aria-label="Paper resources">
+          <a class="paper-link" href="https://www.sciencedirect.com/science/article/pii/S0378779626011600">Open-access article</a>
+          <a class="paper-link" href="https://doi.org/10.1016/j.epsr.2026.113871">DOI</a>
+          <a class="paper-link" href="https://gitlab.rse-web.it/sse/grd/distribution-network-dataset-for-ml/-/releases/v1.1">Dataset</a>
+        </nav>
+      </header>
+
+      <p class="paper-summary"><strong>In one sentence.</strong> HCGNN combines graph message passing with feeder-path electrical features to estimate every node’s hosting capacity in milliseconds, without running a new AC-OPF for each node.</p>
+
+      <section aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>Distribution system operators need node-level hosting capacity estimates to determine where new distributed generation or loads can connect without violating voltage or thermal limits. AC optimal power flow provides accurate values but must solve a nonlinear, non-convex problem for every node, making repeated assessments and interactive hosting-capacity maps computationally expensive.</p>
+      </section>
+
+      <section aria-labelledby="contributions">
+        <h2 id="contributions">Main contributions</h2>
+        <ul>
+          <li>HCGNN formulates hosting capacity estimation as node-level graph regression on radial distribution networks.</li>
+          <li>Path-based resistance, reactance, loading, and structural descriptors expose upstream electrical dependencies to a compact GIN model.</li>
+          <li>An open dataset contains 7,188 synthetic Italian medium-voltage networks and approximately 1.43 million nodes and edges labeled through AC-OPF.</li>
+          <li>Accuracy, feasibility, inference time, data efficiency, solver robustness, and out-of-distribution behavior are evaluated separately.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="method">
+        <h2 id="method">Method</h2>
+        <p>Each bus receives local structural features plus statistics computed along its shortest path to the feeder, including cumulative impedance and line-capacity information. Three Graph Isomorphism Network layers with 128 hidden units refine these representations, and a multilayer perceptron outputs one hosting-capacity value per node. Training targets come from offline AC-OPF simulations; deployment requires only a non-iterative forward pass.</p>
+      </section>
+
+      <section aria-labelledby="experiments">
+        <h2 id="experiments">Experimental setting</h2>
+        <dl class="paper-details">
+          <dt>Networks</dt><dd>7,188 connected radial feeders with 68–559 nodes each, representative of Italian medium-voltage grids.</dd>
+          <dt>Target</dt><dd>Node-level hosting capacity under ±5% voltage limits and line thermal constraints, computed with Pandapower AC-OPF.</dd>
+          <dt>Split</dt><dd>70% training, 15% validation, and 15% testing; five deterministic runs with different random seeds.</dd>
+          <dt>Baseline</dt><dd>Linear DistFlow hosting-capacity estimation through direct inversion of a linearized power-flow model.</dd>
+          <dt>Metrics</dt><dd>MAE, MAPE, tolerance-aware feasibility rate, and inference time; IEEE 123-bus and 33-bus tests probe robustness and domain shift.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="results">
+        <h2 id="results">Key results</h2>
+        <p>On the in-domain test set, HCGNN lowers MAE by about 30% and MAPE by about 20% relative to Linear DistFlow. GPU inference is approximately 4.6 times faster than the linear baseline and about 11,000 times faster than AC-OPF. With a 1% tolerance, 93% of predictions do not exceed the AC-OPF value by more than that margin.</p>
+        <div class="table-wrap">
+          <table class="paper-table">
+            <caption>Selected test-set results reported in the paper.</caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col">HCGNN</th><th scope="col">Reference</th></tr></thead>
+            <tbody>
+              <tr><td>MAE [p.u.] ↓</td><td>0.0705 ± 0.0083</td><td>Linear DistFlow: 0.1010</td></tr>
+              <tr><td>MAPE [%] ↓</td><td>2.17 ± 0.23</td><td>Linear DistFlow: 2.73</td></tr>
+              <tr><td>Inference speed ↑</td><td>≈11,000× faster</td><td>AC-OPF</td></tr>
+              <tr><td>Feasibility rate at 1% tolerance ↑</td><td>93%</td><td>Strict feasibility: 60%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="relevance">
+        <h2 id="relevance">When this work is relevant</h2>
+        <p>The approach targets interactive hosting-capacity maps, rapid distributed-energy-resource connection studies, large-scale scenario analysis, and operational decision support where many grid nodes or network variants must be assessed repeatedly.</p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Limitations</h2>
+        <p>The study assumes radial, balanced single-phase networks and omits existing load and generation. Training uses synthetic medium- and large-scale Italian feeders, and accuracy degrades under strong domain shift: on the unseen IEEE 33-bus network, HCGNN has higher error than Linear DistFlow. Voltage-critical cases form only about 25% of the data. Meshed grids, unbalanced multiphase systems, live operating profiles, physical constraints in the loss, and interpretability remain future work.</p>
+      </section>
+
+      <section aria-labelledby="citation">
+        <h2 id="citation">Citation</h2>
+        <p class="citation-id"><strong>Persistent identifier:</strong> <a href="https://doi.org/10.1016/j.epsr.2026.113871">https://doi.org/10.1016/j.epsr.2026.113871</a></p>
+        <div class="code-block">
+          <button class="copy-button" type="button" aria-label="Copy BibTeX citation">Copy</button>
+          <div class="code" role="region" aria-label="BibTeX citation">@Article{longa2027fast,
+  title   = {Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks},
+  author  = {Longa, Antonio and Rossi, Marco and Soldan, Francesca and Zambetti, Ramon and Cazzaniga, Andrea and Passerini, Andrea},
+  journal = {Electric Power Systems Research},
+  volume  = {264},
+  pages   = {113871},
+  year    = {2027},
+  month   = {mar},
+  publisher = {Elsevier BV},
+  issn    = {0378-7796},
+  doi     = {10.1016/j.epsr.2026.113871},
+  url     = {https://doi.org/10.1016/j.epsr.2026.113871}
+}</div>
+        </div>
+      </section>
+    </article>
+
+    <a class="back-home bottom" href="../index.html#pub">← Back to publications</a>
+  </main>
+  <script src="papers.js"></script>
+</body>
+</html>

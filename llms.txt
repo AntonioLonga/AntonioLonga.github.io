@@ -27,6 +27,7 @@ The most important topics associated with Antonio Longa are Graph Machine Learni
 - [Simple Path Structural Encoding for Graph Transformers](https://antoniolonga.github.io/papers/simple-path-structural-encoding.html): ICML 2025 paper page on SPSE, simple path counts, RRWP limitations, structural edge encoding, cycle patterns, graph transformers, approximate path counting, and graph benchmarks.
 - [Community aware temporal network generation](https://antoniolonga.github.io/papers/community-aware-temporal-network-generation.html): Applied Network Science 2025 paper page on LETN-gen, community-aware temporal networks, labeled egocentric neighborhoods, surrogate network generation, modularity, and label assortativity.
 - [Generating fine-grained surrogate temporal networks](https://antoniolonga.github.io/papers/generating-fine-grained-surrogate-temporal-networks.html): Communications Physics 2024 paper page on ETN-gen, egocentric temporal neighborhoods, scalable surrogate temporal networks, data augmentation, temporal extension, and privacy-aware synthetic graphs.
+- [Fast and accurate node-level hosting capacity estimation in distribution networks using graph neural networks](https://antoniolonga.github.io/papers/gnn-hosting-capacity-estimation.html): Electric Power Systems Research paper page on HCGNN, node-level hosting capacity, AC optimal power flow, radial distribution grids, path-based electrical features, and real-time grid assessment.
 
 ## Main research areas
 
